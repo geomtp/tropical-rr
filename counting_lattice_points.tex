@@ -1,0 +1,592 @@
+\documentclass[a4paper,dvipdfmx,reqno,12pt]{amsart}
+\synctex=1
+%
+%%%% packages
+\usepackage[utf8]{inputenc}
+\usepackage[dvipdfmx]{graphicx,color}%for images
+\usepackage{bm}%fonts
+\usepackage{tikz-cd}%
+\usetikzlibrary{cd}
+\usetikzlibrary{calc}
+\usepackage{amsmath,amsthm,amstext,amsfonts,amsbsy}% ほぼ必須
+\usepackage{amssymb}
+\usepackage{latexsym}% ほぼ必須
+\usepackage{makecell}%表のセル内で改行するためのパッケージ
+\usepackage{algpseudocode,algorithm}%疑似コード用
+\usepackage{todonotes}%comments
+\usepackage[margin=0.8in]{geometry}
+\usepackage{layout}
+\usepackage[T1]{fontenc}%font encoding
+\usepackage{physics}
+\usepackage{braket}%after physics
+\usepackage{mathtools,thmtools}
+\usepackage{imakeidx}%before hyperref for pagebackref
+\usepackage[pagebackref,dvipdfmx]{hyperref}
+\usepackage[capitalize]{cleveref}
+\hypersetup{
+     colorlinks = true,
+     citecolor  = blue,
+     linkcolor  = blue, 
+     urlcolor   = blue, 
+}
+%\usepackage{pxjahyper}%for hyperref in Japanese
+\usepackage{bookmark}
+\usepackage{dynkin-diagrams}
+
+%%%% imakeidx
+\makeindex
+\makeindex[name=not, title=Index, columns=2]
+\makeindex[name=sym, title=Symbol, columns=3]
+\makeindex[name=ref, title=Ref, columns=3]
+
+\newcommand{\ind}[2]{\emph{#1}\index{1{#2}@{#1}}}
+\newcommand{\indset}[3]{$#1 \deq #2 $ \index{0{#3}@$#1$} }
+\newcommand{\indse}[2]{{$#1$}\index{0{#2}@{$#1$}}}
+
+%%%%
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows}
+
+
+
+%%%%
+
+
+%%%% theoremstyle
+
+\theoremstyle{definition}
+\newtheorem{Thm}{Theorem}[section]
+\newtheorem*{Thm*}{Theorem}
+\newtheorem{Def}[Thm]{Definition}
+\newtheorem{Def*}{Definition}
+\newtheorem{Eg}[Thm]{Example}
+\newtheorem*{Eg*}{Example}
+\newtheorem{Prop}[Thm]{Proposition}
+\newtheorem*{Prop*}{Proposition}
+\newtheorem{Note}[Thm]{Note}
+\newtheorem*{Note*}{Note}
+\newtheorem{Ntc}[Thm]{Notice}
+\newtheorem*{Ntc*}{Notice}
+\newtheorem{Lem}[Thm]{Lemma}
+\newtheorem*{Lem*}{Lemma}
+\newtheorem{DefProp}[Thm]{Definition and Proposition}
+\newtheorem*{DefProp*}{Definition and Proposition}
+\newtheorem{Fact}[Thm]{Fact}
+\newtheorem*{Fact*}{Fact}
+\newtheorem{Ques}[Thm]{Question}
+\newtheorem*{Ques*}{Question}
+\newtheorem{Cite}[Thm]{Citation}
+\newtheorem*{Cite*}{Citation}
+\newtheorem{Conj}[Thm]{Conjecture}
+\newtheorem*{Conj*}{Conjecture}
+\newtheorem{Rule}[Thm]{Rule}
+\newtheorem*{Rule*}{Rule}
+\newtheorem{Not}[Thm]{Notation}
+\newtheorem*{Not*}{Notation}
+\newtheorem{Cor}[Thm]{Corollary}
+\newtheorem*{Cor*}{Corollary}
+\newtheorem{Rmk}[Thm]{Remark}
+\newtheorem*{Rmk*}{Remark}
+\newtheorem{Cond}[Thm]{Condition}
+\newtheorem*{Cond*}{Condition}
+\newtheorem{Conv}[Thm]{Convention}
+\newtheorem*{Conv*}{Convention}
+%%%% newcommand
+
+%%%logic symbol
+\newcommand{\deq}{\coloneqq}
+
+\newcommand{\dbraket}[1]{\hspace{-1.5pt}\braket{\hspace{-2.2pt}\braket{#1}\hspace{-2.2pt}}}
+
+\newcommand{\textcmd}[1]{\texttt{\symbol{"5C}#1}}
+
+%%special sets
+\newcommand{\emp}{\varnothing}%emptyset
+\newcommand{\C}{\mathbb{C}}%complex number
+\newcommand{\Ha}{\mathbb{H}}%quaternion
+\newcommand{\F}{\mathbb{F}}%field
+\newcommand{\R}{\mathbb{R}}%real number
+\newcommand{\Q}{\mathbb{Q}}%rational number
+\newcommand{\Z}{\mathbb{Z}}%integer
+\newcommand{\N}{\mathbb{N}_{0}}%natural number
+\newcommand{\Pj}{\mathbb{P}}%bold p
+\newcommand{\vep}{\varepsilon}%varepsilon
+
+%%%%
+
+\newcommand{\mb}[1]{\mathbb{#1}}%blackboard bold (for math mode)
+\newcommand{\mcal}[1]{\mathcal{#1}}%
+\newcommand{\mf}[1]{\mathfrak{#1}}%
+
+\newcommand{\opn}[1]{\operatorname{#1}}
+\newcommand{\catn}[1]{\mathbf{#1}}
+
+\newcommand{\abk}[1]{\langle {#1} \rangle}%angle bracket 
+\newcommand{\Abk}[1]{\left \langle {#1} \right \rangle}%angle bracket (auto sizing)
+\newcommand{\dabk}[1]{\langle\! \langle {#1}\rangle \! \rangle}%double angle bracket
+\newcommand{\Dabk}[1]{\left \langle \! \left \langle {#1} \right \rangle \! \right \rangle}%double angle bracket
+\newcommand{\Sbk}[1]{\left[ {#1} ]\right }% square bracket [] (auto sizing)
+\newcommand{\Cbk}[1]{\left \{ {#1}\right \}}% curly bracket {} (auto sizing)
+\newcommand{\dcbk}[1]{\{\!\!\{ {#1}\}\!\!\}} % double curly bracket {{}} 
+\newcommand{\Dcbk}[1]{\left \{\!\! \left \{ {#1} \right\} \!\!\right \}} % double curly bracket {{}} (auto sizing)
+\newcommand{\Paren}[1]{\left ( {#1} \right )}%parenthesis () (auto sizing)
+\newcommand{\dparen}[1]{(\!({#1})\!)}%double parenthesis
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xgets}[1]{\xleftarrow{#1}}
+\newcommand{\hookto}{\hookrightarrow}
+
+
+%%%% 
+
+%%%% mathabx.sty (font) 
+\DeclareFontFamily{U}{matha}{\hyphenchar\font45}
+\DeclareFontShape{U}{matha}{m}{n}{
+      <5> <6> <7> <8> <9> <10> gen * matha
+      <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
+      }{}
+\DeclareSymbolFont{matha}{U}{matha}{m}{n}
+
+\DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathb}{m}{n}{
+      <5> <6> <7> <8> <9> <10> gen * mathb
+      <10.95> mathb10 <12> <14.4> <17.28> <20.74> <24.88> mathb12
+      }{}
+\DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
+
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+      <5> <6> <7> <8> <9> <10>
+      <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+      mathx10
+      }{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+
+%DeclareMathSymbol (from mathabx.sty)
+\DeclareMathSymbol{\bigboxslash}{\mathop}{mathx}{"FE}
+\DeclareMathSymbol{\bigboxtimes}{\mathop}{mathx}{"D2}
+%%%%
+
+%%%% MnSymbol.sty (font)
+\DeclareFontFamily{U}{MnSymbolC}{}
+\DeclareFontShape{U}{MnSymbolC}{m}{n}{
+  <-6> MnSymbolC5
+  <6-7> MnSymbolC6
+  <7-8> MnSymbolC7
+  <8-9> MnSymbolC8
+  <9-10> MnSymbolC9
+  <10-12> MnSymbolC10
+  <12-> MnSymbolC12}{}
+\DeclareFontShape{U}{MnSymbolC}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolC-Bold6
+  <7-8> MnSymbolC-Bold7
+  <8-9> MnSymbolC-Bold8
+  <9-10> MnSymbolC-Bold9
+  <10-12> MnSymbolC-Bold10
+  <12-> MnSymbolC-Bold12}{}
+
+\DeclareSymbolFont{MnSyC}{U}{MnSymbolC}{m}{n}
+
+%%%% DeclareMathSymbol (from MnSymbol.sty)
+
+\DeclareMathSymbol{\tplus}{\mathbin}{MnSyC}{43}
+\DeclareMathSymbol{\aplus}{\mathbin}{MnSyC}{190}
+
+%%%% renewcommand
+
+
+
+
+%%%% footnote
+
+\newcommand{\cfootnote}[1]{\footnote{#1}}
+
+\newcommand{\TB}{\mcal{T}_{B_0}}
+\newcommand{\TBZ}{\mcal{T}_{\Z,B_0}}
+\newcommand{\AffS}{{\mathop{\mcal{A}\!f\!\!f\!}\nolimits}}
+\newcommand{\FBZ}{\mcal{F}_{\Z,B}}
+\newcommand{\FB}{\mcal{F}_{B}}
+\newcommand{\simto}{ 
+\mathrel{\raisebox{0.13em}{${\sim}$}}
+\kern -0.75em \mathrel{\raisebox{-0.11em}{${\scriptstyle \to}$}}  
+}
+%%%% from 
+
+%%%% from  https://tex.stackexchange.com/questions/183702/formatting-back-references-in-bibliography-bibtex
+\renewcommand*{\backrefalt}[4]{
+    \ifcase #1 [Not cited.]%
+        \or        [Cited on p.#2.]%
+        \else      [Cited on p.#2.]%
+    \fi}
+
+
+\usepackage{mathrsfs}
+\usepackage{upgreek}
+\numberwithin{equation}{section}
+\title{On counting lattice points in some tropical spaces and beyond
+}
+\author[Y. Tsutsui]{Yuki Tsutsui}
+\address{Graduate School of Mathematical Sciences, The University of Tokyo, 3-8-1 Komaba, Meguro-Ku, Tokyo, 153-8914, Japan}
+\email{tyuki@ms.u-tokyo.ac.jp}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+We consider a tropical version of counting lattices point for 
+line bundles on tropical curves and integral affine manifold
+with a Hessian form.
+\end{abstract}
+\maketitle
+\section{Introduction}
+Counting points on a certain region is a classical problem.
+
+
+
+We want to focus on the following Proposition.
+
+\begin{Prop}
+Let $P$ be a convex lattice polytope and
+$f=\log (\sum_{n\in P\cap \Z^{n}} \opn{exp}(\abk{n,x}))\colon \R^{n}\to \R$ be 
+a Laurent polynomial function over the log semiring. Then,
+$df:\R^{n}\to (\R^{n})^{\vee}$ is an embedding onto $\opn{relint}(P)$
+\cite[p.124 Exercise]{MR1301331}.
+Besides, the quotient map $q: \R^{n}\to \R^{n}/\Z^{n}$ induces the following
+equation.
+\begin{align}
+\sharp (q(df)\cap 0)=\sharp (\opn{int}(P)\cap \Z^{n}) 
+\end{align}
+
+\end{Prop}
+We can naturally extend this proposition for tropical projective toric 
+varieties and then the extension map is called the tropical moment map
+$\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$ 
+\cite[Definition 2.1 (2)]{MR2428356}.
+
+Another important point is that $q\circ df$ is also a Lagrangian
+submanifold of the torus fibration $\check{X}(\R^{n})\deq \R^{n}\times (\R^{n})^{\vee}/(\Z^{n})^{\vee}$.
+
+These Lagrangian submanifolds are called
+\emph{Lagrangian sections} \index{Lagrangian section@Lagrangian section}
+which is well-studied in the field of homological 
+mirror symmetry 
+\cite{kontsevichAffineStructuresNonArchimedean2006a}.
+In particular, Lagrangian sections are mirror of line bundles on
+mirror varieties. 
+In this paper, we consider a 
+
+\begin{Thm} \label{thm: main}
+Let $B$ be a compact tropical curve $C$ (resp. integral affine manifold
+with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ a polite $C^{1}$-
+Cartier data on $C$ (resp. $B$). Then,
+\begin{align}
+\chi(C,s)=c_1(D_s)+\chi(C), \quad \chi(B,s)=\frac{c_1(D_s)^{n}}{n!}
+\end{align}
+where $\chi(C,s)$ (resp. $\chi(B,s)$) is the number of weighted lattice
+points on $s$ (see \cref{def: weighted_lattice_points}) and $D_s$ is the divisor class of $s$.
+\end{Thm}
+
+We note that this theorem has already essentially proved for some
+literature as a trivial corollary of homological mirror symmetry 
+in \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{rmk: curve_mirror} and \cref{rmk: integral_mirror} 
+for more details) but we reprove it in tropical  
+geometrical setting as a test play of an another approach 
+for a tropical analog of Riemann-Roch formula for 
+tropical spaces. This approach is different
+from classical approach such like 
+\cite{gathmannRiemannRochTheoremTropical2008a,MR4251610} but
+a toy model of homological mirror conjecture in the sense
+of \cite[{\textsection 7}]{auroux2022lagrangian}.
+
+\begin{Rmk}
+   
+\end{Rmk}
+
+\textit{Acknowledgments:}
+
+This work was supported by JSPS KAKENHI 
+Grant Number 21J14529.
+
+\section{Proof for compact tropical curves}
+In this section, we prove \cref{thm: main} for 
+compact tropical curves
+(see \cite{mikhalkinTropicalCurvesTheir2008a} 
+for the definition of tropical curves).
+Our proof is highly effected from 
+\cite{knill2012graph,MR2676658,auroux2022lagrangian}.
+\footnote{Our proof idea comes from 
+\cite{knill2012graph,MR2676658} at first.  
+The current proof is modified after reading 
+\cite{auroux2022lagrangian}}.
+We also follow the notation used in 
+\cite{auroux2022lagrangian}.
+
+\begin{Def}[{Continuous section}]
+Let $C$ be a tropical curve and 
+$C_{0}\deq \{x\in C\mid \opn{val}(x)=2\}$.
+
+\begin{align}
+\check{X}(C_0)\deq T^{*}C_0/T^{*}_{\Z}C_0, \quad 
+X_0(C)\deq \check{X}(C_0)\sqcup_{i,s}C
+\end{align}
+
+\end{Def}
+
+\begin{Thm}
+
+
+\end{Thm}
+
+\begin{Rmk} \label{rmk: curve_mirror}
+When $C$ is a trivalent metric graph, 
+our Lagrangian sections are 
+almost the same with that of fiberwise wrapped Fukaya category 
+$\mcal{F}(M)$ \cite[3.1]{auroux2022lagrangian}.
+Here, $M$ is the
+union of $\C P^{1}$'s whose intersection complex is $C$, 
+i.e., every edge of $C$ corresponds
+$\C P^{1}$ and every trivalent vertex of $C$ corresponds
+to the intersection points of some three $\C P^{1}$'s.
+The mirror manifold of $M$ is an algebraic curves $X_K$
+from Mumford's construction using the dual intersection
+complex $C$.
+
+The local model of $M$ comes from the critical locus
+of the potential function of a (A-side) Landau-Ginzburg 
+model $(\C^{3},-xyz)$. There exists a (Orlov) functor
+from $\opn{Fuk}(\C^{3},-xyz)$ 
+to $\opn{wFuk}((\C^{\times})^2)$ which is compatible
+with the pushforward 
+$i_*:\opn{Perf}(V(1+x_1+x_2))\to \opn{Perf}((K^{\times})^{2})$. 
+of the inclusion $i:V(1+x_1+x_2)\hookto (K^{\times})^2$
+via mirror functors (see \cite[2.]{auroux2022lagrangian}
+for more details). 
+
+The mirror space $M$ of $X_K$ can be considered as a 
+topological compactification of $\check{X}_0(C)$.
+
+By a slight modification of $\check{X}_0(C)$, every 
+stratified smooth Lagrangian section of $\check{X}(C)$ 
+can be considered as an object of $\mcal{F}(M)$
+
+The main difference between our setting and 
+that of \cite{auroux2022lagrangian} 
+is the definition of graded space $\opn{CF}(C,s)$. 
+Our approach has no good definition 
+of $m^{d}$-operations but we define $\opn{CF}(C,s)$ 
+without Hamiltonian
+perturbations.
+\end{Rmk}
+
+The stratified torus fibration of Riemann surface is 
+closely related with pants decomposition, and thus
+Auroux-Efimov-Kain in \cite{auroux2022lagrangian} expect the mirror symmetry 
+for projective hypersurfaces since they has a hihger 
+dimensional pants decomposition \cite{MR2079993} along
+tropical hypersurfaces.
+As a toy model of this question, we also pose a 
+following question as a higher version of the 
+above correspondence.
+\begin{Ques}
+Is there exists an analog of the correspondence of the 
+localization of index for
+hypersurfaces of projective space and pants decomposition 
+in \cite{MR2079993}?
+\end{Ques}
+We also expect that the above question has a generalization
+for more general algbraic varieties.
+\begin{Def} \label{def: weighted_lattice_points}
+
+\end{Def}
+
+
+
+\section{Proof for integral affine manifold}
+
+Let $B$ an integral affine manifold. Every integral affine 
+manifold is a tropical manifold and every tropical manifold is 
+a rational polyhedral space, so we use the theory of 
+tropical homology.
+
+There exists a natural isomorphism $\Omega_X^{n-p}[n]\to 
+\mcal{D}(\Omega_{X}^{p})$ where 
+$\mcal{D}(\mcal{F}^{\bullet})
+=R\mcal{H}om(\mcal{F};\upomega_X^{\bullet})$
+\cite[Theorem 6.2]{gross2019sheaftheoretic}.
+
+In particular, the natural isomorphism $\Omega_X^{n}[n]\to 
+\mcal{D}(\Omega_{X}^{0})=\upomega_B^{\bullet}$
+can be considered as the element of $H_{n,n}^{\opn{BM}}(X;\Z)$ 
+from definition. 
+We call this element as the \emph{fundamental class} of $X$ 
+and it denotes by $[X]$. The fundamental class of tropical
+manifold was defined from the locally constant function on 
+$X_{\opn{reg}}$. (See \cite[Definition 4.8]{jellLefschetzTheoremTropical2018a}.)
+If $X=\opn{pt}$, $H_{0,0}^{\opn{BM}}(\opn{pt};\Z)=\opn{End}(\Z)\simeq \Z$.
+Therefore, $H^{n,n}(X;\Z)\xto{\cdot \cap [X]} H_{0,0}^{\opn{BM}}(X;\Z)
+\xto{f_!} H_{0,0}^{\opn{BM}}(\opn{pt};\Z)$ defines
+the 
+When $B$ is an integral affine manifold of dimension $n$, 
+$\upomega^{\bullet}_{B}\simeq \opn{or}_{B}^{\Z}[n]$ 
+\cite[]{}.
+and the fundamental class of $B$ is an $\Z$-orientation of $B$
+when $B$ is orientable.
+
+\begin{Prop}
+Let $f:B'\to B$ be an \'etale covering of a compact integral affine 
+manifold $B$ of dimension $n$. Then,
+(i) $\chi(B',f^{*}(s))=\opn{deg}(f)\chi(B,s)$
+
+(ii) (Projection formula) 
+$\frac{c_1(f^{*}(D_s))^{n}}{n!}=\opn{deg}(f)\frac{c_1(D_s)^{n}}{n!}$
+
+(iii) If $B$ has a Hessian form, then $\chi(B,s)=\frac{c_1(D_s)^{n}}{n!}$
+\end{Prop}
+
+\begin{proof}
+(i) We can see this from definition.
+
+(ii) Since $f^{!}=f^{-1}$ 
+\cite[]{iversenCohomologySheaves1986a}
+, $\opn{deg}(f)$ is the same with degree of 
+mapping of closed manifolds.
+
+(iii) If $B$ has a Hessian form, then there exists a tropical tori $T$
+and an \'etale cover $f\colon T\to B$ by Cheng-Yau's result
+\cite{MR714338}. Since $f^{*}(s)$ is a Lagrangian section
+of $\check{X}(T)$, $\chi(T,f^{*}(s))$ is an intersection
+number of
+\end{proof}
+
+\begin{Rmk} \label{rmk: integral_mirror}
+This theorem is also a special case of \cite{MR4301560}.
+\end{Rmk}
+
+\begin{Rmk}
+
+According to \cite[5.3]{mikhalkinTropicalGeometryIts2006},
+the support of $k$-th Chern class of tropical manifold is 
+the $k$-skeleton of it.
+We don't know the definition of higher Chern class of tropical manifold $B$ except
+$n=1$ or $n=\dim B$. (See \cite[Definition 3.20]{shawTropicalSurfaces2015a} for
+$\dim B$-th Chern class of $B$.)
+On the other hand, $\opn{ch}(B)$ should be trivial when $B$ is
+an integral affine manifold, since $B$ has empty
+$k$-skeleton except $k=n$.
+\end{Rmk}
+
+\begin{Rmk}
+ Thus, $c_{k}(B_0)$ should be $1$ except $k=0$, 
+i.e., $\opn{td}(B_0)=1$. 
+We already see $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$.
+    From semi-flat SYZ mirror symmetry, the above conjecture should be true. In the case of tropical tori, see \ref{}.
+\end{Rmk}
+
+\begin{Rmk}
+If $B_0$ is not a Hessian manifold, then we cannot apply the above proof
+but we can also prove for closed integral affine surface by the same logic.
+See \cite{MR1422337} for tropical primary Kodaira surfaces.
+If Markus conjecture is true, $\widetilde{X(B_0)}\simeq \C^{n}$
+for some $n\in \N$.
+\end{Rmk}
+
+\section{For more examples}
+
+
+
+\begin{Def}
+Let 
+\end{Def}
+We didn't formalize this 
+We restrict for the condition of Lagrangian section and 
+give a certain extension of the main theorem.
+In this proof,
+\begin{Cor}[{K\"unneth formula}]
+Let $X,Y$ be a compact tropical curve or integral affine manifold.
+Let $s$ and $s'$ be (fiberwise) Lagrangian section of $X$ and $Y$ 
+statisfying the condition of cohomological version of a Milnor 
+fibration \cite[Assumption 1.1.1]{MR2031639} locally.
+Then, the induced external tensor product 
+$s\boxtimes s'\deq \opn{pr}_X^{*} (s)\times \opn{pr}_Y^{*}(s)$
+has the following equations:
+\begin{align}
+\chi(X\times Y,s\boxtimes s')=\chi(X,s)\chi(Y,s')
+\end{align}
+
+\end{Cor}
+\begin{proof}
+From sheaf theoretic Thom-Sebastiani theorem for constructible sheaves 
+\cite[Corollary 1.2.1]{MR2031639}, we get an isomorphism of 
+graded spaces;
+
+\begin{align}
+\opn{CF}^{\bullet}(X\times Y;s\boxtimes s') 
+& =\bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
+(R^{\bullet}_{\{f_v\boxplus g_w\geq 0\}}\Z_{U_{(v,w)}})_{(v,w)} \\
+& =\bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
+(R^{\bullet}_{\{f_v\geq 0\}}\Z_{U_v})_v
+\otimes_{\Z} (R^{\bullet}_{\{g_w\geq 0\}}\Z_{U_w})_w \\
+& \simeq
+\opn{CF}^{\bullet}(X,s)\otimes_{\Z} \opn{CF}^{\bullet}(Y,s') 
+\end{align}
+
+\end{proof}
+
+\begin{Rmk}
+In the proof of the above corollary, we didn't use anything
+of special conditions from tropical curves and integral
+affine manifolds.
+\end{Rmk}
+
+We will develop this paper for integral affine manifold
+with singularities. As an example we also gives the 
+following analog for (ADE type) tropical Kummer surfaces.
+
+\begin{Prop}[{For the proof for Tropical Kummer surfaces}]
+Let $L=q(L')$ be the image of a Lagrangian 
+section $L'$ of $\check{f}_{T}:\check{X}(T)\to T$ such 
+that $L'$ is invariant under the negation map. 
+\end{Prop}
+\begin{proof}
+
+\end{proof}
+
+
+\appendix
+
+\section{The local index}
+
+\begin{Eg}
+  If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
+  the Thom-Sebastiani theorem gives
+  a certain K\"unneth formula for
+  $\opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W})$:
+  \begin{align}
+    \opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W})
+    \simeq \opn{CF}^{\bullet}(f_1,\Z_{V})
+    \otimes_{\Z} \opn{CF}^{\bullet}(f_2,\Z_{W}), \quad
+    \opn{ind}_{(v,w)}(f_1\dot{+}f_2)=\opn{ind}_v(f_1)\cdot \opn{ind}_v(f_2).
+  \end{align}
+  From instance, if $f_1(x)=x_1^{2}+\cdots x_{m}^{2}$
+  and $f_2(x)=-x_{m+1}^{2}-\cdots - x_{m+n}^{2}$ then we have
+
+  \begin{align}
+    \opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{\R^{n+m}})
+    \simeq \tilde{H}^{\bullet-1}(S^{n-1};\Z)
+\simeq H^{\bullet}_c(B^{n};\Z)
+    \simeq \Z[-\opn{ind}_{\mathrm{Morse}}(f_1\dot{+}f_2,0)]
+  \end{align}
+  where $\opn{ind}_{\mathrm{Morse}}(f,0)$ is the Morse index
+  of a Morse function $f$ at the origin.
+This is compatible with classical Morse homology for Morse-Smale functions
+on closed Riemannian manifolds.
+\end{Eg}
+
+
+\bibliography{lattice_points_surface}
+\bibliographystyle{halpha}
+
+\printindex
+
+\end{document}
