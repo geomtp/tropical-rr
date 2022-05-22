@@ -242,7 +242,8 @@ with a Hessian form.
 \section{Introduction}
 Counting points on a certain region is a classical problem.
 
-
+This interpretation works for integral affine manifold 
+with singularities $B$ as a lattice point of $B$. 
 
 We want to focus on the following Proposition which is related with
 BS=RR problems.
@@ -278,7 +279,7 @@ $\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$
 \cite[Definition 2.1 (2)]{MR2428356}.
 
 This is a tropical analog of algebraic moment map 
-\cite[]{} for toric varieties.
+(e.g. \cite[\textsection 12.2]{coxToricVarieties2011a}) for toric varieties.
 
 We can generalize the above proposition as follows;
 \begin{align}
@@ -288,7 +289,7 @@ We can generalize the above proposition as follows;
 
 These data is very similar with elements of 
 $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})\deq H^{0}(X_{P}^{\opn{trop}};
-\mcal{A}^{0,0}_{X_{P}^{\opn{trop}}}/\AffS_{\Z,X_{P}^{\opn{trop}}})$.
+\mcal{A}^{0,0}_{X_{P}^{\opn{trop}}}/\mathcal{O}^{\times}_{X_{P}^{\opn{trop}}})$.
 
 \footnote{Be careful that this data is not an element
 of $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ since
@@ -297,6 +298,8 @@ at the neighborhood of the corner of $X_{P}^{\opn{trop}}$,
 i.e., the fixed point of big the tropical torus orbits.
 We need extend $\mcal{A}^{0,0}_{X_{P}^{\opn{trop}}}$
 suitably to treat as a truly analog of Cartier data.}
+
+
 
 $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ is a
 smooth version of the group of tropical Cartier divisor
@@ -307,6 +310,7 @@ $\opn{CaDiv}(X_{P}^{\opn{trop}})$
 Another important point is that $q\circ df$ is also a Lagrangian
 submanifold of the torus fibration $\check{X}(\R^{n})\deq \R^{n}\times (\R^{n})^{\vee}/(\Z^{n})^{\vee}$.
 
+
 These Lagrangian submanifolds are called
 \emph{Lagrangian sections} \index{Lagrangian section@Lagrangian section}
 which is well-studied in the field of homological 
@@ -315,6 +319,46 @@ mirror symmetry
 In particular, Lagrangian sections are mirror of line bundles on
 mirror varieties. 
 In this paper, we consider a 
+This gives an interesting insight which is inspired from
+Strominger-Yau-Zaslow conjecture.
+(See \cref{rmk: floer-coherent-problem} 
+for detail about it.)
+
+The follwoing question is not formulated as a mathematical 
+conjecture since we don't know the definition of Todd 
+class of $n(\geq 3)$ dimensional tropical manifolds,
+but we write it for showing a slogan of formulation 
+of a tropical analog of Riemann-Roch theorem.
+
+\begin{Ques}[{Tropical Mirror Riemann-Roch Problem}]
+Let $B$ be a compact tropical manifold and $\mcal{L}$
+be a line bundle on it. Let $s$ be a transversal polite 
+smooth Cartier data which represents of $\mcal{L}$.
+
+\begin{align}
+\chi(B,s)  \deq \chi(\opn{MF}^{\bullet}(s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
+\end{align}
+
+In particular, when $\mcal{L}=\mcal{O}_B$ then
+$\chi(\opn{MF}^{\bullet}(s))=\chi_{\opn{top}}(B)$?
+\end{Ques}
+
+Here, $\opn{ch}(\mcal{L})$ is a tropical analog of 
+the total Chern class of $\mcal{L}$.
+On the other hand, $\opn{td}(B)$ is
+"a tropical analog of Todd class"
+but we don't know the definition of it. 
+The definition of higher tropical Chern class of $B$
+is mentioned in \cite[5.3]{mikhalkinTropicalGeometryIts2006}
+but we don't understand the weight of the higher Chern class 
+of $B$ is not written explicitly.
+(See \cite[Definition 3.20]{shawTropicalSurfaces2015a} for 
+the weight of top Chern class of $B$.
+
+
+In this paper, we give an answer for compact tropical curves 
+and integral affine manifolds with Hessian form
+as test plays of the above question:
 
 \begin{Thm} \label{thm: main}
 Let $B$ be a compact tropical curve $C$ (resp. integral 
@@ -337,7 +381,7 @@ We note that this theorem has already essentially proved for some
 literature as a trivial corollary of homological mirror symmetry 
 in \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{rmk: curve_mirror} and \cref{rmk: integral_mirror} 
 for more details) but we reprove it in tropical  
-geometrical setting as a test play of an another approach 
+geometrical setting as a test play of another approach 
 for a tropical analog of Riemann-Roch formula for 
 tropical spaces. This approach is different
 from classical approach such like 
@@ -346,13 +390,25 @@ a toy model of homological mirror conjecture in the sense
 of \cite[{\textsection 7}]{auroux2022lagrangian}.
 
 \begin{Rmk}
-   
+We expect our approach works for various style 
+of tropical spaces and develop a certain tropical 
+analog of Ehrhart theory. 
 \end{Rmk}
 
 \textit{Acknowledgments:}
 
 This work was supported by JSPS KAKENHI 
 Grant Number 21J14529.
+
+\begin{Note}[Guide for reading this paper]
+  In order to reveal the relationships between our study
+  and other topics, we cannot avoid introducing various
+  notions. However, our results are almost elementary
+in the case of tropical curves,
+  so we write down a shortcut course of this paper as below:
+\end{Note}
+
+\section{The cohomological local Morse data}
 
 \section{Proof for compact tropical curves}
 In this section, we prove \cref{thm: main} for 
@@ -515,16 +571,13 @@ According to \cite[5.3]{mikhalkinTropicalGeometryIts2006},
 the support of $k$-th Chern class of tropical manifold is 
 the $k$-skeleton of it.
 We don't know the definition of higher Chern class of tropical manifold $B$ except
-$n=1$ or $n=\dim B$. (See \cite[Definition 3.20]{shawTropicalSurfaces2015a} for
-$\dim B$-th Chern class of $B$.)
+$n=1$ or $n=\dim B$. 
 On the other hand, $\opn{ch}(B)$ should be trivial when $B$ is
 an integral affine manifold, since $B$ has empty
 $k$-skeleton except $k=n$.
-\end{Rmk}
-
-\begin{Rmk}
- Thus, $c_{k}(B_0)$ should be $1$ except $k=0$, 
+Thus, $c_{k}(B_0)$ should be $1$ except $k=0$, 
 i.e., $\opn{td}(B_0)=1$. 
+
 We already see $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$.
     From semi-flat SYZ mirror symmetry, the above conjecture should be true. In the case of tropical tori, see \ref{}.
 \end{Rmk}
@@ -598,6 +651,12 @@ that $L'$ is invariant under the negation map.
 
 \end{proof}
 
+
+\section{Future works}
+
+\begin{Ques}
+  Is there a Morse $A_{\infty}$-precategory for tropical manifolds?
+\end{Ques}
 
 \appendix
 
