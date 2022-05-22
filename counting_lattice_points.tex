@@ -244,25 +244,65 @@ Counting points on a certain region is a classical problem.
 
 
 
-We want to focus on the following Proposition.
+We want to focus on the following Proposition which is related with
+BS=RR problems.
 
 \begin{Prop}
 Let $P$ be a convex lattice polytope and
 $f=\log (\sum_{n\in P\cap \Z^{n}} \opn{exp}(\abk{n,x}))\colon \R^{n}\to \R$ be 
 a Laurent polynomial function over the log semiring. Then,
+ the differential of $f$
 $df:\R^{n}\to (\R^{n})^{\vee}$ is an embedding onto $\opn{relint}(P)$
 \cite[p.124 Exercise]{MR1301331}.
 Besides, the quotient map $q: \R^{n}\to \R^{n}/\Z^{n}$ induces the following
 equation.
 \begin{align}
-\sharp (q(df)\cap 0)=\sharp (\opn{int}(P)\cap \Z^{n}) 
+\sharp (q(df)\cap 0_{\R^{n}})=\sharp (\opn{int}(P)\cap \Z^{n}). 
 \end{align}
-
+Here, $0_{{\R}^{n}}$ is the zero section of $\check{X}(\R^{n})$.
 \end{Prop}
+
+\begin{Eg}
+Let $f:\R \to \R; x\mapsto \log (1+e^{x})$ be a soft 
+plus function. When we take a dequantization of $f$,
+we get a ReLU $f^{\opn{trop}}(x)=\max\{0,x\}$.
+The differential is a sigmoid function 
+$df(x)=\frac{e^{x}}{1+e^{x}}$ 
+\footnote{softmax functions are appreared 
+naturally in a similar way.}.
+\end{Eg}
+
 We can naturally extend this proposition for tropical projective toric 
-varieties and then the extension map is called the tropical moment map
+varieties and then the extension map is called the \emph{tropical moment map}
 $\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$ 
 \cite[Definition 2.1 (2)]{MR2428356}.
+
+This is a tropical analog of algebraic moment map 
+\cite[]{} for toric varieties.
+
+We can generalize the above proposition as follows;
+\begin{align}
+\sharp (q(\mu_P^{\opn{trop}}) \cap 0_{X_P^{\opn{trop}}})
+=\sharp (P \cap \Z^{n}).
+\end{align}
+
+These data is very similar with elements of 
+$\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})\deq H^{0}(X_{P}^{\opn{trop}};
+\mcal{A}^{0,0}_{X_{P}^{\opn{trop}}}/\AffS_{\Z,X_{P}^{\opn{trop}}})$.
+
+\footnote{Be careful that this data is not an element
+of $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ since
+ the former collection of smooth function is not constant
+at the neighborhood of the corner of $X_{P}^{\opn{trop}}$,
+i.e., the fixed point of big the tropical torus orbits.
+We need extend $\mcal{A}^{0,0}_{X_{P}^{\opn{trop}}}$
+suitably to treat as a truly analog of Cartier data.}
+
+$\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ is a
+smooth version of the group of tropical Cartier divisor
+$\opn{CaDiv}(X_{P}^{\opn{trop}})$ 
+\cite[Definition 4.2]{jellLefschetzTheoremTropical2018a}.
+
 
 Another important point is that $q\circ df$ is also a Lagrangian
 submanifold of the torus fibration $\check{X}(\R^{n})\deq \R^{n}\times (\R^{n})^{\vee}/(\Z^{n})^{\vee}$.
@@ -271,13 +311,14 @@ These Lagrangian submanifolds are called
 \emph{Lagrangian sections} \index{Lagrangian section@Lagrangian section}
 which is well-studied in the field of homological 
 mirror symmetry 
-\cite{kontsevichAffineStructuresNonArchimedean2006a}.
+\cite{kontsevichAffineStructuresNonArchimedean2006a,MR2452307}.
 In particular, Lagrangian sections are mirror of line bundles on
 mirror varieties. 
 In this paper, we consider a 
 
 \begin{Thm} \label{thm: main}
-Let $B$ be a compact tropical curve $C$ (resp. integral affine manifold
+Let $B$ be a compact tropical curve $C$ (resp. integral 
+affine manifold $B$
 with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ a polite $C^{1}$-
 Cartier data on $C$ (resp. $B$). Then,
 \begin{align}
@@ -286,6 +327,11 @@ Cartier data on $C$ (resp. $B$). Then,
 where $\chi(C,s)$ (resp. $\chi(B,s)$) is the number of weighted lattice
 points on $s$ (see \cref{def: weighted_lattice_points}) and $D_s$ is the divisor class of $s$.
 \end{Thm}
+
+The condition of politeness is that every cotagent vector 
+is not in planes defined by the span of microsupport of
+cotangent sheaf of $C$. 
+
 
 We note that this theorem has already essentially proved for some
 literature as a trivial corollary of homological mirror symmetry 
@@ -460,7 +506,7 @@ number of
 \end{proof}
 
 \begin{Rmk} \label{rmk: integral_mirror}
-This theorem is also a special case of \cite{MR4301560}.
+This theorem also can be considered as a special case of \cite{MR4301560}.
 \end{Rmk}
 
 \begin{Rmk}
