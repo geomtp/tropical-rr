@@ -240,29 +240,121 @@ with a Hessian form.
 \end{abstract}
 \maketitle
 \section{Introduction}
-\subsection{tropical Riemann--Roch theorem}
+
+One of main topics of tropical geometry is that 
+how to calculate algebraic data on algebraic varieties
+from tropical varieties with additional data.
+In particular, we may expect that we can calculate
+ some invariants of algebraic varieties
+which is (generically) invariant for tropicalization
+(or degeneration) from tropical variety.
+
+For instance, the tropicalization of a $n$-dimensional
+algebraic subvariety of an algebraic split torus 
+is a $n$-dimensional polyhedral complex 
+(e.g 
+\cite[Theorem 3.2.3]{maclaganIntroductionTropicalGeometry2015a}).
+
+\subsection{Tropical Riemann--Roch theorem}
 Tropical Riemann--Roch theorem for tropical curves 
 is proved in \cite{gathmannRiemannRochTheoremTropical2008a}
 as an extension of Riemann--Roch theorem for graphs 
 \cite{MR2355607}.
 
-One of remarkable feature is that 
-the rank of linear system of tropical curves is
-not the invariant of $\mb{T}$-modules 
-\footnote{}. One of 
+The rank $r(D)$ of the linear system of a divisor $D$ 
+on tropical curve in 
+\cite{gathmannRiemannRochTheoremTropical2008a}
+is \emph{not} an invariant of $\mb{T}$-modules\footnote{
+See }
+but this is truly one of good analog of classical one,
+see \cite[Lemma 2.4]{MR2448666}. 
+Cartwright defines an invariant 
+$h^{0}(\Delta,D)$ for a divisor on tropical complex
+which a certain analog of the dimension of
+the $0$-th cohomology of a line bundle on algebraic 
+variety.
+in \cite[Definition 3.1]{MR4251610}.
+If $\dim \Delta=1$, then $h^{0}(\Delta,D)=r(D)+1$
+\cite[Proposition 3.3]{MR4251610}, and thus $h^{0}(\Delta,D)$
+is a generalization of $r(D)+1$ for tropical complexes. 
 
+On the other hand, a tropical analog of Riemann--Roch theorem
+for higher dimensional tropical manifolds 
+(or tropical complexes) is not formulated
+since there hasn't been any good definition of 
+Euler characteristic of line bundles on tropical 
+manifolds as an extension of the above notions yet.
+
+In \cite{MR3903579},
+One of main difference between them is that 
+the rank of linear system of tropical curves is
+not the invariant of $\mb{T}$-modules.\footnote{}
+
+The other dimensions of $\mb{T}$-modules 
+(which are invariant for $\mb{T}$-modules) are defined for 
+some authors (e.g. \cite[Definition 2.3]{mikhalkinTropicalCurvesTheir2008a}
+and \cite[p.8]{yoshitomi2011generators}) but 
+these dimensions have no tropical analog of 
+Riemann--Roch formula.
+
+One of standard (but very hard) approach is that 
+consrtucting 
 The homotopical algebra of semimodules is 
 studied recently in 
 \href{https://arxiv.org/abs/2202.01573}{[2202.01573] Proto-exact categories of modules over semirings and hyperrings}
 but the structure of the associated 
 stable $\infty$-category of the proto-exact structure
-is not clear yet
+is not studied yet.
 \footnote{The nerve of a proto-exact category
 forms an exact $\infty$-category 
-\cite[Example 7.2.3]{} and there exists the
-stable hull of it}. 
+\cite[Example 7.2.3]{MR3970975} and there exists the
+stable hull of it 
+\cite{https://doi.org/10.48550/arxiv.2010.04957}.}
+
+From successes of tropical homology \cite{itenbergTropicalHomology2019b}, we 
+may expect the existence of transformation from 
+line bundles on tropical manifold to complexes of
+constructible sheaves whose Euler number 
+represents that of line bundle, but we need to 
+be careful of that we also can observe that
+the derived category $\opn{D}_{c}^{b}(B)$
+of constructible sheaves on 
+tropical manifold $B$ does not seem like a tropical 
+analog of the derived category of coherent 
+sheaves on algebraic variety directly.\footnote{One of reasons
+comes from the result in \cite{MR2449059,MR2565051} and 
+homological mirror symmetry for 
+the derived category of coherent sheaves on complex split $n$-torus 
+$(\C^{\times})^{n}$ and the derived wrapped Fukaya category of $T^{*}(S^{1})^{n}$
+by \cite{MR2822213}.
+Therefore, $\opn{D}_c^{b}((S^{1})^{n})$ should behave like 
+the derived category of coherent sheaves on $(\C^{\times})^{n}$
+but not like of some complex tori.
+We will see another reason in \cref{a}.}
+
+
 \subsection{Lattice polytopes}
+
+We consider about 
+
 Counting points on a certain region is a classical problem.
+
+Since Euler number of line bundle is invariant for 
+degeneration (e.g. \cite[p.50]{}) and thus we can calculate
+the Euler number (or the dimension of global section)
+ of many interesting ample line bundles
+by a degeneration to a toric variety or a union of toric
+varieties. 
+
+(For instance, let $X\to \opn{Spec}(\Z_{p})$ be a
+projective scheme over $\Z_{p}$ and $\mcal{L}$
+be a line bundle on $X$ that is flat over $\Z_{p}$.
+Then, $\chi_{\kappa(s)}(X_s;\mcal{L}_s)=\chi_{\kappa(\eta)}(X_{\eta};\mcal{L}_{\eta})$
+
+Roughly speaking, this means that
+we can calculate the Euler number of line bundles on
+a projective scheme over $\Q_p$ from that on a 
+projective scheme over $\mb{F}_p$.  
 
 This interpretation works for integral affine manifold 
 with singularities $B$ as a lattice point of $B$. 
@@ -270,11 +362,14 @@ with singularities $B$ as a lattice point of $B$.
 We want to focus on the following Proposition which is related with
 BS=RR problems.
 
+Lattice polytopes naturally appear from tropical toric
+varieties as follows: 
+
 \begin{Prop}
 Let $P$ be a convex lattice polytope and
 $f=\log (\sum_{n\in P\cap \Z^{n}} \opn{exp}(\abk{n,x}))\colon \R^{n}\to \R$ be 
 a Laurent polynomial function over the log semiring. Then,
- the differential of $f$
+ the differential
 $df:\R^{n}\to (\R^{n})^{\vee}$ is an embedding onto $\opn{relint}(P)$
 \cite[p.124 Exercise]{MR1301331}.
 Besides, the quotient map $q: \R^{n}\to \R^{n}/\Z^{n}$ induces the following
@@ -291,14 +386,17 @@ plus function. When we take a dequantization of $f$,
 we get a ReLU $f^{\opn{trop}}(x)=\max\{0,x\}$.
 The differential is a sigmoid function 
 $df(x)=\frac{e^{x}}{1+e^{x}}$ 
-\footnote{softmax functions are appreared 
-naturally in a similar way.}.
+\footnote{softmax functions also are appreared 
+naturally in a similar way when we consider tropical projective spaces.}.
 \end{Eg}
 
 We can naturally extend this proposition for tropical projective toric 
 varieties and then the extension map is called the \emph{tropical moment map}
 $\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$ 
 \cite[Definition 2.1 (2)]{MR2428356}.
+
+Instead of moment map for Hamiltonian action of Lie group, we
+need not assume convex lattice polytope is not Delzant.
 
 This is a tropical analog of algebraic moment map 
 (e.g. \cite[\textsection 12.2]{coxToricVarieties2011a}) for toric varieties.
@@ -308,6 +406,12 @@ We can generalize the above proposition as follows;
 \sharp (q(\mu_P^{\opn{trop}}) \cap 0_{X_P^{\opn{trop}}})
 =\sharp (P \cap \Z^{n}).
 \end{align}
+
+From construction of tropical moment map for lattice polytope,
+it seems that generic rational section of line bundle on 
+toric variety (over log semifield) generate the basis of
+.
+
 
 These data is very similar with elements of 
 $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})\deq H^{0}(X_{P}^{\opn{trop}};
@@ -328,6 +432,7 @@ smooth version of the group of tropical Cartier divisor
 $\opn{CaDiv}(X_{P}^{\opn{trop}})$ 
 \cite[Definition 4.2]{jellLefschetzTheoremTropical2018a}.
 
+This observation gives an ex
 
 Another important point is that $q\circ df$ is also a Lagrangian
 submanifold of the torus fibration $\check{X}(\R^{n})\deq \R^{n}\times (\R^{n})^{\vee}/(\Z^{n})^{\vee}$.
@@ -342,20 +447,25 @@ In particular, Lagrangian sections are mirror of line bundles on
 mirror varieties. 
 In this paper, we consider a 
 This gives an interesting insight which is inspired from
-Strominger-Yau-Zaslow conjecture.
+Strominger--Yau--Zaslow conjecture 
+(SYZ conjecture for short).
 (See \cref{rmk: floer-coherent-problem} 
 for detail about it.)
 
-The follwoing question is not formulated as a mathematical 
+The following question is not formulated as a mathematical 
 conjecture since we don't know the definition of Todd 
 class of $n(\geq 3)$ dimensional tropical manifolds,
 but we write it for showing a slogan of formulation 
 of a tropical analog of Riemann-Roch theorem.
 
-\begin{Ques}[{Tropical Mirror Riemann-Roch Problem}]
+\begin{Conj}[{Tropical Mirror Riemann--Roch Problem}]
 Let $B$ be a compact tropical manifold and $\mcal{L}$
-be a line bundle on it. Let $s$ be a transversal polite 
-smooth Cartier data which represents of $\mcal{L}$.
+be a line bundle on it. Suppose $B$ has the Todd class
+$\opn{td}(B) \in \mb{H}^{\bullet}(B;\Omega_B^{\bullet})$.
+ Let $s$ be a "generic"
+extended smooth Cartier data which represents of $\mcal{L}$
+and its Floer graded $\Z$-module $\opn{MF}^{\bullet}(s)$
+of it. Then,
 
 \begin{align}
 \chi(B,s)  \deq \chi(\opn{MF}^{\bullet}(s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
@@ -363,7 +473,7 @@ smooth Cartier data which represents of $\mcal{L}$.
 
 In particular, when $\mcal{L}=\mcal{O}_B$ then
 $\chi(\opn{MF}^{\bullet}(s))=\chi_{\opn{top}}(B)$?
-\end{Ques}
+\end{Conj}
 
 Here, $\opn{ch}(\mcal{L})$ is a tropical analog of 
 the total Chern class of $\mcal{L}$.
@@ -371,11 +481,11 @@ On the other hand, $\opn{td}(B)$ is
 "a tropical analog of Todd class"
 but we don't know the definition of it. 
 The definition of higher tropical Chern class of $B$
-is mentioned in \cite[5.3]{mikhalkinTropicalGeometryIts2006}
+is mentioned in \cite[5.3]{mikhalkinTropicalGeometryIts2006},
 but we don't understand the weight of the higher Chern class 
 of $B$ is not written explicitly.
 (See \cite[Definition 3.20]{shawTropicalSurfaces2015a} for 
-the weight of top Chern class of $B$.
+the weight of top Chern class of $B$.)
 
 
 In this paper, we give an answer for compact tropical curves 
@@ -388,14 +498,14 @@ affine manifold $B$
 with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ a polite $C^{1}$-
 Cartier data on $C$ (resp. $B$). Then,
 \begin{align}
-\chi(C,s)=c_1(D_s)+\chi(C), \quad \chi(B,s)=\frac{c_1(D_s)^{n}}{n!}
+\chi(C,s)=c_1(D_s)+c_1(-K_C), \quad \chi(B,s)=\frac{c_1(D_s)^{n}}{n!}
 \end{align}
 where $\chi(C,s)$ (resp. $\chi(B,s)$) is the number of weighted lattice
 points on $s$ (see \cref{def: weighted_lattice_points}) and $D_s$ is the divisor class of $s$.
 \end{Thm}
 
-The condition of politeness is that every cotagent vector 
-is not in planes defined by the span of microsupport of
+The condition of politeness is that every cotangent vector 
+is not in hyperplanes defined by the span of microsupport of
 cotangent sheaf of $C$. 
 
 
@@ -430,7 +540,25 @@ in the case of tropical curves,
   so we write down a shortcut course of this paper as below:
 \end{Note}
 
+\begin{Note}
+  We also impose the following assumption for simplicity in this paper:
+
+  Any topological space is locally compact and locally
+  contractible except schemes.
+
+
+  We mainly use min-plus algebra.
+
+  \footnote{We write down the reason of this in \cref{rmk: mix vs max}.}
+
+
+\end{Note}
+
 \section{The cohomological local Morse data}
+In this section we recall some 
+\begin{Def}[{politeness}]
+
+\end{Def}
 
 \section{Proof for compact tropical curves}
 In this section, we prove \cref{thm: main} for 
@@ -442,7 +570,7 @@ Our proof is highly effected from
 \footnote{Our proof idea comes from 
 \cite{knill2012graph,MR2676658} at first.  
 The current proof is modified after reading 
-\cite{auroux2022lagrangian}}.
+\cite{auroux2022lagrangian}.}.
 We also follow the notation used in 
 \cite{auroux2022lagrangian}.
 
@@ -472,12 +600,12 @@ union of $\C P^{1}$'s whose intersection complex is $C$,
 i.e., every edge of $C$ corresponds
 $\C P^{1}$ and every trivalent vertex of $C$ corresponds
 to the intersection points of some three $\C P^{1}$'s.
-The mirror manifold of $M$ is an algebraic curves $X_K$
+The mirror manifold of $M$ is an algebraic curve $X_K$
 from Mumford's construction using the dual intersection
 complex $C$.
 
 The local model of $M$ comes from the critical locus
-of the potential function of a (A-side) Landau-Ginzburg 
+of the potential function of a (A-side) Landau--Ginzburg 
 model $(\C^{3},-xyz)$. There exists a (Orlov) functor
 from $\opn{Fuk}(\C^{3},-xyz)$ 
 to $\opn{wFuk}((\C^{\times})^2)$ which is compatible
@@ -505,8 +633,8 @@ perturbations.
 
 The stratified torus fibration of Riemann surface is 
 closely related with pants decomposition, and thus
-Auroux-Efimov-Kain in \cite{auroux2022lagrangian} expect the mirror symmetry 
-for projective hypersurfaces since they has a hihger 
+Auroux--Efimov--Katzarkov in \cite{auroux2022lagrangian} expect the mirror symmetry 
+for projective hypersurfaces since they have higher 
 dimensional pants decomposition \cite{MR2079993} along
 tropical hypersurfaces.
 As a toy model of this question, we also pose a 
@@ -519,13 +647,19 @@ hypersurfaces of projective space and pants decomposition
 in \cite{MR2079993}?
 \end{Ques}
 We also expect that the above question has a generalization
-for more general algbraic varieties.
+for more general algebraic varieties.
 \begin{Def} \label{def: weighted_lattice_points}
 
 \end{Def}
 
+By imitating of the objects of fiberwise wrapped Fukaya category 
+in \cite{auroux2022lagrangian}, we can define a tropical 
+analogue of vector bundles.
+\begin{Eg}[{Multi-section}]
 
-
+This is a tropical analog of 
+\end{Eg}
+ 
 \section{Proof for integral affine manifold}
 
 Let $B$ an integral affine manifold. Every integral affine 
@@ -554,11 +688,24 @@ the
 When $B$ is an integral affine manifold of dimension $n$, 
 $\upomega^{\bullet}_{B}\simeq \opn{or}_{B}^{\Z}[n]$ 
 \cite[]{}.
-and the fundamental class of $B$ is an $\Z$-orientation of $B$
+and the fundamental class of $B$ is a $\Z$-orientation of $B$
 when $B$ is orientable.
 
+\begin{Def}
+Let $B,B'$ be an integral affine manifold.
+\end{Def}
+
+\begin{Rmk}
+Our condition of \'etale is different from that of 
+\cite[Definition 1.1]{grossMirrorSymmetryLogarithmic2006a}.
+
+If $f\colon B\to B'$ be an affine local diffeomorphism,
+then $X(f)\colon X(B) \to X(B')$ is a local isomorphism of
+complex manifolds.
+\end{Rmk}
+
 \begin{Prop}
-Let $f:B'\to B$ be an \'etale covering of a compact integral affine 
+Let $f:B'\to B$ be a finite \'etale covering of a compact integral affine 
 manifold $B$ of dimension $n$. Then,
 (i) $\chi(B',f^{*}(s))=\opn{deg}(f)\chi(B,s)$
 
@@ -626,7 +773,7 @@ In this proof,
 \begin{Cor}[{K\"unneth formula}]
 Let $X,Y$ be a compact tropical curve or integral affine manifold.
 Let $s$ and $s'$ be (fiberwise) Lagrangian section of $X$ and $Y$ 
-statisfying the condition of cohomological version of a Milnor 
+satisfying the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
 Then, the induced external tensor product 
 $s\boxtimes s'\deq \opn{pr}_X^{*} (s)\times \opn{pr}_Y^{*}(s)$
@@ -710,6 +857,16 @@ This is compatible with classical Morse homology for Morse-Smale functions
 on closed Riemannian manifolds.
 \end{Eg}
 
+
+\appendix
+
+\section{HMS}
+
+\begin{Rmk}[{Reason why Calabi--Yau's condition is needed}]
+We note Abouzaid constructed ($\Z/2\Z$-graded)
+Fukaya categories of higher genus closed surfaces in
+\cite{MR2383898}. 
+\end{Rmk}
 
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}
