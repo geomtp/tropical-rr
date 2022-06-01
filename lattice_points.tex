@@ -443,10 +443,6 @@ This paper is organized as follows:
 In order to formulate for general cases and give background about this paper, we use various subjects.
 We hope there exists several approaches for developing the theory of lattice points on tropical spaces; combinatorial approach, differential geometric approach and algebraic geometric approach.
 
-\textit{Acknowledgments:}
-
-
-
 \begin{Not}
 
   We will use the following notation in this paper:
@@ -571,12 +567,7 @@ closed subset of $\R^{n}$.
 
 The functor $R\Gamma_{\{f\geq f(v)\}}$ is called
 the \ind{local cohomology functor}{local cohomology functor}
-and the cochain complex
-$\opn{LMD}(\mcal{F},f,v)\deq R\Gamma_{\{f\geq f(v)\}}(\mcal{F})_v$
-is called the sheaf theoretic counterpart of the (cohomological)
-"local Morse datum" in \cite[p.271]{MR2031639}.
 
-We explain
 
 For simplicity, we assume $f(v)=0$ from now.
 
@@ -679,7 +670,7 @@ Of course, $\tilde{H}^{-1}(X;A)=0$ for any nonempty space $X$.
 
 \subsection{The local index and Morse degree}
 
-We explain the relationships between the local index and singularities.
+
 
 
 This is different from those of microlocal sheaf theory \cite[Definition 4.2.2, Definition 4.3.1]{MR1299726} but deeply related with them,
@@ -725,18 +716,6 @@ The proof is in \cite[Theorem 1.2.2]{MR2031639}.
   where $\opn{ind}_{\mathrm{Morse}}(f,0)$ is the Morse index
   of a Morse function $f$ at the origin.
 \end{Eg}
-
-Let $(M,g)$ be a Riemannian manifold and $f$ be an analytic function on $M$.
-
-
-
-\begin{Eg}[Morse function]
-  We
-\end{Eg}
-
-\begin{Rmk}
-
-\end{Rmk}
 
 \begin{Eg} Instead of Morse degree, we can define the local index for $C^{1}$-functions with at most isolated critical points.
 
@@ -819,7 +798,7 @@ in $\opn{Im}(C^{\infty}(U;\R)\to C^{0}(X\cap U;\R))$.
 
 \subsection{Proof for tropical curves}
 
-We start from for tropical curves. Our theorem for tropical curve
+Our theorem for tropical curve
 is a little bit extension of Banchoff's critical point theorem \cite[Theorem 1]{MR225327}
 or Poincar\'e-Hopf theorem for graphs \cite{knill2012graph}.
 Besides, our proof can be considered as a localization of
@@ -860,23 +839,7 @@ of $B$ is $\emp\subset V \subset B$.
   (ii) $f|_{B^{i}}$ is a Morse function for each strata $B^{i}$.
 \end{Def}
 
-\begin{Rmk}
-  We would like to remark extremely polite smooth functions are \emph{not}
-  a Morse function in the sense of \emph{stratified Morse theory}
-  even though $f$ is a restriction of a Morse function.
-  Every open atlas of tropical curve (or rational polyhedral space) can be considered
-  as a smooth stratification satisfying Whitney's condition \cite[]{}.
 
-  Therefore, we can consider a Morse function
-  for the coarse polyhedral stratification.
-
-  In our setting $df_v(Q)=0$ for every generalized tangent space
-  at $v$ is important.
-
-  We should add the isotopy condition for general cases:
-
-
-\end{Rmk}
 
 Let $B$ be a connected compact tropical curve with half edges of finite length.
 
@@ -1754,11 +1717,7 @@ The middle row is a smooth version of the following short exact sequence.
 \end{align}
 $\mcal{M}_{B}^{\times}$ is also acyclic, and thus $\opn{Pic}(B)\deq H^{1}(B,\mcal{O}^{\times}_B)\simeq  \opn{Im} (\delta : H^{0}(B,\mcal{D}iv_{B})\to H^{1}(B, \mcal{O}^{\times}_B))$ \cite[Lemma 4.5]{jellLefschetzTheoremTropical2018a}.
 
-\begin{Def}[Smooth Cartier data]
-  A \ind{smooth Cartier data}{smooth Cartier data} $s=\{f_i\}$ is an element of
-  $H^{0}(B,\mcal{A}_B^{0,0}/\mcal{O}_{B}^{\times})
-    \simeq H^{0}(B,\mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1})$.
-\end{Def}
+
 
 
 
@@ -2374,7 +2333,7 @@ such like \cite[Lemma 3.4]{gathmannRiemannRochTheoremTropical2008a}.
 
 When $D$ is an effective divisor on $\overline{C}$
 
-We don't know more sophisticated interpretation and relationships between the above counting formula and tropical Riemann-Roch formula \cite{gathmannRiemannRochTheoremTropical2008a}.
+
 
 
 
@@ -2390,8 +2349,6 @@ We don't know more sophisticated interpretation and relationships between the ab
   A \ind{curve over $k$}{curve over k} is an 1-dimensional
   $\opn{deg}_k D\deq \sum_{x \in X: \text{closed point}}\opn{mult}_{x}(D)[k(x):k]$.
   When $k$ is algebraic closed, the degree of $D$ is equal to that of \cite[p.]{hartshorneAlgebraicGeometry1977a}.
-
-  It may seem that the definition $r_G(D)$ is far from the usual definition of the rank of linear system of divisor on algebraic curve, but the rank of classical linear system can be considered as the same definition of graph version, see \cite[Lemma 2.4]{MR2448666}.
 
 \end{Rmk}
 
@@ -2504,25 +2461,7 @@ On the other hand, we expect
 
 
 
-\begin{Rmk}[Difficulty of ]
 
-  You may think this observation is strange because
-  there exist lattice polyhedral
-  complex $B$ which is homeomorphic to
-  a tropical K3 manifold but the Ehrhart polynomial is different from
-  for any numerical function of line bundle $\mcal{L}$ for some K3 manifold.
-
-  We consider this lattice polyhedral complex corresponds to line bundle on
-  a finite blow up or blow down K3 surface.
-
-  \begin{align}
-    c_1(n(\pi^{*}D-mE))c_1(K_{\tilde{X}})=nm
-  \end{align}
-
-
-
-
-\end{Rmk}
 
 \appendix
 
@@ -3872,6 +3811,26 @@ the isomorphism class of Arakelov vector bundles of rank $n$ on $\overline{\opn{
 
 Riesz space is essential for tropical modules since the semifield of tropical rational function
 has a such structure.
+
+\begin{Rmk}[Difficulty of ]
+
+  You may think this observation is strange because
+  there exist lattice polyhedral
+  complex $B$ which is homeomorphic to
+  a tropical K3 manifold but the Ehrhart polynomial is different from
+  for any numerical function of line bundle $\mcal{L}$ for some K3 manifold.
+
+  We consider this lattice polyhedral complex corresponds to line bundle on
+  a finite blow up or blow down K3 surface.
+
+  \begin{align}
+    c_1(n(\pi^{*}D-mE))c_1(K_{\tilde{X}})=nm
+  \end{align}
+
+
+
+
+\end{Rmk}
 
 \small
 

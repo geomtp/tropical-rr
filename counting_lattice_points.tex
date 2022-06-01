@@ -578,23 +578,34 @@ Let $X$ be a topological space and $Z$ a closed subset of $X$.
 
 
 
-The following graded module is the most important notion
+The following stalk complex (or graded module) is the most important notion
 for this paper which is naturally appeared from sheaf theory
 which is called "local Morse datum" in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
 \begin{Def}[{Cohomological local Morse datum}]
 Let $f:X\to \R$ be a $C^{1}$-function on a smooth manifold $X$ and has 
 at most one critical point $x$.
-
-$\opn{LMD}(\mcal{F},f,x)\deq (R\Gamma_{\{f\geq f(x)\}}(\mcal{F})_x$
-
+\begin{align}
+\opn{LMD}(\mcal{F},f,x)\deq R\Gamma_{\{f\geq f(x)\}}
+(\mcal{F})_x, \quad \opn{MF}^{\bullet}(\mcal{F},f,x)\deq 
+H^{\bullet}(\opn{LMD}(\mcal{F},f,x)).
+\end{align}
 \end{Def}
 
 \begin{Rmk}
 We don't assume $f$ satisfies some 
 "Morse condition" like \cite{MR2031639,MR4132582} since we need to use some $C^{1}$-function
-which does not satisfy stratified Morse condition. 
+which is \emph{not} a Morse function in the sense of 
+stratified Morse theory. 
+We also note that we need to use 
+the graded module $\opn{MF}^{\bullet}(\mcal{F},f,x)$ instead of 
+the complex $\opn{LMD}(\mcal{F},f,x)$ since we need to
+forget the differential.
 \end{Rmk}
+
+\begin{Eg}[Morse function]
+  We
+\end{Eg}
 
 \subsection{Polite condition}
 
@@ -623,9 +634,32 @@ The remarkable feature gives a certain analog
 of Kodaira vanishing theorem. See \cref{eg: kodaira}.
 \end{Eg}
 
+
+
+\begin{Rmk}[{A vanishing properties
+for some good fan}]
+$f\colon M_{\R}\to \R$ be a strictly convex
+$C^{1}$-function on $M_{\R}$ with the minimum point $x$
+ and $S$ be the support of 
+a polyhedral complex $\Sigma$ whose contains $x$.
+
+One of trivial but remarkable point is that
+\begin{align}
+\opn{MF}^{\bullet}(A_S,f,x)\not\simeq (-1)^{n}
+\opn{MF}^{\bullet}(A_S,-f,x)
+\end{align}
+
+\end{Rmk}
+
 \begin{Def}[{politeness}]
 
 \end{Def}
+
+\begin{align}
+\opn{MF}^{\bullet}(S,f;A)\deq 
+\bigoplus_{(x,m)\in \opn{Crit}(f,S)} \opn{MF}^{\bullet}(A_S,f+\check{m},x)
+\end{align}
+
 
 \section{Proof for compact tropical curves}
 In this section, we prove \cref{thm: main} for 
@@ -733,12 +767,32 @@ index on Riemann surfaces.}
 \section{Proof for integral affine manifold with Hessian form.}
 
 
+We write some background from 
 
-Let $B$ an integral affine manifold. Every integral affine 
+
+\begin{Def}
+
+\end{Def}
+
+\begin{Eg}
+
+\end{Eg}
+
+Every integral affine 
 manifold is a tropical manifold and every tropical manifold is 
 a rational polyhedral space, so we use the theory of 
-tropical homology. We follow about tropical homology 
-from \cite{MR1853077,gross2019sheaftheoretic}
+tropical homology.
+From now on, we follow about tropical homology 
+from \cite{MR3903579,gross2019sheaftheoretic}.
+
+
+
+\begin{Def}[Smooth Cartier data]
+  A \ind{very polite smooth Cartier data}{very polite smooth Cartier data} $s=\{f_i\}$ is an element of
+  $H^{0}(B,\mcal{A}_B^{0,0}/\mcal{O}_{B}^{\times})
+    \simeq H^{0}(B,\mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1})$ such
+that every $f_i$ is polite.
+\end{Def}
 
 
 There exists a natural isomorphism $\Omega_X^{n-p}[n]\to 
@@ -951,9 +1005,16 @@ on closed Riemannian manifolds.
 
 \appendix
 
-\section{HMS and SYZ}
+\section{Radiance obstruction and geometric quantization}
+
+In this section, we mention about 
+
+\section{Etc of HMS and SYZ}
 
 \begin{Rmk}[{Reason why Calabi--Yau's condition is needed}]
+
+
+
 We note Abouzaid constructed ($\Z/2\Z$-graded)
 Fukaya categories of higher genus closed surfaces in
 \cite{MR2383898}. 
