@@ -563,13 +563,58 @@ in the case of tropical curves,
 
 \end{Note}
 
-\section{The cohomological local Morse data}
+\section{The cohomological local Morse datum}
 In this section we recall some elementary result
 for cohomological local Morse data from
-\cite{,MR1299726}.
+\cite{MR2031639,MR1299726,MR4294126}.
+
+\subsection{Sheaf theory on locally compact 
+Hausdorff spaces.}
+The notion and symbols for 
+sheaf theory follows from \cite{MR1299726}.
+Let $X$ be a topological space and $Z$ a closed subset of $X$.
+
+
+
+
+
+The following graded module is the most important notion
+for this paper which is naturally appeared from sheaf theory
+which is called "local Morse datum" in \cite[p.271]{MR2031639} 
+or microlocal stalk in \cite{MR4132582}.
+\begin{Def}[{Cohomological local Morse datum}]
+Let $f:X\to \R$ be a $C^{1}$-function on a smooth manifold $X$ and has 
+at most one critical point $x$.
+
+$\opn{LMD}(\mcal{F},f,x)\deq (R\Gamma_{\{f\geq f(x)\}}(\mcal{F})_x$
+
+\end{Def}
+
+\begin{Rmk}
+We don't assume $f$ satisfies some 
+"Morse condition" like \cite{MR2031639,MR4132582} since we need to use some $C^{1}$-function
+which does not satisfy stratified Morse condition. 
+\end{Rmk}
+
+\subsection{Polite condition}
+
+Let $M$ be a free $\Z$-module of finite rank and 
+$M_{\R}\deq M\otimes_{\Z}\R$.
+
+\begin{Def}[{\cite{MR4294126}}]
+
+\end{Def}
+
+Every PL set is subanalytic, and thus 
+we can use the theory of microsupport of sheaves
+effectively.
+Let $\mcal{F}$ be a 
+
 We will develop this without condition 
 
 \begin{Eg}
+
+
 
 Let $S$ be a rational PL set in $\R^{n}$ and
 $f$.
@@ -681,13 +726,20 @@ analogue of vector bundles.
 
 This is a tropical analog of 
 \end{Eg}
- 
-\section{Proof for integral affine manifold}
+
+\subsection{Relationships between a localization of 
+index on Riemann surfaces.}
+
+\section{Proof for integral affine manifold with Hessian form.}
+
+
 
 Let $B$ an integral affine manifold. Every integral affine 
 manifold is a tropical manifold and every tropical manifold is 
 a rational polyhedral space, so we use the theory of 
-tropical homology.
+tropical homology. We follow about tropical homology 
+from \cite{MR1853077,gross2019sheaftheoretic}
+
 
 There exists a natural isomorphism $\Omega_X^{n-p}[n]\to 
 \mcal{D}(\Omega_{X}^{p})$ where 
@@ -853,6 +905,7 @@ that $L'$ is invariant under the negation map.
 
 
 \section{Future works}
+We need to 
 More difficult problem is about what is the differential $m_1$ or higher multiplication $m_d$ for tropical manifolds.
 If such $m_d$ exists, this should be determined by the contribution of the moduli space of tropical Morse tree for tropical manifold.
 \begin{Ques}
@@ -898,13 +951,17 @@ on closed Riemannian manifolds.
 
 \appendix
 
-\section{HMS}
+\section{HMS and SYZ}
 
 \begin{Rmk}[{Reason why Calabi--Yau's condition is needed}]
 We note Abouzaid constructed ($\Z/2\Z$-graded)
 Fukaya categories of higher genus closed surfaces in
 \cite{MR2383898}. 
 \end{Rmk}
+
+\subsection{Wrapped Fukaya category for toric variety}
+$\opn{Fuk}(;\Lambda_{\Sigma})$
+\cite[Theorem 3.4]{MR2871160}
 
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}
