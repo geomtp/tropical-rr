@@ -603,8 +603,43 @@ the complex $\opn{LMD}(\mcal{F},f,x)$ since we need to
 forget the differential.
 \end{Rmk}
 
-\begin{Eg}[Morse function]
-  We
+\begin{Eg}[{Real Milnor fiber}]
+We mainly follow from \cite[3.2]{MR3779558} for this example.
+
+Let $f\colon \R^{n}\to \R$ be a real polynomial function
+which has at most one critical point $x$ and $f(x)=0$.
+Let's calculate 
+$\chi (\opn{MF}^{\bullet}(\Z,f,x))
+=\chi(\tilde{H}^{\bullet-1}(\{f<f(x)\};\Z))$.
+Let $B_{\vep,x}\deq \set{y\in \R^{n}\mid \|x-y\|\leq \vep}$
+, $S_{\vep,x}=\partial B_{\vep,x}$ and 
+$\opn{Cone}(X)$ the cone of a topological space $X$.
+
+There exists a homeomorphism of pairs of
+topological spaces:
+\begin{align}
+(B_{\vep,x},B_{\vep,x}\cap V(f))\simeq 
+(\opn{Cone}(S_{\vep,x}),\opn{Cone}(S_{\vep,x}\cap V(f)))
+\end{align}
+for sufficienly small $\vep>0$
+\cite[Theorem 2.10]{MR0239612}.
+From this $B_{\vep,x}\cap\{f<f(x)\}$ is homeomorphic to
+$(S_{\vep,x}\cap \{f<f(x)\})\times (0,\vep]$.
+Besides, $S_{\vep,x}\cap \{f<f(x)\}\simeq 
+f^{-1}(-\delta)\cap B_{\vep,x}$
+for sufficiently small $\vep>\delta>0$ 
+\cite[Lemma 5.10]{MR0239612}.
+$f^{-1}(-\delta)\cap B_{\vep,x}$ is called 
+the (negative) real Milnor fibre.
+By Khimshiashvili [Himšiašvili] formula \cite{MR0458467}, we have
+\begin{align}
+  \chi(\opn{LMD}(\Z,f,x))
+=1-\chi(f^{-1}(-\delta)\cap B_{\vep,x})
+=\opn{ind}_{\opn{PH}}(\nabla f,x).
+\end{align}
+Thus, we can see 
+We can generalize the above for real analytic functions with 
+at most isolated singular points.
 \end{Eg}
 
 \subsection{Polite condition}
@@ -1009,11 +1044,16 @@ on closed Riemannian manifolds.
 
 In this section, we mention about 
 
+If $B_0$ is a strongly integral affine manifold,
+we can define the set of lattice points $B_0(\Z)$ 
+on $B_0$ for a fixed strongly integral affine structure.
+
 \section{Etc of HMS and SYZ}
 
 \begin{Rmk}[{Reason why Calabi--Yau's condition is needed}]
 
-
+We explain why we need Calabi--Yau's condition is needed for
+homological mirror symmetry in the sense of \cref{a}.
 
 We note Abouzaid constructed ($\Z/2\Z$-graded)
 Fukaya categories of higher genus closed surfaces in
