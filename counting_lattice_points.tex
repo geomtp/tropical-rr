@@ -594,9 +594,10 @@ H^{\bullet}(\opn{LMD}(\mcal{F},f,x)).
 
 \begin{Rmk}
 We don't assume $f$ satisfies some 
-"Morse condition" like \cite{MR2031639,MR4132582} since we need to use some $C^{1}$-function
+"Morse condition" like \cite{MR2031639,MR4132582} since
+ we need to use some $C^{\infty}$-function
 which is \emph{not} a Morse function in the sense of 
-stratified Morse theory. 
+stratified Morse theory (e.g. \cite[Part 1.2.1]{}). 
 We also note that we need to use 
 the graded module $\opn{MF}^{\bullet}(\mcal{F},f,x)$ instead of 
 the complex $\opn{LMD}(\mcal{F},f,x)$ since we need to
@@ -633,7 +634,7 @@ $f^{-1}(-\delta)\cap B_{\vep,x}$ is called
 the (negative) real Milnor fibre.
 By Khimshiashvili [Himšiašvili] formula \cite{MR0458467}, we have
 \begin{align}
-  \chi(\opn{LMD}(\Z,f,x))
+  \chi(\opn{MF}^{\bullet}(\Z,f,x))
 =1-\chi(f^{-1}(-\delta)\cap B_{\vep,x})
 =\opn{ind}_{\opn{PH}}(\nabla f,x).
 \end{align}
@@ -641,6 +642,18 @@ Thus, we can see
 We can generalize the above for real analytic functions with 
 at most isolated singular points.
 \end{Eg}
+
+The equation $\chi(\opn{MF}^{\bullet}(\Z,f,x))=
+\opn{ind}_{\opn{PH}}(\nabla f,x)$ is a special case of
+microlocal index theroem:
+
+\begin{Thm}[{\cite[Theorem 9.5.6]{}}]
+
+\begin{align}
+\chi(\opn{LMD}(\mcal{F},f,x))=\sharp ([\opn{graph}(f)]\cap \opn{CC}(\mcal{F}))
+\end{align}
+
+\end{Thm}
 
 \subsection{Polite condition}
 
@@ -657,6 +670,12 @@ effectively.
 Let $\mcal{F}$ be a 
 
 We will develop this without condition 
+
+\begin{Def}
+$(K, K\cap V(f))\simeq (B_{\vep,x}, B_{\vep,x}\cap V(g))$ 
+for some real analytic function $g$ with at most one 
+isolated critical point at $x$.
+\end{Def}
 
 \begin{Eg}
 
@@ -1009,7 +1028,7 @@ We expect
 
 \appendix
 
-\section{The local index}
+\section{The local index part2}
 
 \begin{Eg}
   If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
