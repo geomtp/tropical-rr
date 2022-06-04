@@ -504,10 +504,11 @@ as test plays of the above question:
 \begin{Thm} \label{thm: main}
 Let $B$ be a compact tropical curve $C$ (resp. integral 
 affine manifold $B$
-with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ a polite $C^{1}$-
+with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ a polite 
+locally real analytic 
 Cartier data on $C$ (resp. $B$). Then,
 \begin{align}
-\chi(C,s)=c_1(D_s)+c_1(-K_C), \quad \chi(B,s)=\frac{c_1(D_s)^{n}}{n!}
+\chi(C,s)=\int_C c_1(D_s)+c_1(-K_C), \quad \chi(B,s)=\int_B \frac{c_1(D_s)^{n}}{n!}
 \end{align}
 where $\chi(C,s)$ (resp. $\chi(B,s)$) is the number of weighted lattice
 points on $s$ (see \cref{def: weighted_lattice_points}) and $D_s$ is the divisor class of $s$.
@@ -604,7 +605,7 @@ the complex $\opn{LMD}(\mcal{F},f,x)$ since we need to
 forget the differential.
 \end{Rmk}
 
-\begin{Eg}[{Real Milnor fiber}]
+\begin{Eg}[{Real Milnor fiber}] \label{eg:}
 We mainly follow from \cite[3.2]{MR3779558} for this example.
 
 Let $f\colon \R^{n}\to \R$ be a real polynomial function
@@ -631,16 +632,21 @@ f^{-1}(-\delta)\cap B_{\vep,x}$
 for sufficiently small $\vep>\delta>0$ 
 \cite[Lemma 5.10]{MR0239612}.
 $f^{-1}(-\delta)\cap B_{\vep,x}$ is called 
-the (negative) real Milnor fibre.
+the (negative) \emph{real Milnor fibre}.
 By Khimshiashvili [Himšiašvili] formula \cite{MR0458467}, we have
-\begin{align}
+\begin{align} \label{eq: Khim}
   \chi(\opn{MF}^{\bullet}(\Z,f,x))
 =1-\chi(f^{-1}(-\delta)\cap B_{\vep,x})
 =\opn{ind}_{\opn{PH}}(\nabla f,x).
 \end{align}
-Thus, we can see 
+Here, $\opn{ind}_{\opn{PH}}(\nabla f,x)$ is the 
+Poincare--Hopf index of the gradient of $f$.
 We can generalize the above for real analytic functions with 
 at most isolated singular points.
+\end{Eg}
+
+\begin{Eg}
+
 \end{Eg}
 
 The equation $\chi(\opn{MF}^{\bullet}(\Z,f,x))=
@@ -652,10 +658,31 @@ microlocal index theroem:
 \begin{align}
 \chi(\opn{LMD}(\mcal{F},f,x))=\sharp ([\opn{graph}(f)]\cap \opn{CC}(\mcal{F}))
 \end{align}
-
 \end{Thm}
 
+\begin{Eg}
+
+Therefore, this is a certain sheaf theoretic version of 
+Pincar\'e--Hopf theorem for some polyhedral spaces.
+\end{Eg}
+
+\begin{Rmk}
+The microlocal index formula is generalized for more general 
+class of functions, see \cite{}.
+\end{Rmk}
+
 \subsection{Polite condition}
+
+\begin{Rmk}
+
+\end{Rmk}
+
+\begin{Eg}
+Let $f$ be a 
+
+Every real analytic function is \emph{nondepraved} 
+\cite[Part I, Definition. 2.3,]{MR932724}
+\end{Eg}
 
 Let $M$ be a free $\Z$-module of finite rank and 
 $M_{\R}\deq M\otimes_{\Z}\R$.
@@ -696,13 +723,17 @@ $f\colon M_{\R}\to \R$ be a strictly convex
 $C^{1}$-function on $M_{\R}$ with the minimum point $x$
  and $S$ be the support of 
 a polyhedral complex $\Sigma$ whose contains $x$.
-
+Obviously, 
 One of trivial but remarkable point is that
 \begin{align}
 \opn{MF}^{\bullet}(A_S,f,x)\not\simeq (-1)^{n}
 \opn{MF}^{\bullet}(A_S,-f,x)
 \end{align}
-
+except for special cases such like \cref{eq: Khim}.
+We will see this
+We note $\opn{MF}^{\bullet}(\Q_S,-f,x) \simeq 
+H^{\bullet}(S,S\setminus \{x\};\Q)\simeq 
+(H^{-n}(\upomega_S^{\bullet}))_x$. 
 \end{Rmk}
 
 \begin{Def}[{politeness}]
@@ -960,7 +991,9 @@ Let
 We didn't formalize this 
 We restrict for the condition of Lagrangian section and 
 give a certain extension of the main theorem.
-In this proof,
+We don't state for the K\"unneth type formula in a fully
+general setting but it is enough to perform the Euler number of
+generic locally analytic  behaves as expected.
 \begin{Cor}[{K\"unneth formula}]
 Let $X,Y$ be a compact tropical curve or integral affine manifold.
 Let $s$ and $s'$ be (fiberwise) Lagrangian section of $X$ and $Y$ 
@@ -993,9 +1026,10 @@ graded spaces;
 \end{proof}
 
 \begin{Rmk}
-In the proof of the above corollary, we didn't use anything
-of special conditions from tropical curves and integral
-affine manifolds.
+In the proof of the above corollary, we only use
+the condition of cohomological version of Milnor fibre. 
+Besides, we can find many smooth Cartier data satisfying 
+the condtion, see \cite[p.35]{MR2031639}.  
 \end{Rmk}
 
 We will develop this paper for integral affine manifold
