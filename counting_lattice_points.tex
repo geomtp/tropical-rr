@@ -263,6 +263,12 @@ the Hirzebruch--Riemann--Roch theorem and the Grothendieck--
 Riemann--Roch theorem are monumental work in
  algebraic geometry (or complex geometry).
 
+The difficulty of homological algebra over idempotent 
+semiring relates 
+with the difficulty of higher dimensional
+Riemann--Roch theorem for 
+tropical varieties.
+
 Tropical Riemann--Roch theorem for tropical curves 
 is proved in \cite{gathmannRiemannRochTheoremTropical2008a}
 as an extension of Riemann--Roch theorem for graphs 
@@ -272,10 +278,16 @@ The rank $r(D)$ of the linear system of a divisor $D$
 on tropical curve in 
 \cite{gathmannRiemannRochTheoremTropical2008a}
 is \emph{not} an invariant of $\mb{T}$-modules\footnote{
-See }
+In fact, in \cite[Example 6.5]{yoshitomi2011generators} 
+the author give a simple example of divisors on 
+tropical curves such that 
+the rank of a divisor is different even though 
+the $\mathbb{T}$-semimodule of the global section of 
+tropical line bundle $\mcal{O}_C(D)$ is isomorphic. }
 but this is truly one of good analog of classical one,
 see \cite[Lemma 2.4]{MR2448666}.
-The rank
+The rank of linear system is generalized by Cartwright
+\cite{MR4131998,MR4251610}.
 Cartwright defines an invariant 
 $h^{0}(\Delta,D)$ for a divisor on tropical complex
 which a certain analog of the dimension of
@@ -285,7 +297,9 @@ in \cite[Definition 3.1]{MR4251610}.
 If $\dim \Delta=1$, then $h^{0}(\Delta,D)=r(D)+1$
 \cite[Proposition 3.3]{MR4251610}, and thus $h^{0}(\Delta,D)$
 is a generalization of $r(D)+1$ for tropical complexes. 
-
+Cartwright conjectured the Riemann--Roch inequality
+$h^{0}(\Delta,D)+h^{0}(\Delta,K_{\Delta}-D)\geq 
+\frac{D(D-K)}{2}+\chi_{\opn{top}}(\Delta)$.
 On the other hand, a tropical analog of Riemann--Roch theorem
 for higher dimensional tropical manifolds 
 (or tropical complexes) is not formulated
@@ -304,7 +318,7 @@ some authors (e.g. \cite[Definition 2.3]{mikhalkinTropicalCurvesTheir2008a}
 and \cite[p.8]{yoshitomi2011generators}) but 
 these dimensions have no tropical analog of 
 Riemann--Roch formula like 
-\cite{,gathmannRiemannRochTheoremTropical2008a}.
+\cite{MR2355607,gathmannRiemannRochTheoremTropical2008a}.
 
 One of standard (but very hard) approach is that 
 consrtucting 
@@ -571,16 +585,28 @@ for cohomological local Morse data from
 
 \subsection{Sheaf theory on locally compact 
 Hausdorff spaces.}
+\cite{MR1299726,MR1269324,MR2050072}
 The notion and symbols for 
-sheaf theory follows from \cite{MR1299726}.
+sheaf theory mainly follows from \cite{MR1299726}.
+In this section, we suppose $A$ is a PID. Then, the Grothendieck 
+group $K_0(A)$ of $A$ is isomorphic to $\Z$. From this, 
+we can define the rank $\opn{rank}_A M$ of 
+a finitely generated $A$-module.
+If $M^{\bullet}$ is a bounded $\Z$-graded finitely generated $A$-module,
+then we can define the Euler characteristic 
+$\chi(M^{\bullet})\deq \sum_{i\in \Z}(-1)^{i}\opn{rank}_A M^{i}$.
+If $(M^{\bullet},d)$ is a bounded chain complex of finitely 
+generated $A$-module, then $\chi(M^{\bullet})=\chi(H^{\bullet}(M))$.
 Let $X$ be a topological space and $Z$ a closed subset of $X$.
 
 
 
 
 
-The following stalk complex (or graded module) is the most important notion
-for this paper which is naturally appeared from sheaf theory
+The following stalk complex (or graded module) is 
+the most important notion
+for this paper which is naturally appeared from 
+microlocal sheaf theory 
 which is called "local Morse datum" in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
 \begin{Def}[{Cohomological local Morse datum}]
@@ -854,19 +880,72 @@ index on Riemann surfaces.}
 
 We write some background from 
 
+We recall 
 
 \begin{Def}
 
 \end{Def}
 
+
+
 \begin{Eg}
 
 \end{Eg}
 
-Every integral affine 
-manifold is a tropical manifold and every tropical manifold is 
-a rational polyhedral space, so we use the theory of 
-tropical homology.
+\begin{Rmk}
+The following fact is one of most important things 
+for integral affine manifold with a Hessian form.
+By \cite[Corollary 2.3]{MR714338} and 
+\cite[Corollary 8.3.4 (2)]{MR2293045},
+every closed special Hessian manifold $B_0$ has 
+a flat Riemannian metric $g$ such that 
+its Levi--Civita connection is 
+equal to affine connection of $B_0$ \cite[Corollary 8.3.7]{MR2293045}. 
+By Bieberbach theorem, every closed flat Riemannian manifold 
+is covered by a Riemannian flat torus and thus every closed 
+integral Hessian manifold is a unramified cover of 
+a tropical torus as mentioned in \cite[5.2]{MR1882331}.
+\end{Rmk}
+
+\begin{Rmk}
+The integral affine structure itself is a very strict condition.
+
+\ind{Chern's conjecture}{Chern's conjecture} states every closed affine manifold $B_0$ has zero topological Euler number $\chi_{\opn{top}}(B_0)$.
+If $B_0$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
+This conjecture is true for special affine manifold \cite{MR3665000}.
+Therefore, every closed integral affine manifold satisfies Chern's conjecture since the orientable double over of an integral affine manifold has a compatible special integral affine structure.
+
+\ind{Markus's conjecture}{Markus conjecture} states every closed
+special affine manifold is complete (in the sense of $(G,X)$-manifold)
+if and only if its orientable double cover has a compatible special affine structure.
+
+\footnote{We have not check the original source of Chern's conjecture
+  and Markus conjecture yet. Our knowledge about these conjectures
+  mainly comes from \cite{goldmanRadianceObstructionParallel1984a}
+  and \cite{MR3665000}.
+}
+\end{Rmk}
+
+\begin{Rmk}[{Relationships between symplectic geometry}]
+Integral affine manifolds naturally appear 
+as a base space of Lagrangian torus fibration 
+\cite{duistermaatGlobalActionangleCoordinates1980a}. 
+Besides, the deformation space of 
+special Lagrangian submanifolds of
+a Calabi-Yau $n$-fold with a nowhere vanishing 
+holomorphic $n$-form has 
+an integral affine structure with 
+a Hessian metric by McLean's theorem \cite{MR1664890}.
+
+Every integral affine manifold has the following canonical
+\end{Rmk}
+
+We can consider the sheaf theoretic definition of 
+integral affine manifold as explained 
+in \cite[2.1]{kontsevichAffineStructuresNonArchimedean2006a} 
+and thus integral affine manifold is a special case of 
+tropical manifold.
+
 From now on, we follow about tropical homology 
 from \cite{MR3903579,gross2019sheaftheoretic}.
 
@@ -973,12 +1052,20 @@ We already see $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$.
     From semi-flat SYZ mirror symmetry, the above conjecture should be true. In the case of tropical tori, see \ref{}.
 \end{Rmk}
 
-\begin{Rmk}
-If $B_0$ is not a Hessian manifold, then we cannot apply the above proof
-but we can also prove for closed integral affine surface by the same logic.
-See \cite{MR1422337} for tropical primary Kodaira surfaces.
-If Markus conjecture is true, $\widetilde{X(B_0)}\simeq \C^{n}$
-for some $n\in \N$.
+\begin{Rmk}[{Kodaira--Thurston surface}]
+There exists a complete and compact integral affine manifold
+  which has no Hessian form.
+As pointed out in \cite[Example 1.14]{grossMirrorSymmetryLogarithmic2006a}
+and \cite[p.403]{MR1461965}, there exists an integral affine manifold
+$B_0$ such that
+$X(B_0)$ is a primary Kodaira surface and $X(B_0),\check{X}(B_0)$
+are diffeomorphic to Thurston's example of a symplectic but
+not K\"ahler manifold in \cite{MR402764}.
+Hence, $\check{X}(B_0)$ is not K\"ahler and $B_0$ has no
+Hessian form since every Hessian form on $B_0$ induces a 
+standard K\"ahler form
+on torus fibration.
+See also \cite{MR1422337} for tropical primary Kodaira surfaces.
 \end{Rmk}
 
 \section{For more examples}
@@ -1047,7 +1134,9 @@ that $L'$ is invariant under the negation map.
 
 
 \section{Future works}
-We need to 
+We need to consider the extension of scalar of 
+$\opn{MF}^{\bullet}(B,s)$ by 
+Novikov ring or Novikov field.
 More difficult problem is about what is the differential $m_1$ or higher multiplication $m_d$ for tropical manifolds.
 If such $m_d$ exists, this should be determined by the contribution of the moduli space of tropical Morse tree for tropical manifold.
 \begin{Ques}
@@ -1097,11 +1186,21 @@ on closed Riemannian manifolds.
 
 In this section, we mention about 
 
+Every compact integral affine manifold has no infinite volume face,
+ i.e., has a nontrivial finite volume.
+
 If $B_0$ is a strongly integral affine manifold,
 we can define the set of lattice points $B_0(\Z)$ 
 on $B_0$ for a fixed strongly integral affine structure.
 
+\begin{Rmk}
+  We stress that the $\sharp \mathrm{BS}=\mathrm{RR}$ is true for closed integral affine manifold such that $X(B_0)$ is not K\"ahlerian, i.e., not Calabi-Yau type.
+\end{Rmk}
+
 \section{Etc of HMS and SYZ}
+
+\subsection{A crash course of SYZ mirror for tropical 
+geometer}
 
 \begin{Rmk}[{Reason why Calabi--Yau's condition is needed}]
 
@@ -1112,6 +1211,8 @@ We note Abouzaid constructed ($\Z/2\Z$-graded)
 Fukaya categories of higher genus closed surfaces in
 \cite{MR2383898}. 
 \end{Rmk}
+
+\subsection{integral affine manifold and Floer cohomology}
 
 \subsection{Wrapped Fukaya category for toric variety}
 $\opn{Fuk}(;\Lambda_{\Sigma})$

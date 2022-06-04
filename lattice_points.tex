@@ -1311,15 +1311,11 @@ This proposition is an analog of \'{e}tale multiplicity of Euler characteristics
 
 
 \begin{Rmk}
-  If $B_0$ is not an Hessian manifold, then we cannot apply the above proof
-  but we can also prove for closed integral affine surface by the same logic.
-  See \cite{MR1422337} for tropical primary Kodaira surfaces.
   If Markus conjecture is true, $\widetilde{X(B_0)}\simeq \C^{n}$
   for some $n\in \N$. From Oka's principle of Stein manifolds,
   every complex manifold $X$ whose universal cover is Stein
   then $TX$ is holomorphically flat and thus the total Chern class of $X$
   is trivial.
-
 \end{Rmk}
 
 \section{tropical toric varieties} \label{sec: toric}
@@ -1771,65 +1767,34 @@ $\mb{D}_X=a_X^{!}\Z\simeq (a_Y\circ f)^{!}\Z\simeq f^{!}a_Y^{!}\Z= f^{!}\mb{D}_Y
 
 \section{the case of tropical tori and integral affine manifolds}
 In this section,
-we recall the notion of affine manifolds with singularities
+we recall the notion of affine manifolds from
 following
 \cite{kontsevichAffineStructuresNonArchimedean2006a,
   grossMirrorSymmetryLogarithmic2006a}.
 
 \cite[Chapter 6]{aspinwallDirichletBranesMirror2009}
 
-An integral affine manifold is a special tropical manifold which is homeomorphic to a topological manifold.
 \begin{Def}[integral affine manifold, Hessian manifold]
 
   An \ind{integral Hessian manifold}{integral Hessian manifold} is a pair of an integral affine manifold and Hessian form on it.
 
-  An \ind{real Monge-Ampere manifold}{real Monge-Ampere manifold} is a Hessian manifold satisfying the
+  A \ind{real Monge-Ampere manifold}{real Monge-Ampere manifold} is a Hessian manifold satisfying the
 
   \footnote{In many papers including \cite{kontsevichAffineStructuresNonArchimedean2006a} (resp. \cite{alexeevStablePairCompactification2019a}), tropical affine structure (resp. special tropical affine surface) is called integral affine structure (resp. integral-affine surface) or $\Z$-affine structure. In this paper differences between $(\opn{Aff}(M),M_{\R})$-structure and $(\opn{Aff}_{\R}(M),M_{\R})$-structure are significant, and thus we don't use this style.}
 
   \footnote{Hessian manifold is called
-    \ind{K\"ahler affine manifold}{Kahler affine manifold}
-    in \cite{MR714338}, \ind{affine K\"ahler manifold}{affine Kahler manifold}
-    or AK-manifold for short.
-    In the respect of history, we should use the latter name.
-    However, we usually use the former name for avoiding the confusion
-    of notion.}
+  \ind{K\"ahler affine manifold}{Kahler affine manifold}
+  in \cite{MR714338}, \ind{affine K\"ahler manifold}{affine Kahler manifold}
+  or AK-manifold for short.
+  In the respect of history, we should use the latter name.
+  However, we usually use the former name for avoiding the confusion
+  of notion.}
 
 \end{Def}
 
-We can consider the sheaf theoretic definition of integral affine manifold as explained in \cite[2.1]{kontsevichAffineStructuresNonArchimedean2006a} and thus integral affine manifold is a special case of tropical manifold.
-
-Integral affine manifolds naturally appear as a base space of Lagrangian torus fibration \cite{duistermaatGlobalActionangleCoordinates1980a}. In particular, the deformation space of special Lagrangian submanifolds of a Calabi-Yau $n$-fold with a nowhere vanishing holomorphic $n$-form has an integral affine structure with a Hessian metric by McLean's theorem \cite{MR1664890}.
-
-Every integral affine manifold has the following canonical
-
-The integral affine structure is a very strict condition.
-
-\ind{Chern's conjecture}{Chern's conjecture} states every closed affine manifold $B_0$ has zero topological Euler number $\chi_{\opn{top}}(B_0)$.
-If $B_0$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
-This conjecture is true for special affine manifold \cite{MR3665000}.
-Therefore, every closed integral affine manifold satisfies Chern's conjecture since the orientable double over of an integral affine manifold has a compatible special integral affine structure.
-
-\ind{Markus's conjecture}{Markus conjecture} states every closed
-special affine manifold is complete (in the sense of $(G,X)$-manifold)
-if and only if its orientable double cover has a compatible special affine structure.
-
-\footnote{We have not check the original source of Chern's conjecture
-  and Markus conjecture yet. Our knowledge about these conjectures
-  mainly comes from \cite{goldmanRadianceObstructionParallel1984a}
-  and \cite{MR3665000}.
-}
-
-As mentioned in \cite{}, if a closed affine manifold has a Hessian form, then the Markus conjecture is true by an analogue of Calabi's conjecture for Hessian manifolds proved in \cite{MR714338}.
-
-By \cite{MR714338}, every closed special Hessian manifold $B_0$ has a flat Riemannian metric $g$ such that its Levi--Civita connection is equal to affine connection of $B_0$. By Bieberbach theorem, every closed flat Riemannian manifold is covered by a Riemannian flat torus and thus every closed integral Hessian manifold is a unramified cover of a tropical torus as mentioned in \cite[5.2]{MR1882331}.
-
-Every compact integral affine manifold has no infinite volume face, i.e., has a nontrivial finite volume.
-
-From now we recall the commutative diagram (\ref{eq: smoothcartier}) for integral affine manifolds.
-
-
-We now see additional properties for sheaves on integral affine manifolds.
+From now on we recall the commutative diagram (\ref{eq: smoothcartier})
+ for integral affine manifolds.
+and see additional properties for sheaves on integral affine manifolds.
 
 If $B_0$ is a integral affine manifold, $\mcal{O}^{\times}_{B_0}$ is a locally constant sheaf and the quotient sheaf $\mcal{W}^{1}_{\Z,B_0}$ is a $\Z$-local system on $B_0$.
 
@@ -1878,11 +1843,6 @@ If
 $B_0$ is $\Z$-orientable if and only if $B_0$ has a special integral affine structure. We note a connected manifold $B_0$ is $\Z$-orientable if and only if $H^{n}_c(B_0,\Z)\simeq \Z$
 \cite[VI Theorem 6.4]{iversenCohomologySheaves1986a}.
 Special integral affine manifold can be considered as a tropical analog of complex manifold with trivial Chern class and we will see this later.
-\begin{Rmk}
-  We write down why we say integral affine manifold is a certain analogue of complex manifold but not algebraic variety. Besides, there exists an integral affine manifold such that $h^{p,q}_{\opn{trop}}\ne h^{q,p}_{\opn{trop}}$. One of examples is a tropical analog of first Kodaira surface as explained in .
-\end{Rmk}
-
-
 
 \begin{align}
   \abk{\cdot,\cdot}: \bigwedge_{i=1}^{p} \TBZ\times  \bigwedge_{i=1}^{n-p} \TBZ \to \bigwedge_{i=1}^{n} \TBZ \simeq \opn{or}(\Z_{B_0}),\quad \bigwedge_{i=1}^{p}\TBZ^{\vee}\simeq \bigwedge_{i=1}^{n-p}\TBZ\otimes_{\Z_{B_0}}\opn{or}(\Z_{B_0})
@@ -1922,29 +1882,11 @@ From Leray spectral sequence, $(R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)})_{x}=H^{
   R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)}\simeq \bigwedge_{i=1}^{p} \TBZ=\mcal{W}^{p}_{\Z,B_0}, \quad R^{p}f_{B_0}\Z_{X(B_0)}\simeq \bigwedge_{i=1}^{p} \TBZ^{\vee}=\mcal{F}_{\Z,B_0}^{p}
 \end{align}
 
-\begin{Rmk}[{Kodaira-Thurston surface}]
-  There exists a complete and compact integral affine manifold
-  which has no Hessian form.
-
-  As pointed out in \cite[Example 1.14]{grossMirrorSymmetryLogarithmic2006a}
-  and \cite[p.403]{MR1461965},
-  $X(B_0)$ is a primary Kodaira surface and $X(B_0),\check{X}(B_0)$
-  are diffeomorphic to Thurston's example of a symplectic but
-  not K\"ahler manifold in \cite{MR402764} since all of them can
-  be considered as a total space of $(\R/\Z)^{2}$-local system on
-  a $2$-torus with the same monodromy representation.
-  Hence, $\check{X}(B_0)$ is not K\"ahler and $B_0$ has no
-  Hessian form.
-\end{Rmk}
-
 \subsection{A crash course of SYZ mirror for tropical geometer}
 In the previous section, we see that Lagrangian sections of integral affine manifold $B_0$ corresponds to section of $\mcal{M}^{\times}_{B_0}/\mcal{O}^{\times}_{B_0}$ which describe the Picard group $\opn{Pic}(B_0)$.
 On the other hand, what is a good point of this correspondence for tropical geometry? One of important feature is that "Lagrangian sections have a good cohomology theory which corresponds to sheaf cohomology via Strominger-Yau-Zaslow's mirror symmetry." The cohomology is called \ind{Lagrangian Floer cohomology}{Lagrangian Floer cohomology} in symplectic geometry.
 This strong point gives a Floer theoretic approach of "sheaf cohomology theory" for tropical geometry without discussing homological algebra over idempotent semiring 
-\footnote{In fact, in \cite[Example 6.5]{yoshitomi2011generators} the author give a simple example of divisors on tropical curves such that rank of divisor is different even though the $\mathbb{T}$-semimodule of the global section of tropical line bundle $\mcal{O}_C(D)$ is isomorphic. We will see this example later.}. 
-The difficulty of homological algebra over idempotent semiring relates 
-with the difficulty of higher dimensional Riemann-Roch theorem for 
-tropical varieties.
+
 Historically, integral affine manifolds are deeply-studied in the field of mirror symmetry as a toy model before the name of "tropical geometry" appear.
 
 \ind{Strominger-Yau-Zaslow conjecture}{Strominger-Yau-Zaslow conjecture} or \ind{SYZ conjecture}{SYZ conjecture} is about a concrete method to solve Kontsevich's Homological Mirror Symmetry conjecture for Calabi-Yau manifolds.
@@ -1969,7 +1911,9 @@ At first,
 In order to explain SYZ conjecture and HMS, we need to prepare the notions of $A_{\infty}$-categories which need to define Fukaya category.
 However, the notion of Fukaya category and $A_{\infty}$-category is too difficult, we only use a limited version of Fukaya category which is introduced in \cite[Chapter 8]{aspinwallDirichletBranesMirror2009} and we never discuss about the accurate definition and structure about Fukaya categories and $A_{\infty}$-categories.
 
-\footnote{Surprisingly, the words "sheaf" or "sheaves" is only at page 13 in \cite{} and there is no such words in }
+\footnote{Surprisingly, the words 
+"sheaf" or "sheaves" is only at page 13 in 
+\cite{} and there is no such words in }
 
 See \cite[Chapter1,2,3]{MR2244106} or \cite[4.4]{aspinwallDirichletBranesMirror2009} for fundamental properties of triangulated categories and derived category of coherent sheaves on algebraic variety.
 
@@ -2287,9 +2231,7 @@ From the Morse index of potential multifunction at $x\in f_{B_0}(s_{B_0}\cap s_0
 See
 \href{https://arxiv.org/abs/1808.07305}{[1808.07305] Geometric quantization via SYZ transforms} for recent results on geometric quantization.
 
-\begin{Rmk}
-  We stress that the $\sharp \mathrm{BS}=\mathrm{RR}$ is true for closed integral affine manifold such that $X(B_0)$ is not K\"ahlerian, i.e., not Calabi-Yau type.
-\end{Rmk}
+
 
 \subsection{Combinatorial Floer graded vector space and micro-localization}
 
@@ -2299,30 +2241,9 @@ See
 
 \end{Eg}
 
-\begin{Prop} If $B$ is an integral affine manifold and $A=\Lambda_{\opn{nov}}$ or $A=\Lambda_{\opn{nov}}^{\mb{K}}$, then
-
-  $\opn{CF}^{\bullet}(L_1,L_2)$ is isomorphic to the classical Floer complex as a graded $\Lambda_{\opn{nov}}$-module.
-\end{Prop}
 
 
 
-
-
-\section{The case of compact tropical curves}
-
-\subsection{Weighted lattice points on tropical curves}
-
-\begin{Rmk}[A relation of arithmetic surfaces]
-  We didn't discuss relationships between degeneration of algebraic curves (or model of algebraic curves) discussed in \cite{MR2448666,MR4131998,MR4251610}. We write outline of their results for readers. We recall some notion of arithmetic surfaces and models over DVR \footnote{When we apply their theory to SYZ mirror, we need replace DVR with valuation ring with rank $1$ since Novikov ring is not a DVR. Besides, this replacement is important for tropicalization of algebraic variety over valuation field, but we only discuss a model over DVR since the theory of non-Noetherian scheme is usually difficult.} from \cite[Chapter 9]{MR1917232}.
-  Let $k$ be a field.
-
-  $\mf{X}$
-
-  A \ind{curve over $k$}{curve over k} is an 1-dimensional
-  $\opn{deg}_k D\deq \sum_{x \in X: \text{closed point}}\opn{mult}_{x}(D)[k(x):k]$.
-  When $k$ is algebraic closed, the degree of $D$ is equal to that of \cite[p.]{hartshorneAlgebraicGeometry1977a}.
-
-\end{Rmk}
 
 \section{General setting}
 
@@ -3801,6 +3722,19 @@ has a such structure.
 
 
 
+
+\end{Rmk}
+
+\section{The case of compact tropical curves}
+
+\subsection{Weighted lattice points on tropical curves}
+
+\begin{Rmk}[A relation of arithmetic surfaces]
+  We didn't discuss relationships between degeneration of algebraic curves (or model of algebraic curves) discussed in \cite{MR2448666,MR4131998,MR4251610}. We write outline of their results for readers. We recall some notion of arithmetic surfaces and models over DVR \footnote{When we apply their theory to SYZ mirror, we need replace DVR with valuation ring with rank $1$ since Novikov ring is not a DVR. Besides, this replacement is important for tropicalization of algebraic variety over valuation field, but we only discuss a model over DVR since the theory of non-Noetherian scheme is usually difficult.} from \cite[Chapter 9]{MR1917232}.
+  Let $k$ be a field.
+  A \ind{curve over $k$}{curve over k} is an 1-dimensional
+  $\opn{deg}_k D\deq \sum_{x \in X: \text{closed point}}\opn{mult}_{x}(D)[k(x):k]$.
+  When $k$ is algebraic closed, the degree of $D$ is equal to that of \cite[p.]{hartshorneAlgebraicGeometry1977a}.
 
 \end{Rmk}
 
