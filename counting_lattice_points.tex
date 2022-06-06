@@ -596,7 +596,8 @@ If $M^{\bullet}$ is a bounded $\Z$-graded finitely generated $A$-module,
 then we can define the Euler characteristic 
 $\chi(M^{\bullet})\deq \sum_{i\in \Z}(-1)^{i}\opn{rank}_A M^{i}$.
 If $(M^{\bullet},d)$ is a bounded chain complex of finitely 
-generated $A$-module, then $\chi(M^{\bullet})=\chi(H^{\bullet}(M))$.
+generated $A$-module, then 
+$\chi(M^{\bullet})=\chi(H^{\bullet}(M^{\bullet}))$.
 Let $X$ be a topological space and $Z$ a closed subset of $X$.
 
 
@@ -877,6 +878,12 @@ index on Riemann surfaces.}
 
 \section{Proof for integral affine manifold with Hessian form.}
 
+In this section,
+we recall the notion of affine manifolds from
+following
+\cite{kontsevichAffineStructuresNonArchimedean2006a,
+  grossMirrorSymmetryLogarithmic2006a} and 
+\cite[Chapter 6]{aspinwallDirichletBranesMirror2009}.
 
 We write some background from 
 
@@ -885,7 +892,6 @@ We recall
 \begin{Def}
 
 \end{Def}
-
 
 
 \begin{Eg}
@@ -917,10 +923,10 @@ Therefore, every closed integral affine manifold satisfies Chern's conjecture si
 
 \ind{Markus's conjecture}{Markus conjecture} states every closed
 special affine manifold is complete (in the sense of $(G,X)$-manifold)
-if and only if its orientable double cover has a compatible special affine structure.
+if and only if its orientable double cover 
+has a compatible special affine structure \cite[p.53]{}.
 
-\footnote{We have not check the original source of Chern's conjecture
-  and Markus conjecture yet. Our knowledge about these conjectures
+\footnote{We have not check the original source of Chern's conjecture yet. Our knowledge about these conjectures
   mainly comes from \cite{goldmanRadianceObstructionParallel1984a}
   and \cite{MR3665000}.
 }
@@ -946,10 +952,11 @@ in \cite[2.1]{kontsevichAffineStructuresNonArchimedean2006a}
 and thus integral affine manifold is a special case of 
 tropical manifold.
 
-From now on, we follow about tropical homology 
+From now on, we follow about tropical homology and sheaf 
+theory for tropical manifolds
 from \cite{MR3903579,gross2019sheaftheoretic}.
 
-
+\subsection{Tropical superform and Cartier data}
 
 \begin{Def}[Smooth Cartier data]
   A \ind{very polite smooth Cartier data}{very polite smooth Cartier data} $s=\{f_i\}$ is an element of
@@ -957,6 +964,7 @@ from \cite{MR3903579,gross2019sheaftheoretic}.
     \simeq H^{0}(B,\mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1})$ such
 that every $f_i$ is polite.
 \end{Def}
+
 
 
 There exists a natural isomorphism $\Omega_X^{n-p}[n]\to 
@@ -982,6 +990,19 @@ $\upomega^{\bullet}_{B}\simeq \opn{or}_{B}^{\Z}[n]$
 \cite[]{}.
 and the fundamental class of $B$ is a $\Z$-orientation of $B$
 when $B$ is orientable.
+
+
+
+If $B_0$ is a integral affine manifold, 
+$\mcal{O}^{\times}_{B_0}$ is a locally constant sheaf and the quotient sheaf $\mcal{W}^{1}_{\Z,B_0}$ is a $\Z$-local system on $B_0$.
+
+\begin{Not}
+  Usually, integral affine manifolds are used as a special case of integral affine manifold with singularities and we also want to treat like this in many cases.
+  Therefore, we write $\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$, $\mcal{T}_{\Z,B_0}\deq \mcal{W}_{\Z,B_0}^{1}$ in this section for integral affine manifolds. We also use this notation for integral affine manifold with singularities.
+\end{Not}
+
+Thus, 
+
 
 \begin{Rmk}
 When $s=df$, $\chi(B,s)=\chi_{\opn{top}}(B)=0$ is 
@@ -1070,14 +1091,6 @@ See also \cite{MR1422337} for tropical primary Kodaira surfaces.
 
 \section{For more examples}
 
-
-
-\begin{Def}
-Let 
-\end{Def}
-We didn't formalize this 
-We restrict for the condition of Lagrangian section and 
-give a certain extension of the main theorem.
 We don't state for the K\"unneth type formula in a fully
 general setting but it is enough to perform the Euler number of
 generic locally analytic  behaves as expected.
@@ -1213,6 +1226,46 @@ Fukaya categories of higher genus closed surfaces in
 \end{Rmk}
 
 \subsection{integral affine manifold and Floer cohomology}
+
+\subsubsection{Semi-flat SYZ mirror pair}
+
+We add some notes about integral affine manifolds $B_0$, and its SYZ-pair $\check{X}(B_0), X(B_0)$ from \cite[Chapter 6]{aspinwallDirichletBranesMirror2009} and \cite{MR2737696,MR3079343}
+
+
+
+From construction, $\check{X}(B_0), X(B_0)$ have the zero section.
+
+Let's see the topological properties of $X(B_0)$ and $\check{X}(B_0)$.
+
+Since integral affine condition is very strict, so $X(B_0)$ (resp. $\check{X}(B_0)$) is a special class of complex (resp. symplectic) manifold.
+
+Since each fiber of the fibration $f_{B_0}$ and $\check{f}_{B_0}$ are compact, $f_{B_0}$ and $\check{f}_{B_0}$ are proper maps. In particular, if $B_0$ is compact then $\check{X}(B_0)$ and $X(B_0)$ are compact.
+
+
+
+We note $\pi_{i\geq 2}(X,p)\simeq \pi_{i\geq 2}(\widetilde{X},\tilde{p})$ and $\pi_{i}(X\times Y,(p,q))\simeq \pi_i(X,p)\times \pi_i(Y,q)$ and thus
+\begin{align}
+  \pi_{i\geq 2}(\check{X}(B_0))\simeq \pi_{i\geq 2}(\widetilde{\check{X}(B_0)})\simeq \pi_{i\geq 2}(\widetilde{T^{*}B_0})\simeq \pi_{i\geq 2}(T^{*}\widetilde{B_0})\simeq  \pi_{i\geq 2}(T_p^* B_0)\times \pi_{i\geq 2}(\widetilde{B_0})\simeq \pi_{i\geq 2}(B_0)
+\end{align}
+Thus, we have $\pi_{i\geq 2}(B_0)\simeq \pi_{i\geq 2}(\check{X}(B_0))\simeq \pi_{i\geq 2}(X(B_0))$. In particular, if $B_0$ is complete then $\pi_{i\geq 2}(B_0)\simeq \pi_{i\geq 2}(T_{p}B_0)=0$. See \cite[Chapter 4]{hatcherAlgebraicTopology2002a} for fundamental properties of homotopy groups and relative homotopy groups.
+
+From Leray spectral sequence, $(R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)})_{x}=H^{p}(T^{*}_xB_0/(\TBZ^{\vee})_x;\Z)\simeq \bigwedge_{i=1}^{p}(\TBZ)_{x}$, i.e.,
+
+\begin{align}
+  R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)}\simeq \bigwedge_{i=1}^{p} \TBZ=\mcal{W}^{p}_{\Z,B_0}, \quad R^{p}f_{B_0}\Z_{X(B_0)}\simeq \bigwedge_{i=1}^{p} \TBZ^{\vee}=\mcal{F}_{\Z,B_0}^{p}
+\end{align}
+
+\begin{Eg}
+If $B_0$ is an integral Hessian manifold, 
+$X(B_0)$ and $\check{X}(B_0)$ has a K\"ahler structure.
+
+Let $f:B_0' \to B_0$ be a finite unramified covering of $B_0$ such that $B_0'$ is a tropical torus.
+
+Then, $X(B_0',K')$ (resp. $\check{X}(B_0',K')$) 
+is a complex torus and an unramified finite cover 
+of $X(B_0,K)$ (resp. $\check{X}(B_0,K)$).
+
+\end{Eg}
 
 \subsection{Wrapped Fukaya category for toric variety}
 $\opn{Fuk}(;\Lambda_{\Sigma})$

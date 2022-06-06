@@ -1576,34 +1576,7 @@ As the case of tropical curves, tropical toric varieties
 
 
 
-\section{Symmetric product of tropical space}
 
-\begin{Thm}
-  Let $B$ be an integral affine manifold with singularities.
-
-
-
-\end{Thm}
-\begin{proof}
-
-  \begin{align}
-    \chi(B^{n},s^{\boxtimes n})
-     & =\sum_{v\in \opn{Im}s^{\boxtimes n}\cap \opn{Im}s_0}
-    \opn{ind}_{(v_1,\ldots,v_n)}(s^{\boxtimes n})
-    =\sum_{v\in \opn{Im}s^{\boxtimes n}\cap \opn{Im}s_0}
-    \prod_{i=1}^{n}\opn{ind}_{v_i}(s)^{n}                                                               \\
-     & =\prod_{i=1}^{n}\mqty({\sum_{v_i\in \opn{Im}s\cap \opn{Im}s_0}\opn{ind}_{v_i}(s)})=\chi(B,s)^{n}
-  \end{align}
-
-  \begin{align}
-    \chi(B^{n}/\mf{S}_n,[s^{\boxtimes n}])-\opn{Im}s^{\boxtimes n} \cap \opn{Im}s_0
-     & = \chi_{\opn{top}}(D_{s^{\boxtimes n}}/\mf{S}_n)      \\
-     & =\chi(H^{\bullet}(D_{s^{\boxtimes n}};\R)^{\mf{S}_n}) \\
-     & =\chi((H^{\bullet}(D_s;\R)^{\otimes n})^{\mf{S}_n})   \\
-     & =\chi_{\opn{top}}(D_s^{n}/\mf{S}_n)
-  \end{align}
-
-\end{proof}
 
 
 \section{Preliminary of tropical manifolds}
@@ -1614,8 +1587,6 @@ tropical piecewise linear spaces in the sense of \cite[Definition 2.1]{cavalieri
   in the sense of \cite[Definition 2.1]{cavalieri2020tropical} from the preprints by Yamamoto Yuto.}
 
 \subsection{Definition of tropical manifolds}
-
-In this section, we recall about polyhedral spaces, tropical manifolds and sheaves on them from  \cite{MR3903579,gross2019sheaftheoretic}.
 
 We usually use max-plus algebra and thus we replace $\overline{\R}\deq \R \cup \{+\infty\}$ with $\underline{\R}\deq \R \cup\{-\infty\}$ from \cite{gross2019sheaftheoretic}.
 There exists an exponential map $\opn{exp}: \underline{\R} \to \R_{\geq 0}$ and $\underline{\R}$ has the induced topology from the Euclidean topology of $\R_{\geq 0} (\subset \R)$. $\underline{\R}^{n}$ (resp. $\R^{n}$) is a tropical analogue of $n$-dimensional vector space $K^{n}$ (resp. split torus $(K^{\times})^{n}$) over a field $K$.
@@ -1657,10 +1628,6 @@ called the \ind{cotangent sheaf}{cotangent sheaf} on $B$.
 \begin{align}
   \mathbf{F}_p^{\Z}(x)\deq
 \end{align}
-
-\begin{Rmk}
-  To treat
-\end{Rmk}
 
 By taking total wedge product, we have a sheaf of graded ring
 $\bigwedge^{\bullet} \FBZ^{1}$.
@@ -1730,13 +1697,13 @@ Let $\mcal{D}: \opn{D}(\Z_{B})\to \opn{D}(\Z_{B})$ be the Verdier dual functor.
 
 $\upomega_X\deq a_X^{!}A_{\{\opn{pt}\}},\mcal{D}_{A_X}(\mcal{F}^{\bullet})\deq R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},\mb{D}_{A_X})$
 
-$\mb{D}_{A_X}$ is called the \ind{dualizing complex}{dualizingcomplex} over $A$ of $X$.
+$\upomega_X$ is called the \ind{dualizing complex}{dualizingcomplex} over $A$ of $X$.
 
 There exists the following quasi-isomorphism for a purely $n$-dimensional tropical manifold \cite[Theorem 6.2]{gross2019sheaftheoretic}.
 \begin{align}
   \FBZ^{n-p}[n]\simeq \mcal{D}(\FBZ^{p})
 \end{align}
-In particular, $\mb{D}_{B}\simeq \mcal{D}(\Z_{B})\simeq \FBZ^{n}[n]$.
+
 We can discuss similar discussion which is used in applications of Verdier duality for Poincare duality as follows.
 \begin{align}
   \opn{Hom}_{\opn{D}^{+}(\Z)}(R\Gamma_c(B,\Z_B),\Z)\simeq \opn{Hom}_{\opn{D}^{+}(\Z_{B})}(\Z_B, \FBZ^{n}[n] )\simeq \opn{Ext}^{n}(\Z_{B},\FBZ^{n})\simeq H^{n}(B,\FBZ^{n})
@@ -1766,19 +1733,12 @@ $\mb{D}_X=a_X^{!}\Z\simeq (a_Y\circ f)^{!}\Z\simeq f^{!}a_Y^{!}\Z= f^{!}\mb{D}_Y
 
 
 \section{the case of tropical tori and integral affine manifolds}
-In this section,
-we recall the notion of affine manifolds from
-following
-\cite{kontsevichAffineStructuresNonArchimedean2006a,
-  grossMirrorSymmetryLogarithmic2006a}.
-
-\cite[Chapter 6]{aspinwallDirichletBranesMirror2009}
 
 \begin{Def}[integral affine manifold, Hessian manifold]
 
   An \ind{integral Hessian manifold}{integral Hessian manifold} is a pair of an integral affine manifold and Hessian form on it.
 
-  A \ind{real Monge-Ampere manifold}{real Monge-Ampere manifold} is a Hessian manifold satisfying the
+  
 
   \footnote{In many papers including \cite{kontsevichAffineStructuresNonArchimedean2006a} (resp. \cite{alexeevStablePairCompactification2019a}), tropical affine structure (resp. special tropical affine surface) is called integral affine structure (resp. integral-affine surface) or $\Z$-affine structure. In this paper differences between $(\opn{Aff}(M),M_{\R})$-structure and $(\opn{Aff}_{\R}(M),M_{\R})$-structure are significant, and thus we don't use this style.}
 
@@ -1796,19 +1756,12 @@ From now on we recall the commutative diagram (\ref{eq: smoothcartier})
  for integral affine manifolds.
 and see additional properties for sheaves on integral affine manifolds.
 
-If $B_0$ is a integral affine manifold, $\mcal{O}^{\times}_{B_0}$ is a locally constant sheaf and the quotient sheaf $\mcal{W}^{1}_{\Z,B_0}$ is a $\Z$-local system on $B_0$.
-
-\begin{Not}
-  Usually, integral affine manifolds are used as a special case of integral affine manifold with singularities and we also want to treat like this in many cases.
-  Therefore, we write $\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$, $\mcal{T}_{\Z,B_0}\deq \mcal{W}_{\Z,B_0}^{1}$ in this section for integral affine manifolds. We also use this notation for integral affine manifold with singularities.
-\end{Not}
-
 From definition, there exists the isomorphism $\TBZ^{\vee}\simeq \mcal{F}_{\Z,B_0}^{1}$ and $\mcal{F}_{\Z,B_0}^{\bullet}\simeq \bigwedge^{\bullet}\TBZ^{\vee}$.
 
 
 Of course, $\mcal{A}_{B_0}^{0,0}=\mcal{C}^{\infty}(B_0)$ and $\mcal{Z}^{1}_{B_0}$ is the sheaf of closed $1$-form on $B_0$.
 
-We note this sheaf can be considered as the sheaf of Lagrangian sections $s:U \to T^{*}U$ for open set $U \subset B_0$ , see some standard textbook for symplectic geometry such as \cite[3.2]{MR1853077}.
+We note this sheaf can be considered as the sheaf $\opn{Lag}(T^{*}B_0)$ of Lagrangian sections $s:U \to T^{*}U$ for open set $U \subset B_0$ , see some standard textbook for symplectic geometry such as \cite[3.2]{MR1853077}.
 
 Another important thing is that $\mcal{Z}^{1}(B_0)/\mcal{T}_{\Z,B_0}^{\vee}$ (resp. $\mcal{C}^{\infty}(T^{*}B_0)/\mcal{T}_{\Z,B_0}^{\vee}$) is isomorphic to the sheaf of germs of Lagrangian sections (resp. smooth sections ) of the Lagrangian torus fibration $\check{f}_{B_0} :\check{X}(B_0)\to B_0$ \cite[(2.7), (2.11)]{duistermaatGlobalActionangleCoordinates1980a}.
 
@@ -1820,14 +1773,14 @@ The following commutative diagram is fundamental for $B_0$ (e.g. \cite[p.468]{as
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
     & \mb{R}_{B_0} \arrow[r,equal] \arrow[d]                & \mb{R}_{B_0} \arrow[d]           &                      &   \\
     0 \arrow[r] & \AffS_{\Z,B_0} \arrow[r] \arrow[d]         & \mcal{C}^{\infty}(B_0) \arrow[r] \arrow[d] & \mcal{C}^{\infty}(B_0)/\AffS_{\Z,B_0}  \arrow[r] \arrow[d,equal] & 0 \\
-    0 \arrow[r] & \mcal{T}_{\Z,B_0}^{\vee} \arrow[r] \arrow[d] & \mcal{Z}^{1}(B_0) \arrow[r] \arrow[d]  & \mcal{Z}^{1}(B_0)/\mcal{T}_{\Z,B_0}^{\vee} \arrow[r]   & 0 \\
+    0 \arrow[r] & \mcal{T}_{\Z,B_0}^{\vee} \arrow[r] \arrow[d] & \opn{Lag}(T^{*}B_0) \arrow[r] \arrow[d]  & \opn{Lag}(\check{X}(B_0)) \arrow[r]   & 0 \\
     & 0 & 0 &  &
   \end{tikzcd}
 \end{equation}
 
 
 
-$\mcal{C}^{\infty}(B_0)$ works a similar work of the sheaf $\mcal{M}_{B_0}^{\times}$ of rational function on $B_0$ and we can replace $\mcal{C}^{\infty}(B_0)$ a certain sheaf of piecewise linear functions on $B_0$ such like rational functions on tropical manifolds. See also \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a} for strongly integral affine manifolds with singularities with a polyhedral decomposition in the sense of \cite[Definition 1.22]{grossMirrorSymmetryLogarithmic2006a}.
+ See also \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a} for strongly integral affine manifolds with singularities with a polyhedral decomposition in the sense of \cite[Definition 1.22]{grossMirrorSymmetryLogarithmic2006a}.
 
 Besides, $\mcal{C}^{\infty}(B_0)$ and $\mcal{C}^{\infty}(T^{*}B_0)$ are acyclic sheaves on $B_0$, the two map is surjective
 \begin{align}
@@ -1848,39 +1801,7 @@ Special integral affine manifold can be considered as a tropical analog of compl
   \abk{\cdot,\cdot}: \bigwedge_{i=1}^{p} \TBZ\times  \bigwedge_{i=1}^{n-p} \TBZ \to \bigwedge_{i=1}^{n} \TBZ \simeq \opn{or}(\Z_{B_0}),\quad \bigwedge_{i=1}^{p}\TBZ^{\vee}\simeq \bigwedge_{i=1}^{n-p}\TBZ\otimes_{\Z_{B_0}}\opn{or}(\Z_{B_0})
 \end{align}
 
-\subsubsection{Semi-flat SYZ mirror pair}
 
-We add some notes about integral affine manifolds $B_0$, and its SYZ-pair $\check{X}(B_0), X(B_0)$ from \cite[Chapter 6]{aspinwallDirichletBranesMirror2009} and \cite{MR2737696,MR3079343}
-
-
-
-From construction, $\check{X}(B_0), X(B_0)$ have the zero section.
-
-Let's see the topological properties of $X(B_0)$ and $\check{X}(B_0)$.
-
-Since integral affine condition is very strict, so $X(B_0)$ (resp. $\check{X}(B_0)$) is a special class of complex (resp. symplectic) manifold.
-
-Since each fiber of the fibration $f_{B_0}$ and $\check{f}_{B_0}$ are compact, $f_{B_0}$ and $\check{f}_{B_0}$ are proper maps. In particular, if $B_0$ is compact then $\check{X}(B_0)$ and $X(B_0)$ are compact.
-
-
-
-We note $\pi_{i\geq 2}(X,p)\simeq \pi_{i\geq 2}(\widetilde{X},\tilde{p})$ and $\pi_{i}(X\times Y,(p,q))\simeq \pi_i(X,p)\times \pi_i(Y,q)$ and thus
-\begin{align}
-  \pi_{i\geq 2}(\check{X}(B_0))\simeq \pi_{i\geq 2}(\widetilde{\check{X}(B_0)})\simeq \pi_{i\geq 2}(\widetilde{T^{*}B_0})\simeq \pi_{i\geq 2}(T^{*}\widetilde{B_0})\simeq  \pi_{i\geq 2}(T_p^* B_0)\times \pi_{i\geq 2}(\widetilde{B_0})\simeq \pi_{i\geq 2}(B_0)
-\end{align}
-Thus, we have $\pi_{i\geq 2}(B_0)\simeq \pi_{i\geq 2}(\check{X}(B_0))\simeq \pi_{i\geq 2}(X(B_0))$. In particular, if $B_0$ is complete then $\pi_{i\geq 2}(B_0)\simeq \pi_{i\geq 2}(T_{p}B_0)=0$. See \cite[Chapter 4]{hatcherAlgebraicTopology2002a} for fundamental properties of homotopy groups and relative homotopy groups.
-
-If $B_0$ is a closed integral Hessian manifold, $X(B_0)$ and $\check{X}(B_0)$ has a K\"ahler structure.
-
-Let $f:B_0' \to B_0$ be a finite unramified covering of $B_0$ such that $B_0'$ is a tropical torus.
-
-Then, $X(B_0',K')$ (resp. $\check{X}(B_0',K')$)  is a complex torus and an unramified finite cover of $X(B_0,K)$ (resp. $\check{X}(B_0,K)$).
-
-From Leray spectral sequence, $(R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)})_{x}=H^{p}(T^{*}_xB_0/(\TBZ^{\vee})_x;\Z)\simeq \bigwedge_{i=1}^{p}(\TBZ)_{x}$, i.e.,
-
-\begin{align}
-  R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)}\simeq \bigwedge_{i=1}^{p} \TBZ=\mcal{W}^{p}_{\Z,B_0}, \quad R^{p}f_{B_0}\Z_{X(B_0)}\simeq \bigwedge_{i=1}^{p} \TBZ^{\vee}=\mcal{F}_{\Z,B_0}^{p}
-\end{align}
 
 \subsection{A crash course of SYZ mirror for tropical geometer}
 In the previous section, we see that Lagrangian sections of integral affine manifold $B_0$ corresponds to section of $\mcal{M}^{\times}_{B_0}/\mcal{O}^{\times}_{B_0}$ which describe the Picard group $\opn{Pic}(B_0)$.
@@ -1891,8 +1812,6 @@ Historically, integral affine manifolds are deeply-studied in the field of mirro
 
 \ind{Strominger-Yau-Zaslow conjecture}{Strominger-Yau-Zaslow conjecture} or \ind{SYZ conjecture}{SYZ conjecture} is about a concrete method to solve Kontsevich's Homological Mirror Symmetry conjecture for Calabi-Yau manifolds.
 \ind{Homological Mirror Symmetry}{Homological Mirror Symmetry} or \ind{HMS}{HMS} is a conjecture about categorical equivalence between two different triangulated category derived from symplectic geometry of Calabi-Yau manifold $\check{X}$ and complex geometry of a Calabi-Yau manifold $X$ (or a degenerate family of Calabi-Yau manifold $X_t$) \footnote{One of important motivation of HMS is a solution of \ind{Classical Mirror Symmetry}{classical mirror symmetry} which is appeared from string theory but we will not discuss about this since this solution is still an open question.}.
-
-
 
 The triangulated category of symplectic geometric side come from a $A_{\infty}$-category which is called \ind{Fukaya category}{Fukaya category} of $\check{X}$.
 An object of Fukaya category of $\check{X}$ is 
@@ -3679,6 +3598,38 @@ integrable system \href{https://arxiv.org/abs/1205.5249}{[1205.5249] Integrable 
 ?There exists a $p$-adic analog of Verlinde formula, see 
 \cite[]{} and "Mochizuki’s indigenous bundles and Ehrhart polynomials"?
 \href{https://arxiv.org/abs/1411.1191}{[1411.1191] An explicit formula for the generic number of dormant indigenous bundles}
+
+
+\subsubsection{More examples}
+
+\section{Symmetric product of tropical space}
+
+\begin{Thm}
+  Let $B$ be an integral affine manifold with singularities.
+
+
+
+\end{Thm}
+\begin{proof}
+
+  \begin{align}
+    \chi(B^{n},s^{\boxtimes n})
+     & =\sum_{v\in \opn{Im}s^{\boxtimes n}\cap \opn{Im}s_0}
+    \opn{ind}_{(v_1,\ldots,v_n)}(s^{\boxtimes n})
+    =\sum_{v\in \opn{Im}s^{\boxtimes n}\cap \opn{Im}s_0}
+    \prod_{i=1}^{n}\opn{ind}_{v_i}(s)^{n}                                                               \\
+     & =\prod_{i=1}^{n}\mqty({\sum_{v_i\in \opn{Im}s\cap \opn{Im}s_0}\opn{ind}_{v_i}(s)})=\chi(B,s)^{n}
+  \end{align}
+
+  \begin{align}
+    \chi(B^{n}/\mf{S}_n,[s^{\boxtimes n}])-\opn{Im}s^{\boxtimes n} \cap \opn{Im}s_0
+     & = \chi_{\opn{top}}(D_{s^{\boxtimes n}}/\mf{S}_n)      \\
+     & =\chi(H^{\bullet}(D_{s^{\boxtimes n}};\R)^{\mf{S}_n}) \\
+     & =\chi((H^{\bullet}(D_s;\R)^{\otimes n})^{\mf{S}_n})   \\
+     & =\chi_{\opn{top}}(D_s^{n}/\mf{S}_n)
+  \end{align}
+
+\end{proof}
 
 
 \subsubsection{Cluster varieties}
