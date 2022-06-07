@@ -354,8 +354,6 @@ an $n$-dimensional complex variety $X$.
 
 In particular, we expect a certain analogue of Wirtinger's formula of compact K\"ahler manifolds: $\opn{vol}(X)=\frac{1}{d!}\int_{X}\omega^{d}$ since if the cohomology class of $\omega$ is in $H^{2}(X,\Z)$ then $[\omega]$ is the cohomology class of the first Chern class of an ample line bundle $\mcal{L}$ and the right side is equal to the leading term of the numerical polynomial $n\mapsto \chi(X,\mcal{L}^{n})$.
 
-Let's see for $1$-dimensional and $2$-dimensional lattice polyhedral complexes.
-
 \begin{Eg}[lattice points of finite integer metric graphs]
   Let $C$ be a realization space of a metric graph $G=(V,E,l)$ such that the length of each edge is a positive integer and $C$ is connected.
   We can consider $C$ as a realization space of the metric graph $G'=(V',E',l')$ such that $V'=C(\Z)$ and the length $l'(e)$ of each edge $e$ is $1$. From fundamental properties of Euler number $\chi_{\opn{top}}(C)=\sharp V'-\sharp E'$ of finite cell complexes, we get Pick's formula $\sharp C(\Z)=\opn{ehr}_{C}(1)$ for finite integer metric graphs elementally:
@@ -425,7 +423,7 @@ Each tropical object is precisely different but deeply related with each other. 
 
 For some cases we can define "$\frac{1}{n}\underline{\Z}_{\max}$-rational point" of $B$.
 One of typical example is a smooth compact tropical curve has no 1-valent vertices such that the length of each edge is a positive integer.
-Every compact smooth tropical curve is tropically equivalent \cite[Definition 3.5]{mikhalkinTropicalCurvesTheir2008a} to a smooth compact tropical curve which has no 1-valent vertices. From definition, we can define the set $C(\Z)$ of lattice points in $C$.
+
 
 \footnote{In \cite{MR4155409}, new Ehrhart theory of tropical geometry appear.}
 
@@ -437,29 +435,6 @@ The difference between for the case of toric varieties and others is that others
   The idea of considering the lattice point $B(\Z)$ of integral affine manifold with singularities $B$ as a index of a good basis of an ample line bundle of a (degenerating) family of Calabi--Yau manifold is deeply developed by Gross and Siebert. The precise setting of the conjecture is in \cite[Conjecture 1.6]{MR3525095}.
 
 \end{Rmk}
-
-This paper is organized as follows:
-
-In order to formulate for general cases and give background about this paper, we use various subjects.
-We hope there exists several approaches for developing the theory of lattice points on tropical spaces; combinatorial approach, differential geometric approach and algebraic geometric approach.
-
-\begin{Not}
-
-  We will use the following notation in this paper:
-  For every continuous function $f\colon X\to \R$,
-
-  $\{f<f(v)\}\deq \set{x\in X\mid f(x)< f(v)}$
-
-  $\{f\geq f(v)\}\deq \set{x\in X\mid f(x)\geq f(v)}$
-
-  $X\sqcup_{f,g}Y$: the pushout of the diagram
-  $X\xgets{f} A\xto{g} Y$
-
-  $\opn{Crit}(f)$: the subset of critical points of a
-  $C^{1}$-function on a smooth manifold.
-\end{Not}
-
-
 
 \section{Proof of main theorem}
 
@@ -599,11 +574,6 @@ $R^{i}\Gamma_{\set{f<0}}(\mcal{F})_v
 for sufficiently small $B_v^{n+1}(\vep)$ when
 $\mcal{F}$ and $f$ satisfy for some good conditions.
 
-If $A$ is a PID, then there exists
-the Euler characteristic map
-$\chi:K_0(\opn{D}^{b}(\opn{mod}(A)))\simto \Z;
-  [C^{\bullet}] \mapsto \sum_{i}(-1)^{i}\opn{rk}_A(C^{i})
-  =\sum_{i}(-1)^{i}\opn{rk}_A H^{i}(C^{\bullet})$.
 \begin{Def} Let $A$ be a PID.
   If $\opn{MF}^{\bullet}(f;\mcal{F}),\opn{CF}^{\bullet}(f;\mcal{F}).
     \in \opn{D}^{b}(\catn{mod}(A))$ then
@@ -632,16 +602,6 @@ In particular, if $f$ is strictly convex at $v$
 then $\opn{ind}_v(f,A_S)=1-\chi_{\opn{top}}(\emp)=1$.
 We will explain that this local index corresponds to a Bohr-Sommerfeld point for Lagrangian torus fibration and the usual lattice point for lattice polyhedra later.
 Of course, $\tilde{H}^{-1}(X;A)=0$ for any nonempty space $X$.
-
-\begin{Eg}
-  A polynomial function $f:\R^{n}\to \R;(x_1,\ldots,x_n)\mapsto x_1^{2}+\cdots+x_n^{2}$
-  $X=S=\R^{n}$
-  \begin{align}
-    \opn{CF}^{\bullet}(f;\Z_S)\simeq \tilde{H}^{\bullet-1}(\emp;\Z_S),
-    \quad \opn{CF}^{\bullet}(-f;\Z_S) \simeq \tilde{H}^{\bullet-1}(S^{n-1};\Z_S).
-  \end{align}
-
-\end{Eg}
 
 \begin{Rmk}
   We remark about a historical note of the local index.
@@ -680,8 +640,6 @@ see \cite[Remark 1.1.1]{MR2031639}.
 
 In some case we write $f_1\dot{+} f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$.
 
-The following K\"unneth type formula is important:
-
 \begin{Thm}[Thom-Sebastiani Theorem for sheaves]
   where $\mcal{F}_1\boxtimes^{L} \mcal{F}_2\deq p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$ is
   the \ind{external derived tensor product}{external derived tensor product}.
@@ -717,31 +675,6 @@ The proof is in \cite[Theorem 1.2.2]{MR2031639}.
   of a Morse function $f$ at the origin.
 \end{Eg}
 
-\begin{Eg} Instead of Morse degree, we can define the local index for $C^{1}$-functions with at most isolated critical points.
-
-  Let $f:\R^{2}\to \R; (x,y)\mapsto x^{2}+y^{2}$
-
-\end{Eg}
-
-
-
-$f^{-1}(\delta)\cap B_{\vep}^{n}$ is called a \ind{negative Milnor fiber}{negative Milnor fiber} of $f$.
-
-
-\begin{Rmk}
-  This index is a certain formalization of Poincar\'e-Hopf index $\opn{ind}_{\opn{PH}}(\opn{grad}(f),0)$
-  of gradient field $\opn{grad}f$ ( or exact differential 1-form $df$) of smooth functions.
-  Khimshiashvili's formula \footnote{Khimshiashvili is called Himshiashvili for some literatures}
-  \begin{Thm}[Khimshiashvili's formula \cite{MR0458467}]
-    Let $f$ be an analytic germ
-    \begin{align}
-      1-\chi_{\opn{top}} (f^{-1}(\delta)\cap B^{n}_{\vep})=\opn{sign}(-\delta)^{n}\opn{ind}_{\opn{PH}}(\opn{grad}f,0)
-    \end{align}
-    where $0<|\delta|\ll \vep \ll 1 $
-  \end{Thm}
-
-\end{Rmk}
-
 \begin{Eg}
   This formula gives a criterion for the index of gradient vector field.
   If $n=2$, the fiber $f^{-1}(\delta)\cap B^{2}_{\vep}$ is a
@@ -750,27 +683,6 @@ $f^{-1}(\delta)\cap B_{\vep}^{n}$ is called a \ind{negative Milnor fiber}{negati
 \end{Eg}
 
 
-and the set of nondegenerate critical points of $f$ is isolated\cite[Corollary 1.3.2]{}.
-
-Let $f:V \to \R$, $g:W \to \R$ be a smooth Morse function $f+g:V\times W\to \R;(x,y)\mapsto f(x)+g(y)$ is also a Morse function.
-
-\begin{align}
-  W^{u}(v)\deq \set{x\in M\mid  \lim_{t\to \infty}\opn{exp}(t\opn{grad}(f)x=v) }, \quad
-\end{align}
-
-\begin{align}
-  W^{s}(v)\simeq B^{n-\opn{ind}_{\opn{Morse}}(f,v)},\quad W^{u}(v)\simeq B^{\opn{ind}_{\opn{Morse}}(f,v)}
-\end{align}
-
-\begin{align}
-  C^{\bullet}_{\opn{Morse}}(M,f)\deq \bigoplus_{v\in \opn{Crit}(f)}H^{\bullet}_c(W^{u}(v),\Z) \simeq \bigoplus_{v\in \opn{Crit}(f)} \Z[-\opn{ind}_{\opn{Morse}}(f)]
-\end{align}
-
-The chain complex $C_{\bullet}^{\mathrm{Morse}}(M,f)$ is defined as dual of the cochain complex $C^{\bullet}_{\opn{Morse}}(M,f)$.
-
-If $f$ satisfies a
-
-As a result, $C^{\bullet}_{\opn{Morse}}(U,f)$ is isomorphic to $\opn{CF}^{\bullet}(f,\Z_{U})$ as a graded module.
 
 \subsection{Results for stratified spaces in $\R^{n}$}
 
@@ -1013,38 +925,6 @@ At first, we prove for projective tropical line $\mb{T}\mb{P}^{1}$.
 
 \end{Rmk}
 
-\subsection{Relationships between a localization of index on compact Riemann surfaces}
-We mention the relationship between Pick's formula of tropical curves and
-\cite[6]{MR2676658}.
-
-For simplicity, we assume $B$ is a compact trivalent tropical curve.
-
-On the other hand, we can construct a typical tropical curve
-(Reeb graph) from a Morse function on Riemann surface
-\cite[3.2.2]{kontsevichAffineStructuresNonArchimedean2006a}.
-
-$X_0(B)$  can be considered as a subset of a compact Riemann surface
-\footnote{By philosophy of SYZ mirror symmetry,
-  we should consider Lagrangian section as a mirror of complex line bundle
-  and we also explain about it for tropical tori in \cref{a}.
-}.
-
-Under the above interpretation, a very polite Lagrangian section can be considered as a data of $U(1)$-holonomy of each fiber $\check{\pi}_{B_0}^{-1}(p)$.
-The following equation is a correspondence about local index $\opn{ind}_v$ and the Local Riemann-Roch number under the above identification \cite[Theorem 6.7]{MR2676658}.
-\begin{align}
-   & [BS^{+}]=\opn{ind}_v(s_{2,0}),
-  \quad [BS^{-}]=\opn{ind}_v(s_{0,2}),
-  \quad [D^{+}]=\opn{ind}_v(s_{1,0}),
-  \quad [D^{-}]=\opn{ind}_v(s_{0,1}), \\
-   & [P^{S}]=\opn{ind}_v(s_{2,1}),
-  \quad [P^{L}]=\opn{ind}_v(s_{1,2}).
-\end{align}
-From this our theorem for tropical curve can be proved from the theory of localization of index and classical Riemann-Roch formula.
-\begin{Ques}
-  Can we generalize the above correspondence for pants decomposition of
-  complex algebraic hypersurfaces in \cite{MR2079993} and line bundles?
-\end{Ques}
-
 \begin{Rmk}
   If $D$ is BS type, then $\opn{deg}(D)+1-g\geq \sharp V(C)$ and thus
   $\opn{deg}(D)-\sharp V(C)\geq g-1$.
@@ -1102,7 +982,7 @@ The $(p,q)$-th Borel-Moore homology of $X$ is
   H^{\opn{BM}}_{p,q}(X;\Z)\deq H^{-q}R\opn{Hom}(\Omega_X^{p},\upomega_X)
 \end{align}
 
-\begin{Eg} (i) $H_{0,q}^{\opn{BM}}(X;\Z)$ is equal to the classical Borel-Moore homology
+\begin{Eg} (i) $H_{0,q}^{\opn{BM}}(X;\Z)=H^{-q}R\opn{Hom}(A_X,\upomega_X)$ is equal to the classical Borel-Moore homology
   \cite[Lemma 4.8]{gross2019sheaftheoretic}.
 
   Since $B$ is a locally compact space,
@@ -1310,13 +1190,7 @@ This proposition is an analog of \'{e}tale multiplicity of Euler characteristics
 \end{proof}
 
 
-\begin{Rmk}
-  If Markus conjecture is true, $\widetilde{X(B_0)}\simeq \C^{n}$
-  for some $n\in \N$. From Oka's principle of Stein manifolds,
-  every complex manifold $X$ whose universal cover is Stein
-  then $TX$ is holomorphically flat and thus the total Chern class of $X$
-  is trivial.
-\end{Rmk}
+
 
 \section{tropical toric varieties} \label{sec: toric}
 
@@ -1604,17 +1478,9 @@ A convex polyhedron is \ind{rational}{rational} if it is a finite intersection o
 
 
 \begin{Def}
-
-
-
   A rational polyhedral space $(B,\mcal{O}_B^{\times})$ is a \ind{tropical space}{tropicalspace} if
 \end{Def}
 
-\begin{Eg}[{tropical projective spaces}]
-
-
-  We see tropical toric varieties in \cref{X}.
-\end{Eg}
 
 Let $\mcal{C}^{0}(B)$ be the sheaf of continuous $\R$-valued function on $B$ and $f:B\to B'$ be a continuous map. Then, there exists the pullback sheaf morphism $f^{\sharp}:f^{-1}\mcal{C}^{0}(B')\to \mcal{C}^{0}(B)$ such that $f^{\sharp}(U): C^{0}(f(U)) \to C^{0}(U);g \mapsto g\circ f $ for any open set $U$ in $B$. A morphism of rational polyhedral spaces is a continuous map $f:B\to B'$ such that
 the pullback morphism $f^{\sharp}:f^{-1}\mcal{C}^{0}(B')\to \mcal{C}^{0}(B)$ induces a morphism $f^{-1}\mcal{O}^{\times}_{B'} \to \mcal{O}^{\times}_{B}$.
@@ -1648,35 +1514,6 @@ and isomorphism \cite[Corollary 3.18, Lemma 3.21]{MR3903579}:
 
 Let $\mcal{Z}^{q}_{B}\deq
   \opn{Ker}(d'': \mcal{A}^{0,q}\to \mcal{A}^{0,q+1})$.
-Then, the canonical monomorphism $\mcal{O}^{\times}_B \to \mcal{A}^{0,0}_B$
-induces the following commutative diagram \footnote{Several similar diagrams appear
-  in literature}:
-
-\begin{equation} \label{eq: smoothcartier}
-  \begin{tikzcd}
-    & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
-    & \mb{R}_{B} \arrow[r,equal] \arrow[d]                & \mb{R}_{B} \arrow[d]           &                      &   \\
-    0 \arrow[r] & \mcal{O}_{B}^{\times} \arrow[r] \arrow[d]         & \mcal{A}^{0,0}_B \arrow[r] \arrow[d] & \mcal{A}^{0,0}_B / \mcal{O}_{B}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
-    0 \arrow[r] & \FBZ^{1} \arrow[r] \arrow[d] & \mcal{Z}^{1}_{B} \arrow[r] \arrow[d]  & \mcal{Z}^{1}_{B}/\FBZ^{1} \arrow[r]   & 0 \\
-    & 0 & 0 &  &
-  \end{tikzcd}
-\end{equation}
-Here every row and column of the diagram (\ref{eq: smoothcartier}) is exact
-and $\mcal{A}_{B}^{0,0}/\mcal{O}^{\times}_B
-  \simeq \mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1}$ from the snake lemma.
-
-
-The right column exact sequence of \cref{eq: smoothcartier} is called
-the \ind{tropical exponential exact sequence}{tropicalexponentialexactsequence}.
-
-The middle row is a smooth version of the following short exact sequence.
-\begin{align}
-  0 \to \mcal{O}^{\times}_B \to \mcal{M}_B^{\times} \to \mcal{D}iv_{B}\to 0
-\end{align}
-$\mcal{M}_{B}^{\times}$ is also acyclic, and thus $\opn{Pic}(B)\deq H^{1}(B,\mcal{O}^{\times}_B)\simeq  \opn{Im} (\delta : H^{0}(B,\mcal{D}iv_{B})\to H^{1}(B, \mcal{O}^{\times}_B))$ \cite[Lemma 4.5]{jellLefschetzTheoremTropical2018a}.
-
-
-
 
 
 
@@ -1764,23 +1601,6 @@ Of course, $\mcal{A}_{B_0}^{0,0}=\mcal{C}^{\infty}(B_0)$ and $\mcal{Z}^{1}_{B_0}
 We note this sheaf can be considered as the sheaf $\opn{Lag}(T^{*}B_0)$ of Lagrangian sections $s:U \to T^{*}U$ for open set $U \subset B_0$ , see some standard textbook for symplectic geometry such as \cite[3.2]{MR1853077}.
 
 Another important thing is that $\mcal{Z}^{1}(B_0)/\mcal{T}_{\Z,B_0}^{\vee}$ (resp. $\mcal{C}^{\infty}(T^{*}B_0)/\mcal{T}_{\Z,B_0}^{\vee}$) is isomorphic to the sheaf of germs of Lagrangian sections (resp. smooth sections ) of the Lagrangian torus fibration $\check{f}_{B_0} :\check{X}(B_0)\to B_0$ \cite[(2.7), (2.11)]{duistermaatGlobalActionangleCoordinates1980a}.
-
-
-
-The following commutative diagram is fundamental for $B_0$ (e.g. \cite[p.468]{aspinwallDirichletBranesMirror2009});
-\begin{equation} \label{eq:affinecartier}
-  \begin{tikzcd}
-    & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
-    & \mb{R}_{B_0} \arrow[r,equal] \arrow[d]                & \mb{R}_{B_0} \arrow[d]           &                      &   \\
-    0 \arrow[r] & \AffS_{\Z,B_0} \arrow[r] \arrow[d]         & \mcal{C}^{\infty}(B_0) \arrow[r] \arrow[d] & \mcal{C}^{\infty}(B_0)/\AffS_{\Z,B_0}  \arrow[r] \arrow[d,equal] & 0 \\
-    0 \arrow[r] & \mcal{T}_{\Z,B_0}^{\vee} \arrow[r] \arrow[d] & \opn{Lag}(T^{*}B_0) \arrow[r] \arrow[d]  & \opn{Lag}(\check{X}(B_0)) \arrow[r]   & 0 \\
-    & 0 & 0 &  &
-  \end{tikzcd}
-\end{equation}
-
-
-
- See also \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a} for strongly integral affine manifolds with singularities with a polyhedral decomposition in the sense of \cite[Definition 1.22]{grossMirrorSymmetryLogarithmic2006a}.
 
 Besides, $\mcal{C}^{\infty}(B_0)$ and $\mcal{C}^{\infty}(T^{*}B_0)$ are acyclic sheaves on $B_0$, the two map is surjective
 \begin{align}
@@ -2228,8 +2048,6 @@ For instance, $\omega_X$ is
 
 From this properties, we need to consider different category
 for
-
-On the other hand, we expect
 
 \begin{Eg}[An analog of Kodaira vanishing theorem]
 
@@ -2784,14 +2602,6 @@ $H_i^{\opn{BM}}(X;A)\simeq H^{d-i}(X;\mcal{F})$.
 
 Let $f:X\to Y$ be a proper map such that $f_!$ has cohomological dimension.
 $\int_X=\int_Y \circ f_*$
-
-
-\begin{Thm}
-T
-\end{Thm}
-
-
-
 \begin{Rmk}
   There exists algebraic geometric version of Verdier duality.
   $\upomega_X\deq a_X^{!}k$
@@ -2875,14 +2685,7 @@ $\mb{H}^{\bullet}(B;\Omega_B^{\bullet})$ is also a graded ring.
 
 $\mcal{A}_B^{\bullet}\deq \opn{Tot}(\mcal{A}_B^{\bullet,*})$
 
-$\mcal{A}_B^{\bullet}\simeq \Omega_B^{\bullet}$ \cite[Proposition 3.5]{}
-
-A remarkable fact is that $(\Omega_B^{\bullet},d)$ is
-quasi-isomorphic to $\bigoplus_{p\in \Z}\Omega_B^{p}[-p]$, i.e.,
-$d|_{\Omega_{B}^{p}}=0$ for all $p\in \Z$, see \cite[Corollary 2.15]{}.
-
-This phenomena is different from analytic de Rham complexes of
-complex manifolds.
+$\mcal{A}_B^{\bullet}\simeq \Omega_B^{\bullet}$ \cite[Proposition 3.5]{epub36262}
 
 More surprising phenomena is the existance of the monodromy map,
 see \cite{}.
@@ -2900,12 +2703,6 @@ The difference of ring structure between $\mb{H}^{\bullet}(B;\Omega_B^{\bullet})
 and $H^{\bullet}(B;\Omega_B^{\bullet})$ comes from the difference between
 the tensor product of $\Omega_B^{\bullet}\otimes \Omega_B^{\bullet}$ as modules and
 that of graded modules.
-
-
-$\Omega_B^{0}=\R_B$
-
-
-
 
 
 We note fundamental properties of the cohomology ring 
@@ -3302,6 +3099,29 @@ In particular, $H^{\bullet}(X/G;\Q)\simeq H^{\bullet}(X;\Q)^{G}$.
 
 \section{Morse homology} \label{sec: Morse}
 
+and the set of nondegenerate critical points of $f$ is isolated\cite[Corollary 1.3.2]{}.
+
+Let $f:V \to \R$, $g:W \to \R$ be a smooth Morse function $f+g:V\times W\to \R;(x,y)\mapsto f(x)+g(y)$ is also a Morse function.
+
+\begin{align}
+  W^{u}(v)\deq \set{x\in M\mid  \lim_{t\to \infty}\opn{exp}(t\opn{grad}(f)x=v) }, \quad
+\end{align}
+
+\begin{align}
+  W^{s}(v)\simeq B^{n-\opn{ind}_{\opn{Morse}}(f,v)},\quad W^{u}(v)\simeq B^{\opn{ind}_{\opn{Morse}}(f,v)}
+\end{align}
+
+\begin{align}
+  C^{\bullet}_{\opn{Morse}}(M,f)\deq \bigoplus_{v\in \opn{Crit}(f)}H^{\bullet}_c(W^{u}(v),\Z) \simeq \bigoplus_{v\in \opn{Crit}(f)} \Z[-\opn{ind}_{\opn{Morse}}(f)]
+\end{align}
+
+The chain complex $C_{\bullet}^{\mathrm{Morse}}(M,f)$ is defined as dual of the cochain complex $C^{\bullet}_{\opn{Morse}}(M,f)$.
+
+If $f$ satisfies a
+
+As a result, $C^{\bullet}_{\opn{Morse}}(U,f)$ is isomorphic to $\opn{CF}^{\bullet}(f,\Z_{U})$ as a graded module.
+
+
 \section{Ehrhart polynomial of lattice polytopal complex}
 
 We write down elementary properties of Ehrhart polynomial of
@@ -3691,7 +3511,13 @@ has a such structure.
 
 \small
 
-
+\begin{Rmk}
+  If Markus conjecture is true, $\widetilde{X(B_0)}\simeq \C^{n}$
+  for some $n\in \N$. From Oka's principle of Stein manifolds,
+  every complex manifold $X$ whose universal cover is Stein
+  then $TX$ is holomorphically flat and thus the total Chern class of $X$
+  is trivial.
+\end{Rmk}
 
 
 \bibliography{lattice_points_surface}

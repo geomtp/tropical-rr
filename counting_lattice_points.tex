@@ -249,10 +249,10 @@ In particular, we may expect that we can calculate
 which is (generically) invariant for tropicalization
 (or degeneration) from tropical variety.
 
-For instance, the tropicalization of a $n$-dimensional
+For instance, the tropicalization of an $n$-dimensional
 algebraic subvariety of an algebraic split torus 
-is a $n$-dimensional polyhedral complex 
-(e.g 
+is an $n$-dimensional polyhedral complex 
+(e.g. 
 \cite[Theorem 3.2.3]{maclaganIntroductionTropicalGeometry2015a}).
 
 We will explain 
@@ -538,10 +538,10 @@ literature as a trivial corollary of homological mirror symmetry
 in \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{rmk: curve_mirror} and \cref{rmk: integral_mirror} 
 for more details) but we reprove it in tropical  
 geometrical setting as a test play of another approach 
-for a tropical analog of Riemann-Roch formula for 
-tropical spaces. This approach is different
+for a tropical analog of Riemann--Roch formula for 
+good tropical spaces. This approach is different
 from classical approach such like 
-\cite{gathmannRiemannRochTheoremTropical2008a,MR4251610} but
+\cite{MR2355607,gathmannRiemannRochTheoremTropical2008a,mikhalkinTropicalCurvesTheir2008a} but
 a toy model of homological mirror conjecture in the sense
 of \cite[{\textsection 7}]{auroux2022lagrangian}.
 
@@ -556,6 +556,8 @@ analog of Ehrhart theory.
 This work was supported by JSPS KAKENHI 
 Grant Number 21J14529.
 
+This paper is organized as follows:
+
 \begin{Note}[Guide for reading this paper]
   In order to reveal the relationships between our study
   and other topics, we cannot avoid introducing various
@@ -563,6 +565,22 @@ Grant Number 21J14529.
 in the case of tropical curves,
   so we write down a shortcut course of this paper as below:
 \end{Note}
+
+\begin{Not}
+
+  We will use the following notation in this paper:
+  For every continuous function $f\colon X\to \R$,
+
+  $\{f<f(v)\}\deq \set{x\in X\mid f(x)< f(v)}$
+
+  $\{f\geq f(v)\}\deq \set{x\in X\mid f(x)\geq f(v)}$
+
+  $X\sqcup_{f,g}Y$: the pushout of the diagram
+  $X\xgets{f} A\xto{g} Y$
+
+  $\opn{Crit}(f)$: the subset of critical points of a
+  $C^{1}$-function on a smooth manifold.
+\end{Not}
 
 \begin{Note}
   We also impose the following assumption for simplicity in this paper:
@@ -588,21 +606,23 @@ Hausdorff spaces.}
 \cite{MR1299726,MR1269324,MR2050072}
 The notion and symbols for 
 sheaf theory mainly follows from \cite{MR1299726}.
+
 In this section, we suppose $A$ is a PID. Then, the Grothendieck 
 group $K_0(A)$ of $A$ is isomorphic to $\Z$. From this, 
-we can define the rank $\opn{rank}_A M$ of 
+we can define the rank $\opn{rk}_A M$ of 
 a finitely generated $A$-module.
 If $M^{\bullet}$ is a bounded $\Z$-graded finitely generated $A$-module,
 then we can define the Euler characteristic 
-$\chi(M^{\bullet})\deq \sum_{i\in \Z}(-1)^{i}\opn{rank}_A M^{i}$.
+$\chi(M^{\bullet})\deq \sum_{i\in \Z}(-1)^{i}\opn{rk}_A M^{i}$.
 If $(M^{\bullet},d)$ is a bounded chain complex of finitely 
 generated $A$-module, then 
 $\chi(M^{\bullet})=\chi(H^{\bullet}(M^{\bullet}))$.
+
 Let $X$ be a topological space and $Z$ a closed subset of $X$.
 
 
 
-
+\subsection{Local index}
 
 The following stalk complex (or graded module) is 
 the most important notion
@@ -625,7 +645,7 @@ We don't assume $f$ satisfies some
 "Morse condition" like \cite{MR2031639,MR4132582} since
  we need to use some $C^{\infty}$-function
 which is \emph{not} a Morse function in the sense of 
-stratified Morse theory (e.g. \cite[Part 1.2.1]{}). 
+stratified Morse theory (e.g. \cite[Part 1.2.1]{MR932724}). 
 We also note that we need to use 
 the graded module $\opn{MF}^{\bullet}(\mcal{F},f,x)$ instead of 
 the complex $\opn{LMD}(\mcal{F},f,x)$ since we need to
@@ -666,18 +686,25 @@ By Khimshiashvili [Himšiašvili] formula \cite{MR0458467}, we have
 =1-\chi(f^{-1}(-\delta)\cap B_{\vep,x})
 =\opn{ind}_{\opn{PH}}(\nabla f,x).
 \end{align}
-Here, $\opn{ind}_{\opn{PH}}(\nabla f,x)$ is the 
-Poincare--Hopf index of the gradient of $f$.
+Here, $\opn{ind}_{\opn{PH}}(\opn{grad} f,x)$ is the 
+Poincare--Hopf index of the gradient of $f$ for the standard 
+inner product on $\R^{n}$.
 We can generalize the above for real analytic functions with 
 at most isolated singular points.
 \end{Eg}
 
 \begin{Eg}
-
+  A polynomial function $f:\R^{n}\to \R;(x_1,\ldots,x_n)\mapsto x_1^{2}+\cdots+x_n^{2}$
+  $X=S=\R^{n}$
+  \begin{align}
+    \opn{CF}^{\bullet}(f;\Z_S)\simeq \tilde{H}^{\bullet-1}(\emp;\Z_S),
+    \quad \opn{CF}^{\bullet}(-f;\Z_S) \simeq \tilde{H}^{\bullet-1}(S^{n-1};\Z_S).
+  \end{align}
 \end{Eg}
-
 The equation $\chi(\opn{MF}^{\bullet}(\Z,f,x))=
-\opn{ind}_{\opn{PH}}(\nabla f,x)$ is a special case of
+\opn{ind}_{\opn{PH}}(\opn{grad} f,x)$ can be considered 
+as the intersection $\sharp ([df]\cap M)$ in $T^{*}M$,
+and this is a special case of
 microlocal index theroem:
 
 \begin{Thm}[{\cite[Theorem 9.5.6]{}}]
@@ -690,7 +717,13 @@ microlocal index theroem:
 \begin{Eg}
 
 Therefore, this is a certain sheaf theoretic version of 
-Pincar\'e--Hopf theorem for some polyhedral spaces.
+Pincar\'e--Hopf theorem for some polyhedral spaces. Under
+the philosophy of this paper, $H^{\bullet}(X;\iota_*A_S)\simeq 
+\opn{Ext}^{\bullet}(A_X,\iota_*A_S)$
+ should be considered a
+certain analog of 
+$\opn{Ext}^{\bullet}(\mcal{O}_X,\iota_*\mcal{O}_Z)$ for closed embedding of 
+scheme.
 \end{Eg}
 
 \begin{Rmk}
@@ -750,7 +783,6 @@ $f\colon M_{\R}\to \R$ be a strictly convex
 $C^{1}$-function on $M_{\R}$ with the minimum point $x$
  and $S$ be the support of 
 a polyhedral complex $\Sigma$ whose contains $x$.
-Obviously, 
 One of trivial but remarkable point is that
 \begin{align}
 \opn{MF}^{\bullet}(A_S,f,x)\not\simeq (-1)^{n}
@@ -874,7 +906,38 @@ This is a tropical analog of
 \end{Eg}
 
 \subsection{Relationships between a localization of 
-index on Riemann surfaces.}
+index on compact Riemann surfaces.}
+
+We mention the relationship between Pick's formula of tropical curves and
+\cite[6]{MR2676658}.
+
+For simplicity, we assume $B$ is a compact trivalent tropical curve.
+
+On the other hand, we can construct a typical tropical curve
+(Reeb graph) from a Morse function on Riemann surface
+\cite[3.2.2]{kontsevichAffineStructuresNonArchimedean2006a}.
+
+$X_0(B)$  can be considered as a subset of a compact Riemann surface
+\footnote{By philosophy of SYZ mirror symmetry,
+  we should consider Lagrangian section as a mirror of complex line bundle
+  and we also explain about it for tropical tori in \cref{a}.
+}.
+
+Under the above interpretation, a very polite Lagrangian section can be considered as a data of $U(1)$-holonomy of each fiber $\check{\pi}_{B_0}^{-1}(p)$.
+The following equation is a correspondence about local index $\opn{ind}_v$ and the Local Riemann-Roch number under the above identification \cite[Theorem 6.7]{MR2676658}.
+\begin{align}
+   & [BS^{+}]=\opn{ind}_v(s_{2,0}),
+  \quad [BS^{-}]=\opn{ind}_v(s_{0,2}),
+  \quad [D^{+}]=\opn{ind}_v(s_{1,0}),
+  \quad [D^{-}]=\opn{ind}_v(s_{0,1}), \\
+   & [P^{S}]=\opn{ind}_v(s_{2,1}),
+  \quad [P^{L}]=\opn{ind}_v(s_{1,2}).
+\end{align}
+From this our theorem for tropical curve can be proved from the theory of localization of index and classical Riemann-Roch formula.
+\begin{Ques}
+  Can we generalize the above correspondence for pants decomposition of
+  complex algebraic hypersurfaces in \cite{MR2079993} and line bundles?
+\end{Ques}
 
 \section{Proof for integral affine manifold with Hessian form.}
 
@@ -956,7 +1019,85 @@ From now on, we follow about tropical homology and sheaf
 theory for tropical manifolds
 from \cite{MR3903579,gross2019sheaftheoretic}.
 
-\subsection{Tropical superform and Cartier data}
+\subsection{Tropical homology, Tropical superform and Cartier data}
+
+Heew, $\Omega_B^{0}=\R_B$.
+
+$\Omega_B^{\bullet}$ is a certain analog of analytic
+de Rham complex of complex manifold\footnote{
+}.
+$\Omega_X^{\bullet}$ has a canonical dga structure, 
+and thus its hypercohomology 
+$\mb{H}^{\bullet}(B;\Omega_B^{\bullet})$ is a 
+graded-commutative algebra. 
+This is a tropical analog of the singular cohomology
+$H^{\bullet}(X;\C)$ for a complex manifold $X$ since 
+de Rham theorem $\C_X \simeq \Omega_X^{\bullet}$ 
+gives isomorphism 
+$H^{\bullet}(X;\C)\simeq \mb{H}^{\bullet}(X;\Omega_X^{\bullet})$
+of graded algebras. 
+
+An elementary but remarkable fact of 
+$\Omega_B^{\bullet}$ is that $\Omega_B^{\bullet}\simeq 
+\bigoplus_{i\in \Z}\Omega_B^{i}[-i]$, i.e., the differential 
+of $\Omega_B^{\bullet}$ is trivial unlike the analytic de Rham complex
+of complex manifolds, see \cite[Corollary 2.15]{epub36262}.
+Therefore, we can calculate the multiplication of 
+$\mb{H}^{\bullet}(B;\Omega_B^{\bullet})$ by 
+cup product of each $H^{q}(B;\Omega_B^{p})$.
+
+Let $f\colon B\to B'$ be a morphism of rational polyhedral 
+space. Then, this induces the pullback $f^{-1}$ and 
+ring homomorphism $\mb{H}^{\bullet}(B';\Omega_{B'}^{\bullet})\to \mb{H}^{\bullet}(B;\Omega_B^{\bullet})$
+
+\subsubsection{Tropical Cartier data}
+
+The canonical monomorphism $\mcal{O}^{\times}_B \to \mcal{A}^{0,0}_B$
+induces the following commutative diagram 
+\footnote{Several similar diagrams for some tropical spaces and 
+similar spaces appear
+  in literature, e.g. \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}}:
+
+\begin{equation} \label{eq: smoothcartier}
+  \begin{tikzcd}
+    & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
+    & \mb{R}_{B} \arrow[r,equal] \arrow[d]                & \mb{R}_{B} \arrow[d]           &                      &   \\
+    0 \arrow[r] & \mcal{O}_{B}^{\times} \arrow[r] \arrow[d]         & \mcal{A}^{0,0}_B \arrow[r] \arrow[d] & \mcal{A}^{0,0}_B / \mcal{O}_{B}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
+    0 \arrow[r] & \FBZ^{1} \arrow[r] \arrow[d] & \mcal{Z}^{1}_{B} \arrow[r] \arrow[d]  & \mcal{Z}^{1}_{B}/\FBZ^{1} \arrow[r]   & 0 \\
+    & 0 & 0 &  &
+  \end{tikzcd}
+\end{equation}
+Here every row and column of the diagram (\ref{eq: smoothcartier}) is exact
+and $\mcal{A}_{B}^{0,0}/\mcal{O}^{\times}_B
+  \simeq \mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1}$ from the snake lemma.
+The right column exact sequence of \cref{eq: smoothcartier} is called
+the \ind{tropical exponential exact sequence}{tropicalexponentialexactsequence}, 
+(e.g. ).
+
+The middle row is a smooth version of the following short exact sequence.
+\begin{align}
+  0 \to \mcal{O}^{\times}_B \to \mcal{M}_B^{\times} \to \mcal{D}iv_{B}\to 0
+\end{align}
+$H^{1}(B;\mcal{M}_{B}^{\times})=0$, 
+and thus 
+$\opn{Pic}(B)\deq H^{1}(B,\mcal{O}^{\times}_B)\simeq  
+\opn{Im} (\delta : H^{0}(B,\mcal{D}iv_{B})\to 
+H^{1}(B, \mcal{O}^{\times}_B))$ \cite[Lemma 4.5, Proposition 4.6]{jellLefschetzTheoremTropical2018a}.
+
+We can see the similar proposition for 
+$\opn{CaDiv}^{\infty}(B)$ since 
+$\mcal{A}^{0,0}_B$ is acyclic.
+
+Let $f\colon X\to Y$ be a morphism of 
+two rational polyhedral spaces.
+From definition of morphism of rational polyhedral space
+and a natural morphism of superforms 
+\cite[Lemma 2.21]{MR3903579},
+$f$ induces the pullback 
+$f^{*}\colon \opn{CaDiv}^{\infty}(Y)\to \opn{CaDiv}^{\infty}(X)$ 
+and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
+(\ref{eq: smoothcartier}). 
+
 
 \begin{Def}[Smooth Cartier data]
   A \ind{very polite smooth Cartier data}{very polite smooth Cartier data} $s=\{f_i\}$ is an element of
@@ -1001,7 +1142,18 @@ $\mcal{O}^{\times}_{B_0}$ is a locally constant sheaf and the quotient sheaf $\m
   Therefore, we write $\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$, $\mcal{T}_{\Z,B_0}\deq \mcal{W}_{\Z,B_0}^{1}$ in this section for integral affine manifolds. We also use this notation for integral affine manifold with singularities.
 \end{Not}
 
-Thus, 
+Thus, the commutative diagram is written like this 
+(e.g. \cite[p.468]{aspinwallDirichletBranesMirror2009}):
+
+\begin{equation} \label{eq:affinecartier}
+  \begin{tikzcd}
+    & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
+    & \mb{R}_{B_0} \arrow[r,equal] \arrow[d]                & \mb{R}_{B_0} \arrow[d]           &                      &   \\
+    0 \arrow[r] & \AffS_{\Z,B_0} \arrow[r] \arrow[d]         & \mcal{C}^{\infty}(B_0) \arrow[r] \arrow[d] & \mcal{C}^{\infty}(B_0)/\AffS_{\Z,B_0}  \arrow[r] \arrow[d,equal] & 0 \\
+    0 \arrow[r] & \mcal{T}_{\Z,B_0}^{\vee} \arrow[r] \arrow[d] & \opn{Lag}(T^{*}B_0) \arrow[r] \arrow[d]  & \opn{Lag}(\check{X}(B_0)) \arrow[r]   & 0 \\
+    & 0 & 0 &  &
+  \end{tikzcd}
+\end{equation}
 
 
 \begin{Rmk}
@@ -1069,7 +1221,8 @@ $k$-skeleton except $k=n$.
 Thus, $c_{k}(B_0)$ should be $1$ except $k=0$, 
 i.e., $\opn{td}(B_0)=1$. 
 
-We already see $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$.
+On the other hand, $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$
+since the tangent bundle of $X(B_0)$ is flat.
     From semi-flat SYZ mirror symmetry, the above conjecture should be true. In the case of tropical tori, see \ref{}.
 \end{Rmk}
 
@@ -1090,37 +1243,53 @@ See also \cite{MR1422337} for tropical primary Kodaira surfaces.
 \end{Rmk}
 
 \section{For more examples}
+We also mention more examples of 
+tropical analog of Euler characteristic of 
+line bundles.
+ K\"unneth formula for
+the direct product of tropical curves and 
+integral affine manifold for some special cases.
+
+This theorem comes from the following sheaf 
+theoretic Thom--Sebastiani Theorem.
+
+
 
 We don't state for the K\"unneth type formula in a fully
 general setting but it is enough to perform the Euler number of
 generic locally analytic  behaves as expected.
 \begin{Cor}[{K\"unneth formula}]
 Let $X,Y$ be a compact tropical curve or integral affine manifold.
-Let $s$ and $s'$ be (fiberwise) Lagrangian section of $X$ and $Y$ 
+Let $s$ and $s'$ a polite smooth Cartier divisor of $X$ and $Y$ 
 satisfying the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
 Then, the induced external tensor product 
-$s\boxtimes s'\deq \opn{pr}_X^{*} (s)\times \opn{pr}_Y^{*}(s)$
+$s\boxtimes s'\deq \opn{pr}_X^{*} (s)+\opn{pr}_Y^{*}(s')
+\in \opn{CaDiv}^{\infty}(X\times Y)$ is also polite and
 has the following equations:
 \begin{align}
-\chi(X\times Y,s\boxtimes s')=\chi(X,s)\chi(Y,s')
+\chi(X\times Y,s\boxtimes s')=\chi(X,s)\chi(Y,s').
 \end{align}
 
 \end{Cor}
 \begin{proof}
+Since 
+$\opn{SS}(F\boxtimes G)\subset \opn{SS}(F)\times \opn{SS}(G)$
+\cite[Proposition 5.4.1]{MR1299726},
+$s\boxtimes s'$ is also polite.
 From sheaf theoretic Thom-Sebastiani theorem for constructible sheaves 
 \cite[Corollary 1.2.1]{MR2031639}, we get an isomorphism of 
-graded spaces;
+graded modules;
 
 \begin{align}
-\opn{CF}^{\bullet}(X\times Y;s\boxtimes s') 
+\opn{MF}^{\bullet}(X\times Y;s\boxtimes s') 
 & =\bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
 (R^{\bullet}_{\{f_v\boxplus g_w\geq 0\}}\Z_{U_{(v,w)}})_{(v,w)} \\
 & =\bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
 (R^{\bullet}_{\{f_v\geq 0\}}\Z_{U_v})_v
 \otimes_{\Z} (R^{\bullet}_{\{g_w\geq 0\}}\Z_{U_w})_w \\
 & \simeq
-\opn{CF}^{\bullet}(X,s)\otimes_{\Z} \opn{CF}^{\bullet}(Y,s') 
+\opn{MF}^{\bullet}(X,s)\otimes_{\Z} \opn{MF}^{\bullet}(Y,s') 
 \end{align}
 
 \end{proof}
@@ -1162,6 +1331,9 @@ on algebraic varieties.
 We expect
 \end{Rmk}
 
+We also expect that we can define a graded module for a given
+Cartier divisor directly since the global microlocal index
+theorem has no 
 \appendix
 
 \section{The local index part2}
