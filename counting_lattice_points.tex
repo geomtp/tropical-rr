@@ -321,7 +321,7 @@ Riemann--Roch formula like
 \cite{MR2355607,gathmannRiemannRochTheoremTropical2008a}.
 
 One of standard (but very hard) approach is that 
-consrtucting 
+constructing 
 The homotopical algebra of semimodules is 
 studied recently in 
 \href{https://arxiv.org/abs/2202.01573}{[2202.01573] Proto-exact categories of modules over semirings and hyperrings}
@@ -746,8 +746,6 @@ The microlocal index formula is generalized for more general
 class of functions, see \cite{}.
 \end{Rmk}
 
-\subsection{Polite condition}
-
 
 
 \begin{Rmk}
@@ -793,8 +791,9 @@ submanifolds.
 
 Every real analytic function is \emph{nondepraved} 
 \cite[Part I, Definition. 2.3,]{MR932724} and
-every nondepraved function satisfies Whitney b-condition
-for $(\{f(x)=0\},x)$.
+every nondepraved function $f\colon \to \R$ satisfies Whitney b-condition
+for the pair $(\{f(x)=0\},x)$. Such a function satisfies the 
+following condition
 
 \begin{Eg}
 
@@ -828,7 +827,29 @@ H^{\bullet}(S,S\setminus \{x\};\Q)\simeq
 $H^{-i}(\upomega_S^{\bullet})$ is the sheafication of
 the presheaf $U\mapsto H_{c}^{i}(U;k)^{\vee}=H^{i}(S,S\setminus U;k)^{\vee}$
  \cite[]{iversenCohomologySheaves1986a} and fundamental properties of the direct limit of topological spaces \cite[Proposition 3.33]{hatcherAlgebraicTopology2002a}. 
+If $S$ is a purely tropical $n$-manifold, then 
+$\opn{MF}^{\bullet}(A_S,-f,x)\simeq H^{n}(S,S\setminus\{x\},\Q)[-n]$
+since the shellability of the link of Bergman fan, see also
+\cite[]{gross2019sheaftheoretic}.
+The vanishing property of the local cohomology is conjectured for
+tropicalization of very affine algebraic variety by Hacking in
+\cite{MR2452307}.
+In other words, the dualizing complex of tropicalization of 
+algebraic variety should be a shift of a single sheaf 
+by Hacking conjecture. 
+
+Hacking also prove that conjecture is true for a suitable condition
+\cite[Theorem 2.5]{MR2452307}.
+Since any tropical varieties is connected
+  through codimension $1$ \cite[Theorem 3.3.5]{maclaganIntroductionTropicalGeometry2015a}
+  this conjecture is true when $\dim B \leq 2$.
+
+This phenominon gives a certain analog of Kodaira vanishing theorem for 
+positive line bundles, see 
+also \cref{eg: kodaira}.
 \end{Rmk}
+
+\subsection{Polite condition}
 
 To generalize cohomological local Morse datum for
 smooth Cartier data $\{f_i\}_{i\in I}$, we
@@ -843,8 +864,7 @@ space $S (\subset M_{\R})$.
 Suppose $\dim M_{\R}=\dim \mathbf{F}_{S,x}$. In this case,
 we can identify $M$ with $\mathbf{F}_{S,x}^{\Z}$.
 A smooth function $f\colon U_x \to \R$ is \emph{polite} at $x$ 
-if $(x,df(x))\notin (\opn{span}_{\R}(\opn{SS}(A_S)_x)\setminus
-T^{*}_{M_{\R}} M_{\R})+M^{\vee}$.
+if $(x,df(x))\notin (\opn{span}_{\R}(\opn{SS}(A_S)_x)+M^{\vee})\setminus M^{\vee}$.
 \end{Cond}
 
 \begin{Eg}
@@ -865,19 +885,20 @@ $\{f_i\}_{i\in I}\in \opn{CaDiv}^{\infty}(S)$ is polite
 if each $f_i$ is polite at any point in $S$.
 \end{Cond}
 
-Take a projection $M\to M/(\opn{span}_{\R}(\opn{SS}(A_S)_x))\cap M$
+Take a projection $M^{\vee}\to M^{\vee}/(\opn{span}_{\R}(\opn{SS}(A_S)_x))\cap M^{\vee}$
 Since $S$ is a rational polyhedral space and thus 
 $\opn{SS}(\Z_S)$ also 
-Then, $df(x)\in M$ if and only if 
-$df(x)\in M/(\opn{span}_{\R}(\opn{SS}(A_S)_x))\cap M$
+Then, $df(x)\in M^{\vee}$ if and only if 
+$df(x)\in M^{\vee}/(\opn{span}_{\R}(\opn{SS}(A_S)_x))\cap M^{\vee}$
 for any polite function at $x$. Thus, there exists a canonical
 lift $\tilde{f}_x\colon U_x\to \R$ such that
 $d\tilde{f}_x(x)=0$.
 
 \begin{Def}[{Stratified torus fibration and Lagrangian}]
-Let $S$ be a compact rational polyhedral space such that any atlas is 
+Let $S$ be a compact rational polyhedral space such that 
+the image of any atlas is 
 in for some $\R^{n}$. Then the stratified torus 
-fibration is the following
+fibration is the following set
 \begin{align}
 \check{X}(S)\deq \bigcup_{x\in S} 
 (\mathbf{F}_{S,x}^{\Z,\vee}/(\opn{span}_{\R}
@@ -888,7 +909,13 @@ The stratified Lagrangian is the differential  $\{df_i\}_{i\in I}$ in $\check{X}
 by fiberwise projection.
 \end{Def}
 
+\begin{Eg}[{metric graph}]
+
+\end{Eg}
+
 \begin{Def}
+Let $S$ be a rational polyhedral space such that the image of
+any atlas is in for some $\R^{n}$.
 Let $s=\{(U_i,f_i)\}_{i\in I}$ be a polite smooth Cartier divisor such that
 the following set is finite;
 \begin{align}
@@ -896,13 +923,51 @@ s_0 \cap s\deq \set{x\in S\mid \opn{pr}_x^{S}(df_i(x))=0
 \text{ for some } i\in I}
 \end{align}
 \begin{align}
-\opn{MF}^{\bullet}(S,s;A)\deq 
+\opn{MF}^{\bullet}(S;s,A)\deq 
 \bigoplus_{x\in s_0 \cap s} \opn{MF}^{\bullet}(A_{S\cap U_i},\tilde{f}_{i,x},x)
 \end{align}
 \end{Def}
 
+\begin{Rmk}
+We stress that we should not consider 
+$\opn{MF}^{\bullet}(S;s,A)$ as the cohomology of $s$ just
+a graded module 
+since we need to define the differentials $\mf{m}_1$ of 
+$\opn{MF}^{\bullet}(S;s,A)$ from the view point of 
+Floer cohomology. We don't have, however,
+the definition of the true differential of 
+$\opn{MF}^{\bullet}(S;s,A)$ in general.
+\end{Rmk}
+
+\begin{Eg} \label{eg: kodaira}
+A polite smooth Cartier divisor $s=\{f_i\}_{i\in I}$ is 
+\emph{Bohr--Sommerfeld type} or \emph{Hessian type} if
+$f_i$ is strictly convex for any $i\in I$. Then,
+
+\begin{align}
+  \opn{MF}^{\bullet}(S;s,\Q)\simeq \bigoplus_{x\in s_0 \cap s} \Q[0], \quad
+ \opn{MF}^{\bullet}(S;-s,\Q)\simeq \bigoplus_{x\in s_0\cap -s} 
+H^{n}(S,S\setminus\{x\};\Q)[-n]
+\end{align}
+In this case, the cohomology of 
+$\opn{MF}^{\bullet}(S;s,\Q)$ is independent of the choice of 
+differential of $\opn{MF}^{\bullet}(S;s,\Q)$.
+
+This is a tropical analog of Kodaira's vanishing theorem
+for a (multiple of) positive form, i.e., a holomorphic line bundle $\mcal{L}$ with a 
+K\"ahler form on a complex manifold $M$: 
+\begin{align}
+H^{\bullet}(M;\mcal{L}^{-1})\simeq H^{n}(M;\mcal{L}^{-1})[-n].
+\end{align}
+The name of Bohr--Sommerfeld type comes from 
+the set $s_0\cap s$ can be considered as the set of 
+Bohr--Sommerfeld point if $S$ is a strictly integral affine manifold 
+with a Hessian form by Strominger--Yau-Zaslow mirror pair.
+See \cref{sec: BSRR}
+\end{Eg}
+
 \begin{Conj}
-Let $S$ be a tropical manifold such that any atlas is in for some 
+Let $S$ be a compact tropical manifold such that any atlas is in for some 
 $\R^{n}$ and has the Todd class $\opn{td}(S)$ of $S$.
 Let $s$ be a polite smooth Cartier divisor such that
 $s_0\cap s$ is finite. Then, 
@@ -1475,7 +1540,7 @@ on closed Riemannian manifolds.
 \appendix
 
 \section{Radiance obstruction and geometric prequantization}
-
+\label{sec: BSRR}
 In this section, we mention about 
 
 Every compact integral affine manifold has no infinite volume face,
