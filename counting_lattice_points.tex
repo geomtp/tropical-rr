@@ -486,7 +486,8 @@ Let $B$ be a compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
 $\opn{td}(B) \in \mb{H}^{\bullet}(B;\Omega_B^{\bullet})$.
  Let $s$ be a "generic"
-extended smooth Cartier data which represents of $\mcal{L}$
+extended smooth Cartier data satisfying a polite condition 
+\cref{cond: polite} which represents of $\mcal{L}$
 and its Floer graded $\Z$-module $\opn{MF}^{\bullet}(s)$
 of it. Then,
 
@@ -601,9 +602,15 @@ In this section we recall some elementary result
 for cohomological local Morse data from
 \cite{MR2031639,MR1299726,MR4294126}.
 
+
+
 \subsection{Sheaf theory on locally compact 
 Hausdorff spaces.}
-\cite{MR1299726,MR1269324,MR2050072}
+\cite{iversenCohomologySheaves1986a,MR1299726,MR1269324,MR2050072}
+
+\cite[Chapter 1-3]{MR2050072} is also a good survey of 
+the sheaf theory of locally compact spaces.
+
 The notion and symbols for 
 sheaf theory mainly follows from \cite{MR1299726}.
 
@@ -642,7 +649,7 @@ H^{\bullet}(\opn{LMD}(\mcal{F},f,x)).
 
 \begin{Rmk}
 We don't assume $f$ satisfies some 
-"Morse condition" like \cite{MR2031639,MR4132582} since
+"Morse condition" since
  we need to use some $C^{\infty}$-function
 which is \emph{not} a Morse function in the sense of 
 stratified Morse theory (e.g. \cite[Part 1.2.1]{MR932724}). 
@@ -656,13 +663,14 @@ forget the differential.
 We mainly follow from \cite[3.2]{MR3779558} for this example.
 
 Let $f\colon \R^{n}\to \R$ be a real polynomial function
-which has at most one critical point $x$ and $f(x)=0$.
+which has at most one critical point $x$.
 Let's calculate 
 $\chi (\opn{MF}^{\bullet}(\Z,f,x))
 =\chi(\tilde{H}^{\bullet-1}(\{f<f(x)\};\Z))$.
-Let $B_{\vep,x}\deq \set{y\in \R^{n}\mid \|x-y\|\leq \vep}$
-, $S_{\vep,x}=\partial B_{\vep,x}$ and 
-$\opn{Cone}(X)$ the cone of a topological space $X$.
+Let $B_{\vep,x}\deq \set{y\in \R^{n}\mid \|x-y\|\leq \vep}$,
+$S_{\vep,x}=\partial B_{\vep,x}$ and 
+$\opn{Cone}(X)$ the cone of a topological space $X$
+\cite[Example 4.4]{hatcherAlgebraicTopology2002a}.
 
 There exists a homeomorphism of pairs of
 topological spaces:
@@ -684,7 +692,7 @@ By Khimshiashvili [Himšiašvili] formula \cite{MR0458467}, we have
 \begin{align} \label{eq: Khim}
   \chi(\opn{MF}^{\bullet}(\Z,f,x))
 =1-\chi(f^{-1}(-\delta)\cap B_{\vep,x})
-=\opn{ind}_{\opn{PH}}(\nabla f,x).
+=\opn{ind}_{\opn{PH}}(\opn{grad} f,x).
 \end{align}
 Here, $\opn{ind}_{\opn{PH}}(\opn{grad} f,x)$ is the 
 Poincare--Hopf index of the gradient of $f$ for the standard 
@@ -707,20 +715,27 @@ as the intersection $\sharp ([df]\cap M)$ in $T^{*}M$,
 and this is a special case of
 microlocal index theroem:
 
-\begin{Thm}[{\cite[Theorem 9.5.6]{}}]
+\begin{Thm}[{\cite[Theorem 9.5.6]{MR1299726}}]
 
 \begin{align}
-\chi(\opn{LMD}(\mcal{F},f,x))=\sharp ([\opn{graph}(f)]\cap \opn{CC}(\mcal{F}))
+\chi(\opn{LMD}(\mcal{F},f,x))
+=\sharp ([\opn{graph}(f)]\cap \opn{CC}(\mcal{F}))
 \end{align}
 \end{Thm}
 
 \begin{Eg}
-
+Let $M$ be a compact integral affine manifold and $S$  
+a compact rational polyhedral subspace in $M$. 
+\begin{align}
+\chi(H^{\bullet}(M;\iota_*A_S))
+=\sharp ([\opn{graph}(f)]\cap \opn{CC}(\iota_* A_S))
+=\sharp (\opn{CC}(A_M)\cap \opn{CC}(\iota_* A_S))
+\end{align}
 Therefore, this is a certain sheaf theoretic version of 
 Pincar\'e--Hopf theorem for some polyhedral spaces. Under
-the philosophy of this paper, $H^{\bullet}(X;\iota_*A_S)\simeq 
-\opn{Ext}^{\bullet}(A_X,\iota_*A_S)$
- should be considered a
+the philosophy of this paper, $H^{\bullet}(M;\iota_*A_S)\simeq 
+\opn{Ext}^{\bullet}(A_M,\iota_*A_S)$
+ should be considered as a
 certain analog of 
 $\opn{Ext}^{\bullet}(\mcal{O}_X,\iota_*\mcal{O}_Z)$ for closed embedding of 
 scheme.
@@ -733,6 +748,8 @@ class of functions, see \cite{}.
 
 \subsection{Polite condition}
 
+
+
 \begin{Rmk}
 
 \end{Rmk}
@@ -740,8 +757,7 @@ class of functions, see \cite{}.
 \begin{Eg}
 Let $f$ be a 
 
-Every real analytic function is \emph{nondepraved} 
-\cite[Part I, Definition. 2.3,]{MR932724}
+
 \end{Eg}
 
 Let $M$ be a free $\Z$-module of finite rank and 
@@ -758,11 +774,27 @@ Let $\mcal{F}$ be a
 
 We will develop this without condition 
 
-\begin{Def}
-$(K, K\cap V(f))\simeq (B_{\vep,x}, B_{\vep,x}\cap V(g))$ 
-for some real analytic function $g$ with at most one 
-isolated critical point at $x$.
-\end{Def}
+\begin{Cond}[{locally analytic}]
+Let 
+$f\colon U \to \R$ be a smooth function on a open subset of $\R^{n}$.
+$f$ is locally analytic if there exists an analytic function
+$f_0\colon V\to \R$ and a diffeomorphism $\phi\colon U \to V$ such 
+that $f=f_0\circ \phi $
+\end{Cond}
+
+\begin{Rmk}
+Of course, this condition is tentative since various important
+features work under weaker condition for functions by using 
+some good o-minimal structure on $\R$ or Stratified Morse theory. We mainly use this condition for
+simplicity of our claims and revealing a similarity between
+graded module of our sense and Floer complex of Lagrangian 
+submanifolds.
+\end{Rmk}
+
+Every real analytic function is \emph{nondepraved} 
+\cite[Part I, Definition. 2.3,]{MR932724} and
+every nondepraved function satisfies Whitney b-condition
+for $(\{f(x)=0\},x)$.
 
 \begin{Eg}
 
@@ -792,19 +824,93 @@ except for special cases such like \cref{eq: Khim}.
 We will see this
 We note $\opn{MF}^{\bullet}(\Q_S,-f,x) \simeq 
 H^{\bullet}(S,S\setminus \{x\};\Q)\simeq 
-(H^{-n}(\upomega_S^{\bullet}))_x$. 
+(H^{-\bullet}(\upomega_S^{\bullet}))_x$ since
+$H^{-i}(\upomega_S^{\bullet})$ is the sheafication of
+the presheaf $U\mapsto H_{c}^{i}(U;k)^{\vee}=H^{i}(S,S\setminus U;k)^{\vee}$
+ \cite[]{iversenCohomologySheaves1986a} and fundamental properties of the direct limit of topological spaces \cite[Proposition 3.33]{hatcherAlgebraicTopology2002a}. 
 \end{Rmk}
 
-\begin{Def}[{politeness}]
+To generalize cohomological local Morse datum for
+smooth Cartier data $\{f_i\}_{i\in I}$, we
+need additional condition for $f_i$ in order 
+to give a well-defined definition of graded modules.
+In this paper, we only gives the polite condition for 
+rational polyhedral spaces.
 
+\begin{Cond}[{politeness}] \label{cond: polite}
+Let $U_x$ be an open neighborhood of a point $x$ in a rational polyhedral
+space $S (\subset M_{\R})$. 
+Suppose $\dim M_{\R}=\dim \mathbf{F}_{S,x}$. In this case,
+we can identify $M$ with $\mathbf{F}_{S,x}^{\Z}$.
+A smooth function $f\colon U_x \to \R$ is \emph{polite} at $x$ 
+if $(x,df(x))\notin (\opn{span}_{\R}(\opn{SS}(A_S)_x)\setminus
+T^{*}_{M_{\R}} M_{\R})+M^{\vee}$.
+\end{Cond}
+
+\begin{Eg}
+Let $S=V(\max\{x_1,\ldots,x_n,1\})$ a trivalent graph in $\R^{n}$.
+$\opn{span}_{\R}(\opn{SS}(A_S)_x)=(\R^{n})^{\vee}$.
+A smooth function $f\colon U_x\to \R$ is polite at $x$
+if and only if $d(x)\in (\Z^{n})^{\vee}$.
+\end{Eg}
+
+From definition, $f$ is polite at $x$ then $f+m$ is also polite for 
+any $m\in \mcal{O}^{\times}_{M_{\R}}(M_{\R})$.  
+Thus, we can generalize the politeness condition for
+smooth Cartier divisor $\opn{CaDiv}^{\infty}(S)\deq H^{0}(S;\mcal{A}^{0,0}_S/\mcal{O}^{\times}_S)$.
+\begin{Cond}[{Polite smooth Cartier divisor}]
+Let $S$ be a rational polyhedral space such that any atlas is 
+in for some $\R^{n}$. A smooth Cartier divisor 
+$\{f_i\}_{i\in I}\in \opn{CaDiv}^{\infty}(S)$ is polite 
+if each $f_i$ is polite at any point in $S$.
+\end{Cond}
+
+Take a projection $M\to M/(\opn{span}_{\R}(\opn{SS}(A_S)_x))\cap M$
+Since $S$ is a rational polyhedral space and thus 
+$\opn{SS}(\Z_S)$ also 
+Then, $df(x)\in M$ if and only if 
+$df(x)\in M/(\opn{span}_{\R}(\opn{SS}(A_S)_x))\cap M$
+for any polite function at $x$. Thus, there exists a canonical
+lift $\tilde{f}_x\colon U_x\to \R$ such that
+$d\tilde{f}_x(x)=0$.
+
+\begin{Def}[{Stratified torus fibration and Lagrangian}]
+Let $S$ be a compact rational polyhedral space such that any atlas is 
+in for some $\R^{n}$. Then the stratified torus 
+fibration is the following
+\begin{align}
+\check{X}(S)\deq \bigcup_{x\in S} 
+(\mathbf{F}_{S,x}^{\Z,\vee}/(\opn{span}_{\R}
+(\opn{SS}(A_S)_x))\cap \mathbf{F}_{S,x}^{\Z,\vee})\otimes_{\Z} \R/\Z
+\end{align}
+Let $s=\{f_i\}_{i\in I}$ be a polite smooth Cartier divisor. 
+The stratified Lagrangian is the differential  $\{df_i\}_{i\in I}$ in $\check{X}(S)$
+by fiberwise projection.
 \end{Def}
 
+\begin{Def}
+Let $s=\{(U_i,f_i)\}_{i\in I}$ be a polite smooth Cartier divisor such that
+the following set is finite;
 \begin{align}
-\opn{MF}^{\bullet}(S,f;A)\deq 
-\bigoplus_{(x,m)\in \opn{Crit}(f,S)} \opn{MF}^{\bullet}(A_S,f+\check{m},x)
+s_0 \cap s\deq \set{x\in S\mid \opn{pr}_x^{S}(df_i(x))=0 
+\text{ for some } i\in I}
 \end{align}
+\begin{align}
+\opn{MF}^{\bullet}(S,s;A)\deq 
+\bigoplus_{x\in s_0 \cap s} \opn{MF}^{\bullet}(A_{S\cap U_i},\tilde{f}_{i,x},x)
+\end{align}
+\end{Def}
 
-
+\begin{Conj}
+Let $S$ be a tropical manifold such that any atlas is in for some 
+$\R^{n}$ and has the Todd class $\opn{td}(S)$ of $S$.
+Let $s$ be a polite smooth Cartier divisor such that
+$s_0\cap s$ is finite. Then, 
+\begin{align}
+\chi(\opn{MF}^{\bullet}(S;s,A))=\int_{S}\opn{ch}(s)\opn{td}(S)
+\end{align}
+\end{Conj}
+We will prove it for some special cases.
 \section{Proof for compact tropical curves}
 In this section, we prove \cref{thm: main} for 
 compact tropical curves
@@ -987,7 +1093,7 @@ Therefore, every closed integral affine manifold satisfies Chern's conjecture si
 \ind{Markus's conjecture}{Markus conjecture} states every closed
 special affine manifold is complete (in the sense of $(G,X)$-manifold)
 if and only if its orientable double cover 
-has a compatible special affine structure \cite[p.53]{}.
+has a compatible special affine structure \cite[p.53]{markus1963cosmological}.
 
 \footnote{We have not check the original source of Chern's conjecture yet. Our knowledge about these conjectures
   mainly comes from \cite{goldmanRadianceObstructionParallel1984a}
@@ -1056,7 +1162,8 @@ The canonical monomorphism $\mcal{O}^{\times}_B \to \mcal{A}^{0,0}_B$
 induces the following commutative diagram 
 \footnote{Several similar diagrams for some tropical spaces and 
 similar spaces appear
-  in literature, e.g. \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}}:
+  in literature, e.g. \cite[p.468]{aspinwallDirichletBranesMirror2009}
+ and \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}}:
 
 \begin{equation} \label{eq: smoothcartier}
   \begin{tikzcd}
@@ -1367,7 +1474,7 @@ on closed Riemannian manifolds.
 
 \appendix
 
-\section{Radiance obstruction and geometric quantization}
+\section{Radiance obstruction and geometric prequantization}
 
 In this section, we mention about 
 
