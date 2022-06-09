@@ -406,11 +406,14 @@ Here, $0_{{\R}^{n}}$ is the zero section of $\check{X}(\R^{n})$.
 \begin{Eg}
 Let $f:\R \to \R; x\mapsto \log (1+e^{x})$ be a soft 
 plus function. When we take a dequantization of $f$,
-we get a ReLU $f^{\opn{trop}}(x)=\max\{0,x\}$.
+we get a ReLU $f^{\opn{trop}}(x)=\max\{0,x\}$ which 
+is frequently used in machine learning.
 The differential is a sigmoid function 
-$df(x)=\frac{e^{x}}{1+e^{x}}$ 
-\footnote{softmax functions also are appreared 
-naturally in a similar way when we consider tropical projective spaces.}.
+$df(x)=\frac{e^{x}}{1+e^{x}}$ and 
+the image of $df$ is the open interval $(0,1)$.\footnote{
+the softmax function also are appreared 
+naturally in a similar way 
+when we consider tropical projective spaces.}
 \end{Eg}
 
 We can naturally extend this proposition for tropical projective toric 
@@ -420,10 +423,8 @@ $\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$
 
 Instead of moment map for Hamiltonian action of Lie group, we
 need not assume convex lattice polytope is not Delzant.
-
 This is a tropical analog of algebraic moment map 
 (e.g. \cite[\textsection 12.2]{coxToricVarieties2011a}) for toric varieties.
-
 We can generalize the above proposition as follows;
 \begin{align}
 \sharp (q(\mu_P^{\opn{trop}}) \cap 0_{X_P^{\opn{trop}}})
@@ -432,15 +433,28 @@ We can generalize the above proposition as follows;
 
 From construction of tropical moment map for lattice polytope,
 it seems that generic rational section of line bundle on 
-toric variety (over log semifield) generate the basis of
-.
+toric variety (over log semifield).
+In fact, we can define a "Cartier data" on toric variety
+associated with the Laurent polynomial over log semiring like 
+the following example. 
+\begin{Eg} \label{eg: TP1Cartier}
+$f_{1,n}\colon \mb{T}\to \mb{T};x \mapsto \log (1+e^{nx})$,
+$f_{2,n}\colon \mb{R}\cup\{+\infty\}\to \mb{R}\cup\{+\infty\};
+x\mapsto \log(e^{-nx}+1)=\log(1+e^{nx})-nx$.
+$\{f_{i,n}\}_{i=1,2}$ defines an element 
+$D_n\deq (f_{1,n}-f_{2,n})\in 
+H^{1}(\mb{T}P^1;\mcal{O}_{\mb{T}P^1}^{\times})\simeq \Z$
+as a \v{C}ech cocycle.
+Then, we have 
+$\sharp([0,n]\cap \Z)=\opn{deg}(D_n)+1=\opn{deg}(D_n)+\chi_{\opn{top}}(\mb{T}P^1)$.
+\end{Eg}
 
 
 These data is very similar with elements of 
 $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})\deq H^{0}(X_{P}^{\opn{trop}};
-\mcal{A}^{0,0}_{X_{P}^{\opn{trop}}}/\mathcal{O}^{\times}_{X_{P}^{\opn{trop}}})$.
-
-\footnote{Be careful that this data is not an element
+\mcal{A}^{0,0}_{X_{P}^{\opn{trop}}}/
+\mathcal{O}^{\times}_{X_{P}^{\opn{trop}}})$.\footnote{
+Be careful that this data is not an element
 of $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ since
  the former collection of smooth function is not constant
 at the neighborhood of the corner of $X_{P}^{\opn{trop}}$,
@@ -453,7 +467,9 @@ suitably to treat as a truly analog of Cartier data.}
 $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ is a
 smooth version of the group of tropical Cartier divisor
 $\opn{CaDiv}(X_{P}^{\opn{trop}})$ 
-\cite[Definition 4.2]{jellLefschetzTheoremTropical2018a}.
+\cite[Definition 4.2]{jellLefschetzTheoremTropical2018a}
+which is defined by the sheaf of $(0,0)$-super forms on 
+$X_P$.
 
 This observation gives an ex
 
@@ -553,7 +569,9 @@ analog of Ehrhart theory.
 \end{Rmk}
 
 \textit{Acknowledgments:}
-
+We also thanks for Kentaro Yamaguchi for explaining about
+\cite{MR4234675} and his results of master thesis 
+\cite{yamaguchimaster}.
 This work was supported by JSPS KAKENHI 
 Grant Number 21J14529.
 
@@ -638,7 +656,7 @@ microlocal sheaf theory
 which is called "local Morse datum" in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
 \begin{Def}[{Cohomological local Morse datum}]
-Let $f:X\to \R$ be a $C^{1}$-function on a smooth manifold $X$ and has 
+Let $f\colon X\to \R$ be a $C^{1}$-function on a smooth manifold $X$ and has 
 at most one critical point $x$.
 \begin{align}
 \opn{LMD}(\mcal{F},f,x)\deq R\Gamma_{\{f\geq f(x)\}}
@@ -702,7 +720,7 @@ at most isolated singular points.
 \end{Eg}
 
 \begin{Eg}
-  A polynomial function $f:\R^{n}\to \R;(x_1,\ldots,x_n)\mapsto x_1^{2}+\cdots+x_n^{2}$
+  A polynomial function $f\colon \R^{n}\to \R;(x_1,\ldots,x_n)\mapsto x_1^{2}+\cdots+x_n^{2}$
   $X=S=\R^{n}$
   \begin{align}
     \opn{CF}^{\bullet}(f;\Z_S)\simeq \tilde{H}^{\bullet-1}(\emp;\Z_S),
@@ -795,18 +813,8 @@ every nondepraved function $f\colon \to \R$ satisfies Whitney b-condition
 for the pair $(\{f(x)=0\},x)$. Such a function satisfies the 
 following condition
 
-\begin{Eg}
-
-
-
 Let $S$ be a rational PL set in $\R^{n}$ and
 $f$.
-
-The remarkable feature gives a certain analog
-of Kodaira vanishing theorem. See \cref{eg: kodaira}.
-\end{Eg}
-
-
 
 \begin{Rmk}[{A vanishing properties
 for some good fan}]
@@ -830,7 +838,7 @@ the presheaf $U\mapsto H_{c}^{i}(U;k)^{\vee}=H^{i}(S,S\setminus U;k)^{\vee}$
 If $S$ is a purely tropical $n$-manifold, then 
 $\opn{MF}^{\bullet}(A_S,-f,x)\simeq H^{n}(S,S\setminus\{x\},\Q)[-n]$
 since the shellability of the link of Bergman fan, see also
-\cite[]{gross2019sheaftheoretic}.
+\cite[Theorem 6.2]{gross2019sheaftheoretic}.
 The vanishing property of the local cohomology is conjectured for
 tropicalization of very affine algebraic variety by Hacking in
 \cite{MR2452307}.
@@ -952,7 +960,6 @@ H^{n}(S,S\setminus\{x\};\Q)[-n]
 In this case, the cohomology of 
 $\opn{MF}^{\bullet}(S;s,\Q)$ is independent of the choice of 
 differential of $\opn{MF}^{\bullet}(S;s,\Q)$.
-
 This is a tropical analog of Kodaira's vanishing theorem
 for a (multiple of) positive form, i.e., a holomorphic line bundle $\mcal{L}$ with a 
 K\"ahler form on a complex manifold $M$: 
@@ -966,7 +973,7 @@ with a Hessian form by Strominger--Yau-Zaslow mirror pair.
 See \cref{sec: BSRR}
 \end{Eg}
 
-\begin{Conj}
+\begin{Conj} \label{conj: conj}
 Let $S$ be a compact tropical manifold such that any atlas is in for some 
 $\R^{n}$ and has the Todd class $\opn{td}(S)$ of $S$.
 Let $s$ be a polite smooth Cartier divisor such that
@@ -976,6 +983,60 @@ $s_0\cap s$ is finite. Then,
 \end{align}
 \end{Conj}
 We will prove it for some special cases.
+
+\begin{Rmk}
+A canonical topological semifield isomorphism 
+$(\R_{\geq 0},+,\cdot)\simto 
+(\mb{T},\oplus_{\opn{log}},+);x\mapsto \log(x)$
+induces a homeomorphism $\R_{\geq 0}^{n}\simeq \mb{T}^{n}$
+naturally and we can define a smooth function on 
+$\mb{T}^{n}$ by the pullback of the smooth function on 
+$\R_{\geq 0}^{n}$ such that its derivative at $x$ in
+the stalk of the sheaf of affine function
+(with a real valued slope) on $\mb{T}^{n}$.
+ By repeating
+the construction of the sheaf of super $(0,0)$-forms on 
+rational polyhedral spaces, we can extend a sheaf of
+smooth function on rational polyhedral spaces and
+\cref{conj: conj}. For instance, \cref{eg: TP1Cartier} satisfies 
+these conditions. We can generalize about it for toric
+varieties and this gives a tropically interpretation 
+of the wrapped Fukaya category for the mirror of
+toric varieties in \cite{MR2871160}.
+For instance, let $U_{x}$ be a small open neighborhood of 
+a given point $x$ in a tropical toric strata $X_{\sigma}$
+ corresponds to a convex cone $\sigma$ of a fan.
+Then, the slope of a smooth function $f$ on $U_{\sigma}$ at $x$
+should be in $\sigma^{\bot}$ since the set of intertible element
+in $\sigma^{\vee}$ is $\sigma^{\bot}$.
+This condition corresponds to the condition for the Lagrangian
+in $\opn{Fuk}(T^{*}M_{\R}/M;\overline{\Lambda}_{\sigma})$ 
+\cite[3.1]{MR2871160} since
+the condition $df(x)\in\sigma^{\bot}$ gives 
+$(df|_{U_{x}\setminus X_{\sigma}})^{\infty}\subset 
+-\overline{\Lambda}_{\sigma}^{\infty}$.
+In other words, the stratified Lagrangian submanifold 
+of a smooth Cartier divisor on a tropical toric variety
+can be considered as 
+an object of wrapped Fukaya category in the sense of
+\cite{MR2871160} naturally. This interpretation is 
+an intermediate of wrapped Fukaya categorical approach by
+\cite{MR2871160}
+and Morse categorical approach of moment polytopes
+(e.g. \cite{MR4234675}).
+We will discuss it in detail in the future.
+
+Our tropical Lagrangian section for toric varieties is 
+different from that of \cite{MR2240909,MR2529936}.
+See also \cite[Appendix C.2.]{MR2871160} for relationships
+between \cite{MR2871160} and \cite{MR2240909,MR2529936}.
+We also note the mirror symmetry between the derived category of
+coherent sheaves on toric varieties $X_{\Sigma}$ and
+the wrapped Fukaya category 
+$\opn{Fuk}(T^{*}M_{\R}/M;\overline{\Lambda}_{\Sigma})$
+is solved by \cite{MR4132582}.
+\end{Rmk}
+
 \section{Proof for compact tropical curves}
 In this section, we prove \cref{thm: main} for 
 compact tropical curves
@@ -1026,8 +1087,8 @@ model $(\C^{3},-xyz)$. There exists a (Orlov) functor
 from $\opn{Fuk}(\C^{3},-xyz)$ 
 to $\opn{wFuk}((\C^{\times})^2)$ which is compatible
 with the pushforward 
-$i_*:\opn{Perf}(V(1+x_1+x_2))\to \opn{Perf}((K^{\times})^{2})$. 
-of the inclusion $i:V(1+x_1+x_2)\hookto (K^{\times})^2$
+$i_*\colon \opn{Perf}(V(1+x_1+x_2))\to \opn{Perf}((K^{\times})^{2})$. 
+of the inclusion $i\colon V(1+x_1+x_2)\hookto (K^{\times})^2$
 via mirror functors (see \cite[2.]{auroux2022lagrangian}
 for more details). 
 
@@ -1203,7 +1264,7 @@ $\mb{H}^{\bullet}(B;\Omega_B^{\bullet})$ is a
 graded-commutative algebra. 
 This is a tropical analog of the singular cohomology
 $H^{\bullet}(X;\C)$ for a complex manifold $X$ since 
-de Rham theorem $\C_X \simeq \Omega_X^{\bullet}$ 
+the analytic de Rham theorem $\C_X \simeq \Omega_X^{\bullet}$ 
 gives isomorphism 
 $H^{\bullet}(X;\C)\simeq \mb{H}^{\bullet}(X;\Omega_X^{\bullet})$
 of graded algebras. 
@@ -1253,7 +1314,7 @@ The middle row is a smooth version of the following short exact sequence.
 $H^{1}(B;\mcal{M}_{B}^{\times})=0$, 
 and thus 
 $\opn{Pic}(B)\deq H^{1}(B,\mcal{O}^{\times}_B)\simeq  
-\opn{Im} (\delta : H^{0}(B,\mcal{D}iv_{B})\to 
+\opn{Im} (\delta \colon H^{0}(B,\mcal{D}iv_{B})\to 
 H^{1}(B, \mcal{O}^{\times}_B))$ \cite[Lemma 4.5, Proposition 4.6]{jellLefschetzTheoremTropical2018a}.
 
 We can see the similar proposition for 
@@ -1351,7 +1412,7 @@ complex manifolds.
 \end{Rmk}
 
 \begin{Prop}
-Let $f:B'\to B$ be a finite \'etale covering of a compact integral affine 
+Let $f\colon B'\to B$ be a finite \'etale covering of a compact integral affine 
 manifold $B$ of dimension $n$. Then,
 (i) $\chi(B',f^{*}(s))=\opn{deg}(f)\chi(B,s)$
 
@@ -1479,7 +1540,7 @@ following analog for (ADE type) tropical Kummer surfaces.
 
 \begin{Prop}[{For the proof for Tropical Kummer surfaces}]
 Let $L=q(L')$ be the image of a Lagrangian 
-section $L'$ of $\check{f}_{T}:\check{X}(T)\to T$ such 
+section $L'$ of $\check{f}_{T}\colon \check{X}(T)\to T$ such 
 that $L'$ is invariant under the negation map. 
 \end{Prop}
 \begin{proof}
@@ -1543,6 +1604,10 @@ on closed Riemannian manifolds.
 \label{sec: BSRR}
 In this section, we mention about 
 
+\begin{Eg}
+This 
+\end{Eg}
+
 Every compact integral affine manifold has no infinite volume face,
  i.e., has a nontrivial finite volume.
 
@@ -1553,6 +1618,9 @@ on $B_0$ for a fixed strongly integral affine structure.
 \begin{Rmk}
   We stress that the $\sharp \mathrm{BS}=\mathrm{RR}$ is true for closed integral affine manifold such that $X(B_0)$ is not K\"ahlerian, i.e., not Calabi-Yau type.
 \end{Rmk}
+
+A similar result for toric varieties and prequantum line bundle on them
+is in \cite[Theorem 3.20]{yamaguchimaster}.
 
 \section{Etc of HMS and SYZ}
 
