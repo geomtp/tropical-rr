@@ -599,13 +599,19 @@ in the case of tropical curves,
 
   $\opn{Crit}(f)$: the subset of critical points of a
   $C^{1}$-function on a smooth manifold.
+
+$A_X$: the constant sheaf on $X$ with fiber $A$.
 \end{Not}
 
 \begin{Note}
   We also impose the following assumption for simplicity in this paper:
 
   Any topological space is locally compact and locally
-  contractible except schemes.
+  contractible except schemes. If $X$ is a locally contractible 
+space, then the sigular cohomology of $X$ and constant sheaf cohomology
+is isomorphic. A short proof of this isomorphism is in 
+\cite[Theorem 11.13]{wedhornManifoldsSheavesCohomology2016a}
+for instance.
 
 
   We mainly use min-plus algebra.
@@ -970,8 +976,19 @@ The name of Bohr--Sommerfeld type comes from
 the set $s_0\cap s$ can be considered as the set of 
 Bohr--Sommerfeld point if $S$ is a strictly integral affine manifold 
 with a Hessian form by Strominger--Yau-Zaslow mirror pair.
-See \cref{sec: BSRR}
+See \cref{sec: BSRR} for more details.
 \end{Eg}
+
+The following proposition is an analog of \'{e}tale multiplicity of Euler characteristics
+(cf. \cite[Proposition 1.1.28]{MR2095471}).
+
+\begin{Prop}
+Let $f:S' \to S$ be a covering map of $S$.
+Then, $\chi(\opn{MF}^{\bullet}(S';f^{*}(s),A))=
+\opn{deg}(f)\chi(\opn{MF}^{\bullet}(S;s,A))$.
+\end{Prop}
+
+The proof of this proposition is trivial from definition.
 
 \begin{Conj} \label{conj: conj}
 Let $S$ be a compact tropical manifold such that any atlas is in for some 
@@ -1000,19 +1017,20 @@ rational polyhedral spaces, we can extend a sheaf of
 smooth function on rational polyhedral spaces and
 \cref{conj: conj}. For instance, \cref{eg: TP1Cartier} satisfies 
 these conditions. We can generalize about it for toric
-varieties and this gives a tropically interpretation 
+varieties and this gives a tropical theoretic interpretation 
 of the wrapped Fukaya category for the mirror of
-toric varieties in \cite{MR2871160}.
+toric varieties by \cite{MR2871160}.
 For instance, let $U_{x}$ be a small open neighborhood of 
-a given point $x$ in a tropical toric strata $X_{\sigma}$
+a given point $x$ in a tropical toric open strata $O(\sigma)$
  corresponds to a convex cone $\sigma$ of a fan.
-Then, the slope of a smooth function $f$ on $U_{\sigma}$ at $x$
+Then, the slope of a smooth function $f$ on $U_{x}$ at $x$
 should be in $\sigma^{\bot}$ since the set of intertible element
 in $\sigma^{\vee}$ is $\sigma^{\bot}$.
 This condition corresponds to the condition for the Lagrangian
 in $\opn{Fuk}(T^{*}M_{\R}/M;\overline{\Lambda}_{\sigma})$ 
 \cite[3.1]{MR2871160} since
-the condition $df(x)\in\sigma^{\bot}$ gives 
+the condition $df(x')\in\sigma^{\bot}$ for all 
+$x'\in U_x\cap O(\sigma)$ gives 
 $(df|_{U_{x}\setminus X_{\sigma}})^{\infty}\subset 
 -\overline{\Lambda}_{\sigma}^{\infty}$.
 In other words, the stratified Lagrangian submanifold 
@@ -1035,6 +1053,15 @@ coherent sheaves on toric varieties $X_{\Sigma}$ and
 the wrapped Fukaya category 
 $\opn{Fuk}(T^{*}M_{\R}/M;\overline{\Lambda}_{\Sigma})$
 is solved by \cite{MR4132582}.
+\end{Rmk}
+
+\begin{Rmk}[{Ehrhart reciprocity revisit}]
+Let $s$ be a polite smooth Cartier divisor on 
+tropical toric varieties in the sense of the above Remark.
+$\chi(X_{\Sigma},-s,A)=(-1)^{n}\sharp (\opn{int}(\mu_s(X_{\Sigma}))\cap \Z^{n})$ since
+the Local Morse data at boundary lattice point is trivial.
+This is another interpretation of Ehrhart reciprocity of 
+lattice polytopes.
 \end{Rmk}
 
 \section{Proof for compact tropical curves}
@@ -1176,7 +1203,7 @@ From this our theorem for tropical curve can be proved from the theory of locali
 In this section,
 we recall the notion of affine manifolds from
 following
-\cite{kontsevichAffineStructuresNonArchimedean2006a,
+\cite{heMR2293045,goldmanRadianceObstructionParallel1984a,kontsevichAffineStructuresNonArchimedean2006a,
   grossMirrorSymmetryLogarithmic2006a} and 
 \cite[Chapter 6]{aspinwallDirichletBranesMirror2009}.
 
@@ -1253,7 +1280,13 @@ from \cite{MR3903579,gross2019sheaftheoretic}.
 
 \subsection{Tropical homology, Tropical superform and Cartier data}
 
-Heew, $\Omega_B^{0}=\R_B$.
+In the case of affine manifold, this sheaf is already
+studied in the field of Hessian geometry as a vector bundle
+with a flat connection
+(e.g. \cite[Chapter 7]{MR2293045}).
+
+
+Here, $\Omega_B^{0}=\R_B$.
 
 $\Omega_B^{\bullet}$ is a certain analog of analytic
 de Rham complex of complex manifold\footnote{
@@ -1279,9 +1312,8 @@ $\mb{H}^{\bullet}(B;\Omega_B^{\bullet})$ by
 cup product of each $H^{q}(B;\Omega_B^{p})$.
 
 Let $f\colon B\to B'$ be a morphism of rational polyhedral 
-space. Then, this induces the pullback $f^{-1}$ and 
-ring homomorphism $\mb{H}^{\bullet}(B';\Omega_{B'}^{\bullet})\to \mb{H}^{\bullet}(B;\Omega_B^{\bullet})$
-
+space. Then, this induces the pullback $f^{-1}\colon \mb{H}^{\bullet}(B';\Omega_{B'}^{\bullet})\to \mb{H}^{\bullet}(B;\Omega_B^{\bullet})$
+and this is a graded ring homomorphism \cite[Proposition 4.17]{gross2019sheaftheoretic}. 
 \subsubsection{Tropical Cartier data}
 
 The canonical monomorphism $\mcal{O}^{\times}_B \to \mcal{A}^{0,0}_B$
@@ -1330,6 +1362,8 @@ $f$ induces the pullback
 $f^{*}\colon \opn{CaDiv}^{\infty}(Y)\to \opn{CaDiv}^{\infty}(X)$ 
 and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
 (\ref{eq: smoothcartier}). 
+In particular, we have
+$c_1(f^{*}(s)^{n}=f^{*}(c_1(s)^{n})$ for every $D\in\opn{CaDiv}^{\infty}(Y)$.
 
 
 \begin{Def}[Smooth Cartier data]
@@ -1338,6 +1372,9 @@ and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
     \simeq H^{0}(B,\mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1})$ such
 that every $f_i$ is polite.
 \end{Def}
+
+\subsection{Verdier duality and Borel--Moore homology
+for tropical spaces}
 
 
 
@@ -1375,7 +1412,27 @@ $\mcal{O}^{\times}_{B_0}$ is a locally constant sheaf and the quotient sheaf $\m
   Therefore, we write $\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$, $\mcal{T}_{\Z,B_0}\deq \mcal{W}_{\Z,B_0}^{1}$ in this section for integral affine manifolds. We also use this notation for integral affine manifold with singularities.
 \end{Not}
 
-Thus, the commutative diagram is written like this 
+Of course, $\mcal{A}_{B_0}^{0,0}=\mcal{C}^{\infty}(B_0)$ and
+ $\mcal{Z}^{1}_{B_0}$ is the sheaf of closed $1$-form on $B_0$.
+
+
+
+We note the sheaf $\mcal{Z}^{1}_{B_0}$ can be considered as the sheaf 
+$\opn{Lag}(T^{*}B_0)$ of Lagrangian sections 
+$s:U \to T^{*}U$ for open set $U \subset B_0$, 
+see some standard textbook for symplectic geometry 
+such as \cite[3.2]{MR1853077}.
+
+Another important thing is that 
+$\mcal{Z}^{1}(B_0)/\mcal{T}_{\Z,B_0}^{\vee}$
+ (resp. $\mcal{C}^{\infty}(T^{*}B_0)/\mcal{T}_{\Z,B_0}^{\vee}$) 
+is isomorphic to the sheaf of germs of Lagrangian sections 
+(resp. smooth sections ) of the Lagrangian torus fibration 
+$\check{f}_{B_0}\colon \check{X}(B_0)\to B_0$ 
+\cite[(2.7), (2.11)]{duistermaatGlobalActionangleCoordinates1980a}.
+
+
+Thus, the commutative diagram (\ref{eq: smoothcartier}) is written like this 
 (e.g. \cite[p.468]{aspinwallDirichletBranesMirror2009}):
 
 \begin{equation} \label{eq:affinecartier}
@@ -1447,8 +1504,8 @@ According to \cite[5.3]{mikhalkinTropicalGeometryIts2006},
 the support of $k$-th Chern class of tropical manifold is 
 the $k$-skeleton of it.
 We don't know the definition of higher Chern class of tropical manifold $B$ except
-$n=1$ or $n=\dim B$. 
-On the other hand, $\opn{ch}(B)$ should be trivial when $B$ is
+$n=1$ or $n=\dim B_0$. 
+On the other hand, $\opn{ch}(B_0)$ should be trivial when $B$ is
 an integral affine manifold, since $B$ has empty
 $k$-skeleton except $k=n$.
 Thus, $c_{k}(B_0)$ should be $1$ except $k=0$, 
@@ -1600,6 +1657,31 @@ on closed Riemannian manifolds.
 
 \appendix
 
+\section{Historical notes for index}
+
+\begin{Rmk}
+  We remark about a historical note of the local index.
+  in \cite[p.246]{MR225327}.
+  This index is also defined for affine linear map $f:\R^{n}\to \R$ and embedded convex cell complex
+  $M$.
+  The definition of the index $a(v,f)$
+  may seem different from that of us but as written .
+
+  We also note generic affine linear function defines a Morse function
+  on an embedded smooth manifold as the restriction of it.
+
+  $a(v,f)=1-\chi_{\mathrm{top}}(\opn{lk}(v)_{\leq f(v)})$. Therefore, $a(v,f)$ is a combinatorial version of our local index.
+
+  Banchoff proves a polyhedral complex version of Poincare-Hopf theorem
+  for height functions (Banchoff's critical point theorem) \cite[Theorem 1]{MR225327}.
+
+  the condition for function is weaker than that of us but we need that condition for our goals.
+
+  We also note this combinatorial local index $1-\chi(\opn{lk}(v)_{\leq f(v)})$ is defined in
+  \cite[3]{knill2012graph}
+  for (abstract) graphical analogue of Poincar\'e-Hopf theorem.
+\end{Rmk}
+
 \section{Radiance obstruction and geometric prequantization}
 \label{sec: BSRR}
 In this section, we mention about 
@@ -1614,7 +1696,8 @@ Every compact integral affine manifold has no infinite volume face,
 If $B_0$ is a strongly integral affine manifold,
 we can define the set of lattice points $B_0(\Z)$ 
 on $B_0$ for a fixed strongly integral affine structure.
-
+In other words, we can define 
+"$\frac{1}{n}\underline{\Z}_{\max}$-rational point" of $B$.
 \begin{Rmk}
   We stress that the $\sharp \mathrm{BS}=\mathrm{RR}$ is true for closed integral affine manifold such that $X(B_0)$ is not K\"ahlerian, i.e., not Calabi-Yau type.
 \end{Rmk}
@@ -1679,9 +1762,7 @@ of $X(B_0,K)$ (resp. $\check{X}(B_0,K)$).
 
 \end{Eg}
 
-\subsection{Wrapped Fukaya category for toric variety}
-$\opn{Fuk}(;\Lambda_{\Sigma})$
-\cite[Theorem 3.4]{MR2871160}
+
 
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}

@@ -419,13 +419,11 @@ In tropical geometry, there exist various style of tropical analogue of algebrai
 
 Each tropical object is precisely different but deeply related with each other. In fact, these styles share essentially same some tropical objects.
 
-For some cases we can define "$\frac{1}{n}\underline{\Z}_{\max}$-rational point" of $B$.
+
 One of typical example is a smooth compact tropical curve has no 1-valent vertices such that the length of each edge is a positive integer.
 
 
 \footnote{In \cite{MR4155409}, new Ehrhart theory of tropical geometry appear.}
-
-
 
 The difference between for the case of toric varieties and others is that others is not about line bundles on tropical varieties. In this  paper, we fill these gaps and consider the number of lattice points as a "Bohr-Sommerfeld point" which is studied in symplectic geometry.
 
@@ -601,31 +599,6 @@ then $\opn{ind}_v(f,A_S)=1-\chi_{\opn{top}}(\emp)=1$.
 We will explain that this local index corresponds to a Bohr-Sommerfeld point for Lagrangian torus fibration and the usual lattice point for lattice polyhedra later.
 Of course, $\tilde{H}^{-1}(X;A)=0$ for any nonempty space $X$.
 
-\begin{Rmk}
-  We remark about a historical note of the local index.
-  in \cite[p.246]{MR225327}.
-  This index is also defined for affine linear map $f:\R^{n}\to \R$ and embedded convex cell complex
-  $M$.
-  The definition of the index $a(v,f)$
-  may seem different from that of us but as written .
-
-  We also note generic affine linear function defines a Morse function
-  on an embedded smooth manifold as the restriction of it.
-
-  $a(v,f)=1-\chi_{\mathrm{top}}(\opn{lk}(v)_{\leq f(v)})$. Therefore, $a(v,f)$ is a combinatorial version of our local index.
-
-  Banchoff proves a polyhedral complex version of Poincare-Hopf theorem
-  for height functions (Banchoff's critical point theorem) \cite[Theorem 1]{MR225327}.
-
-  the condition for function is weaker than that of us but we need that condition for our goals.
-
-  We also note this combinatorial local index $1-\chi(\opn{lk}(v)_{\leq f(v)})$ is defined in
-  \cite[3]{knill2012graph}
-  for (abstract) graphical analogue of Poincar\'e-Hopf theorem.
-\end{Rmk}
-
-
-
 \subsection{The local index and Morse degree}
 
 
@@ -673,12 +646,7 @@ The proof is in \cite[Theorem 1.2.2]{MR2031639}.
   of a Morse function $f$ at the origin.
 \end{Eg}
 
-\begin{Eg}
-  This formula gives a criterion for the index of gradient vector field.
-  If $n=2$, the fiber $f^{-1}(\delta)\cap B^{2}_{\vep}$ is a
-  $1$-dimensional (paracompact) manifold. From classification
-  of $1$-dimensional manifold, we have $\opn{Ind}(\opn{grad} f,0)=1-\chi_{\opn{top}} (f^{-1}(\delta)\cap B^{2}_{\vep})\leq 1$.
-\end{Eg}
+
 
 
 
@@ -826,24 +794,7 @@ At first, we prove for projective tropical line $\mb{T}\mb{P}^{1}$.
 
 \end{proof}
 
-\begin{Rmk}[Relations with sympletic geometry]
-  In this paper, we usually assume every $C^{1}$-function has at most isolated critical point because we don't know about Morse-Bott functions for polyhedral complexes.
-  $\check{X}_0([0,1])$ is a submanifold of a Liouville domain $[0,1]\times \R/\Z$ and
-  the Liouville completion of $[0,1]\times \R^{\vee}/\Z^{\vee}$ is
-  isomorphic to $\check{X}(\R)\simeq \R\times \R^{\vee}/\Z^{\vee}$.
-  We can see such a Lagrangian section as
-  a Lagrangian submanifold of the exact
-  Lagrangian submanifold $\check{X}(\R)\simeq T^{*}S^{1}$
-  such that the exact $1$-form vanishes on the complement
-  of a compact set and invariant for the flow of
-  the Liouville vector field
-  \footnote{A \ind{Liouville vector field}{Liouville vector field}
-    on a symplectic manifold $(M,\omega)$ is a vector field $V$ such that $L_V\omega =\omega$. If a Liouville vector field exists $V$ $i(V)\omega$ is a Liouville $1$-form and this transformation is bijective since $\omega$ is nondegenerate.}.
-  associated with the tautological $1$-form on $T^{*}S^{1}$.
-  Lagrangian submanifolds of this type have
-  a central role of \ind{wrapped Fukaya category}{wrapped Fukaya category}.
-  We will mention more about this in \cref{sec: toric}.
-\end{Rmk}
+
 
 \begin{Eg}
   Let $U$ be a sufficiently small open domain of an $n$-valent vertex $v$ of tropical curve.
@@ -916,40 +867,12 @@ At first, we prove for projective tropical line $\mb{T}\mb{P}^{1}$.
 
 \begin{Rmk}
   We can naturally generalize this Pick's formula for "Lagrangian multi-section" of tropical curves.
-
-  If $B$ is a tropical elliptic curve. This can be considered as a mirror of holomorphic vector bundle on the complex elliptic curve $X(B)$.
-
-  This can be considered as the pushforward of line bundle by harmonic map.
-
 \end{Rmk}
 
-\begin{Rmk}
-  If $D$ is BS type, then $\opn{deg}(D)+1-g\geq \sharp V(C)$ and thus
-  $\opn{deg}(D)-\sharp V(C)\geq g-1$.
-  From this we can easily see there exists an effective (resp. very ample) divisor $D$ such that
-  $D$ is not BS type if $g\geq 2$.
-  If $C$ is a trivalent metric graph, then every BS type divisor is very ample if $g\geq 4$ since
-  $\sharp V(C)+g-1=3g-3$
 
-  From the existence of winning strategy of chip-firing game　\cite[Thereom 1.9]{MR2355607},
-  every effective divisor has sufficiently large multiple $nD$ such that
-  $nD$ is a Bohr-Sommerfeld type.
-
-
-
-  From the philosophy of mirror symmetry, the desired associated cohomology is compatible with
-  the rank of divisor on Mumford curves.
-  See also \cite[Remark 2.9]{MR2448666} for an example of the specialization inequality is strict.
-  (This remark is not in arXiv preprint.)
-\end{Rmk}
 
 \subsection{Proof for Hessian manifolds}
 
-
-Let $f:X\to Y$ be a morphism of rational polyhedral space.
-Then, this induces the pullback $f^{-1} $ and ring homomorphism
-$f^{*}:H^{\bullet,\bullet}(Y)\to H^{\bullet,\bullet}(X)$ \cite[Proposition 4.17]{gross2019sheaftheoretic}. In particular, we have
-$c_1(f^{*}(D))^{n}=f^{*}(c_1(D)^{n})$ for every $D\in\opn{Div}(Y)$.
 \subsubsection{Verdier duality of rational polyhedral spaces}
 
 Every rational polyhedral space $X$ is locally compact and $\Z$ is has finite homological dimension.
@@ -982,7 +905,8 @@ The $(p,q)$-th Borel-Moore homology of $X$ is
 
 \begin{Eg} (i) $H_{0,q}^{\opn{BM}}(X;\Z)=H^{-q}R\opn{Hom}(A_X,\upomega_X)$ is equal to the classical Borel-Moore homology
   \cite[Lemma 4.8]{gross2019sheaftheoretic}.
-
+(See also \cite[IX]{iversenCohomologySheaves1986a}
+for fundamental properties of Borel--Moore homology)
   Since $B$ is a locally compact space,
 
   \begin{align}
@@ -1118,21 +1042,6 @@ Let $A$ be a tropical $k$-cycle.
   f_*A(y)=\sum_{x\in f^{-1}(y)}[T^{\Z}_yY:d_xf(T^{\Z}_x X)]A(x)
 \end{align}
 
-\begin{Def}
-
-\end{Def}
-
-For classical cases,
-
-If $B$ is an integral affine manifold, then $B\setminus B_0=\emp$ and thus the Chern class of $B$ is trivial.
-
-
-
-Therefore, $\opn{td}(B)$ should be $1$.
-
-This proposition is an analog of \'{e}tale multiplicity of Euler characteristics
-(cf. \cite[Proposition 1.1.28]{}).
-
 \begin{Eg}[Frobenius splitting of tropical varieties]
 
   This is not a morphism of tropical space in the sense of
@@ -1156,10 +1065,6 @@ This proposition is an analog of \'{e}tale multiplicity of Euler characteristics
 \begin{proof}
   The right side follow from \cref{thm:}.
 \end{proof}
-
-\begin{Not}
-  $\int_B$
-\end{Not}
 
 \begin{Thm}
   Let $B_0$ be a $n$-dimensional compact integral affine manifold and
@@ -1428,20 +1333,6 @@ Let $\Lambda \subset T^{*}X$ be a conical Lagrangian subset
   \opn{D}(\opn{Fuk}(\check{X}(N_{\R});\bar{\Lambda}_{\Sigma})).
 \end{align}
 
-
-\footnote{This isomorphism is, however, for }
-
-$\Phi_{}$
-
-
-
-Our tropical Lagrangian section for toric varieties is different from
-that of \cite{MR2240909,MR2529936}.
-
-In our definition of Lagrangian section and index, we do not define the higher operation
-$\mf{m}_n$ so we only compare the objects.
-In order to treat
-
 \cite{MR3173401}
 
 
@@ -1588,18 +1479,6 @@ and see additional properties for sheaves on integral affine manifolds.
 
 From definition, there exists the isomorphism $\TBZ^{\vee}\simeq \mcal{F}_{\Z,B_0}^{1}$ and $\mcal{F}_{\Z,B_0}^{\bullet}\simeq \bigwedge^{\bullet}\TBZ^{\vee}$.
 
-
-Of course, $\mcal{A}_{B_0}^{0,0}=\mcal{C}^{\infty}(B_0)$ and $\mcal{Z}^{1}_{B_0}$ is the sheaf of closed $1$-form on $B_0$.
-
-We note this sheaf can be considered as the sheaf $\opn{Lag}(T^{*}B_0)$ of Lagrangian sections $s:U \to T^{*}U$ for open set $U \subset B_0$ , see some standard textbook for symplectic geometry such as \cite[3.2]{MR1853077}.
-
-Another important thing is that $\mcal{Z}^{1}(B_0)/\mcal{T}_{\Z,B_0}^{\vee}$ (resp. $\mcal{C}^{\infty}(T^{*}B_0)/\mcal{T}_{\Z,B_0}^{\vee}$) is isomorphic to the sheaf of germs of Lagrangian sections (resp. smooth sections ) of the Lagrangian torus fibration $\check{f}_{B_0} :\check{X}(B_0)\to B_0$ \cite[(2.7), (2.11)]{duistermaatGlobalActionangleCoordinates1980a}.
-
-Besides, $\mcal{C}^{\infty}(B_0)$ and $\mcal{C}^{\infty}(T^{*}B_0)$ are acyclic sheaves on $B_0$, the two map is surjective
-\begin{align}
-  H^{0}(B_0; \mcal{C}^{\infty}(B_0)/\AffS_{\Z,B_0})\xto{\delta_1} H^{1}(B_0;\AffS_{\Z,B_0}),\quad  H^{0}(B_0;\mcal{C}^{\infty}(T^{*}B_0)/\mcal{T}_{\Z,B_0}^{\vee})\xto{\delta_1}H^{1}(B_0;\TBZ^{\vee}).
-\end{align}
-
 $\bigwedge^{n}_{i=1}\TBZ\simeq \opn{or}(\Z_{B_0})$. Here $\opn{or}(\Z_{B_0})$ is the $\Z$-orientation sheaf on $B_0$.
 If $A$ is a PID, there exists the following short exact sequence  by universal coefficient theorem:
 \begin{align}
@@ -1608,7 +1487,6 @@ If $A$ is a PID, there exists the following short exact sequence  by universal c
 If
 $B_0$ is $\Z$-orientable if and only if $B_0$ has a special integral affine structure. We note a connected manifold $B_0$ is $\Z$-orientable if and only if $H^{n}_c(B_0,\Z)\simeq \Z$
 \cite[VI Theorem 6.4]{iversenCohomologySheaves1986a}.
-Special integral affine manifold can be considered as a tropical analog of complex manifold with trivial Chern class and we will see this later.
 
 \begin{align}
   \abk{\cdot,\cdot}: \bigwedge_{i=1}^{p} \TBZ\times  \bigwedge_{i=1}^{n-p} \TBZ \to \bigwedge_{i=1}^{n} \TBZ \simeq \opn{or}(\Z_{B_0}),\quad \bigwedge_{i=1}^{p}\TBZ^{\vee}\simeq \bigwedge_{i=1}^{n-p}\TBZ\otimes_{\Z_{B_0}}\opn{or}(\Z_{B_0})
@@ -1990,23 +1868,13 @@ See
 \end{Def}
 
 \begin{Rmk}
-  Let $B$ be a compact integral affine manifold.
-  \begin{align}
-    \chi(B,s_1,s_2) & =\opn{deg}([\opn{Im}s_1]\cap [\opn{Im}s_2]) \\
-    \chi(B,s_1,s_2) & =(-1)^{n}\chi(B,s_2,s_1)
-  \end{align}
+
   Of course, the last equation is false in general compact tropical manifolds. This is an analog of Serre duality of algebraic varieties such that canonical divisor $\mcal{K}_X$ is trivial.
 
   \begin{align}
     \chi(\opn{Ext}^{\bullet}_{\mcal{O}_X}(\mcal{L}_2,\mcal{L}_1))=\chi(X,\mcal{L}_1\otimes \mcal{L}_2^{-1})= & (-1)^{n}\chi(X,\mcal{L}_1^{-1}\otimes \mcal{L}_2\otimes \mcal{K}_X)                     \\
     =                                                                                                        & (-1)^{n}\chi(\opn{Ext}^{\bullet}_{\mcal{O}_X}(\mcal{L}_1,\mcal{L}_2\otimes \mcal{K}_X))
   \end{align}
-
-  \begin{Ques}
-    \begin{align}
-      \chi(B,s_2,s_1)=(-1)^{n}\chi(B,s_1,s_2+s_{K_B}) \quad ?
-    \end{align}
-  \end{Ques}
 
 \end{Rmk}
 
@@ -3482,9 +3350,55 @@ has a such structure.
   and \cite[Corollary 48]{}.
 \end{Eg}
 
+\begin{Eg}
+  This formula gives a criterion for the index of gradient vector field.
+  If $n=2$, the fiber $f^{-1}(\delta)\cap B^{2}_{\vep}$ is a
+  $1$-dimensional (paracompact) manifold. From classification
+  of $1$-dimensional manifold, we have $\opn{Ind}(\opn{grad} f,0)=1-\chi_{\opn{top}} (f^{-1}(\delta)\cap B^{2}_{\vep})\leq 1$.
+\end{Eg}
+
 \section{The case of compact tropical curves}
 
+\begin{Rmk}[Relations with sympletic geometry]
+  In this paper, we usually assume every $C^{1}$-function has at most isolated critical point because we don't know about Morse-Bott functions for polyhedral complexes.
+  $\check{X}_0([0,1])$ is a submanifold of a Liouville domain $[0,1]\times \R/\Z$ and
+  the Liouville completion of $[0,1]\times \R^{\vee}/\Z^{\vee}$ is
+  isomorphic to $\check{X}(\R)\simeq \R\times \R^{\vee}/\Z^{\vee}$.
+  We can see such a Lagrangian section as
+  a Lagrangian submanifold of the exact
+  Lagrangian submanifold $\check{X}(\R)\simeq T^{*}S^{1}$
+  such that the exact $1$-form vanishes on the complement
+  of a compact set and invariant for the flow of
+  the Liouville vector field
+  \footnote{A \ind{Liouville vector field}{Liouville vector field}
+    on a symplectic manifold $(M,\omega)$ is a vector field $V$ such that $L_V\omega =\omega$. If a Liouville vector field exists $V$ $i(V)\omega$ is a Liouville $1$-form and this transformation is bijective since $\omega$ is nondegenerate.}.
+  associated with the tautological $1$-form on $T^{*}S^{1}$.
+  Lagrangian submanifolds of this type have
+  a central role of \ind{wrapped Fukaya category}{wrapped Fukaya category}.
+  We will mention more about this in \cref{sec: toric}.
+\end{Rmk}
+
 \subsection{Weighted lattice points on tropical curves}
+
+\begin{Rmk}
+  If $D$ is BS type, then $\opn{deg}(D)+1-g\geq \sharp V(C)$ and thus
+  $\opn{deg}(D)-\sharp V(C)\geq g-1$.
+  From this we can easily see there exists an effective (resp. very ample) divisor $D$ such that
+  $D$ is not BS type if $g\geq 2$.
+  If $C$ is a trivalent metric graph, then every BS type divisor is very ample if $g\geq 4$ since
+  $\sharp V(C)+g-1=3g-3$
+
+  From the existence of winning strategy of chip-firing game　\cite[Thereom 1.9]{MR2355607},
+  every effective divisor has sufficiently large multiple $nD$ such that
+  $nD$ is a Bohr-Sommerfeld type.
+
+
+
+  From the philosophy of mirror symmetry, the desired associated cohomology is compatible with
+  the rank of divisor on Mumford curves.
+  See also \cite[Remark 2.9]{MR2448666} for an example of the specialization inequality is strict.
+  (This remark is not in arXiv preprint.)
+\end{Rmk}
 
 \begin{Rmk}[A relation of arithmetic surfaces]
   We didn't discuss relationships between degeneration of algebraic curves (or model of algebraic curves) discussed in \cite{MR2448666,MR4131998,MR4251610}. We write outline of their results for readers. We recall some notion of arithmetic surfaces and models over DVR \footnote{When we apply their theory to SYZ mirror, we need replace DVR with valuation ring with rank $1$ since Novikov ring is not a DVR. Besides, this replacement is important for tropicalization of algebraic variety over valuation field, but we only discuss a model over DVR since the theory of non-Noetherian scheme is usually difficult.} from \cite[Chapter 9]{MR1917232}.
