@@ -438,9 +438,13 @@ In fact, we can define a "Cartier data" on toric variety
 associated with the Laurent polynomial over log semiring like 
 the following example. 
 \begin{Eg} \label{eg: TP1Cartier}
+Take two continuous functions on 
 $f_{1,n}\colon \mb{T}\to \mb{T};x \mapsto \log (1+e^{nx})$,
 $f_{2,n}\colon \mb{R}\cup\{+\infty\}\to \mb{R}\cup\{+\infty\};
-x\mapsto \log(e^{-nx}+1)=\log(1+e^{nx})-nx$.
+x\mapsto \log(e^{-nx}+1)=\log(1+e^{nx})-nx$ on two open 
+subsets of $\mb{T}P^{1}$. These function is the given 
+by the pullback of a smooth function on $\R$ by the 
+exponential map $\opn{exp}:\mb{T}\to \R_{\geq 0} (\subset \R)$.
 $\{f_{i,n}\}_{i=1,2}$ defines an element 
 $D_n\deq (f_{1,n}-f_{2,n})\in 
 H^{1}(\mb{T}P^1;\mcal{O}_{\mb{T}P^1}^{\times})\simeq \Z$
@@ -469,7 +473,7 @@ smooth version of the group of tropical Cartier divisor
 $\opn{CaDiv}(X_{P}^{\opn{trop}})$ 
 \cite[Definition 4.2]{jellLefschetzTheoremTropical2018a}
 which is defined by the sheaf of $(0,0)$-super forms on 
-$X_P$.
+polyhedral spaces.
 
 This observation gives an ex
 
@@ -481,7 +485,7 @@ These Lagrangian submanifolds are called
 \emph{Lagrangian sections} \index{Lagrangian section@Lagrangian section}
 which is well-studied in the field of homological 
 mirror symmetry 
-\cite{kontsevichAffineStructuresNonArchimedean2006a,MR2452307}.
+(e.g. \cite{MR1882331}).
 In particular, Lagrangian sections are mirror of line bundles on
 mirror varieties. 
 In this paper, we consider a 
@@ -504,7 +508,7 @@ $\opn{td}(B) \in \mb{H}^{\bullet}(B;\Omega_B^{\bullet})$.
  Let $s$ be a "generic"
 extended smooth Cartier data satisfying a polite condition 
 \cref{cond: polite} which represents of $\mcal{L}$
-and its Floer graded $\Z$-module $\opn{MF}^{\bullet}(s)$
+and its graded $\Z$-module $\opn{MF}^{\bullet}(s)$
 of it. Then,
 
 \begin{align}
@@ -516,19 +520,17 @@ $\chi(\opn{MF}^{\bullet}(s))=\chi_{\opn{top}}(B)$?
 \end{Conj}
 
 Here, $\opn{ch}(\mcal{L})$ is a tropical analog of 
-the total Chern class of $\mcal{L}$.
-On the other hand, $\opn{td}(B)$ is
-"a tropical analog of Todd class"
-but we don't know the definition of it. 
-The definition of higher tropical Chern class of $B$
-is mentioned in \cite[5.3]{mikhalkinTropicalGeometryIts2006},
-but we don't understand the weight of the higher Chern class 
-of $B$ is not written explicitly.
-(See \cite[Definition 3.20]{shawTropicalSurfaces2015a} for 
-the weight of top Chern class of $B$.)
+the Chern character of $\mcal{L}$.
+We don't discuss the tropical Todd class
+$\opn{td}(B)$ of tropical manifolds in general, 
+but this is defined from the theory of 
+Chern--Schwartz--MacPherson cycles for matroids 
+\cite{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
+See also \cite[5.3]{mikhalkinTropicalGeometryIts2006} and
+\cite[Definition 3.20]{shawTropicalSurfaces2015a}.
 
 
-In this paper, we give an answer for compact tropical curves 
+In this paper, we give a partial answer for compact tropical curves 
 and integral affine manifolds with Hessian form
 as test plays of the above question:
 
@@ -607,11 +609,7 @@ $A_X$: the constant sheaf on $X$ with fiber $A$.
   We also impose the following assumption for simplicity in this paper:
 
   Any topological space is locally compact and locally
-  contractible except schemes. If $X$ is a locally contractible 
-space, then the sigular cohomology of $X$ and constant sheaf cohomology
-is isomorphic. A short proof of this isomorphism is in 
-\cite[Theorem 11.13]{wedhornManifoldsSheavesCohomology2016a}
-for instance.
+  contractible except schemes.
 
 
   We mainly use min-plus algebra.
@@ -881,9 +879,18 @@ A smooth function $f\colon U_x \to \R$ is \emph{polite} at $x$
 if $(x,df(x))\notin (\opn{span}_{\R}(\opn{SS}(A_S)_x)+M^{\vee})\setminus M^{\vee}$.
 \end{Cond}
 
+% \begin{Rmk}
+% $\opn{span}_{\R}(\opn{SS}(A_S))$ is equal to the orthogonal vector space of
+% the linearity space of $S$ at $x$, i.e., the maximal vector space
+% which is containded in $S$ at $x$ locally. 
+% We use the language of microsupport for revealing the 
+% reason of the condition of politeness.
+% \end{Rmk}
+
 \begin{Eg}
-Let $S=V(\max\{x_1,\ldots,x_n,1\})$ a trivalent graph in $\R^{n}$.
+Let $S=V(\max\{x_1,\ldots,x_n,1\})$ an $n+1$-valent graph in $\R^{n}$.
 $\opn{span}_{\R}(\opn{SS}(A_S)_x)=(\R^{n})^{\vee}$.
+Fix $x\deq (0,\ldots,0)$.
 A smooth function $f\colon U_x\to \R$ is polite at $x$
 if and only if $d(x)\in (\Z^{n})^{\vee}$.
 \end{Eg}
@@ -992,7 +999,10 @@ The proof of this proposition is trivial from definition.
 
 \begin{Conj} \label{conj: conj}
 Let $S$ be a compact tropical manifold such that any atlas is in for some 
-$\R^{n}$ and has the Todd class $\opn{td}(S)$ of $S$.
+$\R^{n}$ and has the Todd class $\opn{td}(S)$ of $S$ 
+defined by the theory of Chern--Schwartz--MacPherson
+cycles
+\cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
 Let $s$ be a polite smooth Cartier divisor such that
 $s_0\cap s$ is finite. Then, 
 \begin{align}
@@ -1015,7 +1025,14 @@ the stalk of the sheaf of affine function
 the construction of the sheaf of super $(0,0)$-forms on 
 rational polyhedral spaces, we can extend a sheaf of
 smooth function on rational polyhedral spaces and
-\cref{conj: conj}. For instance, \cref{eg: TP1Cartier} satisfies 
+\cref{conj: conj}.\footnote{
+The differential of such a smooth function 
+need to be in the stalk of the sheaf of affine function 
+with real valued slope since 
+$\frac{df\circ \opn{exp}}{dx_i}=
+\frac{df}{dy_i}e^{x_i}\mapsto 0$ at 
+$x_i\mapsto 0$.}
+ For instance, \cref{eg: TP1Cartier} satisfies 
 these conditions. We can generalize about it for toric
 varieties and this gives a tropical theoretic interpretation 
 of the wrapped Fukaya category for the mirror of
@@ -1545,6 +1562,48 @@ theoretic Thom--Sebastiani Theorem.
 
 
 
+This is different from those of microlocal sheaf theory \cite[Definition 4.2.2, Definition 4.3.1]{MR1299726} but deeply related with them,
+see \cite[Remark 1.1.1]{MR2031639}.
+
+
+
+In some case we write $f_1\dot{+} f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$.
+
+\begin{Thm}[Thom-Sebastiani Theorem for sheaves]
+  where $\mcal{F}_1\boxtimes^{L} \mcal{F}_2\deq p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$ is
+  the \ind{external derived tensor product}{external derived tensor product}.
+  \begin{align}
+    R\Gamma(S_1\times S_2,\mu_{f_1\dot{+}f_2}(\mcal{F}_1\boxtimes^{L} \mcal{F}_2))
+    \simeq R\Gamma(S_1,\mu_{f_1}(\mcal{F}_1))
+    \otimes^{L}_{A_X}R\Gamma(S_2,\mu_{f_2}(\mcal{F}_2)).
+  \end{align}
+
+\end{Thm}
+The proof is in \cite[Theorem 1.2.2]{MR2031639}.
+
+\begin{Eg}
+  If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
+  the Thom-Sebastiani theorem gives
+  a certain K\"unneth formula for
+  $\opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W})$:
+  \begin{align}
+    \opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W})
+    \simeq \opn{CF}^{\bullet}(f_1,\Z_{V})
+    \otimes_{\Z} \opn{CF}^{\bullet}(f_2,\Z_{W}), \quad
+    \opn{ind}_{(v,w)}(f_1\dot{+}f_2)=\opn{ind}_v(f_1)\cdot \opn{ind}_v(f_2).
+  \end{align}
+  From instance, if $f_1(x)=x_1^{2}+\cdots x_{m}^{2}$
+  and $f_2(x)=-x_{m+1}^{2}-\cdots - x_{m+n}^{2}$ then we have
+
+  \begin{align}
+    \opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{\R^{n+m}})
+    \simeq \tilde{H}^{\bullet}(S^{n-1},\Z)
+    \simeq \Z[-\opn{ind}_{\mathrm{Morse}}(f_1\dot{+}f_2,0)]
+  \end{align}
+  where $\opn{ind}_{\mathrm{Morse}}(f,0)$ is the Morse index
+  of a Morse function $f$ at the origin.
+\end{Eg}
+
 We don't state for the K\"unneth type formula in a fully
 general setting but it is enough to perform the Euler number of
 generic locally analytic  behaves as expected.
@@ -1622,37 +1681,9 @@ We expect
 \end{Rmk}
 
 We also expect that we can define a graded module for a given
-Cartier divisor directly since the global microlocal index
-theorem has no 
-\appendix
+not only smooth polite Cartier divisor but also 
+an ordinary Cartier divisor directly.
 
-\section{The local index part2}
-
-\begin{Eg}
-  If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
-  the Thom-Sebastiani theorem gives
-  a certain K\"unneth formula for
-  $\opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W})$:
-  \begin{align}
-    \opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W})
-    \simeq \opn{CF}^{\bullet}(f_1,\Z_{V})
-    \otimes_{\Z} \opn{CF}^{\bullet}(f_2,\Z_{W}), \quad
-    \opn{ind}_{(v,w)}(f_1\dot{+}f_2)=\opn{ind}_v(f_1)\cdot \opn{ind}_v(f_2).
-  \end{align}
-  From instance, if $f_1(x)=x_1^{2}+\cdots x_{m}^{2}$
-  and $f_2(x)=-x_{m+1}^{2}-\cdots - x_{m+n}^{2}$ then we have
-
-  \begin{align}
-    \opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{\R^{n+m}})
-    \simeq \tilde{H}^{\bullet-1}(S^{n-1};\Z)
-\simeq H^{\bullet}_c(B^{n};\Z)
-    \simeq \Z[-\opn{ind}_{\mathrm{Morse}}(f_1\dot{+}f_2,0)]
-  \end{align}
-  where $\opn{ind}_{\mathrm{Morse}}(f,0)$ is the Morse index
-  of a Morse function $f$ at the origin.
-This is compatible with classical Morse homology for Morse-Smale functions
-on closed Riemannian manifolds.
-\end{Eg}
 
 
 \appendix
@@ -1719,6 +1750,11 @@ We note Abouzaid constructed ($\Z/2\Z$-graded)
 Fukaya categories of higher genus closed surfaces in
 \cite{MR2383898}. 
 \end{Rmk}
+
+In usual, homological mirror symmetry 
+for non-Calabi--Yau manifolds has three ways:
+
+
 
 \subsection{integral affine manifold and Floer cohomology}
 

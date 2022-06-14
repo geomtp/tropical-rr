@@ -599,57 +599,6 @@ then $\opn{ind}_v(f,A_S)=1-\chi_{\opn{top}}(\emp)=1$.
 We will explain that this local index corresponds to a Bohr-Sommerfeld point for Lagrangian torus fibration and the usual lattice point for lattice polyhedra later.
 Of course, $\tilde{H}^{-1}(X;A)=0$ for any nonempty space $X$.
 
-\subsection{The local index and Morse degree}
-
-
-
-
-This is different from those of microlocal sheaf theory \cite[Definition 4.2.2, Definition 4.3.1]{MR1299726} but deeply related with them,
-see \cite[Remark 1.1.1]{MR2031639}.
-
-
-
-In some case we write $f_1\dot{+} f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$.
-
-\begin{Thm}[Thom-Sebastiani Theorem for sheaves]
-  where $\mcal{F}_1\boxtimes^{L} \mcal{F}_2\deq p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$ is
-  the \ind{external derived tensor product}{external derived tensor product}.
-  \begin{align}
-    R\Gamma(S_1\times S_2,\mu_{f_1\dot{+}f_2}(\mcal{F}_1\boxtimes^{L} \mcal{F}_2))
-    \simeq R\Gamma(S_1,\mu_{f_1}(\mcal{F}_1))
-    \otimes^{L}_{A_X}R\Gamma(S_2,\mu_{f_2}(\mcal{F}_2)).
-  \end{align}
-
-\end{Thm}
-The proof is in \cite[Theorem 1.2.2]{MR2031639}.
-
-\begin{Eg}
-  If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
-  the Thom-Sebastiani theorem gives
-  a certain K\"unneth formula for
-  $\opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W})$:
-  \begin{align}
-    \opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W})
-    \simeq \opn{CF}^{\bullet}(f_1,\Z_{V})
-    \otimes_{\Z} \opn{CF}^{\bullet}(f_2,\Z_{W}), \quad
-    \opn{ind}_{(v,w)}(f_1\dot{+}f_2)=\opn{ind}_v(f_1)\cdot \opn{ind}_v(f_2).
-  \end{align}
-  From instance, if $f_1(x)=x_1^{2}+\cdots x_{m}^{2}$
-  and $f_2(x)=-x_{m+1}^{2}-\cdots - x_{m+n}^{2}$ then we have
-
-  \begin{align}
-    \opn{CF}^{\bullet}(f_1\dot{+}f_2,\Z_{\R^{n+m}})
-    \simeq \tilde{H}^{\bullet}(S^{n-1},\Z)
-    \simeq \Z[-\opn{ind}_{\mathrm{Morse}}(f_1\dot{+}f_2,0)]
-  \end{align}
-  where $\opn{ind}_{\mathrm{Morse}}(f,0)$ is the Morse index
-  of a Morse function $f$ at the origin.
-\end{Eg}
-
-
-
-
-
 \subsection{Results for stratified spaces in $\R^{n}$}
 
 Let $X$ be a locally compact space and $(P,\leq_P)$
@@ -684,21 +633,6 @@ theorem that is discussed in \cite[6]{MR2676658}.
 Let $B$ be a compact tropical curve. (See \cite{mikhalkinTropicalCurvesTheir2008a}) 
 The \ind{coarse polyhedral filtration}{coarse polyhedral filtration}
 of $B$ is $\emp\subset V \subset B$.
-
-
-\begin{Def}
-  Let $U$ be a open domain of $\R^{n}$. For simplicity we assume
-  $\sharp U\cap V(B)=1$.
-  Let $f:U\to \R$ be a smooth function.
-  The inclusion map $S \cap U \to \R^{n}$ induces the pullback
-  $\Gamma(U,T^{*}U)\to \Gamma(S\cap U,T^{*}(S \cap U))$
-  of smooth $1$-forms for each strata $S$ of the stratification of $B$.
-
-  $\opn{Ker}(T_x^{*}U \to T^{*}_{x}(S \cap U))\cap T^{*}_{\Z,x}U$
-
-  $s:U \to \check{X}(B\cap U)$
-
-\end{Def}
 
 \begin{Def}
   $s_{f,0}:B_0 \xto{df|_{B_0}} T^{*}B_0 \to\check{X}(B_0)$
@@ -1708,8 +1642,6 @@ $\opn{HF}^{\bullet}((L_1,\mcal{L}_1,\nabla),(L_2,\mcal{L}_2,\nabla))\deq \opn{Ke
 
 Consider the self-intersection number of zero section $[L_0]\cap [L_0] \in H_{0}(\check{X}(B_0),\Z)$
 
-$g(\opn{grad}f,X)=df(X)$, i.e., the gradient is defined from musical isomorphism.
-
 \begin{Eg}[Generalized Pick's formula for line bundles on tropical tori] \label{eg: lattice tori}
   We add some comments about the previous remark in the case of tropical tori.
   First, we consider tropical version.
@@ -1912,15 +1844,8 @@ for
 
 \begin{Eg}[An analog of Kodaira vanishing theorem]
 
-  We don't define the differential
-  $\mf{m}_1:\opn{CF}^{\bullet}(s,R)\to \opn{CF}^{\bullet}(s,R)$
-  for extremely polite Cartier data $s$ on a tropical manifold $B$. However, if the graded complex
-  is a shift of a $R$-module then we can discuss
-  the cohomology group $H^{\bullet}(\opn{CF}^{\bullet}(s,R),\mf{m}_1)$
-  is independent from the choice of differentials. Fix $R\deq\Q$.
-  One of typical example is the BS-type, i.e.,
-  $\opn{CF}^{\bullet}(s,\Q)\simeq
-    \bigoplus_{v\in \opn{Im}s\cap \opn{Im}s_0}\tilde{H}^{\bullet-1}(\emp,\Q)$.
+ Fix $R\deq\Q$.
+  
   We can consider this as an analog of Serre vanishing theorem
   (c.f. \cite[III. Proposition 5.3]{hartshorneAlgebraicGeometry1977a}) for a power of an ample line bundle.
  
@@ -2222,7 +2147,7 @@ In particular, $R\Gamma(X;-) \circ Rf_*=R\Gamma(Y,-)$ and the associated spectra
 \begin{Eg}[Singular cohomology v.s. constant sheaf cohomology]
   If $X$ is a locally contractible space,
   $H^{i}_{\opn{Sing}}(X;A)\simeq H^{i}(X;A_X)$.
-  A short proof of this isomorphism is in \cite[Theorem 11.13]{wedhornManifoldsSheavesCohomology2016a} for instance.
+  A proof of this isomorphism is in \href{https://arxiv.org/abs/1602.06674}{[1602.06674] Comparison of sheaf cohomology and singular cohomology}.
 \end{Eg}
 
 We recall some properties about locally compact spaces from \cite[Cahpter I. \textsection 9-10]{MR1726779}.
