@@ -444,8 +444,6 @@ The difference between for the case of toric varieties and others is that others
   
   In particular, we will use the following notation in this paper:
 
-  $R^{\bullet}(\mcal{F})\deq H^{\bullet}(R\mcal{F})$
-
 \end{Not}
 
 Let $X$ be a topological space and $Z$ a closed subset of $X$.
@@ -466,17 +464,17 @@ independent of the choice of $U$. From this we may also
 define $\Gamma_{Z}(\mcal{F})$ for any locally closed subset $Z$ of
 $X$.
 
-\cite[(2.6.32)]{MR1299726}
 
-\begin{align}
-  R\Gamma_{Z'}(\mcal{F})\to R\Gamma_{Z}(\mcal{F})\to R\Gamma_{Z\setminus Z'}(\mcal{F})\xto{[1]} R\Gamma_{Z'}(\mcal{F})[1]
-\end{align}
 
-We mention two elementary properties about stalks of $R\Gamma_{Z}(\mcal{F})$.
 
-(i) Let $j:V\to X$ be an open inclusion.
-Then, $\Gamma_{Z\cap V}(\mcal{F}|_V)(U)=\Gamma_{Z\cap U}(U;\mcal{F})$
-for any open subset $U (\subset V)$.
+
+
+
+(i) Let $j:V\to X$ be an open inclusion and $Z$ be a 
+closed subset of $X$.
+Then, $\Gamma_{Z\cap V}(\mcal{F}|_V)(U)=
+\Gamma_{Z\cap U}(U\cap V;\mcal{F})=\Gamma_{Z\cap U}(\mcal{F})|_V(U)$
+for any open subset $U$.
 Therefore, $\Gamma_{Z\cap V}\circ j^{-1}=j^{-1}\circ \Gamma_{Z}$.
 In particular, for any point $v\in V$
 \begin{align}
@@ -494,9 +492,6 @@ Since $i_!=i_*$ and $i_!$ is exact,
 \end{align}
 In particular, $(R\Gamma_{Z}(i_*\mcal{F}))_v
   \simeq (R\Gamma_{Z\cap Y}\mcal{F})_v$ for $v\in Y$.
-
-At first, we define the local index of $C^{1}$-function on a locally
-closed subset of $\R^{n}$.
 
 \begin{Def}
   Let $|\Sigma|$ be the support of a convex polyhedral fan $\Sigma$ of $\R^{n}$
@@ -3346,6 +3341,73 @@ has a such structure.
 
 See \href{https://arxiv.org/abs/math/0409520}{[math/0409520] Lectures on Arithmetic Noncommutative Geometry}
 for Schottky uniformization.
+
+\subsection{GW invariant}
+The Gromov--Witten invariant $N_d$ is equal to the number of rational 
+curve with marked $n$-points.
+(See [Theorem 7.3.1,Cox--Katz])
+
+\subsection{the differential of an extended 
+smooth function on tropical manifold}
+
+Since $\opn{exp}:\mb{T}^{n}\to \R_{\geq 0}^{n}$ is not 
+a smooth map of manifolds, we need to check the slope of 
+smooth function on rational polyhedral space is well-defined.
+
+Let $\psi\colon U\mapsto \mb{T}^{r}$ be a chart of 
+
+We will see the slope of the pullback of a smooth 
+function on $\R_{\geq 0}^{n}$.
+
+We note that the monomial maps 
+$(z_1,\ldots,z_n)\mapsto cz_1^{m_1}\cdots z_n^{m_n}$ is a real 
+analytic function and thus, the pullback of $f$ is also 
+smooth.
+
+The pullback of smooth function on $\R_{\geq 0}^{n}$ satisfies
+the condition i) of \cite[Definition 2.4]{MR3903579} 
+but does not safisfies Definition 2.4 ii).
+
+\begin{Prop}
+Every $(0,0)$-superform on an open subset of $\mb{T}^{n}$ is the pullback
+of a smooth function on an open subset of $\R_{\geq 0}^{n}$.
+\end{Prop}
+
+\begin{proof}
+Fix $V_x\deq \opn{exp}(U_x)$. $f\circ \opn{log}\colon V_x \to \R$
+
+Let $\opn{pr}_I\colon \R^{n} \to (\R^{n})_I$ be 
+a canonical projection. $f_I \circ \opn{log}_I$ is a smooth 
+function on $V_x \cap (\R_{\geq 0}^{n})_I$ and thus
+$f_I \circ \opn{log}_I \circ \opn{pr}_I$ is a smooth function on 
+$V_x$.
+\end{proof}
+Therefore, we can use a partition of unity \cite[Lemma 2.7]{MR3903579}.
+
+This defintion works since we have the following Proposition
+\begin{Prop}
+Let $y\in \mb{T}_I^{n}$ and
+$(a_j)_{j\in \N}$ be a convergent sequence of $y$ such that 
+$\opn{sed}(a_j)=\emp$ for every $j\in \N$.
+\begin{align}
+\frac{\partial f_I\circ \opn{exp}}{\partial x_i}(\opn{pr}_I(y))
+=\lim_{m\to \infty}\frac{\partial f\circ \opn{exp}}{\partial x_i}(a_m)
+\end{align}
+
+\end{Prop}
+
+\begin{Eg}
+If $f$ is a monomial function on an open subset $U$ of $\mb{T}^{n}$, then the above Proposition means that
+$f$ is constant along the divisorial direction to any $x\in U$
+\cite[Definition 3.2]{jellLefschetzTheoremTropical2018a}.
+\end{Eg}
+\begin{Def}
+
+\end{Def}
+This is independent of the choice of atlas since every differential 
+of a smooth function at $x\in U$ can be represented by an
+linear function at $x$ uniquely and every transition map is an 
+extended affine map.
 
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}
