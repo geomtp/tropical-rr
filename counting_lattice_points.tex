@@ -512,8 +512,8 @@ Let $B$ be a compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
 $\opn{td}(B) \in \mb{H}^{\bullet}(B;\Omega_B^{\bullet})$.
  Let $s$ be a "generic"
-extended smooth Cartier data satisfying a polite condition 
-\cref{cond: polite} which represents of $\mcal{L}$
+extended smooth Cartier data satisfying a admissible condition 
+\cref{cond: admissible} which represents of $\mcal{L}$
 and its graded $\Z$-module $\opn{MF}^{\bullet}(s)$
 of it. Then,
 
@@ -542,7 +542,7 @@ as test plays of the above question:
 \begin{Thm} \label{thm: main}
 Let $B$ be a compact tropical curve $C$ (resp. integral 
 affine manifold $B$
-with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ a polite 
+with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ a admissible 
 locally real analytic 
 Cartier data on $C$ (resp. $B$). Then,
 \begin{align}
@@ -552,7 +552,7 @@ where $\chi(C,s)$ (resp. $\chi(B,s)$) is the number of weighted lattice
 points on $s$ (see \cref{def: weighted_lattice_points}) and $D_s$ is the divisor class of $s$.
 \end{Thm}
 
-The condition of politeness is that every cotangent vector 
+The condition of admissibility is that every cotangent vector 
 is not in hyperplanes defined by the span of microsupport of
 cotangent sheaf of $C$. 
 
@@ -628,7 +628,7 @@ $A_X$: the constant sheaf on $X$ with fiber $A$.
 \end{Note}
 
 \section{The cohomological local Morse datum}
-In this section we recall some elementary result
+In this section we recall some elementary results
 for cohomological local Morse data from
 \cite{MR2031639,MR1299726,MR4294126}.
 
@@ -653,9 +653,15 @@ If $(M^{\bullet},d)$ is a bounded chain complex of finitely
 generated $A$-module, then 
 $\chi(M^{\bullet})=\chi(H^{\bullet}(M^{\bullet}))$.
 
+
 Let $X$ be a topological space, $Z$ a locally closed 
 subset of $X$
 and $i\colon Z\to X$ be the inclusion map.
+
+Since the global homological 
+dimension of $A$ \cite[Exercise I.28]{MR1299726} is finite,
+the weak global dimension of $A_X$ \cite[Definition 2.6.2]{MR1299726} is also finite.
+
 \begin{align}
 \mcal{F}|_{Z}\deq i^{-1}\mcal{F}, \quad 
 \mcal{F}_Z\deq i_! i^{-1}\mcal{F}, \quad 
@@ -663,7 +669,8 @@ A_{Z\subset X}\deq i_! A_Z
 \end{align}
 where $i_!$ is the functor of 
 direct image with proper supports. \cite[(2.5.1)]{MR1299726}.
-
+The symbol $A_{Z\subset X}$ is not used in \cite{MR1299726} 
+but in \cite{MR932640}.
 From \cite[Proposition 2.5.4]{MR1299726}, $i_!$ is exact 
 and $\mcal{F}_Z$ is isomorphic to the sheaf defined in
 \cite[p.93]{MR1299726}.
@@ -923,13 +930,13 @@ positive line bundles, see
 also \cref{eg: kodaira}.
 \end{Rmk}
 
-\subsection{Polite condition}
+\subsection{admissible condition}
 
 To generalize cohomological local Morse datum for
 smooth Cartier data $\{f_i\}_{i\in I}$, we
 need additional condition for $f_i$ in order 
 to give a well-defined definition of graded modules.
-In this paper, we only gives the polite condition for 
+In this paper, we only gives the admissible condition for 
 rational polyhedral spaces.
 
 To define it, we use the notion of the micro-support of
@@ -962,12 +969,12 @@ $\opn{SS}(A_M)=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
 Let $(S,x)$ be a 
 \end{Def}
 
-\begin{Cond}[{politeness}] \label{cond: polite}
+\begin{Cond}[{admissibility}] \label{cond: admissible}
 Let $U_x$ be an open neighborhood of a point $x$ in a rational polyhedral
 space $S (\subset M_{\R})$. 
 Suppose $\dim M_{\R}=\dim \mathbf{F}_{S,x}$. In this case,
 we can identify $M$ with $\mathbf{F}_{S,x}^{\Z}$.
-A smooth function $f\colon U_x \to \R$ is \emph{polite} at $x$ 
+A smooth function $f\colon U_x \to \R$ is \emph{admissible} at $x$ 
 if $(x,df(x))\notin (\opn{span}_{\R}(\opn{SS}(A_S)_x)+M^{\vee})\setminus M^{\vee}$.
 \end{Cond}
 
@@ -976,39 +983,45 @@ if $(x,df(x))\notin (\opn{span}_{\R}(\opn{SS}(A_S)_x)+M^{\vee})\setminus M^{\vee
 % the linearity space of $S$ at $x$, i.e., the maximal vector space
 % which is containded in $S$ at $x$ locally. 
 % We use the language of microsupport for revealing the 
-% reason of the condition of politeness.
+% reason of the condition of admissibility.
 % \end{Rmk}
 
 \begin{Eg}
 Let $S=V(\max\{x_1,\ldots,x_n,1\})$ an $n+1$-valent graph in $\R^{n}$.
 $\opn{span}_{\R}(\opn{SS}(A_S)_x)=(\R^{n})^{\vee}$.
 Fix $x\deq (0,\ldots,0)$.
-A smooth function $f\colon U_x\to \R$ is polite at $x$
+A smooth function $f\colon U_x\to \R$ is admissible at $x$
 if and only if $d(x)\in (\Z^{n})^{\vee}$.
 \end{Eg}
 
-From definition, $f$ is polite at $x$ then $f+m$ is also polite for 
+From definition, $f$ is admissible at $x$ then $f+m$ is also admissible for 
 any $m\in \mcal{O}^{\times}_{M_{\R}}(M_{\R})$.  
-Thus, we can generalize the politeness condition for
+Thus, we can generalize the admissibility condition for
 smooth Cartier divisor $\opn{CaDiv}^{\infty}(S)\deq H^{0}(S;\mcal{A}^{0,0}_S/\mcal{O}^{\times}_S)$.
-\begin{Cond}[{Polite smooth Cartier divisor}]
+\begin{Cond}[{admissible smooth Cartier divisor}]
 Let $S$ be a rational polyhedral space such that any atlas is 
 in for some $\R^{n}$. A smooth Cartier divisor 
-$\{f_i\}_{i\in I}\in \opn{CaDiv}^{\infty}(S)$ is polite 
-if each $f_i$ is polite at any point in $S$.
+$\{f_i\}_{i\in I}\in \opn{CaDiv}^{\infty}(S)$ is admissible 
+if each $f_i$ is admissible at any point in $S$.
 \end{Cond}
 
-We assume that every polyhedral space satisfies 
+We assume that every (rational) polyhedral space satisfies 
 the following condition,
 but we expect that the condition is not necessary
 in general.
 
-\begin{Cond}
+\begin{Cond} \label{cond: good}
 
 \begin{align}
 \opn{span}_{\R}\opn{SS}(S)_x=\opn{Lin}(S,x)^{\bot}
 \end{align}
 \end{Cond}
+
+\begin{Eg}
+Every metric graph of finite length and 
+smooth tropical hypersurfaces in $\R^{n}$ satisfies
+\cref{cond: good} obviously.
+\end{Eg}
 
 Take a projection $M^{\vee}\to 
 M^{\vee}/(\opn{span}_{\R}(\opn{SS}(A_S)_x))\cap M^{\vee}$.
@@ -1018,21 +1031,23 @@ $M^{\vee}/(\opn{span}_{\R}(\opn{SS}(A_S)_x))\cap M^{\vee}$
 is a free module. 
 Then, $df(x)\in M^{\vee}$ if and only if 
 $df(x)\in M^{\vee}/(\opn{span}_{\R}(\opn{SS}(A_S)_x))\cap M^{\vee}$
-for any polite function at $x$. Thus, there exists a canonical
+for any admissible function at $x$. Thus, there exists a canonical
 shift $\tilde{f}_x\colon U_x\to \R$ of $f$ such that
 $d\tilde{f}_x(x)=0$.
 
 \begin{Def}[{Stratified torus fibration and Lagrangian}]
 Let $S$ be a compact rational polyhedral space such that 
 the image of any atlas is 
-in for some $\R^{n}$. Then the stratified torus 
+in for some $\R^{n}$. 
+Suppose $S$ satisfies \label{cond: good}.
+Then the stratified torus 
 fibration is the following set
 \begin{align}
 \check{X}(S)\deq \bigcup_{x\in S} 
 (\mathbf{F}_{S,x}^{\Z}/(\opn{span}_{\R}
 (\opn{SS}(A_S)_x))\cap \mathbf{F}_{S,x}^{\Z})\otimes_{\Z} \R/\Z.
 \end{align}
-Let $s=\{f_i\}_{i\in I}$ be a polite smooth Cartier divisor. 
+Let $s=\{f_i\}_{i\in I}$ be a admissible smooth Cartier divisor. 
 The stratified Lagrangian is the image of the differential  $\{df_i\}_{i\in I}$ in $\check{X}(S)$
 by fiberwise projection.
 \end{Def}
@@ -1047,7 +1062,7 @@ there exist some minor differences.
 \begin{Def}
 Let $S$ be a rational polyhedral space such that the image of
 any atlas is in for some $\R^{n}$.
-Let $s=\{(U_i,f_i)\}_{i\in I}$ be a polite smooth Cartier divisor such that
+Let $s=\{(U_i,f_i)\}_{i\in I}$ be a admissible smooth Cartier divisor such that
 the following set is finite;
 \begin{align}
 s_0 \cap s\deq \set{x\in S\mid \opn{pr}_x^{S}(df_i(x))=0 
@@ -1077,7 +1092,7 @@ of Lagrangian submanifolds (e.g. \cite[5.2]{MR1882331}).
 \end{Rmk}
 
 \begin{Eg} \label{eg: kodaira}
-A polite smooth Cartier divisor $s=\{f_i\}_{i\in I}$ is 
+A admissible smooth Cartier divisor $s=\{f_i\}_{i\in I}$ is 
 \emph{Bohr--Sommerfeld type} or \emph{Hessian type} if
 $f_i$ is strictly convex for any $i\in I$. Then,
 \begin{align}
@@ -1118,7 +1133,7 @@ $\R^{n}$ and has the Todd class $\opn{td}(S)$ of $S$
 defined by the theory of Chern--Schwartz--MacPherson
 cycles
 \cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
-Let $s$ be a polite smooth Cartier divisor such that
+Let $s$ be a admissible smooth Cartier divisor such that
 $s_0\cap s$ is finite. Then, 
 \begin{align}
 \chi(\opn{MF}^{\bullet}(S;s,A))=\int_{S}\opn{ch}(s)\opn{td}(S)
@@ -1197,7 +1212,7 @@ is solved by \cite{MR4132582}.
 \end{Rmk}
 
 \begin{Rmk}[{Ehrhart reciprocity revisit}]
-Let $s$ be a polite smooth Cartier divisor on 
+Let $s$ be a admissible smooth Cartier divisor on 
 tropical toric varieties in the sense of the above Remark.
 $\chi(X_{\Sigma},-s,A)=(-1)^{n}\sharp (\opn{int}(\mu_s(X_{\Sigma}))\cap \Z^{n})$ since
 the Local Morse data at boundary lattice point is trivial.
@@ -1323,7 +1338,7 @@ $X_0(B)$  can be considered as a subset of a compact Riemann surface
   and we also explain about it for tropical tori in \cref{a}.
 }.
 
-Under the above interpretation, a very polite Lagrangian section can be considered as a data of $U(1)$-holonomy of each fiber $\check{\pi}_{B_0}^{-1}(p)$.
+Under the above interpretation, a very admissible Lagrangian section can be considered as a data of $U(1)$-holonomy of each fiber $\check{\pi}_{B_0}^{-1}(p)$.
 The following equation is a correspondence about local index $\opn{ind}_v$ and the Local Riemann-Roch number under the above identification \cite[Theorem 6.7]{MR2676658}.
 \begin{align}
    & [BS^{+}]=\opn{ind}_v(s_{2,0}),
@@ -1508,10 +1523,10 @@ $c_1(f^{*}(s)^{n}=f^{*}(c_1(s)^{n})$ for every $D\in\opn{CaDiv}^{\infty}(Y)$.
 
 
 \begin{Def}[Smooth Cartier data]
-  A \ind{very polite smooth Cartier data}{very polite smooth Cartier data} $s=\{f_i\}$ is an element of
-  $H^{0}(B,\mcal{A}_B^{0,0}/\mcal{O}_{B}^{\times})
-    \simeq H^{0}(B,\mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1})$ such
-that every $f_i$ is polite.
+  A \ind{very admissible smooth Cartier data}{very admissible smooth Cartier data} $s=\{f_i\}$ is an element of
+  $H^{0}(B;\mcal{A}_B^{0,0}/\mcal{O}_{B}^{\times})
+    \simeq H^{0}(B;\mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1})$ such
+that every $f_i$ is admissible.
 \end{Def}
 
 \subsection{Verdier duality and Borel--Moore homology
@@ -1681,6 +1696,18 @@ line bundles.
 the direct product of tropical curves and 
 integral affine manifold for some special cases.
 
+At first, we recall some facts of tensor product of sheaves 
+and derived tensor products of sheaves from \cite{MR1299726}.
+As like flat morphisms of schemes, the notion of flatness
+is defined for any ringed space 
+\cite[Definition 2.4.11]{MR1299726}.
+
+Obviously, $A_{Z\subset X}$ is $A_X$-flat for any locally 
+closed subset $Z$ of $X$. 
+
+Let $\mcal{F}\in \opn{Ob}(\opn{Mod}(A_X))$ 
+\cite[Proposition 2.4.12]{MR1299726}.
+
 This theorem comes from the following sheaf 
 theoretic Thom--Sebastiani Theorem.
 
@@ -1730,6 +1757,8 @@ The proof is in \cite[Theorem 1.2.2]{MR2031639}.
 
 \begin{Eg}
 
+If $\mcal{F}$ is a $A_X$-flat then $p_1^{-1}\mcal{F}$ is also 
+$A_Y$-flat. From \cite[(2.2.7)]{},
 \end{Eg}
 
 We don't state for the K\"unneth type formula in a fully
@@ -1737,12 +1766,12 @@ general setting but it is enough to perform the Euler number of
 generic locally analytic  behaves as expected.
 \begin{Cor}[{K\"unneth formula}]
 Let $X,Y$ be a compact tropical curve or integral affine manifold.
-Let $s$ and $s'$ a polite smooth Cartier divisor of $X$ and $Y$ 
+Let $s$ and $s'$ a admissible smooth Cartier divisor of $X$ and $Y$ 
 satisfying the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
 Then, the induced external tensor product 
 $s\boxtimes s'\deq \opn{pr}_X^{*} (s)+\opn{pr}_Y^{*}(s')
-\in \opn{CaDiv}^{\infty}(X\times Y)$ is also polite and
+\in \opn{CaDiv}^{\infty}(X\times Y)$ is also admissible and
 has the following equations:
 \begin{align}
 \chi(\opn{MF}^{\bullet}(X\times Y;s\boxtimes s'))=
@@ -1752,9 +1781,9 @@ has the following equations:
 \end{Cor}
 \begin{proof}
 Since 
-$\opn{SS}(F\boxtimes G)\subset \opn{SS}(F)\times \opn{SS}(G)$
+$\opn{SS}(F\boxtimes^{L} G)\subset \opn{SS}(F)\times \opn{SS}(G)$
 \cite[Proposition 5.4.1]{MR1299726},
-$s\boxtimes s'$ is also polite.
+$s\boxtimes s'$ is also admissible.
 From sheaf theoretic Thom-Sebastiani theorem for constructible sheaves 
 \cite[Corollary 1.2.1]{MR2031639}, we get an isomorphism of 
 graded modules;
@@ -1810,7 +1839,7 @@ We expect
 \end{Rmk}
 
 We also expect that we can define a graded module for a given
-not only smooth polite Cartier divisor but also 
+not only smooth admissible Cartier divisor but also 
 an ordinary Cartier divisor directly.
 
 
