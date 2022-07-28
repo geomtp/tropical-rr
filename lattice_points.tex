@@ -510,9 +510,7 @@ In particular, $(R\Gamma_{Z}(i_*\mcal{F}))_v
   \end{align}
   \footnote{The isomorphism come from the exactness of taking
     a stalk and $R^{i}(G\circ F)\simeq G\circ R^{i}F$}
-  where $\chi(C^{\bullet})$ is the K-class of
-  $C^{\bullet}(\in \opn{D}^{b}(\catn{Mod}(A)))$
-  in the K-group $K_0(\catn{Mod}(A))$.
+
 \end{Def}
 
 \begin{Note}
@@ -530,12 +528,6 @@ In particular, $(R\Gamma_{Z}(i_*\mcal{F}))_v
   $\opn{MF}^{\bullet}(f,\mcal{F})\deq (f-g,\mcal{F})$
   and $\opn{ind}^{+}(f,\mcal{F})\deq \opn{ind}^{+}(f-g,\mcal{F})$.
 \end{Rmk}
-
-The functor $R\Gamma_{\{f\geq f(v)\}}$ is called
-the \ind{local cohomology functor}{local cohomology functor}
-
-
-For simplicity, we assume $f(v)=0$ from now.
 
 To calculate the graded module $\opn{CF}^{\bullet}(f,\mcal{F})$,
 the following exact triangle of $D(\catn{Mod}(\Z_S))$
@@ -585,10 +577,6 @@ Therefore, $\Gamma_{Z}(A_S)$ is trivial for any closed subset $Z$ of $S$.
   \tilde{H}^{i-1}(B\cap\set{f<0};A).
 \end{align}
 
-Here, $\tilde{H}^{i-1}(X;A)$ is the reduced (singular) cohomology group
-of $X$(cf. \cite[p.199]{hatcherAlgebraicTopology2002a}).
-We note $\tilde{H}^{-1}(\emp;A)=A$ and $\tilde{H}^{i}(\emp;A)=0$
-for any $i\in \N$ from definition.
 In particular, if $f$ is strictly convex at $v$
 then $\opn{ind}_v(f,A_S)=1-\chi_{\opn{top}}(\emp)=1$.
 We will explain that this local index corresponds to a Bohr-Sommerfeld point for Lagrangian torus fibration and the usual lattice point for lattice polyhedra later.
@@ -629,12 +617,7 @@ Let $B$ be a compact tropical curve. (See \cite{mikhalkinTropicalCurvesTheir2008
 The \ind{coarse polyhedral filtration}{coarse polyhedral filtration}
 of $B$ is $\emp\subset V \subset B$.
 
-\begin{Def}
-  $s_{f,0}:B_0 \xto{df|_{B_0}} T^{*}B_0 \to\check{X}(B_0)$
-  can be extended to a section $s_f:B \to \check{X}(B)$ as the closure of $s_0$.
-  A continuous section $s: B \to \check{X}(B)$ is a $C^{2}$-\ind{tame Lagrangian section}{tame Lagrangian section} if
-  it is locally defined as $s_f$ for some definable $C^{2}$-function $f$.
-\end{Def}
+
 
 \begin{Def}[Extremely polite smooth function for curves]
   Let $B$ be a tropical curve. A continuous function $f: B \to \R$
@@ -978,51 +961,6 @@ Let $A$ be a tropical $k$-cycle.
   of monoidal spaces (e.g. \cite[II Definition 1.1.1]{MR3838359}).
 
 \end{Eg}
-
-\begin{Lem}
-
-\end{Lem}
-
-\begin{Lem}
-  Let $f:B\to B'$ be a proper tropical morphism.
-  \begin{align}
-    \int_{B} f^{*}c\frown \alpha=\int_{B'} f_*(f^{*}c\frown \alpha)
-    =\int_{B'}c \frown f_*\alpha=\opn{deg}(f)\int_{B'} c\frown \alpha
-  \end{align}
-\end{Lem}
-
-\begin{proof}
-  The right side follow from \cref{thm:}.
-\end{proof}
-
-\begin{Thm}
-  Let $B_0$ be a $n$-dimensional compact integral affine manifold and
-  $s$ a smooth Lagrangian section
-  whose intersection point are discrete.
-  \begin{align}
-    \chi(B_0,s)=\frac{1}{n!}\int_{B_0}c_1(D_s)^{n}.
-  \end{align}
-
-\end{Thm}
-\begin{proof}
-
-  If $B_0$ is a tropical tori, the statement of is true from \cite[]{} and \cref{eg: lattice tori}.
-
-  From Cheng-Yau's result, $B_0$ is a finite unramified cover of tropical tori.
-  Fix an \`etale cover $f:T \to B_0$ of $B_0$.
-
-  Let $s$ be a Lagrangian section $s:B\to \check{X}(B_0)$.
-
-  \begin{align}
-    \chi(T,\tilde{s})=\opn{deg}(f)\chi(B_0,s),\quad \int_{T}(c_1(f^{*}(D_s))^{n})=\opn{deg}(f)\int_{B}c_1(D_s)^{n}
-  \end{align}
-
-  Combing this, we prove the formula.
-
-\end{proof}
-
-
-
 
 \section{tropical toric varieties} \label{sec: toric}
 
@@ -1402,10 +1340,6 @@ $\mb{D}_X=a_X^{!}\Z\simeq (a_Y\circ f)^{!}\Z\simeq f^{!}a_Y^{!}\Z= f^{!}\mb{D}_Y
 
 \end{Def}
 
-From now on we recall the commutative diagram (\ref{eq: smoothcartier})
- for integral affine manifolds.
-and see additional properties for sheaves on integral affine manifolds.
-
 From definition, there exists the isomorphism $\TBZ^{\vee}\simeq \mcal{F}_{\Z,B_0}^{1}$ and $\mcal{F}_{\Z,B_0}^{\bullet}\simeq \bigwedge^{\bullet}\TBZ^{\vee}$.
 
 $\bigwedge^{n}_{i=1}\TBZ\simeq \opn{or}(\Z_{B_0})$. Here $\opn{or}(\Z_{B_0})$ is the $\Z$-orientation sheaf on $B_0$.
@@ -1769,19 +1703,6 @@ See
 \href{https://arxiv.org/abs/1808.07305}{[1808.07305] Geometric quantization via SYZ transforms} for recent results on geometric quantization.
 
 
-
-\subsection{Combinatorial Floer graded vector space and micro-localization}
-
-\begin{Eg}[{\cite[p.22]{MR2031639}}]
-
-
-
-\end{Eg}
-
-
-
-
-
 \section{General setting}
 
 
@@ -2132,18 +2053,11 @@ Let $\mcal{R}$ be a sheaf of rings on $X$ and $\mcal{H}om_{\mcal{R}}(\mcal{F},\m
 
 Let $(f,f^{\sharp}):(X,\mcal{O}_X)\to (Y,\mcal{O}_Y)$ be a continuous map
 
-\begin{Eg}
-
-\end{Eg}
 Since $g_*,f_*$ is left exact and $(g\circ f)_*$,
 $R(g\circ f)_*=Rg_*\circ Rf_*$ from \cref{eq: RGF=RGRF}.
 In particular, $R\Gamma(X;-) \circ Rf_*=R\Gamma(Y,-)$ and the associated spectral sequence is called the \ind{Leray spectral sequences}{Leray spectral sequences}.
 
-\begin{Eg}[Singular cohomology v.s. constant sheaf cohomology]
-  If $X$ is a locally contractible space,
-  $H^{i}_{\opn{Sing}}(X;A)\simeq H^{i}(X;A_X)$.
-  A proof of this isomorphism is in \href{https://arxiv.org/abs/1602.06674}{[1602.06674] Comparison of sheaf cohomology and singular cohomology}.
-\end{Eg}
+
 
 We recall some properties about locally compact spaces from \cite[Cahpter I. \textsection 9-10]{MR1726779}.
 
@@ -2243,9 +2157,7 @@ Let $\mcal{F}^{\bullet}\in\opn{Ob}(D^{b}(A_X\text{-}\catn{Mod}))$
   \mcal{D}_{A_X}\mcal{F}^{\bullet}\deq R\mcal{H}om_{A_X} (\mcal{F}^{\bullet},\upomega_X), \quad \mcal{D}'_{A_X}\mcal{F}^{\bullet}\deq R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},A_X)
 \end{align}
 
-\begin{align}
-  0 \to
-\end{align}
+
 
 By \cite[Proposition 3.1.11]{}, $f^{-1} {L}{\otimes}$
 

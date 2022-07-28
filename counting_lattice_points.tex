@@ -510,7 +510,7 @@ of a tropical analog of Riemann-Roch theorem.
 \begin{Conj}[{Tropical Mirror Riemann--Roch Problem}]
 Let $B$ be a compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
-$\opn{td}(B) \in \mb{H}^{\bullet}(B;\Omega_B^{\bullet})$.
+$\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
  Let $s$ be a "generic"
 extended smooth Cartier data satisfying a admissible condition 
 \cref{cond: admissible} which represents of $\mcal{L}$
@@ -520,7 +520,7 @@ of it. Then,
 \begin{align}
 \chi(B,s)  \deq \chi(\opn{MF}^{\bullet}(s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
 \end{align}
-where $\int_B$ is the trace map $\mb{H}^{\bullet}(B;\Omega_B^{\bullet})\to \Z$.
+where $\int_B$ is the trace map $\mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})\to \Z$.
 In particular, when $\mcal{L}=\mcal{O}_B$ then
 $\chi(\opn{MF}^{\bullet}(s))=\chi_{\opn{top}}(B)$?
 \end{Conj}
@@ -708,10 +708,12 @@ Then, $\Gamma_Zf_*\mcal{G}\simeq f_*\Gamma_{f^{-1}(Z)}\mcal{G}$
 Let $X$ be a topological space and $Z$ be a locally closed
 There exists the following exact triangle 
 \cite[(2.6.32)]{MR1299726}:
-\begin{align}
+\begin{align} \label{eq: exactlocal}
   R\Gamma_{Z'}(\mcal{F})\to R\Gamma_{Z}(\mcal{F})\to 
 R\Gamma_{Z\setminus Z'}(\mcal{F})\xto{[1]} R\Gamma_{Z'}(\mcal{F})[1]
 \end{align}
+
+
 
 We mention two elementary properties 
 about stalks of $R\Gamma_{Z}(\mcal{F})$.
@@ -749,6 +751,14 @@ this reason.
 \end{Rmk}
 
 Let $i\colon U\to X$ be an open inclusion.
+
+From \cref{eq: exactlocal}, 
+
+
+Here, $\tilde{H}^{i-1}(X;A)$ is the reduced (singular) cohomology group
+of $X$(cf. \cite[p.199]{hatcherAlgebraicTopology2002a}).
+We note $\tilde{H}^{-1}(\emp;A)=A$ and $\tilde{H}^{i}(\emp;A)=0$
+for any $i\in \N$ from definition.
 
 \begin{Eg}[{Real Milnor fiber}] \label{eg:}
 We mainly follow from \cite[3.2]{MR3779558} for this example.
@@ -792,7 +802,7 @@ We can generalize the above for real analytic functions with
 at most isolated singular points.
 \end{Eg}
 
-\begin{Eg}
+\begin{Eg}[{\cite[p.22]{MR2031639}}]
   A polynomial function $f\colon \R^{n}\to \R;(x_1,\ldots,x_n)\mapsto x_1^{2}+\cdots+x_n^{2}$
   $X=S=\R^{n}$
   \begin{align}
@@ -1182,7 +1192,7 @@ a given point $x$ in a tropical toric open strata $O(\sigma)$
  corresponds to a convex cone $\sigma$ of a fan.
 Then, the slope of a smooth function $f$ on $U_{x}$ at $x$
 should be in $\sigma^{\bot}$ since the set of intertible element
-in $\sigma^{\vee}$ is $\sigma^{\bot}$.
+in the dual cone $\sigma^{\vee}$ of $\sigma$ is $\sigma^{\bot}$.
 This condition corresponds to the condition for the Lagrangian
 in $\opn{Fuk}(T^{*}M_{\R}/M;\overline{\Lambda}_{\sigma})$ 
 \cite[3.1]{MR2871160} since
@@ -1443,14 +1453,20 @@ with a flat connection
 (e.g. \cite[Chapter 7]{MR2293045}).
 
 
-Here, $\Omega_B^{0}=\R_B$.
+Here, $\mcal{F}_{\Z, B}^{0}=\R_B$. 
+$\mcal{F}_{B}^{\bullet}$ is a certain analog of analytic
+de Rham complex of complex manifold.
 
-$\Omega_B^{\bullet}$ is a certain analog of analytic
-de Rham complex of complex manifold\footnote{
-}.
+\footnote{以下では\cite{gross2019sheaftheoretic}での結果を
+用いるがその定理は$\mcal{F}_X^{p}$に対してではなく
+\cite{gross2019sheaftheoretic}における
+$\Omega_X^{p}$に対するものである。だが、両者
+はloopless matroidから由来する場合は両者は一致する。
+\cite[Remark 2.8]{gross2019sheaftheoretic}}
+
 $\Omega_X^{\bullet}$ has a canonical dga structure, 
 and thus its hypercohomology 
-$\mb{H}^{\bullet}(B;\Omega_B^{\bullet})$ is a 
+$\mb{H}^{\bullet}(B;\mcal{F}_{B}^{\bullet})$ is a 
 graded-commutative algebra. 
 This is a tropical analog of the singular cohomology
 $H^{\bullet}(X;\C)$ for a complex manifold $X$ since 
@@ -1460,16 +1476,18 @@ $H^{\bullet}(X;\C)\simeq \mb{H}^{\bullet}(X;\Omega_X^{\bullet})$
 of graded algebras. 
 
 An elementary but remarkable fact of 
-$\Omega_B^{\bullet}$ is that $\Omega_B^{\bullet}\simeq 
-\bigoplus_{i\in \Z}\Omega_B^{i}[-i]$, i.e., the differential 
-of $\Omega_B^{\bullet}$ is trivial unlike the analytic de Rham complex
+$\mcal{F}_{B}^{\bullet}$ is that $\mcal{F}_{B}^{\bullet}\simeq 
+\bigoplus_{i\in \Z}\mcal{F}_B^{i}[-i]$, i.e., the differential 
+of $\mcal{F}_{B}^{\bullet}$ is trivial unlike the analytic de Rham complex
 of complex manifolds, see \cite[Corollary 2.15]{epub36262}.
 Therefore, we can calculate the multiplication of 
-$\mb{H}^{\bullet}(B;\Omega_B^{\bullet})$ by 
-cup product of each $H^{q}(B;\Omega_B^{p})$.
+$\mb{H}^{\bullet}(B;\mcal{F}_B^{\bullet})$ by 
+cup product of each $H^{q}(B;\mcal{F}_B^{p})$.
 
 Let $f\colon B\to B'$ be a morphism of rational polyhedral 
-space. Then, this induces the pullback $f^{-1}\colon \mb{H}^{\bullet}(B';\Omega_{B'}^{\bullet})\to \mb{H}^{\bullet}(B;\Omega_B^{\bullet})$
+space. Then, this induces the pullback $f^{-1}\colon 
+\mb{H}^{\bullet}(B';\mcal{F}_{\Z, B'}^{\bullet})\to 
+\mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$
 and this is a graded ring homomorphism \cite[Proposition 4.17]{gross2019sheaftheoretic}. 
 \subsubsection{Tropical Cartier data}
 
@@ -1535,14 +1553,14 @@ for tropical spaces}
 
 
 
-There exists a natural isomorphism $\Omega_X^{n-p}[n]\to 
-\mcal{D}(\Omega_{X}^{p})$ where 
+There exists a natural isomorphism $\mcal{F}_X^{n-p}[n]\to 
+\mcal{D}(\mcal{F}_{X}^{p})$ where 
 $\mcal{D}(\mcal{F}^{\bullet})
 =R\mcal{H}om(\mcal{F};\upomega_X^{\bullet})$
 \cite[Theorem 6.2]{gross2019sheaftheoretic}.
 
-In particular, the natural isomorphism $\Omega_X^{n}[n]\to 
-\mcal{D}(\Omega_{X}^{0})=\upomega_B^{\bullet}$
+In particular, the natural isomorphism $\mcal{F}_{\Z, X}^{n}[n]\to 
+\mcal{D}(\mcal{F}_{\Z, X}^{0})=\upomega_B^{\bullet}$
 can be considered as the element of $H_{n,n}^{\opn{BM}}(X;\Z)$ 
 from definition. 
 We call this element as the \emph{fundamental class} of $X$ 
@@ -1568,6 +1586,9 @@ $\mcal{O}^{\times}_{B_0}$ is a locally constant sheaf and the quotient sheaf $\m
   Usually, integral affine manifolds are used as a special case of integral affine manifold with singularities and we also want to treat like this in many cases.
   Therefore, we write $\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$, $\mcal{T}_{\Z,B_0}\deq \mcal{W}_{\Z,B_0}^{1}$ in this section for integral affine manifolds. We also use this notation for integral affine manifold with singularities.
 \end{Not}
+
+From now on we recall the commutative diagram (\ref{eq: smoothcartier})
+ for integral affine manifolds.
 
 Of course, $\mcal{A}_{B_0}^{0,0}=\mcal{C}^{\infty}(B_0)$ and
  $\mcal{Z}^{1}_{B_0}$ is the sheaf of closed $1$-form on $B_0$.
@@ -1608,7 +1629,7 @@ When $s=df$, $\chi(B,s)=\chi_{\opn{top}}(B)=0$ is
 truly a special case of Poincar\'e--Hopf theorem for $B$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
   \cite{rau2020tropical}. This analogue is about tropical Euler characteristic
-  $\chi_{\opn{trop}}(B)\deq \chi(\mb{H}^{\bullet}(B;\Omega_B^{\bullet}))$
+$\chi_{\opn{trop}}(B)\deq \chi(\mb{H}^{\bullet}(B;\mcal{F}_B^{\bullet}))$
   but not for topological Euler characteristic $\chi_{\opn{top}}(B)$.
 \end{Rmk}
 
@@ -1625,17 +1646,23 @@ then $X(f)\colon X(B) \to X(B')$ is a local isomorphism of
 complex manifolds.
 \end{Rmk}
 
-\begin{Prop}
+\begin{Lem}
+  Let $f:B\to B'$ be a proper tropical morphism.
+  \begin{align}
+    \int_{B} f^{*}c\frown \alpha=\int_{B'} f_*(f^{*}c\frown \alpha)
+    =\int_{B'}c \frown f_*\alpha=\opn{deg}(f)\int_{B'} c\frown \alpha
+  \end{align}
+\end{Lem}
+
+\begin{Prop} \label{thm: intetale}
 Let $f\colon B'\to B$ be a finite \'etale covering of a compact integral affine 
 manifold $B$ of dimension $n$. Then,
 (i) $\chi(B',f^{*}(s))=\opn{deg}(f)\chi(B,s)$
 
 (ii) (Projection formula) 
-$\frac{c_1(f^{*}(D_s))^{n}}{n!}=\opn{deg}(f)\frac{c_1(D_s)^{n}}{n!}$
-
-(iii) If $B$ has a Hessian form, then $\chi(B,s)=\frac{c_1(D_s)^{n}}{n!}$
+$\frac{c_1(f^{*}(D_s))^{n}}{n!}=
+\opn{deg}(f)\frac{c_1(D_s)^{n}}{n!}$
 \end{Prop}
-
 \begin{proof}
 (i) We can see this from definition.
 
@@ -1644,12 +1671,69 @@ $\frac{c_1(f^{*}(D_s))^{n}}{n!}=\opn{deg}(f)\frac{c_1(D_s)^{n}}{n!}$
 , $\opn{deg}(f)$ is the same with degree of 
 mapping of closed manifolds.
 
-(iii) If $B$ has a Hessian form, then there exists a tropical tori $T$
-and an \'etale cover $f\colon T\to B$ by Cheng-Yau's result
-\cite{MR714338}. Since $f^{*}(s)$ is a Lagrangian section
-of $\check{X}(T)$, $\chi(T,f^{*}(s))$ is an intersection
-number of
 \end{proof}
+
+\begin{Thm} \label{thm: HesseRR}
+  Let $B_0$ be a $n$-dimensional compact integral affine manifold and
+  $s$ a smooth Lagrangian section
+  whose intersection point are discrete.
+  \begin{align}
+    \chi(B_0,s)=\frac{1}{n!}\int_{B_0}c_1(D_s)^{n}.
+  \end{align}
+\end{Thm}
+
+\begin{proof}
+
+From Cheng-Yau's result \cite{MR714338}, $B_0$ is a finite unramified cover of tropical tori.
+Fix an \`etale cover $p:T \to B_0$ of $B_0$.
+
+If \cref{thm: HesseRR} is true for tropical tori,
+then \cref{thm: HesseRR} is also true for compact
+integral manifold with a Hessian form from
+\cref{thm: intetale} for $p$.
+
+From now on, we assume $B_0=T$.
+Let $s$ be an element of 
+$H^{0}(T;\mcal{C}^{\infty}(T)/\mcal{O}_{T}^{\times})\simeq
+\Gamma(T;\opn{Lag}(\check{X}(T)))$.
+
+$s$ is linearly equivalent to a Lagrangian section
+defined from the differental $dq$ of a quadratic polynomial
+$q$ function on the universal cover $\tilde{T}$ of $T$.
+
+Let $D_s$ is the divisor class of $s$.
+From explicit calculation of the ring structure of
+$H^{\bullet}(T;\Omega_B^{\bullet})$ or Sumi's result
+\cite[Theorem 47]{MR4229604}, we get 
+$\frac{1}{n!}c_1(D_s)^{n}$ is equal to the determinant
+of the linear part of $dq$.
+
+Every linearlity equivalent 
+class is given by a one-time Hamiltonian flow on 
+$\check{X}(B_0)$ by the pullback $\check{\pi}_{B_0}^{*}(h)$
+of a smooth function $h$ on $B_0$.
+We note one-time flow of submanifold of $\check{X}(B_0)$ does not change
+the homology class in $H^{\bullet}(\check{X}(B_0);\Z)$.
+
+If $p^{*}(s)$ intersect to the zero section of 
+
+$\check{\pi}_{B_0}$ transversaly,
+
+$\opn{MF}^{\bullet}(B_0,p^{*}(s))\otimes_{\Z}\Lambda_{\opn{nov}}=
+\opn{CF}^{\bullet}(L_{p^{*}(s)},L_{0})$.
+
+In particular, $\chi(\opn{MF}^{\bullet}(B_0,p^{*}(s)))$ is 
+equal to the intersection number 
+$\sharp ([L_{p^{*}(s)}]\cap [L_0])$ up to signature.
+
+(i) If 
+
+(ii)
+
+
+
+\end{proof}
+
 
 \begin{Rmk} \label{rmk: integral_mirror}
 This theorem also can be considered as a special case of \cite{MR4301560}.
