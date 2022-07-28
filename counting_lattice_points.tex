@@ -539,10 +539,10 @@ In this paper, we give a partial answer for compact tropical curves
 and integral affine manifolds with Hessian form
 as test plays of the above question:
 
-\begin{Thm} \label{thm: main}
+\begin{Thm}[{,\cref{thm: HesseRR}}] \label{thm: main}
 Let $B$ be a compact tropical curve $C$ (resp. integral 
 affine manifold $B$
-with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ a admissible 
+with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ an admissible 
 locally real analytic 
 Cartier data on $C$ (resp. $B$). Then,
 \begin{align}
@@ -1676,8 +1676,8 @@ mapping of closed manifolds.
 \begin{Thm} \label{thm: HesseRR}
   Let $B_0$ be a $n$-dimensional compact integral affine manifold and
   $s$ a smooth Lagrangian section
-  whose intersection point are discrete.
-  \begin{align}
+  which intersect transversely. Then,
+  \begin{align} \label{eq: HesseRR}
     \chi(B_0,s)=\frac{1}{n!}\int_{B_0}c_1(D_s)^{n}.
   \end{align}
 \end{Thm}
@@ -1698,42 +1698,66 @@ $H^{0}(T;\mcal{C}^{\infty}(T)/\mcal{O}_{T}^{\times})\simeq
 \Gamma(T;\opn{Lag}(\check{X}(T)))$.
 
 $s$ is linearly equivalent to a Lagrangian section
-defined from the differental $dq$ of a quadratic polynomial
-$q$ function on the universal cover $\tilde{T}$ of $T$.
+defined from the differental $dq_s$ of a quadratic polynomial
+$q_s$ function on the universal cover $\tilde{T}$ of $T$.
 
 Let $D_s$ is the divisor class of $s$.
 From explicit calculation of the ring structure of
 $H^{\bullet}(T;\Omega_B^{\bullet})$ or Sumi's result
 \cite[Theorem 47]{MR4229604}, we get 
 $\frac{1}{n!}c_1(D_s)^{n}$ is equal to the determinant
-of the linear part of $dq$.
+of the linear part of $dq_s$.
 
-Every linearlity equivalent 
+Next, we mention the following well-known fact:
+
+Let $s$ be a Lagrangian section of 
+$\check{\pi}_{B_0}\colon \check{X}(B_0) \to B_0$.
+The intersection number of the image $L_s$ Lagrangian
+section and the zero section $L_0$ is equal to
+$\chi(\opn{CF}^{\bullet}(L_s,L_0))$ up to 
+signature\footnote{The signature only depends on
+the choice of 
+an orientation of $\check{X}(B_0)$. 
+The definition of the intersection number of smooth 
+submanifolds is in \cite[5.2]{MR1336822} or 
+\cite[0.4]{griffithsPrinciplesAlgebraicGeometry1994a}}. 
+
+Every linearly equivalent 
 class is given by a one-time Hamiltonian flow on 
 $\check{X}(B_0)$ by the pullback $\check{\pi}_{B_0}^{*}(h)$
 of a smooth function $h$ on $B_0$.
 We note one-time flow of submanifold of $\check{X}(B_0)$ does not change
-the homology class in $H^{\bullet}(\check{X}(B_0);\Z)$.
+the homology class in $H^{\bullet}(\check{X}(B_0);\Z)$ and
+the intersection number \cite[5.2.1. Theorem]{MR1336822}.
 
-If $p^{*}(s)$ intersect to the zero section of 
+As remarked in \cref{eg: MF=CF}, 
+$\opn{MF}^{\bullet}(T,s)\otimes_{\Z}\Lambda_{\opn{nov}}
+=\opn{CF}^{\bullet}(L_s,L_0)$ if $L_s$ intersects with
+$L_0$ transversely. Therefore, 
+the Euler number $\chi(\opn{MF}^{\bullet}(T,s))$ is 
+invariant to the choice of linearly equivalent 
+Lagrangian sections which intersect transversely.
 
-$\check{\pi}_{B_0}$ transversaly,
+We can calculate $\chi(\opn{MF}^{\bullet}(T,s))$ as follows:
 
-$\opn{MF}^{\bullet}(B_0,p^{*}(s))\otimes_{\Z}\Lambda_{\opn{nov}}=
-\opn{CF}^{\bullet}(L_{p^{*}(s)},L_{0})$.
+(i) If $\det dq_s\ne 0$, $dq_s$ intersects to 
+the zero section transversely. We can see that 
+$\sharp(L_s\cap L_0)=|\det dq_s|$ directly, and thus
+we get \cref{eq: HesseRR}. 
 
-In particular, $\chi(\opn{MF}^{\bullet}(B_0,p^{*}(s)))$ is 
-equal to the intersection number 
-$\sharp ([L_{p^{*}(s)}]\cap [L_0])$ up to signature.
-
-(i) If 
-
-(ii)
+(ii) If $\det dq=0$, $L_{dq_s}\cap L_0$ is empty of 
+subtorus of $L_0$. We can choose a smooth vector bundle $v$ on 
+$T$ such that the one-time flow $\phi$ of $v$ make 
+$\phi(L_{dq_s})\cap L_0=\emp$. 
+Thus, $\chi(\opn{MF}^{\bullet}(T,s))=0$.
 
 
 
 \end{proof}
 
+\begin{Rmk}
+
+\end{Rmk}
 
 \begin{Rmk} \label{rmk: integral_mirror}
 This theorem also can be considered as a special case of \cite{MR4301560}.
