@@ -864,26 +864,47 @@ we have the following distinguished triangle:
 \end{align}
 
 We will see the case $\mathcal{F}=A_{S\subset X}$ 
-for some locally closed subset $S$ of $X$ containing $x$. 
+for some closed subset $S$ of $X$ containing $x$. 
 
-\begin{Prop}
-
+\begin{Prop} \label{prop-local-morse-data}
+Let $V$ be an open subset of $X$.
 \begin{align}
-\opn{MF}^{\bullet}(A_{S\subset X},f,x)\simeq 
+\opn{MF}^{\bullet}(A_{S\cap V\subset V},f|_V,x)\simeq 
+\opn{MF}^{\bullet}(A_{S\subset X},f,x
+) \simeq \varinjlim_{U\in \opn{Op}(X)\cap \opn{Nbh}(x)} 
+\tilde{H}^{\bullet-1}(S\cap \{f<f(x)\}\cap U;A).
 \end{align}
 
 \end{Prop}
-\begin{proof}
-
-\end{proof}
-
-
-
 
 Here, $\tilde{H}^{i-1}(X;A)$ is the reduced (singular) cohomology group
 of $X$ (see for example \cite[p.199]{hatcherAlgebraicTopology2002a}).
 We note $\tilde{H}^{-1}(\emp;A)=A$ and $\tilde{H}^{i}(\emp;A)=0$
 for any $i\in \N$ from definition.
+
+\begin{proof}
+Let $i\colon S\to X$ and
+$j\colon \{f<f(x)\}\to X$ be the inclusion maps.
+From definition of $A_{S\subset X}$, 
+$(A_{S\subset X})_x\simeq A$.
+
+\begin{align}
+R\Gamma_{\{f<f(x)\}}A_{S\subset X}\simeq 
+Rj_*\circ j^{-1} \circ i_! \circ i^{-1}A_X&\simeq 
+R (j \circ i')_*\circ (i\circ j')^{-1}A_X \\
+&\simeq R (j \circ i')_* A_{S\cap \{f<f(x)\}}.
+\end{align}
+From the definition of higher direct image, we have
+\begin{align}
+  (R^{n} (j \circ i')_* A_{S\cap \{f<f(x)\}})_x\simeq 
+\varinjlim_{U\in \opn{Op}(X)\cap \opn{Nbh}(x)} H^{n}(S\cap \{f<f(x)\}\cap U;A)
+\end{align}
+\end{proof}
+
+\cref{prop-local-morse-data}
+
+
+
 
 \begin{Eg}[{Real Milnor fiber}] \label{eg:}
 We mainly follow from \cite[3.2]{MR3779558} for this example.
