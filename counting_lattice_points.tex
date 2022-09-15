@@ -202,6 +202,8 @@
 
 \newcommand{\cfootnote}[1]{\footnote{#1}}
 
+\newcommand{\myfootnote}[1]{\hspace{-5pt}\footnote{#1}}
+
 \newcommand{\TB}{\mcal{T}_{B_0}}
 \newcommand{\TBZ}{\mcal{T}_{\Z,B_0}}
 \newcommand{\AffS}{{\mathop{\mcal{A}\!f\!\!f\!}\nolimits}}
@@ -251,10 +253,10 @@ In particular, we may expect that we can calculate
 which is (generically) invariant for tropicalization
 (or degeneration) from tropical variety.
 
-For instance, the tropicalization of an $n$-dimensional
+The tropicalization of an $n$-dimensional
 algebraic subvariety of an algebraic split torus 
 is an $n$-dimensional polyhedral complex 
-(e.g. 
+(see for instance 
 \cite[Theorem 3.2.3]{maclaganIntroductionTropicalGeometry2015a}).
 
 We will explain 
@@ -273,14 +275,15 @@ tropical varieties.
 
 Tropical Riemann--Roch theorem for tropical curves 
 is proved in \cite{gathmannRiemannRochTheoremTropical2008a}
-as an extension of Riemann--Roch theorem for graphs 
+as an extension of Riemann--Roch theorem for graphs
 \cite{MR2355607}.
 
 The rank $r(D)$ of the linear system of a divisor $D$ 
 on tropical curve in 
 \cite{gathmannRiemannRochTheoremTropical2008a}
-is \emph{not} an invariant of $\mb{T}$-modules\footnote{
-In fact, in \cite[Example 6.5]{yoshitomi2011generators} 
+is \emph{not} an invariant of $\mb{T}$-modules
+\myfootnote{In fact, 
+in \cite[Example 6.5]{yoshitomi2011generators} 
 the author give a simple example of divisors on 
 tropical curves such that 
 the rank of a divisor is different even though 
@@ -312,11 +315,14 @@ manifolds as an extension of the above notions yet.
 In \cite{MR3903579},
 One of main difference between them is that 
 the rank of linear system of tropical curves is
-not the invariant of $\mb{T}$-modules.\footnote{}
+not the invariant of $\mb{T}$-modules.
+\myfootnote{}
 
 The other dimensions of $\mb{T}$-modules 
 (which are invariant for $\mb{T}$-modules) are defined for 
-some authors (e.g. \cite[Definition 2.3]{mikhalkinTropicalCurvesTheir2008a}
+some authors 
+(see for instance 
+\cite[Definition 2.3]{mikhalkinTropicalCurvesTheir2008a}
 and \cite[p.8]{yoshitomi2011generators}) but 
 these dimensions have no tropical analog of 
 Riemann--Roch formula like 
@@ -330,7 +336,7 @@ studied recently in
 but the structure of the associated 
 stable $\infty$-category of the proto-exact structure
 is not studied yet.
-\footnote{The nerve of a proto-exact category
+\myfootnote{The nerve of a proto-exact category
 forms an exact $\infty$-category 
 \cite[Example 7.2.3]{MR3970975} and there exists the
 stable hull of it 
@@ -341,21 +347,23 @@ may expect the existence of transformation from
 line bundles on tropical manifold to complexes of
 constructible sheaves whose Euler number 
 represents that of line bundle, but we need to 
-be careful of that we also can observe that
+be careful of that we can also observe that
 the derived category $\opn{D}_{c}^{b}(B)$
 of constructible sheaves on 
 tropical manifold $B$ does not seem like a tropical 
 analog of the derived category of coherent 
-sheaves on algebraic variety directly.\footnote{One of reasons
-comes from the result in \cite{MR2449059,MR2565051} and 
-homological mirror symmetry for 
+sheaves on algebraic variety directly.
+\myfootnote{One of reasons
+comes from the result in \cite{MR2449059,MR2565051}
+and homological mirror symmetry for 
 the derived category of coherent sheaves on complex split $n$-torus 
 $(\C^{\times})^{n}$ and the derived wrapped Fukaya category of $T^{*}(S^{1})^{n}$
 by \cite{MR2822213}.
 Therefore, $\opn{D}_c^{b}((S^{1})^{n})$ should behave like 
 the derived category of coherent sheaves on $(\C^{\times})^{n}$
 but not like of some complex tori.
-We will see another reason in \cref{a}.}
+We will see another reason in \cref{rmk: }.
+}
 
 
 \subsection{Lattice polytopes}
@@ -365,7 +373,8 @@ We consider about
 Counting points on a certain region is a classical problem.
 
 Since Euler number of line bundle is invariant for 
-degeneration (e.g. \cite[p.50]{}) and thus we can calculate
+degeneration of varieties 
+(e.g. \cite[p.50]{}) and thus we can calculate
 the Euler number (or the dimension of global section)
  of many interesting ample line bundles
 by a degeneration to a toric variety or a union of toric
@@ -426,7 +435,9 @@ $\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$
 Instead of moment map for Hamiltonian action of Lie group, we
 need not assume convex lattice polytope is not Delzant.
 This is a tropical analog of algebraic moment map 
-(e.g. \cite[\textsection 12.2]{coxToricVarieties2011a}) for toric varieties.
+for toric varieties
+(see for example
+\cite[\textsection 12.2]{coxToricVarieties2011a}).
 We can generalize the above proposition as follows;
 \begin{align}
 \sharp (q(\mu_P^{\opn{trop}}) \cap 0_{X_P^{\opn{trop}}})
@@ -491,7 +502,7 @@ These Lagrangian submanifolds are called
 \emph{Lagrangian sections} \index{Lagrangian section@Lagrangian section}
 which is well-studied in the field of homological 
 mirror symmetry 
-(e.g. \cite{MR1882331}).
+(see for instance \cite{MR1882331}).
 In particular, Lagrangian sections are mirror of line bundles on
 mirror varieties. 
 In this paper, we consider a 
@@ -597,78 +608,124 @@ in the case of tropical curves,
 
 \begin{Not}
 
-  We will use the following notation in this paper:
-  For every continuous function $f\colon X\to \R$,
+We will use the following notation in this paper:
 
-  $\{f<f(v)\}\deq \set{x\in X\mid f(x)< f(v)}$
+\begin{itemize}
+\item For every continuous function $f\colon X\to \R$,
+\begin{align*}
+\{f<f(v)\}\deq \set{x\in X\mid f(x)< f(v)},\quad
+\{f\geq f(v)\}\deq \set{x\in X\mid f(x)\geq f(v)}.
+\end{align*}
+\item $\opn{Crit}(f)$: the subset of critical points of
+a $C^{1}$-function $f$ on a smooth manifold.
+\item   $X\sqcup_{f,g}Y$: the pushout of the diagram
+  $X\xgets{f} S\xto{g} Y$.
+\item $\{\opn{pt}\}$: the topological space of 
+a fixed singleton set.
+\item $a_X\colon X\to \{\opn{pt}\}$:
+the continuous map from a topological space $X$ to
+$\{\opn{pt}\}$.
+\item $A_X$: the constant sheaf on a topological space $X$ 
+with fiber $A$.
+\item $\catn{Mod}(\mathcal{R})$: the category of 
+sheaves of $\mathcal{R}$-modules
+(e.g. \cite[Definition 2.2.6]{MR1299726}).
+\item $\opn{D}^{b}(\mathcal{C})$: the derived category
+of bounded complexes of a given abelian category 
+$\mathcal{C}$.
+\end{itemize}
 
-  $\{f\geq f(v)\}\deq \set{x\in X\mid f(x)\geq f(v)}$
-
-  $X\sqcup_{f,g}Y$: the pushout of the diagram
-  $X\xgets{f} A\xto{g} Y$
-
-  $\opn{Crit}(f)$: the subset of critical points of a
-  $C^{1}$-function on a smooth manifold.
-
-$A_X$: the constant sheaf on $X$ with fiber $A$.
 \end{Not}
 
 \begin{Note}
-  We also impose the following assumption for simplicity in this paper:
-
-  Any topological space is locally compact and locally
+We also impose the following assumption for simplicity in this paper:
+\begin{itemize}
+\item Any topological space is locally compact and locally
   contractible except schemes.
+\item Any ring is a commutative ring with unity.
+\item We identify any ring $A$ with a constant sheaf on
+$\{\opn{pt}\}$ with fiber $A$.
+\item Any $C^{\alpha}$-manifold is paracompact for 
+$\alpha=0,1,\infty,\omega$.
+\item We mainly use min-plus algebra.
+\myfootnote{We write down the reason of this in 
+\cref{rmk: mix vs max}.}
+\end{itemize}
 
-
-  We mainly use min-plus algebra.
-
-  \footnote{We write down the reason of this in \cref{rmk: mix vs max}.}
 
 
 \end{Note}
 
 \section{The cohomological local Morse datum}
 In this section we recall some elementary results
-for cohomological local Morse data from
+for cohomological local Morse data of sheaves from
 \cite{MR2031639,MR1299726,MR4294126}.
 
 
 
 \subsection{Sheaf theory on locally compact 
 Hausdorff spaces.}
-\cite{iversenCohomologySheaves1986a,MR1299726,MR1269324,MR2050072}
-
+In this subsection, we follow some classical results of
+the theory of sheaves on locally compact topological
+spaces from \cite{iversenCohomologySheaves1986a,
+MR1299726,MR1269324,MR2050072}.
 The notion and symbols for 
-sheaf theory mainly follows from \cite{MR1299726}, 
-but some notations are different from that.
+sheaf theory mainly follows from \cite{MR1299726}
+unless otherwise specified.
 
-In this section, we suppose $A$ is a PID. Then, the Grothendieck 
-group $K_0(A)$ of $A$ is isomorphic to $\Z$. From this, 
-we can define the rank $\opn{rk}_A M$ of 
-a finitely generated $A$-module.
+\subsubsection{Notes for modules over PID}
+
+Henceforth, we assume $A$ is a PID. 
+Then, the (global) homological dimension of 
+$\catn{Mod}(A)$ is less than or equal to $1$
+\cite[Exercise I.17, I.28]{MR1299726}.
+Therefore, for any $M^{\bullet}\in \opn{Ob}(\opn{D}^{b}(\catn{Mod}(A)))$
+there exists the following quasi-isomorphism 
+\cite[Exercise I.18]{MR1299726}:
+\begin{align}
+M^{\bullet}\simeq 
+\bigoplus_{i\in \Z}H^{i}(M^{\bullet})[-i].
+\end{align}
+
+Let $\catn{mod}(A)$ be the category of 
+finitely generated $A$-modules.
+Since $A$ is PID, then the Grothendieck group 
+$K_0(\catn{mod}(A))$ is isomorphic to $\Z$ by
+the rank $\opn{rk}_A M$ of a finitely generated
+$A$-module $M$.
 If $M^{\bullet}$ is a bounded $\Z$-graded finitely generated $A$-module,
 then we can define the Euler characteristic 
-$\chi(M^{\bullet})\deq \sum_{i\in \Z}(-1)^{i}\opn{rk}_A M^{i}$.
+$\chi(M^{\bullet})\deq 
+\sum_{i\in \Z}(-1)^{i}\opn{rk}_A M^{i}$.
 If $(M^{\bullet},d)$ is a bounded chain complex of finitely 
 generated $A$-module, then 
 $\chi(M^{\bullet})=\chi(H^{\bullet}(M^{\bullet}))$.
+We note $K_0(\mathcal{C})\simeq 
+K_0(\opn{D}^{b}(\mathcal{C}))$ for any abelian category 
+\cite[Exercise I.27]{MR1299726}.
 
+\subsubsection{Some operations of sheaves}
+
+From now on, we recall some elementary 
+operations of sheaves. 
+Let $f\colon Y\to X$ be a continuous map.
+$f$ induces the functor $f_!$ of
+the direct image with proper supports 
+\cite[(2.5.1)]{MR1299726}. 
+We note $a_{X,!}\mathcal{F}\simeq \Gamma_c(X;\mathcal{F})$.
 
 Let $X$ be a topological space, $Z$ a locally closed 
 subset of $X$
 and $i\colon Z\to X$ be the inclusion map.
 
-Since the global homological 
-dimension of $A$ \cite[Exercise I.28]{MR1299726} is finite,
-the weak global dimension of $A_X$ \cite[Definition 2.6.2]{MR1299726} is also finite.
 
 \begin{align}
 \mcal{F}|_{Z}\deq i^{-1}\mcal{F}, \quad 
 \mcal{F}_Z\deq i_! i^{-1}\mcal{F}, \quad 
-A_{Z\subset X}\deq i_! A_Z
+A_{Z\subset X}\deq i_! A_Z.
 \end{align}
-where $i_!$ is the functor of 
-direct image with proper supports. \cite[(2.5.1)]{MR1299726}.
+
+ 
 The symbol $A_{Z\subset X}$ is not used in \cite{MR1299726} 
 but in \cite{MR932640}.
 From \cite[Proposition 2.5.4]{MR1299726}, $i_!$ is exact 
@@ -680,20 +737,20 @@ $\mcal{F}$ supported by $Z$
 \cite[Definition 2.3.8]{MR1299726} and 
 $\Gamma_{Z}(X;\mcal{F})$. This sheaf is defined as follows:
 
-(i) Let $U$ be a open subset of $X$ such that $U$ contains
+\begin{enumerate}
+\item Let $U$ be a open subset of $X$ such that $U$ contains
 $Z$ as a closed subset of $U$ then we write
 \begin{align}
   \Gamma_Z(U;\mcal{F})\deq \opn{Ker}(\mcal{F}(U) \to 
-\mcal{F}(U\setminus Z))
+\mcal{F}(U\setminus Z)).
 \end{align}
-
-(ii) If $V$ is an open subset of $U$ contain $Z$ then
+\item If $V$ is an open subset of $U$ contain $Z$ then
 $\Gamma_{Z}(U;\mcal{F})\simeq \Gamma_{Z}(V;\mcal{F})$
 via the canonical morphism. Therefore, we can define
 $\Gamma_{Z}(X;\mcal{F})\deq \Gamma_{Z}(U;\mcal{F})$.
-
-(iii) The sheaf $\Gamma_{Z}(\mcal{F})$ is defined as the presheaf 
+\item The sheaf $\Gamma_{Z}(\mcal{F})$ is defined as the presheaf 
 $U\mapsto \Gamma_{Z\cap U}(U;\mcal{F})$ on $X$.
+\end{enumerate}
 
 $\Gamma_Z(X;\cdot)$ is a left exact functor from 
 $\opn{Mod}(A_X)$ to $\opn{Mod}(A)$,
@@ -703,20 +760,61 @@ $\opn{Mod}(A_X)$ to $\opn{Mod}(A_X)$
 
 Let $f\colon Y\to X$ be a continuous map and 
 $\mcal{G}\in\opn{Ob}(\opn{Mod}(A_Y))$.
-Then, $\Gamma_Zf_*\mcal{G}\simeq f_*\Gamma_{f^{-1}(Z)}\mcal{G}$
-\cite[(2.3.20)]{MR1299726}.
-Let $X$ be a topological space and $Z$ be a locally closed
-There exists the following exact triangle 
+Then, we have the following isomorphism 
+\cite[(2.3.20)]{MR1299726}:
+\begin{align}
+\Gamma_Zf_*\mcal{G}\simeq f_*\Gamma_{f^{-1}(Z)}\mcal{G}.
+\end{align}
+
+
+Let $X$ be a topological space, $Z$ be a locally 
+closed subset of $X$ and $Z'$ a closed subset of $Z$.
+
+There exists the following distinguished triangle 
+for any $\mathcal{F}^{\bullet}\in \opn{Ob}(\opn{D}^{b}(A_X))$ 
 \cite[(2.6.32)]{MR1299726}:
 \begin{align} \label{eq: exactlocal}
-  R\Gamma_{Z'}(\mcal{F})\to R\Gamma_{Z}(\mcal{F})\to 
-R\Gamma_{Z\setminus Z'}(\mcal{F})\xto{[1]} R\Gamma_{Z'}(\mcal{F})[1]
+  R\Gamma_{Z'}(\mcal{F}^{\bullet})\to 
+R\Gamma_{Z}(\mcal{F}^{\bullet})\to 
+R\Gamma_{Z\setminus Z'}(\mcal{F}^{\bullet})\xto{[1]} 
+R\Gamma_{Z'}(\mcal{F}^{\bullet})[1]
 \end{align}
 
 
 
+\begin{Eg}
+
 We mention two elementary properties 
-about stalks of $R\Gamma_{Z}(\mcal{F})$.
+about stalks of $R\Gamma_{Z}(\mcal{F})$ of a sheaf on 
+$X$.
+
+\begin{enumerate}
+\item Let $j:V\to X$ be an open inclusion and $Z$ be a 
+closed subset of $X$.
+Then, $\Gamma_{Z\cap V}(\mcal{F}|_V)(U)=
+\Gamma_{Z\cap U}(U\cap V;\mcal{F})=\Gamma_{Z\cap U}(\mcal{F})|_V(U)$
+for any open subset $U$.
+Therefore, $\Gamma_{Z\cap V}\circ j^{-1}=j^{-1}\circ \Gamma_{Z}$.
+In particular, for any point $v\in V$
+\begin{align}
+  (R(\Gamma_{Z\cap V}(\mcal{F}|_{V}))_v\simeq (R(j^{-1}\circ \Gamma_{Z})(\mcal{F}))_v\simeq R\Gamma_{Z}(\mcal{F})_v
+\end{align}
+Therefore, the stalk is independent of 
+the choice of $V (\ni v)$.
+\item Let $i: Y\to X$ be an closed inclusion.
+Since $i_!=i_*$ and $i_!$ is exact,
+\begin{align}
+  j^{-1}R\Gamma_{Z}(j_*\mcal{F})\simeq j^{-1}R(\Gamma_{Z}\circ j_*)\mcal{F}
+  \simeq j^{-1}R(j_*\circ \Gamma_{j^{-1}(Z)})\mcal{F}
+  \simeq R\Gamma_{Z\cap Y}\mcal{F}
+\end{align}
+In particular, $(R\Gamma_{Z}(i_*\mcal{F}))_v
+  \simeq (R\Gamma_{Z\cap Y}\mcal{F})_v$ for $v\in Y$.
+\end{enumerate}
+
+\end{Eg}
+
+
 
 \subsection{Local index}
 
@@ -727,21 +825,25 @@ microlocal sheaf theory
 which is called "local Morse datum" in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
 \begin{Def}[{Cohomological local Morse datum}]
-Let $f\colon X\to \R$ be a $C^{1}$-function on a smooth manifold $X$ and has 
-at most one critical point $x$.
+Let $f\colon X\to \R$ be a $C^{1}$-function on a 
+$C^{1}$-manifold $X$ and has 
+at most one critical point $x$. Fix 
+$\mathcal{F}^{\bullet}\in 
+\opn{Ob}(\opn{D}^{b}(\catn{Mod}(A_X)))$.
 \begin{align}
-\opn{LMD}(\mcal{F},f,x)\deq R\Gamma_{\{f\geq f(x)\}}
-(\mcal{F})_x, \quad \opn{MF}^{\bullet}(\mcal{F},f,x)\deq 
+\opn{LMD}(\mcal{F}^{\bullet},f,x)\deq R\Gamma_{\{f\geq f(x)\}}
+(\mcal{F}^{\bullet})_x, \quad \opn{MF}^{\bullet}(\mcal{F}^{\bullet},f,x)\deq 
 H^{\bullet}(\opn{LMD}(\mcal{F},f,x)).
 \end{align}
 \end{Def}
-The notation comes from \cite[p.271]{MR2031639}
+We follow the above notation from \cite[p.271]{MR2031639}.
 \begin{Rmk}
 We don't assume $f$ satisfies some 
 "Morse condition" since
  we need to use some $C^{\infty}$-function
 which is \emph{not} a Morse function in the sense of 
-stratified Morse theory (e.g. \cite[Part 1.2.1]{MR932724}). 
+stratified Morse theory (see for example
+\cite[Part 1.2.1]{MR932724}). 
 We also note that we need to use 
 the graded module $\opn{MF}^{\bullet}(\mcal{F},f,x)$ instead of 
 the complex $\opn{LMD}(\mcal{F},f,x)$ in order to define
@@ -752,11 +854,19 @@ this reason.
 
 Let $i\colon U\to X$ be an open inclusion.
 
-From \cref{eq: exactlocal}, 
+From \cref{eq: exactlocal} and by taking stalks,
+we have the following distinguished triangle:
+\begin{align}
+\opn{LMD}(\mathcal{F},f,x) \to \mathcal{F}_x\to 
+(R\Gamma_{\{f<f(x)\}}\mathcal{F})_x\to 
+\opn{LMD}(\mathcal{F},f,x)[1].
+\end{align}
 
+We will see the case $\mathcal{F}=A_{S\subset X}$ 
+for some locally closed subset $S$ of $X$ containing $x$. 
 
 Here, $\tilde{H}^{i-1}(X;A)$ is the reduced (singular) cohomology group
-of $X$(cf. \cite[p.199]{hatcherAlgebraicTopology2002a}).
+of $X$ (see for example \cite[p.199]{hatcherAlgebraicTopology2002a}).
 We note $\tilde{H}^{-1}(\emp;A)=A$ and $\tilde{H}^{i}(\emp;A)=0$
 for any $i\in \N$ from definition.
 
@@ -850,7 +960,9 @@ class of functions, see \cite{}.
 
 
 \begin{Rmk}
-
+Since the global homological 
+dimension of $A$ is finite,
+the weak global dimension of $A_X$ \cite[Definition 2.6.2]{MR1299726} is also finite.
 \end{Rmk}
 
 \begin{Eg}
@@ -946,8 +1058,8 @@ To generalize cohomological local Morse datum for
 smooth Cartier data $\{f_i\}_{i\in I}$, we
 need additional condition for $f_i$ in order 
 to give a well-defined definition of graded modules.
-In this paper, we only gives the admissible condition for 
-rational polyhedral spaces.
+In this paper, we only gives the \emph{admissible condition}
+for rational polyhedral spaces.
 
 To define it, we use the notion of the micro-support of
 sheaves \cite[Chapter V]{MR1299726}.
@@ -1456,6 +1568,9 @@ with a flat connection
 Here, $\mcal{F}_{\Z, B}^{0}=\R_B$. 
 $\mcal{F}_{B}^{\bullet}$ is a certain analog of analytic
 de Rham complex of complex manifold.
+\begin{Rmk}
+
+\end{Rmk}
 
 \footnote{以下では\cite{gross2019sheaftheoretic}での結果を
 用いるがその定理は$\mcal{F}_X^{p}$に対してではなく
@@ -1511,8 +1626,8 @@ Here every row and column of the diagram (\ref{eq: smoothcartier}) is exact
 and $\mcal{A}_{B}^{0,0}/\mcal{O}^{\times}_B
   \simeq \mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1}$ from the snake lemma.
 The right column exact sequence of \cref{eq: smoothcartier} is called
-the \ind{tropical exponential exact sequence}{tropicalexponentialexactsequence}, 
-(e.g. ).
+the \ind{tropical exponential sequence}{tropicalexponentialexactsequence}, 
+(e.g. \cite{jellLefschetzTheoremTropical2018a}).
 
 The middle row is a smooth version of the following short exact sequence.
 \begin{align}
@@ -1644,6 +1759,9 @@ Our condition of \'etale is different from that of
 If $f\colon B\to B'$ be an affine local diffeomorphism,
 then $X(f)\colon X(B) \to X(B')$ is a local isomorphism of
 complex manifolds.
+When $f$ is not an \'etale in our sense, however,
+$\opn{deg}(f)\ne \opn{deg}(X(f))$ in general.
+
 \end{Rmk}
 
 \begin{Lem}
@@ -1661,7 +1779,7 @@ manifold $B$ of dimension $n$. Then,
 
 (ii) (Projection formula) 
 $\frac{c_1(f^{*}(D_s))^{n}}{n!}=
-\opn{deg}(f)\frac{c_1(D_s)^{n}}{n!}$
+\opn{deg}(f)\frac{c_1(D_s)^{n}}{n!}$.
 \end{Prop}
 \begin{proof}
 (i) We can see this from definition.
@@ -2074,6 +2192,8 @@ From Leray spectral sequence, $(R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)})_{x}=H^{
 \begin{align}
   R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)}\simeq \bigwedge_{i=1}^{p} \TBZ=\mcal{W}^{p}_{\Z,B_0}, \quad R^{p}f_{B_0}\Z_{X(B_0)}\simeq \bigwedge_{i=1}^{p} \TBZ^{\vee}=\mcal{F}_{\Z,B_0}^{p}
 \end{align}
+
+
 
 \begin{Eg}
 If $B_0$ is an integral Hessian manifold, 
