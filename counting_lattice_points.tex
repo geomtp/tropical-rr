@@ -280,9 +280,12 @@ the Euler number of many interesting line bundles
 by the geometry of dual complex of degeneration 
 for a good family of algebraic variety or 
 tropicalization.
-
-
-We will explain 
+((なぜ直線束のみに制限して話しているのかについての説明が
+ないが理由を追加するべきか？))
+Besides, we may expect that there exists 
+a good tropical analog of the Euler characteristic of
+line bundles, but there exist several difficulties of 
+formalism of it, which I explain in the next subsection.
 
 \subsection{Tropical Riemann--Roch theorem}
 
@@ -290,11 +293,29 @@ The Hirzebruch--Riemann--Roch theorem (HRR for short) and the Grothendieck--
 Riemann--Roch theorem (GRR for short) 
 are monumental works in
 algebraic geometry (or complex geometry). 
-It is natural to study some analogs of these theorems 
-for tropical varieties, but it is not easy since 
-line bundles on tropical spaces are not sheaves of 
-Abelian groups but commutative monoids in general.
+Here is the statement of HRR for holomorphic line bundles on 
+complex manifolds.
+\begin{Thm}[{\cite{MR0202713}}]
+Let $X$ be a compact complex manifold andki
+$\mathcal{L}$ a holomorphic line bundle on $X$.
+Then there exists the following equation:
+\begin{align} \label{equation-HRR}
+\chi(H^{\bullet}(X;\mathcal{L}))
+=\int_X \opn{ch}(\mathcal{L})\opn{td}(X).
+\end{align}
+\end{Thm}
 
+((厳密にはHilzerbruchの元論文からの引用ではなく
+改訂版だがよいか?))
+
+It is natural to study some analogs of these theorems 
+for tropical varieties, but it is not easy by various
+reasons.
+In this subsection, we mainly focus on the 
+LHS of \cref{equation-HRR}.
+
+At first, line bundles on tropical spaces are not sheaves of 
+Abelian groups but commutative monoids in general.
 Several authors have studied homological algebra of semimodules 
 or non-Abelian categories (e.g. 
 \cite{MR3051517,MR3211743,https://doi.org/10.48550/arxiv.2202.01573})
@@ -356,6 +377,8 @@ and \cite[p.8]{yoshitomi2011generators}) but
 these dimensions have no tropical analog of 
 Riemann--Roch formula like 
 \cite{MR2355607,gathmannRiemannRochTheoremTropical2008a}.
+This is another difficulty of homological approach of 
+tropical Riemann--Roch formula. 
 
 From the successes of tropical homology \cite{itenbergTropicalHomology2019b}, we 
 may expect the existence of transformation from 
@@ -381,7 +404,7 @@ We will see another reason in \cref{rmk: }.
 }
 
 In this paper, we will pursue a different tropical
-analog of HRR with the help of ideas on 
+analog of HRR for line bundles with the help of ideas on 
 Strominger--Yau--Zaslow conjecture,
 toric varieties and related topics.
 
@@ -652,7 +675,7 @@ locally compact unless otherwise specified.
 \item We identify any ring $A$ with a constant sheaf on
 $\{\opn{pt}\}$ with fiber $A$.
 \item Any $C^{\alpha}$-manifold is paracompact for 
-$\alpha=0,1,\infty,\omega$.
+$\alpha=0,1,\ldots,\infty,\omega$.
 \item We mainly use min-plus algebra.
 \myfootnote{We write down the reason of this in 
 \cref{rmk: mix vs max}.}
