@@ -261,12 +261,7 @@ some invariants of algebraic varieties
 from tropicalization.
 
 Since the Euler number of line bundle is invariant for 
-degeneration of varieties (e.g. \cite[p.50]{}), 
-and thus we can expect calculate (or estimate)
-the Euler number of many interesting line bundles
-by the geometry of dual complex of degeneration 
-for a good family of algebraic variety or 
-tropicalization.
+degeneration of varieties
 \myfootnote{
 For instance, let $X\to \opn{Spec}(\Z_{p})$ be a
 projective scheme over $\Z_{p}$ and $\mcal{L}$
@@ -279,6 +274,13 @@ we can calculate the Euler number of line bundles on
 a projective scheme of characteristic zero from that on a 
 projective scheme of a positive characteristic.
 }
+(e.g. \cite[p.50]{MR2514037}), 
+and thus we can expect calculate (or estimate)
+the Euler number of many interesting line bundles
+by the geometry of dual complex of degeneration 
+for a good family of algebraic variety or 
+tropicalization.
+
 
 We will explain 
 
@@ -297,7 +299,8 @@ Several authors have studied homological algebra of semimodules
 or non-Abelian categories (e.g. 
 \cite{MR3051517,MR3211743,https://doi.org/10.48550/arxiv.2202.01573})
 but the theory of sheaf cohomology of $\mathbb{T}$-semimodules 
-have not studied well yet.
+have been not studied well enough yet.
+((もう少しニュアンスを柔らかくしたい。))
 The difficulty of homological algebra of semimodules
 over idempotent semiring relates 
 with the difficulty of the formulation of
@@ -843,6 +846,7 @@ microlocal sheaf theory
 which is called "local Morse datum" in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
 \begin{Def}[{Cohomological local Morse datum}]
+\label{definition-local-morse-data}
 Let $f\colon X\to \R$ be a continuous map on a 
 topological space $X$ and has 
 at most one critical point $x$. Fix 
@@ -862,12 +866,17 @@ H^{\bullet}(\opn{LMD}(\mcal{F},f,x)).
 One of this is for simplicity. 
 The other one is for emphasizing on analogy to
 Morse complexes.
+((モース複体との類似性は後で \cref{example-} にて見る。))
 \item We don't assume $f$ satisfies some 
 "Morse condition" since
  we need to use some $C^{\infty}$-function
 which is \emph{not} a Morse function in the sense of 
 stratified Morse theory (see for example
 \cite[Part 1.2.1]{MR932724}). 
+((また、本論文では、条件の良し悪しを後で比較するために
+\cref{definition-local-morse-data} の$f$ に対しては
+何の条件も課さない。一方で、本論文では$f$ に対する
+条件 \cref{condition-isolated-singularity}を課す。))
 We also note that we need to use 
 the graded module $\opn{MF}^{\bullet}(\mcal{F},f,x)$ instead of 
 the complex $\opn{LMD}(\mcal{F},f,x)$ in order to define
@@ -876,6 +885,10 @@ spaces. See also \cref{rmk: cartier module} for more about
 this reason.
 \end{enumerate}
 \end{Rmk}
+
+Before we see some important examples of cohomological
+local Morse datum, we will see some elementary
+properties of them.
 
 From \cref{eq: exactlocal} and by taking stalks,
 we have the following distinguished triangle:
@@ -948,7 +961,8 @@ we will see several examples of local Morse data
 for manifolds.
 
 \begin{Cond}
-
+\label{condition-isolated-singularity}
+$f\colon X\to \mathbb{R}$
 \end{Cond}
 
 \begin{Eg}[{Real Milnor fiber}] \label{eg:}
