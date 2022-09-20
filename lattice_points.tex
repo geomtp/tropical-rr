@@ -440,58 +440,7 @@ The difference between for the case of toric varieties and others is that others
 
 
 
-\begin{Not}
-  
-  In particular, we will use the following notation in this paper:
 
-\end{Not}
-
-Let $X$ be a topological space and $Z$ a closed subset of $X$.
-
-$\Gamma_{Z}(U;\mcal{F})\deq \opn{Ker}(\mcal{F}(U)\to \mcal{F}(U\setminus Z))$
-
-$\Gamma_{Z}(\mcal{F})$ be the presheaf
-$U\mapsto \Gamma_{Z\cap U}(U;\mcal{F})$
-\cite[Definition 2.3.8]{MR1299726}.
-$\Gamma_{Z}(\mcal{F})$ is also a sheaf.
-
-If $Z$ is a locally closed subset of $X$, there exists
-an open subset $U$ of $X$ containing $Z$ as a closed
-subset of $U$, and thus we may define
-$\Gamma_{Z}(X;\mcal{F})\deq \Gamma_{Z}(U;\mcal{F})$
-for any locally closed subset $Z$ of $X$ and which is
-independent of the choice of $U$. From this we may also
-define $\Gamma_{Z}(\mcal{F})$ for any locally closed subset $Z$ of
-$X$.
-
-
-
-
-
-
-
-(i) Let $j:V\to X$ be an open inclusion and $Z$ be a 
-closed subset of $X$.
-Then, $\Gamma_{Z\cap V}(\mcal{F}|_V)(U)=
-\Gamma_{Z\cap U}(U\cap V;\mcal{F})=\Gamma_{Z\cap U}(\mcal{F})|_V(U)$
-for any open subset $U$.
-Therefore, $\Gamma_{Z\cap V}\circ j^{-1}=j^{-1}\circ \Gamma_{Z}$.
-In particular, for any point $v\in V$
-\begin{align}
-  (R(\Gamma_{Z\cap V}(\mcal{F}|_{V}))_v\simeq (R(j^{-1}\circ \Gamma_{Z})(\mcal{F}))_v\simeq R\Gamma_{Z}(\mcal{F})_v
-\end{align}
-
-Therefore, the stalk is independent of the choice of $V (\ni v)$.
-
-(ii) Let $i: Y\to X$ be an closed inclusion.
-Since $i_!=i_*$ and $i_!$ is exact,
-\begin{align}
-  j^{-1}R\Gamma_{Z}(j_*\mcal{F})\simeq j^{-1}R(\Gamma_{Z}\circ j_*)\mcal{F}
-  \simeq j^{-1}R(j_*\circ \Gamma_{j^{-1}(Z)})\mcal{F}
-  \simeq R\Gamma_{Z\cap Y}\mcal{F}
-\end{align}
-In particular, $(R\Gamma_{Z}(i_*\mcal{F}))_v
-  \simeq (R\Gamma_{Z\cap Y}\mcal{F})_v$ for $v\in Y$.
 
 \begin{Def}
   Let $|\Sigma|$ be the support of a convex polyhedral fan $\Sigma$ of $\R^{n}$
@@ -572,7 +521,6 @@ Therefore, $\Gamma_{Z}(A_S)$ is trivial for any closed subset $Z$ of $S$.
 In particular, if $f$ is strictly convex at $v$
 then $\opn{ind}_v(f,A_S)=1-\chi_{\opn{top}}(\emp)=1$.
 We will explain that this local index corresponds to a Bohr-Sommerfeld point for Lagrangian torus fibration and the usual lattice point for lattice polyhedra later.
-Of course, $\tilde{H}^{-1}(X;A)=0$ for any nonempty space $X$.
 
 \subsection{Results for stratified spaces in $\R^{n}$}
 
@@ -602,10 +550,8 @@ in $\opn{Im}(C^{\infty}(U;\R)\to C^{0}(X\cap U;\R))$.
 Our theorem for tropical curve
 is a little bit extension of Banchoff's critical point theorem \cite[Theorem 1]{MR225327}
 or Poincar\'e-Hopf theorem for graphs \cite{knill2012graph}.
-Besides, our proof can be considered as a localization of
-the index of complex line bundle on classical Riemann surface
-theorem that is discussed in \cite[6]{MR2676658}.
-Let $B$ be a compact tropical curve. (See \cite{mikhalkinTropicalCurvesTheir2008a}) 
+
+
 The \ind{coarse polyhedral filtration}{coarse polyhedral filtration}
 of $B$ is $\emp\subset V \subset B$.
 
@@ -769,9 +715,6 @@ At first, we prove for projective tropical line $\mb{T}\mb{P}^{1}$.
 
 \end{proof}
 
-\begin{Rmk}
-  We can naturally generalize this Pick's formula for "Lagrangian multi-section" of tropical curves.
-\end{Rmk}
 
 
 
@@ -1114,9 +1057,7 @@ The phenomena of
   commutative with the moment map in the sense of .
 \end{Rmk}
 
-\begin{Lem}
-  Let $f:C \to \R$ be a Morse function on a $2$-dimensional polyhedral cone $C$ with an isolated critical point at $0$.
-\end{Lem}
+
 
 
 The following Proposition is
@@ -1320,7 +1261,8 @@ $\mb{D}_X=a_X^{!}\Z\simeq (a_Y\circ f)^{!}\Z\simeq f^{!}a_Y^{!}\Z= f^{!}\mb{D}_Y
 
   
 
-  \footnote{In many papers including \cite{kontsevichAffineStructuresNonArchimedean2006a} (resp. \cite{alexeevStablePairCompactification2019a}), tropical affine structure (resp. special tropical affine surface) is called integral affine structure (resp. integral-affine surface) or $\Z$-affine structure. In this paper differences between $(\opn{Aff}(M),M_{\R})$-structure and $(\opn{Aff}_{\R}(M),M_{\R})$-structure are significant, and thus we don't use this style.}
+\footnote{In many papers including 
+\cite{kontsevichAffineStructuresNonArchimedean2006a} (resp. \cite{alexeevStablePairCompactification2019a}), tropical affine structure (resp. special tropical affine surface) is called integral affine structure (resp. integral-affine surface) or $\Z$-affine structure. In this paper differences between $(\opn{Aff}(M),M_{\R})$-structure and $(\opn{Aff}_{\R}(M),M_{\R})$-structure are significant, and thus we don't use this style.}
 
   \footnote{Hessian manifold is called
   \ind{K\"ahler affine manifold}{Kahler affine manifold}
@@ -1563,19 +1505,6 @@ $\opn{HF}^{\bullet}((L_1,\mcal{L}_1,\nabla),(L_2,\mcal{L}_2,\nabla))\deq \opn{Ke
 
 Consider the self-intersection number of zero section $[L_0]\cap [L_0] \in H_{0}(\check{X}(B_0),\Z)$
 
-\begin{Eg}[Generalized Pick's formula for line bundles on tropical tori] \label{eg: lattice tori}
-  We add some comments about the previous remark in the case of tropical tori.
-  First, we consider tropical version.
-  Let $B_0=M_{\R}/\Lambda$ be a tropical torus and $\mcal{L}$ be a tropical line bundle on $B_0$. As explained in \ref{}, a Cartier data of $\mcal{L}$ can be described by a quadratic potential function $q$ on $M_{\R}$ up to affine functions and every Cartier divisor on integral affine manifolds can be considered as a Lagrangian section $s: B_0 \to \check{X}(B_0)$ which is induced from the 1-form $dq$ by the equation \ref{eq: }. For simplicity, we assume $c_1(\mcal{L})$ is a nondegenerate matrix. Then $q$ is a Morse function and $L_0 \cap L_s$ is a finite set. Thus, every Morse index at $x\in  L_0\cap L_s$ is equal to the index of $q$. In summary, we have
-  \begin{align}
-    [L_0]\cap [L_s]=\det (c_1(\mcal{L}))=\frac{c_1(\mcal{L})^{n}}{n!}.
-  \end{align}
-  When $c_1(\mcal{L})$ is a degenerate matrix, we can add a good periodic smooth function $h$ on $B_0$ such that $q+h$ is a Morse function and consider the Lagrangian section which is induced from the 1-form $d(q+h)$. Then, we also get the above formula for this cases, i.e., $[L_0]\cap [L_s]=0$.
-
-  From now, we consider the mirror version. Let $D\in H^{1}(B,\TBZ)$
-
-\end{Eg}
-
 \begin{Eg}[{$\C$-local system on $L$ should be trivial in the tropical world}]
   The following analogue suggests that we only consider a certain analogue of classical Lagrangian Floer cohomology when we attack Riemann-Roch type theorem. Be careful this observation is false when we apply to Fukaya category for Calabi-Yau varieties.
 
@@ -1699,13 +1628,7 @@ See
 
 
 
-\begin{Def}
 
-  \begin{align}
-    \chi(B,s)\deq \sum_{p\in \opn{Im} s_1 \cap \opn{Im} 0_B} \opn{Ind}(s_1,p), \quad   \chi(B,s_1,s_2)\deq \chi(B,s_2-s_1)
-  \end{align}
-
-\end{Def}
 
 \begin{Rmk}
 
@@ -1810,11 +1733,10 @@ If $\mcal{C}$ has enough injectives then $\mcal{C}^{\opn{op}}$ has enough projec
 
 \section{Sheaf theory}
 
-We recall sheaf theory from \cite{iversenCohomologySheaves1986a,MR1269324,MR1299726,MR2050072} for fundamental properties of trace map on locally compact spaces.
+
 
 \cite[Chapter 1-3]{MR2050072} is a good summary and the appendix of this section is a summary of this summary.
 
-When we cite well-known Definitions and proofs of Theorems, we usually choice one proof from the above literature for short.
 \subsection{Derived category}
 At first, we write down fundamental properties of the derived category of abelian category. We mainly follow from \cite{MR1299726} in this subsection.
 
@@ -1978,10 +1900,7 @@ Besides, $A\text{-}\catn{Mod}$ has enough projectives since free module is proje
   We explain how to compute derived category over PID according to \cite[1.4]{MR2050072}.
   If $A$ is a PID, $A$-module $M$ is injective if and only if $M$ is divisible \cite[Corollary 2.3.2]{MR1269324}.
   A $A$-module $M$ is divisible if the scalar map $r:M\to M; a\to ra$ is surjective for $r\in R\setminus\{0\}$.
-  Therefore, every PID $A$ has the following injective resolution.
-  \begin{align}
-    0 \to A \to Q(A) \to Q(A)/A \to 0
-  \end{align}
+
 
   $\opn{hd}(A)\leq 1$ if $A$ is a Dedekind domain since every submodule of free $A$-module is projective \cite[Theorem 4.2.11, Exercise 4.2.6]{MR1269324}.
   The theorem comes from that every ideal of $A$ is $A$-projective when $R$ is a Dedekind domain and this properties comes from \cite[Theorem 7.12]{MR1011461}.
@@ -2134,10 +2053,7 @@ $\opn{chd}_A(\R^{n})=n$ \cite[III. Example 9.6]{} and thus $\dim X=\opn{chd}_A(X
 The Verdier duality holds for the following general form
 \cite[Proposition 3.1.10]{MR1299726}
 
-\begin{align}
-  R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{Hom}_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet})        \\
-  R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}).
-\end{align}
+
 
 Let $f,g:X\to Y$ be a continuous map such that $f_!,g_!$ has finite cohomological dimension. Then, $(f\circ g)_!$ has finite cohomological dimension and $(f\circ g)^{!}\simeq g^{!}\circ f^{!}$ since $R(f\circ g)_!=Rg_!\circ Rf_!$ \cite[Proposition 3.1.8]{MR1299726}.
 

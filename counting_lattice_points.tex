@@ -245,13 +245,7 @@ with a Hessian form.
 \maketitle
 \section{Introduction}
 
-One of main topics of tropical geometry is that 
-how to calculate algebraic data on algebraic varieties
-from tropical varieties with additional data.
-In particular, we may expect that we can calculate
- some invariants of algebraic varieties
-which is (generically) invariant for tropicalization
-(or degeneration) from tropical variety.
+((A explanation of tropical geometry))
 
 The tropicalization of an $n$-dimensional
 algebraic subvariety of an algebraic split torus 
@@ -259,29 +253,67 @@ is an $n$-dimensional polyhedral complex
 (see for instance 
 \cite[Theorem 3.2.3]{maclaganIntroductionTropicalGeometry2015a}).
 
+One of main topics of tropical geometry is that 
+how to calculate algebraic data on algebraic varieties
+from tropical varieties with additional data. 
+In particular, we may expect that we can calculate
+some invariants of algebraic varieties
+from tropicalization.
+
+Since the Euler number of line bundle is invariant for 
+degeneration of varieties (e.g. \cite[p.50]{}), 
+and thus we can expect calculate (or estimate)
+the Euler number of many interesting line bundles
+by the geometry of dual complex of degeneration 
+for a good family of algebraic variety or 
+tropicalization.
+\myfootnote{
+For instance, let $X\to \opn{Spec}(\Z_{p})$ be a
+projective scheme over $\Z_{p}$ and $\mcal{L}$
+be a line bundle on $X$ that is flat over $\Z_{p}$.
+Then, 
+$\chi_{\kappa(s)}(X_s;\mcal{L}_s)=
+\chi_{\kappa(\eta)}(X_{\eta};\mcal{L}_{\eta})$.
+Roughly speaking, this means that
+we can calculate the Euler number of line bundles on
+a projective scheme of characteristic zero from that on a 
+projective scheme of a positive characteristic.
+}
+
 We will explain 
 
 \subsection{Tropical Riemann--Roch theorem}
 
-the Hirzebruch--Riemann--Roch theorem and the Grothendieck--
-Riemann--Roch theorem are monumental works in
- algebraic geometry (or complex geometry).
+The Hirzebruch--Riemann--Roch theorem (HRR for short) and the Grothendieck--
+Riemann--Roch theorem (GRR for short) 
+are monumental works in
+algebraic geometry (or complex geometry). 
+It is natural to study some analogs of these theorems 
+for tropical varieties, but it is not easy since 
+line bundles on tropical spaces are not sheaves of 
+Abelian groups but commutative monoids in general.
 
-The difficulty of homological algebra over idempotent 
-semiring relates 
-with the difficulty of higher dimensional
-Riemann--Roch theorem for 
-tropical varieties.
+Several authors have studied homological algebra of semimodules 
+or non-Abelian categories (e.g. 
+\cite{MR3051517,MR3211743,https://doi.org/10.48550/arxiv.2202.01573})
+but the theory of sheaf cohomology of $\mathbb{T}$-semimodules 
+have not studied well yet.
+The difficulty of homological algebra of semimodules
+over idempotent semiring relates 
+with the difficulty of the formulation of
+higher dimensional
+Riemann--Roch theorem for tropical varieties.
+In fact, current tropical analogs of Riemann--Roch 
+theorem is not formulated and proved by 
+homological algebra of semimodules.
 
 Tropical Riemann--Roch theorem for tropical curves 
 is proved in \cite{gathmannRiemannRochTheoremTropical2008a}
 as an extension of Riemann--Roch theorem for graphs
-\cite{MR2355607}.
-
-The rank $r(D)$ of the linear system of a divisor $D$ 
+\cite{MR2355607}. The rank $r(D)$ of the linear system of a divisor $D$ 
 on tropical curve in 
 \cite{gathmannRiemannRochTheoremTropical2008a}
-is \emph{not} an invariant of $\mb{T}$-modules
+is \emph{not} an invariant of $\mb{T}$-(semi) modules
 \myfootnote{In fact, 
 in \cite[Example 6.5]{yoshitomi2011generators} 
 the author give a simple example of divisors on 
@@ -289,8 +321,8 @@ tropical curves such that
 the rank of a divisor is different even though 
 the $\mathbb{T}$-semimodule of the global section of 
 tropical line bundle $\mcal{O}_C(D)$ is isomorphic.}
-but this is truly one of good analog of classical one,
-see \cite[Lemma 2.4]{MR2448666}.
+but this is truly one of good analog of classical one 
+(see \cite[Lemma 2.4]{MR2448666}).
 The rank of linear system is generalized by Cartwright
 \cite{MR4131998,MR4251610}.
 Cartwright defines an invariant 
@@ -312,14 +344,8 @@ since there hasn't been any good definition of
 Euler characteristic of line bundles on tropical 
 manifolds as an extension of the above notions yet.
 
-In \cite{MR3903579},
-One of main difference between them is that 
-the rank of linear system of tropical curves is
-not the invariant of $\mb{T}$-modules.
-\myfootnote{}
-
-The other dimensions of $\mb{T}$-modules 
-(which are invariant for $\mb{T}$-modules) are defined for 
+We also note the other dimensions of $\mb{T}$-semimodules 
+(which are invariant for $\mb{T}$-semimodules) are defined for 
 some authors 
 (see for instance 
 \cite[Definition 2.3]{mikhalkinTropicalCurvesTheir2008a}
@@ -328,21 +354,7 @@ these dimensions have no tropical analog of
 Riemann--Roch formula like 
 \cite{MR2355607,gathmannRiemannRochTheoremTropical2008a}.
 
-One of standard (but very hard) approach is that 
-constructing 
-The homotopical algebra of semimodules is 
-studied recently in 
-\href{https://arxiv.org/abs/2202.01573}{[2202.01573] Proto-exact categories of modules over semirings and hyperrings}
-but the structure of the associated 
-stable $\infty$-category of the proto-exact structure
-is not studied yet.
-\myfootnote{The nerve of a proto-exact category
-forms an exact $\infty$-category 
-\cite[Example 7.2.3]{MR3970975} and there exists the
-stable hull of it 
-\cite{https://doi.org/10.48550/arxiv.2010.04957}.}
-
-From successes of tropical homology \cite{itenbergTropicalHomology2019b}, we 
+From the successes of tropical homology \cite{itenbergTropicalHomology2019b}, we 
 may expect the existence of transformation from 
 line bundles on tropical manifold to complexes of
 constructible sheaves whose Euler number 
@@ -365,30 +377,21 @@ but not like of some complex tori.
 We will see another reason in \cref{rmk: }.
 }
 
+In this paper, we will pursue a different tropical
+analog of HRR with the help of ideas on 
+Strominger--Yau--Zaslow conjecture,
+toric varieties and related topics.
 
-\subsection{Lattice polytopes}
+\subsection{Counting lattice point of lattice polytopes}
 
-We consider about 
+One of important theorem of toric varieties
 
 Counting points on a certain region is a classical problem.
 
-Since Euler number of line bundle is invariant for 
-degeneration of varieties 
-(e.g. \cite[p.50]{}) and thus we can calculate
-the Euler number (or the dimension of global section)
- of many interesting ample line bundles
-by a degeneration to a toric variety or a union of toric
-varieties. 
+ 
 
-(For instance, let $X\to \opn{Spec}(\Z_{p})$ be a
-projective scheme over $\Z_{p}$ and $\mcal{L}$
-be a line bundle on $X$ that is flat over $\Z_{p}$.
-Then, $\chi_{\kappa(s)}(X_s;\mcal{L}_s)=\chi_{\kappa(\eta)}(X_{\eta};\mcal{L}_{\eta})$
 
-Roughly speaking, this means that
-we can calculate the Euler number of line bundles on
-a projective scheme over $\Q_p$ from that on a 
-projective scheme over $\mb{F}_p$.  
+  
 
 This interpretation works for integral affine manifold 
 with singularities $B$ as a lattice point of $B$. 
@@ -640,8 +643,8 @@ $\mathcal{C}$.
 \begin{Note}
 We also impose the following assumption for simplicity in this paper:
 \begin{itemize}
-\item Any topological space is locally compact and locally
-  contractible except schemes.
+\item Any topological space is Hausdorff and
+locally compact unless otherwise specified.
 \item Any ring is a commutative ring with unity.
 \item We identify any ring $A$ with a constant sheaf on
 $\{\opn{pt}\}$ with fiber $A$.
@@ -717,8 +720,7 @@ We note $a_{X,!}\mathcal{F}\simeq \Gamma_c(X;\mathcal{F})$.
 Let $X$ be a topological space, $Z$ a locally closed 
 subset of $X$
 and $i\colon Z\to X$ be the inclusion map.
-
-
+For a given sheaf $\mathcal{F}$ on $X$, 
 \begin{align}
 \mcal{F}|_{Z}\deq i^{-1}\mcal{F}, \quad 
 \mcal{F}_Z\deq i_! i^{-1}\mcal{F}, \quad 
@@ -731,6 +733,17 @@ but in \cite{MR932640}.
 From \cite[Proposition 2.5.4]{MR1299726}, $i_!$ is exact 
 and $\mcal{F}_Z$ is isomorphic to the sheaf defined in
 \cite[p.93]{MR1299726}.
+If $Z'$ be a closed subset of $Z$, then
+there exists the following exact sequence 
+\cite[Proposition 2.3.6.(v)]{MR1299726}:
+\begin{align}
+0\to \mathcal{F}_{Z\setminus Z'} \to 
+\mathcal{F}_Z \to \mathcal{F}_{Z'}\to 0.
+\end{align}
+
+\begin{Eg}
+
+\end{Eg}
 
 Let $\Gamma_{Z}(\mcal{F})$ be the sheaf of sections of 
 $\mcal{F}$ supported by $Z$
@@ -758,13 +771,17 @@ and $\Gamma_{Z}(\cdot)$ is a left exact functor from
 $\opn{Mod}(A_X)$ to $\opn{Mod}(A_X)$ 
 \cite[Proposition 2.3.9 (i)]{MR1299726}.
 
-Let $f\colon Y\to X$ be a continuous map and 
-$\mcal{G}\in\opn{Ob}(\opn{Mod}(A_Y))$.
+Let $f\colon Y\to X$ be a continuous map,
+$\mathcal{F}\in \opn{Ob}(\catn{Mod}(A_X))$
+and $\mathcal{G}\in\opn{Ob}(\catn{Mod}(A_Y))$.
 
 Then, we have the following isomorphism 
-\cite[(2.3.20)]{MR1299726}:
+\cite[(2.3.19)-(2.3.20)]{MR1299726}:
 \begin{align}
-\Gamma_Zf_*\mcal{G}\simeq f_*\Gamma_{f^{-1}(Z)}\mcal{G}.
+f^{-1}\mathcal{F}_Z\simeq 
+(f^{-1}\mathcal{F})_{f^{-1}(Z)},\quad 
+\Gamma_Zf_*\mathcal{G}\simeq f_*\Gamma_{f^{-1}(Z)}
+\mathcal{G}.
 \end{align}
 
 
@@ -826,8 +843,8 @@ microlocal sheaf theory
 which is called "local Morse datum" in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
 \begin{Def}[{Cohomological local Morse datum}]
-Let $f\colon X\to \R$ be a $C^{1}$-function on a 
-$C^{1}$-manifold $X$ and has 
+Let $f\colon X\to \R$ be a continuous map on a 
+topological space $X$ and has 
 at most one critical point $x$. Fix 
 $\mathcal{F}^{\bullet}\in 
 \opn{Ob}(\opn{D}^{b}(\catn{Mod}(A_X)))$.
@@ -837,9 +854,15 @@ $\mathcal{F}^{\bullet}\in
 H^{\bullet}(\opn{LMD}(\mcal{F},f,x)).
 \end{align}
 \end{Def}
-We follow the above notation from \cite[p.271]{MR2031639}.
+
 \begin{Rmk}
-We don't assume $f$ satisfies some 
+\begin{enumerate}
+\item We follow the above notation from 
+\cite[p.271]{MR2031639} for two reasons.
+One of this is for simplicity. 
+The other one is for emphasizing on analogy to
+Morse complexes.
+\item We don't assume $f$ satisfies some 
 "Morse condition" since
  we need to use some $C^{\infty}$-function
 which is \emph{not} a Morse function in the sense of 
@@ -851,9 +874,8 @@ the complex $\opn{LMD}(\mcal{F},f,x)$ in order to define
 a graded module associated with line bundle on tropical
 spaces. See also \cref{rmk: cartier module} for more about 
 this reason.
+\end{enumerate}
 \end{Rmk}
-
-Let $i\colon U\to X$ be an open inclusion.
 
 From \cref{eq: exactlocal} and by taking stalks,
 we have the following distinguished triangle:
@@ -869,42 +891,65 @@ for some closed subset $S$ of $X$ containing $x$.
 \begin{Prop} \label{prop-local-morse-data}
 Let $V$ be an open subset of $X$.
 \begin{align}
-\opn{MF}^{\bullet}(A_{S\cap V\subset V},f|_V,x)\simeq 
+\opn{MF}^{\bullet}(A_{S\cap V\subset V},f|_V,x)&\simeq 
 \opn{MF}^{\bullet}(A_{S\subset X},f,x
 ) \simeq \varinjlim_{U\in \opn{Op}(X)\cap \opn{Nbh}(x)} 
-\tilde{H}^{\bullet-1}(S\cap \{f<f(x)\}\cap U;A).
+\tilde{H}^{\bullet-1}(S\cap \{f<f(x)\}\cap U;A) \\
+& \simeq \opn{MF}^{\bullet}(A_S,f|_S,x).
 \end{align}
 
 \end{Prop}
 
-Here, $\tilde{H}^{i-1}(X;A)$ is the reduced (singular) cohomology group
-of $X$ (see for example \cite[p.199]{hatcherAlgebraicTopology2002a}).
+Here, $\tilde{H}^{i-1}(X;A)$ is the reduced cohomology 
+group
+of $A_X$ (see 
+\cite[p.199]{hatcherAlgebraicTopology2002a} for 
+reduced singular cohomology).
 We note $\tilde{H}^{-1}(\emp;A)=A$ and $\tilde{H}^{i}(\emp;A)=0$
 for any $i\in \N$ from definition.
 
 \begin{proof}
-Let $i\colon S\to X$ and
-$j\colon \{f<f(x)\}\to X$ be the inclusion maps.
+
+
 From definition of $A_{S\subset X}$, 
 $(A_{S\subset X})_x\simeq A$.
-
+There exists the following Cartesian suquare of 
+inclusion maps:
+Let $i\colon S\to X$, 
+$j\colon \{f<f(x)\}\to X$, 
+$i'\colon S\cap \{f<f(x)\} \to \{f<f(x)\}$ and 
+$j'\colon S\cap \{f<f(x)\} \to S$
+ be the inclusion maps.
+Then, 
+$j^{-1}\circ i_!\simeq i'_!\circ g'^{-1}$ 
+\cite[Proposition 2.5.11]{MR1299726}.
+Besides, $i,i'$ are closed inclusion maps, and thus
+we have the following quasi-isomorphisms:
 \begin{align}
 R\Gamma_{\{f<f(x)\}}A_{S\subset X}\simeq 
 Rj_*\circ j^{-1} \circ i_! \circ i^{-1}A_X&\simeq 
 R (j \circ i')_*\circ (i\circ j')^{-1}A_X \\
 &\simeq R (j \circ i')_* A_{S\cap \{f<f(x)\}}.
 \end{align}
-From the definition of higher direct image, we have
+From the elemental properties of higher direct image
+(e.g. \cite[II. Proposition 5.11]{iversenCohomologySheaves1986a}), we have
 \begin{align}
   (R^{n} (j \circ i')_* A_{S\cap \{f<f(x)\}})_x\simeq 
-\varinjlim_{U\in \opn{Op}(X)\cap \opn{Nbh}(x)} H^{n}(S\cap \{f<f(x)\}\cap U;A)
+\varinjlim_{U\in \opn{Op}(X)\cap \opn{Nbh}(x)} 
+H^{n}(S\cap \{f<f(x)\}\cap U;A).
 \end{align}
 \end{proof}
 
-\cref{prop-local-morse-data}
+By \cref{prop-local-morse-data}, we can extend 
+the local Morse data for rational polyhedral spaces.
 
+Before defining this, 
+we will see several examples of local Morse data 
+for manifolds.
 
+\begin{Cond}
 
+\end{Cond}
 
 \begin{Eg}[{Real Milnor fiber}] \label{eg:}
 We mainly follow from \cite[3.2]{MR3779558} for this example.
@@ -1519,7 +1564,7 @@ In this section,
 we recall the notion of affine manifolds from
 following
 \cite{heMR2293045,goldmanRadianceObstructionParallel1984a,kontsevichAffineStructuresNonArchimedean2006a,
-  grossMirrorSymmetryLogarithmic2006a} and 
+grossMirrorSymmetryLogarithmic2006a} and 
 \cite[Chapter 6]{aspinwallDirichletBranesMirror2009}.
 
 We write some background from 
@@ -1592,6 +1637,20 @@ tropical manifold.
 From now on, we follow about tropical homology and sheaf 
 theory for tropical manifolds
 from \cite{MR3903579,gross2019sheaftheoretic}.
+
+\subsection{Verdier duality}
+The Verdier duality holds for the following general form
+\cite[Proposition 3.1.10]{MR1299726}
+\begin{align}
+  R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{Hom}_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet})        \\
+  R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}).
+\end{align}
+
+\begin{Thm}
+
+\end{Thm}
+
+
 
 \subsection{Tropical homology, Tropical superform and Cartier data}
 
@@ -1899,9 +1958,8 @@ the zero section transversely. We can see that
 $\sharp(L_s\cap L_0)=|\det dq_s|$ directly, and thus
 we get \cref{eq: HesseRR}. 
 
-(ii) If $\det dq=0$, $L_{dq_s}\cap L_0$ is empty of 
-subtorus of $L_0$. We can choose a smooth vector bundle $v$ on 
-$T$ such that the one-time flow $\phi$ of $v$ make 
+(ii) If $\det dq=0$, we can choose a smooth vector bundle $v$ on 
+$\check{X}(T)$ such that the one-time flow $\phi$ of $v$ make 
 $\phi(L_{dq_s})\cap L_0=\emp$. 
 Thus, $\chi(\opn{MF}^{\bullet}(T,s))=0$.
 
