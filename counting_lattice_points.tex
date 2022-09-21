@@ -296,7 +296,7 @@ algebraic geometry (or complex geometry).
 Here is the statement of HRR for holomorphic line bundles on 
 complex manifolds.
 \begin{Thm}[{\cite{MR0202713}}]
-Let $X$ be a compact complex manifold andki
+Let $X$ be a compact complex manifold and
 $\mathcal{L}$ a holomorphic line bundle on $X$.
 Then there exists the following equation:
 \begin{align} \label{equation-HRR}
@@ -311,8 +311,8 @@ Then there exists the following equation:
 It is natural to study some analogs of these theorems 
 for tropical varieties, but it is not easy by various
 reasons.
-In this subsection, we mainly focus on the 
-LHS of \cref{equation-HRR}.
+In this subsection, we mainly focus on the difficulty of
+the LHS of \cref{equation-HRR}.
 
 At first, line bundles on tropical spaces are not sheaves of 
 Abelian groups but commutative monoids in general.
@@ -380,7 +380,8 @@ Riemann--Roch formula like
 This is another difficulty of homological approach of 
 tropical Riemann--Roch formula. 
 
-From the successes of tropical homology \cite{itenbergTropicalHomology2019b}, we 
+From the successes of tropical homology 
+\cite{itenbergTropicalHomology2019b}, we 
 may expect the existence of transformation from 
 line bundles on tropical manifold to complexes of
 constructible sheaves whose Euler number 
@@ -395,24 +396,70 @@ sheaves on algebraic variety directly.
 comes from the result in \cite{MR2449059,MR2565051}
 and homological mirror symmetry for 
 the derived category of coherent sheaves on complex split $n$-torus 
-$(\C^{\times})^{n}$ and the derived wrapped Fukaya category of $T^{*}(S^{1})^{n}$
+$(\C^{\times})^{d}$ and the derived wrapped Fukaya category of $T^{*}(S^{1})^{n}$
 by \cite{MR2822213}.
-Therefore, $\opn{D}_c^{b}((S^{1})^{n})$ should behave like 
-the derived category of coherent sheaves on $(\C^{\times})^{n}$
+Therefore, $\opn{D}_c^{b}((S^{1})^{d})$ should behave like 
+the derived category of coherent sheaves on 
+$(\C^{\times})^{d}$
 but not like of some complex tori.
-We will see another reason in \cref{rmk: }.
+We will see another reason in \cref{remark- }.
 }
 
 In this paper, we will pursue a different tropical
-analog of HRR for line bundles with the help of ideas on 
-Strominger--Yau--Zaslow conjecture,
-toric varieties and related topics.
+analog of Euler number of line bundles with the help of 
+ideas on toric varieties
+Strominger--Yau--Zaslow conjecture
+and related topics.
+
+\begin{Rmk}
+We also note about the RHS of \cref{equation-HRR} 
+for tropical manifolds. 
+The $1$-st Chern class $c_1(\mathcal{L})$ of 
+tropical line bundle $\mathcal{L}$ and 
+the Chow group of rational polyhedral spaces and 
+its cycle map is 
+well-studied ((適切な参考文献\cite{gross2019sheaftheoretic})),
+and thus we can define the Chern character
+$\opn{ch}(\mathcal{L})$ of 
+$\mathcal{L}$ naturally.
+On the other hand, the Todd class of tropical manifold
+have not been studied well enough yet  
+when the dimension of tropical manifold is greater
+than $2$.
+We won't discuss the general theory of Todd class of tropical 
+manifolds in this paper, 
+but should be essentially defined from the theory of 
+Chern--Schwartz--MacPherson cycles for matroids 
+\cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
+See also \cite[5.3]{mikhalkinTropicalGeometryIts2006} and
+\cite[Definition 3.20]{shawTropicalSurfaces2015a}.
+\end{Rmk}
 
 \subsection{Counting lattice point of lattice polytopes}
+In this subsection, we explain some backgrounds of 
+our approach of our definition of Euler characteristic
+of tropical line bundles.
 
-One of important theorem of toric varieties
+In the case of some special line bundles on
+tropical toric variety, our definition of Euler 
+characteristic of it is essentially same with the
+number of lattice points of the lattice polytope of it.
 
-Counting points on a certain region is a classical problem.
+Before explaining about it, we recall some 
+elemental properties of projective toric varieties over 
+$\mathbb{C}$.
+
+Let $P$ be a $d$-dimensional lattice polytope in 
+$\mathbb{R}^{d}$, $X_P$ the projective toric variety
+of $P$, $\mathcal{L}_P$ the line bundle on 
+$X_P$ of $P$
+ and $P(\mathbb{Z})\deq P\cap \Z^{d}$.
+
+
+\begin{align}
+\sharp (P(\mathbb{Z}))
+=\int_{X_P}\opn{ch}(\mathcal{L}_P)\opn{td}(X_P)
+\end{align}
 
  
 
@@ -561,19 +608,40 @@ of it. Then,
 \chi(B,s)  \deq \chi(\opn{MF}^{\bullet}(s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
 \end{align}
 where $\int_B$ is the trace map $\mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})\to \Z$.
+
 In particular, when $\mcal{L}=\mcal{O}_B$ then
-$\chi(\opn{MF}^{\bullet}(s))=\chi_{\opn{top}}(B)$?
+$\chi(\opn{MF}^{\bullet}(s))=\chi_{\opn{top}}(B)$ ?
 \end{Conj}
 
-Here, $\opn{ch}(\mcal{L})$ is a tropical analog of 
-the Chern character of $\mcal{L}$.
-We don't discuss the tropical Todd class
-$\opn{td}(B)$ of tropical manifolds in general, 
-but this should be essentially defined from the theory of 
-Chern--Schwartz--MacPherson cycles for matroids 
-\cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
-See also \cite[5.3]{mikhalkinTropicalGeometryIts2006} and
-\cite[Definition 3.20]{shawTropicalSurfaces2015a}.
+\begin{Rmk}
+Here is the list of the reason why the Euler 
+characteristic
+\begin{enumerate}
+\item If $B$ is a compact tropical curve and $D$ 
+is trivial divisor, then the tropical Riemann--Roch 
+formula in 
+\cite{gathmannRiemannRochTheoremTropical2008a}
+says $r(D)-r(K_B-D)=\chi_{\opn{top}}(B)=\frac{1}{2}\opn{deg}(-K_B)$. 
+\item If $B$ is a tropical surface satisfying a certain 
+good condition there exists the Noether formula
+$\chi_{\opn{top}}(B)=\frac{c_1(K_B)^{2} +c_2(B)}{12}$ 
+\cite[Theorem 5.1]{shawTropicalSurfaces2015a}.
+\item 
+\cite[Corollary 2]{itenbergTropicalHomology2019b} says 
+that the Hodge number $h^{p,q}(Z_w)$ of a general fiber $Z_w$ of
+a one-parameter family $\mathcal{Z}$ of 
+complex projective varieties over a punctured disc which 
+has a tropical limit to a smooth projective 
+$\mathbb{Q}$-tropical variety $X$, 
+is equal to that of tropical homology 
+$H_{q}(B;\mathcal{F}_p)$ of it. If $p=0$, then
+$h^{0,q}(Z_w)=\dim_{\mathbb{R}}(H_{q}(B;\mathbb{R}))
+=\dim_{\mathbb{R}}(H^{q}(B;\mathbb{R}))$.
+Therefore, $\chi(Z_w,\mathcal{O}_{Z_w})=
+\chi_{\opn{top}}(B)$.
+\end{enumerate}
+
+\end{Rmk}
 
 In this paper, we give a partial answer for compact tropical curves 
 and integral affine manifolds with Hessian form
@@ -586,7 +654,7 @@ with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ an admissible
 locally real analytic 
 Cartier data on $C$ (resp. $B$). Then,
 \begin{align}
-\chi(C,s)=\int_C c_1(D_s)+c_1(-K_C), \quad \chi(B,s)=\int_B \frac{c_1(D_s)^{n}}{n!}
+\chi(C,s)=\int_C c_1(D_s)+\frac{1}{2}c_1(-K_C), \quad \chi(B,s)=\int_B \frac{c_1(D_s)^{n}}{n!}
 \end{align}
 where $\chi(C,s)$ (resp. $\chi(B,s)$) is the number of weighted lattice
 points on $s$ (see \cref{def: weighted_lattice_points}) and $D_s$ is the divisor class of $s$.
@@ -985,7 +1053,10 @@ for manifolds.
 
 \begin{Cond}
 \label{condition-isolated-singularity}
-$f\colon X\to \mathbb{R}$
+$f\colon X\to \mathbb{R}$ is a $C^{1}$-function on a 
+smooth manifold $X$ with an isolated singularity
+at $x$ and $S$ is a connected closed subset of $X$ which is homeomorphic to 
+an open subset of a finite cell complex. 
 \end{Cond}
 
 \begin{Eg}[{Real Milnor fiber}] \label{eg:}
@@ -1042,7 +1113,7 @@ The equation $\chi(\opn{MF}^{\bullet}(\Z,f,x))=
 \opn{ind}_{\opn{PH}}(\opn{grad} f,x)$ can be considered 
 as the intersection $\sharp ([df]\cap [T^{*}_M M])$ of cycles in $T^{*}M$,
 and this is a special case of
-microlocal index theroem:
+the following microlocal index theroem:
 
 \begin{Thm}[{\cite[Theorem 9.5.6]{MR1299726}}]
 
