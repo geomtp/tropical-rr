@@ -256,10 +256,7 @@ The following is the main theorem of this paper:
   \end{align}
   In particular, $\opn{ehr}_{s}(n)\deq \chi(B,ns)$ is a polynomial function of at most degree $\opn{dim} B$ and $\opn{ehr}_{s}(0)=\chi_{\opn{top}}(B)$.
 \end{Thm}
-This main theorem is obvious from our definition.
-We stress the "extremely polite" condition is very strict,
-and we don't know how many elements of N\'eron Severi group
-is a first Chern class of such a desirable Cartier data.
+
 
 On the other hand, we can choose an extremely polite Lagrangian section
 for any fist Chern class when $B$ is a compact tropical curve or closed integral affine
@@ -638,30 +635,6 @@ $s: S\cup S' \to \check{X}(S\cup S)$
   \caption{A standard section for $\check{X}([0,1])\simeq S^{1}\times [0,1]$}
 \end{figure}
 
-At first, we prove for projective tropical line $\mb{T}\mb{P}^{1}$.
-
-\begin{proof}[Proof for tropical projective lines]
-
-\end{proof}
-
-
-
-\begin{Eg}
-  Let $U$ be a sufficiently small open domain of an $n$-valent vertex $v$ of tropical curve.
-
-  \begin{align}
-    \opn{ind}_v(s_{p,q})=1-q, \quad
-    \opn{ind}_v(-s_{p,q})=\opn{ind}_v(s_{q,p})=1-p.
-  \end{align}
-
-  when $n=p+q=3$,
-
-  \begin{align}
-    \opn{ind}_v(s_{3,0})=1, \quad \opn{ind}_v(s_{2,1})=0, \quad \opn{ind}_v(s_{1,2})=-1, \quad \opn{ind}_v(s_{0,3})=-2.
-  \end{align}
-
-\end{Eg}
-
 
 \begin{DefProp}
   Let $B$ be a compact tropical curve and $s:B \to \check{X}_0(B)$ a continuous section of
@@ -904,13 +877,12 @@ but we mention about them for revealing the relationship
 between the theory of lattice polytopes in the sense of
 toric varieties and our index.
 
-See also \cite{coxToricVarieties2011a} for fundamental properties of classical toric varieties.
+
 
 
 For simplicity, we fix $N=\Z^{n}$.
 
-We recall about toric varieties over tropical semifield or semifield
-from \cite{MR2428356} and potential .
+
 
 We first recall the limit of polynomial over log-semiring $\underline{\R}_{\opn{log}}$
 by Viro and Maslov's method.
@@ -965,7 +937,7 @@ $n$-torus over $\underline{\R}_{\opn{log}}$:
 Every Laurent polynomial function is smooth and convex on $\R^{n}$
 \footnote{$f(x,T)$ also convex on $\R^{n}\times \R_{>0}$}.
 
-Therefore, $(\R^{n},f)$ forms an integral Hessian manifold.
+
 
 
 
@@ -977,8 +949,7 @@ $df: \R^{n}\to \R$.
   \sum_{m\in A} \opn{exp}(a_m)\cdot\opn{exp}(\abk{x,m})m
 \end{align}
 
-The image of $1$-form $df:\R^{n}\to (\R^{n})^{\vee}$ is
-homeomorphic to $\opn{relint}(\opn{Newt}(f))$ \cite[p.124 Exercise]{MR1301331}.
+
 
 From properties of Hesse domains, $(\R^{n},Ddf)$ and
 $(\opn{int}(\Delta^{[n]}),\check{D}d\check{f})$ are isometrics
@@ -1001,9 +972,7 @@ globally since $\R^{n}$ is simply connected.
 \end{align}
 This is the restriction of Fubini--Study metric on algebraic torus
 $(\C^{\times})^{n}$ \cite[Examples 3.1.9 i)]{MR2093043}.
-See also \cite[Appendix 2]{MR1301331} for general theory for
-the relationships for Hessian form and the induced K\"{a}hler potential for
-toric manifolds.
+
 
 This is a tropical analog of weighted algebraic moment map.
 
@@ -1056,11 +1025,6 @@ The phenomena of
   over $\underline{\R}_{\opn{log}}$ and its differential is
   commutative with the moment map in the sense of .
 \end{Rmk}
-
-
-
-
-The following Proposition is
 
 \begin{Prop}[Ehrhart's reciprocity law revisit]
   Let $\mu_P: X_{\Sigma (P)}^{\opn{trop}}
@@ -1562,7 +1526,9 @@ $L_{D}$ be a section of $f:X\to B$ which is defined
 Take care the signature $(-1)^{n(n-1)/2}$. In fact, we can easily check $[L_0]\cap [L_0]=-2$ if $\check{X}\to B$ is a special Lagrangian torus fibration of K3 surfaces under hyperk\"ahler rotation from adjunction formula.
 
 \subsection{Radiance obstruction and geometric prequantization}
-In this subsection, we recall the relationships lattice points of strongly integral affine manifolds and geometric quantization from \cite{1999math......2027T,MR3112817,MR3525095}. A symplectic manifold $(M,\omega)$ is \ind{prequantizable}{prequantizable} if the de Rham cohomology class $[\omega]$ of $\omega$ is in $H^2(X,\Z)$. An integral affine manifold $B_0$ has a strongly integral affine structure if and only if the de Rham cohomology class of $\omega_{\opn{std}}(\in \check{X}(B_0))$ is in $H^{2}(\check{X}(B_0),\Z)$, see
+In this subsection, we recall the relationships lattice points of 
+strongly integral affine manifolds and geometric quantization 
+from \cite{1999math......2027T,MR3112817,MR3525095}. A symplectic manifold $(M,\omega)$ is \ind{prequantizable}{prequantizable} if the de Rham cohomology class $[\omega]$ of $\omega$ is in $H^2(X,\Z)$. An integral affine manifold $B_0$ has a strongly integral affine structure if and only if the de Rham cohomology class of $\omega_{\opn{std}}(\in \check{X}(B_0))$ is in $H^{2}(\check{X}(B_0),\Z)$, see
 
 
 
@@ -1673,19 +1639,11 @@ For instance, $\omega_X$ is
 From this properties, we need to consider different category
 for
 
-\begin{Eg}[An analog of Kodaira vanishing theorem]
-
- Fix $R\deq\Q$.
   
-  We can consider this as an analog of Serre vanishing theorem
-  (c.f. \cite[III. Proposition 5.3]{hartshorneAlgebraicGeometry1977a}) for a power of an ample line bundle.
- 
-  If Hacking's conjecture for the homology of the link of tropical fan
-  \cite{MR2452307} is true, $\opn{CF}^{i}(s,\Q)$ vanish except $i=\dim B$.
+
  
 
-  Besides, this property holds for every Bergman support since the order complex
-  $\Delta_M$ is shellable. This is called Folkman's vanishing theorem.
+  
 
 
 
@@ -2618,7 +2576,7 @@ If the group action $\rho:G \times X \to X$ is free,
 map
 $\pi^{-1}=\pi^{!}$ \cite[VII.(4.5),(4.6)]{iversenCohomologySheaves1986a}.
 
-Similar properties exist for finite \'etale morphism of schemes.
+
 
 We don't know whether $\pi^{-1}=\pi^{!}$ for our setting in general but
 we give a partial answer of this which we need for the proof of main
@@ -3004,7 +2962,7 @@ integrable system \href{https://arxiv.org/abs/1205.5249}{[1205.5249] Integrable 
 \href{https://arxiv.org/abs/1411.1191}{[1411.1191] An explicit formula for the generic number of dormant indigenous bundles}
 
 
-\subsubsection{More examples}
+
 
 \section{Symmetric product of tropical space}
 
@@ -3034,16 +2992,6 @@ integrable system \href{https://arxiv.org/abs/1205.5249}{[1205.5249] Integrable 
   \end{align}
 
 \end{proof}
-
-
-\subsubsection{Cluster varieties}
-
-
-
-The theta functions as canonical bases is explained in 
-
-\href{http://content.algebraicgeometry.nl/2015-2/2015-2-007.pdf}{2015-2-007.pdf}
-
 From semi-continuity and ivariance of Kodaira dimension 
 by "Extension of twisted pluricanonical sections
 with plurisubharmonic weight and invariance of
@@ -3081,7 +3029,7 @@ has a such structure.
 \end{Rmk}
 
 
-\end{Eg}
+
 
 \begin{Eg}[Focusing on single cohomology of complex tori]
   If $Q$ has $r$ positive and $n-r$ negative eigenvalues. Then,
@@ -3159,13 +3107,8 @@ has a such structure.
   is trivial.
 \end{Rmk}
 
-See \href{https://arxiv.org/abs/math/0409520}{[math/0409520] Lectures on Arithmetic Noncommutative Geometry}
-for Schottky uniformization.
 
-\subsection{GW invariant}
-The Gromov--Witten invariant $N_d$ is equal to the number of rational 
-curve with marked $n$-points.
-(See [Theorem 7.3.1,Cox--Katz])
+
 
 \subsection{the differential of an extended 
 smooth function on tropical manifold}
