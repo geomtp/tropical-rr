@@ -1896,9 +1896,33 @@ We set the following spaces:
 \check{X}(C_0)\deq T^{*}C_0/T^{*}_{\Z}C_0, \quad 
 \check{X}_0(C)\deq \check{X}(C_0)\sqcup_{i,s}C.
 \end{align}
+Obviously, $\check{X}_0(C)$ has a canonical projection
+$\check{\pi}_C \colon \check{X}_0(C)\to C$.
 \end{Def}
 
+\begin{Eg}
+If $C=\mathbb{T}P^{1}$, then 
+$\check{X}_0(\mathbb{T}P^{1})$ is just a 
+cylinder with infinity length plus two infinity points:
+\begin{align}
+\check{X}_0(\mathbb{T}P^{1})\simeq 
+\{(-\infty,0)\}\cup(\mathbb{R}\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee})
+\cup \{(+\infty,0)\}.
+\end{align}
+The negation map
+$\iota \colon\mathbb{T}P^{1}\to \mathbb{T}P^{1}; x\mapsto -x$
+induces the canonical automorphism:
+\begin{align}
+\iota^{*}\colon \check{X}_0(\mathbb{T}P^{1})
+\to \check{X}_0(\mathbb{T}P^{1}); (x;y)\mapsto (-x;-y). 
+\end{align}
+This is a symplectic automorphism on 
+$\check{X}_0(\mathbb{R}) (\subset \check{X}_0(\mathbb{T}P^{1}))$ since 
+$dx\wedge dy=d(-x)\wedge d(-y)$.
+\end{Eg}
+
 \begin{Prop}
+\label{proposition-admissible-section}
 Let $s$ be an admissible Cartier divisor 
 $s=\{(U_i,f_i)\}_{i\in I}$ on a tropical curve with 
 no $1$-valent vertex. 
@@ -1950,12 +1974,56 @@ If $C$ is not isomorphic to a circle, then
 $C_0$ is a disjoint union of open interval:
 \begin{align}
   C_0\simeq \coprod_{e\in E} (a_e,b_e), \quad
-(a_e\in \mathbb{T}, b_e\in \mathbb{R}\cup\{+\infty\})
+(a_e\in \mathbb{T}, b_e\in \mathbb{R}\cup\{+\infty\}).
 \end{align}
 
-%NEXT: ここを仕上げる。と順序整理
+$\check{X}(C_0)$ has a canonical symplectic structure
+and thus there exists a canonical orientation induced
+from the symplectic form on $\check{X}(C_0)$.
+This form defines an orientation number of 
+section defined in \cref{proposition-admissible-section}.
+%NEXT: TP1のローテーションを定義する。 
+
+\begin{Def}
+Let $s\colon  (\subset \mathbb{T}P^{1}\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee})$
+\end{Def}
+
+\begin{Prop}
+$\opn{rot}(s)=\opn{rot}(s\circ \iota)$
+\end{Prop}
+
+\begin{proof}
+
+\end{proof}
+
 \begin{Def}[{rotation number}]
-Let $[a_e,b_e]$
+Fix a closed interval $[a,b]$ in $\mathbb{T}P^{1}$.
+Let $s\colon [a,b]\to [a,b]\times \mathbb{R}/\mathbb{Z}$ be 
+a continuous section of the canonical projection
+$p\colon [a,b]\times \mathbb{R}/\mathbb{Z} \to [a,b]$
+such that $s(a)=(a,0)$ and $s(b)=(b,0)$. 
+The rotation number
+is the homotopy class of the closed path
+$q\circ s\colon [a,b]\to \mathbb{R}/\mathbb{Z}$
+induced from $s$ and the canonical projection
+$q\colon [a,b]\times \mathbb{R}/\mathbb{Z} 
+\to \mathbb{R}/\mathbb{Z}$. Here, 
+we identify $\pi_1(\mathbb{R}/\mathbb{Z},0)\simeq \mathbb{Z}$
+via the canonical orientation.
+\end{Def}
+
+\begin{Prop}
+Fix an affine isomorphism $e\simeq [a,b]$ 
+\end{Prop}
+
+
+\begin{Def}
+
+\begin{align}
+\opn{rot}(s)\deq \sum_{e\in \pi_0(C_0)}
+\opn{rot}(s|_{\opn{cl}(e)})
+\end{align}
+
 \end{Def}
 
 \begin{Def}
@@ -1975,7 +2043,7 @@ D_s=\{(f_j-f_i)\}_{i,j\in I}
 \begin{Prop}
 Let $s$ be an admissible smooth Cartier divisor on $C$.
 \begin{align}
-\opn{rot}(s)=\opn{deg}(D_s)
+\opn{rot}(s)=\opn{deg}(D_s)(= c_1(D_s))
 \end{align}
 \end{Prop}
 
