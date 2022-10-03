@@ -7,3 +7,16 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QMoreover, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a c-unital triangulated \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q-category triangulated Ainfty-category of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QA Graph Theoretical Poincare-Hopf Theorem\\E$"}
 {"rule":"EN_A_VS_AN","sentence":"^\\Q(iii) If \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q has a Hessian form, then there exists a tropical tori \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and an étale cover \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q by Cheng-Yau's result \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is called the (negative) real Milnor fibre.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QWe also note has a differential geometrical interpretation, see also .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIn the proof of the above corollary, we only use the condition of cohomological version of Milnor fibre.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIn usual, homological mirror symmetry for non-Calabi–Yau manifolds has three ways:\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QIn this subsection, we mainly focus on the difficulty of the LHS of .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QOne of trivial but remarkable point is that \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q except for special cases such like .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QWe will see a smooth Cartier divisor is an analog of Lagrangian section .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThis phenomenon gives a certain analog of Kodaira vanishing theorem for positive line bundles, see also .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QWe will see another reason in .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a integral manifold with the standard coordinate and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q a smooth function defined by .\\E$"}
+{"rule":"EN_A_VS_AN","sentence":"^\\QData \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q defines an element \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q as a Čech cocycle.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QBy Khimshiashvili [Himšiašvili] formula \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, we have \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

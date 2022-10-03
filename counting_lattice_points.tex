@@ -300,10 +300,10 @@ Then there exists the following equation:
 \end{align}
 \end{theorem}
 
-((厳密にはHilzerbruchの元論文からの引用ではなく
+((厳密には Hirzerbruch の元論文からの引用ではなく
 改訂版だがよいか?))
 
-It is natural to study some analogs of these theorems 
+It is natural to study some analogs of HRR or GRR 
 for tropical varieties, but it is not easy by various
 reasons.
 In this subsection, we mainly focus on the difficulty of
@@ -456,7 +456,7 @@ number of lattice points of the lattice polytope of it.
 Before explaining about it, we recall some 
 elemental properties of projective toric varieties over 
 $\mathbb{C}$.
-((See also \cite{coxToricVarieties2011a} for fundamental
+((See also \cite{MR2810322} for fundamental
 properties of classical toric varieties.))
 Let $P$ be a $n$-dimensional lattice polytope in 
 $\mathbb{R}^{n}$, $X_P$ the projective toric variety
@@ -488,7 +488,7 @@ as follows:
 \sharp (P\cap \mathbb{Z}^{n})
 =\int_{X_P}\opn{ch}(\mathcal{L}_P)\opn{td}(X_P).
 \end{align}
-The proto-type slogan of our approach
+The prototype slogan of our approach
 for a tropical analog of HRR is 
 a realization of \cref{equation-toric-HRR}
 for tropical manifolds.
@@ -500,8 +500,10 @@ see also \cref{appendix-geometric-quantization}.
 Next, we will interpret the LHS of 
 \cref{equation-toric-HRR} by the language
 of tropical toric varieties.
-
-Let $P$ be a $n$-dimensional convex lattice polytope in
+Basic concepts and properties 
+of tropical toric varieties is studied and 
+explained in \cite{MR2428356,MR2511632,meyer2011intersection,MR3287221}.
+Let $P$ be an $n$-dimensional convex lattice polytope in
 $(\mathbb{R}^{n})^{\vee}$ and
 $f\colon \mathbb{R}^{n} \to \mathbb{R}$ a 
 smooth function which is defined as follows:
@@ -542,7 +544,7 @@ The differential is a sigmoid function
 $df(x)=\frac{e^{x}}{1+e^{x}}$ and 
 the image of $df$ is the open interval $(0,1)$.
 \myfootnote{
-the softmax function also are appreared 
+The softmax function also are appeared 
 naturally in a similar way 
 when we consider tropical projective spaces.}
 \end{example}
@@ -559,7 +561,7 @@ need not assume convex lattice polytope is not Delzant.
 This is a tropical analog of algebraic moment map 
 for toric varieties
 (see for example
-\cite[\textsection 12.2]{coxToricVarieties2011a}).
+\cite[\textsection 12.2]{MR2810322}).
 
 Let 
 $q: ({\mathbb{R}}^{n})^{\vee}\to ({\mathbb{R}}^{n})^{\vee}/(\Z^{n})^{\vee}$ 
@@ -672,8 +674,8 @@ submanifolds of $T^{*}B_0$
 
 \begin{example}
 Let $B_0\deq\mathbb{R}^{n}$ be 
-a integral manifold with the standard coordinate and
-$f$ a smooth function defined by 
+an integral manifold with the standard coordinate and
+$f$ a smooth function defined by
 \cref{equation-log-polynomial}.
 Then, $s_{df}(X)$ is equal to the graph of 
 $q\circ df$. In particular,
@@ -702,7 +704,7 @@ $\check{\pi}_{B_0}\colon \check{X}(B)\to B$.
 If $B$ is a tropical elliptic curve 
 $\mathbb{R}/\mathbb{Z}$, then we can check there exists 
 a similar formula of 
-\cref{equation-MRR-tropical-line} easily.
+(\ref{equation-MRR-tropical-line}) easily.
 
 \begin{example}
 Let $f_n\colon \mathbb{R}\to \mathbb{R};
@@ -769,7 +771,7 @@ Let $B$ be a compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
 $\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
  Let $s$ be a "generic"
-extended smooth Cartier data satisfying a admissible condition 
+extended smooth Cartier data satisfying an admissible condition 
 \cref{cond: admissible} which represents of $\mcal{L}$
 and its graded $\Z$-module $\opn{MF}^{\bullet}(B;s)$
 of it. Then,
@@ -1153,7 +1155,7 @@ We also note that we need to use
 the graded module $\opn{MF}^{\bullet}(\mcal{F},f,x)$ instead of 
 the complex $\opn{LMD}(\mcal{F},f,x)$ in order to define
 a graded module associated with line bundle on tropical
-spaces. See also \cref{rmk: cartier module} for more about 
+spaces. See also \cref{remark-differential-graded-module} for more about 
 this reason.
 \end{enumerate}
 \end{remark}
@@ -1267,9 +1269,9 @@ We also use the locally analytic condition frequently:
 \begin{condition}
 \label{condition-local-analytic}
 $f\colon X\to \mathbb{R}$ is a $C^{\infty}$-function
-with an isolated singularities at $x$ such that 
+with an isolated singularity at $x$ such that 
 there exists a real analytic function $f_0$ on an open 
-subset $U$ of $\mathbb{R}^{n}$ and an smooth embedding
+subset $U$ of $\mathbb{R}^{n}$ and a smooth embedding
 $\phi \colon U\to X$ satisfying $x\in \phi(U)$ and
 $f_0=f\circ \phi$.
 \end{condition}
@@ -1324,7 +1326,7 @@ topological spaces:
 (B_{\vep,x},B_{\vep,x}\cap \{f=0\})\simeq 
 (\opn{Cone}(S_{\vep,x}),\opn{Cone}(S_{\vep,x}\cap \{f=0\}))
 \end{align}
-for sufficienly small $\vep>0$
+for sufficiently small $\vep>0$
 \cite[Theorem 2.10]{MR0239612}.
 From this $B_{\vep,x}\cap\{f<f(x)\}$ is homeomorphic to
 $(S_{\vep,x}\cap \{f<f(x)\})\times (0,\vep]$.
@@ -1459,7 +1461,7 @@ We will see this in the case $A=\mathbb{Q}$.
 We note $\opn{MF}^{\bullet}(\Q_S,-f,x) \simeq 
 H^{\bullet}(S,S\setminus \{x\};\Q)\simeq 
 (H^{-\bullet}(\upomega_S^{\bullet}))_x$ since
-$H^{-i}(\upomega_S^{\bullet})$ is the sheafication of
+$H^{-i}(\upomega_S^{\bullet})$ is the sheafification of
 the presheaf $U\mapsto H_{c}^{i}(U;k)^{\vee}=H^{i}(S,S\setminus U;k)^{\vee}$
  \cite[]{iversenCohomologySheaves1986a} and fundamental properties of the direct limit of topological spaces \cite[Proposition 3.33]{hatcherAlgebraicTopology2002a}. 
 If $S$ is a purely tropical $n$-manifold, then 
@@ -1479,11 +1481,11 @@ by Hacking conjecture.
 Hacking also proved that conjecture is true for a suitable condition
 \cite[Theorem 2.5]{MR2452307}.
 Since any tropical varieties is connected
-through codimension $1$ \cite[Theorem 3.3.5]{maclaganIntroductionTropicalGeometry2015a}
+through codimension $1$ \cite[Theorem 3.3.5]{MR3287221}
 this conjecture is true when $\dim S \leq 2$.
 This phenomenon gives a certain analog of Kodaira vanishing theorem for 
 positive line bundles, see 
-also \cref{eg: kodaira}.
+also \cref{example-tropical-kodaira-vanishing}.
 \end{remark}
 
 \subsection{Smooth Cartier divisors on rational 
@@ -1508,8 +1510,7 @@ there exists the notion of tropical line bundle on
 rational polyhedral space
 \cite[Definition 3.12]{gross2019sheaftheoretic}.
 Every isomorphism class of 
-tropical line bundles on a rational polyhedral 
-spaces is parametrized by 
+tropical line bundles on $B$ is parametrized by 
 $H^{1}(B;\mathcal{O}^{\times}_B)$
 \cite[Proposition 3.13]{gross2019sheaftheoretic}.
 The group $H^{1}(B, \mcal{O}^{\times}_B))$ is called 
@@ -1568,7 +1569,7 @@ H^{0}(B;\mathcal{A}^{0,0}_B)\to
 H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$ 
 be a morphism defined from 
 (\ref{equation-smoooth-cartier-divisor-sequence}).
-The \emph{primncipal smooth divisor} of a $(0,0)$-superform 
+The \emph{principal smooth divisor} of a $(0,0)$-superform 
 $f$ is the image $(f)^{\mathrm{sm}}$ of $f$
 induced from the short exact sequence
 (\ref{equation-smoooth-cartier-divisor-sequence}).
@@ -1682,17 +1683,7 @@ if and only if $df(x)\in (\Z^{n})^{\vee}$.
 From definition, $f$ is admissible at $x$ then $f+m$ is also admissible for 
 any $m\in \mcal{O}^{\times}_{M_{{\mathbb{R}}}}(M_{{\mathbb{R}}})$.  
 
-We assume that every (rational) polyhedral space satisfies 
-the following condition,
-but we expect that the condition is not necessary
-in general.
 
-\begin{condition}
-\label{condition-good-linearity-space}
-\begin{align}
-\opn{span}_{{\mathbb{R}}}\opn{SS}(S)_x=\opn{Lin}(S,x)^{\bot}
-\end{align}
-\end{condition}
 
 \begin{example}
 Every metric graph of finite length and 
@@ -1758,11 +1749,14 @@ smooth Cartier divisor like
 Let $s\in \opn{CDiv}^{\mathrm{sm}}(B)$, 
 $\{U_i\}_{i\in I}$ an open cover of $B$ and 
 $f_i\colon U_i \to \mathbb{R}$ a $(0,0)$-superform
-on $U_i$. We call 
+on $U_i$. The set 
 $\{(U_i,f_i)\}_{i\in I}$ is 
 a \emph{local data} of $s$ if 
 $s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all 
-$i\in I$.  
+$i\in I$. The set $\{(U_i,f_i)\}_{i\in I}$ is a
+\emph{local smooth Cartier data} if 
+$\{(U_i,f_i)\}_{i\in I}$ is a local data of a smooth
+Cartier divisor.
 \end{definition}
 %TODO: 競合の正当化
 \begin{proposition}
@@ -1774,11 +1768,35 @@ $\{(V_j,f_j)\}_{j\in J}$ are local data of $s$.
 \begin{definition}[{smooth admissible Cartier divisor}]
 \label{definition-admissible-smooth-cartier-divisor}
 A smooth Cartier divisor $s$ is \emph{admissible} 
-if there exists a local data $\{(U_i,f_i)\}_{i\in I}$
-such that $f_i$ is admissible for all $i\in I$.
+if there exists a local data $\{(U_i,f_i)\}_{i\in I}$ 
+of $s$
+such that $f_i$ is admissible for all $i\in I$. 
+In general, a pair $(s,s')$ of smooth 
+Cartier divisor is \emph{admissible} if $s'-s$ is 
+admissible. 
 \end{definition}
 
+\begin{definition}
+$s_0\cap s$
+\end{definition}
 
+\begin{definition}[{local intersection data}]
+Fix a compact rational polyhedral space $B$ satisfying 
+\cref{condition-Rn}.
+Let $s$ be an admissible smooth Cartier divisor 
+on $B$ such that $\sharp (s\cap s_0)<\infty$. 
+A \emph{local intersection data} of $s$ is the set 
+$\{(U_p,f_p)\}_{p\in s\cap s_0}$ of open subsets
+$U_i$ of $B$ and (0,0)-superforms
+$f_p\colon U_p \to \mathbb{R}$ indexed by 
+$ s\cap s_0$ 
+such that
+\begin{enumerate}
+\item $s|_{U_p}=(f_p)^{\mathrm{sm}}$
+for all $p\in s\cap s_0$,
+\item $\opn{Crit}(f_p)=\{p\}$ for all $p\in s\cap s_0$.
+\end{enumerate}
+\end{definition}
 
 \begin{definition}
 Let $S$ be a rational polyhedral space such that the image of
@@ -1797,9 +1815,10 @@ s_0 \cap s\deq \set{x\in S\mid \opn{pr}_x^{S}(df_i(x))=0
 \end{align}
 \end{definition}
 
+We defined the 
 
-
-\begin{remark} \label{rmk: cartier module}
+\begin{remark}
+\label{remark-differential-graded-module}
 We stress that we should not consider 
 $\opn{MF}^{\bullet}(S;s,A)$ as the cohomology of $s$ just
 a graded module 
@@ -1813,7 +1832,8 @@ $\opn{MF}^{\bullet}(S;s,A)$ is equal to a Floer complex
 of Lagrangian submanifolds (e.g. \cite[5.2]{MR1882331}).
 \end{remark}
 
-\begin{example} \label{eg: kodaira}
+\begin{example}
+\label{example-tropical-kodaira-vanishing}
 A local data $\{(f_i,U_i)\}_{i\in I}$ of a given 
 smooth Cartier divisor $s$ is 
 \emph{Bohr--Sommerfeld type} or \emph{Hessian type} if
@@ -1827,7 +1847,7 @@ In this case, the cohomology of
 $\opn{MF}^{\bullet}(S;s,\Q)$ is independent of the choice of 
 differential of $\opn{MF}^{\bullet}(S;s,\Q)$.
 This is a tropical analog of Kodaira's vanishing theorem
-for a (multiple of) positive form, i.e., a holomorphic line bundle $\mcal{L}$ with a 
+for a (multiple of) positive line bundle, i.e., a holomorphic line bundle $\mcal{L}$ with a 
 K\"ahler form on a complex manifold $M$: 
 \begin{align}
 H^{\bullet}(M;\mcal{L}^{-1})\simeq H^{n}(M;\mcal{L}^{-1})[-n].
@@ -1839,39 +1859,45 @@ with a Hessian form by SYZ mirror pair.
 See \cref{sec: BSRR} for more details.
 \end{example}
 
+
+
+
 The following proposition is an analog of \'{e}tale multiplicity of Euler characteristics
 (cf. \cite[Proposition 1.1.28]{MR2095471}).
 
 \begin{proposition}
 \label{proposition-euler-number-etale}
-Let $S$ be a compact rational polyhedral space such that any atlas is in for some 
-${\mathbb{R}}^{n}$ and $s$ be an admissible smooth Cartier divisor
+Let $B$ be a compact rational polyhedral space satisfying
+\cref{condition-Rn} and $s$ be an admissible smooth Cartier divisor
 such that $s_0\cap s$ is a finite set.
-For $f:S' \to S$ be a covering map of $S$ of degree 
-$\opn{deg}(f)$,
+For $q \colon B' \to B$ be a covering map of $B$ of degree 
+$\opn{deg}(q)$,
 \begin{align}
-\chi(\opn{MF}^{\bullet}(S';f^{*}(s),A))=
-\opn{deg}(f)\chi(\opn{MF}^{\bullet}(S;s,A)).
+\chi(\opn{MF}^{\bullet}(B';q^{*}(s)))=
+\opn{deg}(q)\chi(\opn{MF}^{\bullet}(B;s)).
 \end{align}
 \end{proposition}
 
-The proof of this proposition is trivial from definition.
+The proof of \cref{proposition-euler-number-etale} is trivial from definition.
 
 \begin{conjecture} 
 \label{conjecture-tropical-MRR}
 Let $S$ be a compact tropical manifold satisfying 
 \cref{condition-Rn} and has the Todd class $\opn{td}(S)$ of $S$ 
-defined by the theory of Chern--Schwartz--MacPherson
+which (should be) defined by the theory of Chern--Schwartz--MacPherson
 cycles
 \cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
-Let $s$ be a admissible smooth Cartier divisor such that
+Let $s$ be an admissible smooth Cartier divisor such that
 $s_0\cap s$ is finite. Then, 
 \begin{align}
 \chi(\opn{MF}^{\bullet}(S;s))=\int_{S}\opn{ch}(s)\opn{td}(S).
 \end{align}
 \end{conjecture}
-We will prove it for tropical curves in the 
-next section.
+In this paper, we don't discuss the general theory of 
+Todd class of $S$.
+We will prove it for tropical curves and integral 
+affine manifold with a Hessian form in the 
+rest of this paper.
 
 \begin{remark}
 Obviously, $\opn{MF}^{\bullet}(S;s,A)$ is not finitely
@@ -1893,11 +1919,11 @@ ${\mathbb{R}}_{\geq 0}^{n}$ such that its derivative at $x$ in
 the stalk of the sheaf of affine function
 (with a real valued slope) on $\mb{T}^{n}$.
  By repeating
-the construction of the sheaf of super $(0,0)$-forms on 
+the construction of the sheaf of $(0,0)$-superforms on 
 rational polyhedral spaces, we can extend a sheaf of
 smooth function on rational polyhedral spaces and
-\cref{conj: conj}.\footnote{
-The differential of such a smooth function 
+\cref{conj: conj}.
+\myfootnote{The differential of such a smooth function 
 need to be in the stalk of the sheaf of affine function 
 with real valued slope since 
 $\frac{df\circ \opn{exp}}{dx_i}=
@@ -1912,7 +1938,8 @@ For instance, let $U_{x}$ be a small open neighborhood of
 a given point $x$ in a tropical toric open strata $O(\sigma)$
  corresponds to a convex cone $\sigma$ of a fan.
 Then, the slope of a smooth function $f$ on $U_{x}$ at $x$
-should be in $\sigma^{\bot}$ since the set of intertible element
+should be in $\sigma^{\bot}$ since the set of 
+invertible element
 in the dual cone $\sigma^{\vee}$ of $\sigma$ is $\sigma^{\bot}$.
 This condition corresponds to the condition for the Lagrangian
 in $\opn{Fuk}(T^{*}M_{{\mathbb{R}}}/M;\overline{\Lambda}_{\sigma})$ 
@@ -1944,13 +1971,31 @@ is solved by \cite{MR4132582}.
 \end{remark}
 
 \begin{remark}[{Ehrhart reciprocity revisit}]
-Let $s$ be a admissible smooth Cartier divisor on 
+Let $s$ be an admissible smooth Cartier divisor on 
 tropical toric varieties in the sense of the above Remark.
 $\chi(X_{\Sigma},-s,A)=(-1)^{n}\sharp (\opn{int}(\mu_s(X_{\Sigma}))\cap \Z^{n})$ since
-the Local Morse data at boundary lattice point is trivial.
+the local Morse data at boundary lattice point is trivial.
 This is another interpretation of Ehrhart reciprocity of 
 lattice polytopes.
 \end{remark}
+
+\subsection{Stratified torus fibrations}
+
+If $B$ is a good rational polyhedral space, we 
+can consider every admissible smooth Cartier divisor
+$s$ on $B$, then
+
+We assume that every (rational) polyhedral space satisfies 
+the following condition,
+but we expect that the condition is not necessary
+in general.
+
+\begin{condition}
+\label{condition-good-linearity-space}
+\begin{align}
+\opn{span}_{{\mathbb{R}}}\opn{SS}(S)_x=\opn{Lin}(S,x)^{\bot}
+\end{align}
+\end{condition}
 
 \section{Proof for compact tropical curves}
 In this section, we prove \cref{thm: main} for 
@@ -1966,7 +2011,7 @@ The current proof is modified after reading
 We also follow the notation used in 
 \cite{auroux2022lagrangian}.
 Some proposition which is proved is in a special case
-of the previous section but we write a short proof 
+of the previous section, but we write a short proof 
 for simplicity.
 
 \begin{theorem}
@@ -2009,7 +2054,7 @@ $df(x)\in (\mathcal{F}^{1}_{\mathbb{Z},\Gamma_{n+1}})_x\simeq (\mathbb{Z}^{n})^{
 \begin{proof}
 Obviously, $\opn{dim}_{\mathbb{R}}\opn{Lin}(\Gamma_{n+1},x)=0$.
 Let $x_i^{*}$ be the $i$-th dual linear form on 
-$\mathbb{R}^{n}$ for the standard coordinates system on 
+$\mathbb{R}^{n}$ for the standard coordinate system on 
 $\mathbb{R}^{n}$ and 
 $h=\sum_{i=1}^{n} a_i x^{*}_i$ be a linear form
 such that $a_i<0$ for any $a_i$.
@@ -2088,7 +2133,7 @@ induces the canonical automorphism induced from the pullback of cotangent bundle
 This is a symplectic automorphism on 
 $\check{X}_0(\mathbb{R}) (\subset \check{X}_0(\mathbb{T}P^{1}))$ since 
 $dx\wedge dy=d(-x)\wedge d(-y)$.
-This automorphism can be visualized as the 180 degree rotation of the 
+This automorphism can be visualized as the 180-degree rotation of the 
 cylinder.
 \end{example}
 
@@ -2242,7 +2287,7 @@ tropical curves.
 
 \begin{definition}
 Let $\opn{exp}\colon \mathbb{T}^{n}\to 
-\mathbb{R}_{\geq 0}^{n}$ be a expoential map of 
+\mathbb{R}_{\geq 0}^{n}$ be an exponential map of 
 $\mathbb{T}^{n}$ and $U$ an open subset of 
 $\mathbb{T}^{n}$.
 A continuous function $f\colon U\to \mathbb{R}$
@@ -2258,7 +2303,7 @@ Since $\opn{log}\circ g\circ\opn{exp}+\opn{log}\circ h
 the condition is local, 
 $\mathcal{A}_{\mathbb{T}^{n}}^{\opn{weak}}(U)$ forms a 
 sheaf of Abelian groups on $\mathbb{T}^{n}$. 
-The following property say that every weak-smooth 
+The following property says that every weak-smooth 
 function is constant at the origin of $\mathbb{T}^{n}$.
 \begin{proposition}
 Let $U$ be an open neighborhood of the origin of 
@@ -2289,7 +2334,7 @@ Therefore, there exists a real number $r$ such that
 $|(g\circ \opn{exp}(x))^{-1} 
 \frac{\partial g}{\partial y_i}(\opn{exp}(x))|<r$ for any 
 $x\in [-\infty,\delta]^{n}$.
-Therefore, if $x_i$ is sufficently small, so is 
+Therefore, if $x_i$ is sufficiently small, so is 
 $\frac{\partial f}{\partial x_i}$. 
 \end{proof}
 From now on, we mainly discuss the case when $n=1$.
@@ -2443,10 +2488,10 @@ There exists the following equation for local Morse index:
 \opn{ind}_x(g)=1=\chi_{\opn{top}}(\overline{\Gamma}_3).
 \end{align}
 Therefore, if we generalize 
-\cref{theorem-MRR-tropical-curve} for non-adimissible
-funcions, we need to add the index at each non-admissible 
+\cref{theorem-MRR-tropical-curve} for non-admissible
+functions, we need to add the index at each non-admissible 
 point. At least, \cref{theorem-MRR-tropical-curve} is not
-true without correction the effect at non-admissbile point
+true without correction the effect at non-admissible point
 of $g$.
 In this case, $\opn{ind}_x(g)$ should be $-1$.
 This condition is independent of the choice
@@ -2454,7 +2499,7 @@ of $g$ satisfying the above condition.
 On the other hand, the index of smooth Cartier
 divisor should be independent of the choice of
 Cartier data.
-Since $\opn{ind}_x(g+m)$ is depend on the choice
+Since $\opn{ind}_x(g+m)$ depends on the choice
 of monomials $m$, we need to choose a choice $m_0$
 of monomials with integer slope to 
 define the index of $g$ as a divisor.
@@ -2480,13 +2525,13 @@ we assume $C$ is a compact trivalent tropical curve.
 
 On the other hand, we can construct a typical tropical curve
 (Reeb graph) from a Morse function on Riemann surface
-\cite[3.2.2]{kontsevichAffineStructuresNonArchimedean2006a}.
+\cite[3.2.2]{MR2181810}.
 
 $X_0(C)$  can be considered as a subset of a compact 
 Riemann surface $X$.
 \myfootnote{By philosophy of SYZ mirror symmetry,
-  we should consider Lagrangian section as a mirror of complex line bundle
-  and we also explain about it for tropical tori in \cref{a}.
+we should consider Lagrangian section as a mirror of complex line bundle
+and we also explain about it for tropical tori in \cref{a}.
 }
 
 Under the above interpretation, a very admissible Lagrangian section can be considered as a data of $U(1)$-holonomy of each fiber $\check{\pi}_{B_0}^{-1}(p)$.
@@ -2509,10 +2554,11 @@ From this our theorem for tropical curve can be proved from the theory of locali
 
 In this section,
 we recall the notion of affine manifolds from
-following
-\cite{heMR2293045,goldmanRadianceObstructionParallel1984a,kontsevichAffineStructuresNonArchimedean2006a,
+\cite{MR2293045,
+goldmanRadianceObstructionParallel1984a,
+MR2181810,
 grossMirrorSymmetryLogarithmic2006a} and 
-\cite[Chapter 6]{aspinwallDirichletBranesMirror2009}.
+\cite[Chapter 6]{MR2567952}.
 
 \begin{definition}
 
@@ -2544,7 +2590,7 @@ its Levi--Civita connection is
 equal to affine connection of $B_0$ \cite[Corollary 8.3.7]{MR2293045}. 
 By Bieberbach theorem, every closed flat Riemannian manifold 
 is covered by a Riemannian flat torus and thus every closed 
-integral Hessian manifold is a unramified cover of 
+integral Hessian manifold is an unramified cover of 
 a tropical torus as mentioned in \cite[5.2]{MR1882331}.
 \end{remark}
 
@@ -2561,7 +2607,7 @@ special affine manifold is complete (in the sense of $(G,X)$-manifold)
 if and only if its orientable double cover 
 has a compatible special affine structure \cite[p.53]{markus1963cosmological}.
 
-\footnote{We have not check the original source of Chern's conjecture yet. Our knowledge about these conjectures
+\footnote{We have not checked the original source of Chern's conjecture yet. Our knowledge about these conjectures
   mainly comes from \cite{goldmanRadianceObstructionParallel1984a}
   and \cite{MR3665000}.
 }
@@ -2583,7 +2629,7 @@ Every integral affine manifold has the following canonical
 
 We can consider the sheaf theoretic definition of 
 integral affine manifold as explained 
-in \cite[2.1]{kontsevichAffineStructuresNonArchimedean2006a} 
+in \cite[2.1]{MR2181810} 
 and thus integral affine manifold is a special case of 
 tropical manifold.
 
@@ -2632,7 +2678,7 @@ de Rham complex of complex manifold.
 用いるがその定理は$\mcal{F}_X^{p}$に対してではなく
 \cite{gross2019sheaftheoretic}における
 $\Omega_X^{p}$に対するものである。だが、両者
-はloopless matroidから由来する場合は両者は一致する。
+は loopless matroid から由来する場合は両者は一致する。
 \cite[Remark 2.8]{gross2019sheaftheoretic}}
 
 $\Omega_X^{\bullet}$ has a canonical dga structure, 
@@ -2682,10 +2728,10 @@ The canonical monomorphism $\mcal{O}^{\times}_B \to \mcal{A}^{0,0}_B$
 induces the following commutative diagram 
 \footnote{Several similar diagrams for some special tropical spaces and 
 similar spaces appear
-  in literature, e.g. \cite[p.468]{aspinwallDirichletBranesMirror2009}
+  in literature, e.g. \cite[p.468]{MR2567952}
  and \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}}:
 
-\begin{equation} \label{eq: smoothcartier}
+\begin{equation} \label{equation-smooth-cartier-diagram}
   \begin{tikzcd}
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
     & \mb{R}_{B} \arrow[r,equal] \arrow[d]                & \mb{R}_{B} \arrow[d]           &                      &   \\
@@ -2694,19 +2740,12 @@ similar spaces appear
     & 0 & 0 &  &
   \end{tikzcd}
 \end{equation}
-Here every row and column of the diagram (\ref{eq: smoothcartier}) is exact
+Here every row and column of the diagram (\ref{equation-smooth-cartier-diagram}) is exact
 and $\mcal{A}_{B}^{0,0}/\mcal{O}^{\times}_B
   \simeq \mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1}$ from the snake lemma.
-The right column exact sequence of \cref{eq: smoothcartier} is called
+The right column exact sequence of \cref{equation-smooth-cartier-diagram} is called
 the \ind{tropical exponential sequence}{tropicalexponentialexactsequence}, 
 (e.g. \cite{MR3894860}).
-
-
-
-
-We can see the similar proposition for 
-$\opn{CaDiv}^{\infty}(B)$ since 
-$\mcal{A}^{0,0}_B$ is acyclic.
 
 Let $f\colon X\to Y$ be a morphism of 
 two rational polyhedral spaces.
@@ -2716,17 +2755,9 @@ and a natural morphism of superforms
 $f$ induces the pullback 
 $f^{*}\colon \opn{CaDiv}^{\infty}(Y)\to \opn{CaDiv}^{\infty}(X)$ 
 and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
-(\ref{eq: smoothcartier}). 
+(\ref{equation-smooth-cartier-diagram}). 
 In particular, we have
 $c_1(f^{*}(s)^{n}=f^{*}(c_1(s)^{n})$ for every $D\in\opn{CaDiv}^{\infty}(Y)$.
-
-
-\begin{definition}[Smooth Cartier data]
-  A \ind{very admissible smooth Cartier data}{very admissible smooth Cartier data} $s=\{f_i\}$ is an element of
-  $H^{0}(B;\mcal{A}_B^{0,0}/\mcal{O}_{B}^{\times})
-    \simeq H^{0}(B;\mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1})$ such
-that every $f_i$ is admissible.
-\end{definition}
 
 \subsection{Verdier duality and Borel--Moore homology
 for tropical spaces}
@@ -2767,7 +2798,7 @@ $\mcal{O}^{\times}_{B_0}$ is a locally constant sheaf and the quotient sheaf $\m
   Therefore, we write $\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$, $\mcal{T}_{\Z,B_0}\deq \mcal{W}_{\Z,B_0}^{1}$ in this section for integral affine manifolds. We also use this notation for integral affine manifold with singularities.
 \end{Not}
 
-From now on we recall the commutative diagram (\ref{eq: smoothcartier})
+From now on we recall the commutative diagram (\ref{equation-smooth-cartier-diagram})
  for integral affine manifolds.
 
 Of course, $\mcal{A}_{B_0}^{0,0}=\mcal{C}^{\infty}(B_0)$ and
@@ -2790,8 +2821,8 @@ $\check{f}_{B_0}\colon \check{X}(B_0)\to B_0$
 \cite[(2.7), (2.11)]{duistermaatGlobalActionangleCoordinates1980a}.
 
 
-Thus, the commutative diagram (\ref{eq: smoothcartier}) is written like this 
-(e.g. \cite[p.468]{aspinwallDirichletBranesMirror2009}):
+Thus, the commutative diagram (\ref{equation-smooth-cartier-diagram}) is written like this 
+(e.g. \cite[p.468]{MR2567952}):
 
 \begin{equation} \label{eq:affinecartier}
   \begin{tikzcd}
@@ -2805,7 +2836,8 @@ Thus, the commutative diagram (\ref{eq: smoothcartier}) is written like this
 
 
 \begin{remark}
-When $s=df$, $\chi(B,s)=\chi_{\opn{top}}(B)=0$ is 
+When $s=\vep df$ for a sufficiently small $\vep >0$ and 
+a Morse function, $\chi(B,s)=\chi_{\opn{top}}(B)=0$ is 
 truly a special case of Poincar\'e--Hopf theorem for $B$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
   \cite{rau2020tropical}. This analogue is about tropical Euler characteristic
@@ -2816,6 +2848,8 @@ $\chi_{\opn{trop}}(B)\deq \chi(\mb{H}^{\bullet}(B;\mcal{F}_B^{\bullet}))$
 \begin{definition}
 Let $B,B'$ be an integral affine manifold.
 \end{definition}
+
+
 
 \begin{remark}
 Our condition of \'etale is different from that of 
@@ -2868,7 +2902,7 @@ mapping of closed manifolds.
 \begin{proof}
 
 From Cheng-Yau's result \cite{MR714338}, $B_0$ is a finite unramified cover of tropical tori.
-Fix an \`etale cover $p:T \to B_0$ of $B_0$.
+Fix an \'etale cover $p:T \to B_0$ of $B_0$.
 
 If \cref{thm: HesseRR} is true for tropical tori,
 then \cref{thm: HesseRR} is also true for compact
@@ -2881,7 +2915,7 @@ $H^{0}(T;\mcal{C}^{\infty}(T)/\mcal{O}_{T}^{\times})\simeq
 \Gamma(T;\opn{Lag}(\check{X}(T)))$.
 
 $s$ is linearly equivalent to a Lagrangian section
-defined from the differental $dq_s$ of a quadratic polynomial
+defined from the differential $dq_s$ of a quadratic polynomial
 $q_s$ function on the universal cover $\tilde{T}$ of $T$.
 
 Let $D_s$ is the divisor class of $s$.
@@ -2942,7 +2976,10 @@ Thus, $\chi(\opn{MF}^{\bullet}(T,s))=0$.
 \end{remark}
 
 \begin{remark} \label{rmk: integral_mirror}
-This theorem also can be considered as a special case of \cite{MR4301560}.
+This theorem also can be considered as
+a special case of \cite{MR4301560}.
+Abouzaid assumed $\pi_{2}(B_0)=0$ for $B_0$
+in \cite{MR4301560}.
 \end{remark}
 
 \begin{remark}
@@ -2995,7 +3032,7 @@ Let $\mcal{F}\in \opn{Ob}(\opn{Mod}(A_X))$
 \cite[Proposition 2.4.12]{MR1299726}.
 
 This theorem comes from the following sheaf 
-theoretic Thom--Sebastiani Theorem.
+theoretic Thom--Sebastiani formula.
 
 
 
@@ -3106,7 +3143,7 @@ graded modules;
 In the proof of the above corollary, we only use
 the condition of cohomological version of Milnor fibre. 
 Besides, we can find many smooth Cartier data satisfying 
-the condtion, see \cite[p.35]{MR2031639}.  
+the condition, see \cite[p.35]{MR2031639}.  
 \end{remark}
 
 We will develop this paper for integral affine manifold
@@ -3162,7 +3199,7 @@ The definition of the index $a(v,f)$
 
   $a(v,f)=1-\chi_{\mathrm{top}}(\opn{lk}(v)_{\leq f(v)})$. Therefore, $a(v,f)$ is a combinatorial version of our local index.
 
-  Banchoff proves a polyhedral complex version of Poincare-Hopf theorem
+  Banchoff proves a polyhedral complex version of Poincar\'e--Hopf theorem
   for height functions (Banchoff's critical point theorem) \cite[Theorem 1]{MR225327}.
 
   the condition for function is weaker than that of us but we need that condition for our goals.
@@ -3207,11 +3244,11 @@ $s_{B_0}$ and the zero section of $\pi_{B_0}:X(B_0)\to B_0$.
 If $B_0$ has a Hessian potential (multivalued) function $K$, then $s_{B_0}$ can be 
 considered as a Lagrangian section of the dual torus 
 fibration $\pi_{\check{B}_0}\colon \check{X}(\check{B}_0)\to \check{B}_0$ of dual Hessian
-manifold $\check{B}_0$ \cite[Proposition 6.9]{aspinwallDirichletBranesMirror2009}.
+manifold $\check{B}_0$ \cite[Proposition 6.9]{MR2567952}.
 The associated smooth Cartier divisor is 
 given from the dual Hessian potential function
 $\check{K}$ on $\check{B_0}$ 
-\cite[p.429]{aspinwallDirichletBranesMirror2009}.
+\cite[p.429]{MR2567952}.
 A similar result for projective toric manifolds 
 and the prequantum line bundle on them
 is in \cite[Theorem 3.20]{yamaguchimaster}.
@@ -3242,11 +3279,11 @@ for non-Calabi--Yau manifolds has three ways:
 
 
 
-\subsection{integral affine manifold and Floer cohomology}
+\subsection{Integral affine manifold and Floer cohomology}
 
 \subsubsection{Semi-flat SYZ mirror pair}
 
-We add some notes about integral affine manifolds $B_0$, and its SYZ-pair $\check{X}(B_0), X(B_0)$ from \cite[Chapter 6]{aspinwallDirichletBranesMirror2009} and \cite{MR2737696,MR3079343}
+We add some notes about integral affine manifolds $B_0$, and its SYZ-pair $\check{X}(B_0), X(B_0)$ from \cite[Chapter 6]{MR2567952} and \cite{MR2737696,MR3079343}
 
 
 
@@ -3258,14 +3295,24 @@ Since integral affine condition is very strict, so $X(B_0)$ (resp. $\check{X}(B_
 
 Since each fiber of the fibration $f_{B_0}$ and $\check{f}_{B_0}$ are compact, $f_{B_0}$ and $\check{f}_{B_0}$ are proper maps. In particular, if $B_0$ is compact then $\check{X}(B_0)$ and $X(B_0)$ are compact.
 
-
-
-We note $\pi_{i\geq 2}(X,p)\simeq \pi_{i\geq 2}(\widetilde{X},\tilde{p})$ and $\pi_{i}(X\times Y,(p,q))\simeq \pi_i(X,p)\times \pi_i(Y,q)$ and thus
+\begin{proposition}
+%TODO: 適切な箇所で引用
+\label{proposition-unobstructed-lagrangian}
+Let $B_0$ be a connected integral affine manifold. 
+Then,
+$\pi_i(B_0)\simeq \pi_i(\check{X}(B_0))$ 
+for $i\geq 2$.
+In particular, 
+$\pi_i(B_0)=\pi_i(\check{X}(B_0))=0$ if 
+$B_0$ is complete.
+\end{proposition}
+\begin{proof}
+We note $\pi_{i}(X,p)\simeq \pi_{i}(\widetilde{X},\tilde{p})$ and $\pi_{i}(X\times Y,(p,q))\simeq \pi_i(X,p)\times \pi_i(Y,q)$ and thus
 \begin{align}
-  \pi_{i\geq 2}(\check{X}(B_0))\simeq \pi_{i\geq 2}(\widetilde{\check{X}(B_0)})\simeq \pi_{i\geq 2}(\widetilde{T^{*}B_0})\simeq \pi_{i\geq 2}(T^{*}\widetilde{B_0})\simeq  \pi_{i\geq 2}(T_p^* B_0)\times \pi_{i\geq 2}(\widetilde{B_0})\simeq \pi_{i\geq 2}(B_0)
+  \pi_{i}(\check{X}(B_0))\simeq \pi_{i}(\widetilde{\check{X}(B_0)})\simeq \pi_{i}(\widetilde{T^{*}B_0})\simeq \pi_{i}(T^{*}\widetilde{B_0})\simeq  \pi_{i}(T_p^* B_0)\times \pi_{i}(\widetilde{B_0})\simeq \pi_{i}(B_0)
 \end{align}
-Thus, we have $\pi_{i\geq 2}(B_0)\simeq \pi_{i\geq 2}(\check{X}(B_0))\simeq \pi_{i\geq 2}(X(B_0))$. In particular, if $B_0$ is complete then $\pi_{i\geq 2}(B_0)\simeq \pi_{i\geq 2}(T_{p}B_0)=0$. See \cite[Chapter 4]{hatcherAlgebraicTopology2002a} for fundamental properties of homotopy groups and relative homotopy groups.
-
+Thus, we have $\pi_{i}(B_0)\simeq \pi_{i}(\check{X}(B_0))\simeq \pi_{i}(X(B_0))$. In particular, if $B_0$ is complete then $\pi_{i}(B_0)\simeq \pi_{i}(T_{p}B_0)=0$. See \cite[Chapter 4]{hatcherAlgebraicTopology2002a} for fundamental properties of homotopy groups and relative homotopy groups.
+\end{proof}
 From Leray spectral sequence, $(R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)})_{x}=H^{p}(T^{*}_xB_0/(\TBZ^{\vee})_x;\Z)\simeq \bigwedge_{i=1}^{p}(\TBZ)_{x}$, i.e.,
 
 \begin{align}
@@ -3289,7 +3336,7 @@ If two smooth Cartier divisors $s,s'$ are linearly equivalent,
 i.e., $f=s-s'\in C^{\infty}(B_0)$, 
 then $s$ is the image of a time-one Hamiltonian flow of $s'$
 on $\check{X}(B_0)$
-\cite[Exercise 6.65]{aspinwallDirichletBranesMirror2009}.
+\cite[Exercise 6.65]{MR2567952}.
 
 
 
