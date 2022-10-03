@@ -608,7 +608,7 @@ which is defined by the sheaf of $(0,0)$-super forms
 $\mcal{A}^{0,0}_X$ on 
 polyhedral spaces.
 \begin{example} \label{eg: TP1Cartier}
-Fix a continous function $f\colon \mathbb{R}\to \mathbb{R}; 
+Fix a continuous function $f\colon \mathbb{R}\to \mathbb{R}; 
 x\mapsto \opn{log}(1+e^{nx})$.
 Its differential induces a homeomorphism 
 from $\mathbb{T}P^1$ onto $[0,n]$. 
@@ -682,7 +682,7 @@ $q\circ df$. In particular,
 \sharp (\opn{int}(P\cap (\mathbb{Z}^{n})^{\vee})).
 \end{align}
 where $0_{\check{X}(B_0)}$ is the 
-zero secion of 
+zero section of 
 $\check{\pi}_{B_0}\colon\check{X}(B_0)\to B_0$.
 \end{example}
 
@@ -751,7 +751,7 @@ The following question is our approach.
 \begin{question}
 Can we replace the
 In particular, is there an analog of Floer complex of
-Lagranigian submanifolds for line bundles on 
+Lagrangian submanifolds for line bundles on 
 tropical spaces?  
 \end{question}
 
@@ -786,7 +786,7 @@ $\chi(\opn{MF}^{\bullet}(B;s))=\chi_{\opn{top}}(B)$ ?
 \begin{remark}
 Here is the list of the reason why the Euler 
 characteristic of structure sheaf of tropical manifold
-is equal to the topological Euler characteristics of it.
+should be equal to the topological Euler characteristics of it.
 \begin{enumerate}
 \item If $B$ is a compact tropical curve and $D$ 
 is trivial divisor, then the tropical Riemann--Roch 
@@ -1206,10 +1206,10 @@ reduced singular cohomology).
 \begin{proof}
 If the second isomorphism is true, then the rest
 isomorphisms are also true from the definition of 
-tha stalk of sheaves.
+the stalk of sheaves.
 From definition of $A_{S\subset X}$, 
 $(A_{S\subset X})_x\simeq A$.
-There exists the following Cartesian suquare of 
+There exists the following Cartesian square of 
 inclusion maps:
 Let $i\colon S\to X$, 
 $j\colon \{f<f(x)\}\to X$, 
@@ -1486,7 +1486,8 @@ positive line bundles, see
 also \cref{eg: kodaira}.
 \end{remark}
 
-\subsection{Admissibility condition}
+\subsection{Smooth Cartier divisors on rational 
+polyhedral spaces}
 
 
 
@@ -1511,7 +1512,8 @@ tropical line bundles on a rational polyhedral
 spaces is parametrized by 
 $H^{1}(B;\mathcal{O}^{\times}_B)$
 \cite[Proposition 3.13]{gross2019sheaftheoretic}.
-
+The group $H^{1}(B, \mcal{O}^{\times}_B))$ is called 
+the \emph{Picard group} of $B$.
 There exists the following exact sequence:
 \begin{align}
 \label{equation-smoooth-cartier-divisor-sequence}
@@ -1529,23 +1531,56 @@ of (real valued) tropical rational functions:
 0 \to \mcal{O}^{\times}_B \to \mcal{M}_B^{\times} 
 \to \mcal{M}_B^{\times}/\mathcal{O}^{\times}_B\to 0.
 \end{align}
-
+By taking a global section of the
+short exact sequence 
+(\ref{equation-cartier-divisor-sequence}),
+there exists a connecting homomorphism 
+$\delta \colon 
+H^{0}(B;\mcal{M}_B^{\times}/\mathcal{O}^{\times}_B)
+\to H^{1}(B;\mathcal{O}^{\times}_B)$.
 We note $H^{1}(B;\mcal{M}_{B}^{\times})=0$, 
-and thus $H^{1}(B,\mcal{O}^{\times}_B)\simeq  
-\opn{Im} (\delta \colon H^{0}(B,\mcal{M}_B^{\times}/\mathcal{O}^{\times}_B)\to 
-H^{1}(B, \mcal{O}^{\times}_B))$ \cite[Lemma 4.5, Proposition 4.6]{MR3894860}.
-The group $H^{1}(B, \mcal{O}^{\times}_B))$ is called 
-the \emph{Picard group} of $B$.
+and thus $\delta$ is surjective
+\cite[Lemma 4.5, Proposition 4.6]{MR3894860}.
+The element $H^{0}(B;\mcal{M}_B^{\times}/\mathcal{O}^{\times}_B)$
+is called a \emph{Cartier divisor} on $B$.
+Therefore, for every line bundle $\mathcal{L}$ on a rational polyhedral 
+space, there exists a Cartier divisor $s$ 
+which represents $\mathcal{L}$.
 
-We didn't define a analog for line bundles of  
-on rational polyhedral spaces directly.
+By taking a global section of the
+short exact sequence
+(\ref{equation-smoooth-cartier-divisor-sequence}),
+there also exists a connecting homomorphism 
+$\delta' \colon 
+H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)
+\to H^{1}(B;\mathcal{O}^{\times}_B)$. 
+$\mathcal{A}^{0,0}_B$ is a fine sheaf 
+\cite[Proposition 2.26]{MR3903579}, so 
+$H^{1}(B;\mathcal{A}^{0,0}_B)=0$ and 
+so $\delta'$ is also surjective.
 
-From now on, we define the admissible condition for
-\emph{smooth Cartier divisors}.
-
-
-
-We will define an analog of Floer complex 
+\begin{definition}[{smooth Cartier divisor}]
+A smooth Cartier divisor on $B$ is an element of
+$H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
+Let 
+$(\cdot)^{\mathrm{sm}}\colon 
+H^{0}(B;\mathcal{A}^{0,0}_B)\to 
+H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$ 
+be a morphism defined from 
+(\ref{equation-smoooth-cartier-divisor-sequence}).
+The \emph{primncipal smooth divisor} of a $(0,0)$-superform 
+$f$ is the image $(f)^{\mathrm{sm}}$ of $f$
+induced from the short exact sequence
+(\ref{equation-smoooth-cartier-divisor-sequence}).
+\end{definition}
+We write $\opn{CDiv}^{\infty}(B)$ for 
+$H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
+We will see a smooth Cartier divisor is
+an analog of Lagrangian section 
+\cref{proposition-smooth-cartier-lagrangian}.
+In the next subsection, 
+we will define an analog of Floer complex of 
+Lagrangian submanifolds
 (without differential) for some good smooth Cartier 
 divisors on rational polyhedral space satisfying 
 the following condition:
@@ -1563,18 +1598,29 @@ The \cref{condition-Rn} is strict for rational polyhedral
 spaces, but it is enough to
 give our main results.
 
-First, we introduce the \emph{admissibility condition}
-for smooth functions.
-In this paper, we only gives the \emph{admissible condition}
-for rational polyhedral spaces.
+\begin{remark}
+((上記の条件の理由)) 
+\end{remark}
 
-To define it, we use the notion of the micro-support of
-sheaves \cite[Chapter V]{MR1299726}.
+\subsection{Admissible conditions}
 
+In this subsection, we define 
+the \emph{admissibility condition} for
+smooth Cartier divisors on rational 
+polyhedral spaces.
+We need to the notion of 
+the micro-support of sheaves in order to define it.
+
+First, we recall about the micro-support of sheaves 
+from \cite{MR1299726}.
 Let $X$ be a real analytic manifold and let
 $\mcal{F}\in\opn{Ob}(\opn{D}^{b}(A_X))$ and
 $\opn{SS}(\mcal{F})$ the micro-support of $\mcal{F}$
 \cite[Definition 5.1.2]{MR1299726}.
+\begin{definition}
+
+\end{definition}
+
 As remarked in \cite[Remark 5.1.6]{MR1299726},
 $\opn{SS}(\mcal{F})$ depends only on the 
 $C^{1}$-structure of $X$.\footnote{この一文ほぼ丸々引用の文だけどだい
@@ -1591,8 +1637,12 @@ $\opn{SS}(\mcal{F}|_{U})_x=\opn{SS}(\mcal{F})_x$
 for any open neighborhood $U$ of $x$ via the canonical 
 isomorphism $T^{*}_xX\to T^{*}_xU$.
 
+\begin{example}
 If $M$ is a closed submanifold of $X$, then
 $\opn{SS}(A_M)=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
+\end{example}
+Next, we define the admissible condition for
+smooth principal Cartier divisors.
 
 \begin{definition}
 Let $(S,x)$ be a 
@@ -1696,21 +1746,7 @@ there exist some minor differences.
 
 From \cref{equation-smoooth-cartier-divisor-sequence},
 
-\begin{definition}[{smooth Cartier divisor}]
-A smooth Cartier divisor on $B$ is an element of
-$H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
-Let 
-$(\cdot)^{\mathrm{sm}}\colon 
-H^{0}(B;\mathcal{A}^{0,0}_B)\to 
-H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$ 
-be a morphism defined from 
-(\ref{equation-smoooth-cartier-divisor-sequence}).
-The \emph{primncipal smooth divisor} of a $(0,0)$-superform 
-$f$ is the image $(f)^{\mathrm{sm}}$ of $f$.
-\end{definition}
 
-We write $\opn{CDiv}^{\infty}(B)$ for 
-$H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
 
 We also use the following representation of 
 smooth Cartier divisor like 
@@ -1728,8 +1764,12 @@ a \emph{local data} of $s$ if
 $s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all 
 $i\in I$.  
 \end{definition}
-
-
+%TODO: 競合の正当化
+\begin{proposition}
+Fix $s\in \opn{CDiv}^{\mathrm{sm}}(B)$.
+$\{(U_i,f_i)\}_{i\in I}$ and 
+$\{(V_j,f_j)\}_{j\in J}$ are local data of $s$.
+\end{proposition}
 
 \begin{definition}[{smooth admissible Cartier divisor}]
 \label{definition-admissible-smooth-cartier-divisor}
@@ -1738,11 +1778,7 @@ if there exists a local data $\{(U_i,f_i)\}_{i\in I}$
 such that $f_i$ is admissible for all $i\in I$.
 \end{definition}
 
-\begin{proposition}
-Fix $s\in \opn{CDiv}^{\mathrm{sm}}(B)$.
-$\{(U_i,f_i)\}_{i\in I}$ and 
-$\{(V_j,f_j)\}_{j\in J}$ are local data of $s$.
-\end{proposition}
+
 
 \begin{definition}
 Let $S$ be a rational polyhedral space such that the image of
@@ -1834,11 +1870,8 @@ $s_0\cap s$ is finite. Then,
 \chi(\opn{MF}^{\bullet}(S;s))=\int_{S}\opn{ch}(s)\opn{td}(S).
 \end{align}
 \end{conjecture}
-We will prove it for some special cases.
-
-\begin{example}
-
-\end{example}
+We will prove it for tropical curves in the 
+next section.
 
 \begin{remark}
 Obviously, $\opn{MF}^{\bullet}(S;s,A)$ is not finitely
@@ -2059,7 +2092,7 @@ This automorphism can be visualized as the 180 degree rotation of the
 cylinder.
 \end{example}
 
-\begin{proposition}
+\begin{proposition}[{continuous sections}]
 \label{proposition-admissible-section}
 Let $s$ be an admissible Cartier divisor 
 $s=\{(U_i,f_i)\}_{i\in I}$ on a tropical curve with 
@@ -2122,7 +2155,7 @@ This form defines an orientation number of
 section defined in \cref{proposition-admissible-section}.
 %NEXT: TP1のローテーションを定義する。 
 
-\begin{definition}
+\begin{definition}[{Rotation number}]
 Let $s\colon  (\subset \mathbb{T}P^{1}\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee})$
 \end{definition}
 
@@ -2154,7 +2187,9 @@ via the canonical orientation.
 Fix an affine isomorphism $e\simeq [a,b]$ 
 \end{proposition}
 
-
+From the above proposition, we can define the 
+rotation number for every admissible smooth 
+Cartier divisors.
 \begin{definition}
 
 \begin{align}
@@ -2188,7 +2223,7 @@ Let $s$ be an admissible smooth Cartier divisor on $C$.
 \begin{proof}[{Proof of \cref{theorem-MRR-metric-graph}}]
 
 \end{proof}
-\subsection{MRR for general tropical curve}
+\subsection{MRR for general tropical curves}
 
 We will prove MRR for compact tropical curve 
 without assumption of valency. 
@@ -2197,7 +2232,6 @@ vertex and smooth Cartier divisor
 $s\in\Gamma(C;\mathcal{A}^{0,0}_C/\mathcal{O}^{\times}_C)$,
 we cannot choose a Cartier divisor $s'$ which
 is linearly equivalent to $s$ and $s_0\cap s'<\infty$. 
-
 The reason of this fact is that every 
 $(0,0)$-superform on $C$ is constant on a sufficiently
 small open neighborhood of $1$-valent vertex.
@@ -2216,7 +2250,6 @@ is a \emph{weak-smooth} if
 $f=\opn{log}\circ g\circ \opn{exp}$ for some 
 smooth function $g\colon V\to \mathbb{R}_{>0}$ on 
 an open subset $V$ of $\mathbb{R}^{n}$.
-
 Let $\mathcal{A}_{\mathbb{T}^{n}}^{\mathrm{weak}}(U)$ 
 be the set of weak-smooth functions on $U$.
 \end{definition}
@@ -2225,7 +2258,6 @@ Since $\opn{log}\circ g\circ\opn{exp}+\opn{log}\circ h
 the condition is local, 
 $\mathcal{A}_{\mathbb{T}^{n}}^{\opn{weak}}(U)$ forms a 
 sheaf of Abelian groups on $\mathbb{T}^{n}$. 
-
 The following property say that every weak-smooth 
 function is constant at the origin of $\mathbb{T}^{n}$.
 \begin{proposition}
