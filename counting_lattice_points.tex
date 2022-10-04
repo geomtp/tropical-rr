@@ -420,6 +420,7 @@ Strominger--Yau--Zaslow conjecture
 and related topics.
 
 \begin{remark}
+\label{remark-todd-class}
 We also note about the RHS of \cref{equation-HRR} 
 for tropical manifolds. 
 The $1$-st Chern class $c_1(\mathcal{L})$ of 
@@ -1493,11 +1494,11 @@ polyhedral spaces}
 
 
 
-First, we recall about line bundles on 
-rational polyhedral spaces and mention
-\emph{smooth Cartier divisors}.
+We recall about line bundles on 
+rational polyhedral spaces and mention the notion of
+\emph{smooth Cartier divisor}.
 
-%NEXT: Cartier dataの整理
+%TODO: 引用の整理
 
 Let $B$ be a rational polyhedral space, 
 $\mathcal{O}^{\times}_B$ the sheaf of 
@@ -1640,7 +1641,7 @@ isomorphism $T^{*}_xX\to T^{*}_xU$.
 
 \begin{example}
 If $M$ is a closed submanifold of $X$, then
-$\opn{SS}(A_M)=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
+$\opn{SS}(A_{M\subset X})=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
 \end{example}
 Next, we define the admissible condition for
 smooth principal Cartier divisors.
@@ -1669,6 +1670,8 @@ if
 % We use the language of microsupport for revealing the 
 % reason of the condition of admissibility.
 % \end{remark}
+
+%TODO: 下の節に移動
 
 \begin{example}[{Hypersurfaces}]
 
@@ -1702,6 +1705,8 @@ $df(x)\in M^{\vee}/(\opn{span}_{{\mathbb{R}}}(\opn{SS}(A_S)_x))\cap M^{\vee}$
 for any admissible function at $x$. Thus, there exists a canonical
 shift $\tilde{f}_x\colon U_x\to {\mathbb{R}}$ of $f$ such that
 $d\tilde{f}_x(x)=0$.
+
+%TODO: 下の節に移動
 
 \begin{definition}[{Stratified torus fibration and Lagrangian}]
 Let $S$ be a compact rational polyhedral space such that 
@@ -1859,7 +1864,9 @@ with a Hessian form by SYZ mirror pair.
 See \cref{sec: BSRR} for more details.
 \end{example}
 
+\begin{remark}
 
+\end{remark}
 
 
 The following proposition is an analog of \'{e}tale multiplicity of Euler characteristics
@@ -1883,14 +1890,12 @@ The proof of \cref{proposition-euler-number-etale} is trivial from definition.
 \begin{conjecture} 
 \label{conjecture-tropical-MRR}
 Let $S$ be a compact tropical manifold satisfying 
-\cref{condition-Rn} and has the Todd class $\opn{td}(S)$ of $S$ 
-which (should be) defined by the theory of Chern--Schwartz--MacPherson
-cycles
-\cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
+\cref{condition-Rn} and has the Todd class $\opn{td}(B)$ 
+of $B$ (see \cref{remark-todd-class}).
 Let $s$ be an admissible smooth Cartier divisor such that
 $s_0\cap s$ is finite. Then, 
 \begin{align}
-\chi(\opn{MF}^{\bullet}(S;s))=\int_{S}\opn{ch}(s)\opn{td}(S).
+\chi(\opn{MF}^{\bullet}(B;s))=\int_{B}\opn{ch}(s)\opn{td}(B).
 \end{align}
 \end{conjecture}
 In this paper, we don't discuss the general theory of 
@@ -2235,8 +2240,8 @@ Fix an affine isomorphism $e\simeq [a,b]$
 From the above proposition, we can define the 
 rotation number for every admissible smooth 
 Cartier divisors.
-\begin{definition}
-
+\begin{definition}[{cf. \cite{auroux2022lagrangian}}]
+The \emph{rotation number} of $s$ is the sum of
 \begin{align}
 \opn{rot}(s)\deq \sum_{e\in \pi_0(C_0)}
 \opn{rot}(s|_{\opn{cl}(e)})
@@ -2261,11 +2266,100 @@ D_s=\{(f_j-f_i)\}_{i,j\in I}
 \begin{proposition}
 Let $s$ be an admissible smooth Cartier divisor on $C$.
 \begin{align}
-\opn{rot}(s)=\opn{deg}(D_s)(= c_1(D_s))
+\opn{rot}(s)=\opn{deg}(D_s)(=\int_{C} c_1(D_s))
 \end{align}
 \end{proposition}
 
+\begin{proof}
+Compare the \v{C}ech cocycle between smooth Cartier data and ordinary Cartier data.
+\end{proof}
+
+\begin{proposition}
+Let $C$ be a connected tropical curve with no 
+1-valent vertex which is not homeomorphic to a circle 
+and $s$ be a smooth Cartier divisor on $C$. 
+For any open subset $U$ of $C_0$, there exists a $(0,0)$-superform
+$f\colon U \to \mathbb{R}$ such that
+$(f)^{\opn{sm}}=s|_{U}$.
+\end{proposition}
+\begin{proof}
+Since $\mathcal{O}^{\times}_{C_0}$ is a locally constant 
+sheaf on $C_0$ and $C_0$ is a disjoint union of 
+open intervals, 
+$H^{1}(C_0;\mathcal{O}^{\times}_{C_0})=0$ and thus
+$(\cdot)^{\mathrm{sm}}$ is surjective.
+\end{proof}
+
+\begin{definition}[{Edge data}]
+
+\end{definition}
+
+\begin{definition}
+Let $C$ be a connected compact tropical curve with
+no 1-valent vertex and $p\in C$. 
+A \emph{bump function} of $p$
+is a $(0,0)$-superform such that
+\begin{enumerate}
+\item $C\setminus \opn{supp}(f)$ is contractible.
+\item $\opn{Crit}(f)\setminus \opn{supp}(f)=\{p\}$.
+\item $f$ is concave at $p$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[{cf. \cite{auroux2022lagrangian}}]
+An admissible smooth Cartier divisor $s$ is 
+\emph{simple} if there exists a local intersection data
+$\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
+$f_p$ is convex at all $p\in C\setminus C_0$.
+\end{definition}
+
+\begin{proposition}
+Let $s$ be an admissible smooth Cartier divisor. 
+Then, there exists a simple admissible
+smooth Cartier divisor such that
+$\chi(\opn{MF}^{\bullet}(C;s))=
+\chi(\opn{MF}^{\bullet}(C;s'))$
+and $\opn{rot}(s)=\opn{rot}(s')$.
+\end{proposition}
+
+\begin{proof}
+We can create $s'$ by adding some good 
+bump functions to $s$.
+\end{proof}
+
+\begin{definition}
+
+\end{definition}
+
+\begin{definition}[{Standard function}]
+Let $C$ be a connected compact tropical curve with
+no 1-valent vertex which is not homeomorphic to 
+a circle and $p\in C$.
+A \emph{bump function} on $C$ is a
+$(0,0)$-superform such that:
+\begin{enumerate}
+\item $\sharp (\opn{Crit}(f))<\infty$,
+\item $C\setminus C_0\subset \opn{Crit}(f)$,
+\item $f$ is convex at all $p\in C\setminus C_0$,
+\item $\sharp (\opn{Crit}(f)\cap e)=1$ for all connected 
+      component $e$ of $C_0$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+Let $C$ be a compact tropical curve with no 1-valent
+vertex which is not homeomorphic to a circle
+ and $f$ a standard function on 
+$C$. Then, $\chi(\opn{MF}(C;(f)^{\mathrm{sm}}))=\chi_{\mathrm{top}}(C)$.
+\end{proposition}
+\begin{proof}
+If $C$ is homeomorphic to a circle, 
+we can transform $s$ to  
+\end{proof}
+
 \begin{proof}[{Proof of \cref{theorem-MRR-metric-graph}}]
+Without loss of generality, we can assume $C$ is 
+connected and .
 
 \end{proof}
 \subsection{MRR for general tropical curves}
@@ -2454,9 +2548,10 @@ for more general algebraic varieties.
 
 \end{definition}
 
-
+%TODO: 適切な箇所で See \cref{remark-non-admissible-divisor}
 
 \begin{remark}
+\label{remark-non-admissible-divisor}
 We explain the reason why we add admissible condition for 
 smooth Cartier divisors. 
 One of reasons is that there exists smooth function $f$
@@ -2466,8 +2561,6 @@ $\opn{MF}^{\bullet}(A_S,f|_{S},x)$ is nontrivial.
 Another reason is that we could not create 
 convenient continuous sections like 
 \cref{definition-continuous-section} easily.
-
-%TODO: admissbileという条件がいる第三の理由例を挙げる。
 
 The third reason is the most critical:
 Let $\overline{\Gamma}_3$ be the canonical 
