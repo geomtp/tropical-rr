@@ -289,9 +289,9 @@ Riemann--Roch theorem (GRR for short)
 are monumental works in
 algebraic geometry (or complex geometry). 
 Here is the statement of HRR for holomorphic line bundles on 
-complex manifolds.
+projective complex manifolds.
 \begin{theorem}[{\cite{MR0202713}}]
-Let $X$ be a compact complex manifold and
+Let $X$ be a compact projective complex manifold and
 $\mathcal{L}$ a holomorphic line bundle on $X$.
 Then there exists the following equation:
 \begin{align} \label{equation-HRR}
@@ -302,7 +302,10 @@ Then there exists the following equation:
 
 ((厳密には Hirzerbruch の元論文からの引用ではなく
 改訂版だがよいか?))
-
+The HRR is generalized for 
+general compact complex 
+manifolds as a corollary of Atiyah--Singer index 
+theorem.
 It is natural to study some analogs of HRR or GRR 
 for tropical varieties, but it is not easy by various
 reasons.
@@ -334,7 +337,8 @@ as an extension of Riemann--Roch theorem for graphs
 \cite{MR2355607}. The rank $r(D)$ of the linear system of a divisor $D$ 
 on tropical curve in 
 \cite{gathmannRiemannRochTheoremTropical2008a}
-is \emph{not} an invariant of $\mb{T}$-(semi) modules
+is \emph{not} an invariant of $\mb{T}$-(semi)
+modules
 \myfootnote{In fact, 
 in \cite[Example 6.5]{yoshitomi2011generators} 
 the author give a simple example of divisors on 
@@ -348,16 +352,16 @@ The rank of linear system is generalized by Cartwright
 \cite{MR4131998,MR4251610}.
 Cartwright defines an invariant 
 $h^{0}(\Delta,D)$ for a divisor on tropical complex
-which a certain analog of the dimension of
+which is a certain analog of the dimension of
 the $0$-th cohomology of a line bundle on algebraic 
-variety.
-in \cite[Definition 3.1]{MR4251610}.
+variety in \cite[Definition 3.1]{MR4251610}.
 If $\dim \Delta=1$, then $h^{0}(\Delta,D)=r(D)+1$
 \cite[Proposition 3.3]{MR4251610}, and thus $h^{0}(\Delta,D)$
 is a generalization of $r(D)+1$ for tropical complexes. 
 Cartwright conjectured the Riemann--Roch inequality
 $h^{0}(\Delta,D)+h^{0}(\Delta,K_{\Delta}-D)\geq 
-\frac{D(D-K)}{2}+\chi_{\opn{top}}(\Delta)$.
+\frac{D(D-K)}{2}+\chi_{\opn{top}}(\Delta)$
+in \cite[Conjecture 3.6]{MR4251610}.
 On the other hand, a tropical analog of Riemann--Roch theorem
 for higher dimensional tropical manifolds 
 (or tropical complexes) is not formulated
@@ -451,7 +455,7 @@ of tropical line bundles.
 
 In the case of some special line bundles on
 tropical toric variety, our definition of Euler 
-characteristic of it is essentially same with the
+characteristic of tropical line bundle is essentially same with the
 number of lattice points of the lattice polytope of it.
 
 Before explaining about it, we recall some 
@@ -531,7 +535,7 @@ $\mathbb{R}^{n}$.
 The differential
 $df:{\mathbb{R}}^{n}\to ({\mathbb{R}}^{n})^{\vee}; x\mapsto 
 (\frac{\partial f}{\partial x_1}(x),\ldots,\frac{\partial f}{\partial x_n}(x))$ 
-is an embedding onto $\opn{relint}(P)$
+is an embedding onto the (relative) interior of $P$
 \cite[p.124 Exercise]{MR1301331}. 
 The differential map is also naturally appeared as an 
 exponential family in algebraic statistic,
@@ -558,7 +562,7 @@ $\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$
 \cite[Definition 2.1 (2)]{MR2428356}.
 Instead of moment map for Hamiltonian action of Lie group on
 symplectic manifold, we
-need not assume convex lattice polytope is not Delzant.
+need not assume convex lattice polytope is Delzant.
 This is a tropical analog of algebraic moment map 
 for toric varieties
 (see for example
@@ -797,9 +801,13 @@ formula in
 \cite{gathmannRiemannRochTheoremTropical2008a}
 says $r(D)-r(K_B-D)=\chi_{\opn{top}}(B)=\frac{1}{2}\opn{deg}(-K_B)$. 
 \item If $B$ is a tropical surface satisfying a certain 
-good condition there exists the Noether formula
+good condition, then there exists the Noether formula
 $\chi_{\opn{top}}(B)=\frac{c_1(K_B)^{2} +c_2(B)}{12}$ 
 \cite[Theorem 5.1]{shawTropicalSurfaces2015a}.
+\myfootnote{We would like to thank Felipe Rinc\'on 
+for explaining about the unpublished recent works
+about Noether formula for general cases.
+}
 \item 
 \cite[Corollary 2]{itenbergTropicalHomology2019b} says 
 that the Hodge number $h^{p,q}(Z_w)$ of a general fiber $Z_w$ of
@@ -822,7 +830,7 @@ and integral affine manifolds with Hessian form
 as test plays of the above question:
 
 \begin{theorem}[{\cref{theorem-MRR-tropical-curve},
-\cref{thm: HesseRR}}] \label{thm: main}
+\cref{theorem-MRR-hesse}}] \label{thm: main}
 Let $C$ (resp. $B$) be a compact tropical curve $C$ 
 (resp. $n$-dimensional integral 
 affine manifold $B$
@@ -857,8 +865,17 @@ of \cite[{\textsection 7}]{auroux2022lagrangian}.
 
 \begin{remark}
 We expect our approach works for various style 
-of tropical spaces. In fact, our approach is 
-truly related with Gross--Siebert programs. 
+of tropical spaces. 
+If SYZ conjecture for Calabi--Yau manifolds
+is true, our apporoach should
+be true for integral affine manifold 
+with singularities of Calabi--Yau type.
+Our approach is 
+also inspired from Gross's 
+works in 
+\cite{grossSpecialLagrangianFibrations1998a} and Gross--Siebert programs
+(see \cite[Conjecture 1.6]{MR3525095}).
+
 \end{remark}
 
 \begin{remark}
@@ -1498,6 +1515,9 @@ We recall about line bundles on
 rational polyhedral spaces and mention the notion of
 \emph{smooth Cartier divisor}.
 
+We mainly follow 
+from \cite{MR3903579,gross2019sheaftheoretic}.
+
 %TODO: 引用の整理
 
 Let $B$ be a rational polyhedral space, 
@@ -1645,23 +1665,64 @@ $\opn{SS}(A_{M\subset X})=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
 \end{example}
 Next, we define the admissible condition for
 smooth principal Cartier divisors.
+Fix a polyhedral set $S$ 
+in $\mathbb{R}^{n}$.
+Let 
+$\mathcal{F}^{1}_{\mathbb{Z},S}
+\deq \mathcal{O}^{\times}_S/\mathbb{R}_{S}$
+and 
+$\mathcal{F}^{1}_{S}\deq 
+\mathcal{F}^{1}_{\mathbb{Z},S}
+\otimes_{\mathbb{Z}_S} \mathbb{R}_S$.
+From definition of polyhedral set, 
+we can see 
+the stalk $(\mathcal{F}^{1}_{\mathbb{Z},S})_x$
+at $x$ is a free 
+$\mathbb{Z}$-module of finite rank.
 
-\begin{definition}
-Let $(S,x)$ be a 
-\end{definition}
+From definition of superforms on 
+polyhedral spaces 
+\cite[Definition 2.10, 2.24]{MR3903579}, we 
+can define the set of \emph{critical points} 
+of $(0,0)$-superform on rational polyhedral space
+like that of smooth function on differential
+manifolds.
+From the compatibility of pullback of extended
+affine map and the differential $d''$
+\cite[Lemma 2.21]{MR3903579}, we can 
+describe the set of critical point of 
+$(0,0)$-superform as follows:
+
+%TODO: きちんとかく
+\begin{enumerate}
+\item 
+\end{enumerate}
 
 \begin{condition}[{admissibility}] \label{cond: admissible}
 Let $U_x$ be an open neighborhood of a point $x$ in a rational polyhedral
 space $S (\subset M_{{\mathbb{R}}})$. 
-Suppose $\dim M_{{\mathbb{R}}}=\dim \mathbf{F}_{S,x}$. In this case,
+Suppose $\dim M_{{\mathbb{R}}}=\dim 
+\mathcal{F}_{S,x}^{1}$. In this case,
 we can identify $M$ with $\mathbf{F}_{S,x}^{\Z}$.
 A smooth function $f\colon U_x \to {\mathbb{R}}$ is \emph{admissible} at $x$ 
 if 
 \begin{align}
 (x,df(x))\notin (\opn{span}_{{\mathbb{R}}}
-(\opn{SS}(A_S)_x)+M^{\vee})\setminus M^{\vee}
+(\opn{SS}(A_S)_x)+M^{\vee})\setminus M^{\vee}.
 \end{align}
 \end{condition}
+
+\begin{remark}
+If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
+(\opn{SS}(A_S)_x)=\dim \mathbf{F}_{S,x}$,
+$f$ is admissible if and only if 
+$df(x)\in M^{\vee}$. Therefore, admissibility
+condition is not an open condition.
+If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
+(\opn{SS}(A_S)_x)<\dim \mathbf{F}_{S,x}$, the 
+set of admissible cotangent vector at $x$ is dense and 
+connected.
+\end{remark}
 
 % \begin{remark}
 % $\opn{span}_{{\mathbb{R}}}(\opn{SS}(A_S))$ is equal to the orthogonal vector space of
@@ -1733,7 +1794,8 @@ there exist some minor differences.
 \end{example}
 
 \begin{remark}
-  
+
+
 \end{remark}
 
 
@@ -1825,7 +1887,8 @@ We defined the
 \begin{remark}
 \label{remark-differential-graded-module}
 We stress that we should not consider 
-$\opn{MF}^{\bullet}(S;s,A)$ as the cohomology of $s$ just
+$\opn{MF}^{\bullet}(S;s,A)$ as the cohomology of $s$,
+but just
 a graded module 
 since we need to define the differentials 
 $\mathfrak{m}_1$ of 
@@ -1837,16 +1900,23 @@ $\opn{MF}^{\bullet}(S;s,A)$ is equal to a Floer complex
 of Lagrangian submanifolds (e.g. \cite[5.2]{MR1882331}).
 \end{remark}
 
+It is important that $\opn{MF}^{\bullet}(S;s,A)$ is
+defined as a certain topological data, and thus
+we can use topological tools for computation of 
+$\opn{MF}^{\bullet}(S;s,A)$.
+
 \begin{example}
 \label{example-tropical-kodaira-vanishing}
 A local data $\{(f_i,U_i)\}_{i\in I}$ of a given 
 smooth Cartier divisor $s$ is 
-\emph{Bohr--Sommerfeld type} or \emph{Hessian type} if
+\emph{Bohr--Sommerfeld type},
+\emph{strongly-positive}
+or \emph{Hessian type} if
 $f_i$ is strictly convex for any $i\in I$. Then,
 \begin{align}
   \opn{MF}^{\bullet}(S;s,\Q)\simeq \bigoplus_{x\in s_0 \cap s} \Q[0], \quad
  \opn{MF}^{\bullet}(S;-s,\Q)\simeq \bigoplus_{x\in s_0\cap -s} 
-H^{n}(S,S\setminus\{x\};\Q)[-n]
+H^{n}(S,S\setminus\{x\};\Q)[-n].
 \end{align}
 In this case, the cohomology of 
 $\opn{MF}^{\bullet}(S;s,\Q)$ is independent of the choice of 
@@ -1861,13 +1931,11 @@ The name of Bohr--Sommerfeld type comes from
 the set $s_0\cap s$ can be considered as the set of 
 Bohr--Sommerfeld point if $S$ is a strictly integral affine manifold 
 with a Hessian form by SYZ mirror pair.
-See \cref{sec: BSRR} for more details.
+The name of strongly-positive follows 
+from \cite{MR2892935}.
+See \cref{sec: BSRR} for more details if 
+you are interested in Bohr--Sommerfeld points.
 \end{example}
-
-\begin{remark}
-
-\end{remark}
-
 
 The following proposition is an analog of \'{e}tale multiplicity of Euler characteristics
 (cf. \cite[Proposition 1.1.28]{MR2095471}).
@@ -1887,6 +1955,11 @@ $\opn{deg}(q)$,
 
 The proof of \cref{proposition-euler-number-etale} is trivial from definition.
 
+%TODO: Meyer--Vietoris 系の補題が使える。
+Besides, we can apply Meyer--Vietoris exact sequence 
+for $\opn{MF}^{\bullet}(B;s)$ under a suitable condition.
+We will use this feature for tropical curves (see
+\cref{proposition-gluing-formula}). 
 \begin{conjecture} 
 \label{conjecture-tropical-MRR}
 Let $S$ be a compact tropical manifold satisfying 
@@ -1910,7 +1983,12 @@ generated and this is not invariant for linearly
 equivalent smooth Cartier divisors
 if $S$ is not compact.
 This corresponds that Morse homology does not work directly
-for non-compact manifolds such like for compact manifolds.
+for non-compact manifolds such 
+like for compact manifolds.
+Besides, $\chi(\opn{MF}^{\bullet}(S;s,A))$ is \emph{not}
+invariant for line bundles for general compact rational 
+polyhedral spaces. See also 
+\cref{remark-rotation-closed-interval}   
 \end{remark}
 
 \begin{remark}
@@ -2002,10 +2080,35 @@ in general.
 \end{align}
 \end{condition}
 
+\subsection{Verdier duality}
+We will use this subsection 
+in \cref{section-integral-affine-manifold}.
+
+The Verdier duality holds for the following general form
+\cite[Proposition 3.1.10]{MR1299726}
+
+
+\begin{theorem}[{Verdier duality}]
+Let $f\colon X\to Y$ be a continuous map between locally 
+compact Hausdorff space s. If $f_!$ has finite cohomological
+dimension, 
+\begin{align}
+  R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{Hom}_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet})        \\
+  R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}).
+\end{align}
+\end{theorem}
+
+The dualizing complex over $A$ of $X$ is 
+$\upomega_{A_X}\deq a^{!}_{X}A_{\{\opn{pt}\}}$.
+
+$\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
+\deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},\upomega_{A_X})$
+
+
 \section{Proof for compact tropical curves}
 In this section, we prove \cref{thm: main} for 
 compact tropical curves
-(see \cite{mikhalkinTropicalCurvesTheir2008a} 
+(see \cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a} 
 for the definition of tropical curves).
 Our proof is highly effected from 
 \cite{knill2012graph,MR2676658,auroux2022lagrangian}.
@@ -2032,7 +2135,7 @@ $s_0\cap s$ is finite. Then,
 \chi_{\opn{top}}(C)=\opn{deg}(\mathcal{L})+1-g(C).
 \end{align}
 \end{theorem}
-
+ 
 \begin{remark}
 ((1-valentに制限している理由説明))
 \end{remark}
@@ -2040,11 +2143,12 @@ $s_0\cap s$ is finite. Then,
 \begin{proposition}
 \label{proposition-admissible-curve}
 Let $\Gamma_{n+1}$ be a subset of $\mathbb{R}^{n}$
+($n\geq 1$)
 defined as follows: 
 \begin{align}
 \Gamma_{n+1}\deq \mathbb{R}_{\geq 0}(1,0,\ldots,0)\cup \cdots
 \cup {\mathbb{R}}_{\geq 0}(0,\ldots,0,1)\cup 
-{\mathbb{R}}_{\geq 0}(-1,\ldots,-1)
+{\mathbb{R}}_{\geq 0}(-1,\ldots,-1).
 \end{align}
 \begin{enumerate}
 \item $\Gamma_{n+1}$ satisfies
@@ -2053,6 +2157,10 @@ defined as follows:
 $(0,0)$-superform on $\Gamma_{n+1}$. Then, 
 $f$ is admissible at $x=(0,\ldots,0)$ if and only if 
 $df(x)\in (\mathcal{F}^{1}_{\mathbb{Z},\Gamma_{n+1}})_x\simeq (\mathbb{Z}^{n})^{\vee}$.
+\item Let $f\colon [0,\infty) \to \mathbb{R}$ be a
+$(0,0)$-superform on $[0,\infty)$. Then, 
+$f$ is admissible at $x=0$ if and only if 
+$df(x)\in \mathbb{Z}^{\vee}$.
 \end{enumerate}
 \end{proposition}
 
@@ -2072,8 +2180,7 @@ $\opn{span}_{\mathbb{R}}(\opn{SS}(\mathbb{Z}_{S\subset X})_x)
 
 
 \begin{proposition}
-
-
+\label{proposition-n-valent}
 Let $s_{p,q}\colon \Gamma_{n+1}\to \mathbb{R}$ be 
 an admissible $(0,0)$-superform on $\Gamma_{n+1}$ 
 such that $\opn{Crit}(s_{p,q})=\{x\}$ where
@@ -2197,6 +2304,13 @@ $C_0$ is a disjoint union of open interval:
   C_0\simeq \coprod_{e\in E} (a_e,b_e), \quad
 (a_e\in \mathbb{T}, b_e\in \mathbb{R}\cup\{+\infty\}).
 \end{align}
+$C_0$ is an integral affine manifold, 
+and thus $C_0$ has a standard Lagrangian torus fibration
+$\check{\pi}_{C_0}\colon \check{X}(C_0)\to C_0$ and
+a dual torus fibration 
+$\pi_{C_0}\colon X(C_0)\to C_0$,
+(see \cref{definition-integral-affine-manifold}
+and \cref{definition-SYZ-torus-fibration}).
 
 $\check{X}(C_0)$ has a canonical symplectic structure
 and thus there exists a canonical orientation induced
@@ -2265,8 +2379,9 @@ D_s=\{(f_j-f_i)\}_{i,j\in I}
 
 \begin{proposition}
 Let $s$ be an admissible smooth Cartier divisor on $C$.
+\label{equation-rotation-number}
 \begin{align}
-\opn{rot}(s)=\opn{deg}(D_s)(=\int_{C} c_1(D_s))
+\opn{rot}(s)=\opn{deg}(D_s)(=\int_{C} c_1(D_s)).
 \end{align}
 \end{proposition}
 
@@ -2274,37 +2389,105 @@ Let $s$ be an admissible smooth Cartier divisor on $C$.
 Compare the \v{C}ech cocycle between smooth Cartier data and ordinary Cartier data.
 \end{proof}
 
+\begin{remark}
+\label{remark-rotation-closed-interval} 
+The above proposition 
+is \emph{not} true for general compact metric curves.
+Let $C\deq [0,1]$ be a closed interval
+and $f_n\colon C\to \mathbb{R};x \mapsto nx^{2}$.
+All $f_n$ is an admissible $(0,0)$-superform on $C$.
+From the definition of smooth principal Cartier divisor,
+$\opn{deg}(D_{(f_n)^{\mathrm{sm}}})=0$. 
+A philosophical reason of this is that
+a closed interval with finite length is a tropical
+analog of a closed annulus in $\mathbb{C}$ but not for
+a complex projective line. In fact, $X(C_0)$ 
+has a standard complex structure which is holomorphic to
+an open annulus in $\mathbb{C}$.
+See also \cref{remark-relative-divisor}.
+\end{remark}
+
+A good point of the rotation number and the 
+Euler number of $s$ satisfies the 
+following Meyer--Vietoris type lemma.
+
 \begin{proposition}
-Let $C$ be a connected tropical curve with no 
-1-valent vertex which is not homeomorphic to a circle 
-and $s$ be a smooth Cartier divisor on $C$. 
-For any open subset $U$ of $C_0$, there exists a $(0,0)$-superform
-$f\colon U \to \mathbb{R}$ such that
-$(f)^{\opn{sm}}=s|_{U}$.
+\label{proposition-gluing-formula}
+Let $s$ be an admissible smooth Cartier divisor on a
+compact metric graph $C$ such that $s_0\cap s<\infty$.
+Fix two closed metric subgraph of $C$ such that
+$C' \cup C''=C$ and $C'\cap C''\subset s_0 \cap s$.
+Then, 
+the inclusion $i_{C'}\colon C'\to C$ 
+and $i_{C''}\colon C''\to C$ induces
+\begin{align}
+\label{equation-meyer-vietoris}
+\chi(\opn{MF}^{\bullet}(C;s))
+&=\chi(\opn{MF}^{\bullet}(C';i_{C'}^{*}(s)))
++\chi(\opn{MF}^{\bullet}(C'';i_{C''}^{*}(s)))
+-\sharp(C'\cap C''), \\
+\label{equation-rotation-sum}
+\opn{rot}(s)&=\opn{rot}(i_{C'}^{*}(s))
++\opn{rot}(i_{C''}^{*}(s)).
+\end{align}
 \end{proposition}
 \begin{proof}
-Since $\mathcal{O}^{\times}_{C_0}$ is a locally constant 
-sheaf on $C_0$ and $C_0$ is a disjoint union of 
-open intervals, 
-$H^{1}(C_0;\mathcal{O}^{\times}_{C_0})=0$ and thus
-$(\cdot)^{\mathrm{sm}}$ is surjective.
+From assumption $i^{*}_{C'}(s)$ and 
+$i^{*}_{C''}(s)$ are admissible.
+The \cref{equation-rotation-sum} is true from
+the definition of rotation number. 
+ Besides,
+\begin{align}
+s_0\cap i^{*}_{C'}(s)=i^{-1}_{C'}(s_0\cap s), \quad 
+s_0\cap i^{*}_{C''}(s)=i^{-1}_{C''}(s_0\cap s), \quad
+s_0\cap i^{*}_{C'\cap C''}(s)=
+i^{-1}_{C'\cap C''}(s_0\cap s).
+\end{align}
+By \cref{proposition-n-valent} 
+and Meyer--Vietoris exact sequence, we get 
+the \cref{equation-meyer-vietoris}.
 \end{proof}
 
-\begin{definition}[{Edge data}]
+We can prove \cref{theorem-MRR-metric-graph} from
+\cref{proposition-gluing-formula} and the following
+proposition.
 
-\end{definition}
+\begin{proposition}
+Let $C=[a,b]$ be a closed interval in $\mathbb{R}$
+and $s$ an admissible smooth Cartier divisor 
+such that $s_0\cap s=C\setminus C_0$. Then,
+\begin{align}
+\chi(\opn{MF}^{\bullet}(C;s))=\opn{rot}(s)+
+\chi_{\opn{top}}(C).
+\end{align}
+\end{proposition}
+\begin{proof}
+We can calculate from 
+\cref{proposition-n-valent} directly.
+\end{proof}
 
-\begin{definition}
-Let $C$ be a connected compact tropical curve with
-no 1-valent vertex and $p\in C$. 
-A \emph{bump function} of $p$
-is a $(0,0)$-superform such that
-\begin{enumerate}
-\item $C\setminus \opn{supp}(f)$ is contractible.
-\item $\opn{Crit}(f)\setminus \opn{supp}(f)=\{p\}$.
-\item $f$ is concave at $p$.
-\end{enumerate}
-\end{definition}
+
+
+
+
+\begin{proof}[{Proof of \cref{theorem-MRR-metric-graph}}]
+Without loss of generality, we can assume $C$ is 
+connected and $\sharp (s_0\cap s)\geq 1$.
+
+Since $s_0\cap s\supset (C\setminus C_0)$, 
+The set $s_0\cap s$ induces a cell-decomposition of 
+$C$. Let 
+$\psi \colon \pi_0 (C_0)\to \mathcal{P}(C_0)$
+
+%NEXT: この考えを完成させる
+%TODO: gluing の原理を一般化させる
+\begin{align}
+\sum_{e\in \pi_0(C),}
+\sum_{\psi_e(p)=v} 
+\opn{MF}^{\bullet}(\tilde{e},p)
+\end{align}
+
+\end{proof}
 
 \begin{definition}[{cf. \cite{auroux2022lagrangian}}]
 An admissible smooth Cartier divisor $s$ is 
@@ -2313,55 +2496,11 @@ $\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
 $f_p$ is convex at all $p\in C\setminus C_0$.
 \end{definition}
 
-\begin{proposition}
-Let $s$ be an admissible smooth Cartier divisor. 
-Then, there exists a simple admissible
-smooth Cartier divisor such that
-$\chi(\opn{MF}^{\bullet}(C;s))=
-\chi(\opn{MF}^{\bullet}(C;s'))$
-and $\opn{rot}(s)=\opn{rot}(s')$.
-\end{proposition}
-
-\begin{proof}
-We can create $s'$ by adding some good 
-bump functions to $s$.
-\end{proof}
-
-\begin{definition}
-
-\end{definition}
-
-\begin{definition}[{Standard function}]
-Let $C$ be a connected compact tropical curve with
-no 1-valent vertex which is not homeomorphic to 
-a circle and $p\in C$.
-A \emph{bump function} on $C$ is a
-$(0,0)$-superform such that:
-\begin{enumerate}
-\item $\sharp (\opn{Crit}(f))<\infty$,
-\item $C\setminus C_0\subset \opn{Crit}(f)$,
-\item $f$ is convex at all $p\in C\setminus C_0$,
-\item $\sharp (\opn{Crit}(f)\cap e)=1$ for all connected 
-      component $e$ of $C_0$.
-\end{enumerate}
-\end{definition}
-
-\begin{proposition}
-Let $C$ be a compact tropical curve with no 1-valent
-vertex which is not homeomorphic to a circle
- and $f$ a standard function on 
-$C$. Then, $\chi(\opn{MF}(C;(f)^{\mathrm{sm}}))=\chi_{\mathrm{top}}(C)$.
-\end{proposition}
-\begin{proof}
-If $C$ is homeomorphic to a circle, 
-we can transform $s$ to  
-\end{proof}
-
-\begin{proof}[{Proof of \cref{theorem-MRR-metric-graph}}]
-Without loss of generality, we can assume $C$ is 
-connected and .
-
-\end{proof}
+\begin{remark}
+%TODO: admissible な関数のなす層にして理論を展開
+%したらうまくいくことをかく。
+%TODO: $(\mathcal{O}_B^{\times})^{\opn{adm}}$
+\end{remark}
 \subsection{MRR for general tropical curves}
 
 We will prove MRR for compact tropical curve 
@@ -2372,7 +2511,8 @@ $s\in\Gamma(C;\mathcal{A}^{0,0}_C/\mathcal{O}^{\times}_C)$,
 we cannot choose a Cartier divisor $s'$ which
 is linearly equivalent to $s$ and $s_0\cap s'<\infty$. 
 The reason of this fact is that every 
-$(0,0)$-superform on $C$ is constant on a sufficiently
+$(0,0)$-superform on a compact tropical curve 
+$C$ is constant on a sufficiently
 small open neighborhood of $1$-valent vertex.
 In this subsection, we extend smooth functions
 on tropical curves for generalization of 
@@ -2457,7 +2597,7 @@ We can extend admissibility condition for
 weak-smooth functions and weak-smooth Cartier 
 divisors on $C$ but in this case every 
 weak-smooth function is admissible at $1$-valent
-vertex.
+vertex of $C$.
 
 \begin{definition}
 Let $s$ be an admissible weak-smooth Cartier divisor 
@@ -2522,7 +2662,7 @@ The main difference between our setting and
 that of \cite{auroux2022lagrangian} 
 is the definition of graded space $\opn{CF}(C,s)$. 
 Our approach has no good definition 
-of $m^{d}$-operations but we define $\opn{CF}(C,s)$ 
+of $m^{d}$-operations, but we define $\opn{CF}(C,s)$ 
 without Hamiltonian
 perturbations.
 \end{remark}
@@ -2607,6 +2747,15 @@ $x\notin \opn{Crit}(g+m)$ for every monomial with
 integer slope.
 \end{remark}
 
+%TODO: positive と豊富の差
+% \begin{remark}
+% If $s$ is a Bohr--Sommerfeld type smooth Cartier on 
+% a compact tropical curve, then 
+% $\opn{deg}(D_s)=\sharp(s_0\cap s)-
+%\chi_{\mathrm{top}}(C)
+% \geq \sharp (C\setminus C_0)+g-1$
+% \end{remark}
+
 \subsection{Relationships between a localization of 
 index on compact Riemann surfaces.}
 
@@ -2623,8 +2772,10 @@ On the other hand, we can construct a typical tropical curve
 $X_0(C)$  can be considered as a subset of a compact 
 Riemann surface $X$.
 \myfootnote{By philosophy of SYZ mirror symmetry,
-we should consider Lagrangian section as a mirror of complex line bundle
-and we also explain about it for tropical tori in \cref{a}.
+we should consider Lagrangian section 
+as a mirror of complex line bundle,
+and we also explain about it for tropical tori in 
+\cref{example-SYZ-trasform-tori}.
 }
 
 Under the above interpretation, a very admissible Lagrangian section can be considered as a data of $U(1)$-holonomy of each fiber $\check{\pi}_{B_0}^{-1}(p)$.
@@ -2643,8 +2794,11 @@ From this our theorem for tropical curve can be proved from the theory of locali
   complex algebraic hypersurfaces in \cite{MR2079993} and line bundles?
 \end{question}
 
-\section{Proof for integral affine manifold with Hessian form.}
+%TODO: amissibleのなす層がアーベル群のなす層では
+%Torsorとしての性質のを満たすことを述べる。
 
+\section{Proof for integral affine manifold with Hessian form.}
+\label{section-integral-affine-manifold}
 In this section,
 we recall the notion of affine manifolds from
 \cite{MR2293045,
@@ -2665,8 +2819,8 @@ a smooth function
 is smooth and convex 
 on $\mathbb{R}^{n}$.
 Therefore, $(\mathbb{R}^{n},f)$ form an integral 
-Hessian manifold which is homeomorphic to a domain.
-
+Hessian manifold. This is a typical example of
+Hessian domain.
 See also \cite[Appendix 2]{MR1301331} for general theory for
 the relationships for Hessian form and the induced K\"{a}hler potential for
 toric manifolds.
@@ -2716,8 +2870,8 @@ a Calabi-Yau $n$-fold with a nowhere vanishing
 holomorphic $n$-form has 
 an integral affine structure with 
 a Hessian metric by McLean's theorem \cite{MR1664890}.
-
-Every integral affine manifold has the following canonical
+Every integral affine manifold has 
+the following canonical torus fibrations.
 \end{remark}
 
 We can consider the sheaf theoretic definition of 
@@ -2726,34 +2880,15 @@ in \cite[2.1]{MR2181810}
 and thus integral affine manifold is a special case of 
 tropical manifold.
 
-From now on, we follow about tropical homology and sheaf 
-theory for tropical manifolds
-from \cite{MR3903579,gross2019sheaftheoretic}.
-
-\subsection{Verdier duality}
-The Verdier duality holds for the following general form
-\cite[Proposition 3.1.10]{MR1299726}
 
 
-\begin{theorem}[{Verdier duality}]
-Let $f\colon X\to Y$ be a continuous map between locally 
-compact Hausdorff space s. If $f_!$ has finite cohomological
-dimension, 
-\begin{align}
-  R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{Hom}_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet})        \\
-  R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}).
-\end{align}
-\end{theorem}
 
-The dualizing complex over $A$ of $X$ is 
-$\upomega_{A_X}\deq a^{!}_{X}A_{\{\opn{pt}\}}$.
-
-$\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
-\deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},\upomega_{A_X})$
 
 
 \subsection{Tropical homology, Tropical superform and Cartier data}
-
+From now on, we follow about tropical homology and sheaf 
+theory for tropical manifolds
+from \cite{MR3903579,gross2019sheaftheoretic}.
 In the case of affine manifold, this sheaf is already
 studied in the field of Hessian geometry as a vector bundle
 with a flat connection
@@ -2874,10 +3009,13 @@ $X_{\opn{reg}}$. (See \cite[Definition 4.8]{MR3894860}.)
 If $X=\opn{pt}$, $H_{0,0}^{\opn{BM}}(\opn{pt};\Z)=\opn{End}(\Z)\simeq \Z$.
 Therefore, $H^{n,n}(X;\Z)\xto{\cdot \cap [X]} H_{0,0}^{\opn{BM}}(X;\Z)
 \xto{f_!} H_{0,0}^{\opn{BM}}(\opn{pt};\Z)$ defines
-the 
-When $B$ is an integral affine manifold of dimension $n$, 
+the ((補完))
+If $B$ is a topological manifold of dimension $n$, 
 $\upomega^{\bullet}_{B}\simeq \opn{or}_{B}^{\Z}[n]$ 
-\cite[]{}.
+where $\opn{or}_{B}^{\mathbb{Z}}[n]$ is the sheaf 
+associated with the presheaf $U\mapsto 
+\opn{Hom}(H^{n}_c(U;\mathbb{Z}_{B}),\mathbb{Z})$
+\cite[Proposition 3.3.6]{MR1299726}.
 and the fundamental class of $B$ is a $\Z$-orientation of $B$
 when $B$ is orientable.
 
@@ -2888,22 +3026,26 @@ $\mcal{O}^{\times}_{B_0}$ is a locally constant sheaf and the quotient sheaf $\m
 
 \begin{Not}
   Usually, integral affine manifolds are used as a special case of integral affine manifold with singularities and we also want to treat like this in many cases.
-  Therefore, we write $\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$, $\mcal{T}_{\Z,B_0}\deq \mcal{W}_{\Z,B_0}^{1}$ in this section for integral affine manifolds. We also use this notation for integral affine manifold with singularities.
+  Therefore, we write 
+$\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$, 
+$\mcal{T}_{\Z,B_0}\deq \mcal{F}_{\Z,B_0}^{1}$ in this section for integral affine manifolds. We also use this notation for integral affine manifold with singularities.
 \end{Not}
 
 From now on we recall the commutative diagram (\ref{equation-smooth-cartier-diagram})
  for integral affine manifolds.
 
-Of course, $\mcal{A}_{B_0}^{0,0}=\mcal{C}^{\infty}(B_0)$ and
- $\mcal{Z}^{1}_{B_0}$ is the sheaf of closed $1$-form on $B_0$.
+Of course, 
+$\mcal{A}_{B_0}^{0,0}=\mcal{C}^{\infty}(B_0)$ and
+$\mcal{Z}^{1}_{B_0}$ is the sheaf of 
+closed $1$-form on $B_0$.
 
 
 
 We note the sheaf $\mcal{Z}^{1}_{B_0}$ can be considered as the sheaf 
 $\opn{Lag}(T^{*}B_0)$ of Lagrangian sections 
-$s:U \to T^{*}U$ for open set $U \subset B_0$, 
-see some standard textbook for symplectic geometry 
-such as \cite[3.2]{MR1853077}.
+$s:U \to T^{*}U$ for open set $U \subset B_0$ 
+(see \cite[3.2]{MR1853077} or some standard textbook
+of symplectic geometry).
 
 Another important thing is that 
 $\mcal{Z}^{1}(B_0)/\mcal{T}_{\Z,B_0}^{\vee}$
@@ -2917,7 +3059,7 @@ $\check{f}_{B_0}\colon \check{X}(B_0)\to B_0$
 Thus, the commutative diagram (\ref{equation-smooth-cartier-diagram}) is written like this 
 (e.g. \cite[p.468]{MR2567952}):
 
-\begin{equation} \label{eq:affinecartier}
+\begin{equation} \label{equation-cartier-lagrangian}
   \begin{tikzcd}
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
     & \mb{R}_{B_0} \arrow[r,equal] \arrow[d]                & \mb{R}_{B_0} \arrow[d]           &                      &   \\
@@ -2927,6 +3069,17 @@ Thus, the commutative diagram (\ref{equation-smooth-cartier-diagram}) is written
   \end{tikzcd}
 \end{equation}
 
+From the diagram (\ref{equation-cartier-lagrangian}),
+we have the following group isomorphism already remarked 
+before:
+
+\begin{proposition}
+Let $B_0$ be an integral affine manifold. Then,
+\begin{align}
+\opn{CDiv}^{\infty}(B_0)\simeq \Gamma(B_0;
+\opn{Lag}(\check{X}(B_0))).
+\end{align}
+\end{proposition}
 
 \begin{remark}
 When $s=\vep df$ for a sufficiently small $\vep >0$ and 
@@ -2983,7 +3136,7 @@ mapping of closed manifolds.
 
 \end{proof}
 
-\begin{theorem} \label{thm: HesseRR}
+\begin{theorem} \label{theorem-MRR-hesse}
   Let $B_0$ be a $n$-dimensional compact integral affine manifold and
   $s$ a smooth Lagrangian section
   which intersect transversely. Then,
@@ -2996,9 +3149,8 @@ mapping of closed manifolds.
 
 From Cheng-Yau's result \cite{MR714338}, $B_0$ is a finite unramified cover of tropical tori.
 Fix an \'etale cover $p:T \to B_0$ of $B_0$.
-
-If \cref{thm: HesseRR} is true for tropical tori,
-then \cref{thm: HesseRR} is also true for compact
+If \cref{theorem-MRR-hesse} is true for tropical tori,
+then \cref{theorem-MRR-hesse} is also true for compact
 integral manifold with a Hessian form from
 \cref{thm: intetale} for $p$.
 
@@ -3135,6 +3287,10 @@ see \cite[Remark 1.1.1]{MR2031639}.
 
 
 In some case we write $f_1\dot{+} f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$.
+
+((この和と使ったのは将来的に容易に予想される
+トロピカル演算の和$\oplus, \boxplus$,
+との混同を避けるためである。))
 
 \begin{theorem}[{Thom--Sebastiani Theorem for sheaves \cite[Theorem 1.2.2]{MR2031639}}]
 Let $i=1,2$.
@@ -3347,6 +3503,7 @@ and the prequantum line bundle on them
 is in \cite[Theorem 3.20]{yamaguchimaster}.
 
 \begin{remark}
+%TODO: Tyurinから
   We stress that the $\sharp \mathrm{BS}=\mathrm{RR}$ is true for closed integral affine manifold such that $X(B_0)$ is not K\"ahlerian, i.e., not Calabi-Yau type.
 \end{remark}
 
@@ -3378,7 +3535,17 @@ for non-Calabi--Yau manifolds has three ways:
 
 We add some notes about integral affine manifolds $B_0$, and its SYZ-pair $\check{X}(B_0), X(B_0)$ from \cite[Chapter 6]{MR2567952} and \cite{MR2737696,MR3079343}
 
+\begin{definition}
+\label{definition-SYZ-torus-fibration}
+\end{definition}
 
+%TODO: 適切な箇所に配置
+\begin{remark}
+In some literature, the symbol $\check{X}$ and
+$X$ are opposite. In this paper, we choose the above
+symbolic rule in order to be compatible with the symbol of 
+\cref{definition-SYZ-torus-fibration}.
+\end{remark}
 
 From construction, $\check{X}(B_0), X(B_0)$ have the zero section.
 
