@@ -418,9 +418,9 @@ tropical spaces ?
 
 In this paper, we will pursue a different tropical
 analog of Euler number of line bundles with the help of 
-ideas on toric varieties,
+ideas on toric varieties, Morse theory,
 Strominger--Yau--Zaslow conjecture
-(SYZ conjecture for short)
+(SYZ conjecture for short), geometric prequantization
 and related topics.
 
 \begin{remark}
@@ -2118,10 +2118,15 @@ The current proof is modified after reading
 \cite{auroux2022lagrangian}.}.
 We also follow the notation used in 
 \cite{auroux2022lagrangian}.
-Some proposition which is proved is in a special case
-of the previous section, but we write a short proof 
+Some propositions which have already proved as a special case
+of the previous section will appeear, but we write a short proof 
 for simplicity.
 
+\subsection{MRR for tropical curve with no 1-valent
+vertex}
+
+The goal of this subsection is to prove the following 
+version of \cref{thm: main}.
 \begin{theorem}
 \label{theorem-MRR-metric-graph}
 Let $C$ be a compact tropical curve with 
@@ -2135,37 +2140,51 @@ $s_0\cap s$ is finite. Then,
 \chi_{\opn{top}}(C)=\opn{deg}(\mathcal{L})+1-g(C).
 \end{align}
 \end{theorem}
- 
-\begin{remark}
-((1-valentに制限している理由説明))
-\end{remark}
-
-\begin{proposition}
-\label{proposition-admissible-curve}
-Let $\Gamma_{n+1}$ be a subset of $\mathbb{R}^{n}$
-($n\geq 1$)
-defined as follows: 
+We will prove a generalized version of 
+\cref{theorem-MRR-metric-graph} in the next subsection.
+Let $\Gamma_{n}$ be the projectivization of 
+a certein tropical module defined in 
+\cite[2.2]{mikhalkinTropicalCurvesTheir2008a}.
+$\mathbb{P}(\mathbb{T}^{n})$ has a canonical inclusion
+$\iota_n\colon \mathbb{R}^{n-1}\to 
+\mathbb{P}(\mathbb{T}^{n})=\mathbb{T}P^{n-1}$ 
+of tropical algebraic torus.
+There exists the following isomorphism as rational 
+polyhedral spaces:
 \begin{align}
-\Gamma_{n+1}\deq \mathbb{R}_{\geq 0}(1,0,\ldots,0)\cup \cdots
+\Gamma_{n}^{\circ}\deq \Gamma_{n}\cap \iota_n(\mathbb{R}^{n-1}) \simeq \mathbb{R}_{\geq 0}(1,0,\ldots,0)\cup \cdots
 \cup {\mathbb{R}}_{\geq 0}(0,\ldots,0,1)\cup 
 {\mathbb{R}}_{\geq 0}(-1,\ldots,-1).
 \end{align}
+
+If $C$ is a compact tropical curve with 
+no $1$-valent vertex, then every point in $C$ has 
+an open neighborhood which is isomoprhic to 
+a open subset of some $\Gamma_{n}^{\circ}$.
+
+
+\begin{definition}
+
+\end{definition}
+
+\begin{proposition}
+\label{proposition-admissible-curve}
+Let $\Sigma$ be the support of a $1$-dimensonal 
+finite convex polyhedral fan $\mathbb{R}^{n}$ such that
+$\Sigma$ spans $\mathbb{R}^{n}$.
 \begin{enumerate}
-\item $\Gamma_{n+1}$ satisfies
+\item $\Sigma$ satisfies
 \cref{condition-good-linearity-space} at $x=(0,\ldots,0)$.
-\item Let $f\colon \Gamma_{n+1}\to \mathbb{R}$ be a 
-$(0,0)$-superform on $\Gamma_{n+1}$. Then, 
+\item Let $f\colon \Sigma\to \mathbb{R}$ be a 
+$(0,0)$-superform on $\Sigma$. Then, 
 $f$ is admissible at $x=(0,\ldots,0)$ if and only if 
-$df(x)\in (\mathcal{F}^{1}_{\mathbb{Z},\Gamma_{n+1}})_x\simeq (\mathbb{Z}^{n})^{\vee}$.
-\item Let $f\colon [0,\infty) \to \mathbb{R}$ be a
-$(0,0)$-superform on $[0,\infty)$. Then, 
-$f$ is admissible at $x=0$ if and only if 
-$df(x)\in \mathbb{Z}^{\vee}$.
+$df(x)\in (\mathcal{F}^{1}_{\mathbb{Z},\Sigma})_x\simeq (\mathbb{Z}^{n})^{\vee}$
+or $\opn{Lin}(\Sigma,x)\simeq \mathbb{R}$.
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-Obviously, $\opn{dim}_{\mathbb{R}}\opn{Lin}(\Gamma_{n+1},x)=0$.
+Obviously, $\opn{dim}_{\mathbb{R}}\opn{Lin}(\Sigma,x)=0$.
 Let $x_i^{*}$ be the $i$-th dual linear form on 
 $\mathbb{R}^{n}$ for the standard coordinate system on 
 $\mathbb{R}^{n}$ and 
@@ -2174,15 +2193,17 @@ such that $a_i<0$ for any $a_i$.
 Then, the lower set $\Gamma_{n+1}\cap \{h< 0\}$ is disconnected.
 Thus, 
 $\opn{span}_{\mathbb{R}}(\opn{SS}(\mathbb{Z}_{S\subset X})_x)
-=\mathbb{R}^{n}$ where $X=\mathbb{R}^{n}$ and $S=\Gamma_{n+1}$.
+=\mathbb{R}^{n}$ where $X=\mathbb{R}^{n}$ and $S=\Sigma$.
 \end{proof}
 
-
+\begin{remark}
+We can generalize for general
+\end{remark}
 
 \begin{proposition}
 \label{proposition-n-valent}
-Let $s_{p,q}\colon \Gamma_{n+1}\to \mathbb{R}$ be 
-an admissible $(0,0)$-superform on $\Gamma_{n+1}$ 
+Let $s_{p,q}\colon \Sigma\to \mathbb{R}$ be 
+an admissible $(0,0)$-superform on $\Sigma$ 
 such that $\opn{Crit}(s_{p,q})=\{x\}$ where
 $x=(0,\ldots,0)$ and
 \begin{align}
@@ -2405,7 +2426,22 @@ a complex projective line. In fact, $X(C_0)$
 has a standard complex structure which is holomorphic to
 an open annulus in $\mathbb{C}$.
 See also \cref{remark-relative-divisor}.
+%TODO: ここにつながる話を書く。
 \end{remark}
+
+\begin{proposition}
+Let $C=[a,b]$ be a closed interval in $\mathbb{R}$
+and $s$ an admissible smooth Cartier divisor 
+such that $s_0\cap s=C\setminus C_0$. Then,
+\begin{align}
+\chi(\opn{MF}^{\bullet}(C;s))=\opn{rot}(s)+
+\chi_{\opn{top}}(C).
+\end{align}
+\end{proposition}
+\begin{proof}
+We can calculate from 
+\cref{proposition-n-valent} directly.
+\end{proof}
 
 A good point of the rotation number and the 
 Euler number of $s$ satisfies the 
@@ -2444,7 +2480,7 @@ s_0\cap i^{*}_{C'\cap C''}(s)=
 i^{-1}_{C'\cap C''}(s_0\cap s).
 \end{align}
 By \cref{proposition-n-valent} 
-and Meyer--Vietoris exact sequence, we get 
+and Meyer--Vietoris sequence, we get 
 the \cref{equation-meyer-vietoris}.
 \end{proof}
 
@@ -2452,19 +2488,7 @@ We can prove \cref{theorem-MRR-metric-graph} from
 \cref{proposition-gluing-formula} and the following
 proposition.
 
-\begin{proposition}
-Let $C=[a,b]$ be a closed interval in $\mathbb{R}$
-and $s$ an admissible smooth Cartier divisor 
-such that $s_0\cap s=C\setminus C_0$. Then,
-\begin{align}
-\chi(\opn{MF}^{\bullet}(C;s))=\opn{rot}(s)+
-\chi_{\opn{top}}(C).
-\end{align}
-\end{proposition}
-\begin{proof}
-We can calculate from 
-\cref{proposition-n-valent} directly.
-\end{proof}
+
 
 
 
@@ -2676,17 +2700,10 @@ tropical hypersurfaces.
 As a toy model of this question, we also pose a 
 following question as a higher version of the 
 correspondence above.
-\begin{question}
-Is there exists an analog of the correspondence of the 
-localization of index for
-hypersurfaces of projective space and pants decomposition 
-in \cite{MR2079993}?
-\end{question}
+
 We also expect that the question above has a generalization
 for more general algebraic varieties.
-\begin{definition} \label{def: weighted_lattice_points}
 
-\end{definition}
 
 %TODO: 適切な箇所で See \cref{remark-non-admissible-divisor}
 
@@ -2703,22 +2720,20 @@ convenient continuous sections like
 \cref{definition-continuous-section} easily.
 
 The third reason is the most critical:
-Let $\overline{\Gamma}_3$ be the canonical 
-compactification of $\Gamma_3$ as a projective tropical 
-curve and
-$g$ a weak-smooth function on 
-$\overline{\Gamma}_3$
+Let 
+$g$ be a weak-smooth function on 
+$\Gamma_3$
 such that 
 \begin{enumerate}
 \item $dg=(\frac{1}{2},\frac{1}{2})$
-\item $\opn{Crit}(g)=\overline{\Gamma}_3\setminus \Gamma_3$
+\item $\opn{Crit}(g)=\Gamma_3\setminus \Gamma_3^{\circ}$
 \item $\sum_{p\in \opn{Crit}(g)}\opn{ind}_p(g)=2$
 \end{enumerate}
 $g$ is admissible except $x=(0,0)$.
 There exists the following equation for local Morse index:
 \begin{align}
 \sum_{p\in \opn{Crit}(g)}\opn{ind}_p(g)+
-\opn{ind}_x(g)=1=\chi_{\opn{top}}(\overline{\Gamma}_3).
+\opn{ind}_x(g)=1=\chi_{\opn{top}}(\Gamma_3).
 \end{align}
 Therefore, if we generalize 
 \cref{theorem-MRR-tropical-curve} for non-admissible
@@ -2763,23 +2778,80 @@ We mention the relationship between
 \cref{theorem-MRR-tropical-curve} and
 \cite[6]{MR2676658}.
 For simplicity,
-we assume $C$ is a compact trivalent tropical curve.
+we assume $C$ is a compact trivalent tropical curve, i.e.,
+a compact tropical curve which only has $3$-valent
+vertex in $C\setminus C_0$.  
+$C_0$ has a canonical dual torus fibration 
+$\pi_{C_0}\colon X(C_0)\to C_0$ of
+$\check{\pi}_{C_0} \colon \check{X}(C_0)\to C_0$.
+We can define $X_0(C)\deq C\sqcup_{i,s} X(C_0)$ like
+$\check{X}_0(C)$.
+$C$ has a canonical lattice length metric $d_{C}$, and
+thus we can define the following set for sufficiently small
+$\vep >0$: 
+\begin{align}
+C_{0,\vep}\deq \{p\in C\mid d_C(p,v)>\vep 
+\text{ for all } v\in C\setminus C_0\}.
+\end{align}
 
-On the other hand, we can construct a typical tropical curve
-(Reeb graph) from a Morse function on Riemann surface
-\cite[3.2.2]{MR2181810}.
-
-$X_0(C)$  can be considered as a subset of a compact 
-Riemann surface $X$.
+For a given $\vep>0$, $X_0(C)$ can be considered as a subset of a compact 
+Riemann surface $X$ whose complex structure is 
+compatible with $X(C_{0,\vep})$. 
+Such a $X$ is given by gluing triangles for 
+each open neighborhood of $p\in X_0(C)\setminus X(C_0)$
+properly.
+Let $s$ be an admissible smooth Cartier divisor on $C$.
+$s|_{C_0}$ corresponds to a Lagrangian section of 
+$\check{\pi}_{C_0}$ from 
+\cref{proposition-cartier-lagrangian}.
+By SYZ transformation,
 \myfootnote{By philosophy of SYZ mirror symmetry,
 we should consider Lagrangian section 
 as a mirror of complex line bundle,
 and we also explain about it for tropical tori in 
 \cref{example-SYZ-trasform-tori}.
 }
+$s|_ {C_0}$ induces a family of $U(1)$ holonomoy for
+each torus fiber $\pi_{C_0}^{-1}(p)$ and defines a 
+complex line bundle on $C_{0,\vep}$. From now on, 
+we suppose $s_0\cap s<\infty$. 
+Let $\{(U_p, f_p)\}_{p\in s_0\cap s}$ be the local intersection data 
+of $s$ such that 
+$\{x\in C\mid d_C(p,x)\leq \vep\}\subset U_p$ for
+all $p\in C\setminus C_0$.
 
-Under the above interpretation, a very admissible Lagrangian section can be considered as a data of $U(1)$-holonomy of each fiber $\check{\pi}_{B_0}^{-1}(p)$.
-The following equation is a correspondence about local index $\opn{ind}_v$ and the Local Riemann-Roch number under the above identification \cite[Theorem 6.7]{MR2676658}.
+Besides, we suppose 
+$(s\cap s_0)\setminus C_{0,\vep}=C\setminus C_0$ and $s$ satisfies the following cocycle
+condition for each $p\in C\setminus C_0$:
+\begin{align}
+df_p(p_1)+df_p(p_2)+df_p(p_3)=0,\quad 
+(\{p_1,p_2,p_3\}\deq \{x\in C\mid d_C(p,x)=\vep\}).
+\end{align}
+
+From the above condition, $0<|df_p(p_i)|<1$ and
+$f$ is of type $s_{2,1}$ or $s_{1,2}$ discussed
+in \cref{proposition-n-valent}.
+From the above condition, we can define 
+a flat $U(1)$-connection on each pants of a 
+connected component of $X\setminus X(C_{0,\vep})$
+as like \cite[6.1.3]{MR2676658}. The former 
+corresponds a small pants and the latter
+corresponds a large pants in 
+\cite[Definition 6.3]{MR2676658}.
+Each small pants and large pants have a Local 
+Riemann--Roch number defined the theory of 
+localization of Dirac-type operator and its 
+number is equal 
+to our index by the above correspondence.
+\footnote{We also thanks 
+for explaining us a heart of localization of 
+Dirac-type operators and answering some 
+questions about it.}
+
+The following equation is a correspondence about 
+local index $\opn{ind}_v$ and the Local 
+Riemann--Roch number under the above 
+identification \cite[Theorem 6.7]{MR2676658}.
 \begin{align}
 & [BS^{+}]=\opn{ind}_v(s_{2,0})=1, 
 && [BS^{-}]=\opn{ind}_v(s_{0,2})=-1,\notag \\
@@ -2788,7 +2860,14 @@ The following equation is a correspondence about local index $\opn{ind}_v$ and t
 & [P^{S}]=\opn{ind}_v(s_{2,1})=0,
 && [P^{L}]=\opn{ind}_v(s_{1,2})=-1 \notag.
 \end{align}
-From this our theorem for tropical curve can be proved from the theory of localization of index and classical Riemann-Roch formula.
+From this our theorem for tropical curve can be 
+proved from the theory of localization of index 
+and classical Riemann-Roch formula.
+We also stress that both method of computation
+of our index and the local Riemann--Roch number
+defined in \cite{MR2676658} are different 
+each other even though both index have various 
+similar features.
 \begin{question}
   Can we generalize the above correspondence for pants decomposition of
   complex algebraic hypersurfaces in \cite{MR2079993} and line bundles?
@@ -2816,7 +2895,7 @@ grossMirrorSymmetryLogarithmic2006a} and
 ((トーリック幾何に関するヘッセ幾何の説明))
 Let $f\colon \mathbb{R}^{n}\to \mathbb{R}$ be 
 a smooth function 
-is smooth and convex 
+$f$ is smooth and convex 
 on $\mathbb{R}^{n}$.
 Therefore, $(\mathbb{R}^{n},f)$ form an integral 
 Hessian manifold. This is a typical example of
@@ -3074,12 +3153,34 @@ we have the following group isomorphism already remarked
 before:
 
 \begin{proposition}
+\label{proposition-cartier-lagrangian}
 Let $B_0$ be an integral affine manifold. Then,
 \begin{align}
 \opn{CDiv}^{\infty}(B_0)\simeq \Gamma(B_0;
 \opn{Lag}(\check{X}(B_0))).
 \end{align}
 \end{proposition}
+
+If two smooth Cartier divisors $s,s'$ are linearly equivalent, 
+i.e., $f=s-s'\in C^{\infty}(B_0)$, 
+then $s$ is the image of an one-time Hamiltonian flow of $s'$
+on $\check{X}(B_0)$
+\cite[Exercise 6.65]{MR2567952}.
+
+If $B_0$ is an integral affine manifold such 
+that $\pi_2(B_0)=0$, then $\pi_2(\check{X}(B_0))=0$ 
+and thus every pair $(L_1,L_2)$ of Lagrangian section
+of $B_0$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
+Floer cohomology $\opn{HF}^{\bullet}(L_1,L_2)$. 
+Its Euler number is equal to the intersection of 
+$L_1$ and $L_2$ (up to signature).
+Besides,
+if $B_0$ is a compact integral affine 
+Hessian manifold and has a spin structure, every 
+Lagrangian section has a canonical structure 
+as a object of the Fukaya category of 
+$\check{X}(B_0)$ 
+\cite[5.2]{MR1882331}.
 
 \begin{remark}
 When $s=\vep df$ for a sufficiently small $\vep >0$ and 
@@ -3104,7 +3205,7 @@ Our condition of \'etale is different from that of
 If $f\colon B\to B'$ be an affine local diffeomorphism,
 then $X(f)\colon X(B) \to X(B')$ is a local isomorphism of
 complex manifolds.
-When $f$ is not an \'etale in our sense, however,
+When $f$ is not an \'etale in our sense,
 $\opn{deg}(f)\ne \opn{deg}(X(f))$ in general.
 
 \end{remark}
@@ -3592,11 +3693,7 @@ is a complex torus and an unramified finite cover
 of $X(B_0,K)$ (resp. $\check{X}(B_0,K)$).
 
 \end{example}
-If two smooth Cartier divisors $s,s'$ are linearly equivalent, 
-i.e., $f=s-s'\in C^{\infty}(B_0)$, 
-then $s$ is the image of a time-one Hamiltonian flow of $s'$
-on $\check{X}(B_0)$
-\cite[Exercise 6.65]{MR2567952}.
+
 
 
 
