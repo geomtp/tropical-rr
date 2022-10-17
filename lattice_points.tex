@@ -401,33 +401,6 @@ In particular, we expect a certain analogue of Wirtinger's formula of compact K\
 
 \end{Eg}
 
-Of course, the above discussion gives no mathematical reason of this analogue of the above example instead of toric varieties.
-
-
-Roughly speaking, tropical geometry is an algebraic geometry over tropical semifield  $\underline{\mb{R}}_{\max}$\footnote{We use max-plus semifield in this paper.} whose geometrical object is a certain polyhedral complex with additional data.
-
-In tropical geometry, there exist various style of tropical analogue of algebraic varieties such like algebraic geometry before the appearance of the notion of schemes. In this paper, we expect that the theory of lattice points on tropical space is related with the following three styles.
-
-(i) tropical variety (= a formalization of non-Archimedean amoeba)
-
-(ii) tropical complex (= a formalization of the dual complex of a reduced simple normal crossing divisor + additional data)
-
-(iii) integral affine manifold with singularities (= a formalization of the base space of (special) Lagrangian torus fibration)
-
-Each tropical object is precisely different but deeply related with each other. In fact, these styles share essentially same some tropical objects.
-
-
-One of typical example is a smooth compact tropical curve has no 1-valent vertices such that the length of each edge is a positive integer.
-
-
-\footnote{In \cite{MR4155409}, new Ehrhart theory of tropical geometry appear.}
-
-The difference between for the case of toric varieties and others is that others is not about line bundles on tropical varieties. In this  paper, we fill these gaps and consider the number of lattice points as a "Bohr-Sommerfeld point" which is studied in symplectic geometry.
-
-\begin{Rmk}
-  The idea of considering the lattice point $B(\Z)$ of integral affine manifold with singularities $B$ as a index of a good basis of an ample line bundle of a (degenerating) family of Calabi--Yau manifold is deeply developed by Gross and Siebert. The precise setting of the conjecture is in \cite[Conjecture 1.6]{MR3525095}.
-
-\end{Rmk}
 
 \section{Proof of main theorem}
 
@@ -440,12 +413,7 @@ The difference between for the case of toric varieties and others is that others
 
 
 \begin{Def}
-  Let $|\Sigma|$ be the support of a convex polyhedral fan $\Sigma$ of $\R^{n}$
-  such that the affine hull of $|\Sigma|$ is equal to $\R^{n}$.
-  Fix a $C^{1}$-function $f_0:U\to \R$ with only
-  one isolated critical point at the origin $v\deq 0$ of $\R^{n}$
-  and $f$ is the restriction on $S\deq U \cap |\Sigma|$.
-  Let $\mcal{F}$ be a sheaf of $A$-modules on $S$.
+
   \begin{align}
     \opn{MF}^{\bullet}(f;\mcal{F})
      & \deq H^{\bullet}(R\Gamma_{\{f\geq f(v)\}}(\mcal{F})_v) \simeq
@@ -467,13 +435,7 @@ The difference between for the case of toric varieties and others is that others
   of a cochain complex of Morse cohomology in \cref{sec: Morse}.
 \end{Note}
 
-\begin{Rmk}
-  When $f_0:U\to \R$ is a $C^{1}$-function such that
-  $f_0-g$ has only one isolated singular point at $v$
-  for some affine function $g$ on $U$, we may define
-  $\opn{MF}^{\bullet}(f,\mcal{F})\deq (f-g,\mcal{F})$
-  and $\opn{ind}^{+}(f,\mcal{F})\deq \opn{ind}^{+}(f-g,\mcal{F})$.
-\end{Rmk}
+
 
 Let $j:\set{f<0}\hookto S$ be the open inclusion map.
 Since $\Gamma_{\set{f<0}}=j_*\circ j^{-1}$
@@ -536,58 +498,9 @@ the realization space of a simplicial complex then
 this isomorphism induces a standard topological stratification whose stratum is isomorphic
 (relative) interior of an open ball in $\R^{n}$ for some $n\in \N$.
 
-
-
-\subsection{Proof for tropical curves}
-
-Our theorem for tropical curve
-is a little bit extension of Banchoff's critical point theorem \cite[Theorem 1]{MR225327}
-or Poincar\'e-Hopf theorem for graphs \cite{knill2012graph}.
-
-
 The \ind{coarse polyhedral filtration}{coarse polyhedral filtration}
 of $B$ is $\emp\subset V \subset B$.
 
-
-
-
-
-
-
-Let $B$ be a connected compact tropical curve with half edges of finite length.
-
-In general, the topology of $\check{X}(B)$ is defined by the dual torus
-fibration $X(B)$ but
-
-
-
-
-
-\begin{align}
-  |\check{X}(B)|\deq \coprod_{x\in B} T_x^{*} S(x)/T_{\Z,x}^{*} S(x)
-\end{align}
-where $S(x)$ is the minimum strata of $B$ containing $x$.
-
-$T_x^{*} S(x)\subset \mcal{F}_{x,B}^{1}$
-
-
-Let $S,S'$ be stratum of $B_0$ such that $S' \subset \opn{cl}(S)$.
-We would like to characterize the gluing condition of section
-$s: S\cup S' \to \check{X}(S\cup S)$
-
-
-
-
-\begin{Lem}
-  Let $s:[0,1]\to [0,1]\times \R/\Z$ be a smooth section such that $s(0)=s(1)=0$ and intersect with zero section transversely.
-\end{Lem}
-\begin{proof}
-
-
-
-
-
-\end{proof}
 
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
@@ -615,53 +528,11 @@ $s: S\cup S' \to \check{X}(S\cup S)$
 \end{figure}
 
 
-\begin{DefProp}
-
-
-  The \ind{rotation number}{rotation number} of $s$ is the sum $\opn{rot}(s)\deq \sum_{e\in \pi_0(B_0)} \opn{rot}(s|_{\opn{cl}(e)})$ of rotation number
-  of all closed edge whose interior is a connected component of $N$.
-  \begin{align}
-    \opn{rot}(s)=\opn{deg}(D_s)(=c_1(D_s))
-  \end{align}
-
-\end{DefProp}
 
 
 
-\begin{Thm}[Pick's formula for tropical curve]
-  Let $B$ be a compact tropical curve and $s:B \to \check{X}_0(B)$ a continuous section of
-  the surjection $\check{\pi}_{B}:\check{X}_0(B)\to B$
-  such that $\check{\pi}_B(\opn{Im}s\cap \opn{Im}s_0)$ is discrete.
-  Then,
-  \begin{align}
-    \chi(B,s)=\opn{deg}(D_s)+1-g(B).
-  \end{align}
-  where $g(B)\deq \rank H^{1}(B,\Z)$.
-\end{Thm}
-
-\begin{proof}
 
 
-
-  We can deform $s$ to a new section $s'$
-  such that $\opn{ind}_v(s')=1$ for every vertex $v\in B\setminus B_0$.
-
-  Under this deformation, the number $\chi(B,s)$ and $\opn{rot}(s)$ have no change.
-
-  Choose a connected component $e$ of $B_0$.
-
-  By replacing $s'|_{e}$ to the standard section, we get a new section $s_1$.
-
-  The difference $\chi(B,s')-\chi(B,s_1)$ is equal to $\opn{rot}(s'|_{\opn{cl}(e)})$. By repeating this process, we can construct a new section $s_m$ such that every
-  restriction of $s_m$ to a connected component of $B_0$ is a standard section.
-  Obviously, $\opn{rot}(s_m)=0$, $\chi(B,s_m)= \sharp (B\setminus B_0) -\sharp \pi_0(B_0)=\chi_{\opn{top}}(B)$ and $\chi(B,s')-\chi(B,s_m)=\opn{rot}(s')$.
-
-  In summary,
-  \begin{align}
-    \chi(B,s)=\opn{rot}(s)+\chi_{\opn{top}}(B)=\opn{deg}(D_s)+\chi_{\opn{top}}(B).
-  \end{align}
-
-\end{proof}
 
 
 
@@ -678,8 +549,7 @@ Recall the following elementary quasi-isomorphism.
   \upomega_X=a_X^{!}\Z\simeq (a_Y\circ f)^{!}\Z \simeq f^{!}a_Y^{!}\Z=f^{!}\upomega_Y
 \end{align}
 
-The \ind{trace map}{trace map} of $X$ is the counit
-$\int_X=\vep(X):Rf_!f^{!}\Z\to \Z$.
+
 
 \begin{Prop}[Composition of ]
   \begin{align}
@@ -930,9 +800,7 @@ From properties of Hesse domains, $(\R^{n},Ddf)$ and
 $(\opn{int}(\Delta^{[n]}),\check{D}d\check{f})$ are isometrics
 Riemannian manifolds \cite[Proposition 2.3.3]{}.
 
-As mentioned in the section of Hessian manifolds, the pullback of smooth convex function
-is a K\"ahler potential function on $\check{X}(\R^{n})\simeq \R^{n} \times (\R^{n})^{\vee}/(\Z^{n})^{\vee}$
-globally since $\R^{n}$ is simply connected.
+
 
 
 \begin{align}
@@ -989,11 +857,9 @@ Here, $\Sigma(P)$ is the normal fan of $P$.
 
 
 
-$\mu_P^{\opn{trop}}$ is called the \ind{tropical moment map}{tropical moment map} of $(X_{\Sigma}^{\opn{trop}})$.
 
-This is a tropical analog of algebraic moment map.
 
-The phenomena of
+
 
 \begin{Rmk}
   We expect that we can generalized for rational function
@@ -1014,9 +880,7 @@ The phenomena of
   The associated local regular function over $\underline{\R}_{\opn{Log}}$ is minimum at the each vertex.
   Thus, this proposition is trivial.
 \end{proof}
-\begin{Def}
 
-\end{Def}
 
 \begin{Prop}
   $f:X_{\Sigma}^{\opn{trop}}\to \R$ be a $C^{1}$-function on $X_{\Sigma}^{\opn{trop}}$ and $[f]:X_{\Sigma}^{\opn{trop}} \to \check{X}_0(X_{\Sigma}^{\opn{trop}})$ the associated Lagrangian section.
@@ -1095,9 +959,7 @@ From representation theorem for convex polyhedron (cf. \cite[Theorem 1.1,1.2]{MR
 A convex polyhedron is \ind{rational}{rational} if it is a finite intersection of $\{H_{m_i,a_i}\}_{i=1,\ldots,r}$ such that $m_i\in (\Z^{n})^{\vee}$ for all $i=1,\ldots,r$. A \ind{rational convex polyhedron}{rationalconvexpolyhedron} in $\underline{\R}^{n}$ is the closure of a rational convex polyhedron in $\R^{n}_I$ for some $I\subset \{1,\ldots,r\}$.
 
 
-\begin{Def}
-  A rational polyhedral space $(B,\mcal{O}_B^{\times})$ is a \ind{tropical space}{tropicalspace} if
-\end{Def}
+
 
 
 Let $\mcal{C}^{0}(B)$ be the sheaf of continuous $\R$-valued function on $B$ and $f:B\to B'$ be a continuous map. Then, there exists the pullback sheaf morphism $f^{\sharp}:f^{-1}\mcal{C}^{0}(B')\to \mcal{C}^{0}(B)$ such that $f^{\sharp}(U): C^{0}(f(U)) \to C^{0}(U);g \mapsto g\circ f $ for any open set $U$ in $B$. A morphism of rational polyhedral spaces is a continuous map $f:B\to B'$ such that
@@ -1121,10 +983,7 @@ $\iota_* ( \bigwedge^{\bullet} \FBZ^{1}|_{B^{\opn{reg}}})$
 
 \subsection{Tropical superform}
 
-There exists the following quasi-isomorphism for a purely $n$-dimensional tropical manifold \cite[Theorem 6.2]{gross2019sheaftheoretic}.
-\begin{align}
-  \FBZ^{n-p}[n]\simeq \mcal{D}_{\mathbb{Z}_B}(\FBZ^{p})
-\end{align}
+
 
 We can discuss similar discussion which is used in applications of Verdier duality for Poincare duality as follows.
 \begin{align}
@@ -1146,12 +1005,10 @@ From universal coefficient theorem for PID-modules \cite[3.6.5]{MR1269324},
 Since $B$ is a locally compact space, $H^{1}_c(B;\Z)$ is free (cf. \cite[VI. Proposition 5.3]{iversenCohomologySheaves1986a}) and thus $H_{0,0}^{\opn{BM}}(B;\Z)\simeq H^{n,n}(B;\Z)=H^{n}(B;\FBZ^{n})\simeq \Z$ if $B$ is compact and path-connected.
 The associated map
 %TODO こちらも引用
-$\opn{Hom}_{\opn{D}^{+}(\Z_{B})} (\mb{D}_B,\mb{D}_B)\simeq \opn{Hom}_{\opn{D}^{+}(\Z)}(R\Gamma_c\mb{D}_B,\Z)$
-is called the \ind{trace map}{trace map} on $B$.
+
 
 $f_*: H_{n,n}^{\opn{BM}}(X;\Z)\to H_{n,n}^{\opn{BM}}(Y;\Z)$ defines the degree of $f$.
 
-$\mb{D}_X=a_X^{!}\Z\simeq (a_Y\circ f)^{!}\Z\simeq f^{!}a_Y^{!}\Z= f^{!}\mb{D}_Y$
 
 
 
@@ -1198,10 +1055,9 @@ In the previous section, we see that Lagrangian sections of integral affine mani
 On the other hand, what is a good point of this correspondence for tropical geometry? One of important feature is that "Lagrangian sections have a good cohomology theory which corresponds to sheaf cohomology via Strominger-Yau-Zaslow's mirror symmetry." The cohomology is called \ind{Lagrangian Floer cohomology}{Lagrangian Floer cohomology} in symplectic geometry.
 This strong point gives a Floer theoretic approach of "sheaf cohomology theory" for tropical geometry without discussing homological algebra over idempotent semiring 
 
-Historically, integral affine manifolds are deeply-studied in the field of mirror symmetry as a toy model before the name of "tropical geometry" appear.
 
-\ind{Strominger-Yau-Zaslow conjecture}{Strominger-Yau-Zaslow conjecture} or \ind{SYZ conjecture}{SYZ conjecture} is about a concrete method to solve Kontsevich's Homological Mirror Symmetry conjecture for Calabi-Yau manifolds.
-\ind{Homological Mirror Symmetry}{Homological Mirror Symmetry} or \ind{HMS}{HMS} is a conjecture about categorical equivalence between two different triangulated category derived from symplectic geometry of Calabi-Yau manifold $\check{X}$ and complex geometry of a Calabi-Yau manifold $X$ (or a degenerate family of Calabi-Yau manifold $X_t$) \footnote{One of important motivation of HMS is a solution of \ind{Classical Mirror Symmetry}{classical mirror symmetry} which is appeared from string theory but we will not discuss about this since this solution is still an open question.}.
+
+
 
 The triangulated category of symplectic geometric side come from a $A_{\infty}$-category which is called \ind{Fukaya category}{Fukaya category} of $\check{X}$.
 An object of Fukaya category of $\check{X}$ is 
@@ -1212,7 +1068,7 @@ when the two intersect transversely.
 
 The  triangulated category of complex geometric side is the (bounded) \ind{derived category}{derived category} of coherent sheaves on $X$. This category is a powerful tool for the study of algebraic varieties and deeply studied.
 
-Under assumption of SYZ conjecture, Lagrangian section of $s_{B_0}:B_0\to \check{X}(B_0)$ should map to a line bundle on $X(B_0)$. The goal of this subsection is about giving a reasoning about this, so symplectic geometers can skip this section. In this paper, Floer cohomology means that Lagrangian Floer cohomology.
+
 \subsubsection{What is SYZ conjecture and HMS ?}
 
 At first,
@@ -1299,7 +1155,8 @@ The right side equivalence of triangulated categories follows from the left side
 
 Let's check the quick consequence of HMS. Let $\Phi: \opn{D}^{\pi}_{\infty}(\opn{Fuk}(\check{X}))\simto \opn{D}^{b}_{\infty}(\opn{Coh}(X))$ be a quasi-equivalent c-unital $A^{\infty}$-functor. Since $H^{i}(\opn{Hom}_{\opn{D}^{b}_{\infty}(\opn{Coh}(X))}^{\bullet}(\mcal{F}^{\bullet},\mcal{G}^{\bullet}))\simeq \opn{Ext}^{i}_{\mcal{O}_X}(\mcal{F}^{\bullet},\mcal{G}^{\bullet})$ \cite[8.2.1]{aspinwallDirichletBranesMirror2009}, we have the following isomorphism as graded vector spaces:
 \begin{align}
-  \opn{HF}^{\bullet}(\mathscr{L},\mathscr{L}')\deq H^{\bullet}(\opn{CF}^{\bullet}(\mathscr{L},\mathscr{L}'))\simeq \opn{Ext}^{\bullet}_{\mcal{O}_X}(\Phi(\mathscr{L}),\Phi(\mathscr{L}')).
+  \opn{HF}^{\bullet}(\mathscr{L},\mathscr{L}')\deq 
+H^{\bullet}(\opn{CF}^{\bullet}(\mathscr{L},\mathscr{L}'))\simeq \opn{Ext}^{\bullet}_{\mcal{O}_X}(\Phi(\mathscr{L}),\Phi(\mathscr{L}')).
 \end{align}
 
 
@@ -1318,21 +1175,11 @@ $\opn{HF}^{\bullet}(\mathscr{L},\mathscr{L}')$
 maps to Ext group
 $\opn{Ext}^{\bullet}_{\mcal{O}_X}(\mcal{F}^{\bullet},
   \mcal{G}^{\bullet})$ of coherent sheaves.
-In particular, if $\mathscr{L}_0$ is an object of
-$\opn{Fuk}(\check{X})$ such that $\Phi(\mathscr{L}_0)
-  \simeq \mcal{O}_X$ then
-$\opn{HF}^{\bullet}(\mathscr{L}_0,\mathscr{L})\simeq
-  \opn{Ext}^{\bullet}_{\mcal{O}_X}(\mcal{O}_X,\Phi(\mathscr{L}))\simeq
-  \mb{H}^{\bullet}(X;\Phi(\mathscr{L}))$.
 
 
 
-Strominger-Yau-Zaslow Conjecture is about a concrete method to create a c-unital $A_{\infty}$-functor $\Phi_{\opn{SYZ}}: \opn{Fuk}(\check{X})\to \opn{D}^{b}_{\infty}(\opn{Coh}(X))$ which induces a quasi-equivalence $\opn{D}^{\pi}_{\infty}(\opn{Fuk}(\check{X}))\simeq \opn{D}^{b}_{\infty}(\opn{Coh}(X))$.
-\cite{stromingerMirrorSymmetryTduality1996}
 
-\begin{Conj}[limiting version of Strominger-Yau-Zaslow(SYZ)]
 
-\end{Conj}
 If $\Phi_{\opn{SYZ}}: \opn{Fuk}(\check{X})\to \opn{D}^{b}_{\infty}(\opn{Coh}(X))$ exists, then $H^{0}(\Phi): H^{0}(\opn{Fuk}(\check{X}))\to \opn{D}^{b}(\opn{Coh}(X))$
 describe the image of $\opn{Ob}(\opn{Fuk}(\check{X}))$ completely since $\opn{Ob}(H^{0}(\opn{Fuk}(\check{X})))=\opn{Ob}(\opn{Fuk}(\check{X}))$.
 
@@ -1403,9 +1250,9 @@ $\opn{HF}^{\bullet}((L_1,\mcal{L}_1,\nabla),(L_2,\mcal{L}_2,\nabla))\deq \opn{Ke
 \end{Eg}
 
 
-\footnote{In some literature, the symbols $\check{X}(B_0)$ and $X(B_0)$ are opposite.}
 
-Consider the self-intersection number of zero section $[L_0]\cap [L_0] \in H_{0}(\check{X}(B_0),\Z)$
+
+
 
 \begin{Eg}[{$\C$-local system on $L$ should be trivial in the tropical world}]
   The following analogue suggests that we only consider a certain analogue of classical Lagrangian Floer cohomology when we attack Riemann-Roch type theorem. Be careful this observation is false when we apply to Fukaya category for Calabi-Yau varieties.
@@ -1464,17 +1311,6 @@ $L_{D}$ be a section of $f:X\to B$ which is defined
 Take care the signature $(-1)^{n(n-1)/2}$. In fact, we can easily check $[L_0]\cap [L_0]=-2$ if $\check{X}\to B$ is a special Lagrangian torus fibration of K3 surfaces under hyperk\"ahler rotation from adjunction formula.
 
 \subsection{Radiance obstruction and geometric prequantization}
-In this subsection, we recall the relationships lattice points of 
-strongly integral affine manifolds and geometric quantization 
-from \cite{1999math......2027T,MR3112817,MR3525095}. A symplectic manifold $(M,\omega)$ is \ind{prequantizable}{prequantizable} if the de Rham cohomology class $[\omega]$ of $\omega$ is in $H^2(X,\Z)$. An integral affine manifold $B_0$ has a strongly integral affine structure if and only if the de Rham cohomology class of $\omega_{\opn{std}}(\in \check{X}(B_0))$ is in $H^{2}(\check{X}(B_0),\Z)$, see
-
-
-
-From the theory of connection on a vector bundle,
- there exists a complex line bundle $\mcal{L}$ with a $U(1)$-connection $\nabla$ and $R_{\nabla}=-2\pi\sqrt{-1}\omega$.  Such pair $(\mcal{L},\nabla)$ is called \ind{prequantum line bundle}{prequantum line bundle} over $M$. Obviously, $c_1(\mcal{L})=[\omega]$.
-Let $L$ be a Lagrangian submanifold of $(M,\omega)$.
-Then, $\nabla|_{L}$ is a flat $U(1)$-connection from definition.
-$L$ is a \ind{Bohr--Sommerfeld orbit}{bohr-sommerfeld orbit} if $\nabla|_{L}$ is a trivial connection on $L$. Let $\pi :M\to B$ be a Lagrangian fibration. A point $x\in B$ is \ind{Bohr--Sommerfeld point}{bohr-sommerfeld point} if $\pi^{-1}(x)$ is a Bohr-Sommerfeld orbit.
 
 \begin{Eg}
 The origin of Bohr-Sommerfeld orbit is from Old Quantum Theory.
@@ -1516,13 +1352,9 @@ Here, $m$ means the mass of harmonic oscillator and $k$ be a force constant.
 Let $\check{f}_{B_0}:\check{X}(B_0)\to B_0$ be the standard Lagrangian torus fibration of a compact strongly integral affine manifold. By checking the holonomy representation of each cycle of fiber $\check{f}_{B_0}^{-1}(b)$,
 the set of Bohr-Sommerfeld point of it is equal to $B_0(\Z)$.
 
-
-
-The equation $\sharp (B_0(\Z))=\chi(\mcal{L},\nabla)=\opn{vol}(\check{X}(B_0))=\opn{vol}(B_0)$ can be computed by Atiyah-Singer's index formula \cite[Corollary 4.1]{MR1461965}.
-
-(ii) We can see  $B_0(\Z)=f_{B_0}(s_{B_0} \cap s_0)$.
-
-From the Morse index of potential multifunction at $x\in f_{B_0}(s_{B_0}\cap s_0)$, the signature index of every Bohr-Sommerfeld point is positive.
+From the Morse index of potential multifunction at 
+$x\in f_{B_0}(s_{B_0}\cap s_0)$, the signature 
+index of every Bohr-Sommerfeld point is positive.
 
 See
 \href{https://arxiv.org/abs/1808.07305}{[1808.07305] Geometric quantization via SYZ transforms} for recent results on geometric quantization.
@@ -1534,22 +1366,11 @@ See
 
 
 
-\begin{Rmk}
 
-  Of course, the last equation is false in general compact tropical manifolds. This is an analog of Serre duality of algebraic varieties such that canonical divisor $\mcal{K}_X$ is trivial.
-
-  \begin{align}
-    \chi(\opn{Ext}^{\bullet}_{\mcal{O}_X}(\mcal{L}_2,\mcal{L}_1))=\chi(X,\mcal{L}_1\otimes \mcal{L}_2^{-1})= & (-1)^{n}\chi(X,\mcal{L}_1^{-1}\otimes \mcal{L}_2\otimes \mcal{K}_X)                     \\
-    =                                                                                                        & (-1)^{n}\chi(\opn{Ext}^{\bullet}_{\mcal{O}_X}(\mcal{L}_1,\mcal{L}_2\otimes \mcal{K}_X))
-  \end{align}
-
-\end{Rmk}
 
 \subsection{Future works}
 
 \subsubsection{Sheaf theoretic version of this thesis}
-
-From
 
 From the success of the theory of tropical cohomology
 $\mb{H}^{\bullet}(X;\mcal{F}_X^{\bullet})$,
@@ -1623,7 +1444,7 @@ $\vep$ (resp. $\eta$) is called the \ind{unit}{unit} (resp. \ind{counit}{counit}
   If $F$ is left exact then $G$ maps every injective object to an injective objects ($G$ preserve injectives). On the other hand, if $G$ is right exact then $F$ preserves projectives \cite[Proposition 2.3.10]{MR1269324}.
 \end{Eg}
 
-If $\mcal{C}$ has enough injectives then $\mcal{C}^{\opn{op}}$ has enough projectives.
+
 
 
 
@@ -1862,7 +1683,7 @@ Let $(f,f^{\sharp}):(X,\mcal{O}_X)\to (Y,\mcal{O}_Y)$ be a continuous map
 
 Since $g_*,f_*$ is left exact and $(g\circ f)_*$,
 $R(g\circ f)_*=Rg_*\circ Rf_*$ from \cref{eq: RGF=RGRF}.
-In particular, $R\Gamma(X;-) \circ Rf_*=R\Gamma(Y,-)$ and the associated spectral sequence is called the \ind{Leray spectral sequences}{Leray spectral sequences}.
+
 
 
 
@@ -1885,7 +1706,7 @@ See \cite[Cahpter I. \textsection 10]{MR1726779} for fundamental properties of p
 From definition, $f_!\mcal{F}$ is a subsheaf of $f_*\mcal{F}$ and called the \ind{direct image with proper supports}{direct image with proper supports}.
 
 If $f$ is proper, then $f_!\mcal{F}=f_*\mcal{F}$ since $f^{-1}(K)\cap \opn{supp}(s)$ is compact for any compact subset $K$ of $U$.
-As like $f_*$, $f_!$ is a left exact functor naturally.
+
 
 Let $g:Y\to Z$ be a continuous map then $(g\circ f)_!=g_!\circ f_!$.
 
@@ -1943,11 +1764,8 @@ The \ind{$A$-cohomogical dimension}{A-cohomological dimension} $\opn{chd}_A(X)$ 
 The $\Z$-cohomological dimension of $X$ is also called the \ind{c-soft dimension}{c-soft dimension} (resp. dimension) of $X$ in \cite[Exercise II.9]{MR1299726} (resp. \cite[III. Definition 9.4]{iversenCohomologySheaves1986a}).
 $\opn{chd}_A(\R^{n})=n$ \cite[III. Example 9.6]{} and thus $\dim X=\opn{chd}_A(X)$ for any simplicial complex or CW complex \cite[Proposition 3.1.5]{MR2050072}.
 
-\begin{align}
-  \opn{Hom}
-\end{align}
-The Verdier duality holds for the following general form
-\cite[Proposition 3.1.10]{MR1299726}
+
+
 
 
 
@@ -1963,15 +1781,13 @@ Let $\mcal{F}^{\bullet}\in\opn{Ob}(D^{b}(A_X\text{-}\catn{Mod}))$
 
 
 
-By \cite[Proposition 3.1.11]{}, $f^{-1} {L}{\otimes}$
+By \cite[Proposition 3.1.11]{}, 
 
 \begin{Eg}
-  $a_{\{\opn{pt}\}}^{!}A=A$
-
   Let $f:X\to Y$
 \end{Eg}
 
-$\upomega_{X}$ is the \ind{dualizing complex}{dualizing complex} of $X$.
+
 
 If $\mcal{F}^{\bullet},\mcal{G}^{\bullet}\in \opn{Ob}(\opn{D}^{b}(\mcal{C}))$ is cohomologically constructible, then
 $ \mcal{D}_{A_X}(\mcal{F}^{\bullet})$ is also cohomologically constructible
@@ -1990,7 +1806,7 @@ and $\mcal{D}_{A_X}\mcal{D}_{A_X}(\mcal{F}^{\bullet})\simeq \mcal{F}^{\bullet}$ 
 The image of the identity morphism $\opn{id}_{\upomega_X}:\upomega_X \to \upomega_X$ in $ \opn{Hom}_{\opn{D}^{+}(A)}(Ra_{X!}\upomega_X,A)$, i.e., $\vep_A=\Phi_{A,a^{!}_XA}(1_{a_X^{!}A})$  is called \ind{trace map}{trace map} of $X$ and we write $\int_X:Ra_{X!} a_X^{!}A\to A$.
 By taking the $0$-th cohomology, we get the homomorphism $\int_X:\mb{H}_c^{0}(X;\upomega_X) \to A$.
 
-Of course, the trace map is different from the usual integration but this map corresponds to the latter for specially good space such like compact manifolds.
+
 
 \begin{Eg}
   $\opn{Hom}_{}$ $\upomega_X=a_X^{!}A=(a_Y\circ f)^{!}A=f^{!}\upomega_Y$
@@ -2007,9 +1823,7 @@ Of course, the trace map is different from the usual integration but this map co
   From definition, $\int_X=\int_Y\circ f_!$
 \end{Eg}
 
-\begin{align}
-  \opn{or}^{A}_X\deq H^{-l}(\upomega_X)
-\end{align}
+
 
 \begin{Eg}[{For manifolds \cite[Example 3.3.8]{}}]
 Let $X$ be a topological manifold of dimension $n$.
@@ -2316,8 +2130,6 @@ From this, the zero section $B_0\to \check{X}(B_0)$
 
 $[T_pB_0]\cap [B_0]=(-1)^{\frac{n(n-1)}{2}}$.
 
-For simplicity, we assume $B_0=\R^{n}/\Lambda$
-
 Each
 
 \cite[IV.6.8,6.9]{bredonSheafTheory1997a}
@@ -2484,10 +2296,6 @@ From definition, $\opn{Im}(\opn{tr})=(\pi_*\mcal{F})^{G}$.
 If the action of $G$ is free,
 $\pi_*\mcal{F}_x\simeq \bigoplus_{i=1}^{\sharp G}\mcal{F}_x$
 and
-
-
-
-The following lemma is the key lemma.
 
 \begin{Lem}
   There exists the following natural transform:
@@ -2850,7 +2658,7 @@ $P(\frac{1}{n}\Z)\deq \iota^{-1}_{n}(nP\cap M)$.
 From Ehrhart reciprocity theorem (e.g. \cite[Theorem 9.4.2]{coxToricVarieties2011a} for toric geometrical proof and \cite[Theorem 2.4]{MR3971684} for $M$-valuations),
 \end{Rmk}
 
-\begin{Eg}[{Boundary lattice}]
+
 
 \begin{Rmk}
 This method is already used in \cite[Proposition 10.2.3]{MR2715929} for the boundary volume of 3-dimensional lattice polytope.
@@ -2858,7 +2666,7 @@ In general case, see \cite{MR2862314}
 \footnote{We thanks Akiyoshi Tsuchiya for telling us this paper.}.
 \end{Rmk}
 
-\end{Eg}
+
 
 
 \subsection{More comments(We don't use this subsection)}

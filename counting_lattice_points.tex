@@ -527,7 +527,8 @@ log semiring.
 In fact, $f=\opn{log}\circ p\circ \opn{exp}$ 
 for some polynomial 
 $p\in \mathbb{R}_{\geq 0}[x_1^{\pm},\ldots,x_n^{\pm}]
-\setminus \{0\}$.
+\setminus \{0\}$ over the semifield of nonnegative
+real numbers.
 This observation is well-known and important 
 for our approach.
 Let $x_1,\ldots,x_n$ be the standard coordinates of 
@@ -655,7 +656,15 @@ Then, we have the following analog of
 Another important point is that 
 we can consider \cref{equation-moment-map-intersection}
 as the intersection of two "Lagrangian submanifolds".
-We now explain about this meaning.
+We now explain about this meaning by
+using the theory of integral affine manifolds.
+((整アファイン多様体の説明))
+Every integral affine manifold is a tropical manifold.
+Historically, integral affine manifolds are 
+deeply-studied in the field of symplectic geometry 
+as a base space of Lagrangian torus fibration before
+"tropical geometry" appear.
+
 Let $f\colon B\to \mathbb{R}$ be a 
 smooth function on a smooth manifold $B$.
 $f$ defines a section 
@@ -665,8 +674,7 @@ We note that the intersection number of
 $\sigma_{df}$ and the zero section of the cotangent
 bundle is equal to the topological Euler characteristic
 of $B$ if $B$ is compact.
-If $B$ is an integral affine manifold, i.e.,
-((手短に整アファイン多様体の定義を書く)), 
+If $B$ is an integral affine manifold,
 $\sigma_{df}$ induces a section 
 $s_{df}\colon B\to T^*B/\Lambda$ of a torus fibration
 $\check{\pi}_B\colon T^*B/\Lambda \to B$ via a canonical 
@@ -706,12 +714,13 @@ divisor $s\in \opn{CDiv}^{\infty}(B)$ whose divisor
 class is equal to $D$ and 
 $s$ induces a Lagrangian section of 
 $\check{\pi}_{B_0}\colon \check{X}(B)\to B$.
+
+
+\begin{example}
 If $B$ is a tropical elliptic curve 
 $\mathbb{R}/\mathbb{Z}$, then we can check there exists 
 a similar formula of 
 (\ref{equation-MRR-tropical-line}) easily.
-
-\begin{example}
 Let $f_n\colon \mathbb{R}\to \mathbb{R};
 x\mapsto \frac{n}{2}x^{2}$ be a quadratic polynomial.
 The polynomial induces a smooth Cartier divisor 
@@ -728,7 +737,56 @@ s_n'(\mathbb{R}/\mathbb{Z}))
 This is a certain analog of Riemann--Roch formula 
 for elliptic curves.
 \end{example}
+The above example can be considered as a toy result 
+of SYZ conjecture and HMS conjecture for 
+Calabi--Yau manifolds.  
+%TODO: SYZとは
 
+\ind{Strominger-Yau-Zaslow conjecture}{Strominger-Yau-
+Zaslow conjecture} or 
+\ind{SYZ conjecture}{SYZ conjecture} is about 
+a concrete method to solve Kontsevich's Homological 
+Mirror Symmetry conjecture for Calabi-Yau manifolds
+\cite{stromingerMirrorSymmetryTduality1996}.
+
+\ind{Homological Mirror Symmetry}{Homological Mirror 
+Symmetry} or \ind{HMS}{HMS} is a conjecture about categorical equivalence between two different triangulated category derived from symplectic geometry of Calabi-Yau manifold $\check{X}$ and complex geometry of a Calabi-Yau manifold $X$ (or a degenerate family of Calabi-Yau manifold $X_t$) \footnote{One of important motivation of HMS is a solution of \ind{Classical Mirror Symmetry}{classical mirror symmetry} which is appeared from string theory but we will not discuss about this since this solution is still an open question.}.
+
+HMS induces the isomorphism between Floer cohomology and 
+Ext group of coherent sheaves:
+\begin{align}
+\opn{HF}^{\bullet}(\mathscr{L},\mathscr{L}')
+\simeq  \opn{Ext}^{\bullet}_{\mcal{O}_X}
+(\Phi(\mathscr{L}),\Phi(\mathscr{L}')).
+\end{align}
+
+In particular, if $\mathscr{L}_0$ is an object of
+$\opn{Fuk}(\check{X})$ such that $\Phi(\mathscr{L}_0)
+  \simeq \mcal{O}_X$ then
+$\opn{HF}^{\bullet}(\mathscr{L}_0,\mathscr{L})\simeq
+  \opn{Ext}^{\bullet}_{\mcal{O}_X}(\mcal{O}_X,\Phi(\mathscr{L}))\simeq
+  \mb{H}^{\bullet}(X;\Phi(\mathscr{L}))$.
+
+((See also 
+\cite[\textsection 1.3.2,
+\textsection 7.3.7]{MR2567952} for more details about 
+SYZ conjecture.))
+
+SYZ conjecture gives a concrete method to create 
+a $A_{\infty}$-functor 
+$\Phi_{\mathrm{SYZ}}\colon 
+\opn{Fuk}(\check{X})\to D^{b}(\opn{Coh}(X))$
+which induces a quasi-equivalence
+induces a quasi-equivalence 
+$D^{\pi}_{\infty}(\opn{Fuk}(\check{X}))\simeq 
+D^{b}_{\infty}(\opn{Coh}(X))$.
+
+Under assumption of SYZ conjecture, 
+every Lagrangian section 
+$s_{B_0}\colon B_0\to \check{X}(B_0)$ 
+should map to a line bundle on $X(B_0)$. 
+In this paper, Floer cohomology means that 
+Lagrangian Floer cohomology.
 
 
 If SYZ conjecture is true, the equation should be
@@ -762,11 +820,22 @@ Lagrangian submanifolds for line bundles on
 tropical spaces?  
 \end{question}
 
+Some readers may think this question do not make sense
+because of elementary properties of 
+Lagrangian Floer cohomology.
+
+\begin{align}
+\chi(\opn{Ext}^{\bullet}_{\mcal{O}_X}
+(\mcal{L}_2,\mcal{L}_1))
+= (-1)^{n}\chi(\opn{Ext}^{\bullet}_{\mcal{O}_X}
+(\mcal{L}_1,\mcal{L}_2\otimes \mcal{K}_X)).
+\end{align}
+If $X$ is Calabi--Yau, then this is compatible with
 
 
 The following question is not formulated as a mathematical 
 conjecture since we don't know the definition of Todd 
-class of $n(\geq 3)$ dimensional tropical manifolds,
+class of $n$ ($\geq 3$) dimensional tropical manifolds,
 but we write it for showing a slogan of formulation 
 of a tropical analog of HRR.
 
@@ -784,7 +853,10 @@ of it. Then,
 \chi(\opn{MF}^{\bullet}(B;s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
 \end{align}
 where $\int_B$ is the trace map 
-$\mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})\to \Z$.
+$\mb{H}^{n}(B;\mcal{F}_{\Z, B}^{n})\to \Z$
+induced from the counit 
+$Ra_{B!}a_{B}^{!}\mathbb{Z}_{\{\mathrm{pt}\}}
+\to \mathbb{Z}_{\{\mathrm{pt}\}}$.
 
 In particular, when $\mcal{L}=\mcal{O}_B$ then
 $\chi(\opn{MF}^{\bullet}(B;s))=\chi_{\opn{top}}(B)$ ?
@@ -842,8 +914,6 @@ $\sharp(s\cap s_0)<\infty$. Then,
 \chi(\opn{MF}^{\bullet}(C;s))=\int_C c_1(D_s)+\frac{1}{2}c_1(-K_C), \quad 
 \chi(\opn{MF}^{\bullet}(B;s))=\int_B \frac{c_1(D_s)^{n}}{n!}.
 \end{align}
-where $\chi(C,s)$ (resp. $\chi(B,s)$) is the number of weighted lattice
-points on $s$ (see \cref{def: weighted_lattice_points}) and $D_s$ is the divisor class of $s$.
 \end{theorem}
 
 The condition of admissibility is that every cotangent vector 
@@ -875,6 +945,11 @@ also inspired from Gross's
 works in 
 \cite{grossSpecialLagrangianFibrations1998a} and Gross--Siebert programs
 (see \cite[Conjecture 1.6]{MR3525095}).
+We expect that 
+our approach make sense for not only rational polyhedral
+spaces, integral affine manifold with singularities,
+but also for tropical spaces 
+in the sense of \cite[Definition 2.8]{cavalieri2020tropical}.
 
 \end{remark}
 
@@ -1367,8 +1442,8 @@ We can generalize the above for real analytic functions with
 at most isolated singular points. 
 In this case, there exists the following \emph{special} symmetry:
 \begin{align}
-\chi(\opn{MF}^{\bullet}(\Z_X,f,x))=
-(-1)^{\dim X}\chi(\opn{MF}^{\bullet}(\Z_X,-f,x)).
+\chi(\opn{MF}^{\bullet}(\Z_S,f,x))=
+(-1)^{\dim S}\chi(\opn{MF}^{\bullet}(\Z_S,-f,x)).
 \end{align}
 This symmetry is not true if $S$ is not a manifold at $x$
 in general. 
@@ -2050,7 +2125,7 @@ We also note the mirror symmetry between the derived category of
 coherent sheaves on toric varieties $X_{\Sigma}$ and
 the wrapped Fukaya category 
 $\opn{Fuk}(T^{*}M_{{\mathbb{R}}}/M;\overline{\Lambda}_{\Sigma})$
-is solved by \cite{MR4132582}.
+is finally solved by the results in \cite{MR4132582}.
 \end{remark}
 
 \begin{remark}[{Ehrhart reciprocity revisit}]
@@ -2104,6 +2179,17 @@ $\upomega_{A_X}\deq a^{!}_{X}A_{\{\opn{pt}\}}$.
 $\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
 \deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},\upomega_{A_X})$
 
+There exists a natural morphism 
+$f^{-1}(\mathcal{F})\otimes \upomega_{Y/X}\to 
+f^{!}(\mathcal{F})$.
+
+From elementary properties of adjoint functors,
+every morphism 
+$f\colon Ra_{!}\upomega_X\to A_{\{\mathrm{pt}\}}$
+
+Of course, the trace map is different from the usual integration 
+but this map corresponds to the latter 
+for specially good space such like compact manifolds.
 
 \section{Proof for compact tropical curves}
 In this section, we prove \cref{thm: main} for 
@@ -2145,9 +2231,9 @@ We will prove a generalized version of
 Let $\Gamma_{n}$ be the projectivization of 
 a certein tropical module defined in 
 \cite[2.2]{mikhalkinTropicalCurvesTheir2008a}.
-$\mathbb{P}(\mathbb{T}^{n})$ has a canonical inclusion
+$\mathbb{P}(\mathbb{T}^{n})=\mathbb{T}P^{n-1}$ has a canonical inclusion
 $\iota_n\colon \mathbb{R}^{n-1}\to 
-\mathbb{P}(\mathbb{T}^{n})=\mathbb{T}P^{n-1}$ 
+\mathbb{T}P^{n-1}$ 
 of tropical algebraic torus.
 There exists the following isomorphism as rational 
 polyhedral spaces:
@@ -2200,7 +2286,7 @@ $\opn{span}_{\mathbb{R}}(\opn{SS}(\mathbb{Z}_{S\subset X})_x)
 We can generalize for general
 \end{remark}
 
-\begin{proposition}
+\begin{proposition}[{cf. \cite{knill2012graph}}]
 \label{proposition-n-valent}
 Let $s_{p,q}\colon \Sigma\to \mathbb{R}$ be 
 an admissible $(0,0)$-superform on $\Sigma$ 
@@ -2632,8 +2718,8 @@ The Morse complex of $s$ the following graded module:
 \tilde{H}^{\bullet-1}
 (U_p\cap \{\tilde{f_p}<\tilde{f_p}(p)\};\mathbb{Z})
 \end{align}
-Here, $(U_p,\tilde{f}_p)_{p\in s_0\cap s}$ is an 
-essential system of $s$.
+Here, $(U_p,\tilde{f}_p)_{p\in s_0\cap s}$ is a local 
+index data of $s$.
 \end{definition}
 
 From construction, the following theorem is just a
@@ -2771,7 +2857,21 @@ integer slope.
 % \geq \sharp (C\setminus C_0)+g-1$
 % \end{remark}
 
-\subsection{Relationships between a localization of 
+
+\subsection{Relationships between previous results}
+\label{section-tropical-curve-note}
+
+\subsubsection{Relationships between
+homological mirror symmetry of trivalent graphs}
+\label{section-syz-trivalent-graph}
+
+Our approach is mostly affected from 
+\cite{auroux2022lagrangian}.
+
+Our
+
+
+\subsubsection{Relationships between a localization of 
 index on compact Riemann surfaces.}
 
 We mention the relationship between 
@@ -2843,9 +2943,10 @@ Riemann--Roch number defined the theory of
 localization of Dirac-type operator and its 
 number is equal 
 to our index by the above correspondence.
-\footnote{We also thanks 
+\myfootnote{
+We also thanks Jin Miyazawa
 for explaining us a heart of localization of 
-Dirac-type operators and answering some 
+the index of Dirac operator and answering some 
 questions about it.}
 
 The following equation is a correspondence about 
@@ -2863,11 +2964,15 @@ identification \cite[Theorem 6.7]{MR2676658}.
 From this our theorem for tropical curve can be 
 proved from the theory of localization of index 
 and classical Riemann-Roch formula.
-We also stress that both method of computation
+We stress that both method of computation
 of our index and the local Riemann--Roch number
 defined in \cite{MR2676658} are different 
 each other even though both index have various 
 similar features.
+We also note that it was the beginning of our 
+approach that we 
+noticed the above correspondence.
+
 \begin{question}
   Can we generalize the above correspondence for pants decomposition of
   complex algebraic hypersurfaces in \cite{MR2079993} and line bundles?
@@ -3071,10 +3176,12 @@ for tropical spaces}
 
 
 
+
 There exists a natural isomorphism $\mcal{F}_X^{n-p}[n]\to 
 \mcal{D}(\mcal{F}_{X}^{p})$ where 
 $\mcal{D}(\mcal{F}^{\bullet})
 =R\mcal{H}om(\mcal{F};\upomega_X^{\bullet})$
+for a purely $n$-dimensional tropical manifold
 \cite[Theorem 6.2]{gross2019sheaftheoretic}.
 
 In particular, the natural isomorphism $\mcal{F}_{\Z, X}^{n}[n]\to 
@@ -3535,7 +3642,9 @@ an ordinary Cartier divisor directly.
 \appendix
 
 \section{Historical notes for index}
-
+Our theorem for tropical curve
+is a little bit extension of Banchoff's critical point theorem \cite[Theorem 1]{MR225327}
+or Poincar\'e-Hopf theorem for graphs \cite{knill2012graph}.
 \begin{remark}
 We remark about a historical note of the local index.
 in \cite[p.246]{MR225327}.
@@ -3567,12 +3676,38 @@ In this subsection, we recall the relationships lattice points of
 strongly integral affine manifolds and geometric quantization 
 from \cite{1999math......2027T,MR3112817,MR3525095}.
 
+A symplectic manifold $(M,\omega)$ is \ind{prequantizable}{prequantizable}
+if the de Rham cohomology class $[\omega]$ of $\omega$ is in $H^2(X;\Z)$. 
+An integral affine manifold $B_0$ has a strongly integral affine structure 
+if and only if the de Rham cohomology class of 
+$\omega_{\opn{std}}(\in \check{X}(B_0))$ is in 
+$H^{2}(\check{X}(B_0);\mathbb{Z})$, see
+
 \begin{example}
 This 
 \end{example}
 
-Every compact integral affine manifold has no infinite volume face,
- i.e., has a nontrivial finite volume.
+From the theory of connection on a vector bundle,
+ there exists a complex line bundle $\mcal{L}$ with a $U(1)$-connection $\nabla$ and $R_{\nabla}=-2\pi\sqrt{-1}\omega$.  Such pair $(\mcal{L},\nabla)$ is called \ind{prequantum line bundle}{prequantum line bundle} over $M$. Obviously, $c_1(\mcal{L})=[\omega]$.
+Let $L$ be a Lagrangian submanifold of $(M,\omega)$.
+Then, $\nabla|_{L}$ is a flat $U(1)$-connection from definition.
+$L$ is a 
+\ind{Bohr--Sommerfeld orbit}{bohr-sommerfeld orbit} 
+(BS-orbit for short)
+if $\nabla|_{L}$ is a trivial connection on $L$. Let $\pi :M\to B$ be a Lagrangian fibration. A point $x\in B$ is \ind{Bohr--Sommerfeld point}{bohr-sommerfeld point} if $\pi^{-1}(x)$ is a Bohr-Sommerfeld orbit.
+
+
+The origin of Bohr--Sommerfeld orbit comes from
+Old Quantum Theory.
+See also \cite[15.2, Chapter 22]{MR3112817}
+and \cite[Remark 4.3]{MR1270931} for physical meaning 
+of BS-orbits.
+
+The problem is also called 
+\emph{numerical quantization problem}
+ in \cite{1999math......2027T}.
+
+
 
 If $B_0$ is a strongly integral affine manifold,
 we can define the set of lattice points $B_0(\Z)$ 
@@ -3591,6 +3726,24 @@ $\opn{dev}_{B_0}\colon \widetilde{B_0}\to M_{{\mathbb{R}}}$
 $p:M_{{\mathbb{R}}}\to M_{{\mathbb{R}}}/M$. 
 Then, we can consider $B_0(\Z)$ as the intersection of 
 $s_{B_0}$ and the zero section of $\pi_{B_0}:X(B_0)\to B_0$.
+
+\begin{align}
+B_0(\mathbb{Z})=\pi_{B_0}(s_0\cap s_{B_0})
+=\{p\in B_0 \mid  \check{\pi}_{B_0}^{-1}(p) 
+\text{ is a BS-orbit}\}.
+\end{align}
+The following equation is firstly proved in 
+\cite[Corollary 4.1]{MR1461965} by using Atiyah--Singer index formula.
+\begin{align}
+\sharp (B_0(\Z))=\sharp (s_0\cap s_{B_0})
+=\opn{vol}(\check{X}(B_0))=\opn{vol}(B_0)
+=\chi(\mcal{L},\nabla).
+\end{align}
+
+This equation is reproved in \cite{MR2676658} as a 
+corollary of the theory of localization of the 
+index of a Dirac type operator.
+
 If $B_0$ has a Hessian potential (multivalued) function $K$, then $s_{B_0}$ can be 
 considered as a Lagrangian section of the dual torus 
 fibration $\pi_{\check{B}_0}\colon \check{X}(\check{B}_0)\to \check{B}_0$ of dual Hessian
@@ -3603,9 +3756,32 @@ A similar result for projective toric manifolds
 and the prequantum line bundle on them
 is in \cite[Theorem 3.20]{yamaguchimaster}.
 
+This
+
+
 \begin{remark}
 %TODO: Tyurinから
-  We stress that the $\sharp \mathrm{BS}=\mathrm{RR}$ is true for closed integral affine manifold such that $X(B_0)$ is not K\"ahlerian, i.e., not Calabi-Yau type.
+
+
+The idea of considering the lattice point $B(\Z)$ of 
+integral affine manifold with singularities $B$ as 
+an index of a good basis of an ample line bundle of 
+a (degenerating) family of Calabi--Yau manifold is 
+deeply developed by Gross and Siebert. 
+The precise setting of the conjecture is 
+in \cite[Conjecture 1.6]{MR3525095}.
+
+We stress that the $\sharp \mathrm{BS}=\mathrm{RR}$ is 
+true for closed integral affine manifold 
+such that $X(B_0)$ is not K\"ahlerian, i.e., 
+not Calabi-Yau type. In this case,
+the prequantum line bundle cannot be considered as
+a mirror Lagrangian submanifold induced from a Hessain
+form.
+We also mention that a geometrical reasoning 
+of numerical quantization problem without
+mirror symmetry is studied by several authors (e.g. \cite{MR2879247,
+https://doi.org/10.48550/arxiv.1904.04076}).
 \end{remark}
 
 
@@ -3694,8 +3870,10 @@ of $X(B_0,K)$ (resp. $\check{X}(B_0,K)$).
 
 \end{example}
 
+\section{Valuations and counting lattice polytopes}
 
-
+In \cite{MR4155409},
+new Ehrhart theory of tropical geometry appear.
 
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}
