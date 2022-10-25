@@ -478,28 +478,7 @@ Therefore, $\Gamma_{Z}(A_S)$ is trivial for any closed subset $Z$ of $S$.
 \end{align}
 
 
-\subsection{Results for stratified spaces in $\R^{n}$}
 
-Let $X$ be a locally compact space and $(P,\leq_P)$
-a preordered set with an Alexandrov topology (c.f. \cite[]{}.).
-
-$\opn{int}(p)$
-
-An (abstract) stratification is a continuous map $c:X\to P$.
-
-From now on, we suppose $P$ is lower bounded locally finite and at most countable set.
-
-A filtration (in the sense of \cite[Definition 4.0.1]{MR2031639}) $X_{\bullet}$ is a sequence $\emp =:X_{-1}$
-If $X$ is a \ind{polyhedra}{polyhedra}
-\footnote{Be careful with that polyhedra means that
-  convex polyhedra in the literature.},
-i.e., a topological space that is isomorphic to
-the realization space of a simplicial complex then
-this isomorphism induces a standard topological stratification whose stratum is isomorphic
-(relative) interior of an open ball in $\R^{n}$ for some $n\in \N$.
-
-The \ind{coarse polyhedral filtration}{coarse polyhedral filtration}
-of $B$ is $\emp\subset V \subset B$.
 
 
 
@@ -945,7 +924,8 @@ Let $\Lambda \subset T^{*}X$ be a conical Lagrangian subset
 \subsection{Definition of tropical manifolds}
 
 We usually use max-plus algebra and thus we replace $\overline{\R}\deq \R \cup \{+\infty\}$ with $\underline{\R}\deq \R \cup\{-\infty\}$ from \cite{gross2019sheaftheoretic}.
-There exists an exponential map $\opn{exp}: \underline{\R} \to \R_{\geq 0}$ and $\underline{\R}$ has the induced topology from the Euclidean topology of $\R_{\geq 0} (\subset \R)$. $\underline{\R}^{n}$ (resp. $\R^{n}$) is a tropical analogue of $n$-dimensional vector space $K^{n}$ (resp. split torus $(K^{\times})^{n}$) over a field $K$.
+There exists an exponential map $\opn{exp}: \underline{\R} \to \R_{\geq 0}$ and $\underline{\R}$ has the induced topology from the Euclidean topology of $\R_{\geq 0} (\subset \R)$. 
+$\underline{\R}^{n}$ (resp. $\R^{n}$) is a tropical analogue of $n$-dimensional vector space $K^{n}$ (resp. split torus $(K^{\times})^{n}$) over a field $K$.
 
 \begin{align}
   \R^{n}_{I}\deq \{(x_1,\ldots,x_n)\in \underline{\R}^{n} \mid x_i=-\infty \text{ if } i\in I \}\simeq \R^{n-\sharp I}
@@ -971,9 +951,7 @@ The sheaf $\mcal{F}^{1}_{\Z,B}$ is
 called the \ind{cotangent sheaf}{cotangent sheaf} on $B$.
 \indset{\FBZ^{0}}{\Z_{B}}{F0ZB}
 
-\begin{align}
-  \mathbf{F}_p^{\Z}(x)\deq
-\end{align}
+
 
 By taking total wedge product, we have a sheaf of graded ring
 $\bigwedge^{\bullet} \FBZ^{1}$.
@@ -1254,12 +1232,7 @@ $\opn{HF}^{\bullet}((L_1,\mcal{L}_1,\nabla),(L_2,\mcal{L}_2,\nabla))\deq \opn{Ke
 
 
 
-\begin{Eg}[{$\C$-local system on $L$ should be trivial in the tropical world}]
-  The following analogue suggests that we only consider a certain analogue of classical Lagrangian Floer cohomology when we attack Riemann-Roch type theorem. Be careful this observation is false when we apply to Fukaya category for Calabi-Yau varieties.
 
-  Let $B=\R/r\Z$ be a tropical elliptic curve
-
-\end{Eg}
 
 \subsubsection{More about mirror symmetry}
 
@@ -2095,8 +2068,6 @@ $(\check{X}(B_0)\xto{\check{f}} B_0 \stackrel{f}{\gets} X(B_0))$
   H^{p+q}(X(B_0);\R)
 \end{align}
 
-$\check{X}(B_0)$ has an natural orientation from complex structure.
-
 \begin{Conv}
   $M_{\R}=\R^{n}$ and choose an orientation
   $dx_1\wedge \cdots\wedge dx_n$ on $M_{\R}$
@@ -2834,6 +2805,29 @@ has a such structure.
   (This remark is not in arXiv preprint.)
 \end{Rmk}
 
+\subsection{Results for stratified spaces in $\R^{n}$}
+
+Let $X$ be a locally compact space and $(P,\leq_P)$
+a preordered set with an Alexandrov topology (c.f. \cite[]{}.).
+
+$\opn{int}(p)$
+
+An (abstract) stratification is a continuous map $c:X\to P$.
+
+From now on, we suppose $P$ is lower bounded locally finite and at most countable set.
+
+A filtration (in the sense of \cite[Definition 4.0.1]{MR2031639}) $X_{\bullet}$ is a sequence $\emp =:X_{-1}$
+If $X$ is a \ind{polyhedra}{polyhedra}
+\footnote{Be careful with that polyhedra means that
+  convex polyhedra in the literature.},
+i.e., a topological space that is isomorphic to
+the realization space of a simplicial complex then
+this isomorphism induces a standard topological stratification whose stratum is isomorphic
+(relative) interior of an open ball in $\R^{n}$ for some $n\in \N$.
+
+The \ind{coarse polyhedral filtration}{coarse polyhedral filtration}
+of $B$ is $\emp\subset V \subset B$.
+
 \begin{Rmk}[A relation of arithmetic surfaces]
   We didn't discuss relationships between degeneration of algebraic curves (or model of algebraic curves) discussed in \cite{MR2448666,MR4131998,MR4251610}. We write outline of their results for readers. We recall some notion of arithmetic surfaces and models over DVR \footnote{When we apply their theory to SYZ mirror, we need replace DVR with valuation ring with rank $1$ since Novikov ring is not a DVR. Besides, this replacement is important for tropicalization of algebraic variety over valuation field, but we only discuss a model over DVR since the theory of non-Noetherian scheme is usually difficult.} from \cite[Chapter 9]{MR1917232}.
   Let $k$ be a field.
@@ -2917,6 +2911,13 @@ This is independent of the choice of atlas since every differential
 of a smooth function at $x\in U$ can be represented by an
 linear function at $x$ uniquely and every transition map is an 
 extended affine map.
+
+\begin{Eg}[{$\C$-local system on $L$ should be trivial in the tropical world}]
+  The following analogue suggests that we only consider a certain analogue of classical Lagrangian Floer cohomology when we attack Riemann-Roch type theorem. Be careful this observation is false when we apply to Fukaya category for Calabi-Yau varieties.
+
+  Let $B=\R/r\Z$ be a tropical elliptic curve
+
+\end{Eg}
 
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}

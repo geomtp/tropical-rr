@@ -334,7 +334,8 @@ homological algebra of semimodules.
 Tropical Riemann--Roch theorem for tropical curves 
 is proved in \cite{gathmannRiemannRochTheoremTropical2008a}
 as an extension of Riemann--Roch theorem for graphs
-\cite{MR2355607}. The rank $r(D)$ of the linear system of a divisor $D$ 
+\cite{MR2355607}, (see also 
+\cite{mikhalkinTropicalCurvesTheir2008a}). The rank $r(D)$ of the linear system of a divisor $D$ 
 on tropical curve in 
 \cite{gathmannRiemannRochTheoremTropical2008a}
 is \emph{not} an invariant of $\mb{T}$-(semi)
@@ -505,6 +506,8 @@ see also \cref{appendix-geometric-quantization}.
 Next, we will interpret the LHS of 
 \cref{equation-toric-HRR} by the language
 of tropical toric varieties.
+In this paper, we mainly use max-plus algebra for 
+tropical geometry.
 Basic concepts and properties 
 of tropical toric varieties is studied and 
 explained in \cite{MR2428356,MR2511632,meyer2011intersection,MR3287221}.
@@ -778,8 +781,8 @@ $\Phi_{\mathrm{SYZ}}\colon
 \opn{Fuk}(\check{X})\to D^{b}(\opn{Coh}(X))$
 which induces a quasi-equivalence
 induces a quasi-equivalence 
-$D^{\pi}_{\infty}(\opn{Fuk}(\check{X}))\simeq 
-D^{b}_{\infty}(\opn{Coh}(X))$.
+$D^{\pi}(\opn{Fuk}(\check{X}))\simeq 
+D^{b}(\opn{Coh}(X))$.
 
 Under assumption of SYZ conjecture, 
 every Lagrangian section 
@@ -808,13 +811,18 @@ with singularities $B$ as a lattice point of $B$.
 
 \begin{align}
 \label{equation-MRR}
-\chi (\opn{HF}^{\bullet}(\check{X}(B);s))=
-\int_{X(B)}\opn{ch}(\mathcal{L}_s)\opn{td}(X(B))
+\chi (\opn{HF}^{\bullet}(B_0;s))=
+\int_{X(B_0)}\opn{ch}(\mathcal{L}_s)\opn{td}(X(B_0))
 \end{align}
+Similar question is called 
+Mirror Riemann--Roch conjecture in 
+\cite{grossSpecialLagrangianFibrations1998a}.
 
 The following question is our approach.
 \begin{question}
-Can we replace the
+\label{question-MRR}
+Can we replace the $X(B_0)$ with $B_0$ and generalized 
+for tropical manifolds?
 In particular, is there an analog of Floer complex of
 Lagrangian submanifolds for line bundles on 
 tropical spaces?  
@@ -822,18 +830,65 @@ tropical spaces?
 
 Some readers may think this question do not make sense
 because of elementary properties of 
-Lagrangian Floer cohomology.
+Lagrangian Floer cohomology. 
+We explain typical one of these features as follows.
 
+Let $\check{X}$ be a $2n$-dimensional 
+compact symplectic manifold and 
+$\mathscr{L}_1,\mathscr{L}_2$
+Lagrangian branes of $\check{X}$.
+From definition of Floer cohomology and 
+property of intersection number of cycles of singular 
+cohomology, there exists the
+following isomorphism:
 \begin{align}
+\label{equation-floer-poincare}
+\chi (\opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2))
+=(-1)^{n} \chi(\opn{HF}^{\bullet}(\mathscr{L}_2,\mathscr{L}_1)).
+\end{align}
+This is also a special result of Poincar\'e duality for 
+$\mathbb{Z}/N$-graded Floer cohomology, 
+see \cite[2f]{seidelGradedLagrangianSubmanifolds2000}.
+On othe other hand, let $X$ be a complete smooth 
+complex manifold and $\mathcal{L}_1$, $\mathcal{L}_2$ be a
+line bundle on $X$. Then, by Serre duality there exists 
+the following equation:
+\begin{align}
+\label{equation-serre-duality}
 \chi(\opn{Ext}^{\bullet}_{\mcal{O}_X}
 (\mcal{L}_2,\mcal{L}_1))
 = (-1)^{n}\chi(\opn{Ext}^{\bullet}_{\mcal{O}_X}
-(\mcal{L}_1,\mcal{L}_2\otimes \mcal{K}_X)).
+(\mcal{L}_1,\mcal{L}_2\otimes_{\mathcal{O}_X} \upomega_X)).
 \end{align}
-If $X$ is Calabi--Yau, then this is compatible with
+Here $\upomega_X$ is the canonical bundle on $X$.
+If $X$ is a mirror of $\check{X}$, then 
+the (\ref{equation-floer-poincare}) and 
+(\ref{equation-serre-duality}) should be compatible.
+Obviously, for many complex manifolds $\check{X}$
+there is no $X$ satisfying the condition.
+Therefore, we need to replace $\check{X}$ 
+with different data when we discuss of the mirror 
+symmetry for $D^{b}(\opn{Coh}(X))$. 
+If $X$ is Fano, then a
+mirror of $D^{b}(\opn{Coh}(X))$ is a Fukaya 
+category defined from a Landau--Ginzburg model.
+Such HMS is discussed for many authors, 
+but the relationships between HMS for 
+Fano manifold and SYZ mirror is not easier than 
+for Calabi--Yau manifolds.
 
+However, for the recent study 
+in \cite{auroux2022lagrangian}, 
+SYZ mirror is studied for algebraic curves 
+of general type. 
+They expect their SYZ mirror can be generalized for more
+general varieties in \cite[{\textsection 7}]{auroux2022lagrangian}.
+Our approach and \cref{question-MRR} can be considered as 
+a toy model of their expectation. 
 
-The following question is not formulated as a mathematical 
+The following \cref{conjecture-tropical-MRR-preface}
+is the detail version of \cref{question-MRR}.
+It is not formulated as a mathematical 
 conjecture since we don't know the definition of Todd 
 class of $n$ ($\geq 3$) dimensional tropical manifolds,
 but we write it for showing a slogan of formulation 
@@ -841,11 +896,12 @@ of a tropical analog of HRR.
 
 \begin{conjecture}[{Tropical Mirror Riemann--Roch Problem
 \cref{conjecture-tropical-MRR}}]
+\label{conjecture-tropical-MRR-preface}
 Let $B$ be a compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
 $\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
  Let $s$ be a "generic"
-extended smooth Cartier data satisfying an admissible condition 
+extended smooth Cartier divisor satisfying an admissible condition 
 \cref{cond: admissible} which represents of $\mcal{L}$
 and its graded $\Z$-module $\opn{MF}^{\bullet}(B;s)$
 of it. Then,
@@ -878,7 +934,7 @@ $\chi_{\opn{top}}(B)=\frac{c_1(K_B)^{2} +c_2(B)}{12}$
 \cite[Theorem 5.1]{shawTropicalSurfaces2015a}.
 \myfootnote{We would like to thank Felipe Rinc\'on 
 for explaining about the unpublished recent works
-about Noether formula for general cases.
+about Noether formula for general tropical surfaces.
 }
 \item 
 \cite[Corollary 2]{itenbergTropicalHomology2019b} says 
@@ -906,8 +962,8 @@ as test plays of the above question:
 Let $C$ (resp. $B$) be a compact tropical curve $C$ 
 (resp. $n$-dimensional integral 
 affine manifold $B$
-with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ an admissible 
-locally real analytic 
+with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ an 
+admissible nondepraved
 Cartier data on $C$ (resp. $B$) such that 
 $\sharp(s\cap s_0)<\infty$. Then,
 \begin{align}
@@ -925,13 +981,7 @@ We note that this theorem has already essentially proved for some
 literature as a trivial corollary of homological mirror symmetry 
 in \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{rmk: curve_mirror} and \cref{rmk: integral_mirror} 
 for more details) but we reprove it in tropical  
-geometrical setting as a test play of another approach 
-for a tropical analog of Riemann--Roch formula for 
-good tropical spaces. This approach is different
-from classical approach such like 
-\cite{MR2355607,gathmannRiemannRochTheoremTropical2008a,mikhalkinTropicalCurvesTheir2008a} but
-a toy model of homological mirror conjecture in the sense
-of \cite[{\textsection 7}]{auroux2022lagrangian}.
+geometrical setting as a test play of our approach.
 
 \begin{remark}
 We expect our approach works for various style 
@@ -1238,18 +1288,20 @@ Morse complexes.
 "Morse condition" since
  we need to use some $C^{\infty}$-function
 which is \emph{not} a Morse function in the sense of 
-stratified Morse theory (see for example
-\cite[Part 1.2.1]{MR932724}). 
+stratified Morse theory. 
+We will give an explanation in 
+\cref{remark-nondeprave-curve}.
 ((また、本論文では、条件の良し悪しを後で比較するために
 \cref{definition-local-morse-data} の$f$ に対しては
 何の条件も課さない。一方で、本論文では$f$ に対する
 条件 \cref{condition-isolated-singularity}を課す。))
-We also note that we need to use 
+\item We also note that we need to use 
 the graded module $\opn{MF}^{\bullet}(\mcal{F},f,x)$ instead of 
 the complex $\opn{LMD}(\mcal{F},f,x)$ in order to define
 a graded module associated with line bundle on tropical
 spaces. See also \cref{remark-differential-graded-module} for more about 
 this reason.
+%TODO: Reamrk3.7から
 \end{enumerate}
 \end{remark}
 
@@ -1357,6 +1409,14 @@ critical point at $x$ then
 $\opn{MF}^{\bullet}(A_{S},f|_S,x)\simeq A[0]$.
 \end{example}
 
+%TODO:
+
+We use the 
+
+\begin{definition}
+
+\end{definition}
+
 We also use the locally analytic condition frequently:
 
 \begin{condition}
@@ -1368,6 +1428,13 @@ subset $U$ of $\mathbb{R}^{n}$ and a smooth embedding
 $\phi \colon U\to X$ satisfying $x\in \phi(U)$ and
 $f_0=f\circ \phi$.
 \end{condition}
+
+\iffalse
+\begin{definition}
+
+\end{definition}
+\fi
+
 
 \begin{remark}
 Of course, \cref{condition-local-analytic} is tentative
@@ -1674,7 +1741,7 @@ We write $\opn{CDiv}^{\infty}(B)$ for
 $H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
 We will see a smooth Cartier divisor is
 an analog of Lagrangian section 
-\cref{proposition-smooth-cartier-lagrangian}.
+\cref{proposition-cartier-lagrangian}.
 In the next subsection, 
 we will define an analog of Floer complex of 
 Lagrangian submanifolds
@@ -2020,11 +2087,12 @@ The following proposition is an analog of \'{e}tale multiplicity of Euler charac
 Let $B$ be a compact rational polyhedral space satisfying
 \cref{condition-Rn} and $s$ be an admissible smooth Cartier divisor
 such that $s_0\cap s$ is a finite set.
-For $q \colon B' \to B$ be a covering map of $B$ of degree 
-$\opn{deg}(q)$,
+For $q \colon B' \to B$ be a covering map of $B$ of 
+(topological) degree 
+$\opn{deg}_{\opn{top}}(q)$,
 \begin{align}
 \chi(\opn{MF}^{\bullet}(B';q^{*}(s)))=
-\opn{deg}(q)\chi(\opn{MF}^{\bullet}(B;s)).
+\opn{deg}_{\opn{top}}(q)\chi(\opn{MF}^{\bullet}(B;s)).
 \end{align}
 \end{proposition}
 
@@ -2155,6 +2223,22 @@ in general.
 \end{align}
 \end{condition}
 
+%TODO: 
+\iffalse
+From definition,
+\begin{align}
+df(x)\notin \opn{Lin}(S,x)^{\bot} 
+\Rightleftarrows df|_{\opn{Lin}(S,x)}(x)\ne 0
+\end{align}
+
+Fix a polyhedral fan structure $\mathscr{P}$ of 
+$S/\opn{Lin}(S,x)$. The pullback induced from
+$\opn{pr}\colon S\to S/\opn{Lin}(S,x)$ induces 
+a fan structure on
+$\bigcup_{x\in sigma \in \mathscr{P}}\sigma=
+\opn{Lin}(S,x)$.
+
+\fi
 \subsection{Verdier duality}
 We will use this subsection 
 in \cref{section-integral-affine-manifold}.
@@ -2168,8 +2252,8 @@ Let $f\colon X\to Y$ be a continuous map between locally
 compact Hausdorff space s. If $f_!$ has finite cohomological
 dimension, 
 \begin{align}
-  R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{Hom}_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet})        \\
-  R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}).
+R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{Hom}_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}),        \\
+R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}).
 \end{align}
 \end{theorem}
 
@@ -2316,6 +2400,25 @@ When $p+q=3$,
 \end{align}
 \end{example}
 
+\begin{remark}
+\label{remark-nondeprave-curve}
+Every $\Sigma$ has a coarse polyhedral cone structure 
+$\mathscr{C}$. 
+For this structure, $s_{p,q}$ has a unique critical 
+point at the origin with respect to 
+$\mathscr{C}$ in the theory of stratified 
+Morse theory \cite[Part I.2.1]{MR932724}
+but does not satisfy the nondegeneracy condition.
+In particular, $s_{p,q}$ is not nondepraved 
+at the origin \cite[Part I.2.3.]{MR932724} 
+and thus we cannot use the theory of local Morse 
+data for nondepraved functions directly 
+\cite[Part I.3.5.2 Definition]{MR932724}. 
+We expect, however, that there exists a 
+generalized version of local Morse data 
+which can apply for our settings. 
+\end{remark}
+
 \begin{definition}[{Continuous section}]
 \label{definition-continuous-section}
 Let $C$ be a tropical curve and 
@@ -2431,7 +2534,7 @@ Let $s\colon  (\subset \mathbb{T}P^{1}\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}
 \end{definition}
 
 \begin{proposition}
-$\opn{rot}(s)=\opn{rot}(\iota^{*}\circ s)$
+$\opn{rot}(s)=\opn{rot}(\iota^{*}\circ s)$.
 \end{proposition}
 
 \begin{proof}
@@ -2871,7 +2974,7 @@ Our approach is mostly affected from
 Our
 
 
-\subsubsection{Relationships between a localization of 
+\subsubsection{Relationships with a localization of 
 index on compact Riemann surfaces.}
 
 We mention the relationship between 
@@ -2953,7 +3056,7 @@ The following equation is a correspondence about
 local index $\opn{ind}_v$ and the Local 
 Riemann--Roch number under the above 
 identification \cite[Theorem 6.7]{MR2676658}.
-\begin{align}
+\begin{align} \label{equation-local-RR}
 & [BS^{+}]=\opn{ind}_v(s_{2,0})=1, 
 && [BS^{-}]=\opn{ind}_v(s_{0,2})=-1,\notag \\
 & [D^{+}]=\opn{ind}_v(s_{1,0})=1,
@@ -2972,11 +3075,16 @@ similar features.
 We also note that it was the beginning of our 
 approach that we 
 noticed the above correspondence.
+We can also consider the following question as 
+like \cite{auroux2022lagrangian}.
 
 \begin{question}
-  Can we generalize the above correspondence for pants decomposition of
+  Can we generalize the correspondence
+\ref{equation-local-RR} for pants decomposition of
   complex algebraic hypersurfaces in \cite{MR2079993} and line bundles?
 \end{question}
+
+
 
 %TODO: amissibleのなす層がアーベル群のなす層では
 %Torsorとしての性質のを満たすことを述べる。
@@ -2994,6 +3102,10 @@ grossMirrorSymmetryLogarithmic2006a} and
 \begin{definition}
 
 \end{definition}
+
+\begin{remark}
+  
+\end{remark}
 
 
 \begin{example}
@@ -3291,7 +3403,7 @@ $\check{X}(B_0)$
 
 \begin{remark}
 When $s=\vep df$ for a sufficiently small $\vep >0$ and 
-a Morse function, $\chi(B,s)=\chi_{\opn{top}}(B)=0$ is 
+a Morse function $f$ on $B$, $\chi(B,s)=\chi_{\opn{top}}(B)=0$ is 
 truly a special case of Poincar\'e--Hopf theorem for $B$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
   \cite{rau2020tropical}. This analogue is about tropical Euler characteristic
@@ -3301,8 +3413,15 @@ $\chi_{\opn{trop}}(B)\deq \chi(\mb{H}^{\bullet}(B;\mcal{F}_B^{\bullet}))$
 
 \begin{definition}
 Let $B,B'$ be an integral affine manifold.
+$f_*\colon H_{n,n}(B;\mathbb{Z})\to 
+ H_{n,n}(B';\mathbb{Z})$
 \end{definition}
 
+\begin{definition}
+Let $B,B'$ be an integral affine manifold. 
+An integral affine map $f\colon B\to B'$ is a \emph{\'etale} if
+$f$ is locally isomorphic as integral affine manifolds.
+\end{definition}
 
 
 \begin{remark}
@@ -3313,17 +3432,33 @@ If $f\colon B\to B'$ be an affine local diffeomorphism,
 then $X(f)\colon X(B) \to X(B')$ is a local isomorphism of
 complex manifolds.
 When $f$ is not an \'etale in our sense,
-$\opn{deg}(f)\ne \opn{deg}(X(f))$ in general.
+$\opn{deg}_{\opn{top}}(f)\ne \opn{deg}_{\opn{top}}(X(f))$ in general.
 
 \end{remark}
 
 \begin{lemma}
   Let $f:B\to B'$ be a proper tropical morphism.
-  \begin{align}
-    \int_{B} f^{*}c\frown \alpha=\int_{B'} f_*(f^{*}c\frown \alpha)
-    =\int_{B'}c \frown f_*\alpha=\opn{deg}(f)\int_{B'} c\frown \alpha
-  \end{align}
+\begin{align}
+\int_{B} f^{*}c\frown \alpha=\int_{B'} f_*(f^{*}c\frown \alpha)
+=\int_{B'}c \frown f_*\alpha=\opn{deg}(f)\int_{B'} c\frown \alpha
+\end{align}
 \end{lemma}
+
+\begin{proof}
+From definition of trace map
+$\int_B=\int_{B'}\circ \int_{B/B'}$.
+
+
+\begin{align}
+\opn{Hom}_{D^{b}(\mathbb{Z}_B)}(
+\upomega_B^{\bullet},\upomega_B^{\bullet})
+\simeq \opn{Hom}_{D^{b}(\mathbb{Z}_{B'})}
+(Rf_! \upomega_B^{\bullet},\upomega_{B'}^{\bullet}) \to
+\opn{Hom}_{D^{b}(\mathbb{Z}_{B'})}
+(\upomega_{B'}^{\bullet},\upomega_{B'}^{\bullet})
+\end{align}
+
+\end{proof}
 
 \begin{proposition} \label{thm: intetale}
 Let $f\colon B'\to B$ be a finite \'etale covering of a compact integral affine 
