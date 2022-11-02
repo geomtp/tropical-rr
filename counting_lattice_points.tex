@@ -816,7 +816,7 @@ with singularities $B$ as a lattice point of $B$.
 \end{align}
 Similar question is called 
 Mirror Riemann--Roch conjecture in 
-\cite{grossSpecialLagrangianFibrations1998a}.
+\cite[Conjecture 4.9]{grossSpecialLagrangianFibrations1998a}.
 
 The following question is our approach.
 \begin{question}
@@ -1920,8 +1920,8 @@ Then the stratified torus
 fibration is the following set
 \begin{align}
 \check{X}(S)\deq \bigcup_{x\in S} 
-(\mathbf{F}_{S,x}^{\Z}/(\opn{span}_{{\mathbb{R}}}
-(\opn{SS}(A_S)_x))\cap \mathbf{F}_{S,x}^{\Z})\otimes_{\Z} {\mathbb{R}}/\Z.
+(\mathcal{F}_{S,x}^{\Z}/(\opn{span}_{{\mathbb{R}}}
+(\opn{SS}(A_S)_x))\cap \mathcal{F}_{S,x}^{\Z})\otimes_{\Z} {\mathbb{R}}/\Z.
 \end{align}
 Let $s=\{f_i\}_{i\in I}$ be a admissible smooth Cartier divisor. 
 The stratified Lagrangian is the image of the differential  $\{df_i\}_{i\in I}$ in $\check{X}(S)$
@@ -2213,16 +2213,26 @@ $s$ on $B$, then
 
 We assume that every (rational) polyhedral space satisfies 
 the following condition,
-but we expect that the condition is not necessary
+but we expect that the condition is unnecessary
 in general.
 
 \begin{condition}
 \label{condition-good-linearity-space}
 \begin{align}
-\opn{span}_{{\mathbb{R}}}\opn{SS}(S)_x=\opn{Lin}(S,x)^{\bot}
+\opn{span}_{{\mathbb{R}}}\opn{SS}(S)_x=
+\opn{Lin}(S,x)^{\bot}(\simeq 
+(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}^{\bot}).
 \end{align}
+where $(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}$ is the stalk 
+of the sheaf of (real) wave tangent vector spaces of $S$ at $x$
+(see 
+\cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and \cite[Definition 2.16]{}).
 \end{condition}
+See also \cite[Example 3.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
+\cite[Remark 2.21]{} for the wave tangent space
+ of $1$-dimensional local cones.
 
+%TODO: eigenwaveとの諸々の文献補填
 %TODO: 
 \iffalse
 From definition,
@@ -2259,6 +2269,13 @@ R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\
 
 The dualizing complex over $A$ of $X$ is 
 $\upomega_{A_X}\deq a^{!}_{X}A_{\{\opn{pt}\}}$.
+
+If $X$ is a topological manifold of dimension $n$, 
+$\upomega^{\bullet}_{X}\simeq \opn{or}_{X}^{\Z}[n]$ 
+where $\opn{or}_{X}^{\mathbb{Z}}[n]$ is the sheaf 
+associated with the presheaf $U\mapsto 
+\opn{Hom}(H^{n}_c(U;\mathbb{Z}_{X}),\mathbb{Z})$
+\cite[Proposition 3.3.6]{MR1299726}.
 
 $\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
 \deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},\upomega_{A_X})$
@@ -3191,7 +3208,7 @@ with a flat connection
 (e.g. \cite[Chapter 7]{MR2293045}).
 
 
-Here, $\mcal{F}_{\Z, B}^{0}={\mathbb{R}}_B$. 
+Here, $\mcal{F}_{\Z, B}^{0}={\mathbb{Z}}_B$. 
 $\mcal{F}_{B}^{\bullet}$ is a certain analog of analytic
 de Rham complex of complex manifold.
 \begin{remark}
@@ -3299,7 +3316,8 @@ for a purely $n$-dimensional tropical manifold
 The The $(p,q)$-th Borel-Moore homology of $X$ is
 \begin{align}
 H^{\opn{BM}}_{p,q}(X;\Z)\deq 
-H^{-q}R\opn{Hom}(\Omega_X^{p},\upomega_X^{\bullet}).
+H^{-q}R\opn{Hom}(\Omega_X^{p},\upomega_X^{\bullet})=
+\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega_X^{p}[q],\upomega_X^{\bullet}).
 \end{align}
 $H_{0,q}^{\opn{BM}}(X;\Z)=H^{-q}R\opn{Hom}(A_X,\upomega_X)$ is equal to the classical Borel-Moore homology
 \cite[Lemma 4.8]{gross2019sheaftheoretic}.
@@ -3321,16 +3339,23 @@ H^{n,n}(B;\Z)=H^{n}(B;\FBZ^{n})\simeq \Z$ if
 $B$ is compact and path-connected.
 
 \begin{align}
-H^{\opn{BM}}_{n,n}(X,\Z)\simeq \opn{Hom}_{\opn{D}^{b}(\Z_X)}(\upomega_X,\upomega_X)\simeq
-\opn{Hom}_{\opn{D}^{b}(\Z)}(R\Gamma_c\upomega_X,\Z), \\ 
-H^{n,n}(X;\mathbb{Z})\simeq 
-\opn{Hom}
+H^{\opn{BM}}_{n,n}(X,\Z)&\simeq \opn{Hom}_{\opn{D}^{b}(\Z_X)}(\upomega_X,\upomega_X)\simeq
+ \opn{Hom}_{\opn{D}^{b}(\Z)}(R\Gamma_c\upomega_X,\Z), \\ 
+H^{n,n}(X;\mathbb{Z})&\simeq 
+\opn{Hom}_{\opn{D}^{b}(\Z_X)}(\mathbb{Z}_X,\upomega_X^{\bullet})
+\simeq  \opn{Hom}_{\opn{D}^{b}(\Z)}(R\Gamma_c\Z_X,\Z).
 \end{align}
 The first isomorphism follows from the universal 
 coefficient theorem and 
 $H^{1}_c(X;\mathbb{Z})$ is torsion-free 
 \cite[VI.Proposition 5.3]{iversenCohomologySheaves1986a}.
-
+Let $f$ be a proper morphism of rational polyhedral 
+spaces.
+Then, there exists the pushforward
+$f_*\colon H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})
+\to H_{p,q}^{\mathrm{BM}}(Y;\mathbb{Z})$
+of tropical Borel--Moore homology 
+\cite[Definition 4.9]{gross2019sheaftheoretic}.
 Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
 morphism of rational polyhedral spaces.
 Then, $f_*\circ g_*=(f\circ g)_*$.
@@ -3344,15 +3369,10 @@ and it denotes by $[X]$. The fundamental class of tropical
 manifold was defined from the locally constant function on 
 $X_{\opn{reg}}$. (See \cite[Definition 4.8]{MR3894860}.)
 If $X=\opn{pt}$, $H_{0,0}^{\opn{BM}}(\opn{pt};\Z)=\opn{End}(\Z)\simeq \Z$.
-Therefore, $H^{n,n}(X;\Z)\xto{\cdot \cap [X]} H_{0,0}^{\opn{BM}}(X;\Z)
-\xto{f_!} H_{0,0}^{\opn{BM}}(\opn{pt};\Z)$ defines
+Therefore, $H^{n,n}(X;\Z)\xto{\cdot \frown [X]} H_{0,0}^{\opn{BM}}(X;\Z)
+\xto{f_!} H_{0,0}^{\opn{BM}}(\{\opn{pt}\};\Z)$ defines
 the ((補完))
-If $B$ is a topological manifold of dimension $n$, 
-$\upomega^{\bullet}_{B}\simeq \opn{or}_{B}^{\Z}[n]$ 
-where $\opn{or}_{B}^{\mathbb{Z}}[n]$ is the sheaf 
-associated with the presheaf $U\mapsto 
-\opn{Hom}(H^{n}_c(U;\mathbb{Z}_{B}),\mathbb{Z})$
-\cite[Proposition 3.3.6]{MR1299726}.
+
 and the fundamental class of $B$ is a $\Z$-orientation of $B$
 when $B$ is orientable.
 
