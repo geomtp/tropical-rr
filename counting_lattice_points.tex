@@ -2298,9 +2298,10 @@ We follow the notation $\opn{Tr}_f$ from
 Let $f\colon X\to Y $ and $g\colon Y\to Z$ be 
 a continuous map and $f_!,g_!$ has finite cohomological 
 dimension. Then, $(g\circ f)^{!}=f^{!}\circ g^{!}$
-\cite[]{MR1299726}.
-From elemental properties of 
-adjoint functors we have
+\cite[Proposition 3.1.8]{MR1299726}.
+In particular, $\upomega_X=f^{!}\upomega_Y$.
+From elemental properties of the composition of
+adjoint functors \cite[p.103]{MR1712872}, we have
 \begin{align}
 \label{equation-trace}
 \opn{Tr}_{g\circ f,\mathcal{F}^{\bullet}}=
@@ -2326,7 +2327,8 @@ $\int_{g\circ f}=\int_{g}\circ \int_{f}$, i.e.,
 $\int_f$ is the pushforward of $f$.
 
 \begin{example}
-  
+Let $\pi \colon X\to Y$ be a covering map of topological 
+degree $n$.
 \end{example}
 
 $\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
@@ -3361,12 +3363,7 @@ Every rational polyhedral space $X$ is locally compact and $\Z$ is has finite ho
 Thus, we can use Verdier duality of tropical spaces.
 
 
-There exists a natural isomorphism $\mcal{F}_X^{n-p}[n]\to 
-\mcal{D}(\mcal{F}_{X}^{p})$ where 
-$\mcal{D}(\mcal{F}^{\bullet})
-=R\mcal{H}om(\mcal{F};\upomega_X^{\bullet})$
-for a purely $n$-dimensional tropical manifold
-\cite[Theorem 6.2]{gross2019sheaftheoretic}.
+
 
 The The $(p,q)$-th Borel-Moore homology of $X$ is
 \begin{align}
@@ -3374,17 +3371,40 @@ H^{\opn{BM}}_{p,q}(X;\Z)\deq
 H^{-q}R\opn{Hom}(\Omega_X^{p},\upomega_X^{\bullet})=
 \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega_X^{p}[q],\upomega_X^{\bullet}).
 \end{align}
-$H_{0,q}^{\opn{BM}}(X;\Z)=H^{-q}R\opn{Hom}(A_X,\upomega_X)$ is equal to the classical Borel-Moore homology
+$H_{0,q}^{\opn{BM}}(X;\Z)=
+H^{-q}R\opn{Hom}(A_X,\upomega_X^{\bullet})$ is equal to the classical Borel-Moore homology
 \cite[Lemma 4.8]{gross2019sheaftheoretic}.
 We recall some important properties of 
 classical Borel--Moore homology.
 
+If $\upomega_X\simeq \mcal{F}[d]$ for a sheaf $\mcal{F}$,
+$H_i^{\opn{BM}}(X;A)\simeq H^{d-i}(X;\mcal{F})$.
 
+\begin{definition}
+  
+\end{definition}
+
+$\frown: H^{p,q}(Y) \otimes H_{i,j}^{\opn{BM}}(Y)\to H_{p-i,q-j}^{\opn{BM}}(Y)$
+
+There exists a natural isomorphism $\mcal{F}_X^{n-p}[n]\to 
+\mcal{D}(\mcal{F}_{X}^{p})$ where 
+$\mcal{D}(\mcal{F}^{\bullet})
+=R\mcal{H}om(\mcal{F};\upomega_X^{\bullet})$
+for a purely $n$-dimensional tropical manifold
+\cite[Theorem 6.2]{gross2019sheaftheoretic}.
 
 \begin{align}
-H_{p,q}^{\mathrm{BM}}(X)\simeq H^{n-p,n-q}(X).
+\mathcal{F}_{\mathbb{Z},X}^{n-p}[n]
+\simeq ,\quad \mathcal{F}_{\mathbb{Z},X}^{n}[n] \simeq \upomega^{\bullet}_X
 \end{align}
 
+\begin{align}
+H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})\simeq H^{n-p,n-q}(X;\mathbb{Z}).
+\end{align}
+
+The Poincar\'e duality for tropical manifold
+with coefficients in $\mathbb{Z}$ was firstly 
+proved in \cite[Theorem 5.3]{MR3894860}.
 Since $B$ is a locally compact space, 
 $H^{1}_c(B;\Z)$ is free 
 (cf. 
@@ -3414,6 +3434,15 @@ of tropical Borel--Moore homology
 Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
 morphism of rational polyhedral spaces.
 Then, $f_*\circ g_*=(f\circ g)_*$.
+
+\begin{align}
+f_*(\psi)\deq \opn{Tr}_{f,\upomega_Y^{\bullet}}\circ 
+Rf_!\psi \circ b_{f}.
+\end{align}
+
+\begin{proposition}
+
+\end{proposition}
 
 \begin{definition}[{degree of proper morphism}]
 Let $f\colon X \to Y$ be a 

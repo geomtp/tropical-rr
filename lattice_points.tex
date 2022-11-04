@@ -518,20 +518,11 @@ Therefore, $\Gamma_{Z}(A_S)$ is trivial for any closed subset $Z$ of $S$.
 
 \subsection{Proof for Hessian manifolds}
 
-\subsubsection{Verdier duality of rational polyhedral spaces}
-
-Recall the following elementary quasi-isomorphism.
 
 \subsubsection{Borel-Moore homology of rational polyhedral spaces}
 
 
 
-\begin{Eg} (i) 
-(See also \cite[IX]{iversenCohomologySheaves1986a}
-for fundamental properties of Borel--Moore homology)
-  Since $B$ is a locally compact space,
-
-\end{Eg}
 
 
 
@@ -549,78 +540,15 @@ for fundamental properties of Borel--Moore homology)
 
 \end{proof}
 
-\begin{Def}[{\cite[Definition 4.9]{gross2019sheaftheoretic}}]
-
-  \begin{align}
-    \opn{Hom}_{\opn{D}(\Z_X)}(\Omega_X^{p}[q],\upomega_X)\xto{Rf_*}
-    \opn{Hom}_{\opn{D}(\Z_Y)}(Rf_*\Omega_X^{p}[q],Rf_*\upomega_X)
-    \\
-    \opn{Hom}_{\opn{D}(\Z_Y)}(Rf_*\Omega_X^{p}[q],Rf_*\upomega_X)
-    \xto{\opn{Hom}(b_{f},Rf_*\upomega_X)}
-    \opn{Hom}_{\opn{D}(\Z_Y)}(\Omega^{p}_Y[q],Rf_*\upomega_X) \\
-    \opn{Hom}_{\opn{D}(\Z_Y)}(\Omega^{p}_Y[q],Rf_*\upomega_X)
-    \xto{\opn{Hom}(\Omega_Y^{p}[q],\int_{X/Y})} \opn{Hom}_{\opn{D}(\Z_Y)}(\Omega_Y^{p}[q],\upomega_Y)
-  \end{align}
-
-  where
-
-\end{Def}
 
 
 
-\begin{Prop}
-  Let $f:X\to Y$, $Y\to Z$ be a proper morphism of rational polyhedral spaces
-  In particular, $\int_X=\int_Y\circ f_*$.
-\end{Prop}
-\begin{proof}
-  As mentioned in \cite[4.4]{gross2019sheaftheoretic}, this proposition comes from functoriality of derived pushforwards.
-  We check about this.
 
-  $f^{\flat}$
 
-  \begin{align}
-    \opn{Hom}(b_{g\circ f},R(g\circ f)_*\omega_X)
-    =\opn{Hom}(b_g,R(g\circ f)_*\omega_X)\circ\opn{Hom}(Rg_*(b_f),R(g\circ f)_*\omega_X)
-  \end{align}
-  where
-  \begin{align}
-    \opn{Hom}(\Omega_{Z}^{p}[q],\int_{X/Z})=
-    \opn{Hom}(\Omega_Z^{p}[q],\int_{Y/Z})\circ \opn{Hom}(\Omega_Z^{p}[q],Rg_*\circ \int_{X/Y})
-  \end{align}
-
-  \begin{align}
-    \opn{Hom}(Rg_*(b_f),R(g\circ f)_*\upomega_X): &                                                                            \\
-    \opn{Hom}_{\opn{D}(\Z_Z)}(R(g\circ f)_*\Omega_X^{p}[q],R(g\circ f)_*\upomega_X)
-                                                  & \to \opn{Hom}_{\opn{D}(\Z_Z)}(Rg_*\Omega_Y^{p}[q],R(g\circ f)_*\upomega_X)
-  \end{align}
-
-  \begin{align}
-    \opn{Hom}(b_g,R(g\circ f)_*\upomega_X): &                                                                        \\
-    \opn{Hom}_{\opn{D}(\Z_Z)}(Rg_*\Omega_Y^{p}[q],R(g\circ f)_*\upomega_X)
-                                            & \to \opn{Hom}_{\opn{D}(\Z_Z)}(\Omega_Z^{p}[q],R(g\circ f)_*\upomega_X)
-  \end{align}
-
-  Therefore,
-  \begin{align}
-    \opn{Hom}(Rg_*(b_f),R(g\circ f)_*\upomega_X)\circ Rg_*= Rg_*\circ \opn{Hom}(b_f,Rf_*\upomega_X)
-  \end{align}
-
-  \begin{align}
-    \opn{Hom}(b_{g},R(g\circ f)_*\omega_X)\circ Rg_*:                           \\
-    \opn{Hom}_{\opn{D}(\Z_Y)}(\Omega_Y^{p}[q],R f_*\upomega_X)
-     & \to \opn{Hom}_{\opn{D}(\Z_Z)}(\Omega_Z^{p}[q],Rg_*(Rf_*f^{*}\upomega_Y))
-  \end{align}
-
-  \begin{align}
-    \Omega_Z^{p}\to (g\circ f)_*\Omega_{X}^{p}\to R(g\circ f)_*\Omega_{X}^{p}
-  \end{align}
-
-  When $Z=\{\opn{pt}\}$, then $\upomega_Z=\Z_{\{\opn{pt}\}}$
-\end{proof}
 
 On the other hand,
 
-$\frown: H^{p,q}(Y) \otimes H_{i,j}^{\opn{BM}}(Y)\to H_{p-i,q-j}^{\opn{BM}}(Y)$
+
 
 $c\in H^{p,q}(Y)$
 Let $f:X\to Y$ be a proper morphism of rational polyhedral spaces.
@@ -1690,7 +1618,7 @@ $\opn{chd}_A(\R^{n})=n$ \cite[III. Example 9.6]{} and thus $\dim X=\opn{chd}_A(X
 
 
 
-Let $f,g:X\to Y$ be a continuous map such that $f_!,g_!$ has finite cohomological dimension. Then, $(f\circ g)_!$ has finite cohomological dimension and $(f\circ g)^{!}\simeq g^{!}\circ f^{!}$ since $R(f\circ g)_!=Rg_!\circ Rf_!$ \cite[Proposition 3.1.8]{MR1299726}.
+
 
 \begin{align}
   \upomega_{X/Y}\deq f^{!}A_Y,\quad \upomega_X\deq (a_X)^{!} A_{\{\opn{pt}\}}
@@ -1704,9 +1632,7 @@ Let $\mcal{F}^{\bullet}\in\opn{Ob}(D^{b}(A_X\text{-}\catn{Mod}))$
 
 By \cite[Proposition 3.1.11]{}, 
 
-\begin{Eg}
-  Let $f:X\to Y$
-\end{Eg}
+
 
 
 
@@ -1718,31 +1644,15 @@ and $\mcal{D}_{A_X}\mcal{D}_{A_X}(\mcal{F}^{\bullet})\simeq \mcal{F}^{\bullet}$ 
   R\mcal{H}om(\mcal{F}^{\bullet},\mcal{G}^{\bullet})\simeq R\mcal{H}om(\mcal{D}_{A_X}\mcal{G}^{\bullet},\mcal{D}_{A_X}\mcal{F}^{\bullet})\simeq \mcal{D} (\mcal{D}(\mcal{G})\otimes \mcal{F})
 \end{align}
 
-\begin{align}
-  \opn{Hom}_{\opn{D}^{+}(A_X)}(\upomega_X,\upomega_X)\simeq \opn{Hom}_{\opn{D}^{+}(A)}(Ra_{X!}\upomega_X,A)
-\end{align}
 
 
 
-The image of the identity morphism $\opn{id}_{\upomega_X}:\upomega_X \to \upomega_X$ in $ \opn{Hom}_{\opn{D}^{+}(A)}(Ra_{X!}\upomega_X,A)$, i.e., $\vep_A=\Phi_{A,a^{!}_XA}(1_{a_X^{!}A})$  is called \ind{trace map}{trace map} of $X$ and we write $\int_X:Ra_{X!} a_X^{!}A\to A$.
-By taking the $0$-th cohomology, we get the homomorphism $\int_X:\mb{H}_c^{0}(X;\upomega_X) \to A$.
 
 
 
-\begin{Eg}
-  $\opn{Hom}_{}$ $\upomega_X=a_X^{!}A=(a_Y\circ f)^{!}A=f^{!}\upomega_Y$
 
-  $\Phi_{\upomega_X,A}(f)$
 
-  \begin{align}
-    \vep'' :Ra_{Y,!} \circ R f_!\circ f^{!}\circ a^{!}_Y \xto{Ra_{Y!}\vep'a_{Y}^{!}} Ra_{Y,!} \circ a^{!}_Y \to 1_{A\text{-}\catn{Mod}}
-  \end{align}
-  This natural transform defines the pushforward
-  \begin{align}
-    f_!:R\Gamma_c(X,\upomega_X)\to R\Gamma_c(Y,\upomega_Y).
-  \end{align}
-  From definition, $\int_X=\int_Y\circ f_!$
-\end{Eg}
+
 
 
 
@@ -1807,15 +1717,13 @@ The $i$-th \ind{Borel-Moore homology}{Borel-Moore homology} group is defined by
   $H_i^{\opn{BM}}(X;A)\simeq H^{m-i}_{X}(M;A_{M})$ \cite[IX. Theorem 4.7]{iversenCohomologySheaves1986a}
 \end{Eg}
 
-If $X$ is compact,
 
 
 
-If $\upomega_X\simeq \mcal{F}[d]$ for a sheaf $\mcal{F}$,
-$H_i^{\opn{BM}}(X;A)\simeq H^{d-i}(X;\mcal{F})$.
 
-Let $f:X\to Y$ be a proper map such that $f_!$ has cohomological dimension.
-$\int_X=\int_Y \circ f_*$
+
+
+
 \begin{Rmk}
   There exists algebraic geometric version of Verdier duality.
   $\upomega_X\deq a_X^{!}k$
@@ -2252,12 +2160,6 @@ theorem.
   If $\pi^{!}(\mcal{F})$ is quasi-isomorphic to a single sheaf.
   then $\eta_{\mcal{F}}$ is a epimorphism of sheaf.
 \end{Lem}
-
-From this natural transformation, we calculate the
-degree of trace map
-$\int_{X/Y}:Ra_{X,!}\upomega_X \to Ra_{Y,!}\upomega_Y$.
-
-$\int_{X/Y}':Ra_Y R\pi_{*}\pi^{-1}\upomega_Y\to Ra_Y \upomega_Y$
 
 \begin{Lem}[Slogan]
   Let $X$ be a locally compact Hausdorff space. Let $\mcal{G}$ be a sheaf of
