@@ -1853,6 +1853,10 @@ if
 (\opn{SS}(A_S)_x)+M^{\vee})\setminus M^{\vee}.
 \end{align}
 \end{condition}
+%TODO: 表記の理由を何とかする。
+(Be careful for this definition is \emph{not} 
+compatible with admissible Morse functions defined 
+in \cite{}.)
 
 \begin{remark}
 If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
@@ -2226,14 +2230,15 @@ in general.
 where $(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}$ is the stalk 
 of the sheaf of (real) wave tangent vector spaces of $S$ at $x$
 (see 
-\cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and \cite[Definition 2.16]{}).
+\cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
+\cite[Definition 2.16]{yamamotoTropicalContractionsIntegral2021}).
 \end{condition}
 See also \cite[Example 3.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
-\cite[Remark 2.21]{} for the wave tangent space
+\cite[Remark 2.21]{yamamotoTropicalContractionsIntegral2021} for the wave tangent space
  of $1$-dimensional local cones.
 
 %TODO: eigenwaveとの諸々の文献補填
-%TODO: 
+
 \iffalse
 From definition,
 \begin{align}
@@ -2250,6 +2255,7 @@ $\bigcup_{x\in sigma \in \mathscr{P}}\sigma=
 
 \fi
 \subsection{Verdier duality}
+%TODO: Verdier 双対のまとめ
 We will use this subsection 
 in \cref{section-integral-affine-manifold}.
 
@@ -2257,7 +2263,8 @@ The Verdier duality holds for the following general form
 \cite[Proposition 3.1.10]{MR1299726}
 
 
-\begin{theorem}[{Verdier duality}]
+\begin{theorem}[{Verdier duality and 
+Borel--Moore homology}]
 Let $f\colon X\to Y$ be a continuous map between locally 
 compact Hausdorff space s. If $f_!$ has finite cohomological
 dimension, 
@@ -2267,15 +2274,60 @@ R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\
 \end{align}
 \end{theorem}
 
-The dualizing complex over $A$ of $X$ is 
+
+
+The \emph{dualizing complex} over $A$ of $X$ is 
 $\upomega_{A_X}\deq a^{!}_{X}A_{\{\opn{pt}\}}$.
 
+\begin{example}
 If $X$ is a topological manifold of dimension $n$, 
 $\upomega^{\bullet}_{X}\simeq \opn{or}_{X}^{\Z}[n]$ 
 where $\opn{or}_{X}^{\mathbb{Z}}[n]$ is the sheaf 
 associated with the presheaf $U\mapsto 
 \opn{Hom}(H^{n}_c(U;\mathbb{Z}_{X}),\mathbb{Z})$
 \cite[Proposition 3.3.6]{MR1299726}.
+\end{example}
+
+The pairs of adjoint functors $Rf_! \dashv f^{!}$ 
+induces the trace map $\opn{Tr}_{f,\mathcal{F}^{\bullet}}\colon Rf_!f^{!}\mathcal{F}^{\bullet}
+\to \mathcal{F}^{\bullet}$ for each 
+$\mathcal{F}^{\bullet}\in \opn{Ob}(\opn{D}^{b}(A_X))$.
+
+We follow the notation $\opn{Tr}_f$ from 
+\cite[p.20]{MR1299726}.
+Let $f\colon X\to Y $ and $g\colon Y\to Z$ be 
+a continuous map and $f_!,g_!$ has finite cohomological 
+dimension. Then, $(g\circ f)^{!}=f^{!}\circ g^{!}$
+\cite[]{MR1299726}.
+From elemental properties of 
+adjoint functors we have
+\begin{align}
+\label{equation-trace}
+\opn{Tr}_{g\circ f,\mathcal{F}^{\bullet}}=
+\opn{Tr}_{g,\mathcal{F}^{\bullet}} 
+\circ Rg_!(\opn{Tr}_{f,g^{!}(\mathcal{F}^{\bullet})}).
+\end{align}
+By the global section functor with compact support and
+\cref{equation-trace}, we have
+\begin{align}
+\label{equation-trace-push}
+Ra_{Z!}(\opn{Tr}_{g\circ f,\upomega_{Z}^{\bullet}})
+=Ra_{Z!}(\opn{Tr}_{g,\upomega_{Z}^{\bullet}})
+\circ Ra_{Y!}(\opn{Tr}_{f,\upomega_{Y}^{\bullet}}).
+\end{align}
+For simplicity, we write $\int_f\deq 
+R^{\bullet}a_{Y!}(\opn{Tr}_{f})\colon 
+\mathbb{H}^{\bullet}_c(X;\upomega_{X}^{\bullet})\to 
+\mathbb{H}^{\bullet}_c(Y;\upomega_{Y}^{\bullet})$
+and $\int_X\deq \int_{a_X}$.
+
+From \cref{equation-trace-push}, 
+$\int_{g\circ f}=\int_{g}\circ \int_{f}$, i.e., 
+$\int_f$ is the pushforward of $f$.
+
+\begin{example}
+  
+\end{example}
 
 $\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
 \deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},\upomega_{A_X})$
@@ -2284,9 +2336,7 @@ There exists a natural morphism
 $f^{-1}(\mathcal{F})\otimes \upomega_{Y/X}\to 
 f^{!}(\mathcal{F})$.
 
-From elementary properties of adjoint functors,
-every morphism 
-$f\colon Ra_{!}\upomega_X\to A_{\{\mathrm{pt}\}}$
+
 
 Of course, the trace map is different from the usual integration 
 but this map corresponds to the latter 
@@ -3031,7 +3081,7 @@ as a mirror of complex line bundle,
 and we also explain about it for tropical tori in 
 \cref{example-SYZ-trasform-tori}.
 }
-$s|_ {C_0}$ induces a family of $U(1)$ holonomoy for
+$s|_ {C_0}$ induces a family of $U(1)$-holonomoy for
 each torus fiber $\pi_{C_0}^{-1}(p)$ and defines a 
 complex line bundle on $C_{0,\vep}$. From now on, 
 we suppose $s_0\cap s<\infty$. 
@@ -3083,7 +3133,7 @@ identification \cite[Theorem 6.7]{MR2676658}.
 \end{align}
 From this our theorem for tropical curve can be 
 proved from the theory of localization of index 
-and classical Riemann-Roch formula.
+and classical Riemann--Roch formula.
 We stress that both method of computation
 of our index and the local Riemann--Roch number
 defined in \cite{MR2676658} are different 
@@ -3101,6 +3151,9 @@ like \cite{auroux2022lagrangian}.
   complex algebraic hypersurfaces in \cite{MR2079993} and line bundles?
 \end{question}
 
+We also expect that we can generalize the 
+above correspondence for more general the complement of
+hyperplane arrangements and flat bundles on it.
 
 
 %TODO: amissibleのなす層がアーベル群のなす層では
@@ -3262,8 +3315,7 @@ and isomorphism \cite[Corollary 3.18, Lemma 3.21]{MR3903579}:
   0 \to \mcal{L}^{p}_{B} \to \mcal{A}^{p,0}_{B}\xto{d''} \mcal{A}^{p,1}_{B} \xto{d''}\cdots ,\quad \mcal{L}^{p}_{B} \simeq \mcal{F}_B^{p}
 \end{align}
 
-Let $\mcal{Z}^{q}_{B}\deq
-  \opn{Ker}(d'': \mcal{A}^{0,q}\to \mcal{A}^{0,q+1})$.
+
 
 The canonical monomorphism $\mcal{O}^{\times}_B \to \mcal{A}^{0,0}_B$
 induces the following commutative diagram 
@@ -3281,7 +3333,9 @@ similar spaces appear
     & 0 & 0 &  &
   \end{tikzcd}
 \end{equation}
-Here every row and column of the diagram (\ref{equation-smooth-cartier-diagram}) is exact
+Here $\mcal{Z}^{q}_{B}\deq
+  \opn{Ker}(d'': \mcal{A}^{0,q}\to \mcal{A}^{0,q+1})$.
+Every row and column of the diagram (\ref{equation-smooth-cartier-diagram}) is exact
 and $\mcal{A}_{B}^{0,0}/\mcal{O}^{\times}_B
   \simeq \mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1}$ from the snake lemma.
 The right column exact sequence of \cref{equation-smooth-cartier-diagram} is called
@@ -3298,12 +3352,13 @@ $f^{*}\colon \opn{CaDiv}^{\infty}(Y)\to \opn{CaDiv}^{\infty}(X)$
 and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
 (\ref{equation-smooth-cartier-diagram}). 
 In particular, we have
-$c_1(f^{*}(s)^{n}=f^{*}(c_1(s)^{n})$ for every $D\in\opn{CaDiv}^{\infty}(Y)$.
+$c_1(f^{*}(s)^{n})=f^{*}(c_1(s)^{n})$ for every $D\in\opn{CaDiv}^{\infty}(Y)$.
 
 \subsection{Verdier duality and Borel--Moore homology
 for tropical spaces}
 
-
+Every rational polyhedral space $X$ is locally compact and $\Z$ is has finite homological dimension.
+Thus, we can use Verdier duality of tropical spaces.
 
 
 There exists a natural isomorphism $\mcal{F}_X^{n-p}[n]\to 
@@ -3359,6 +3414,10 @@ of tropical Borel--Moore homology
 Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
 morphism of rational polyhedral spaces.
 Then, $f_*\circ g_*=(f\circ g)_*$.
+
+\begin{definition}[{degree of proper morphism}]
+Let $f\colon X \to Y$ be a 
+\end{definition}
 
 In particular, the natural isomorphism $\mcal{F}_{\Z, X}^{n}[n]\to 
 \mcal{D}(\mcal{F}_{\Z, X}^{0})=\upomega_B^{\bullet}$
