@@ -2320,7 +2320,8 @@ For simplicity, we write $\int_f\deq
 R^{\bullet}a_{Y!}(\opn{Tr}_{f})\colon 
 \mathbb{H}^{\bullet}_c(X;\upomega_{X}^{\bullet})\to 
 \mathbb{H}^{\bullet}_c(Y;\upomega_{Y}^{\bullet})$
-and $\int_X\deq \int_{a_X}$.
+and $\int_X\deq \int_{a_X}$
+(cf. ).
 
 From \cref{equation-trace-push}, 
 $\int_{g\circ f}=\int_{g}\circ \int_{f}$, i.e., 
@@ -2331,8 +2332,25 @@ Let $\pi \colon X\to Y$ be a covering map of topological
 degree $n$.
 \end{example}
 
+If
+
 $\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
-\deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},\upomega_{A_X})$
+\deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
+\upomega_{A_X})$.
+
+The dual functor
+$\mathcal{D}_{A_X}\colon \opn{D}^{b}(X)\to \opn{D}^{b}(X)$
+has the following canonical isomorphism when 
+$\mathcal{F}^{\bullet},\mathcal{G}^{\bullet}$ are 
+cohomologically constructible 
+\cite[Proposition 3.4.6]{MR1299726}. 
+\begin{align}
+R \mathcal{H}om_{A_X}(\mathcal{G}^{\bullet},
+\mathcal{F}^{\bullet})\simeq 
+R \mathcal{H}om_{A_X}(
+\mathcal{D}_{A_X}(\mathcal{F}^{\bullet}),
+\mathcal{D}_{A_X}(\mathcal{G}^{\bullet})).
+\end{align}
 
 There exists a natural morphism 
 $f^{-1}(\mathcal{F})\otimes \upomega_{Y/X}\to 
@@ -3368,7 +3386,7 @@ Thus, we can use Verdier duality of tropical spaces.
 The The $(p,q)$-th Borel-Moore homology of $X$ is
 \begin{align}
 H^{\opn{BM}}_{p,q}(X;\Z)\deq 
-H^{-q}R\opn{Hom}(\Omega_X^{p},\upomega_X^{\bullet})=
+H^{-q}R\opn{Hom}(\Omega_X^{p},\upomega_X^{\bullet})\simeq 
 \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega_X^{p}[q],\upomega_X^{\bullet}).
 \end{align}
 $H_{0,q}^{\opn{BM}}(X;\Z)=
@@ -3384,42 +3402,109 @@ $H_i^{\opn{BM}}(X;A)\simeq H^{d-i}(X;\mcal{F})$.
   
 \end{definition}
 
-$\frown: H^{p,q}(Y) \otimes H_{i,j}^{\opn{BM}}(Y)\to H_{p-i,q-j}^{\opn{BM}}(Y)$
-
-There exists a natural isomorphism $\mcal{F}_X^{n-p}[n]\to 
-\mcal{D}(\mcal{F}_{X}^{p})$ where 
-$\mcal{D}(\mcal{F}^{\bullet})
-=R\mcal{H}om(\mcal{F};\upomega_X^{\bullet})$
-for a purely $n$-dimensional tropical manifold
-\cite[Theorem 6.2]{gross2019sheaftheoretic}.
+$\cdot \frown \cdot \colon
+H^{i,j}(X) \times 
+H_{p,q}^{\opn{BM}}(X)\to 
+H_{p-i,q-j}^{\opn{BM}}(X);(c,\alpha) \mapsto c\frown \alpha$.
 
 \begin{align}
-\mathcal{F}_{\mathbb{Z},X}^{n-p}[n]
-\simeq ,\quad \mathcal{F}_{\mathbb{Z},X}^{n}[n] \simeq \upomega^{\bullet}_X
+c\frown \alpha \deq  \alpha\circ \mu_X \circ 
+(c\otimes \opn{id}).
 \end{align}
 
+If $p=q=i=j=n$, then the cap product $c\frown \alpha$ 
+is just the composition $\alpha \circ c$ of 
+morphisms.
+
+Let $f\colon X \to Y $ be a proper morphism of 
+rational polyhedral spaces.
+
 \begin{align}
-H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})\simeq H^{n-p,n-q}(X;\mathbb{Z}).
+  f_*(f^{*}c\frown \alpha)=
+c\frown f_*\alpha\in H_{p-i,q-j}^{\opn{BM}}(Y).
 \end{align}
+
+
+
+Let $X$ be a compact
+purely $n$-dimensional tropical manifold.
+Then, there exists the following natural isomorphism, 
+which is called the Poincar\'e--Verdier duality 
+\cite[Theorem 6.2]{gross2019sheaftheoretic}:
+\begin{align}
+\opn{PVD}\colon \mathcal{F}_{\mathbb{Z},X}^{n-p}[n]
+\simeq 
+\mathcal{D}_{\mathbb{Z}_X}(\mathcal{F}_{\mathbb{Z},X}^{p}).
+\end{align}
+
+First, 
+
+
+
+\begin{align}
+\mathbb{Z}_X \simeq\mathscr{Z}_n^{X}\simeq 
+\mathcal{H}om(\mathcal{F}^{n}_{\mathbb{Z},X},
+\mathcal{H}^{n}_X).
+\end{align}
+The second isomorphism is true for $n$-dimensional rational polyhedral 
+spaces \cite[Proposition 5.1]{gross2019sheaftheoretic}.
+
+If $p=0$, then the above isomorphism is given the 
+composition of the natural isomorphisms 
+$\mathcal{F}^{n}_{\mathbb{Z},X}\to \mathcal{H}^{n}_X$ and 
+$\mathcal{H}^{n}_X[n]\to \upomega_X^{\bullet}$.
+
+
+
+The Poincar\'e--Verdier duality and the 
+Hom-tensor adjoint induce
+the following isomorphism.
+\begin{align}
+R\opn{Hom}(\mathbb{Z}_X,
+\mathcal{F}_{\mathbb{Z},X}^{n-p}[n-q])\simeq 
+R\opn{Hom}(\mathcal{F}_{\mathbb{Z},X}^{p}[q],
+\upomega_{X}^{\bullet}).
+\end{align}
+This is the Poincar\'e duality
+for tropical manifolds 
+\cite[Corollary 6.3]{gross2019sheaftheoretic}.
 
 The Poincar\'e duality for tropical manifold
 with coefficients in $\mathbb{Z}$ was firstly 
-proved in \cite[Theorem 5.3]{MR3894860}.
-Since $B$ is a locally compact space, 
-$H^{1}_c(B;\Z)$ is free 
-(cf. 
-\cite[VI. Proposition 5.3]{iversenCohomologySheaves1986a})
-and thus $H_{0,0}^{\opn{BM}}(B;\Z)\simeq 
-H^{n,n}(B;\Z)=H^{n}(B;\FBZ^{n})\simeq \Z$ if 
-$B$ is compact and path-connected.
+proved in \cite[Theorem 5.3]{MR3894860}
+under a slight technical assumption.
+
+If $p=q=0$, then $\opn{PVD}$ is an element of 
+$H_{n,n}^{\opn{BM}}(X;\mathbb{Z})$. 
+We call the element the \emph{fundamental class} of $X$.
+
+From 
 
 \begin{align}
-H^{\opn{BM}}_{n,n}(X,\Z)&\simeq \opn{Hom}_{\opn{D}^{b}(\Z_X)}(\upomega_X,\upomega_X)\simeq
- \opn{Hom}_{\opn{D}^{b}(\Z)}(R\Gamma_c\upomega_X,\Z), \\ 
-H^{n,n}(X;\mathbb{Z})&\simeq 
-\opn{Hom}_{\opn{D}^{b}(\Z_X)}(\mathbb{Z}_X,\upomega_X^{\bullet})
-\simeq  \opn{Hom}_{\opn{D}^{b}(\Z)}(R\Gamma_c\Z_X,\Z).
+\opn{Hom}_{\opn{D}^{b}(\Z_X)}
+(\upomega_X^{\bullet},\upomega_X^{\bullet})\simeq H_{n,n}^{\mathrm{BM}}(X;\mathbb{Z}) ; \psi \mapsto \psi\circ [X]
 \end{align}
+
+Since $X$ is a locally compact space, 
+$H^{1}_c(X;\Z)$ is free 
+(cf. 
+\cite[VI. Proposition 5.3]{iversenCohomologySheaves1986a})
+and thus $H_{0,0}^{\opn{BM}}(X;\Z)\simeq 
+H^{n,n}(X;\Z)=H^{n}(X;
+\mathcal{F}_{\mathbb{Z},X}^{n})\simeq \Z$ if 
+$X$ is compact and path-connected.
+
+\begin{align}
+H^{\opn{BM}}_{n,n}(X,\Z)&\simeq 
+\opn{Hom}_{\opn{D}^{b}(\Z_X)}
+(\upomega_X^{\bullet},\upomega_X^{\bullet})\simeq
+ \opn{Hom}_{\opn{D}^{b}(\Z)}(Ra_!\upomega_X^{\bullet},\Z), \\ 
+H^{n,n}(X;\mathbb{Z})&\simeq 
+\opn{Hom}_{\opn{D}^{b}(\Z_X)}(\mathbb{Z}_X,
+\upomega_X^{\bullet})
+\simeq  \opn{Hom}_{\opn{D}^{b}(\Z)}(Ra_!\Z_X,\Z).
+\end{align}
+
 The first isomorphism follows from the universal 
 coefficient theorem and 
 $H^{1}_c(X;\mathbb{Z})$ is torsion-free 
@@ -3431,39 +3516,82 @@ $f_*\colon H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})
 \to H_{p,q}^{\mathrm{BM}}(Y;\mathbb{Z})$
 of tropical Borel--Moore homology 
 \cite[Definition 4.9]{gross2019sheaftheoretic}.
+
+\begin{align}
+b_f\colon \mathcal{F}^{p}_{\mathbb{Z},Y}\to 
+Rf_*\mathcal{F}^{p}_{\mathbb{Z},X}
+\end{align}
+
+\begin{align}
+f_*(\psi)\deq \opn{Tr}_{f,\upomega_Y^{\bullet}}\circ 
+Rf_!\psi \circ b_{f}\in 
+\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
+\mathcal{F}^{p}_{\mathbb{Z},Y}[q],\upomega_Y^{\bullet})
+\end{align}
+
 Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
 morphism of rational polyhedral spaces.
 Then, $f_*\circ g_*=(f\circ g)_*$.
 
-\begin{align}
-f_*(\psi)\deq \opn{Tr}_{f,\upomega_Y^{\bullet}}\circ 
-Rf_!\psi \circ b_{f}.
-\end{align}
+Let $w\colon X_{\mathrm{reg}}\to \mathbb{Z}$ be 
+a weight function on $X$ \cite[Definition 4.8]{MR3894860}.
+If the pair $(X,w)$ is an (abstract) tropical space, 
+then $w$ defines the \emph{fundamental class} 
+$[X]\in H_{n,n}^{\mathrm{BM}}(X;\mathbb{Z})$ of 
+$(X,w)$.
+If a tropical space $X$ is a tropical manifold, 
+then the weight function is just a constant 
+function with value one and this corresponds to 
+the identity morphism 
+$\opn{id}:\upomega_X^{\bullet} \to \upomega_X^{\bullet}$.
 
-\begin{proposition}
 
+
+\begin{remark}
+We stress that the fundamental class of tropical 
+manifolds itself defined without 
+the choice of the orientation like complex manifolds.   
+\end{remark}
+
+\begin{proposition}[{Fundamental class}]
+There exists the following commutative diagram:
+\begin{equation}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGAAkA9YMUsAL4AKABoBuADoSAtnRwALAEaLgALQEBKASAGl0mXPkIoAjOSq1GLNpx59BQgJqSZcpSvVadekBmx4CIjITC3pmVkQQDgB9YDJiAR4pWQUAJ2lgACEAWQFhcWS3ZTVNb31-IyIzEOow60iYuPJE4EK0jJy8pxcU9xKNHQsYKABzeCJQADNUiGkkMhAcCCQAJlqrCJApAGMoCBwAAilpiAB3MAPkEQoQagY6RRgGAAUDAOMQVKwR+RwykBOc0QCyWSDMlnCbCkWDAOGik3+gLB1FBiAAzOtIZEdntDscZudLo4bropjMgWtFst0Zj6gDogAqQYCIA
+\begin{tikzcd}
+{{H^{n,n}(X;\mathbb{Z})}} \arrow[d, "{\cdot \frown [X]}"'] \arrow[r, "\int_f"] & {{H^{n,n}(Y;\mathbb{Z})}} \arrow[d, "{\cdot \frown [Y]}"] \\
+{H_{0,0}^{\mathrm{BM}}(X;\mathbb{Z})} \arrow[r, "f_*"]                         & {H_{0,0}^{\mathrm{BM}}(Y;\mathbb{Z})}                    
+\end{tikzcd}.
+\end{equation}
 \end{proposition}
 
+\begin{example}
+Let $f\deq a_X$ for a pure $n$-dimensional compact 
+tropical manifolds. 
+By identifying $H_{0,0}^{\mathrm{BM}}(\{\mathrm{pt}\};
+\mathbb{Z})\simeq \opn{End}(\mathbb{Z})$ with 
+$\mathbb{Z}$, the above commutative diagram gives
+\begin{align}
+\int_{X}\alpha =f_*(\alpha \frown [X]).
+\end{align}
+
+\end{example}
+
+
 \begin{definition}[{degree of proper morphism}]
-Let $f\colon X \to Y$ be a 
+Let $f\colon X \to Y$ be a proper morphism of 
+compact tropical manifolds.
+The (tropical) degree of $f$ is 
+$f_*\colon H^{\mathbb{BM}}_{n,n}(X)
+\to H^{\mathbb{BM}}_{n,n}(Y)$.
 \end{definition}
 
-In particular, the natural isomorphism $\mcal{F}_{\Z, X}^{n}[n]\to 
-\mcal{D}(\mcal{F}_{\Z, X}^{0})=\upomega_B^{\bullet}$
-can be considered as the element of $H_{n,n}^{\opn{BM}}(X;\Z)$ 
-from definition. 
-We call this element as the \emph{fundamental class} of $X$ 
-and it denotes by $[X]$. The fundamental class of tropical
-manifold was defined from the locally constant function on 
-$X_{\opn{reg}}$. (See \cite[Definition 4.8]{MR3894860}.)
-If $X=\opn{pt}$, $H_{0,0}^{\opn{BM}}(\opn{pt};\Z)=\opn{End}(\Z)\simeq \Z$.
-Therefore, $H^{n,n}(X;\Z)\xto{\cdot \frown [X]} H_{0,0}^{\opn{BM}}(X;\Z)
-\xto{f_!} H_{0,0}^{\opn{BM}}(\{\opn{pt}\};\Z)$ defines
-the ((補完))
-
-and the fundamental class of $B$ is a $\Z$-orientation of $B$
-when $B$ is orientable.
-
+\begin{example}
+Let $f\colon X\to Y$ be a morphism of 
+rational polyhedral spaces such that $f$ is a 
+covering map and the associated map $df_{*,x}\colon 
+T_{x}^{\mathbb{Z}} X\to T_{f(x)}^{\mathbb{Z}}X$ is 
+isomorphic, then $f_*[X]=[Y]$.
+\end{example}
 
 
 If $B_0$ is a integral affine manifold, 
@@ -3558,11 +3686,7 @@ $\chi_{\opn{trop}}(B)\deq \chi(\mb{H}^{\bullet}(B;\mcal{F}_B^{\bullet}))$
   but not for topological Euler characteristic $\chi_{\opn{top}}(B)$.
 \end{remark}
 
-\begin{definition}
-Let $B,B'$ be an integral affine manifold.
-$f_*\colon H_{n,n}(B;\mathbb{Z})\to 
- H_{n,n}(B';\mathbb{Z})$
-\end{definition}
+
 
 \begin{definition}
 Let $B,B'$ be an integral affine manifold. 
