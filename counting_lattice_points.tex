@@ -2071,15 +2071,24 @@ smooth Cartier data of $s$.
 The stratified Lagrangian section of $s$ is the image of the 
 differential  $\{df_i(x)\}_{i\in I}$ in $\check{X}(S)$
 by the caonical fiberwise projection 
-$\mathcal{F}_{S,x}^{1}\to \check{X}(S)_x$ for any $x\in S$.
+$\opn{pr}_x\colon \mathcal{F}_{S,x}^{1}
+\to \mathcal{F}_{S,x}^{1}/\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x) \to \check{X}(S)_x$ for any $x\in S$.
+This construction is well-defined since there exists 
+the following equation: 
+\begin{align}
+\label{equation-torus-fiber}
+\opn{pr}_x^{-1}(0)
+=\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)+
+\mathcal{F}^{1}_{\mathbb{Z},S,x}.
+\end{align}
+
 Let $\check{\pi}_S\colon \check{X}(S)\to S$ be the 
 canonical projection of stratified torus fibration of $S$.
-Let $(s',s)$ be an admissible Cartier pair and 
+Let $(s',s)$ be an admissible smooth Cartier pair and 
 $\{(U_i,f_i)\}_{i\in I}$ the local smooth Cartier data of $s-s'$.
 
-%TODO: 下の等式の説明
-
-Therefore, 
+From the admissibility condition and
+\cref{equation-torus-fiber}, we have
 \begin{align}
 \check{\pi}_S(L_{s'}\cap L_s)=s'\cap s.
 \end{align}
