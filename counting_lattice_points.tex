@@ -1534,7 +1534,7 @@ $\sigma_{df}(X)\cap \opn{SS}(\mathcal{F})
 Then, 
 \begin{align}
 \chi(\opn{LMD}(\mcal{F},f,x))
-=\sharp ([df]\cap \opn{CC}(\mcal{F})).
+=\sharp ([\sigma_df]\cap \opn{CC}(\mcal{F})).
 \end{align}
 Here, $\opn{CC}(\mcal{F})$ is the characteristic cycle of 
 $\mathcal{F}$ and $[\sigma_{df}]$ a cycle of 
@@ -1731,10 +1731,8 @@ H^{0}(B;\mathcal{A}^{0,0}_B)\to
 H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$ 
 be a morphism defined from 
 (\ref{equation-smoooth-cartier-divisor-sequence}).
-The \emph{principal smooth divisor} of a $(0,0)$-superform 
-$f$ is the image $(f)^{\mathrm{sm}}$ of $f$
-induced from the short exact sequence
-(\ref{equation-smoooth-cartier-divisor-sequence}).
+The \emph{principal smooth Cartier divisor} of a $(0,0)$-superform 
+$f$ is the image $(f)^{\mathrm{sm}}$ of $f$.
 \end{definition}
 We write $\opn{CDiv}^{\infty}(B)$ for 
 $H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
@@ -2095,9 +2093,10 @@ From the admissibility condition and
 \end{definition}
 
 \begin{example}[{metric graph}]
+Let $C$ be a compact trivalent tropical curve.
 The stratified torus fibration $\check{X}(C)$ is equal to 
 the stratified space associated
-with a trivalent metric graph \cite{auroux2022lagrangian}
+with a trivalent metric graph defined in \cite{auroux2022lagrangian}
 as a set.
 \end{example}
 
@@ -2126,6 +2125,8 @@ for all $p\in s\cap s_0$,
 \item $\opn{Crit}(f_p)=\{p\}$ for all $p\in s\cap s_0$.
 \end{enumerate}
 \end{definition}
+
+%TODO: 
 
 \begin{definition}
 Let $S$ be a rational polyhedral space 
@@ -2239,12 +2240,12 @@ We will use this feature for tropical curves (see
 \begin{conjecture} 
 \label{conjecture-tropical-MRR}
 Let $S$ be a compact tropical manifold satisfying 
-\cref{condition-Rn} and has the Todd class $\opn{td}(B)$ 
-of $B$ (see \cref{remark-todd-class}).
+\cref{condition-Rn} and has the Todd class $\opn{td}(S)$ 
+of $S$ (see \cref{remark-todd-class}).
 Let $s$ be an admissible smooth Cartier divisor such that
 $s_0\cap s$ is finite. Then, 
 \begin{align}
-\chi(\opn{MF}^{\bullet}(B;s))=\int_{B}\opn{ch}(s)\opn{td}(B).
+\chi(\opn{MF}^{\bullet}(S;s))=\int_{S}\opn{ch}(s)\opn{td}(S).
 \end{align}
 \end{conjecture}
 In this paper, we don't discuss the general theory of 
@@ -2254,17 +2255,17 @@ affine manifold with a Hessian form in the
 rest of this paper.
 
 \begin{remark}
-Obviously, $\opn{MF}^{\bullet}(S;s,A)$ is not finitely
-generated and this is not invariant for linearly 
-equivalent smooth Cartier divisors
+Obviously, $\opn{MF}^{\bullet}(S;s,A)$ is not usually 
+finitely generated and this is not invariant 
+for linearly equivalent smooth Cartier divisors
 if $S$ is not compact.
 This corresponds that Morse homology does not work directly
 for non-compact manifolds such 
 like for compact manifolds.
 Besides, $\chi(\opn{MF}^{\bullet}(S;s,A))$ is \emph{not}
-invariant for line bundles for general compact rational 
+an invariant for line bundles for general compact rational 
 polyhedral spaces. See also 
-\cref{remark-rotation-closed-interval}   
+\cref{remark-rotation-closed-interval}.  
 \end{remark}
 
 \begin{remark}
@@ -2338,18 +2339,7 @@ This is another interpretation of Ehrhart reciprocity of
 lattice polytopes.
 \end{remark}
 
-\subsection{Stratified torus fibrations}
 
-If $B$ is a good rational polyhedral space, we 
-can consider every admissible smooth Cartier divisor
-$s$ on $B$, then
-
-
-
-
-See also \cite[Example 3.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
-\cite[Remark 2.21]{yamamotoTropicalContractionsIntegral2021} for the wave tangent space
- of $1$-dimensional local cones.
 
 %TODO: eigenwaveとの諸々の文献補填
 
@@ -2826,7 +2816,7 @@ See also \cref{remark-relative-divisor}.
 \begin{proposition}
 Let $C=[a,b]$ be a closed interval in $\mathbb{R}$
 and $s$ an admissible smooth Cartier divisor 
-such that $s_0\cap s=C\setminus C_0$. Then,
+such that $s_0\cap s=\{a,b\}$. Then,
 \begin{align}
 \chi(\opn{MF}^{\bullet}(C;s))=\opn{rot}(s)+
 \chi_{\opn{top}}(C).
