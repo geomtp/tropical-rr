@@ -1210,13 +1210,12 @@ closed subset of $X$ and $Z'$ a closed subset of $Z$.
 There exists the following distinguished triangle 
 for any $\mathcal{F}^{\bullet}\in \opn{Ob}(\opn{D}^{b}(A_X))$ 
 \cite[(2.6.32)]{MR1299726}:
-\begin{align} \label{eq: exactlocal}
+\begin{align} \label{equation-exact-local}
   R\Gamma_{Z'}(\mcal{F}^{\bullet})\to 
 R\Gamma_{Z}(\mcal{F}^{\bullet})\to 
 R\Gamma_{Z\setminus Z'}(\mcal{F}^{\bullet})\xto{[1]} 
 R\Gamma_{Z'}(\mcal{F}^{\bullet})[1]
 \end{align}
-
 
 
 \begin{example}
@@ -1232,17 +1231,28 @@ Then, $\Gamma_{Z\cap V}(\mcal{F}|_V)(U)=
 \Gamma_{Z\cap U}(U\cap V;\mcal{F})=\Gamma_{Z\cap U}(\mcal{F})|_V(U)$
 for any open subset $U$.
 Therefore, $\Gamma_{Z\cap V}\circ j^{-1}=j^{-1}\circ \Gamma_{Z}$.
+
+\begin{align}
+\Gamma_{j^{-1}(Z)} \circ j^{-1}
+=j^{-1}\circ j_*\circ \Gamma_{j^{-1}(Z)} \circ j^{-1}
+=j^{-1}\circ\Gamma_{Z}\circ \Gamma_V
+=j^{-1}\circ \Gamma_V \circ \Gamma_Z
+=j^{-1} \circ \Gamma_Z.
+\end{align}
+
 In particular, for any point $v\in V$
 \begin{align}
-  (R(\Gamma_{Z\cap V}(\mcal{F}|_{V}))_v\simeq (R(j^{-1}\circ \Gamma_{Z})(\mcal{F}))_v\simeq R\Gamma_{Z}(\mcal{F})_v
+(R(\Gamma_{Z\cap V}(\mcal{F}|_{V}))_v\simeq 
+(R(j^{-1}\circ \Gamma_{Z})(\mcal{F}))_v\simeq 
+R\Gamma_{Z}(\mcal{F})_v.
 \end{align}
 Therefore, the stalk is independent of 
 the choice of $V (\ni v)$.
-\item Let $i: Y\to X$ be an closed inclusion.
+\item Let $i: Y\to X$ be a closed inclusion.
 Since $i_!=i_*$ and $i_!$ is exact,
 \begin{align}
-  j^{-1}R\Gamma_{Z}(j_*\mcal{F})\simeq j^{-1}R(\Gamma_{Z}\circ j_*)\mcal{F}
-  \simeq j^{-1}R(j_*\circ \Gamma_{j^{-1}(Z)})\mcal{F}
+  i^{-1}R\Gamma_{Z}(i_*\mcal{F})\simeq i^{-1}R(\Gamma_{Z}\circ j_*)\mcal{F}
+  \simeq i^{-1}R(i_*\circ \Gamma_{i^{-1}(Z)})\mcal{F}
   \simeq R\Gamma_{Z\cap Y}\mcal{F}
 \end{align}
 In particular, $(R\Gamma_{Z}(i_*\mcal{F}))_v
@@ -1252,6 +1262,36 @@ In particular, $(R\Gamma_{Z}(i_*\mcal{F}))_v
 \end{example}
 
 
+\begin{example}
+\label{example-local-cohomology}
+Let $Z$ be a open subset of $X$ 
+$\mathcal{F}^{\bullet}=A_{X}$ 
+and $U=Z\setminus Z'$.
+By taking the global 
+section for \cref{equation-exact-local}, we get 
+the following exact sequence from 
+\cite[Proposition 2.3.9 (iv)]{MR1299726}:
+\begin{align}
+  \cdots \to H^{i}_{Z'}(X;A_X)\to
+H^{i}(Z;A_{Z})\to H^{i}(U;A_U)\to 
+H^{i+1}_{Z'}(X;A_X) \to \cdots.
+\end{align}
+If $H^{\bullet}(X;A_X)$ and $H^{\bullet}(U;A_U)$ 
+is isomorphic to the singular cohomology of $X$ and $U$
+respectively, $H^{\bullet}_{Z'}(X;A_X)$ is isomorphic to
+the singular cohomology group of the topological space 
+pair $(Z,U)$.
+The cohomology $H^{\bullet}_{\{x\}}(X;A_X)$ is called
+the local cohomology of $X$ at $x$.
+If $Z$ is acyclic, then $H^{\bullet}_{\{x\}}(X;A_X)$ is 
+isomorphic to the $(-1)$-shift of the reduced cohomology 
+$\tilde{H}^{\bullet-1}(Z\setminus \{x\};
+A_{Z\setminus \{x\}})$
+of the constant sheaf on $Z\setminus \{x\}$.
+(see 
+\cite[p.199]{hatcherAlgebraicTopology2002a} for 
+reduced singular cohomology.)
+\end{example}
 
 \subsection{Local index}
 
@@ -1267,11 +1307,20 @@ Let $f\colon X\to {\mathbb{R}}$ be a continuous map on a
 topological space $X$ and $x\in X$. Fix 
 $\mathcal{F}^{\bullet}\in 
 \opn{Ob}(\opn{D}^{b}(\catn{Mod}(\mathbb{Z}_X)))$.
+The cohomology group of the local (cohomological) Morse 
+data of the pair $(\mathcal{F}^{\bullet},f)$ at $x$ 
+is the following group: 
 \begin{align}
-\opn{LMD}(\mcal{F}^{\bullet},f,x)\deq R\Gamma_{\{f\geq f(x)\}}
-(\mcal{F}^{\bullet})_x, \quad \opn{MF}^{\bullet}(\mcal{F}^{\bullet},f,x)\deq 
-H^{\bullet}(\opn{LMD}(\mcal{F},f,x)).
+\opn{MF}^{\bullet}(\mcal{F}^{\bullet},f,x)\deq 
+H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x.
 \end{align}
+
+The \emph{local Morse index} of $f$ at $x$ is the 
+following number:
+\begin{align}
+\opn{ind}_x(f)\deq \chi(\opn{MF}^{\bullet}(\mathbb{Z}_X,f,x)).
+\end{align}
+
 \end{definition}
 
 \begin{remark}
@@ -1296,7 +1345,7 @@ We will give an explanation in
 条件 \cref{condition-isolated-singularity}を課す。))
 \item We also note that we need to use 
 the graded module $\opn{MF}^{\bullet}(\mcal{F},f,x)$ instead of 
-the complex $\opn{LMD}(\mcal{F},f,x)$ in order to define
+the complex $R\Gamma_{\{f\geq f(x)\}}\mathcal{F}$ in order to define
 a graded module associated with line bundle on tropical
 spaces. See also \cref{remark-differential-graded-module} for more about 
 this reason.
@@ -1308,53 +1357,41 @@ Before we see some important examples of cohomological
 local Morse datum, we will see some elementary
 properties of them.
 
-From \cref{eq: exactlocal} and by taking stalks,
+From \cref{equation-exact-local} and by taking stalks,
 we have the following distinguished triangle:
 \begin{align}
-\opn{LMD}(\mathcal{F},f,x) \to \mathcal{F}_x\to 
+R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet} \to \mathcal{F}_x\to 
 (R\Gamma_{\{f<f(x)\}}\mathcal{F})_x\to 
-\opn{LMD}(\mathcal{F},f,x)[1].
+R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet}[1].
 \end{align}
 
-The following data is the key data of our paper.
-\begin{definition}[{local Morse index}]
-Let $f$ be a continuous function on a topological space
-$X$ and $x\in X$.
-%TODO: オイラー数が定義できるよう定義を是正
-The \emph{local Morse index} of $f$ at $x$ is the following:
-\begin{align}
-\opn{ind}_x(f)\deq \chi(\opn{MF}^{\bullet}(A_X,f,x)).
-\end{align}
-\end{definition}
+
 
 The following proposition is useful:
 
 \begin{proposition} \label{prop-local-morse-data}
 Let $f\colon X\to \mathbb{R}$ be a continuous function
 on $X$, $S$ a closed subset
-of $X$, $x\in S$, $V$ a locally closed subset of $X$ such that
-$S\cap V$ is a neighborhood of $x$ in $S$. Then,
-\begin{align}
-\opn{MF}^{\bullet}(A_{S\cap V\subset V},f|_V,x)&\simeq 
-\opn{MF}^{\bullet}(A_{S\subset X},f,x
-) \simeq \varinjlim_{U\in \opn{Op}(X)\cap \opn{Nbh}(x)} 
-\tilde{H}^{\bullet-1}(S\cap \{f<f(x)\}\cap U;A) \\
-& \simeq \opn{MF}^{\bullet}(A_S,f|_S,x).
+of $X$, $x\in S$. Then,
+\begin{align} 
+\opn{MF}^{\bullet}((A_{X})_S,f,x
+) \simeq \varinjlim_{U\in\opn{Nbh}(x,X)} 
+\tilde{H}^{\bullet-1}(S\cap \{f<f(x)\}\cap U;A) 
+\simeq \opn{MF}^{\bullet}(A_S,f|_S,x).
 \end{align}
 
 \end{proposition}
 
 Here, $\tilde{H}^{i-1}(X;A)$ is the reduced cohomology 
 group
-of $A_X$ (see 
-\cite[p.199]{hatcherAlgebraicTopology2002a} for 
-reduced singular cohomology).
+of $A_X$ and $\opn{Nbh}(x,X)$ the set of open neighborhoods
+of $x$ in $X$. 
 \begin{proof}
-If the second isomorphism is true, then the rest
+If the first isomorphism is true, then the rest
 isomorphisms are also true from the definition of 
 the stalk of sheaves.
-From definition of $A_{S\subset X}$, 
-$(A_{S\subset X})_x\simeq A$.
+From definition of $(A_{X})_S$, 
+$((A_{X})_S)_x\simeq A$.
 There exists the following Cartesian square of 
 inclusion maps:
 Let $i\colon S\to X$, 
@@ -1363,12 +1400,12 @@ $i'\colon S\cap \{f<f(x)\} \to \{f<f(x)\}$ and
 $j'\colon S\cap \{f<f(x)\} \to S$
  be the inclusion maps.
 Then, 
-$j^{-1}\circ i_!\simeq i'_!\circ g'^{-1}$ 
+$j^{-1}\circ i_!\simeq i'_!\circ j'^{-1}$ 
 \cite[Proposition 2.5.11]{MR1299726}.
 Besides, $i,i'$ are closed inclusion maps, and thus
 we have the following quasi-isomorphisms:
 \begin{align}
-R\Gamma_{\{f<f(x)\}}A_{S\subset X}\simeq 
+R\Gamma_{\{f<f(x)\}}(A_{X})_S\simeq 
 Rj_*\circ j^{-1} \circ i_! \circ i^{-1}A_X&\simeq 
 R (j \circ i')_*\circ (i\circ j')^{-1}A_X \\
 &\simeq R (j \circ i')_* A_{S\cap \{f<f(x)\}}.
@@ -1377,9 +1414,10 @@ From the elemental properties of higher direct image
 (e.g. \cite[II. Proposition 5.11]{iversenCohomologySheaves1986a}), we have
 \begin{align}
   (R^{n} (j \circ i')_* A_{S\cap \{f<f(x)\}})_x\simeq 
-\varinjlim_{U\in \opn{Op}(X)\cap \opn{Nbh}(x)} 
+\varinjlim_{U\in \opn{Nbh}(x,X)} 
 H^{n}(S\cap \{f<f(x)\}\cap U;A).
 \end{align}
+The second isomorphism 
 \end{proof}
 
 By \cref{prop-local-morse-data}, we can calculate
@@ -1508,8 +1546,8 @@ We can generalize the above for real analytic functions with
 at most isolated singular points. 
 In this case, there exists the following \emph{special} symmetry:
 \begin{align}
-\chi(\opn{MF}^{\bullet}(\Z_S,f,x))=
-(-1)^{\dim S}\chi(\opn{MF}^{\bullet}(\Z_S,-f,x)).
+\chi(\opn{ind}_x(f))=
+(-1)^{\dim S}\chi(\opn{ind}_x(-f)).
 \end{align}
 This symmetry is not true if $S$ is not a manifold at $x$
 in general. 
@@ -1608,29 +1646,30 @@ Fix $X\deq \mathbb{R}^{n}$.
 Let $f\colon X\to {\mathbb{R}}$ be a convex $C^{1}$-
 function $X$ with the minimum point $x$
 and $S$ be the support of 
-a polyhedral complex $\Sigma$ in $X$ whose contains $x$.
+a polyhedral fan $\Sigma$ in $X$.
 One of trivial but remarkable point is that
 \begin{align}
-\opn{MF}^{\bullet}((A_{X})_S,f,x)\not\simeq (-1)^{n}
-\opn{MF}^{\bullet}((A_{X})_S,-f,x)
+\opn{ind}_x(f|_S,0)\not\simeq (-1)^{n}
+\opn{ind}_x(-f|_S,0)
 \end{align}
 except for special cases such like
 \cref{example-milnor-morse-data}.
-We will see this in the case $A=\mathbb{Q}$.
-We note $\opn{MF}^{\bullet}(\Q_S,-f,x) \simeq 
-H^{\bullet}(S,S\setminus \{x\};\Q)\simeq 
-(H^{-\bullet}(\upomega_S^{\bullet}))_x$ since
+From \cref{example-local-cohomology} and
+\cref{prop-local-morse-data}, we have
+\begin{align}
+\opn{MF}^{\bullet}(A_S,-f|_S,0)=
+\tilde{H}^{\bullet-1}(S\setminus \{0\};A_{S}).
+\end{align}
+
+ since
 $H^{-i}(\upomega_S^{\bullet})$ is the sheafification of
 the presheaf $U\mapsto H_{c}^{i}(U;k)^{\vee}=H^{i}(S,S\setminus U;k)^{\vee}$
  \cite[]{iversenCohomologySheaves1986a} and fundamental properties of the direct limit of topological spaces \cite[Proposition 3.33]{hatcherAlgebraicTopology2002a}. 
 If $S$ is a purely tropical $n$-manifold, then 
-$\opn{MF}^{\bullet}(A_S,-f,x)\simeq H^{n}(S,S\setminus\{x\},\Q)[-n]$
-since the shellability of the link of Bergman fan, see also
-\cite[Theorem 6.2]{gross2019sheaftheoretic}.
-((Besides, this property holds for every Bergman support since
-the order complex $\Delta_M$ is shellable.
-This is called Folkman's vanishing theorem.))
-
+$\opn{MF}^{\bullet}(A_S,-f|_S,x)\simeq H^{n}(S,S\setminus\{x\},
+\mathbb{Z})[-n]$ since every Bergman fan has a subdivision 
+\cite[Theorem 1]{MR2185977} and its link is shellable
+(e.g. \cite[7.9.1. Theorem]{MR1165544}).
 The vanishing property of the local cohomology is conjectured for
 tropicalization of very affine algebraic variety by Hacking in
 \cite{MR2452307}.
@@ -1876,8 +1915,8 @@ spaces:
 Let $Z$ be a subset of
 $\mathbb{R}^{n}$. A \emph{linearity subspace} of $Z$ is 
 a linear subspace $V$ of
-$\mathbb{R}^{n}$ such that $x+s\in S$ for all 
-$s\in S$ and $x\in V$, i.e.,
+$\mathbb{R}^{n}$ such that $x+s\in Z$ for all 
+$s\in Z$ and $x\in V$, i.e.,
 \begin{align}
 Z+V=Z.
 \end{align}
@@ -2091,7 +2130,8 @@ From the admissibility condition and
 \check{\pi}_S(L_{s'}\cap L_s)=s'\cap s.
 \end{align}
 \end{definition}
-
+If $B_0$ is an integral affine manifold, then
+$\check{X}(B_0)$ is equal to the classical one as a set. 
 \begin{example}[{metric graph}]
 Let $C$ be a compact trivalent tropical curve.
 The stratified torus fibration $\check{X}(C)$ is equal to 
@@ -2455,12 +2495,6 @@ R \mathcal{H}om_{A_X}(
 \mathcal{D}_{A_X}(\mathcal{F}^{\bullet}),
 \mathcal{D}_{A_X}(\mathcal{G}^{\bullet})).
 \end{align}
-
-There exists a natural morphism 
-$f^{-1}(\mathcal{F})\otimes \upomega_{Y/X}\to 
-f^{!}(\mathcal{F})$.
-
-
 
 Of course, the trace map is different from the usual integration 
 but this map corresponds to the latter 
@@ -2897,12 +2931,7 @@ $\psi \colon \pi_0 (C_0)\to \mathcal{P}(C_0)$
 
 \end{proof}
 
-\begin{definition}[{cf. \cite{auroux2022lagrangian}}]
-An admissible smooth Cartier divisor $s$ is 
-\emph{simple} if there exists a local intersection data
-$\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
-$f_p$ is convex at all $p\in C\setminus C_0$.
-\end{definition}
+
 
 %\begin{remark}
 %TODO: admissible な関数のなす層にして理論を展開
@@ -3166,7 +3195,12 @@ homological mirror symmetry of trivalent graphs}
 Our approach is mostly affected from 
 \cite{auroux2022lagrangian}.
 
-Our
+\begin{definition}[{cf. \cite{auroux2022lagrangian}}]
+An admissible smooth Cartier divisor $s$ is 
+\emph{simple} if there exists a local intersection data
+$\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
+$f_p$ is convex at all $p\in C\setminus C_0$.
+\end{definition}
 
 
 \subsubsection{Relationships with a localization of 
@@ -3274,14 +3308,15 @@ We can also consider the following question as
 like \cite{auroux2022lagrangian}.
 
 \begin{question}
-  Can we generalize the correspondence
-\ref{equation-local-RR} for pants decomposition of
+Can we generalize the 
+above correspondence \ref{equation-local-RR}
+for more general the complement of
+hyperplane arrangements and flat $U(1)$-bundles on it?
+How about for pants decomposition of
   complex algebraic hypersurfaces in \cite{MR2079993} and line bundles?
 \end{question}
 
-We also expect that we can generalize the 
-above correspondence for more general the complement of
-hyperplane arrangements and flat bundles on it.
+We also expect that we 
 
 
 %TODO: amissibleのなす層がアーベル群のなす層では
