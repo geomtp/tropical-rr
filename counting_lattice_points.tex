@@ -1760,11 +1760,11 @@ is in $\mathbb{R}^{n}$.
 
 The \cref{condition-Rn} is strict for rational polyhedral
 spaces, but it is enough to
-give our main results.
-
-\begin{remark}
-((上記の条件の理由)) 
-\end{remark}
+give a test play of our approaches.
+We will explain why we assume the \cref{condition-Rn}
+and how to solve it
+for tropical curves in 
+\cref{section-tropical-curve-general}.
 
 \subsection{Admissible conditions}
 
@@ -1805,8 +1805,17 @@ isomorphism $T^{*}_xX\to T^{*}_xU$.
 If $M$ is a closed submanifold of $X$, then
 $\opn{SS}(A_{M\subset X})=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
 \end{example}
-Next, we define the admissible condition for
-smooth principal Cartier divisors.
+Let $f\colon X \to Y$ be a smooth morphism of 
+smooth manifolds and $\mathcal{F}\in 
+D^{b}(A_Y)$. Then,
+\begin{align}
+\opn{SS}(f^{-1}\mathcal{F})=
+{}^{t}f'(f_\pi^{-1}(\opn{SS}(\mathcal{F})))
+\end{align}
+See \cite[Proposition 5.4.5 (i)]{MR1299726}.
+In particular, 
+$\opn{SS}(\mathcal{F})_x=$
+
 Fix a polyhedral set $S$ 
 in $\mathbb{R}^{n}$.
 Let 
@@ -1836,28 +1845,43 @@ describe the set of critical point of
 $(0,0)$-superform as follows:
 
 %TODO: きちんとかく
-\begin{enumerate}
-\item 
-\end{enumerate}
+Let $S$ be a rational polyhedral space satisfying
+\cref{condition-Rn}, $x\in S$ and $\opn{LC}_x S$ the 
+local cone of $S$ at $x$ 
+\cite[2.2]{gross2019sheaftheoretic}.
+This is a subset of the tangent vector space
+$T_{x}S$ at $x$ which spans of $T_{x}S$.
+Then, there exists an open neighborhood 
+$V$ of $0$ in $\opn{LC}_x S$ and $\phi \colon V\to S$ 
+such that $\phi_x$ is an open immersion onto an 
+open subset $U_x$ of $S$ as a 
+rational polyhedral space.
+This open immersion represents a unique morphism
+of germs such that $d_x\phi\colon T_x S=T_0(\opn{LC}_xS) \to T_x S$
+is the idenity 
+\cite[Proposition 2.5]{gross2019sheaftheoretic}.
+Every
+
 
 \begin{condition}[{admissibility}] \label{cond: admissible}
-Let $U_x$ be an open neighborhood of a point $x$ in a rational polyhedral
-space $S (\subset M_{{\mathbb{R}}})$. 
-Suppose $\dim M_{{\mathbb{R}}}=\dim 
-\mathcal{F}_{S,x}^{1}$. In this case,
-we can identify $M$ with $\mathbf{F}_{S,x}^{\Z}$.
-A smooth function $f\colon U_x \to {\mathbb{R}}$ is \emph{admissible} at $x$ 
+A $(0,0)$-superform $f\colon S \to {\mathbb{R}}$ is \emph{admissible} at $x$ 
 if 
 \begin{align}
-(x,df(x))\notin (\opn{span}_{{\mathbb{R}}}
-(\opn{SS}(A_S)_x)+M^{\vee})\setminus M^{\vee}.
+(x,\phi^{*}df(x))\notin (\opn{span}_{{\mathbb{R}}}
+(\opn{SS}(A_{\opn{LC}_x S\subset T_x S})_x)+\mathcal{F}_{\mathbb{Z},S,x}^{1})
+\setminus (\mathcal{F}_{\mathbb{Z},S,x}^{1})^{\vee}.
 \end{align}
 \end{condition}
 %TODO: 表記の理由を何とかする。
 (Be careful for this definition is \emph{not} 
 compatible with admissible Morse functions defined 
-in \cite{}.)
+in \cite[p.156]{MR1336822}.)
 
+From definition, if $f$ is admissible at $x$ then
+$f|_{U_x}+m$ is also admissible at $x$ for any 
+$m\in \mathcal{O}_{S}^{\times}(U_x)$.
+Therefore, we can define the admissibility condition
+for principal divisors directly.
 \begin{remark}
 If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
 (\opn{SS}(A_S)_x)=\dim \mathbf{F}_{S,x}$,
@@ -1888,12 +1912,6 @@ and $x\deq (0,\ldots,0)$.
 A smooth function $f\colon X\to {\mathbb{R}}$ is admissible at $x$
 if and only if $df(x)\in (\Z^{n})^{\vee}$.
 \end{example}
-
-
-From definition, $f$ is admissible at $x$ then $f+m$ is also admissible for 
-any $m\in \mcal{O}^{\times}_{M_{{\mathbb{R}}}}(M_{{\mathbb{R}}})$.  
-
-
 
 \begin{example}
 Every metric graph of finite length and 
@@ -1971,12 +1989,6 @@ $i\in I$. The set $\{(U_i,f_i)\}_{i\in I}$ is a
 $\{(U_i,f_i)\}_{i\in I}$ is a local data of a smooth
 Cartier divisor.
 \end{definition}
-%TODO: 競合の正当化
-\begin{proposition}
-Fix $s\in \opn{CDiv}^{\mathrm{sm}}(B)$.
-$\{(U_i,f_i)\}_{i\in I}$ and 
-$\{(V_j,f_j)\}_{j\in J}$ are local data of $s$.
-\end{proposition}
 
 \begin{definition}[{smooth admissible Cartier divisor}]
 \label{definition-admissible-smooth-cartier-divisor}
@@ -1984,14 +1996,40 @@ A smooth Cartier divisor $s$ is \emph{admissible}
 if there exists a local data $\{(U_i,f_i)\}_{i\in I}$ 
 of $s$
 such that $f_i$ is admissible for all $i\in I$. 
-In general, a pair $(s,s')$ of smooth 
-Cartier divisor is \emph{admissible} if $s'-s$ is 
+In general, a pair $(s',s)$ of smooth 
+Cartier divisors $s,s'$ is 
+\emph{admissible} if $s-s'$ is 
 admissible. 
 \end{definition}
 
+Let $s_0$ be the principal smooth Cartier data of 
+the zero function on $S$. Then, a pair 
+$(s_0,s)$ of smooth Cartier divisors is admissible
+if and only if $s$ is admissible.
+If a smooth Cartier divisor is admissible, 
+then every local data satisfies the above 
+admissibility condition.
+
 \begin{definition}
-$s_0\cap s$
+Let $(s,s')$ be a pair of smooth Cartier divisors and 
+$\{(U_i,f_i)\}_{i\in I}$ a local smooth Cartier data
+of $s-s'$. The intersection set of the pair 
+$(s,s')$ is the following set
+\begin{align}
+s'\cap s\deq \set{x\in S \mid  df_i(x)\in 
+\mathcal{F}^{1}_{\mathbb{Z},S,x} 
+\text{ for some } i\in I}.
+\end{align}
 \end{definition}
+
+The set $s'\cap s$ is independent of the choice of 
+a local smooth Cartier data. In this paper, we
+define the graded module of a given admissible pair 
+$(s',s)$ of smooth Cartier divisor such that 
+$\sharp (s'\cap s)<\infty$.
+In order to define the graded module, we define the 
+local intersection data of 
+the admissible pair $(s',s)$.
 
 \begin{definition}[{local intersection data}]
 Fix a compact rational polyhedral space $B$ satisfying 
@@ -2012,19 +2050,25 @@ for all $p\in s\cap s_0$,
 \end{definition}
 
 \begin{definition}
-Let $S$ be a rational polyhedral space such that the image of
-any atlas is in for some ${\mathbb{R}}^{n}$.
+Let $S$ be a rational polyhedral space 
+satisfying \cref{condition-Rn}.
 Let $s=\{(U_i,f_i)\}_{i\in I}$ be a admissible smooth Cartier divisor such that
 the following set is finite;
+
+
+Let $\{(U_p,f_p)\}_{p\in s\cap s_0}$ 
+be a local intersection data of $s$.
+
 \begin{align}
-s_0 \cap s\deq \set{x\in S\mid \opn{pr}_x^{S}(df_i(x))=0 
-\text{ for some } i\in I}
-\end{align}
-\begin{align}
-\opn{MF}^{\bullet}(S;s,A)\deq 
-\bigoplus_{x\in s_0 \cap s} 
-\opn{MF}^{\bullet}(A_{S\cap U_i},\tilde{f}_{i,x},x), \quad
-\opn{MF}^{\bullet}(S;s)=\opn{MF}^{\bullet}(S;s,\Z)
+\opn{MF}^{\bullet}_{A}(s',s)\deq 
+\bigoplus_{x\in s' \cap s} 
+\opn{MF}^{\bullet}(A_{U_p},f_{p},p), \quad 
+\opn{MF}^{\bullet}(s',s)
+\deq \opn{MF}^{\bullet}_{\mathbb{Z}}(s',s)\\
+\opn{MF}^{\bullet}_A(S;s)
+\deq \opn{MF}^{\bullet}_{A}(s_0,s), \quad
+\opn{MF}^{\bullet}(S;s)\deq
+\opn{MF}^{\bullet}_{\mathbb{Z}}(S;s).
 \end{align}
 \end{definition}
 
@@ -2033,39 +2077,46 @@ We defined the
 \begin{remark}
 \label{remark-differential-graded-module}
 We stress that we should not consider 
-$\opn{MF}^{\bullet}(S;s,A)$ as the cohomology of $s$,
+$\opn{MF}^{\bullet}_{A}(S;s)$ as the cohomology of $s$,
 but just
 a graded module 
 since we need to define the differentials 
 $\mathfrak{m}_1$ of 
-$\opn{MF}^{\bullet}(S;s,A)$ from the view point of 
+$\opn{MF}^{\bullet}_{A}(S;s)$ as an analog of
 Floer cohomology. We don't have, however,
 the definition of the true differential of 
-$\opn{MF}^{\bullet}(S;s,A)$ in general except when
-$\opn{MF}^{\bullet}(S;s,A)$ is equal to a Floer complex
+$\opn{MF}^{\bullet}_A(S;s)$ in general except when
+$\opn{MF}^{\bullet}_{A}(S;s)$ is equal to a Floer complex
 of Lagrangian submanifolds (e.g. \cite[5.2]{MR1882331}).
 \end{remark}
 
-It is important that $\opn{MF}^{\bullet}(S;s,A)$ is
+It is important that $\opn{MF}^{\bullet}_{A}(S;s)$ is
 defined as a certain topological data, and thus
 we can use topological tools for computation of 
-$\opn{MF}^{\bullet}(S;s,A)$.
+$\opn{MF}^{\bullet}_{A}(S;s)$.
 
 \begin{example}
 \label{example-tropical-kodaira-vanishing}
-A local data $\{(f_i,U_i)\}_{i\in I}$ of a given 
-smooth Cartier divisor $s$ is 
+Let $S$ be a tropical manifold, 
+$s$ a smooth Cartier divisor on $S$ 
+and $\{(f_i,U_i)\}_{i\in I}$ the local smooth 
+Cartier data of $s$. 
+$s$ is 
 \emph{Bohr--Sommerfeld type},
 \emph{strongly-positive}
 or \emph{Hessian type} if
-$f_i$ is strictly convex for any $i\in I$. Then,
+$f_i$ is strictly convex for any $i\in I$. 
+This is a certain analog of positive form on
+complex manifolds. In this case, 
 \begin{align}
-  \opn{MF}^{\bullet}(S;s,\Q)\simeq \bigoplus_{x\in s_0 \cap s} \Q[0], \quad
- \opn{MF}^{\bullet}(S;-s,\Q)\simeq \bigoplus_{x\in s_0\cap -s} 
-H^{n}(S,S\setminus\{x\};\Q)[-n].
+\opn{MF}^{\bullet}_{\mathbb{Q}}(S;s)\simeq 
+\bigoplus_{x\in s_0 \cap s} \Q[0], \quad
+\opn{MF}^{\bullet}_{\mathbb{Q}}(S;-s)\simeq 
+\bigoplus_{x\in s_0\cap -s} 
+H^{n}(S,S\setminus\{x\};\mathbb{Q})[-n].
 \end{align}
-In this case, the cohomology of 
-$\opn{MF}^{\bullet}(S;s,\Q)$ is independent of the choice of 
+In this case, the "cohomology" of 
+$\opn{MF}^{\bullet}_{\mathbb{Q}}(S;s)$ is independent of the choice of 
 differential of $\opn{MF}^{\bullet}(S;s,\Q)$.
 This is a tropical analog of Kodaira's vanishing theorem
 for a (multiple of) positive line bundle, i.e., a holomorphic line bundle $\mcal{L}$ with a 
@@ -2382,8 +2433,12 @@ for simplicity.
 \subsection{MRR for tropical curve with no 1-valent
 vertex}
 
-The goal of this subsection is to prove the following 
-version of \cref{thm: main}.
+The goal of this subsection is to prove a certain 
+analog of tropical Riemann--Roch theorem for
+a compact smooth tropical 
+curves satisfying \cref{condition-Rn}. 
+From the definition of tropical curves, we will prove
+the following theorem:
 \begin{theorem}
 \label{theorem-MRR-metric-graph}
 Let $C$ be a compact tropical curve with 
@@ -2558,7 +2613,7 @@ Then,
 s'\colon C\to \check{X}_0 (C); x\mapsto (x,df_{i}(x))
 \end{align}
 \item If $s_0'\colon C\to \check{X}_0 (C)$ be the 
-zero section, then $s_0\cap s=s_0'\cap s'$.
+zero section, then $s_0\cap s=\check{\pi}_C(s_0'\cap s')$.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -2796,15 +2851,15 @@ $\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
 $f_p$ is convex at all $p\in C\setminus C_0$.
 \end{definition}
 
-\begin{remark}
+%\begin{remark}
 %TODO: admissible な関数のなす層にして理論を展開
 %したらうまくいくことをかく。
 %TODO: $(\mathcal{O}_B^{\times})^{\opn{adm}}$
-\end{remark}
+%\end{remark}
 \subsection{MRR for general tropical curves}
-
+\label{section-tropical-curve-general}
 We will prove MRR for compact tropical curve 
-without assumption of valency. 
+without \cref{condition-Rn}. 
 For general tropical curve $C$ with $1$-valent
 vertex and smooth Cartier divisor 
 $s\in\Gamma(C;\mathcal{A}^{0,0}_C/\mathcal{O}^{\times}_C)$,
@@ -3295,7 +3350,7 @@ $\Omega_X^{p}$に対するものである。だが、両者
 は loopless matroid から由来する場合は両者は一致する。
 \cite[Remark 2.8]{gross2019sheaftheoretic}}
 
-$\Omega_X^{\bullet}$ has a canonical dga structure, 
+$\mathcal{F}_{Q,X}^{\bullet}$ has a canonical dga structure, 
 and thus its hypercohomology 
 $\mb{H}^{\bullet}(B;\mcal{F}_{B}^{\bullet})$ is a 
 graded-commutative algebra. 
@@ -3533,6 +3588,22 @@ Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper
 morphism of rational polyhedral spaces.
 Then, $f_*\circ g_*=(f\circ g)_*$.
 
+The pushforward of tropical Borel--Moore homology
+is compatible with the pushforward of tropical cycles
+\cite[Definition 3.6]{gross2019sheaftheoretic}.
+In particular, 
+\begin{equation}
+\begin{tikzcd}
+ Z_k(X) \arrow[r,"{f_*}"] \arrow[d,"{\opn{cyc}_X}"']
+ & Z_{k}(Y) \arrow[d,"{\opn{cyc}_Y}"] \\
+ H_{k,k}^{\mathrm{BM}}(X;\mathbb{Z}) 
+\arrow[r,"f_*"]
+ & H_{k,k}^{\mathrm{BM}}(Y;\mathbb{Z}).
+\end{tikzcd}
+\end{equation}
+
+
+
 Let $w\colon X_{\mathrm{reg}}\to \mathbb{Z}$ be 
 a weight function on $X$ \cite[Definition 4.8]{MR3894860}.
 If the pair $(X,w)$ is an (abstract) tropical space, 
@@ -3541,9 +3612,8 @@ $[X]\in H_{n,n}^{\mathrm{BM}}(X;\mathbb{Z})$ of
 $(X,w)$.
 If a tropical space $X$ is a tropical manifold, 
 then the weight function is just a constant 
-function with value one and this corresponds to 
-the identity morphism 
-$\opn{id}:\upomega_X^{\bullet} \to \upomega_X^{\bullet}$.
+function $1_{X_{\mathrm{reg}}}\colon X_{\opn{reg}}\to \mathbb{Z};
+x\mapsto 1$.
 
 
 
@@ -3571,7 +3641,7 @@ By identifying $H_{0,0}^{\mathrm{BM}}(\{\mathrm{pt}\};
 \mathbb{Z})\simeq \opn{End}(\mathbb{Z})$ with 
 $\mathbb{Z}$, the above commutative diagram gives
 \begin{align}
-\int_{X}\alpha =f_*(\alpha \frown [X]).
+\int_{X}\alpha =a_{X*}(\alpha \frown [X]).
 \end{align}
 
 \end{example}
@@ -3579,18 +3649,32 @@ $\mathbb{Z}$, the above commutative diagram gives
 
 \begin{definition}[{degree of proper morphism}]
 Let $f\colon X \to Y$ be a proper morphism of 
-compact tropical manifolds.
-The (tropical) degree of $f$ is 
-$f_*\colon H^{\mathbb{BM}}_{n,n}(X)
-\to H^{\mathbb{BM}}_{n,n}(Y)$.
+$n$-dimensional compact tropical manifolds.
+The (tropical) degree of $f$ is the integer $m$
+such that $f_!([X])=m[Y]$.
 \end{definition}
+
+From projection formula, every element 
+$c\in H^{n,n}(Y;\mathbb{Z})$ have the following equation:
+\begin{align}
+\int_{X}f^{*}c
+=a_{Y,*}(f_*(f^{*}c\frown [X]))
+=a_{Y,*}(c\frown \opn{deg}(f)[Y])
+=\opn{deg}(f)\int_Y c.
+\end{align}
 
 \begin{example}
 Let $f\colon X\to Y$ be a morphism of 
-rational polyhedral spaces such that $f$ is a 
-covering map and the associated map $df_{*,x}\colon 
-T_{x}^{\mathbb{Z}} X\to T_{f(x)}^{\mathbb{Z}}X$ is 
-isomorphic, then $f_*[X]=[Y]$.
+$n$-dimensional tropical manifolds such that $f$ is a 
+covering map of topological degree $m$ and the associated map $d_xf\colon 
+T_{x}^{\mathbb{Z}} X\to T_{f(x)}^{\mathbb{Z}}Y$ is 
+isomorphic.
+Then, $f_*[X]=\opn{cyc}_X(f_*1_{X_{\mathrm{reg}}})
+=m[\opn{cyc}_Y(1_{Y_{\mathrm{reg}}})]=m
+f_*[Y]$ from the commutative diagram of
+tropical cycle maps and the definition of the pushforward
+of tropical cycles.
+In this case $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.
 \end{example}
 
 
@@ -3707,51 +3791,28 @@ $\opn{deg}_{\opn{top}}(f)\ne \opn{deg}_{\opn{top}}(X(f))$ in general.
 
 \end{remark}
 
-\begin{lemma}
-  Let $f:B\to B'$ be a proper tropical morphism.
-\begin{align}
-\int_{B} f^{*}c\frown \alpha=\int_{B'} f_*(f^{*}c\frown \alpha)
-=\int_{B'}c \frown f_*\alpha=\opn{deg}(f)\int_{B'} c\frown \alpha
-\end{align}
-\end{lemma}
-
-\begin{proof}
-From definition of trace map
-$\int_B=\int_{B'}\circ \int_{B/B'}$.
 
 
-\begin{align}
-\opn{Hom}_{D^{b}(\mathbb{Z}_B)}(
-\upomega_B^{\bullet},\upomega_B^{\bullet})
-\simeq \opn{Hom}_{D^{b}(\mathbb{Z}_{B'})}
-(Rf_! \upomega_B^{\bullet},\upomega_{B'}^{\bullet}) \to
-\opn{Hom}_{D^{b}(\mathbb{Z}_{B'})}
-(\upomega_{B'}^{\bullet},\upomega_{B'}^{\bullet})
-\end{align}
 
-\end{proof}
 
 \begin{proposition} \label{thm: intetale}
 Let $f\colon B'\to B$ be a finite \'etale covering of a compact integral affine 
 manifold $B$ of dimension $n$. Then,
-(i) $\chi(B',f^{*}(s))=\opn{deg}(f)\chi(B,s)$
 
-(ii) (Projection formula) 
-$\frac{c_1(f^{*}(D_s))^{n}}{n!}=
-\opn{deg}(f)\frac{c_1(D_s)^{n}}{n!}$.
+\begin{align}
+\chi(\opn{MF}^{\bullet}(B';f^{*}(s)))=\opn{deg}(f)
+\end{align}
 \end{proposition}
 \begin{proof}
 (i) We can see this from definition.
 
-(ii) Since $f^{!}=f^{-1}$ 
-\cite[]{iversenCohomologySheaves1986a}
-, $\opn{deg}(f)$ is the same with degree of 
-mapping of closed manifolds.
+
 
 \end{proof}
 
 \begin{theorem} \label{theorem-MRR-hesse}
-  Let $B_0$ be a $n$-dimensional compact integral affine manifold and
+  Let $B_0$ be a $n$-dimensional compact 
+integral affine manifold with a Hessian form and
   $s$ a smooth Lagrangian section
   which intersect transversely. Then,
   \begin{align} \label{eq: HesseRR}
@@ -3767,6 +3828,14 @@ If \cref{theorem-MRR-hesse} is true for tropical tori,
 then \cref{theorem-MRR-hesse} is also true for compact
 integral manifold with a Hessian form from
 \cref{thm: intetale} for $p$.
+%TODO: 必要命題補完
+By 
+\begin{align}
+\chi(\opn{MF}^{\bullet}(B_0;s))
+=\opn{deg}(p)^{-1}\chi(\opn{MF}^{\bullet}(T;p^{*}(s)))
+=\opn{deg}(p)^{-1}\frac{1}{n!}\int_T c_1(p^{*}s)^{n}
+=\frac{1}{n!}\int_{B_0}c_1(s)^{n}.
+\end{align}
 
 From now on, we assume $B_0=T$.
 Let $s$ be an element of 
