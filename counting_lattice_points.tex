@@ -1144,12 +1144,9 @@ For a given sheaf $\mathcal{F}$ on $X$,
 \begin{align}
 \mcal{F}|_{Z}\deq i^{-1}\mcal{F}, \quad 
 \mcal{F}_Z\deq i_! i^{-1}\mcal{F}, \quad 
-A_{Z\subset X}\deq i_! A_Z.
+(A_X)_Z\deq i_!i^{-1}A_X.
 \end{align}
 
- 
-The symbol $A_{Z\subset X}$ is not used in \cite{MR1299726} 
-but in \cite{MR932640}.
 From \cite[Proposition 2.5.4]{MR1299726}, $i_!$ is exact 
 and $\mcal{F}_Z$ is isomorphic to the sheaf defined in
 \cite[p.93]{MR1299726}.
@@ -1168,7 +1165,9 @@ there exists the following exact sequence
 Let $\Gamma_{Z}(\mcal{F})$ be the sheaf of sections of 
 $\mcal{F}$ supported by $Z$
 \cite[Definition 2.3.8]{MR1299726} and 
-$\Gamma_{Z}(X;\mcal{F})$. This sheaf is defined as follows:
+$\Gamma_{Z}(X;\mcal{F})$ the global section of 
+$\mathcal{F}$ supported by $Z$.
+This sheaf is defined as follows:
 
 \begin{enumerate}
 \item Let $U$ be a open subset of $X$ such that $U$ contains
@@ -1609,11 +1608,11 @@ Fix $X\deq \mathbb{R}^{n}$.
 Let $f\colon X\to {\mathbb{R}}$ be a convex $C^{1}$-
 function $X$ with the minimum point $x$
 and $S$ be the support of 
-a polyhedral complex $\Sigma$ whose contains $x$.
+a polyhedral complex $\Sigma$ in $X$ whose contains $x$.
 One of trivial but remarkable point is that
 \begin{align}
-\opn{MF}^{\bullet}(A_{S\subset X},f,x)\not\simeq (-1)^{n}
-\opn{MF}^{\bullet}(A_{S\subset X},-f,x)
+\opn{MF}^{\bullet}((A_{X})_S,f,x)\not\simeq (-1)^{n}
+\opn{MF}^{\bullet}((A_{X})_S,-f,x)
 \end{align}
 except for special cases such like
 \cref{example-milnor-morse-data}.
@@ -1809,12 +1808,13 @@ Let $f\colon X \to Y$ be a smooth morphism of
 smooth manifolds and $\mathcal{F}\in 
 D^{b}(A_Y)$. Then,
 \begin{align}
-\opn{SS}(f^{-1}\mathcal{F})=
-{}^{t}f'(f_\pi^{-1}(\opn{SS}(\mathcal{F})))
+\opn{SS}(f^{-1}\mathcal{F}^{\bullet})=
+{}^{t}f'(f_\pi^{-1}(\opn{SS}(\mathcal{F}^{\bullet})))
 \end{align}
 See \cite[Proposition 5.4.5 (i)]{MR1299726}.
 In particular, 
-$\opn{SS}(\mathcal{F})_x=$
+$\opn{SS}(\mathcal{F})_x=\opn{SS}(\mathcal{F}|_U)_x$
+for any open neighborhood of $x$.
 
 Fix a polyhedral set $S$ 
 in $\mathbb{R}^{n}$.
@@ -1860,16 +1860,83 @@ This open immersion represents a unique morphism
 of germs such that $d_x\phi\colon T_x S=T_0(\opn{LC}_xS) \to T_x S$
 is the idenity 
 \cite[Proposition 2.5]{gross2019sheaftheoretic}.
-Every
+From now con, we identify 
+$T_0(\opn{LC}_x S)$ with $T_x S$.
 
+We set the following subset of $\mathcal{F}_{\mathbb{Z},S,x}^{1}$:
+\begin{align}
+\opn{SS}(S)_x\deq 
+\opn{SS}(((\mathbb{Z}_{T_x S})_{\opn{LC}_x S})_x).
+\end{align}
+
+In general, $\opn{SS}(S)_x$  
+is complicated, but this is related with the 
+follwoing vector 
+spaces:
+
+\begin{definition}[{Linearity subspace}]
+Let $Z$ be a subset of
+$\mathbb{R}^{n}$. A \emph{linearity subspace} of $Z$ is 
+a linear subspace $V$ of
+$\mathbb{R}^{n}$ such that $x+s\in S$ for all 
+$s\in S$ and $x\in V$, i.e.,
+\begin{align}
+Z+V=Z.
+\end{align}
+where $Z+V$ is the Minkowski sum of $Z$ and $V$.
+\end{definition}
+If $0\in Z$, then 
+every linearity subspace of $Z$ is a subset of $Z$.
+If $V$ and $W$ are a linearity subspace of $Z$, 
+then the Minskowski sum $V+W$ is 
+also a linearity space.
+We write $\opn{Lin}(Z)$ for the maximal linearity 
+subspace of $Z$. If $P$ is a polyhedron in 
+$\mathbb{R}^{n}$, $\opn{Lin}(P)$ is the linearity space
+in the sense of \cite[p.60]{MR3287221}.
+We also note $\opn{Lin}(\opn{LC}_x S)$ is equal to 
+the real wave tangent vector space of $S$ at 
+$x$ (See \cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
+\cite[Definition 2.16, Remark 2.21]{yamamotoTropicalContractionsIntegral2021}).
+Various rational polyhedral spaces satisfy the 
+following condition.
+\begin{condition}
+\label{condition-good-linearity-space}
+Let $S$ be a rational polyhedral space 
+satisfying \cref{condition-Rn} and the following
+equation for any $x\in S$. 
+\begin{align}
+\opn{span}_{{\mathbb{R}}}\opn{SS}(S)_x=
+\opn{Lin}(\opn{LC}_xS)^{\bot}(\simeq 
+(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}^{\bot}).
+\end{align}
+where $(V)^{\bot}$ the orthogonal complement of 
+$V$ for the standard pairing of dual vector spaces
+and $(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}$ is 
+the stalk of the sheaf of (real) wave tangent 
+vector spaces of $S$ at $x$. 
+
+\end{condition}
+
+For instance, if $S$ is a tropical curve 
+or integral affine manifold, 
+then $S$ satisfies \cref{condition-good-linearity-space}.
+
+We expect that almost rational polyhedral spaces 
+satisfies \cref{condition-good-linearity-space}.
+
+Let $f\colon S \to \mathbb{R}$ be a $(0,0)$-superform on 
+$\mathbb{R}$. The differential $d''f\in \mathcal{A}^{0,1}_S$ of $f$ has the 
+differential vector $d''f (x)\in \mathcal{F}_{S,x}^{1}$ for any 
+$x\in S$ from the definition of superforms.
 
 \begin{condition}[{admissibility}] \label{cond: admissible}
 A $(0,0)$-superform $f\colon S \to {\mathbb{R}}$ is \emph{admissible} at $x$ 
 if 
 \begin{align}
-(x,\phi^{*}df(x))\notin (\opn{span}_{{\mathbb{R}}}
-(\opn{SS}(A_{\opn{LC}_x S\subset T_x S})_x)+\mathcal{F}_{\mathbb{Z},S,x}^{1})
-\setminus (\mathcal{F}_{\mathbb{Z},S,x}^{1})^{\vee}.
+(x,d''f(x))\notin (\opn{span}_{{\mathbb{R}}}
+\opn{SS}(S)_x+\mathcal{F}_{\mathbb{Z},S,x}^{1})
+\setminus \mathcal{F}_{\mathbb{Z},S,x}^{1}.
 \end{align}
 \end{condition}
 %TODO: 表記の理由を何とかする。
@@ -1883,13 +1950,14 @@ $m\in \mathcal{O}_{S}^{\times}(U_x)$.
 Therefore, we can define the admissibility condition
 for principal divisors directly.
 \begin{remark}
-If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
-(\opn{SS}(A_S)_x)=\dim \mathbf{F}_{S,x}$,
+If $\opn{span}_{{\mathbb{R}}}
+(\opn{SS}(S)_x)=\mathcal{F}_{S,x}^{1}$,
 $f$ is admissible if and only if 
-$df(x)\in M^{\vee}$. Therefore, admissibility
+$d''f(x)\in \mathcal{F}_{\mathbb{Z},S,x}^{1}$.
+Therefore, admissibility
 condition is not an open condition.
 If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
-(\opn{SS}(A_S)_x)<\dim \mathbf{F}_{S,x}$, the 
+(\opn{SS}(S)_x)<\dim_{\mathbb{R}} \mathcal{F}_{S,x}^{1}$, the 
 set of admissible cotangent vector at $x$ is dense and 
 connected.
 \end{remark}
@@ -1906,61 +1974,18 @@ connected.
 
 \begin{example}[{Hypersurfaces}]
 
-Let $X\deq {\mathbb{R}}^{n}$, $S\deq V_{\mathbb{T}}(\max\{x_1,\ldots,x_n,1\})$.
-$\opn{span}_{{\mathbb{R}}}(\opn{SS}(A_S)_x)=({\mathbb{R}}^{n})^{\vee}$
+Let $S$ be the tropical hypersurface of
+$f=\max\{x_1,\ldots,x_n,1\}$ in $\mathbb{R}^{n}$.
+$\opn{span}_{{\mathbb{R}}}(\opn{SS}(S)_x)=\mathcal{F}_{S,x}^{1}$
 and $x\deq (0,\ldots,0)$.
 A smooth function $f\colon X\to {\mathbb{R}}$ is admissible at $x$
-if and only if $df(x)\in (\Z^{n})^{\vee}$.
+if and only if $d''f(x)\in (\Z^{n})^{\vee}$.
 \end{example}
 
-\begin{example}
-Every metric graph of finite length and 
-smooth tropical hypersurfaces in ${\mathbb{R}}^{n}$ satisfies
-\cref{condition-good-linearity-space} obviously.
-\end{example}
-
-Take a projection $M^{\vee}\to 
-M^{\vee}/(\opn{span}_{{\mathbb{R}}}(\opn{SS}(A_S)_x))\cap M^{\vee}$.
-Since $S$ is a rational polyhedral space and thus 
-$\opn{SS}(\Z_S)$ is a rational PL set. 
-$M^{\vee}/(\opn{span}_{{\mathbb{R}}}(\opn{SS}(A_S)_x))\cap M^{\vee}$
-is a free module. 
-Then, $df(x)\in M^{\vee}$ if and only if 
-$df(x)\in M^{\vee}/(\opn{span}_{{\mathbb{R}}}(\opn{SS}(A_S)_x))\cap M^{\vee}$
-for any admissible function at $x$. Thus, there exists a canonical
-shift $\tilde{f}_x\colon U_x\to {\mathbb{R}}$ of $f$ such that
-$d\tilde{f}_x(x)=0$.
-
-%TODO: 下の節に移動
-
-\begin{definition}[{Stratified torus fibration and Lagrangian}]
-Let $S$ be a compact rational polyhedral space such that 
-the image of any atlas is 
-in for some ${\mathbb{R}}^{n}$. 
-Suppose $S$ satisfies \label{cond: good}.
-Then the stratified torus 
-fibration is the following set
-\begin{align}
-\check{X}(S)\deq \bigcup_{x\in S} 
-(\mathcal{F}_{S,x}^{\Z}/(\opn{span}_{{\mathbb{R}}}
-(\opn{SS}(A_S)_x))\cap \mathcal{F}_{S,x}^{\Z})\otimes_{\Z} {\mathbb{R}}/\Z.
-\end{align}
-Let $s=\{f_i\}_{i\in I}$ be a admissible smooth Cartier divisor. 
-The stratified Lagrangian is the image of the differential  $\{df_i\}_{i\in I}$ in $\check{X}(S)$
-by fiberwise projection.
-\end{definition}
-
-\begin{example}[{metric graph}]
-The stratified torus fibration $\check{X}(C)$ is very
-similar with the stratified space associated
-with a trivalent metric graph \cite{auroux2022lagrangian}, but
-there exist some minor differences.
-\end{example}
-
-\begin{remark}
 
 
-\end{remark}
+
+
 
 
 
@@ -1977,8 +2002,8 @@ smooth Cartier divisor like
 
 
 \begin{definition}[{smooth Cartier local data}]
-Let $s\in \opn{CDiv}^{\mathrm{sm}}(B)$, 
-$\{U_i\}_{i\in I}$ an open cover of $B$ and 
+Let $s\in \opn{CDiv}^{\mathrm{sm}}(S)$, 
+$\{U_i\}_{i\in I}$ an open cover of $S$ and 
 $f_i\colon U_i \to \mathbb{R}$ a $(0,0)$-superform
 on $U_i$. The set 
 $\{(U_i,f_i)\}_{i\in I}$ is 
@@ -2023,7 +2048,51 @@ s'\cap s\deq \set{x\in S \mid  df_i(x)\in
 \end{definition}
 
 The set $s'\cap s$ is independent of the choice of 
-a local smooth Cartier data. In this paper, we
+a local smooth Cartier data. 
+
+%TODO: 下の節に移動
+
+\begin{definition}[{Stratified torus fibration}]
+Let $S$ be a compact rational polyhedral space 
+satisfying \cref{condition-Rn}.
+Let $\check{X}(S)_x$ be 
+the real torus defined as follows:
+\begin{align}
+\check{X}(S)_x\deq  
+(\mathcal{F}_{\mathbb{Z},S,x}^{1}/(\opn{span}_{{\mathbb{R}}}
+(\opn{SS}(S)_x))\cap \mathcal{F}_{\mathbb{Z},S,x}^{1})\otimes_{\Z} {\mathbb{R}}/\Z.
+\end{align}
+We call the union $\check{X}(S)\deq \bigcup_{x\in S}\check{X}(S)_x$
+the \emph{stratified torus 
+fibration} of $S$.
+Let $s$ be a smooth 
+Cartier divisor on $S$ and $\{(U_i,f_i)\}_{i\in I}$ a local
+smooth Cartier data of $s$. 
+The stratified Lagrangian section of $s$ is the image of the 
+differential  $\{df_i(x)\}_{i\in I}$ in $\check{X}(S)$
+by the caonical fiberwise projection 
+$\mathcal{F}_{S,x}^{1}\to \check{X}(S)_x$ for any $x\in S$.
+Let $\check{\pi}_S\colon \check{X}(S)\to S$ be the 
+canonical projection of stratified torus fibration of $S$.
+Let $(s',s)$ be an admissible Cartier pair and 
+$\{(U_i,f_i)\}_{i\in I}$ the local smooth Cartier data of $s-s'$.
+
+%TODO: 下の等式の説明
+
+Therefore, 
+\begin{align}
+\check{\pi}_S(L_{s'}\cap L_s)=s'\cap s.
+\end{align}
+\end{definition}
+
+\begin{example}[{metric graph}]
+The stratified torus fibration $\check{X}(C)$ is equal to 
+the stratified space associated
+with a trivalent metric graph \cite{auroux2022lagrangian}
+as a set.
+\end{example}
+
+In this paper, we
 define the graded module of a given admissible pair 
 $(s',s)$ of smooth Cartier divisor such that 
 $\sharp (s'\cap s)<\infty$.
@@ -2035,7 +2104,7 @@ the admissible pair $(s',s)$.
 Fix a compact rational polyhedral space $B$ satisfying 
 \cref{condition-Rn}.
 Let $s$ be an admissible smooth Cartier divisor 
-on $B$ such that $\sharp (s\cap s_0)<\infty$. 
+on $S$ such that $\sharp (s\cap s_0)<\infty$. 
 A \emph{local intersection data} of $s$ is the set 
 $\{(U_p,f_p)\}_{p\in s\cap s_0}$ of open subsets
 $U_i$ of $B$ and (0,0)-superforms
@@ -2266,24 +2335,9 @@ If $B$ is a good rational polyhedral space, we
 can consider every admissible smooth Cartier divisor
 $s$ on $B$, then
 
-We assume that every (rational) polyhedral space satisfies 
-the following condition,
-but we expect that the condition is unnecessary
-in general.
 
-\begin{condition}
-\label{condition-good-linearity-space}
-\begin{align}
-\opn{span}_{{\mathbb{R}}}\opn{SS}(S)_x=
-\opn{Lin}(S,x)^{\bot}(\simeq 
-(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}^{\bot}).
-\end{align}
-where $(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}$ is the stalk 
-of the sheaf of (real) wave tangent vector spaces of $S$ at $x$
-(see 
-\cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
-\cite[Definition 2.16]{yamamotoTropicalContractionsIntegral2021}).
-\end{condition}
+
+
 See also \cite[Example 3.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
 \cite[Remark 2.21]{yamamotoTropicalContractionsIntegral2021} for the wave tangent space
  of $1$-dimensional local cones.
