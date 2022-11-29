@@ -1360,8 +1360,9 @@ properties of them.
 From \cref{equation-exact-local} and by taking stalks,
 we have the following distinguished triangle:
 \begin{align}
-R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet} \to \mathcal{F}_x\to 
-(R\Gamma_{\{f<f(x)\}}\mathcal{F})_x\to 
+R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet} \to 
+\mathcal{F}_x^{\bullet}\to 
+(R\Gamma_{\{f<f(x)\}}\mathcal{F}^{\bullet})_x\to 
 R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet}[1].
 \end{align}
 
@@ -1520,10 +1521,10 @@ $\opn{Cone}(X)$ the cone of a topological space $X$
 There exists a homeomorphism of pairs of
 topological spaces:
 \begin{align}
-(B_{\vep,x},B_{\vep,x}\cap \{f=0\})\simeq 
-(\opn{Cone}(S_{\vep,x}),\opn{Cone}(S_{\vep,x}\cap \{f=0\}))
+(B_{\vep,x},B_{\vep,x}\cap \{f=f(x)\})\simeq 
+(\opn{Cone}(S_{\vep,x}),\opn{Cone}(S_{\vep,x}\cap \{f=f(x)\}))
 \end{align}
-for sufficiently small $\vep>0$
+for sufficiently small $\vep$
 \cite[Theorem 2.10]{MR0239612}.
 From this $B_{\vep,x}\cap\{f<f(x)\}$ is homeomorphic to
 $(S_{\vep,x}\cap \{f<f(x)\})\times (0,\vep]$.
@@ -1532,7 +1533,7 @@ f^{-1}(-\delta)\cap B_{\vep,x}$
 for sufficiently small $\vep>\delta>0$ 
 \cite[Lemma 5.10]{MR0239612}.
 $f^{-1}(-\delta)\cap B_{\vep,x}$ is called 
-the (negative) \emph{real Milnor fibre}.
+the (negative) \emph{real Milnor fiber}.
 By Khimshiashvili [Himšiašvili] formula \cite{MR0458467}, we have
 \begin{align} \label{eq: Khim}
   \opn{ind}_x(f)
@@ -1658,13 +1659,12 @@ From \cref{example-local-cohomology} and
 \cref{prop-local-morse-data}, we have
 \begin{align}
 \opn{MF}^{\bullet}(A_S,-f|_S,0)=
-\tilde{H}^{\bullet-1}(S\setminus \{0\};A_{S}).
+\tilde{H}^{\bullet-1}(S\setminus \{0\};A_{S})
+\simeq H^{\bullet}_{\{x\}}(S;A_S).
 \end{align}
 
- since
-$H^{-i}(\upomega_S^{\bullet})$ is the sheafification of
-the presheaf $U\mapsto H_{c}^{i}(U;k)^{\vee}=H^{i}(S,S\setminus U;k)^{\vee}$
- \cite[]{iversenCohomologySheaves1986a} and fundamental properties of the direct limit of topological spaces \cite[Proposition 3.33]{hatcherAlgebraicTopology2002a}. 
+
+
 If $S$ is a purely tropical $n$-manifold, then 
 $\opn{MF}^{\bullet}(A_S,-f|_S,x)\simeq H^{n}(S,S\setminus\{x\},
 \mathbb{Z})[-n]$ since every Bergman fan has a subdivision 
@@ -1673,9 +1673,7 @@ $\opn{MF}^{\bullet}(A_S,-f|_S,x)\simeq H^{n}(S,S\setminus\{x\},
 The vanishing property of the local cohomology is conjectured for
 tropicalization of very affine algebraic variety by Hacking in
 \cite{MR2452307}.
-In other words, the dualizing complex of tropicalization of 
-algebraic variety should be a shift of a single sheaf 
-by Hacking conjecture. 
+
 Hacking also proved that conjecture is true for a suitable condition
 \cite[Theorem 2.5]{MR2452307}.
 Since any tropical varieties is connected
@@ -3333,16 +3331,70 @@ grossMirrorSymmetryLogarithmic2006a} and
 \cite[Chapter 6]{MR2567952}.
 
 \begin{definition}
-
+An $n$-dimensional \emph{integral affine 
+(resp. strongly integral affine, affine)} manifold
+is a pair of an $n$-dimensional differential manifold $B$ 
+and an atlas $\{(U_i,\psi_i)\}_{i \in I}$ of $B$ such that 
+$\psi_i \circ \psi_j^{-1}$ is a restriction of 
+an element in $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{R}^{n}$
+(resp. $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{Z}^{n}$,
+$\opn{GL}_n(\mathbb{R})\ltimes \mathbb{R}^{n}$) for any $i,j\in I$.
 \end{definition}
-
+Without
 \begin{remark}
-  
+An (integral) affine manifold is a special case of 
+$(G,X)$-manifolds \cite[3.3]{MR1435975}.
+
+The terminology integral affine manifold has 
+different terminologies for different authors. 
+
+For instance, an integral (resp. strongly integral) affine manifold 
+is called a tropical affine manifold (resp. integral affine manifold)
+in \cite[Definition 1.22]{MR2722115}. 
+The terminology of strongly integral affine manifold is originally used
+in \cite[Remark 5.10]{MR3079343}.
+\end{remark}
+
+
+We can consider the sheaf theoretic definition of 
+integral affine manifold as explained 
+in \cite[2.1]{MR2181810} 
+and every integral affine manifold is a special case of 
+tropical manifold.
+
+Let $(B,\{(U_i,\psi_i)\}_{i \in I})$ be an affine manifold.
+Every  $U_i$ has a coordinate system $\{x_k\}_{k=1,\ldots,n}$ 
+induced from a coordinate system formed 
+by affine functions on $\mathbb{R}^{n}$.
+We call this coordinate system \emph{affine coordinate system} 
+of $U_i$. 
+
+\begin{definition}
+A \emph{Hessian metric} or \emph{metric of Hessian form} on an affine manifold 
+$(B,\{(U_i,\psi_i)\}_{i \in I})$.
+is a Riemannian metric $g$ such that 
+there exists a multi-valued function $K$ on $B$ satisfying
+$g=\sum_{k,l}\frac{\partial K}{\partial x_k \partial x_l}dx_k dx_l$ for 
+an affine conndinate system of $U_i$. The triple
+$(B,\{(U_i,\psi_i)\}_{i \in I},g)$ is called a \emph{Hessian manifold}.
+\end{definition}
+\begin{remark}
+We follows the terminology Hessian metric and Hessian manifold 
+from \cite{MR2293045}.
+The terminology 
+Hessian manifold is called
+\ind{K\"ahler affine manifold}{Kahler affine manifold}
+in \cite{MR714338}, \ind{affine K\"ahler manifold}{affine Kahler manifold}
+or AK-manifold for short.
+In the respect of historical order, we should use the latter name.
+However, we usually use the former name for avoiding confusion
+with K\"ahler manifold with affine structure.
 \end{remark}
 
 
 \begin{example}
-((トーリック幾何に関するヘッセ幾何の説明))
+Let $f$ be a continuous function defined in 
+\cref{equation-log-polynomial}.
 Let $f\colon \mathbb{R}^{n}\to \mathbb{R}$ be 
 a smooth function 
 $f$ is smooth and convex 
@@ -3355,9 +3407,11 @@ the relationships for Hessian form and the induced K\"{a}hler potential for
 toric manifolds.
 \end{example}
 
+A Hessian metric can be considered as a $(1,1)$-superform 
+naturally and this superform is a certain analog of 
+K\"ahler form, so Hessian metric itself is called Hessian form.
+
 \begin{remark}
-The following fact is one of most important things 
-for closed integral affine manifold with a Hessian form.
 By \cite[Corollary 2.3]{MR714338} and 
 \cite[Corollary 8.3.4 (2)]{MR2293045},
 every closed special Hessian manifold $B_0$ has 
@@ -3373,15 +3427,16 @@ a tropical torus as mentioned in \cite[5.2]{MR1882331}.
 \begin{remark}
 The integral affine structure itself is a very strict condition.
 
-\ind{Chern's conjecture}{Chern's conjecture} states every closed affine manifold $B_0$ has zero topological Euler number $\chi_{\opn{top}}(B_0)$.
-If $B_0$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
-This conjecture is true for special affine manifold \cite{MR3665000}.
+\ind{Chern's conjecture}{Chern's conjecture} states 
+every closed affine manifold $B$ has zero topological 
+Euler characteristic.
+If $B$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
+This conjecture is true for special affine manifold \cite{MR3665000}
+, i.e., an affine manifold $(B, \{U_i,\psi_i\}_{i\in I})$ such that 
+$ $
 Therefore, every closed integral affine manifold satisfies Chern's conjecture since the orientable double over of an integral affine manifold has a compatible special integral affine structure.
 
-\ind{Markus's conjecture}{Markus conjecture} states every closed
-special affine manifold is complete (in the sense of $(G,X)$-manifold)
-if and only if its orientable double cover 
-has a compatible special affine structure \cite[p.53]{markus1963cosmological}.
+
 
 \footnote{We have not checked the original source of Chern's conjecture yet. Our knowledge about these conjectures
   mainly comes from \cite{goldmanRadianceObstructionParallel1984a}
@@ -3403,11 +3458,6 @@ Every integral affine manifold has
 the following canonical torus fibrations.
 \end{remark}
 
-We can consider the sheaf theoretic definition of 
-integral affine manifold as explained 
-in \cite[2.1]{MR2181810} 
-and thus integral affine manifold is a special case of 
-tropical manifold.
 
 
 
@@ -3827,6 +3877,10 @@ Let $B_0$ be an integral affine manifold. Then,
 \end{align}
 \end{proposition}
 
+In particular, a multi-valued function $K$ of a Hessian 
+metric of $B_0$ induces a smooth Cartier divisor on $B_0$
+and a Lagrangian submanifold of $\check{X}(B_0)$.
+
 If two smooth Cartier divisors $s,s'$ are linearly equivalent, 
 i.e., $f=s-s'\in C^{\infty}(B_0)$, 
 then $s$ is the image of an one-time Hamiltonian flow of $s'$
@@ -3840,6 +3894,20 @@ of $B_0$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
 Floer cohomology $\opn{HF}^{\bullet}(L_1,L_2)$. 
 Its Euler number is equal to the intersection of 
 $L_1$ and $L_2$ (up to signature).
+\begin{remark}
+The condition $\pi_2(B_0)=0$ may seem to be technical, but 
+closely related with a classical conjecture.
+\ind{Markus's conjecture}{Markus conjecture} states every closed
+special affine manifold is complete (in the sense of $(G,X)$-manifold)
+if and only if its orientable double cover 
+has a compatible special affine structure 
+\cite[p.53]{markus1963cosmological}.
+Every integral affine manifold is a double cover of special integral 
+affine manifold and thus the universal cover of closed integral affine 
+manifold is homeomorphic to a Euclidean space and 
+$\pi_{2}(B_0)=0$ if Markus conjecture 
+is true.
+\end{remark}
 Besides,
 if $B_0$ is a compact integral affine 
 Hessian manifold and has a spin structure, every 
@@ -3851,7 +3919,7 @@ $\check{X}(B_0)$
 \begin{remark}
 When $s=\vep df$ for a sufficiently small $\vep >0$ and 
 a Morse function $f$ on $B$, $\chi(B,s)=\chi_{\opn{top}}(B)=0$ is 
-truly a special case of Poincar\'e--Hopf theorem for $B$.
+truly a special case of Poincar\'e--Hopf theorem for $B_0$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
   \cite{rau2020tropical}. This analogue is about tropical Euler characteristic
 $\chi_{\opn{trop}}(B)\deq \chi(\mb{H}^{\bullet}(B;\mcal{F}_B^{\bullet}))$
@@ -4161,7 +4229,7 @@ graded modules;
 
 \begin{remark}
 In the proof of the above corollary, we only use
-the condition of cohomological version of Milnor fibre. 
+the condition of cohomological version of Milnor fiber. 
 Besides, we can find many smooth Cartier data satisfying 
 the condition, see \cite[p.35]{MR2031639}.  
 \end{remark}
