@@ -531,7 +531,8 @@ In fact, $f=\opn{log}\circ p\circ \opn{exp}$
 for some polynomial 
 $p\in \mathbb{R}_{\geq 0}[x_1^{\pm},\ldots,x_n^{\pm}]
 \setminus \{0\}$ over the semifield of nonnegative
-real numbers.
+real numbers and $\opn{log}$ is a semifield isomorphism
+from definition.
 This observation is well-known and important 
 for our approach.
 Let $x_1,\ldots,x_n$ be the standard coordinates of 
@@ -2259,7 +2260,7 @@ The following proposition is an analog of \'{e}tale multiplicity of Euler charac
 Let $B$ be a compact rational polyhedral space satisfying
 \cref{condition-Rn} and $s$ be an admissible smooth Cartier divisor
 such that $s_0\cap s$ is a finite set.
-For $q \colon B' \to B$ be a covering map of $B$ of 
+For $q \colon B' \to B$ be a tropical \`etale map of $B$ of 
 (topological) degree 
 $\opn{deg}_{\opn{top}}(q)$,
 \begin{align}
@@ -3729,7 +3730,8 @@ Then, $f_*\circ g_*=(f\circ g)_*$.
 The pushforward of tropical Borel--Moore homology
 is compatible with the pushforward of tropical cycles
 \cite[Definition 3.6]{gross2019sheaftheoretic}.
-In particular, 
+In particular, there exists the following commutative 
+diagram:
 \begin{equation}
 \begin{tikzcd}
  Z_k(X) \arrow[r,"{f_*}"] \arrow[d,"{\opn{cyc}_X}"']
@@ -3785,12 +3787,14 @@ $\mathbb{Z}$, the above commutative diagram gives
 \end{example}
 
 
-\begin{definition}[{degree of proper morphism}]
+\begin{definition}[{cf. \cite[Definition 2.11]{MR3668972}}]
 Let $f\colon X \to Y$ be a proper morphism of 
 $n$-dimensional compact tropical manifolds.
-The (tropical) degree of $f$ is the integer $m$
-such that $f_!([X])=m[Y]$.
+The (tropical) degree $\opn{deg}_{\opn{trop}}(f)$ of $f$ is the integer $m$
+such that $f_*([X])=m[Y]$.
 \end{definition}
+
+
 
 From projection formula, every element 
 $c\in H^{n,n}(Y;\mathbb{Z})$ have the following equation:
@@ -3814,6 +3818,43 @@ tropical cycle maps and the definition of the pushforward
 of tropical cycles.
 In this case $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.
 \end{example}
+
+\begin{definition}
+Let $f\colon X\to Y$ be a proper morphism 
+of tropical manifolds such
+that $f$ is a covering map.
+$f$ is a \emph{tropical \'etale} covering map 
+if $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.  
+\end{definition}
+
+A typical example of non-\'etale covering map is given
+from the $n$-th Frobenious endomorphism 
+$\opn{Fr}_{n,X}^{\natural}\colon \mathcal{O}_X \to \mathcal{O}_X; f\mapsto nf$ of 
+the structure sheaf of tropical manifolds. 
+This is a tropical analog of Frobenious morphism of 
+schemes in positive characteristic 
+(e.g. \cite[]{}). As like classical Frobenious morphism, 
+the morphism $\opn{Fr}_{n,X}=(\opn{id}_X,\opn{Fr}_{n,X}^{\natural})$ of semiringed space does 
+not a endomorphism of $X$ (over $\mathbb{T}$) but 
+there exists the following commutative diagram:
+\begin{equation}
+\begin{tikzcd}
+ (X,\mathcal{O}_X) \arrow[r,"{\opn{Fr}_{n,X}}"] 
+\arrow[d,"{a_X}"']
+ &   (X,\mathcal{O}_X) \arrow[d,"{a_Y}"] \\
+(\{\opn{pt}\},\mathbb{T})
+\arrow[r,"{\opn{Fr}_{n,\{\opn{pt}\}}}"]
+ & (\{\opn{pt}\},\mathbb{T}).
+\end{tikzcd}
+\end{equation}
+By the base change, we get 
+a new $X^{(n)}$ tropical manifold
+and the corresponding morphism 
+$\opn{Fr}_{n,X}\colon X^{(n)}\to X$. 
+If $X=\mathbb{R}^{d}$, then $X^{(n)}$ is 
+isomorphic to $X$ and 
+$\opn{Fr}_{n,X}(x)$ corresponds to 
+the $n$-th dilation map of $X$.
 
 
 If $B_0$ is a integral affine manifold, 
@@ -3928,11 +3969,7 @@ $\chi_{\opn{trop}}(B)\deq \chi(\mb{H}^{\bullet}(B;\mcal{F}_B^{\bullet}))$
 
 
 
-\begin{definition}
-Let $B,B'$ be an integral affine manifold. 
-An integral affine map $f\colon B\to B'$ is a \emph{\'etale} if
-$f$ is locally isomorphic as integral affine manifolds.
-\end{definition}
+
 
 
 \begin{remark}
@@ -3942,7 +3979,7 @@ Our condition of \'etale is different from that of
 If $f\colon B\to B'$ be an affine local diffeomorphism,
 then $X(f)\colon X(B) \to X(B')$ is a local isomorphism of
 complex manifolds.
-When $f$ is not an \'etale in our sense,
+When $f$ is not tropical \'etale,
 $\opn{deg}_{\opn{top}}(f)\ne \opn{deg}_{\opn{top}}(X(f))$ in general.
 
 \end{remark}
@@ -3952,11 +3989,12 @@ $\opn{deg}_{\opn{top}}(f)\ne \opn{deg}_{\opn{top}}(X(f))$ in general.
 
 
 \begin{proposition} \label{thm: intetale}
-Let $f\colon B'\to B$ be a finite \'etale covering of a compact integral affine 
+Let $f\colon B'\to B$ be a finite tropical \'etale covering of a compact integral affine 
 manifold $B$ of dimension $n$. Then,
 
 \begin{align}
-\chi(\opn{MF}^{\bullet}(B';f^{*}(s)))=\opn{deg}(f)
+\chi(\opn{MF}^{\bullet}(B';f^{*}(s)))=
+\opn{deg}(f)\chi(\opn{MF}^{\bullet}(B;s)).
 \end{align}
 \end{proposition}
 \begin{proof}
@@ -4055,15 +4093,9 @@ Thus, $\chi(\opn{MF}^{\bullet}(T,s))=0$.
 
 \end{proof}
 
-\begin{remark}
-
-\end{remark}
-
 \begin{remark} \label{rmk: integral_mirror}
 This theorem also can be considered as
 a special case of \cite{MR4301560}.
-Abouzaid assumed $\pi_{2}(B_0)=0$ for $B_0$
-in \cite{MR4301560}.
 \end{remark}
 
 \begin{remark}
@@ -4077,11 +4109,9 @@ On the other hand, $\opn{ch}(B_0)$ should be trivial when $B$ is
 an integral affine manifold, since $B$ has empty
 $k$-skeleton except $k=n$.
 Thus, $c_{k}(B_0)$ should be $1$ except $k=0$, 
-i.e., $\opn{td}(B_0)=1$. 
-
+i.e., $\opn{td}(B_0)$ should be $1$. 
 On the other hand, $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$
 since the tangent bundle of $X(B_0)$ is flat.
-    From semi-flat SYZ mirror symmetry, the above conjecture should be true. In the case of tropical tori, see \ref{}.
 \end{remark}
 
 \begin{remark}[{Kodaira--Thurston surface}]
@@ -4090,13 +4120,14 @@ There exists a complete and compact integral affine manifold
 As pointed out in \cite[Example 1.14]{grossMirrorSymmetryLogarithmic2006a}
 and \cite[p.403]{MR1461965}, there exists an integral affine manifold
 $B_0$ such that
-$X(B_0)$ is a primary Kodaira surface and $X(B_0),\check{X}(B_0)$
-are diffeomorphic to Thurston's example of a symplectic but
+$X(B_0)$ is a primary Kodaira surface and $X(B_0)$
+and $\check{X}(B_0)$
+are diffeomorphic to a Thurston's example of a symplectic but
 not K\"ahler manifold in \cite{MR402764}.
-Hence, $\check{X}(B_0)$ is not K\"ahler and $B_0$ has no
+Hence, $X(B_0)$ is not K\"ahler and $B_0$ has no
 Hessian form since every Hessian form on $B_0$ induces a 
 standard K\"ahler form
-on torus fibration.
+on $X(B_0)$.
 See also \cite{MR1422337} for tropical primary Kodaira surfaces.
 \end{remark}
 
