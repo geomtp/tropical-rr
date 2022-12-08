@@ -337,9 +337,10 @@ The theory of lattice polytope $P$ has wonderful relationships with the theory o
 
 \end{Thm}
 
-In other words, (i) lattice polytope gives a standard basis of the graded ring $R(X_{P},\mcal{L}_P)\deq H^{\bullet}(X_{P},\mcal{L}_P^{\otimes n})$  of ample line bundles on toric varieties, and thus the number of Euler characteristic of line bundle is equal to the counting number of lattice points of associated lattice polytopes. Further results of toric varieties and relationships between toric varieties and Ehrhart polynomials in \cite{coxToricVarieties2011a}.
+In other words, (i) lattice polytope gives a standard basis 
+of the graded ring $R(X_{P},\mcal{L}_P)\deq H^{\bullet}(X_{P},\mcal{L}_P^{\otimes n})$  of ample line bundles on toric varieties, and thus the number of Euler characteristic of line bundle is equal to the counting number of lattice points of associated lattice polytopes. Further results of toric varieties and relationships between toric varieties and Ehrhart polynomials in \cite{coxToricVarieties2011a}.
 
-There exist some similar results of (i) for Lagrangian torus fibration $X \to B$ of a closed symplectic manifold $X$ and a prequantizable line bundle on $X$ \cite{MR1461965}. This is a very important example of our paper but we put it aside in this section and we will explain about it later.
+
 
 From (i), we can expect that the Ehrhart polynomial
 $\opn{ehr}_{\Sigma}(n)$ of an $n$-dimensional lattice polyhedral complex
@@ -466,8 +467,7 @@ $\mcal{F}$ and $f$ satisfy for some good conditions.
   \end{align}
 \end{Def}
 
-From now on, we assume $\mcal{F}$ is
-the constant sheaf $A_S$ for some a commutative ring $A$.
+
 
 
 
@@ -546,13 +546,7 @@ Let $A$ be a tropical $k$-cycle.
   f_*A(y)=\sum_{x\in f^{-1}(y)}[T^{\Z}_yY:d_xf(T^{\Z}_x X)]A(x)
 \end{align}
 
-\begin{Eg}[Frobenius splitting of tropical varieties]
 
-  This is not a morphism of tropical space in the sense of
-  \cite{gross2019sheaftheoretic} but this is a (local) morphism
-  of monoidal spaces (e.g. \cite[II Definition 1.1.1]{MR3838359}).
-
-\end{Eg}
 
 \section{tropical toric varieties} \label{sec: toric}
 
@@ -691,17 +685,6 @@ $\opn{Im}(df)=\opn{Newt}(f)$.
 Here, $\Sigma(P)$ is the normal fan of $P$.
 
 
-
-
-
-
-
-\begin{Rmk}
-  We expect that we can generalized for rational function
-  over $\underline{\R}_{\opn{log}}$ and its differential is
-  commutative with the moment map in the sense of .
-\end{Rmk}
-
 \begin{Prop}[Ehrhart's reciprocity law revisit]
   Let $\mu_P: X_{\Sigma (P)}^{\opn{trop}}
     \to \check{X}_0(X_{\Sigma (P)}^{\opn{trop}})$
@@ -802,8 +785,7 @@ Let $\mcal{C}^{0}(B)$ be the sheaf of continuous $\R$-valued function on $B$ and
 the pullback morphism $f^{\sharp}:f^{-1}\mcal{C}^{0}(B')\to \mcal{C}^{0}(B)$ induces a morphism $f^{-1}\mcal{O}^{\times}_{B'} \to \mcal{O}^{\times}_{B}$.
 
 
-The sheaf $\mcal{F}^{1}_{\Z,B}$ is
-called the \ind{cotangent sheaf}{cotangent sheaf} on $B$.
+
 
 
 
@@ -853,8 +835,9 @@ $B_0$ is $\Z$-orientable if and only if $B_0$ has a special integral affine stru
 
 
 \subsection{A crash course of SYZ mirror for tropical geometer}
-In the previous section, we see that Lagrangian sections of integral affine manifold $B_0$ corresponds to section of $\mcal{M}^{\times}_{B_0}/\mcal{O}^{\times}_{B_0}$ which describe the Picard group $\opn{Pic}(B_0)$.
-On the other hand, what is a good point of this correspondence for tropical geometry? One of important feature is that "Lagrangian sections have a good cohomology theory which corresponds to sheaf cohomology via Strominger-Yau-Zaslow's mirror symmetry." The cohomology is called \ind{Lagrangian Floer cohomology}{Lagrangian Floer cohomology} in symplectic geometry.
+ One of important feature is that 
+"Lagrangian sections have a good cohomology theory which 
+corresponds to sheaf cohomology via Strominger-Yau-Zaslow's mirror symmetry." The cohomology is called \ind{Lagrangian Floer cohomology}{Lagrangian Floer cohomology} in symplectic geometry.
 This strong point gives a Floer theoretic approach of "sheaf cohomology theory" for tropical geometry without discussing homological algebra over idempotent semiring 
 
 
@@ -955,7 +938,11 @@ From the above process, we can state homological mirror symmetry conjecture as f
 
 The right side equivalence of triangulated categories follows from the left side quasi-equivalence.
 
-Let's check the quick consequence of HMS. Let $\Phi: \opn{D}^{\pi}_{\infty}(\opn{Fuk}(\check{X}))\simto \opn{D}^{b}_{\infty}(\opn{Coh}(X))$ be a quasi-equivalent c-unital $A^{\infty}$-functor. Since $H^{i}(\opn{Hom}_{\opn{D}^{b}_{\infty}(\opn{Coh}(X))}^{\bullet}(\mcal{F}^{\bullet},\mcal{G}^{\bullet}))\simeq \opn{Ext}^{i}_{\mcal{O}_X}(\mcal{F}^{\bullet},\mcal{G}^{\bullet})$ \cite[8.2.1]{aspinwallDirichletBranesMirror2009}, we have the following isomorphism as graded vector spaces:
+Let's check the quick consequence of HMS. 
+Let $\Phi: \opn{D}^{\pi}_{\infty}(\opn{Fuk}(\check{X}))\simto 
+\opn{D}^{b}_{\infty}(\opn{Coh}(X))$ be a quasi-equivalent 
+c-unital $A^{\infty}$-functor.
+Since $H^{i}(\opn{Hom}_{\opn{D}^{b}_{\infty}(\opn{Coh}(X))}^{\bullet}(\mcal{F}^{\bullet},\mcal{G}^{\bullet}))\simeq \opn{Ext}^{i}_{\mcal{O}_X}(\mcal{F}^{\bullet},\mcal{G}^{\bullet})$ \cite[8.2.1]{aspinwallDirichletBranesMirror2009}, we have the following isomorphism as graded vector spaces:
 \begin{align}
   \opn{HF}^{\bullet}(\mathscr{L},\mathscr{L}')\deq 
 H^{\bullet}(\opn{CF}^{\bullet}(\mathscr{L},\mathscr{L}'))\simeq \opn{Ext}^{\bullet}_{\mcal{O}_X}(\Phi(\mathscr{L}),\Phi(\mathscr{L}')).
@@ -1008,9 +995,7 @@ We need not discuss angle function and
 From now, $B_0$ is a compact \ind{special integral affine manifold}{special integral affine manifold}, i.e., a compact integral affine manifold such that whose transition maps are in $\opn{SL}_n(\Z)\ltimes \R^{n}$. $B_0$ and Lagrangian section have a canonical orientation induced from special integral affine structure.
 
 
-We explain Semi-flat SYZ transformation of Lagrangian sections.
 
-At first,
 
 If $s:B_0 \to \check{X}(B_0)$ is the zero section, the corresponding $U(1)$-connection on $X(B_0)$ should be flat,i.e., $\Phi_{\opn{SYZ}}(L_0)\simeq \mcal{O}_{X(B_0)}$
 
@@ -1041,14 +1026,12 @@ $\opn{HF}^{\bullet}((L_1,\mcal{L}_1,\nabla),(L_2,\mcal{L}_2,\nabla))\deq \opn{Ke
   Let $B_0=\R/\Z$ and
   $\check{X}=\check{X}(B_0)$. Every submanifold of 2-dimensional symplectic manifold is Lagrangian. Take a small smooth closed disk $D$ at a fixed point. Then, the boundary $\partial D$ does not satisfy the above condition since the integral $\int_{D}\omega$ is obviously nonzero.
 
-  On the other hand, every Lagrangian section $L_s$ of $B_0$ satisfies the condition because $\pi_{1}(B_0,p)\xto{s_*} \pi_{1}(\check{X},s(p))\xto{\check{\pi}_{B_0,*}}\pi_{1}(B_0,p)$ is the identity morphism, i.e., $\pi_1(L_s)\to \pi_1(\check{X})$ is injective and thus $\pi_2(\check{X},L_s)$ is trivial from exact sequence of relative homotopy group and the triviality of higher homotopy group of real tori except fundamental group.
-  Therefore, $\opn{HF}^{\bullet}(L_s,L_s)\simeq H^{\bullet}(L_s,\Lambda_{\opn{nov}}^{\mathbb{K}})$. We can quickly generalize this when $\pi_2(\check{X}(B_0))\simeq \pi_2(B_0)$ is trivial.
-  Every compact integral affine manifold with a Hessian form such that $\pi_2(B_0)$ is trivial since such manifold is a finite quotient of tropical tori by Cheng-Yau's result.
-  \footnote{There exists a compact affine manifold $B_0$ such that $\pi_2(B_0)=\Z$ as explained in \href{https://mathoverflow.net/questions/271499/smooth-manifold-with-affine-structure-aspherical}{dg.differential geometry - Smooth manifold with affine structure: aspherical? - MathOverflow}. This affine manifold is called 3-dimensional \ind{affine Hopf manifold}{affine Hopf manifold}. A $n$-dimensional affine Hopf manifold is homeomorphic to $S^{1}\times S^{n-1}$. However, every affine Hopf manifold is not integral affine and has no Hessian form \cite[Corollary 7.3.5]{MR2293045}.}
-  Markus's conjecture claim that every closed special affine manifold is complete and thus
-  $\pi_2(B_0)=0$ follows if Markus's Conjecture is true.
-  If $\pi_2(B_0)=0$, then $\pi_2(\check{X}(B_0),\check{f}^{-1}(b))=0$ for every torus fiber $\check{f}^{-1}(b)$  \cite[Theorem 4.41, Proposition 4.48]{hatcherAlgebraicTopology2002a}.
-  Therefore,  \cite{MR4301560}.
+  
+  
+\footnote{There exists a compact affine manifold $B_0$ such that 
+$\pi_2(B_0)=\Z$ as explained in 
+\href{https://mathoverflow.net/questions/271499/smooth-manifold-with-affine-structure-aspherical}{dg.differential geometry - Smooth manifold with affine structure: aspherical? - MathOverflow}. This affine manifold is called 3-dimensional \ind{affine Hopf manifold}{affine Hopf manifold}. A $n$-dimensional affine Hopf manifold is homeomorphic to $S^{1}\times S^{n-1}$. However, every affine Hopf manifold is not integral affine and has no Hessian form \cite[Corollary 7.3.5]{MR2293045}.}
+If $\pi_2(B_0)=0$, then $\pi_2(\check{X}(B_0),\check{f}^{-1}(b))=0$ for every torus fiber $\check{f}^{-1}(b)$  \cite[Theorem 4.41, Proposition 4.48]{hatcherAlgebraicTopology2002a}.
 \end{Eg}
 
 
@@ -1166,6 +1149,14 @@ See
 
 \subsection{Future works}
 
+
+
+  
+
+ 
+
+  
+
 \subsubsection{Sheaf theoretic version of this thesis}
 
 From the success of the theory of tropical cohomology
@@ -1190,14 +1181,6 @@ is a sum of exponential functions and constant function.
 Obviously, this properties is very far
 from line bundles on algebraic variety for many cases.
 For instance, $\omega_X$ is
-
-
-
-  
-
- 
-
-  
 
 
 
