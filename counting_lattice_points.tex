@@ -781,7 +781,7 @@ HMS induces an isomorphism between (Lagrangian)
 Floer cohomology of a pair of Lagrangian branes 
 $(\mathscr{L}_0,\mathscr{L})$ and 
 Ext group of coherent sheaves:
-\begin{align}
+\begin{align} \label{equation-HMS-HF}
 \opn{HF}^{\bullet}(\mathscr{L}_0,\mathscr{L})
 \simeq  \opn{Ext}^{\bullet}_{\mcal{O}_{\mcal{X}}}
 (\Phi(\mathscr{L}_0),\Phi(\mathscr{L})).
@@ -3555,32 +3555,55 @@ the following canonical torus fibrations.
 \subsection{Tropical homology, Tropical superform and Cartier data}
 From now on, we follow about tropical homology and sheaf 
 theory for tropical manifolds
-from \cite{MR3903579,gross2019sheaftheoretic}.
+from \cite{mikhalkinTropicalEigenwaveIntermediate2014a,
+MR3903579,gross2019sheaftheoretic}.
 In the case of affine manifold, this sheaf is already
 studied in the field of Hessian geometry as a vector bundle
 with a flat connection
 (e.g. \cite[Chapter 7]{MR2293045}).
+Let $\mathcal{F}^{p}_{\mathbb{Z},X}$ be 
+the sheaf of  defined in 
+\cite[2.4]{mikhalkinTropicalEigenwaveIntermediate2014a}.
+ (We follow the notation in \cite[Definition 2.4]{MR3894860}.)
+If $X$ is a tropical manifold, then 
+$\mathcal{F}^{p}_{\mathbb{Z},X}$ is equal 
+to the sheaf $\Omega_{X}^{p}$ of tropical $p$-forms defined 
+in \cite[Definition 2.7]{gross2019sheaftheoretic}
+(see \cite[Remark 2.8]{gross2019sheaftheoretic}).
+We set $\mathcal{F}^{p}_{X}\deq 
+\mathcal{F}^{p}_{\mathbb{Z}, X}
+\otimes_{\mathbb{Z}_X}\mathbb{R}_X$.
 
+From now on, we assume every rational polyhedral space $X$
+satisfies $\Omega_X^{p}\simeq \mathcal{F}_{\mathbb{Z},X}^{p}$
+for all $p$. 
 
-Here, $\mcal{F}_{\Z, B}^{0}={\mathbb{Z}}_B$. 
-$\mcal{F}_{B}^{\bullet}$ is a certain analog of analytic
-de Rham complex of complex manifold.
-\begin{remark}
+We recall some results about tropical superforms from
+\cite{MR3903579,epub36262}.
+Let $\mathcal{A}^{p,q}_X$ be the sheaf of 
+$(p,q)$-superforms on $X$. 
+$\mathcal{A}_X^{0,0}$ can be considered as the 
+sheaf of smooth functions on $X$.
 
-\end{remark}
+In fact, $\mathcal{A}_X^{0,0}$ is isomorphic to 
+the sheaf $\mathcal{C}^{\infty}(X)$ of smooth functions 
+on $X$ if $X$ is an integral affine manifold.
+The bigraded sheaf $\mathcal{A}_X^{\bullet,*}$ has a bigraded
+complex structure
+$(\mathcal{A}_X^{\bullet,*},d',d'')$.
 
-\footnote{以下では\cite{gross2019sheaftheoretic}での結果を
-用いるがその定理は$\mcal{F}_X^{p}$に対してではなく
-\cite{gross2019sheaftheoretic}における
-$\Omega_X^{p}$に対するものである。だが、両者
-は loopless matroid から由来する場合は両者は一致する。
-\cite[Remark 2.8]{gross2019sheaftheoretic}}
+$\mcal{F}^{p}_{X}$ has the following acyclic resolution
+\cite[Corollary 3.18, Lemma 3.21]{MR3903579}:
+\begin{align}
+  0 \to \mcal{F}^{p}_{X} \to \mcal{A}^{p,0}_{X}\xto{d''} 
+\mcal{A}^{p,1}_{X} \xto{d''}\cdots.
+\end{align}
 
-$\mathcal{F}_{Q,X}^{\bullet}$ has a canonical dga structure, 
+$(\mathcal{F}_{\mathbb{Z},X}^{\bullet},d')$ has a canonical dga structure, 
 and thus its hypercohomology 
-$\mb{H}^{\bullet}(B;\mcal{F}_{B}^{\bullet})$ is a 
+$\mb{H}^{\bullet}(X;\mcal{F}_{\mathbb{Z},X}^{\bullet})$ is a 
 graded-commutative algebra. 
-This is a tropical analog of the singular cohomology
+This is a certain tropical analog of the singular cohomology
 $H^{\bullet}(X;\C)$ for a complex manifold $X$ since 
 the analytic de Rham theorem $\C_X \simeq \Omega_X^{\bullet}$ 
 gives isomorphism 
@@ -3588,61 +3611,58 @@ $H^{\bullet}(X;\C)\simeq \mb{H}^{\bullet}(X;\Omega_X^{\bullet})$
 of graded algebras. 
 
 An elementary but remarkable fact of 
-$\mcal{F}_{B}^{\bullet}$ is that $\mcal{F}_{B}^{\bullet}\simeq 
-\bigoplus_{i\in \Z}\mcal{F}_B^{i}[-i]$, i.e., the differential 
+$(\mcal{F}_{\mathbb{Z},X}^{\bullet},d')$ is that 
+$\mcal{F}_{\mathbb{Z},X}^{\bullet}\simeq 
+\bigoplus_{i\in \Z}\mcal{F}_{\mathbb{Z},X}^{i}[-i]$, i.e., the differential 
 of $\mcal{F}_{B}^{\bullet}$ is trivial unlike the analytic de Rham complex
 of complex manifolds, see \cite[Corollary 2.15]{epub36262}.
 Therefore, we can calculate the multiplication of 
-$\mb{H}^{\bullet}(B;\mcal{F}_B^{\bullet})$ by 
-cup product of each $H^{q}(B;\mcal{F}_B^{p})$.
+$\mb{H}^{\bullet}(X;\mcal{F}_{\mathbb{Z},X}^{\bullet})$ by 
+cup product of each $H^{q}(X;\mcal{F}_{\mathbb{Z},X}^{p})$.
 
-Let $f\colon B\to B'$ be a morphism of rational polyhedral 
+Let $f\colon X\to X'$ be a morphism of rational polyhedral 
 space. Then, this induces the pullback $f^{-1}\colon 
-\mb{H}^{\bullet}(B';\mcal{F}_{\Z, B'}^{\bullet})\to 
-\mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$
+\mb{H}^{\bullet}(X';\mcal{F}_{\Z, X'}^{\bullet})\to 
+\mb{H}^{\bullet}(X;\mcal{F}_{\Z, X}^{\bullet})$
 and this is a graded ring homomorphism \cite[Proposition 4.17]{gross2019sheaftheoretic}. 
-\subsubsection{Tropical Cartier data}
 
-We recall some results about tropical superforms from
-\cite{MR3903579,epub36262}.
-
-In particular, 
-$\mathcal{A}^{0,0}_B$ can be considered as the sheaf 
-of smooth functions on $B$.
-
-Then, $\mcal{L}^{p}_{B}$ has the following acyclic resolution
-and isomorphism \cite[Corollary 3.18, Lemma 3.21]{MR3903579}:
-\begin{align}
-  0 \to \mcal{L}^{p}_{B} \to \mcal{A}^{p,0}_{B}\xto{d''} \mcal{A}^{p,1}_{B} \xto{d''}\cdots ,\quad \mcal{L}^{p}_{B} \simeq \mcal{F}_B^{p}
-\end{align}
-
-
-
-The canonical monomorphism $\mcal{O}^{\times}_B \to \mcal{A}^{0,0}_B$
+The canonical monomorphism $\mcal{O}^{\times}_X \to \mcal{A}^{0,0}_X$
 induces the following commutative diagram 
-\footnote{Several similar diagrams for some special tropical spaces and 
-similar spaces appear
-  in literature, e.g. \cite[p.468]{MR2567952}
- and \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}}:
+\myfootnote{Several similar diagrams for some special tropical spaces 
+and similar spaces appear
+in literature, e.g. \cite[p.468]{MR2567952}
+and \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}.}:
 
 \begin{equation} \label{equation-smooth-cartier-diagram}
   \begin{tikzcd}
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
-    & \mb{R}_{B} \arrow[r,equal] \arrow[d]                & \mb{R}_{B} \arrow[d]           &                      &   \\
-    0 \arrow[r] & \mcal{O}_{B}^{\times} \arrow[r] \arrow[d]         & \mcal{A}^{0,0}_B \arrow[r] \arrow[d] & \mcal{A}^{0,0}_B / \mcal{O}_{B}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
-    0 \arrow[r] & \FBZ^{1} \arrow[r] \arrow[d] & \mcal{Z}^{1}_{B} \arrow[r] \arrow[d]  & \mcal{Z}^{1}_{B}/\FBZ^{1} \arrow[r]   & 0 \\
+    & \mb{R}_{X} \arrow[r,equal] \arrow[d]   & \mb{R}_{X} \arrow[d]\\
+& \mathcal{O}_X^{\times} \arrow[r] \arrow[d] &
+\mcal{A}^{0,0}_X \arrow[r] \arrow[d] & \mcal{A}^{0,0}_X /\mcal{O}_{X}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
+    0 \arrow[r] & 
+\mathcal{F}_{\mathbb{Z},X}^{1} \arrow[r] \arrow[d] & 
+\mcal{Z}^{1}_{X} \arrow[r] \arrow[d]  & \mcal{Z}^{1}_{X}/
+\mathcal{F}_{\mathbb{Z},X}^{1} \arrow[r]   & 0 \\
     & 0 & 0 &  &
   \end{tikzcd}
 \end{equation}
-Here $\mcal{Z}^{q}_{B}\deq
-  \opn{Ker}(d'': \mcal{A}^{0,q}\to \mcal{A}^{0,q+1})$.
+Here $\mcal{Z}^{q}_{X}\deq
+  \opn{Ker}(d'': \mcal{A}^{0,q}_X\to \mcal{A}^{0,q+1}_X)$.
 Every row and column of the diagram (\ref{equation-smooth-cartier-diagram}) is exact
-and $\mcal{A}_{B}^{0,0}/\mcal{O}^{\times}_B
-  \simeq \mcal{Z}^{1}_B/\mcal{F}_{\Z,B}^{1}$ from the snake lemma.
+and $\mcal{A}_{X}^{0,0}/\mcal{O}^{\times}_X
+  \simeq \mcal{Z}^{1}_X/\mcal{F}_{\Z,X}^{1}$ from the snake lemma.
 The right column exact sequence of \cref{equation-smooth-cartier-diagram} is called
 the \ind{tropical exponential sequence}{tropicalexponentialexactsequence}, 
 (e.g. \cite{MR3894860}).
 
+By taking the long exact sequence for 
+\cref{equation-smooth-cartier-diagram}, we get a canonical morphism:
+\begin{align} \label{equation-tropical-cartier}
+c_1\colon \opn{CaDiv}^{\infty}(X)\to \opn{Pic}(X)\to 
+H^{1}(X;\mathcal{F}_{\mathbb{Z},X}^{1}); s\mapsto D_s \mapsto c_1(s).
+\end{align}
+The second morphism of (\ref{equation-tropical-cartier}) is 
+called the Chern class map in \cite[5]{mikhalkinTropicalCurvesTheir2008a}.
 Let $f\colon X\to Y$ be a morphism of 
 two rational polyhedral spaces.
 From definition of morphism of rational polyhedral space
@@ -3653,22 +3673,25 @@ $f^{*}\colon \opn{CaDiv}^{\infty}(Y)\to \opn{CaDiv}^{\infty}(X)$
 and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
 (\ref{equation-smooth-cartier-diagram}). 
 In particular, we have
-$c_1(f^{*}(s)^{n})=f^{*}(c_1(s)^{n})$ for every $D\in\opn{CaDiv}^{\infty}(Y)$.
+$c_1(f^{*}(s)^{n})=f^{*}(c_1(s)^{n})$ for every 
+$D\in\opn{CaDiv}^{\infty}(Y)$ from 
+\cite[]{gross2019sheaftheoretic}.
 
 \subsection{Verdier duality and Borel--Moore homology
 for tropical spaces}
 
 Every rational polyhedral space $X$ is locally compact and $\Z$ is has finite homological dimension.
 Thus, we can use Verdier duality of tropical spaces.
-
+We set $H^{p,q}(X;\mathbb{Z})\deq 
+H^{q}(X;\mathcal{F}_{\mathbb{Z},X}^{p})$.
 
 
 
 The The $(p,q)$-th Borel-Moore homology of $X$ is
 \begin{align}
 H^{\opn{BM}}_{p,q}(X;\Z)\deq 
-H^{-q}R\opn{Hom}(\Omega_X^{p},\upomega_X^{\bullet})\simeq 
-\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega_X^{p}[q],\upomega_X^{\bullet}).
+H^{-q}R\opn{Hom}(\mathcal{F}_{\mathbb{Z},X}^{p},\upomega_X^{\bullet})\simeq 
+\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\mathcal{F}_{\mathbb{Z},X}^{p}[q],\upomega_X^{\bullet}).
 \end{align}
 $H_{0,q}^{\opn{BM}}(X;\Z)=
 H^{-q}R\opn{Hom}(A_X,\upomega_X^{\bullet})$ is equal to the classical Borel-Moore homology
@@ -3684,9 +3707,9 @@ $H_i^{\opn{BM}}(X;A)\simeq H^{d-i}(X;\mcal{F})$.
 \end{definition}
 
 $\cdot \frown \cdot \colon
-H^{i,j}(X) \times 
-H_{p,q}^{\opn{BM}}(X)\to 
-H_{p-i,q-j}^{\opn{BM}}(X);(c,\alpha) \mapsto c\frown \alpha$.
+H^{i,j}(X;\mathbb{Z}) \times 
+H_{p,q}^{\opn{BM}}(X;\mathbb{Z})\to 
+H_{p-i,q-j}^{\opn{BM}}(X;\mathbb{Z});(c,\alpha) \mapsto c\frown \alpha$.
 
 \begin{align}
 c\frown \alpha \deq  \alpha\circ \mu_X \circ 
@@ -4062,7 +4085,8 @@ is the following:
 Here, $\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)$ is 
 the Maslov index of the pair 
 $(\mathscr{L}_s,\mathscr{L}_{s'})$ at $p$.
-In this case, the 
+In this case, the Masolov index
+is equal to the 
 Therefore, every pair $(L_1,L_2)$ of Lagrangian section
 of $B_0$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
 Floer cohomology $\opn{HF}^{\bullet}(\mathscr{L}_1,
@@ -4178,7 +4202,8 @@ $\frac{1}{n!}\int_{T}c_1(s)^{n}$ is equal to the determinant
 of the linear part of $dq_s$. The intersection number of the image $L_s$ Lagrangian
 section and the zero section $L_0$ is equal to
 $\chi(\opn{MF}^{\bullet}(L_0,L_s))$ up to 
-signature\footnote{The signature only depends on
+signature
+\myfootnote{The signature only depends on
 the choice of 
 an orientation of $\check{X}(B_0)$. 
 The definition of the intersection number of smooth 
@@ -4446,7 +4471,7 @@ If such $m_d$ exists, this should be determined by the contribution of the modul
 
 In this subsection, we recall the relationships lattice points of 
 strongly integral affine manifolds and geometric quantization 
-from \cite{1999math......2027T,MR3112817,MR3525095}.
+from \cite{1999math......2027T,MR3525095}.
 
 A symplectic manifold $(M,\omega)$ is \ind{prequantizable}{prequantizable}
 if the de Rham cohomology class $[\omega]$ of $\omega$ is in $H^2(X;\Z)$. 
@@ -4521,15 +4546,29 @@ the name of the \emph{numerical quantization problem}.
 
 If $B_0$ has a Hessian potential (multivalued) function $K$, then $s_{B_0}$ can be 
 considered as a Lagrangian section of the dual torus 
-fibration $\pi_{\check{B}_0}\colon \check{X}(\check{B}_0)\to \check{B}_0$ of dual Hessian
+fibration $\pi_{\check{B}_0}\colon 
+\check{X}(\check{B}_0)\to \check{B}_0$ of dual Hessian
 manifold $\check{B}_0$ \cite[Proposition 6.9]{MR2567952}.
-A similar result for projective toric manifolds 
-and the prequantum line bundle on them
-is in \cite[Theorem 3.20]{yamaguchimaster}.
-The associated smooth Cartier divisor is 
-given from the dual Hessian potential function
-$\check{K}$ on $\check{B_0}$ 
-\cite[p.429]{MR2567952}.
+A similar result exists for projective toric manifolds 
+and the prequantum line bundle on them 
+\cite[Theorem 3.20]{yamaguchimaster}. 
+Then, \cref{equation-lattice-index} can be considered
+as a numerical version of \cref{equation-HMS-HF}
+for the semi-flat SYZ pair 
+($\check{\pi}_{\check{B}_0}\colon \check{X}(\check{B}_0)
+\to \check{B}_0 \leftarrow X(\check{B}_0)\colon \pi_{\check{B}_0}$). 
+
+This observation was developed for 
+(simple) integral affine manifold with singularities
+$B$
+and toric degeneration by Gross and Siebert. 
+Gross and Siebert conjectured 
+that the set $B(\mathbb{Z})$ of integer points of 
+$B$ forms a basis of the global section a 
+relatively ample line bundle of a toric degeneration.
+
+
+\begin{remark}
 We stress that the \cref{equation-lattice-index} is 
 true for closed integral affine manifold 
 such that $X(B_0)$ is not K\"ahlerian, i.e., 
@@ -4538,7 +4577,7 @@ In this case,
 the prequantum line bundle cannot be considered as
 a mirror Lagrangian submanifold induced from a Hessain
 form.
-
+\end{remark}
 
 
 
@@ -4551,8 +4590,7 @@ an index of a good basis of an ample line bundle of
 a (degenerating) family of Calabi--Yau manifold is 
 deeply developed by Gross and Siebert. 
 
-The numerical quantization problem is 
-highl
+
 
 
 We also mention that a geometrical reasoning 
@@ -4578,8 +4616,7 @@ Fukaya categories of higher genus closed surfaces in
 \cite{MR2383898}. 
 \end{remark}
 
-In usual, homological mirror symmetry 
-for non-Calabi--Yau manifolds has three ways:
+
 
 
 
