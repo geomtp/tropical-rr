@@ -3413,7 +3413,7 @@ grossMirrorSymmetryLogarithmic2006a} and
 \begin{definition}
 An $n$-dimensional \emph{integral affine 
 (resp. strongly integral affine, affine)} manifold
-is a pair of an $n$-dimensional differential manifold $B$ 
+is a pair of an $n$-dimensional differential manifold $B_0$ 
 and an atlas $\{(U_i,\psi_i)\}_{i \in I}$ of $B$ such that 
 $\psi_i \circ \psi_j^{-1}$ is a restriction of 
 an element in $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{R}^{n}$
@@ -3440,9 +3440,15 @@ We can consider a sheaf theoretic definition of
 integral affine manifold as explained 
 in \cite[2.1]{MR2181810} 
 and every integral affine manifold is a special case of 
-tropical manifold.
+tropical manifold. 
+Every integral affine structure of $B_0$ induces a 
+canonical local system $\mathcal{T}_{\mathbb{Z},B_0}$ 
+of integer valued vector bundle and the dual 
+local system $\mathcal{T}_{\mathbb{Z},B_0}^{\vee}$ of it.
 
-Let $(B,\{(U_i,\psi_i)\}_{i \in I})$ be an affine manifold.
+
+
+Let $(B_0,\{(U_i,\psi_i)\}_{i \in I})$ be an affine manifold.
 Every  $U_i$ has a coordinate system $\{x_k\}_{k=1,\ldots,n}$ 
 induced from a coordinate system formed 
 by affine functions on $\mathbb{R}^{n}$.
@@ -3516,19 +3522,18 @@ a tropical torus as mentioned in \cite[5.2]{MR1882331}.
 The integral affine structure itself is a very strict condition.
 
 \ind{Chern's conjecture}{Chern's conjecture} states 
-every closed affine manifold $B$ has zero topological 
+every closed affine manifold $B_0$ has zero topological 
 Euler characteristic.
-If $B$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
+If $B_0$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
 This conjecture is true for special affine manifold \cite{MR3665000}
 , i.e., an affine manifold $(B, \{U_i,\psi_i\}_{i\in I})$ such that 
 $ $
 Therefore, every closed integral affine manifold satisfies Chern's conjecture since the orientable double over of an integral affine manifold has a compatible special integral affine structure.
-
-
-
-\footnote{We have not checked the original source of Chern's conjecture yet. Our knowledge about these conjectures
-  mainly comes from \cite{goldmanRadianceObstructionParallel1984a}
-  and \cite{MR3665000}.
+\myfootnote{We have not checked 
+the original source of Chern's conjecture yet.
+Our knowledge about these conjectures
+mainly comes from \cite{goldmanRadianceObstructionParallel1984a}
+and \cite{MR3665000}.
 }
 \end{remark}
 
@@ -3579,15 +3584,16 @@ satisfies $\Omega_X^{p}\simeq \mathcal{F}_{\mathbb{Z},X}^{p}$
 for all $p$. 
 
 We recall some results about tropical superforms from
-\cite{MR3903579,epub36262}.
+\cite{MR3903579,smacka2017differential}.
 Let $\mathcal{A}^{p,q}_X$ be the sheaf of 
 $(p,q)$-superforms on $X$. 
+\begin{example}
 $\mathcal{A}_X^{0,0}$ can be considered as the 
 sheaf of smooth functions on $X$.
-
 In fact, $\mathcal{A}_X^{0,0}$ is isomorphic to 
 the sheaf $\mathcal{C}^{\infty}(X)$ of smooth functions 
 on $X$ if $X$ is an integral affine manifold.
+\end{example}
 The bigraded sheaf $\mathcal{A}_X^{\bullet,*}$ has a bigraded
 complex structure
 $(\mathcal{A}_X^{\bullet,*},d',d'')$.
@@ -3615,10 +3621,10 @@ $(\mcal{F}_{\mathbb{Z},X}^{\bullet},d')$ is that
 $\mcal{F}_{\mathbb{Z},X}^{\bullet}\simeq 
 \bigoplus_{i\in \Z}\mcal{F}_{\mathbb{Z},X}^{i}[-i]$, i.e., the differential 
 of $\mcal{F}_{B}^{\bullet}$ is trivial unlike the analytic de Rham complex
-of complex manifolds, see \cite[Corollary 2.15]{epub36262}.
+of complex manifolds, see \cite[Corollary 2.15]{smacka2017differential}.
 Therefore, we can calculate the multiplication of 
 $\mb{H}^{\bullet}(X;\mcal{F}_{\mathbb{Z},X}^{\bullet})$ by 
-cup product of each $H^{q}(X;\mcal{F}_{\mathbb{Z},X}^{p})$.
+cup product of each $H^{q}(X;\mcal{F}_{\mathbb{Z},X}^{p})$ easily.
 
 Let $f\colon X\to X'$ be a morphism of rational polyhedral 
 space. Then, this induces the pullback $f^{-1}\colon 
@@ -3637,7 +3643,7 @@ and \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}.}:
   \begin{tikzcd}
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
     & \mb{R}_{X} \arrow[r,equal] \arrow[d]   & \mb{R}_{X} \arrow[d]\\
-& \mathcal{O}_X^{\times} \arrow[r] \arrow[d] &
+0\arrow[r] & \mathcal{O}_X^{\times} \arrow[r] \arrow[d] &
 \mcal{A}^{0,0}_X \arrow[r] \arrow[d] & \mcal{A}^{0,0}_X /\mcal{O}_{X}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
     0 \arrow[r] & 
 \mathcal{F}_{\mathbb{Z},X}^{1} \arrow[r] \arrow[d] & 
@@ -3974,26 +3980,28 @@ $\mcal{O}^{\times}_{B_0}$ is a locally constant sheaf and the quotient sheaf $\m
 \begin{Not}
   Usually, integral affine manifolds are used as a special case of integral affine manifold with singularities and we also want to treat like this in many cases.
   Therefore, we write 
-$\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$, 
-$\mcal{T}_{\Z,B_0}\deq \mcal{F}_{\Z,B_0}^{1}$ in this section for integral affine manifolds. We also use this notation for integral affine manifold with singularities.
+$\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$. We also use this notation for integral affine manifold with singularities.
 \end{Not}
 
 From now on we recall the commutative diagram (\ref{equation-smooth-cartier-diagram})
  for integral affine manifolds.
+In this case, every sheaf naturally comes 
+from symplectic geometry.
 
 Of course, 
 $\mcal{A}_{B_0}^{0,0}=\mcal{C}^{\infty}(B_0)$ and
 $\mcal{Z}^{1}_{B_0}$ is the sheaf of 
 closed $1$-form on $B_0$.
-
-
-
-We note the sheaf $\mcal{Z}^{1}_{B_0}$ can be considered as the sheaf 
+We recall the sheaf $\mcal{Z}^{1}_{B_0}$ can be 
+considered as the sheaf 
 $\opn{Lag}(T^{*}B_0)$ of Lagrangian sections 
 $s:U \to T^{*}U$ for open set $U \subset B_0$ 
 (see \cite[3.2]{MR1853077} or some standard textbook
 of symplectic geometry).
-
+The $\mcal{T}_{\Z,B_0}^{\vee}$ is isomorphic to
+the period lattice of 
+$\check{f}_{B_0}\colon \check{X}(B_0)\to B_0$ 
+ \cite{duistermaatGlobalActionangleCoordinates1980a}.
 Another important thing is that 
 $\mcal{Z}^{1}(B_0)/\mcal{T}_{\Z,B_0}^{\vee}$
  (resp. $\mcal{C}^{\infty}(T^{*}B_0)/\mcal{T}_{\Z,B_0}^{\vee}$) 
@@ -4015,6 +4023,8 @@ Thus, the commutative diagram (\ref{equation-smooth-cartier-diagram}) is written
     & 0 & 0 &  &
   \end{tikzcd}
 \end{equation}
+
+
 
 From the diagram (\ref{equation-cartier-lagrangian}),
 we have the following group isomorphism already remarked 
@@ -4053,7 +4063,9 @@ In particular, $L_s$ is
 \emph{tautologically unobstructed} defined in
 \cite[(2.50)]{MR3656481}.
 
-We also note about Floer cohomology of Lagrangian sections.
+We also note about Floer cohomology of 
+Lagrangian sections.
+Every Lagrangian section
 $L_s\xto{i} \check{X}(B_0)\xto{\check{\pi}_{B_0}}  B_0$
 induces a homomorphism of 
 cohomology 
@@ -4085,17 +4097,13 @@ is the following:
 Here, $\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)$ is 
 the Maslov index of the pair 
 $(\mathscr{L}_s,\mathscr{L}_{s'})$ at $p$.
-In this case, the Masolov index
-is equal to the 
-Therefore, every pair $(L_1,L_2)$ of Lagrangian section
-of $B_0$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
-Floer cohomology $\opn{HF}^{\bullet}(\mathscr{L}_1,
-\mathscr{L}_2)$. 
-Its Euler number is equal to the intersection of 
-$L_1$ and $L_2$ (up to signature). We can 
-see this fact from \cite[Remark 13]{MR1882331} directly.
-Therefore, if $L_s$ and $L_s'$ interesects 
-transversally, then there exists the following 
+In this case, the Maslov index at $p$
+is equal to the Morse index of the 
+local intersection data $f_{p}$ of 
+the smooth divisor $s'-s$ at $p$
+\cite[Remark 13]{MR1882331}. Therefore, 
+if $L_s$ and $L_s'$ interesects 
+transversally, then there exists the following
 isomorphism of graded modules:
 \begin{align}
 \opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'};
@@ -4107,6 +4115,17 @@ isomorphism of graded modules:
 This isomorphism supports our analog of graded module
 of Floer complex is compatible with the classical 
 Floer complex.
+
+Therefore, every pair $(L_1,L_2)$ of Lagrangian section
+of $B_0$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
+Floer cohomology $\opn{HF}^{\bullet}(\mathscr{L}_1,
+\mathscr{L}_2)$. 
+Therefore, its Euler number is equal to the intersection of 
+$L_1$ and $L_2$ (up to signature). We can 
+see this fact from \cite[Remark 13]{MR1882331} directly.
+Therefore, if $L_s$ and $L_s'$ interesects 
+transversally, then there exists 
+
 
 \begin{remark}
 The condition $\pi_2(B_0)=0$ may seem to be technical
@@ -4124,23 +4143,9 @@ manifold is homeomorphic to a Euclidean space and
 $\pi_{2}(B_0)=0$ if Markus conjecture 
 is true.
 \end{remark}
-Besides,
-if $B_0$ is a compact integral affine 
-Hessian manifold and has a spin structure, every 
-Lagrangian section has a canonical structure 
-as a object of the Fukaya category of 
-$\check{X}(B_0)$ 
-\cite[5.2]{MR1882331}.
 
-\begin{remark}
-When $s=\vep df$ for a sufficiently small $\vep >0$ and 
-a Morse function $f$ on $B$, $\chi(B,s)=\chi_{\opn{top}}(B)=0$ is 
-truly a special case of Poincar\'e--Hopf theorem for $B_0$.
-We also note there exists another tropical analog of Poincar\'e--Hopf theorem
-  \cite{rau2020tropical}. This analogue is about tropical Euler characteristic
-$\chi_{\opn{trop}}(B)\deq \chi(\mb{H}^{\bullet}(B;\mcal{F}_B^{\bullet}))$
-  but not for topological Euler characteristic $\chi_{\opn{top}}(B)$.
-\end{remark}
+
+
 
 
 
@@ -4277,6 +4282,19 @@ On the other hand, $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$
 since the tangent bundle of $X(B_0)$ is flat.
 \end{remark}
 
+\begin{remark}
+When $s=\vep (f)^{\opn{sm}}$ for a sufficiently small $\vep >0$ and 
+a Morse function $f$ on $B_0$, 
+$\chi(\opn{MF}^{\bullet}(B_0,s))=
+\chi_{\opn{top}}(B_0)=0$ is 
+truly a special case of Poincar\'e--Hopf theorem for $B_0$.
+We also note there exists another tropical analog of Poincar\'e--Hopf theorem
+  \cite{rau2020tropical}. This analogue is about tropical Euler characteristic
+$\chi_{\opn{trop}}(B_0)\deq 
+\chi(\mb{H}^{\bullet}(B_0;\mcal{F}_{B_0}^{\bullet}))$
+  but not for topological Euler characteristic $\chi_{\opn{top}}(B)$.
+\end{remark}
+
 \begin{remark}[{Kodaira--Thurston surface}]
 There exists a complete and compact integral affine manifold
   which has no Hessian form.
@@ -4293,10 +4311,10 @@ standard K\"ahler form
 on $X(B_0)$.
 We can see explicit calculations of 
 $H^{\bullet}(B_0;\mathcal{F}_{\mathbb{Z},B_0}^{\bullet})$
-for tropical primary Kodaira surfaces in \cite{maehara}.
-See \cite{MR1422337} for more detail about tropical 
+for tropical primary Kodaira surfaces in \cite{maehara2023}.
+See \cite{MR1422337} for more details about tropical 
 primary Kodaira surfaces and 
-\cite{,MR3894860} for tropical Klein bottles.
+\cite{MR3079343,MR3894860} for tropical Klein bottles.
 
 \end{remark}
 
@@ -4480,6 +4498,27 @@ if and only if the de Rham cohomology class of
 $\omega_{\opn{std}}(\in \check{X}(B_0))$ is in 
 $H^{2}(\check{X}(B_0);\mathbb{Z})$, see
 
+We can also prove this from that every
+$\omega_{\opn{std}}$ represents the radiance obstruction of $B_0$
+\cite[Theorem 7.5]{} 
+and the
+ following commutative diagram
+induced from Leray spectral sequence: 
+\begin{equation}
+\begin{tikzcd}
+0 \arrow[r] & H^{2}(B_0;\mathbb{Z}) \arrow[d] \arrow[r] & 
+\opn{Ker}(H^{2}(\check{X}(B_0);\mathbb{Z})\to 
+H^{0}(B_0;\bigwedge^{2}\mathcal{T}_{\mathbb{Z},B_0})) 
+\arrow[d] \arrow[r] & H^{1}(B_0;\mathcal{T}_{\mathbb{Z},B_0}) 
+\arrow[d] \arrow[r] & 0 \\
+0 \arrow[r] & H^{2}(B_0;\mathbb{R}) \arrow[r]           & 
+\opn{Ker}(H^{2}(\check{X}(B_0);\mathbb{R})\to 
+H^{0}(B_0;\bigwedge^{2}\mathcal{T}_{B_0}))
+\arrow[r] & 
+{H^{1}(B_0;\mathcal{T}_{B_0})} \arrow[r]           & 0.
+\end{tikzcd}
+\end{equation}
+The above both row is exact.
 \begin{example}
 This 
 \end{example}
