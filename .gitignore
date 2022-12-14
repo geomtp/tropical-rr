@@ -1,5 +1,4 @@
-
-.vscode/*
+.vscode/
 note-*.tex
 # ---> TeX
 ## Core latex/pdflatex auxiliary files:
