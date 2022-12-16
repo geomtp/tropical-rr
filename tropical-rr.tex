@@ -481,7 +481,7 @@ H^{n}(X_P;\mathcal{L}_P^{\vee})\simeq
 \bigoplus_{u\in \opn{int}(P)\cap \mathbb{Z}^{n}}\mathbb{C}z^{u}.
 \end{align}
 In particular, we have
-\begin{align}
+\begin{align} \label{equation-ehrhart-reciprocity}
 \chi(H^{\bullet}(X;\mathcal{L}_P))=
 \sharp (P\cap \mathbb{Z}^{n}), \quad 
 \chi(H^{\bullet}(X;\mathcal{L}_P^{\vee}))=
@@ -659,17 +659,36 @@ Then, we have the following analog of
 
 
 Another important point is that 
-we can consider \cref{equation-moment-map-intersection}
-as the intersection of two "Lagrangian submanifolds".
+we can consider the LHS of 
+\cref{equation-moment-map-intersection}
+as the intersection number 
+of two "Lagrangian submanifolds".
 We now explain about this meaning by
 using the theory of integral affine manifolds.
-((整アファイン多様体の説明))
+An $n$-dimensional 
+\emph{integral affine manifold} $B_0$ 
+is a differential manifold 
+with a fixed atlas whose transition maps is locally in 
+$\opn{GL}(n,\mathbb{Z})\ltimes \mathbb{R}^{n}$.
 Every integral affine manifold is a tropical manifold.
 Historically, integral affine manifolds are 
 deeply-studied in the field of symplectic geometry 
 as a base space of Lagrangian torus fibration before
-"tropical geometry" appear.
+the terminology "tropical geometry" appear.
 
+Every integral affine manifold $B_0$ has 
+a canonical $\mathbb{Z}$-local system 
+$\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$ of integer
+valued cotangent vectors. 
+The integral affine structure of $B_0$ induces a
+torus fibration 
+$f\colon \colon T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}
+\to B_0$ and 
+$T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$ has 
+a standard symplectic structure induced from that of 
+cotangent bundle $T^{*}B_0$.
+We write $\check{X}(B_0)\deq 
+T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$
 Let $f\colon B\to \mathbb{R}$ be a 
 smooth function on a smooth manifold $B$.
 $f$ defines a section 
@@ -690,25 +709,10 @@ both $\sigma_{df}(B)$ (resp. $s_{df}(B)$) are Lagrangian
 submanifolds of $T^{*}B_0$ 
 (resp. $T^*B/\check{\Lambda}$).
 
-\begin{example}
-Let $B_0\deq\mathbb{R}^{n}$ be 
-an integral manifold with the standard coordinate and
-$f$ a smooth function defined by
-\cref{equation-log-polynomial}.
-Then, $s_{df}(X)$ is equal to the graph of 
-$q\circ df$. In particular,
-\begin{align}
-\sharp (0_{\check{X}(B_0)}(X)\cap s_{df}(X))=
-\sharp (\opn{int}(P\cap (\mathbb{Z}^{n})^{\vee})).
-\end{align}
-where $0_{\check{X}(B_0)}$ is the 
-zero section of 
-$\check{\pi}_{B_0}\colon\check{X}(B_0)\to B_0$.
-\end{example}
+\emph{Lagrangian sections} is a section 
+$s\colon B_0\to \check{X}(B_0)$ such that 
+$\opn{Im} s$ is a Lagrangian submanifolds.
 
-The sections whose image are Lagrangian
-submanifolds are called
-\emph{Lagrangian sections}
 \index{Lagrangian section@Lagrangian section}
 which is well-studied in the field of homological 
 mirror symmetry 
@@ -856,6 +860,17 @@ for tropical manifolds?
 In particular, is there an analog of Floer complex of
 Lagrangian submanifolds for line bundles on 
 tropical spaces?  
+\end{question}
+
+For the toric varieties, we can pose the following 
+concrete question.
+
+\begin{question}
+How should we consider the "intersection number" 
+of intersection points at the boundary? In particular,
+what is a good interpretation the 
+\cref{equation-danilov-formula} and 
+as an analog of Floer cohomology?
 \end{question}
 
 Some readers may think this question do not make sense
@@ -3396,10 +3411,6 @@ $T_{|\Sigma|,0}^{\mathbb{Z}}\simeq
 H_1(U(\mathcal{A});\mathbb{Z})$.
 $\rho$ is a natural generalization of $U(1)$-flat 
 connection on pants discussed the above.
-
-
-%TODO: amissibleのなす層がアーベル群のなす層では
-%Torsorとしての性質のを満たすことを述べる。
 
 \section{Proof for integral affine manifold with Hessian form.}
 \label{section-integral-affine-manifold}
