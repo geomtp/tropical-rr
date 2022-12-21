@@ -2900,6 +2900,7 @@ See also \cref{remark-relative-divisor}.
 \end{remark}
 
 \begin{proposition}
+\label{proposition-simple-interval-rr}
 Let $C=[a,b]$ be a closed interval in $\mathbb{R}$
 and $s$ an admissible smooth Cartier divisor 
 such that $s_0\cap s=\{a,b\}$. Then,
@@ -2954,11 +2955,20 @@ and Meyer--Vietoris sequence, we get
 the \cref{equation-meyer-vietoris}.
 \end{proof}
 
-We can prove \cref{theorem-MRR-metric-graph} from
-\cref{proposition-gluing-formula} and the following
-proposition.
+We can generalize
+\cref{proposition-simple-interval-rr} by
+\cref{proposition-gluing-formula} as follows.
 
-
+\begin{proposition}
+\label{proposition-MRR-1-dim-poly-space}
+Let $C$ be a compact pure $1$-dimensional rational 
+polyhedral space satisfying \cref{condition-Rn} 
+and $s$ a smooth Cartier divisor on $C$. Then,
+\begin{align}
+\chi(\opn{LMD}^{\bullet}(C;s))=\opn{rot}(s)+
+\chi_{\opn{top}}(C).
+\end{align}
+\end{proposition}
 
 
 
@@ -2967,29 +2977,56 @@ proposition.
 \begin{proof}[{Proof of \cref{theorem-MRR-metric-graph}}]
 Without loss of generality, we can assume $C$ is 
 connected and $\sharp (s_0\cap s)\geq 1$.
-
 Since $s_0\cap s\supset (C\setminus C_0)$, 
-The set $s_0\cap s$ induces a cell-decomposition of 
-$C$. Let 
-$\psi \colon \pi_0 (C_0)\to \mathcal{P}(C_0)$
+The set $s_0\cap s$ induces a cell decomposition of 
+$C$. We will prove the theorem by mathematical 
+induction for the cardinality of 
+$\pi_0(C\setminus (s_0 \cap s))$, i.e., the 
+number of edges of the cell decomposition.
+When $\pi_0(C\setminus (s_0 \cap s))=1$, 
+$C$ is homeomorphic to a closed interval 
+or a closed circle and 
+$\sharp (s_0\cap s)\leq 2$ 
+from the definition of cell complex.
+In this case, \cref{theorem-MRR-metric-graph} is 
+true from \cref{proposition-n-valent} directly.
 
-%NEXT: この考えを完成させる
-%TODO: gluing の原理を一般化させる
-\begin{align}
-\sum_{e\in \pi_0(C),}
-\sum_{\psi_e(p)=v} 
-\opn{LMD}^{\bullet}(\tilde{e},p)
-\end{align}
+Suppose \cref{theorem-MRR-metric-graph} is true
+for all smooth Cartier divisor $s$ on 
+$C$ such that $\pi_0(C\setminus (s_0 \cap s))=n$.
+
+Let $C$ be a $1$-dimensional 
+compact rational polyhedral space
+such that $\pi_0(C\setminus (s_0 \cap s))=n+1$.
+
+Then, we can choose a pair of proper subgraph $C',C''$ of
+$C$ such that
+$C'\setminus (s_0\cap i^{*}_{C'}(s))\leq n$,
+$C''\setminus (s_0\cap i^{*}_{C''}(s))\leq n$,
+$C'\cup C''=C$
+and $(C'\cap C'')\subset (s_0\cap s)$.
+
+By \cref{proposition-gluing-formula}, we get 
+\begin{align*}
+\chi(\opn{LMD}^{\bullet}(C;s))
+&=\chi(\opn{LMD}^{\bullet}(C';i_{C'}^{*}(s)))
++\chi(\opn{LMD}^{\bullet}(C'';i_{C''}^{*}(s)))
+-\sharp(C'\cap C'') \\
+&=\opn{rot}(i_{C'}^{*}(s))
++\opn{rot}(i_{C''}^{*}(s))
++\chi_{\opn{top}}(C')+\chi_{\opn{top}}(C'')
+-\chi_{\opn{top}}(C'\cap C'') \\
+&=\opn{rot}(s)+\chi_{\opn{top}}(C).
+\end{align*}
 
 \end{proof}
 
+\begin{proof}[{Proof of \cref{theorem-MRR-metric-graph}}]
+We can prove it from \cref{proposition-MRR-1-dim-poly-space}
+and \cref{equation-rotation-number}.
+\end{proof}
 
 
-%\begin{remark}
-%TODO: admissible な関数のなす層にして理論を展開
-%したらうまくいくことをかく。
-%TODO: $(\mathcal{O}_B^{\times})^{\opn{adm}}$
-%\end{remark}
 \subsection{MRR for general tropical curves}
 \label{section-tropical-curve-general}
 We will prove MRR for compact tropical curve 
