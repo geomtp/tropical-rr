@@ -953,10 +953,10 @@ $\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
  Let $s$ be a "generic"
 extended smooth Cartier divisor satisfying an admissible condition 
 \cref{cond: admissible} which represents of $\mcal{L}$
-and its graded $\Z$-module $\opn{MF}^{\bullet}(B;s)$
+and its graded $\Z$-module $\opn{LMD}^{\bullet}(B;s)$
 of it. Then,
 \begin{align}
-\chi(\opn{MF}^{\bullet}(B;s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
+\chi(\opn{LMD}^{\bullet}(B;s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
 \end{align}
 where $\int_B$ is the trace map 
 $\mb{H}^{n}(B;\mcal{F}_{\Z, B}^{n})\to \Z$
@@ -965,7 +965,7 @@ $Ra_{B!}a_{B}^{!}\mathbb{Z}_{\{\mathrm{pt}\}}
 \to \mathbb{Z}_{\{\mathrm{pt}\}}$.
 
 In particular, when $\mcal{L}=\mcal{O}_B$ then
-$\chi(\opn{MF}^{\bullet}(B;s))=\chi_{\opn{top}}(B)$ ?
+$\chi(\opn{LMD}^{\bullet}(B;s))=\chi_{\opn{top}}(B)$ ?
 \end{conjecture}
 
 \begin{remark}
@@ -1017,8 +1017,8 @@ admissible nondepraved
 Cartier data on $C$ (resp. $B$) such that 
 $\sharp(s\cap s_0)<\infty$. Then,
 \begin{align}
-\chi(\opn{MF}^{\bullet}(C;s))=\int_C c_1(D_s)+\frac{1}{2}c_1(-K_C), \quad 
-\chi(\opn{MF}^{\bullet}(B;s))=\int_B \frac{c_1(D_s)^{n}}{n!}.
+\chi(\opn{LMD}^{\bullet}(C;s))=\int_C c_1(D_s)+\frac{1}{2}c_1(-K_C), \quad 
+\chi(\opn{LMD}^{\bullet}(B;s))=\int_B \frac{c_1(D_s)^{n}}{n!}.
 \end{align}
 \end{theorem}
 
@@ -1361,14 +1361,14 @@ The cohomology group of the local (cohomological) Morse
 data of the pair $(\mathcal{F}^{\bullet},f)$ at $x$ 
 is the following group: 
 \begin{align}
-\opn{MF}^{\bullet}(\mcal{F}^{\bullet},f,x)\deq 
+\opn{LMD}^{\bullet}(\mcal{F}^{\bullet},f,x)\deq 
 H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x.
 \end{align}
 
 The \emph{local Morse index} of $f$ at $x$ is the 
 following number:
 \begin{align} \label{equation-local-index}
-\opn{ind}_x(f)\deq \chi(\opn{MF}^{\bullet}(\mathbb{Z}_X,f,x)).
+\opn{ind}_x(f)\deq \chi(\opn{LMD}^{\bullet}(\mathbb{Z}_X,f,x)).
 \end{align}
 
 \end{definition}
@@ -1394,7 +1394,7 @@ We will give an explanation in
 何の条件も課さない。一方で、本論文では$f$ に対する
 条件 \cref{condition-isolated-singularity}を課す。))
 \item We also note that we need to use 
-the graded module $\opn{MF}^{\bullet}(\mcal{F},f,x)$ instead of 
+the graded module $\opn{LMD}^{\bullet}(\mcal{F},f,x)$ instead of 
 the complex $R\Gamma_{\{f\geq f(x)\}}\mathcal{F}$ in order to define
 a graded module associated with line bundle on tropical
 spaces. See also \cref{remark-differential-graded-module} for more about 
@@ -1425,10 +1425,10 @@ Let $f\colon X\to \mathbb{R}$ be a continuous function
 on $X$, $S$ a closed subset
 of $X$, $x\in S$. Then,
 \begin{align} 
-\opn{MF}^{\bullet}((A_{X})_S,f,x
+\opn{LMD}^{\bullet}((A_{X})_S,f,x
 ) \simeq \varinjlim_{U\in\opn{Nbh}(x,X)} 
 \tilde{H}^{\bullet-1}(S\cap \{f<f(x)\}\cap U;A) 
-\simeq \opn{MF}^{\bullet}(A_S,f|_S,x).
+\simeq \opn{LMD}^{\bullet}(A_S,f|_S,x).
 \end{align}
 
 \end{proposition}
@@ -1494,7 +1494,7 @@ an open subset of a finite cell complex.
 Since $\tilde{H}^{\bullet}(\emp;A)=A[1]$, 
 if $f$ is a convex $C^{1}$-function with an isolated 
 critical point at $x$ then
-$\opn{MF}^{\bullet}(A_{S},f|_S,x)\simeq A[0]$.
+$\opn{LMD}^{\bullet}(A_{S},f|_S,x)\simeq A[0]$.
 \end{example}
 
 %TODO:
@@ -1546,8 +1546,8 @@ A polynomial function
 $f\colon {\mathbb{R}}^{n}\to {\mathbb{R}};(x_1,\ldots,x_n)\mapsto x_1^{2}+
 \cdots+x_n^{2}$ gives the following local Morse data:
 \begin{align}
-    \opn{MF}^{\bullet}(\Z_S,f,x)\simeq \tilde{H}^{\bullet-1}(\emp;\Z_S),
-    \quad \opn{MF}^{\bullet}(\Z_S,-f,x) \simeq \tilde{H}^{\bullet-1}(S^{n-1};\Z_S).
+    \opn{LMD}^{\bullet}(\Z_S,f,x)\simeq \tilde{H}^{\bullet-1}(\emp;\Z_S),
+    \quad \opn{LMD}^{\bullet}(\Z_S,-f,x) \simeq \tilde{H}^{\bullet-1}(S^{n-1};\Z_S).
   \end{align}
 \end{example}
 
@@ -1560,7 +1560,7 @@ Fix $X\deq S\deq \mathbb{R}^{n}$.
 Let $f\colon {\mathbb{R}}^{n}\to {\mathbb{R}}$ be a real polynomial function
 which has with one isolated critical point at $x$.
 Let's calculate 
-$\chi (\opn{MF}^{\bullet}(\Z_X,f,x))
+$\chi (\opn{LMD}^{\bullet}(\Z_X,f,x))
 =\chi(\tilde{H}^{\bullet-1}(\{f<f(x)\};\Z))$.
 Let $B_{\vep,x}\deq \set{y\in {\mathbb{R}}^{n}\mid \|x-y\|\leq \vep}$
 for $\vep \in \mathbb{R}_{> 0}$,
@@ -1708,7 +1708,7 @@ except for special cases such like
 From \cref{example-local-cohomology} and
 \cref{prop-local-morse-data}, we have
 \begin{align}
-\opn{MF}^{\bullet}(A_S,-f|_S,0)=
+\opn{LMD}^{\bullet}(A_S,-f|_S,0)=
 \tilde{H}^{\bullet-1}(S\setminus \{0\};A_{S})
 \simeq H^{\bullet}_{\{x\}}(S;A_S).
 \end{align}
@@ -1716,7 +1716,7 @@ From \cref{example-local-cohomology} and
 
 
 If $S$ is a purely tropical $n$-manifold, then 
-$\opn{MF}^{\bullet}(A_S,-f|_S,x)\simeq H^{n}(S,S\setminus\{x\},
+$\opn{LMD}^{\bullet}(A_S,-f|_S,x)\simeq H^{n}(S,S\setminus\{x\},
 \mathbb{Z})[-n]$ since every Bergman fan has a subdivision 
 \cite[Theorem 1]{MR2185977} and its link is shellable
 (e.g. \cite[7.9.1. Theorem]{MR1165544}).
@@ -2218,7 +2218,8 @@ for all $p\in s\cap s_0$,
 
 \begin{definition}
 Let $S$ be a rational polyhedral space 
-satisfying \cref{condition-Rn}.
+satisfying \cref{condition-Rn} and 
+.
 Let $s=\{(U_i,f_i)\}_{i\in I}$ be a admissible smooth Cartier divisor such that
 the following set is finite;
 
@@ -2227,15 +2228,15 @@ Let $\{(U_p,f_p)\}_{p\in s\cap s_0}$
 be a local intersection data of $s$.
 
 \begin{align}
-\opn{MF}^{\bullet}_{A}(s',s)\deq 
+\opn{LMD}^{\bullet}_{A}(s',s)\deq 
 \bigoplus_{x\in s' \cap s} 
-\opn{MF}^{\bullet}(A_{U_p},f_{p},p), \quad 
-\opn{MF}^{\bullet}(s',s)
-\deq \opn{MF}^{\bullet}_{\mathbb{Z}}(s',s)\\
-\opn{MF}^{\bullet}_A(S;s)
-\deq \opn{MF}^{\bullet}_{A}(s_0,s), \quad
-\opn{MF}^{\bullet}(S;s)\deq
-\opn{MF}^{\bullet}_{\mathbb{Z}}(S;s).
+\opn{LMD}^{\bullet}(A_{U_p},f_{p},p), \quad 
+\opn{LMD}^{\bullet}(s',s)
+\deq \opn{LMD}^{\bullet}_{\mathbb{Z}}(s',s)\\
+\opn{LMD}^{\bullet}_A(S;s)
+\deq \opn{LMD}^{\bullet}_{A}(s_0,s), \quad
+\opn{LMD}^{\bullet}(S;s)\deq
+\opn{LMD}^{\bullet}_{\mathbb{Z}}(S;s).
 \end{align}
 \end{definition}
 
@@ -2244,23 +2245,23 @@ We defined the
 \begin{remark}
 \label{remark-differential-graded-module}
 We stress that we should not consider 
-$\opn{MF}^{\bullet}_{A}(S;s)$ as the cohomology of $s$,
+$\opn{LMD}^{\bullet}_{A}(S;s)$ as the cohomology of $s$,
 but just
 a graded module 
 since we need to define the differentials 
 $\mathfrak{m}_1$ of 
-$\opn{MF}^{\bullet}_{A}(S;s)$ as an analog of
+$\opn{LMD}^{\bullet}_{A}(S;s)$ as an analog of
 Floer cohomology. We don't have, however,
 the definition of the true differential of 
-$\opn{MF}^{\bullet}_A(S;s)$ in general except when
-$\opn{MF}^{\bullet}_{A}(S;s)$ is equal to a Floer complex
+$\opn{LMD}^{\bullet}_A(S;s)$ in general except when
+$\opn{LMD}^{\bullet}_{A}(S;s)$ is equal to a Floer complex
 of Lagrangian submanifolds (e.g. \cite[5.2]{MR1882331}).
 \end{remark}
 
-It is important that $\opn{MF}^{\bullet}_{A}(S;s)$ is
+It is important that $\opn{LMD}^{\bullet}_{A}(S;s)$ is
 defined as a certain topological data, and thus
 we can use topological tools for computation of 
-$\opn{MF}^{\bullet}_{A}(S;s)$.
+$\opn{LMD}^{\bullet}_{A}(S;s)$.
 
 \begin{example}
 \label{example-tropical-kodaira-vanishing}
@@ -2276,15 +2277,15 @@ $f_i$ is strictly convex for any $i\in I$.
 This is a certain analog of positive form on
 complex manifolds. In this case, 
 \begin{align}
-\opn{MF}^{\bullet}_{\mathbb{Q}}(S;s)\simeq 
+\opn{LMD}^{\bullet}_{\mathbb{Q}}(S;s)\simeq 
 \bigoplus_{x\in s_0 \cap s} \Q[0], \quad
-\opn{MF}^{\bullet}_{\mathbb{Q}}(S;-s)\simeq 
+\opn{LMD}^{\bullet}_{\mathbb{Q}}(S;-s)\simeq 
 \bigoplus_{x\in s_0\cap -s} 
 H^{n}(S,S\setminus\{x\};\mathbb{Q})[-n].
 \end{align}
 In this case, the "cohomology" of 
-$\opn{MF}^{\bullet}_{\mathbb{Q}}(S;s)$ is independent of the choice of 
-differential of $\opn{MF}^{\bullet}(S;s,\Q)$.
+$\opn{LMD}^{\bullet}_{\mathbb{Q}}(S;s)$ is independent of the choice of 
+differential of $\opn{LMD}^{\bullet}(S;s,\Q)$.
 This is a tropical analog of Kodaira's vanishing theorem
 for a (multiple of) positive line bundle, i.e., a holomorphic line bundle $\mcal{L}$ with a 
 K\"ahler form on a complex manifold $M$: 
@@ -2306,7 +2307,6 @@ The following proposition is an analog of \'{e}tale multiplicity of Euler charac
 Let's see \cref{definition-etale-covering} for 
 the definition of tropical \`etale covering 
 map in this paper.
-%TODO: ここを補完
 \begin{proposition}
 \label{proposition-euler-number-etale}
 Let $B$ be a compact rational polyhedral space satisfying
@@ -2317,18 +2317,18 @@ map of $B$ of
 (topological) degree 
 $\opn{deg}_{\opn{top}}(q)$,
 \begin{align}
-\chi(\opn{MF}^{\bullet}(B';q^{*}(s)))=
-\opn{deg}_{\opn{top}}(q)\chi(\opn{MF}^{\bullet}(B;s)).
+\chi(\opn{LMD}^{\bullet}(B';q^{*}(s)))=
+\opn{deg}_{\opn{top}}(q)\chi(\opn{LMD}^{\bullet}(B;s)).
 \end{align}
 \end{proposition}
 
 The proof of \cref{proposition-euler-number-etale} is trivial from definition.
-
-%TODO: Meyer--Vietoris 系の補題が使える。
 Besides, we can apply Meyer--Vietoris exact sequence 
-for $\opn{MF}^{\bullet}(B;s)$ under a suitable condition.
+for $\opn{LMD}^{\bullet}(B;s)$ under a suitable condition.
 We will use this feature for tropical curves (see
-\cref{proposition-gluing-formula}). 
+\cref{proposition-gluing-formula}).
+From now on, we can pose a detailed version of 
+\cref{conjecture-tropical-MRR-preface}.
 \begin{conjecture} 
 \label{conjecture-tropical-MRR}
 Let $S$ be a compact tropical manifold satisfying 
@@ -2337,7 +2337,7 @@ of $S$ (see \cref{remark-todd-class}).
 Let $s$ be an admissible smooth Cartier divisor such that
 $s_0\cap s$ is finite. Then, 
 \begin{align}
-\chi(\opn{MF}^{\bullet}(S;s))=\int_{S}\opn{ch}(s)\opn{td}(S).
+\chi(\opn{LMD}^{\bullet}(S;s))=\int_{S}\opn{ch}(s)\opn{td}(S).
 \end{align}
 \end{conjecture}
 In this paper, we don't discuss the general theory of 
@@ -2347,20 +2347,26 @@ affine manifold with a Hessian form in the
 rest of this paper.
 
 \begin{remark}
-Obviously, $\opn{MF}^{\bullet}(S;s,A)$ is not usually 
+Obviously, $\opn{LMD}^{\bullet}(S;s,A)$ is not usually 
 finitely generated and this is not invariant 
 for linearly equivalent smooth Cartier divisors
 if $S$ is not compact.
 This corresponds that Morse homology does not work directly
 for non-compact manifolds such 
 like for compact manifolds.
-Besides, $\chi(\opn{MF}^{\bullet}(S;s,A))$ is \emph{not}
+Besides, $\chi(\opn{LMD}^{\bullet}(S;s,A))$ is \emph{not}
 an invariant for line bundles for general compact rational 
 polyhedral spaces. See also 
 \cref{remark-rotation-closed-interval}.  
 \end{remark}
 
 \begin{remark}
+
+We add some comments for the reason 
+why we assume \cref{condition-Rn} for simplicity.
+Of course, $\mathbb{T}P^{1}$ does not satisfies
+\cref{condition-Rn}. In this case, 
+
 A canonical topological semifield isomorphism 
 $({\mathbb{R}}_{\geq 0},+,\cdot)\simto 
 (\mb{T},\oplus_{\opn{log}},+);x\mapsto \log(x)$
@@ -2369,19 +2375,13 @@ naturally and we can define a smooth function on
 $\mb{T}^{n}$ by the pullback of the smooth function on 
 ${\mathbb{R}}_{\geq 0}^{n}$ such that its derivative at $x$ in
 the stalk of the sheaf of affine function
-(with a real valued slope) on $\mb{T}^{n}$.
+(with a real valued slope) on $\mb{T}^{n}$
+(see also \cref{definition-weak-smooth}).
  By repeating
 the construction of the sheaf of $(0,0)$-superforms on 
-rational polyhedral spaces, we can extend a sheaf of
-smooth function on rational polyhedral spaces and
-\cref{conj: conj}.
-\myfootnote{The differential of such a smooth function 
-need to be in the stalk of the sheaf of affine function 
-with real valued slope since 
-$\frac{df\circ \opn{exp}}{dx_i}=
-\frac{df}{dy_i}e^{x_i}\mapsto 0$ at 
-$x_i\mapsto 0$.}
- For instance, \cref{eg: TP1Cartier} satisfies 
+rational polyhedral spaces, we can extend the sheaf of
+$(0,0)$-superforms appropriately.
+For instance, \cref{eg: TP1Cartier} satisfies 
 these conditions. We can generalize about it for toric
 varieties and this gives a tropical theoretic interpretation 
 of the wrapped Fukaya category for the mirror of
@@ -2587,7 +2587,7 @@ Let $s$ be a smooth admissible Cartier divisor which
 represents $\mathcal{L}$ such that 
 $s_0\cap s$ is finite. Then,
 \begin{align}
-  \chi(\opn{MF}^{\bullet}(C,s))=\opn{deg}(s)+
+  \chi(\opn{LMD}^{\bullet}(C,s))=\opn{deg}(s)+
 \chi_{\opn{top}}(C)=\opn{deg}(\mathcal{L})+1-g(C).
 \end{align}
 \end{theorem}
@@ -2904,7 +2904,7 @@ Let $C=[a,b]$ be a closed interval in $\mathbb{R}$
 and $s$ an admissible smooth Cartier divisor 
 such that $s_0\cap s=\{a,b\}$. Then,
 \begin{align}
-\chi(\opn{MF}^{\bullet}(C;s))=\opn{rot}(s)+
+\chi(\opn{LMD}^{\bullet}(C;s))=\opn{rot}(s)+
 \chi_{\opn{top}}(C).
 \end{align}
 \end{proposition}
@@ -2928,9 +2928,9 @@ the inclusion $i_{C'}\colon C'\to C$
 and $i_{C''}\colon C''\to C$ induces
 \begin{align}
 \label{equation-meyer-vietoris}
-\chi(\opn{MF}^{\bullet}(C;s))
-&=\chi(\opn{MF}^{\bullet}(C';i_{C'}^{*}(s)))
-+\chi(\opn{MF}^{\bullet}(C'';i_{C''}^{*}(s)))
+\chi(\opn{LMD}^{\bullet}(C;s))
+&=\chi(\opn{LMD}^{\bullet}(C';i_{C'}^{*}(s)))
++\chi(\opn{LMD}^{\bullet}(C'';i_{C''}^{*}(s)))
 -\sharp(C'\cap C''), \\
 \label{equation-rotation-sum}
 \opn{rot}(s)&=\opn{rot}(i_{C'}^{*}(s))
@@ -2978,7 +2978,7 @@ $\psi \colon \pi_0 (C_0)\to \mathcal{P}(C_0)$
 \begin{align}
 \sum_{e\in \pi_0(C),}
 \sum_{\psi_e(p)=v} 
-\opn{MF}^{\bullet}(\tilde{e},p)
+\opn{LMD}^{\bullet}(\tilde{e},p)
 \end{align}
 
 \end{proof}
@@ -2997,18 +2997,22 @@ without \cref{condition-Rn}.
 For general tropical curve $C$ with $1$-valent
 vertex and smooth Cartier divisor 
 $s\in\Gamma(C;\mathcal{A}^{0,0}_C/\mathcal{O}^{\times}_C)$,
-we cannot choose a Cartier divisor $s'$ which
-is linearly equivalent to $s$ and $s_0\cap s'<\infty$. 
+we cannot choose a smooth Cartier divisor $s'$ which
+is linearly equivalent to $s$ and $s_0\cap s'<\infty$.
 The reason of this fact is that every 
 $(0,0)$-superform on a compact tropical curve 
 $C$ is constant on a sufficiently
 small open neighborhood of $1$-valent vertex.
+For instance, 
+$f\colon \mathbb{T}^1 \to \mathbb{R}; x\mapsto 
+\opn{log}(1+e^{x})$ is not a $(0,0)$-superform
+on $\mathbb{T}^{1}$.
 In this subsection, we extend smooth functions
 on tropical curves for generalization of 
 \cref{theorem-MRR-metric-graph} for general 
 tropical curves.
 
-\begin{definition}
+\begin{definition} \label{definition-weak-smooth}
 Let $\opn{exp}\colon \mathbb{T}^{n}\to 
 \mathbb{R}_{\geq 0}^{n}$ be an exponential map of 
 $\mathbb{T}^{n}$ and $U$ an open subset of 
@@ -3017,25 +3021,36 @@ A continuous function $f\colon U\to \mathbb{R}$
 is a \emph{weak-smooth} if 
 $f=\opn{log}\circ g\circ \opn{exp}$ for some 
 smooth function $g\colon V\to \mathbb{R}_{>0}$ on 
-an open subset $V$ of $\mathbb{R}^{n}$.
+an open subset $V$ of $\mathbb{R}^{n} 
+(\supset \mathbb{R}_{\geq 0}^{n})$.
 Let $\mathcal{A}_{\mathbb{T}^{n}}^{\mathrm{weak}}(U)$ 
 be the set of weak-smooth functions on $U$.
 \end{definition}
+
+\begin{example}
+Let 
+$g\in \mathbb{R}_{\geq 0}[x_1,\ldots,x_n]$ be a polynomial 
+function with positive coefficients such that $g(0)\ne 0$. 
+Then, $f=\opn{log}\circ g \circ \opn{exp}$ is weak-smooth 
+on $\mathbb{T}^{n}$.
+\end{example}
+
 Since $\opn{log}\circ g\circ\opn{exp}+\opn{log}\circ h
 \circ \opn{exp}=\opn{log}\circ(gh)\circ\opn{exp}$ and 
 the condition is local, 
 $\mathcal{A}_{\mathbb{T}^{n}}^{\opn{weak}}(U)$ forms a 
 sheaf of Abelian groups on $\mathbb{T}^{n}$. 
 The following property says that every weak-smooth 
-function is constant at the origin of $\mathbb{T}^{n}$.
+function is sufficiently close to a constant function 
+at the origin of $\mathbb{T}^{n}$.
 \begin{proposition}
 Let $U$ be an open neighborhood of the origin of 
 $\mathbb{T}^{n}$ and 
  $f\in \mathcal{A}_{\mathbb{T}^{n}}^{\mathrm{weak}}(U)$.
 For a given $\vep >0$, there exists $\delta\in \mathbb{R}$
-such that $|\frac{\partial f}{\partial x_i}(x)|<\vep$
-for any $x \in (-\infty,\delta]^{n}$ and $i=1,\ldots,n$. 
-Here, $\frac{\partial f}{\partial x_i}(x)$ is the $i$-th partial 
+such that $|\frac{\partial f}{\partial x_i}(z)|<\vep$
+for any $z=(z_1,\ldots,z_n) \in (-\infty,\delta]^{n}$ and $i=1,\ldots,n$. 
+Here, $\frac{\partial f}{\partial x_i}(z)$ is the $i$-th partial 
 differential on $U\cap \mathbb{R}^{n}$.
 \end{proposition}
 \begin{proof}
@@ -3045,30 +3060,35 @@ We can assume $f=\opn{log}\circ g\circ \opn{exp}$ for
 some smooth function 
 $g\colon V\to \mathbb{R}_{>0}$ of $\mathbb{R}^{n} 
 (\supset \mathbb{R}_{\geq 0}^{n})$.
+By Jacobi rule, we have
 \begin{align}
-\frac{\partial f}{\partial x_i}(x)=(g\circ \opn{exp}(x))^{-1} 
-\frac{\partial g}{\partial y_i}(\opn{exp}(x))\opn{exp}(x_i)
+\frac{\partial f}{\partial x_i}(z)=(g\circ \opn{exp}(z))^{-1} 
+\frac{\partial g}{\partial y_i}(\opn{exp}(z))\opn{exp}(z_i).
 \end{align}
-$g\circ \opn{exp}(x)$ is bounded on $[-\infty,\delta]^{n}$.
+$g\circ \opn{exp}$ is bounded on $[-\infty,\delta]^{n}$.
 $\frac{\partial g}{\partial y_i}$ can be defined 
 on $V$, so $\frac{\partial g}{\partial y_i}\circ \opn{exp}$
 is also bounded on $[-\infty,\delta]^{n}$.
 Therefore, there exists a real number $r$ such that
-$|(g\circ \opn{exp}(x))^{-1} 
-\frac{\partial g}{\partial y_i}(\opn{exp}(x))|<r$ for any 
+$|(g\circ \opn{exp}(z))^{-1} 
+\frac{\partial g}{\partial y_i}(\opn{exp}(z))|<r$ for any 
 $x\in [-\infty,\delta]^{n}$.
-Therefore, if $x_i$ is sufficiently small, so is 
-$\frac{\partial f}{\partial x_i}$. 
+Therefore, if $z_i$ is sufficiently small, so is 
+$\frac{\partial f}{\partial x_i}(z_i)$. 
 \end{proof}
 From now on, we mainly discuss the case when $n=1$.
 
 Let $C$ be a tropical curve. 
 Let $\mathcal{A}_C^{\opn{weak}}$ be the sheaf 
 of weak-smooth functions on $C$. From definition,
-$\mathcal{A}_C^{(0,0)}\subset \mathcal{A}_C^{\opn{weak}}$
+$\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
 and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
 
-
+We can replace $\mathcal{A}_C^{0,0}$ with 
+$\mathcal{A}_C^{\opn{weak}}$
+on \cref{equation-smoooth-cartier-divisor-sequence}
+and thus we can also define smooth Cartier divisors
+for weak-smooth functions. 
 \begin{definition}
 A \emph{weak-smooth Cartier divisor} of $C$ is a 
 element of $\Gamma(C;\mathcal{A}_C^{\opn{weak}}/
@@ -3084,21 +3104,20 @@ surjective.
 
 We can extend admissibility condition for
 weak-smooth functions and weak-smooth Cartier 
-divisors on $C$ but in this case every 
-weak-smooth function is admissible at $1$-valent
-vertex of $C$.
-
+divisors on $C$. In our case, every weak-smooth 
+Cartier divisor satisfies the admissible condition 
+at every $1$-valent vertex.
 \begin{definition}
 Let $s$ be an admissible weak-smooth Cartier divisor 
 of $C$ such that $s_0\cap s<\infty$.
 The Morse complex of $s$ the following graded module:
 \begin{align}
-  \opn{MF}^{\bullet}(C;s)=\bigoplus_{p\in s_0\cap s} 
+  \opn{LMD}^{\bullet}(C;s)\deq \bigoplus_{p\in s_0\cap s} 
 \tilde{H}^{\bullet-1}
-(U_p\cap \{\tilde{f_p}<\tilde{f_p}(p)\};\mathbb{Z})
+(U_p\cap \{\tilde{f_p}<\tilde{f_p}(p)\};\mathbb{Z}).
 \end{align}
 Here, $(U_p,\tilde{f}_p)_{p\in s_0\cap s}$ is a local 
-index data of $s$.
+intersection data of $s$.
 \end{definition}
 
 From construction, the following theorem is just a
@@ -3110,7 +3129,7 @@ Let $C$ be a compact tropical curve and
 $s$ an admissible weak-smooth Cartier divisor 
 of $C$ such that $s_0\cap s<\infty$. Then,
 \begin{align}
-  \chi(\opn{MF}^{\bullet}(C,s))=\opn{deg}(s)+
+  \chi(\opn{LMD}^{\bullet}(C,s))=\opn{deg}(s)+
 \chi_{\opn{top}}(C)=\opn{deg}(\mathcal{L})+1-g(C).
 \end{align}
 \end{theorem}
@@ -3179,7 +3198,7 @@ smooth Cartier divisors.
 One of reasons is that there exists smooth function $f$
 on a polyhedral space $S$ and 
 $x\notin\opn{Crit}(f|_S)$ such that
-$\opn{MF}^{\bullet}(A_S,f|_{S},x)$ is nontrivial.
+$\opn{LMD}^{\bullet}(A_S,f|_{S},x)$ is nontrivial.
 Another reason is that we could not create 
 convenient continuous sections like 
 \cref{definition-continuous-section} easily.
@@ -4121,7 +4140,7 @@ isomorphism of graded modules:
 \opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'};
 \Lambda_{\opn{nov}}^{\mathbb{C}})
 \simeq 
-\opn{MF}^{\bullet}_{\Lambda_{\opn{nov}}^{\mathbb{C}}}
+\opn{LMD}^{\bullet}_{\Lambda_{\opn{nov}}^{\mathbb{C}}}
 (s',s).
 \end{align}
 This isomorphism supports our analog of graded module
@@ -4192,8 +4211,8 @@ then \cref{theorem-MRR-hesse} is also true for compact
 integral manifold with a Hessian form from
 \cref{proposition-euler-number-etale} for $p$:
 \begin{align}
-\chi(\opn{MF}^{\bullet}(B_0;s))
-=\opn{deg}(p)^{-1}\chi(\opn{MF}^{\bullet}(T;p^{*}(s)))
+\chi(\opn{LMD}^{\bullet}(B_0;s))
+=\opn{deg}(p)^{-1}\chi(\opn{LMD}^{\bullet}(T;p^{*}(s)))
 =\opn{deg}(p)^{-1}\frac{1}{n!}\int_T c_1(p^{*}s)^{n}
 =\frac{1}{n!}\int_{B_0}c_1(s)^{n}.
 \end{align}
@@ -4218,7 +4237,7 @@ we get
 $\frac{1}{n!}\int_{T}c_1(s)^{n}$ is equal to the determinant
 of the linear part of $dq_s$. The intersection number of the image $L_s$ Lagrangian
 section and the zero section $L_0$ is equal to
-$\chi(\opn{MF}^{\bullet}(L_0,L_s))$ up to 
+$\chi(\opn{LMD}^{\bullet}(L_0,L_s))$ up to 
 signature
 \myfootnote{The signature only depends on
 the choice of 
@@ -4235,10 +4254,10 @@ We note the one-time flow of submanifold of $\check{X}(B_0)$ does not change
 the homology class in $H^{\bullet}(\check{X}(B_0);\Z)$ and
 the intersection number \cite[5.2.1. Theorem]{MR1336822}.
 Therefore, 
-$\chi(\opn{MF}^{\bullet}(T,s))=
-\chi(\opn{MF}^{\bullet}(T,dq_{s}))$.
+$\chi(\opn{LMD}^{\bullet}(T,s))=
+\chi(\opn{LMD}^{\bullet}(T,dq_{s}))$.
 
-We can calculate $\chi(\opn{MF}^{\bullet}(T,s))$ as follows:
+We can calculate $\chi(\opn{LMD}^{\bullet}(T,s))$ as follows:
 
 (i) If $\det dq_s\ne 0$, $dq_s$ intersects to 
 the zero section transversely. We can see that 
@@ -4248,7 +4267,7 @@ we get \cref{equation-Hesse-RR}.
 (ii) If $\det dq=0$, we can choose a smooth vector bundle $v$ on 
 $\check{X}(T)$ such that the one-time flow $\phi$ of $v$ make 
 $\phi(L_{dq_s})\cap L_0=\emp$. 
-Thus, $\chi(\opn{MF}^{\bullet}(T,s))=0$.
+Thus, $\chi(\opn{LMD}^{\bullet}(T,s))=0$.
 \end{proof}
 
 \begin{corollary}
@@ -4269,8 +4288,8 @@ $\tilde{f}_i$ is Morse, and
 $f_i(x)=\tilde{f}_i(x)$ for the complement of 
 sufficiently small neighborhoods of $L_0\cap L_s$. 
 From \cref{equation-Khimshiashvili}, we have
-$\chi(\opn{MF}^{\bullet}(B_0,s))
-=\chi(\opn{MF}^{\bullet}(B_0,s'))$.
+$\chi(\opn{LMD}^{\bullet}(B_0,s))
+=\chi(\opn{LMD}^{\bullet}(B_0,s'))$.
 \end{proof}
 
 \begin{remark} \label{rmk: integral_mirror}
@@ -4297,7 +4316,7 @@ since the tangent bundle of $X(B_0)$ is flat.
 \begin{remark}
 When $s=\vep (f)^{\opn{sm}}$ for a sufficiently small $\vep >0$ and 
 a Morse function $f$ on $B_0$, 
-$\chi(\opn{MF}^{\bullet}(B_0,s))=
+$\chi(\opn{LMD}^{\bullet}(B_0,s))=
 \chi_{\opn{top}}(B_0)=0$ is 
 truly a special case of Poincar\'e--Hopf theorem for $B_0$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
@@ -4385,17 +4404,17 @@ where $\mcal{F}_1\boxtimes^{L} \mcal{F}_2\deq p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_
   If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
   the Thom-Sebastiani theorem gives
   a certain K\"unneth formula for
-  $\opn{MF}^{\bullet}(\Z_{V\times W},f_1\dot{+}f_2,(v,w))$:
+  $\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\dot{+}f_2,(v,w))$:
 \begin{align}
-\opn{MF}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W},(v,w))
-\simeq \opn{MF}^{\bullet}(f_1,\Z_{V})
-\otimes_{\Z} \opn{MF}^{\bullet}(f_2,\Z_{W}), \quad \\
+\opn{LMD}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W},(v,w))
+\simeq \opn{LMD}^{\bullet}(f_1,\Z_{V})
+\otimes_{\Z} \opn{LMD}^{\bullet}(f_2,\Z_{W}), \quad \\
 \opn{ind}_{(v,w)}(f_1\dot{+}f_2)=\opn{ind}_v(f_1)\cdot \opn{ind}_v(f_2).
 \end{align}
   From instance, if $f_1(x)=x_1^{2}+\cdots x_{m}^{2}$
   and $f_2(x)=-x_{m+1}^{2}-\cdots - x_{m+n}^{2}$ then we have
 \begin{align}
-    \opn{MF}^{\bullet}(f_1\dot{+}f_2,\Z_{{\mathbb{R}}^{n+m}})
+    \opn{LMD}^{\bullet}(f_1\dot{+}f_2,\Z_{{\mathbb{R}}^{n+m}})
     \simeq \tilde{H}^{\bullet}(S^{n-1},\Z)
     \simeq \Z[-\opn{ind}_{\mathrm{Morse}}(f_1\dot{+}f_2,0)]
 \end{align}
@@ -4430,8 +4449,8 @@ $s\boxtimes s'\deq \opn{pr}_X^{*} (s)+\opn{pr}_Y^{*}(s')
 \in \opn{CaDiv}^{\infty}(X\times Y)$ is also admissible and
 has the following equations:
 \begin{align}
-\chi(\opn{MF}^{\bullet}(X\times Y;s\boxtimes s'))=
-\chi(\opn{MF}^{\bullet}(X,s))\chi(\opn{MF}^{\bullet}(Y,s')).
+\chi(\opn{LMD}^{\bullet}(X\times Y;s\boxtimes s'))=
+\chi(\opn{LMD}^{\bullet}(X,s))\chi(\opn{LMD}^{\bullet}(Y,s')).
 \end{align}
 
 \end{corollary}
@@ -4445,15 +4464,15 @@ From sheaf theoretic Thom-Sebastiani theorem for constructible sheaves
 graded modules;
 
 \begin{align}
-\opn{MF}^{\bullet}(X\times Y;s\boxtimes s') 
+\opn{LMD}^{\bullet}(X\times Y;s\boxtimes s') 
 & =\bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
 (R^{\bullet}_{\{f_v\boxplus g_w\geq 0\}}\Z_{U_{(v,w)}})_{(v,w)} \\
 & \simeq \bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
 (R^{\bullet}_{\{f_v\geq 0\}}\Z_{U_v})_v
 \otimes_{\Z} (R^{\bullet}_{\{g_w\geq 0\}}\Z_{U_w})_w \\
 & \simeq
-\opn{MF}^{\bullet}(X,s)\otimes_{\Z} 
-\opn{MF}^{\bullet}(Y,s').
+\opn{LMD}^{\bullet}(X,s)\otimes_{\Z} 
+\opn{LMD}^{\bullet}(Y,s').
 \end{align}
 
 \end{proof}
