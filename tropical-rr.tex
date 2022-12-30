@@ -1497,13 +1497,7 @@ critical point at $x$ then
 $\opn{LMD}^{\bullet}(A_{S},f|_S,x)\simeq A[0]$.
 \end{example}
 
-%TODO:
-
-We use the 
-
-\begin{definition}
-
-\end{definition}
+%NEXT: nondepraveを書くか?
 
 We also use the locally analytic condition frequently:
 
@@ -1631,6 +1625,11 @@ $\sigma_{df}\colon X\to T^{*}X$ defined in
 \cite[Definition 9.3.5]{MR1299726}.
 \end{theorem}
 
+\begin{remark}
+The microlocal index theorem is generalized for more general 
+class of functions by several researchers.
+\end{remark}
+
 \begin{example}
 Let $M$ be a compact integral affine manifold and $S$  
 a compact rational polyhedral subspace in $M$. 
@@ -1650,10 +1649,7 @@ $\opn{Ext}^{\bullet}(\mcal{O}_X,\iota_*\mcal{O}_Z)$ for closed embedding of
 scheme.
 \end{example}
 
-\begin{remark}
-The microlocal index theorem is generalized for more general 
-class of functions by several researchers.
-\end{remark}
+
 
 
 
@@ -1709,7 +1705,7 @@ From \cref{example-local-cohomology} and
 \cref{prop-local-morse-data}, we have
 \begin{align}
 \opn{LMD}^{\bullet}(A_S,-f|_S,0)=
-\tilde{H}^{\bullet-1}(S\setminus \{0\};A_{S})
+\tilde{H}^{\bullet-1}(S\setminus \{x\};A_{S})
 \simeq H^{\bullet}_{\{x\}}(S;A_S).
 \end{align}
 
@@ -2974,7 +2970,7 @@ and $s$ a smooth Cartier divisor on $C$. Then,
 
 
 
-\begin{proof}[{Proof of \cref{theorem-MRR-metric-graph}}]
+\begin{proof}
 Without loss of generality, we can assume $C$ is 
 connected and $\sharp (s_0\cap s)\geq 1$.
 Since $s_0\cap s\supset (C\setminus C_0)$, 
@@ -4668,7 +4664,8 @@ form.
 \begin{remark}
 %TODO: Tyurinから
 
-The idea of considering the lattice point $B(\Z)$ of 
+The idea of considering the lattice point 
+$B(\mathbb{Z})$ of 
 integral affine manifold with singularities $B$ as 
 an index of a good basis of an ample line bundle of 
 a (degenerating) family of Calabi--Yau manifold is 
