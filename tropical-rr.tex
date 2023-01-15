@@ -507,8 +507,15 @@ see also \cref{appendix-geometric-quantization}.
 Next, we will interpret the LHS of 
 \cref{equation-toric-HRR} by the language
 of tropical toric varieties.
+\myfootnote{
+In \cite{MR4155409},
+new Ehrhart theory of tropical geometry appear, 
+but this is different from our approach.
+}
 In this paper, we mainly use max-plus algebra for 
 tropical geometry.
+
+
 Basic concepts and properties 
 of tropical toric varieties is studied and 
 explained in \cite{MR2428356,MR2511632,meyer2011intersection,MR3287221}.
@@ -781,7 +788,10 @@ The RHS is called the derived category of
 Fukaya category of $\check{X}$ and 
 $\mathcal{X}$ is a Calabi--Yau manifold over 
 the Novikov field $\Lambda^{\mathbb{C}}_{\mathrm{nov}}$ 
-with $\mathbb{C}$-coefficients. 
+with $\mathbb{C}$-coefficients.
+To our knowledge, the general definition 
+of the Fukaya category of Calabi--Yau manifold
+will be appeared in \cite{afooo}.
 HMS induces an isomorphism between (Lagrangian) 
 Floer cohomology of a pair of Lagrangian branes 
 $(\mathscr{L}_0,\mathscr{L})$ and 
@@ -911,9 +921,9 @@ Here $\upomega_X$ is the canonical bundle on $X$.
 If $X$ is a mirror of $\check{X}$, then 
 the (\ref{equation-floer-poincare}) and 
 (\ref{equation-serre-duality}) should be compatible.
-Obviously, for many complex manifolds $X$
-$\upomega_X$ is not trivial, and thus we cannot
-consider the mirror cohomology of 
+Obviously, 
+$\upomega_X$ is not trivial for many complex manifolds $X$,
+and thus we cannot consider the mirror cohomology of 
 $\opn{Ext}^{\bullet}(\mathcal{L}_2,\mathcal{L}_1)$
 from classical Lagrangian Floer cohomology directly.
 Therefore, we need to replace $\check{X}$ 
@@ -945,7 +955,7 @@ but we write it for showing a slogan of formulation
 of a tropical analog of HRR.
 
 \begin{conjecture}[{Tropical Mirror Riemann--Roch Problem
-\cref{conjecture-tropical-MRR}}]
+(\cref{conjecture-tropical-MRR})}]
 \label{conjecture-tropical-MRR-preface}
 Let $B$ be a compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
@@ -967,6 +977,10 @@ $Ra_{B!}a_{B}^{!}\mathbb{Z}_{\{\mathrm{pt}\}}
 In particular, when $\mcal{L}=\mcal{O}_B$ then
 $\chi(\opn{LMD}^{\bullet}(B;s))=\chi_{\opn{top}}(B)$ ?
 \end{conjecture}
+
+We also expect the \cref{conjecture-tropical-MRR-preface}
+gives a hint of   
+"sheaf cohomology of tropical line bundle". 
 
 \begin{remark}
 Here is the list of the reason why the Euler 
@@ -1065,7 +1079,8 @@ We also thank for Kentaro Yamaguchi for explaining about
 \cite{yamaguchimaster}. We thank for Yuto Yamamoto for
 explaining about the radiance obstruction of integral 
 affine manifold with singularities and Gross--Siebert
-programs.
+programs. We thanks for Masanori Kobayashi for 
+pointing out some mistakes. 
 This work was supported by JSPS KAKENHI 
 Grant Number 21J14529.
 
@@ -2146,6 +2161,27 @@ the real torus defined as follows:
 We call the union $\check{X}(S)\deq \bigcup_{x\in S}\check{X}(S)_x$
 the \emph{stratified torus 
 fibration} of $S$.
+For simplicity, we give a (tentative) 
+topological structure of $\check{X}(S)$ as follows
+(but we consider this topological structure is 
+\emph{not good}):
+\begin{align}
+{}_k(S)\deq \set{x\in S\mid \dim \opn{SS}(S)_x=k}, \quad
+{}_k\check{X}(S)=\check{\pi}_{S}^{-1}({}_k(S)).
+\end{align}
+Each ${}_k\check{X}(S)$ has a canonical torus fibration 
+structure, and
+$\bigsqcup_{k=0}^{\dim S} S\cap {}_k\check{X}(S)$ has 
+a canonical identity continuous map 
+$i\colon \bigsqcup_{k=0}^{\dim S} S\cap {}_k\check{X}(S)
+\to S$.
+The topological structure of $\check{X}(S)$ is 
+the adjunction space of the above identity map
+$S \cup_{i} (\bigsqcup_{k=0} {}_k\check{X}(S))$.
+We won't pursue about
+topological structures of $\check{X}(S)$ 
+here.
+
 Let $s$ be a smooth 
 Cartier divisor on $S$ and $\{(U_i,f_i)\}_{i\in I}$ a local
 smooth Cartier data of $s$. 
@@ -2429,8 +2465,6 @@ lattice polytopes.
 
 
 
-%TODO: eigenwaveとの諸々の文献補填
-
 \iffalse
 From definition,
 \begin{align}
@@ -2554,12 +2588,12 @@ compact tropical curves
 (see \cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a} 
 for the definition of tropical curves).
 Our proof is highly effected from 
-\cite{knill2012graph,MR2676658,auroux2022lagrangian}.
+\cite{knill2012graph,MR2676658,auroux2022lagrangian}
 \footnote{Our proof idea comes from 
 \cite{knill2012graph,MR2676658} at first.  
 The current proof is modified after reading 
 \cite{auroux2022lagrangian}.}.
-We also follow the notation used in 
+We also mainly follow the notation used in 
 \cite{auroux2022lagrangian}.
 Some propositions which have already proved as a special case
 of the previous section will appeear, but we write a short proof 
@@ -2606,13 +2640,14 @@ polyhedral spaces:
 
 If $C$ is a compact tropical curve with 
 no $1$-valent vertex, then every point in $C$ has 
-an open neighborhood which is isomoprhic to 
+an open neighborhood which is isomorphic to 
 a open subset of some $\Gamma_{n}^{\circ}$.
+Besides, every compact tropical curve with 
+no $1$-valent vertex $C$ has a canonical metric structure 
+associated with lattice structure of the tangent 
+vector space of $C$ 
+\cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
 
-
-\begin{definition}
-
-\end{definition}
 
 \begin{proposition}
 \label{proposition-admissible-curve}
@@ -2643,9 +2678,7 @@ $\opn{span}_{\mathbb{R}}(\opn{SS}(\mathbb{Z}_{S\subset X})_x)
 =\mathbb{R}^{n}$ where $X=\mathbb{R}^{n}$ and $S=\Sigma$.
 \end{proof}
 
-\begin{remark}
-We can generalize for general
-\end{remark}
+
 
 \begin{proposition}[{cf. \cite{knill2012graph}}]
 \label{proposition-n-valent}
@@ -2693,7 +2726,8 @@ data for nondepraved functions directly
 \cite[Part I.3.5.2 Definition]{MR932724}. 
 We expect, however, that there exists a 
 generalized version of local Morse data 
-which can apply for our settings. 
+which can apply for our settings.
+%TODO: local Milnor data
 \end{remark}
 
 \begin{definition}[{Continuous section}]
@@ -2807,7 +2841,9 @@ section defined in \cref{proposition-admissible-section}.
 %NEXT: TP1のローテーションを定義する。 
 
 \begin{definition}[{Rotation number}]
-Let $s\colon  (\subset \mathbb{T}P^{1}\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee})$
+Let $s\colon \mathbb{T}P^{1} \to \check{X}(\mathbb{T}P^{1})$ 
+be the section of 
+$\check{\pi}_{\mathbb{T}P^{1}}$
 \end{definition}
 
 \begin{proposition}
@@ -3167,59 +3203,7 @@ of $C$ such that $s_0\cap s<\infty$. Then,
 \end{align}
 \end{theorem}
 
-\begin{remark} \label{rmk: curve_mirror}
-When $C$ is a trivalent metric graph, 
-our Lagrangian sections are 
-almost the same with that of fiberwise wrapped Fukaya category 
-$\mcal{F}(M)$ \cite[3.1]{auroux2022lagrangian}.
-Here, $M$ is the
-union of $\C P^{1}$'s whose intersection complex is $C$, 
-i.e., every edge of $C$ corresponds
-$\C P^{1}$ and every trivalent vertex of $C$ corresponds
-to the intersection points of some three $\C P^{1}$'s.
-The mirror manifold of $M$ is an algebraic curve $X_K$
-from Mumford's construction using the dual intersection
-complex $C$.
 
-The local model of $M$ comes from the critical locus
-of the potential function of a (A-side) Landau--Ginzburg 
-model $(\C^{3},-xyz)$. There exists a (Orlov) functor
-from $\opn{Fuk}(\C^{3},-xyz)$ 
-to $\opn{wFuk}((\C^{\times})^2)$ which is compatible
-with the pushforward 
-$i_*\colon \opn{Perf}(V(1+x_1+x_2))\to \opn{Perf}((K^{\times})^{2})$. 
-of the inclusion $i\colon V(1+x_1+x_2)\hookto (K^{\times})^2$
-via mirror functors (see \cite[2.]{auroux2022lagrangian}
-for more details). 
-
-The mirror space $M$ of $X_K$ can be considered as a 
-topological compactification of $\check{X}_0(C)$.
-
-By a slight modification of $\check{X}_0(C)$, every 
-stratified smooth Lagrangian section of $\check{X}(C)$ 
-can be considered as an object of $\mcal{F}(M)$
-
-The main difference between our setting and 
-that of \cite{auroux2022lagrangian} 
-is the definition of graded space $\opn{CF}(C,s)$. 
-Our approach has no good definition 
-of $m^{d}$-operations, but we define $\opn{CF}(C,s)$ 
-without Hamiltonian
-perturbations.
-\end{remark}
-
-The stratified torus fibration of Riemann surface is 
-closely related with pants decomposition, and thus
-Auroux--Efimov--Katzarkov in \cite{auroux2022lagrangian} expect the mirror symmetry 
-for projective hypersurfaces since they have higher 
-dimensional pants decomposition \cite{MR2079993} along
-tropical hypersurfaces.
-As a toy model of this question, we also pose a 
-following question as a higher version of the 
-correspondence above.
-
-We also expect that the question above has a generalization
-for more general algebraic varieties.
 
 
 %TODO: 適切な箇所で See \cref{remark-non-admissible-divisor}
@@ -3296,6 +3280,57 @@ integer slope.
 \subsubsection{Relationships between
 homological mirror symmetry of trivalent graphs}
 \label{section-syz-trivalent-graph}
+
+\begin{remark} \label{rmk: curve_mirror}
+When $C$ is a trivalent metric graph, 
+our Lagrangian sections are 
+almost the same with that of fiberwise wrapped Fukaya category 
+$\mcal{F}(M)$ \cite[3.1]{auroux2022lagrangian}.
+Here, $M$ is the
+union of $\C P^{1}$'s whose intersection complex is $C$, 
+i.e., every edge of $C$ corresponds
+$\C P^{1}$ and every trivalent vertex of $C$ corresponds
+to the intersection points of some three $\C P^{1}$'s.
+The mirror manifold of $M$ is an algebraic curve $X_K$
+from Mumford's construction using the dual intersection
+complex $C$.
+
+The local model of $M$ comes from the critical locus
+of the potential function of a (A-side) Landau--Ginzburg 
+model $(\C^{3},-xyz)$. There exists a (Orlov) functor
+from $\opn{Fuk}(\C^{3},-xyz)$ 
+to $\opn{wFuk}((\C^{\times})^2)$ which is compatible
+with the pushforward 
+$i_*\colon \opn{Perf}(V(1+x_1+x_2))\to \opn{Perf}((K^{\times})^{2})$. 
+of the inclusion $i\colon V(1+x_1+x_2)\hookto (K^{\times})^2$
+via mirror functors (see \cite[2.]{auroux2022lagrangian}
+for more details). 
+
+The mirror space $M$ of $X_K$ can be considered as a 
+topological compactification of $\check{X}_0(C)$.
+
+By a slight modification of $\check{X}_0(C)$, every 
+stratified smooth Lagrangian section of $\check{X}(C)$ 
+can be considered as an object of $\mcal{F}(M)$
+
+The main difference between our setting and 
+that of \cite{auroux2022lagrangian} 
+is the definition of graded space $\opn{CF}(C,s)$. 
+Our approach has no good definition 
+of $m^{d}$-operations, but we define $\opn{CF}(C,s)$ 
+without Hamiltonian
+perturbations.
+\end{remark}
+
+The stratified torus fibration of Riemann surface is 
+closely related with pants decomposition, and thus
+Auroux--Efimov--Katzarkov in \cite{auroux2022lagrangian} expect the mirror symmetry 
+for projective hypersurfaces since they have higher 
+dimensional pants decomposition \cite{MR2079993} along
+tropical hypersurfaces.
+As a toy model of this question, we also pose a 
+following question as a higher version of the 
+correspondence above.
 
 Our approach is mostly affected from 
 \cite{auroux2022lagrangian}.
@@ -3395,13 +3430,13 @@ From the above condition, $0<|df_p(p_i)|<1$ and
 $f$ is of type $s_{2,1}$ or $s_{1,2}$ discussed
 in \cref{proposition-n-valent}.
 From the above condition, we can define 
-a flat $U(1)$-connection on each pants of a 
+a flat $U(1)$-bundle on each pants of a 
 connected component of $X\setminus X(C_{0,\vep})$
 as like \cite[6.1.3]{MR2676658}. The former 
 corresponds a small pants and the latter
 corresponds a large pants in 
 \cite[Definition 6.3]{MR2676658}.
-Each small pants and large pants have a Local 
+Each small pants and large pants have a local 
 Riemann--Roch number defined the theory of 
 localization of Dirac-type operator and its 
 number is equal 
@@ -3424,8 +3459,20 @@ identification \cite[Theorem 6.7]{MR2676658}.
 & [P^{S}]=\opn{ind}_v(s_{2,1})=0,
 && [P^{L}]=\opn{ind}_v(s_{1,2})=-1 \notag.
 \end{align}
-From this our theorem for tropical curve can be 
-proved from the theory of localization of index 
+The origin of our approach firstly comes from the 
+above correspondence.
+\myfootnote{
+We also thank Yoshinori Gongyo for 
+giving a question about relationships 
+between a kind of Pick's formula for
+tropical Kummer surfaces and Atiyah--Singer
+index formula. This question gives me 
+an opportunity to learn geometric prequantization and
+Bohr--Sommerfeld points.
+}
+From this correspondence, 
+our theorem for tropical curve can be 
+proved by the theory of localization of index 
 and classical Riemann--Roch formula.
 We stress that both method of computation
 of our index and the local Riemann--Roch number
@@ -3442,7 +3489,7 @@ like \cite{auroux2022lagrangian}.
 Can we generalize the 
 above correspondence \ref{equation-local-RR}
 for more general the complement of
-hyperplane arrangements and flat $U(1)$-bundles on it?
+projective hyperplane arrangements and flat $U(1)$-bundles on it?
 How about for pants decomposition of
   complex algebraic hypersurfaces in \cite{MR2079993} and line bundles?
 \end{question}
@@ -3451,7 +3498,8 @@ We add two comments about the above question.
 First, the Bergman fan $\Sigma$ of a given complex 
 hyperplane arrangement $\mathcal{A}$ does \emph{not} 
 determine 
-the homotopy type of the complement of hyperplane
+the homotopy type of the complement of (projective) 
+hyperplane
 arrangements $U(\mathcal{A})$ uniquely in general.
 Second, every flat $U(1)$-bundle on 
 $U(\mathcal{A})$ is, 
@@ -3462,7 +3510,7 @@ $\rho\colon T_{|\Sigma|,0}^{\mathbb{Z}}\to
 $T_{|\Sigma|,0}^{\mathbb{Z}}\simeq 
 H_1(U(\mathcal{A});\mathbb{Z})$.
 $\rho$ is a natural generalization of $U(1)$-flat 
-connection on pants discussed the above.
+bundle on pants discussed the above.
 
 \section{Proof for integral affine manifold with Hessian form.}
 \label{section-integral-affine-manifold}
@@ -3543,17 +3591,16 @@ with K\"ahler manifold with affine structure.
 
 
 \begin{example}
-Let $f$ be a continuous function defined in 
+Let $f \colon \mathbb{R}^{n} \to \mathbb{R}$ be a continuous function defined by 
 \cref{equation-log-polynomial}.
-Let $f\colon \mathbb{R}^{n}\to \mathbb{R}$ be 
-a smooth function 
 $f$ is smooth and convex 
 on $\mathbb{R}^{n}$.
 Therefore, $(\mathbb{R}^{n},f)$ form an integral 
 Hessian manifold. This is a typical example of
 Hessian domain.
 See also \cite[Appendix 2]{MR1301331} for general theory for
-the relationships for Hessian form and the induced K\"{a}hler potential for
+the relationships for Hessian form and 
+the induced K\"{a}hler potential on
 toric manifolds.
 \end{example}
 
@@ -3562,7 +3609,7 @@ naturally and this superform is a certain analog of
 K\"ahler form, so Hessian metric itself is called Hessian form.
 
 \begin{remark} \label{remark-compact-hessian}
-By \cite[Theorem 2.1, Corollary 2.3]{MR714338},
+By \cite[Theorem 2.1 and Corollary 2.3]{MR714338},
 every closed special Hessian manifold $(B_0,g)$ has 
 a flat Riemannian and Hessian metric $\tilde{g}$ such 
 that its volume form $\opn{vol}_{\tilde{g}}$ is parallel 
@@ -3636,12 +3683,19 @@ the sheaf of  defined in
  (We follow the notation in \cite[Definition 2.4]{MR3894860}.)
 If $X$ is a tropical manifold, then 
 $\mathcal{F}^{p}_{\mathbb{Z},X}$ is equal 
-to the sheaf $\Omega_{X}^{p}$ of tropical $p$-forms defined 
-in \cite[Definition 2.7]{gross2019sheaftheoretic}
+to the sheaf $\Omega_{X}^{p}$ of tropical $p$-forms 
+\cite[Definition 2.7]{gross2019sheaftheoretic}
 (see \cite[Remark 2.8]{gross2019sheaftheoretic}).
 We set $\mathcal{F}^{p}_{X}\deq 
 \mathcal{F}^{p}_{\mathbb{Z}, X}
 \otimes_{\mathbb{Z}_X}\mathbb{R}_X$.
+
+\begin{example}
+If $B_0$ is an integral affine manifold, then 
+$\mathcal{F}^{p}_{\mathbb{Z},B_0}\simeq 
+\bigwedge^{p}_{i=1} \mathcal{T}_{\mathbb{Z},B_0}^{\vee}$ for 
+all $p\in \mathbb{Z}_{\geq 0}$.
+\end{example}
 
 From now on, we assume every rational polyhedral space $X$
 satisfies $\Omega_X^{p}\simeq \mathcal{F}_{\mathbb{Z},X}^{p}$
@@ -3729,7 +3783,8 @@ By taking the long exact sequence for
 \cref{equation-smooth-cartier-diagram}, we get a canonical morphism:
 \begin{align} \label{equation-tropical-cartier}
 c_1\colon \opn{CaDiv}^{\infty}(X)\to \opn{Pic}(X)\to 
-H^{1}(X;\mathcal{F}_{\mathbb{Z},X}^{1}); s\mapsto D_s \mapsto c_1(s).
+H^{1}(X;\mathcal{F}_{\mathbb{Z},X}^{1}); s\mapsto D_s 
+\mapsto c_1(s)=c_1(D_s).
 \end{align}
 The second morphism of (\ref{equation-tropical-cartier}) is 
 called the Chern class map in \cite[5]{mikhalkinTropicalCurvesTheir2008a}.
@@ -3744,8 +3799,8 @@ and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
 (\ref{equation-smooth-cartier-diagram}). 
 In particular, we have
 $c_1(f^{*}(s)^{n})=f^{*}(c_1(s)^{n})$ for every 
-$D\in\opn{CaDiv}^{\infty}(Y)$ from 
-\cite[]{gross2019sheaftheoretic}.
+$D\in\opn{CaDiv}^{\infty}(Y)$
+by \cite[Proposition 4.17]{gross2019sheaftheoretic}.
 
 \subsection{Verdier duality and Borel--Moore homology
 for tropical spaces}
@@ -4193,7 +4248,7 @@ transversally, then there exists
 
 \begin{remark}
 The condition $\pi_2(B_0)=0$ may seem to be technical
-and strict, but 
+and strict, but this condition is 
 closely related with a classical conjecture.
 \ind{Markus's conjecture}{Markus conjecture} states every closed
 special affine manifold is complete (in the sense of $(G,X)$-manifold)
@@ -4303,6 +4358,11 @@ $\phi(L_{dq_s})\cap L_0=\emp$.
 Thus, $\chi(\opn{LMD}^{\bullet}(T,s))=0$.
 \end{proof}
 
+\begin{remark} \label{rmk: integral_mirror}
+This theorem also can be considered as
+a special case of \cite{MR4301560}.
+\end{remark}
+
 \begin{corollary}
 Let $s$ be a smooth local Cartier divisor on $B_0$ and 
 $\{(U_i,f_i)\}_{i\in I}$ a local smooth Cartier 
@@ -4325,10 +4385,7 @@ $\chi(\opn{LMD}^{\bullet}(B_0,s))
 =\chi(\opn{LMD}^{\bullet}(B_0,s'))$.
 \end{proof}
 
-\begin{remark} \label{rmk: integral_mirror}
-This theorem also can be considered as
-a special case of \cite{MR4301560}.
-\end{remark}
+
 
 \begin{remark}
 
@@ -4338,16 +4395,17 @@ the $k$-skeleton of it.
 We don't know the definition of higher Chern class of tropical manifold $B$ except
 $n=1$ or $n=\dim B_0$. 
 On the other hand, $\opn{ch}(B_0)$ should be trivial when $B$ is
-an integral affine manifold, since $B$ has empty
+an integral affine manifold, since $B_0$ has empty
 $k$-skeleton except $k=n$.
 Thus, $c_{k}(B_0)$ should be $1$ except $k=0$, 
 i.e., $\opn{td}(B_0)$ should be $1$. 
 On the other hand, $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$
-since the tangent bundle of $X(B_0)$ is flat.
+since the tangent bundle on $X(B_0)$ is flat.
 \end{remark}
 
 \begin{remark}
-When $s=\vep (f)^{\opn{sm}}$ for a sufficiently small $\vep >0$ and 
+When $s=\vep (f)^{\opn{sm}}$ for a sufficiently small
+positive real number $\vep >0$ and 
 a Morse function $f$ on $B_0$, 
 $\chi(\opn{LMD}^{\bullet}(B_0,s))=
 \chi_{\opn{top}}(B_0)=0$ is 
@@ -4386,32 +4444,9 @@ primary Kodaira surfaces and
 In the last section, we mention more examples of 
 tropical analog of the Euler number of 
 the sheaf cohomology of line bundles.
- K\"unneth formula for
-the direct product of tropical curves and 
-integral affine manifold for some special cases.
-
-
-
-
-
-Let $\mcal{F}\in \opn{Ob}(\opn{Mod}(A_X))$ 
-\cite[Proposition 2.4.12]{MR1299726}.
-
-This theorem comes from the following sheaf 
-theoretic Thom--Sebastiani formula.
-
-
-
-This is different from those of microlocal sheaf theory \cite[Definition 4.2.2, Definition 4.3.1]{MR1299726} but deeply related with them,
-see \cite[Remark 1.1.1]{MR2031639}.
-
-
-
-In some case we write $f_1\dot{+} f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$.
-
-((この和と使ったのは将来的に容易に予想される
-トロピカル演算の和$\oplus, \boxplus$,
-との混同を避けるためである。))
+First, we remark that there exists
+a tropical analog of K\"unneth formula for 
+local Morse data.
 
 \begin{theorem}[{Thom--Sebastiani Theorem for sheaves \cite[Theorem 1.2.2]{MR2031639}}]
 Let $i=1,2$.
@@ -4419,16 +4454,25 @@ Fix locally compact Hausdorff spaces $X_i$ and
 sheaves $\mathcal{F}_i$ on $X_i$.
 For continuous functions $f_i\colon X_1 \to\mathbb{R}$,
 and closed $S_i$ of $X_i$ contained in $\{f_i=0\}$.
-
+We write $f_1\dot{+} f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$
+\myfootnote{
+We don't use $\boxplus$ and $\oplus$ in place of
+$\dot{+}$
+to avoid confusion from tropical addition.}
+and 
+$\mu_{f_i}\mathcal{F}\deq R\Gamma_{f_i\geq 0}
+(\mathcal{F})|_{\{f_i=0\}}$.
+If the above data satisfies
 the condition of cohomological version of a Milnor 
-fibration \cite[Assumption 1.1.1]{MR2031639}.
-Then there exists the following
-where $\mcal{F}_1\boxtimes^{L} \mcal{F}_2\deq p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$.
-  \begin{align}
+fibration \cite[Assumption 1.1.1]{MR2031639},
+then there exists the following isomorphism 
+for $\mcal{F}_1\boxtimes^{L} \mcal{F}_2\deq 
+p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$;
+\begin{align}
     R\Gamma(S_1\times S_2,\mu_{f_1\dot{+}f_2}(\mcal{F}_1\boxtimes^{L} \mcal{F}_2))
     \simeq R\Gamma(S_1,\mu_{f_1}(\mcal{F}_1))
     \otimes^{L}_{A_X}R\Gamma(S_2,\mu_{f_2}(\mcal{F}_2)).
-  \end{align}
+\end{align}
 
 \end{theorem}
 
@@ -4455,25 +4499,15 @@ where $\mcal{F}_1\boxtimes^{L} \mcal{F}_2\deq p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_
   of a Morse function $f$ at the origin.
 \end{example}
 
-We recall some facts of tensor product of sheaves 
-and derived tensor products of sheaves from \cite{MR1299726}.
-As like flat morphisms of schemes, the notion of flatness
-is defined for any ringed space 
-\cite[Definition 2.4.11]{MR1299726}.
+We don't state a K\"unneth type formula for 
+local Morse data in a fully
+general setting, but the following corollary 
+is enough for performing that there exists 
+a K\"unneth type formula for local Morse data.
 
-\begin{example}
-
-If $\mcal{F}$ is a $A_X$-flat then $p_1^{-1}\mcal{F}$ is also 
-$A_Y$-flat. From \cite[(2.2.7)]{}, 
-Obviously, $A_{Z\subset X}$ is $A_X$-flat for any locally 
-closed subset $Z$ of $X$. 
-\end{example}
-
-We don't state for the K\"unneth type formula in a fully
-general setting but it is enough to perform the Euler number of
-generic locally analytic  behaves as expected.
 \begin{corollary}[{K\"unneth formula}]
-Fix compact rational polyhedral spaces $X,Y$.
+Fix compact rational polyhedral spaces $X$ and $Y$
+satisfying \cref{condition-Rn}.
 Let $s$ and $s'$ a admissible smooth Cartier divisor of $X$ and $Y$ 
 satisfying the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
@@ -4492,17 +4526,28 @@ Since
 $\opn{SS}(F\boxtimes^{L} G)\subset \opn{SS}(F)\times \opn{SS}(G)$
 \cite[Proposition 5.4.1]{MR1299726},
 $s\boxtimes s'$ is also admissible.
-From sheaf theoretic Thom-Sebastiani theorem for constructible sheaves 
-\cite[Corollary 1.2.1]{MR2031639}, we get an isomorphism of 
-graded modules;
 
+Let $\{(U_v,f_v)\}_{v\in s_0\cap s}$
+(resp. $\{(U_w,g_w)\}_{v\in s_0\cap s}$) is a
+local intersection data of
+$\{(U_{v}\times U_w,f_v\boxplus g_w)\}_{
+(v,w)\in s_0 \cap 
+(s\boxtimes s')}$ is the 
+corresponding local intersection data 
+of $s\boxtimes s'$.  
+We get an isomorphism of graded modules
+from sheaf theoretic Thom-Sebastiani theorem for 
+$X_1=U_{v}$, $X_2=U_w$, $S_1=\{v\}$, $S_2=\{w\}$,
+$f_1= f_v-f_v(v)$ and 
+$f_2= f_w-f_w(w)$;
 \begin{align}
 \opn{LMD}^{\bullet}(X\times Y;s\boxtimes s') 
 & =\bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
-(R^{\bullet}_{\{f_v\boxplus g_w\geq 0\}}\Z_{U_{(v,w)}})_{(v,w)} \\
+(R^{\bullet}_{\{f_v\boxplus g_w\geq f_v\boxplus g_w(v,w)\}}
+\Z_{U_{v}\times U_w})_{(v,w)} \\
 & \simeq \bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
-(R^{\bullet}_{\{f_v\geq 0\}}\Z_{U_v})_v
-\otimes_{\Z} (R^{\bullet}_{\{g_w\geq 0\}}\Z_{U_w})_w \\
+(R^{\bullet}_{\{f_v\geq f_v(v)\}}\Z_{U_v})_v
+\otimes_{\Z} (R^{\bullet}_{\{g_w\geq g_w(w)\}}\Z_{U_w})_w \\
 & \simeq
 \opn{LMD}^{\bullet}(X,s)\otimes_{\Z} 
 \opn{LMD}^{\bullet}(Y,s').
@@ -4516,20 +4561,6 @@ the condition of cohomological version of Milnor fiber.
 Besides, we can find many smooth Cartier data satisfying 
 the condition, see \cite[p.35]{MR2031639}.  
 \end{remark}
-
-We will develop this paper for integral affine manifold
-with singularities. As an example we also gives the 
-following analog for (ADE type) tropical Kummer surfaces.
-
-\begin{proposition}[{For the proof for Tropical Kummer surfaces}]
-Let $L=q(L')$ be the image of a Lagrangian 
-section $L'$ of $\check{f}_{T}\colon \check{X}(T)\to T$ such 
-that $L'$ is invariant under the negation map. 
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
 
 \section{Future works}
 
@@ -4573,7 +4604,6 @@ $L$ is a
 (BS-orbit for short)
 if $\nabla|_{L}$ is a trivial connection on $L$. Let $\pi :M\to B$ be a Lagrangian fibration. A point $x\in B$ is \ind{Bohr--Sommerfeld point}{bohr-sommerfeld point} if $\pi^{-1}(x)$ is a Bohr-Sommerfeld orbit.
 
-
 The origin of Bohr--Sommerfeld orbit comes from
 Old Quantum Theory.
 See also \cite[15.2, Chapter 22]{MR3112817}
@@ -4589,7 +4619,7 @@ we can define the set of lattice points $B_0(\Z)$
 on $B_0$ for a fixed strongly integral affine structure from 
 the inverse image $\phi^{-1}_i(U_i\cap M)$ of each atlas.
 In other words, we can define 
-"$\underline{\Z}_{\max}$-rational point" of $B_0$.
+"$\underline{\Z}_{\max}$-rational points" of $B_0$.
 
 
 We can create a canonical section 
@@ -4600,7 +4630,8 @@ $\opn{dev}_{B_0}\colon \widetilde{B_0}\to M_{{\mathbb{R}}}$
 \cite[p.641]{goldmanRadianceObstructionParallel1984a} and projection
 $p:M_{{\mathbb{R}}}\to M_{{\mathbb{R}}}/M$. 
 Then, we can consider $B_0(\Z)$ as the intersection of 
-$s_{B_0}$ and the zero section of $\pi_{B_0}:X(B_0)\to B_0$.
+$s_{B_0}$ and the zero section of 
+$\pi_{B_0}:X(B_0)\to B_0$;
 
 \begin{align}
 B_0(\mathbb{Z})=\pi_{B_0}(s_0\cap s_{B_0})
@@ -4781,8 +4812,7 @@ of $X(B_0,K)$ (resp. $\check{X}(B_0,K)$).
 
 \section{Valuations and counting lattice polytopes}
 
-In \cite{MR4155409},
-new Ehrhart theory of tropical geometry appear.
+
 
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}
