@@ -964,7 +964,8 @@ $\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
 extended smooth Cartier divisor satisfying an admissible condition 
 \cref{cond: admissible} which represents of $\mcal{L}$
 and its graded $\Z$-module $\opn{LMD}^{\bullet}(B;s)$
-of it. Then,
+of it.
+Then,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(B;s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
 \end{align}
@@ -2799,18 +2800,6 @@ $s'$ is continuous, obviously.
 \end{enumerate}
 \end{proof}
 
-\begin{proposition}
-Let $s=\{(U_i,f_i)\}_{i\in I}$ be a smooth Cartier divisor on a compact
-tropical curve $C$ with no 1-valent vertex.
-Then, there exists
-an admissible Cartier divisor $s'$ which is linearly
-equivalent to $s$ and
-$s_0\cap s'$ is a finite set. 
-\end{proposition}
-
-\begin{proof}
-
-\end{proof}
 
 As like \cite{auroux2022lagrangian},
 we also use the notion of the rotation number of 
@@ -2822,8 +2811,24 @@ If $C$ is not isomorphic to a circle, then
 $C_0$ is a disjoint union of open interval:
 \begin{align}
   C_0\simeq \coprod_{e\in E} (a_e,b_e), \quad
-(a_e\in \mathbb{T}, b_e\in \mathbb{R}\cup\{+\infty\}).
+(a_e\in \mathbb{T}
+=\mathbb{R}\cup\{-\infty\}, b_e\in \mathbb{R}\cup\{+\infty\}).
 \end{align}
+
+Therefore, we can
+
+\begin{proposition}
+Let $s=\{(U_i,f_i)\}_{i\in I}$ be a smooth Cartier divisor on a compact
+tropical curve $C$ with no 1-valent vertex.
+Then, there exists
+an admissible Cartier divisor $s'$ which is linearly
+equivalent to $s$ and
+$s_0\cap s'$ is a finite set. 
+\end{proposition}
+
+
+
+
 $C_0$ is an integral affine manifold, 
 and thus $C_0$ has a standard Lagrangian torus fibration
 $\check{\pi}_{C_0}\colon \check{X}(C_0)\to C_0$ and
@@ -4755,10 +4760,14 @@ Let's see the topological properties of $X(B_0)$ and $\check{X}(B_0)$.
 
 Since integral affine condition is very strict, so $X(B_0)$ (resp. $\check{X}(B_0)$) is a special class of complex (resp. symplectic) manifold.
 
-Since each fiber of the fibration $f_{B_0}$ and $\check{f}_{B_0}$ are compact, $f_{B_0}$ and $\check{f}_{B_0}$ are proper maps. In particular, if $B_0$ is compact then $\check{X}(B_0)$ and $X(B_0)$ are compact.
+Since each fiber of the fibration $f_{B_0}$ and 
+$\check{f}_{B_0}$ are compact,
+$f_{B_0}$ and $\check{f}_{B_0}$ are proper maps.
+In particular, if $B_0$ is compact then 
+$\check{X}(B_0)$ and $X(B_0)$ are compact.
 
 \begin{proposition}
-%TODO: 適切な箇所で引用
+
 \label{proposition-unobstructed-lagrangian}
 Let $B_0$ be a connected integral affine manifold 
 and $L$ a Lagrangian section of 
@@ -4770,7 +4779,14 @@ $\pi_i(B_0)=\pi_i(\check{X}(B_0))=0$ if
 $B_0$ is complete and $\pi_2(B_0,L)=0$.
 \end{proposition}
 \begin{proof}
-We note $\pi_{i}(X,p)\simeq \pi_{i}(\widetilde{X},\tilde{p})$ and $\pi_{i}(X\times Y,(p,q))\simeq \pi_i(X,p)\times \pi_i(Y,q)$ and thus
+Let $\widetilde{X}$ be the universal cover of 
+a topological space $X$.
+
+
+We note $\pi_{i}(X,p)\simeq 
+\pi_{i}(\widetilde{X},\tilde{p})$ for $i\geq 2$ and 
+$\pi_{i}(X\times Y,(p,q))\simeq \pi_i(X,p)
+\times \pi_i(Y,q)$. Therefore,
 \begin{align}
 \pi_{i}(\check{X}(B_0))\simeq 
 \pi_{i}(\widetilde{\check{X}(B_0)})\simeq 
@@ -4779,7 +4795,10 @@ We note $\pi_{i}(X,p)\simeq \pi_{i}(\widetilde{X},\tilde{p})$ and $\pi_{i}(X\tim
 \pi_{i}(T_p^* B_0)\times \pi_{i}(\widetilde{B_0})\simeq 
 \pi_{i}(B_0).
 \end{align}
-Thus, we have $\pi_{i}(B_0)\simeq \pi_{i}(\check{X}(B_0))\simeq \pi_{i}(X(B_0))$. In particular, if $B_0$ is complete then $\pi_{i}(B_0)\simeq \pi_{i}(T_{p}B_0)=0$. See \cite[Chapter 4]{hatcherAlgebraicTopology2002a} for fundamental properties of homotopy groups and relative homotopy groups.
+Thus, we have 
+$\pi_{i}(B_0)\simeq \pi_{i}(\check{X}(B_0))\simeq 
+\pi_{i}(X(B_0))$. 
+
 Let $i\colon L\to \check{X}(B_0)$ be the inclusion map of 
 $L$.
 Since $L$ is a section of 
@@ -4789,12 +4808,6 @@ injective. Therefore, we get
 $\pi_2(\check{X}(B_0),L)=0$ by considering the long exact
 sequence of relative homotopy groups.
 \end{proof}
-From Leray spectral sequence, $(R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)})_{x}=H^{p}(T^{*}_xB_0/(\TBZ^{\vee})_x;\Z)\simeq \bigwedge_{i=1}^{p}(\TBZ)_{x}$, i.e.,
-
-\begin{align}
-  R^{p}\check{f}_{B_0}\Z_{\check{X}(B_0)}\simeq \bigwedge_{i=1}^{p} \TBZ=\mcal{W}^{p}_{\Z,B_0}, \quad R^{p}f_{B_0}\Z_{X(B_0)}\simeq \bigwedge_{i=1}^{p} \TBZ^{\vee}=\mcal{F}_{\Z,B_0}^{p}
-\end{align}
-
 
 
 \begin{example}
@@ -4806,10 +4819,7 @@ Let $f:B_0' \to B_0$ be a finite unramified covering of $B_0$ such that $B_0'$ i
 Then, $X(B_0',K')$ (resp. $\check{X}(B_0',K')$) 
 is a complex torus and an unramified finite cover 
 of $X(B_0,K)$ (resp. $\check{X}(B_0,K)$).
-
 \end{example}
-
-\section{Valuations and counting lattice polytopes}
 
 
 
