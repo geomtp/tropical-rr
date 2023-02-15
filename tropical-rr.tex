@@ -2815,8 +2815,6 @@ $C_0$ is a disjoint union of open interval:
 =\mathbb{R}\cup\{-\infty\}, b_e\in \mathbb{R}\cup\{+\infty\}).
 \end{align}
 
-Therefore, we can
-
 \begin{proposition}
 Let $s=\{(U_i,f_i)\}_{i\in I}$ be a smooth Cartier divisor on a compact
 tropical curve $C$ with no 1-valent vertex.
@@ -2825,7 +2823,21 @@ an admissible Cartier divisor $s'$ which is linearly
 equivalent to $s$ and
 $s_0\cap s'$ is a finite set. 
 \end{proposition}
+\begin{proof}
 
+First, we 
+
+Next, we check that we can shoose $s'$ 
+such that $s\cap s'$ is a finite set.
+Fix an open edge $e \in E$ of $C$.
+Then, $s|_e$ is the principal divisor of a bounded smooth 
+function $f$ on $e$. 
+Therefore, we can choose a smooth bump function $g$ on $e$ such 
+that $f+g$ is nondegenerate. We can extend $g$ on $C$ 
+by zero, and thus $s+g$ is linearly equivalent to $s$.
+By repeating this, we get an admissible Cartier divisor
+$s'$ on $C$
+\end{proof}
 
 
 
@@ -3396,7 +3408,9 @@ C_{0,\vep}\deq \{p\in C\mid d_C(p,v)>\vep
 \text{ for all } v\in C\setminus C_0\}.
 \end{align}
 
-For a given $\vep>0$, $X_0(C)$ can be considered as a subset of a compact 
+For a given $\vep>0$ and a \emph{signed tropical structure}
+on $C$ \cite{MR3076066}, 
+$X_0(C)$ can be considered as a subset of a compact 
 Riemann surface $X$ whose complex structure is 
 compatible with $X(C_{0,\vep})$. 
 Such a $X$ is given by gluing triangles for 
@@ -3430,14 +3444,14 @@ df_p(p_1)+df_p(p_2)+df_p(p_3)=0,\quad
 (\{p_1,p_2,p_3\}\deq \{x\in C\mid d_C(p,x)=\vep\}).
 \end{align}
 
-From the above condition, $0<|df_p(p_i)|<1$ and
+From the above condition, $0<|df_p(p_i)| \ll 1$ and
 $f$ is of type $s_{2,1}$ or $s_{1,2}$ discussed
 in \cref{proposition-n-valent}.
 From the above condition, we can define 
 a flat $U(1)$-bundle on each pants of a 
 connected component of $X\setminus X(C_{0,\vep})$
-as like \cite[6.1.3]{MR2676658}. The former 
-corresponds a small pants and the latter
+as like \cite[6.1.3]{MR2676658}. The $s_{2,1}$
+corresponds a small pants and the $s_{1,2}$
 corresponds a large pants in 
 \cite[Definition 6.3]{MR2676658}.
 Each small pants and large pants have a local 
@@ -3481,7 +3495,7 @@ and classical Riemann--Roch formula.
 We stress that both method of computation
 of our index and the local Riemann--Roch number
 defined in \cite{MR2676658} are different 
-each other even though both index have various 
+each other even though both indexes have various 
 similar features.
 We also note that it was the beginning of our 
 approach that we 
