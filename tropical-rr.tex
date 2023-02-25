@@ -88,6 +88,8 @@
 \newtheorem*{condition*}{Condition}
 \newtheorem{Conv}[theorem]{Convention}
 \newtheorem*{Conv*}{Convention}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem*{observation*}{Observation}
 %%%% newcommand
 
 %%%logic symbol
@@ -241,11 +243,16 @@ with a Hessian form.
 \section{Introduction}
 %TODO: 日本語で4000字の論文の要旨
 
-((A explanation of tropical geometry))
-
-The tropicalization of an $n$-dimensional
-algebraic subvariety of an algebraic split torus 
-is an $n$-dimensional polyhedral complex 
+Tropical geometry is a combinatorial and convex 
+geometrical analog of
+algebraic geometry or analytic geometry.
+Some typical tropical variety comes from 
+a subvariety $X$ of an algebraic split torus 
+$(K^{\times})^{n}$
+by tropicalization $\opn{Trop}(X)$ of $X$.
+$\opn{Trop}(X)$ is an $\dim X$-dimensional 
+polyhedral complex satisfying a certain 
+balancing condion
 (see for instance 
 \cite[Theorem 3.2.3]{MR3287221}).
 
@@ -255,6 +262,29 @@ from tropical varieties with additional data.
 In particular, we may expect that we can calculate
 some invariants of algebraic varieties
 from tropicalization.
+
+The Hirzebruch--Riemann--Roch theorem (HRR for short) and 
+the Grothendieck--Riemann--Roch theorem (GRR for short) 
+are monumental works in
+algebraic geometry (or complex geometry). 
+Here is the statement of HRR for holomorphic line bundles on 
+projective complex manifolds.
+\begin{theorem}[{\cite{MR0202713}}]
+Let $X$ be a compact projective complex manifold and
+$\mathcal{L}$ a holomorphic line bundle on $X$.
+Then there exists the following equation:
+\begin{align} \label{equation-HRR}
+\chi(H^{\bullet}(X;\mathcal{L}))
+=\int_X \opn{ch}(\mathcal{L})\opn{td}(X).
+\end{align}
+\end{theorem}
+
+((厳密には Hirzerbruch の元論文からの引用ではなく
+改訂版だがよいか?))
+The HRR is generalized for 
+general compact complex 
+manifolds as a corollary of Atiyah--Singer index 
+theorem.
 
 Since the Euler number of line bundle is invariant for 
 degeneration of varieties
@@ -276,149 +306,62 @@ the Euler number of many interesting line bundles
 by the geometry of dual complex of degeneration 
 for a good family of algebraic variety or 
 tropicalization.
-((なぜ直線束のみに制限して話しているのかについての説明が
-ないが理由を追加するべきか？))
-Besides, we may expect that there exists 
-a good tropical analog of the Euler characteristic of
-line bundles, but there exist several difficulties of 
-formalism of it, which I explain in the next subsection.
 
-\subsection{Tropical Riemann--Roch theorem}
+Besides, we can also consider the following question:
 
-The Hirzebruch--Riemann--Roch theorem (HRR for short) and the Grothendieck--
-Riemann--Roch theorem (GRR for short) 
-are monumental works in
-algebraic geometry (or complex geometry). 
-Here is the statement of HRR for holomorphic line bundles on 
-projective complex manifolds.
-\begin{theorem}[{\cite{MR0202713}}]
-Let $X$ be a compact projective complex manifold and
-$\mathcal{L}$ a holomorphic line bundle on $X$.
-Then there exists the following equation:
-\begin{align} \label{equation-HRR}
-\chi(H^{\bullet}(X;\mathcal{L}))
-=\int_X \opn{ch}(\mathcal{L})\opn{td}(X).
-\end{align}
-\end{theorem}
+\begin{question} \label{question-tropical-euler}
+What is a tropical analog of Euler number of sheaf 
+cohomology of line bundles on algebraic varieties for 
+tropical spaces? Is there some analogs of HRR or GRR 
+for tropical varieties?
+\end{question}
 
-((厳密には Hirzerbruch の元論文からの引用ではなく
-改訂版だがよいか?))
-The HRR is generalized for 
-general compact complex 
-manifolds as a corollary of Atiyah--Singer index 
-theorem.
-It is natural to study some analogs of HRR or GRR 
-for tropical varieties, but it is not easy by various
-reasons.
-In this subsection, we mainly focus on the difficulty of
-the LHS of \cref{equation-HRR}.
-
-At first, line bundles on tropical spaces are not sheaves of 
-Abelian groups but commutative monoids in general.
-Many authors have studied homological algebra of semimodules 
-or non-Abelian categories (e.g. 
-\cite{MR3051517,MR3211743,MR3939048,https://doi.org/10.48550/arxiv.2202.01573})
-but the theory of sheaf cohomology of 
-$\mathbb{T}$-semimodules on tropical spaces 
-have been not applied to prove a tropical
-analog of HRR or GRR.
-((もう少しニュアンスを柔らかくしたい。))
-The difficulty of homological algebra of semimodules
-over idempotent semiring relates 
-with the difficulty of the formulation of
-higher dimensional
-Riemann--Roch theorem for tropical varieties.
-In fact, current tropical analogs of Riemann--Roch 
-theorem is not formulated and proved by 
-homological algebra of semimodules.
+This is the main topic of our paper.
+In particular, we mainly focus on
+the former question.
 
 Tropical Riemann--Roch theorem for tropical curves 
 is proved in \cite{gathmannRiemannRochTheoremTropical2008a}
 as an extension of Riemann--Roch theorem for graphs
 \cite{MR2355607}, (see also 
-\cite{mikhalkinTropicalCurvesTheir2008a}). The rank $r(D)$ of the linear system of a divisor $D$ 
-on tropical curve in 
-\cite{gathmannRiemannRochTheoremTropical2008a}
-is \emph{not} an invariant of $\mb{T}$-(semi)
-modules
-\myfootnote{In fact, 
-in \cite[Example 6.5]{yoshitomi2011generators} 
-the author give a simple example of divisors on 
-tropical curves such that 
-the rank of a divisor is different even though 
-the $\mathbb{T}$-semimodule of the global section of 
-tropical line bundle $\mcal{O}_C(D)$ is isomorphic.}
-but this is truly one of good analog of classical one 
-(see \cite[Lemma 2.4]{MR2448666}).
-The rank of linear system is generalized by Cartwright
-\cite{MR4131998,MR4251610}.
-Cartwright defines an invariant 
-$h^{0}(\Delta,D)$ for a divisor on tropical complex
-which is a certain analog of the dimension of
-the $0$-th cohomology of a line bundle on algebraic 
-variety in \cite[Definition 3.1]{MR4251610}.
-If $\dim \Delta=1$, then $h^{0}(\Delta,D)=r(D)+1$
-\cite[Proposition 3.3]{MR4251610}, and thus $h^{0}(\Delta,D)$
-is a generalization of $r(D)+1$ for tropical complexes. 
-Cartwright conjectured the Riemann--Roch inequality
-$h^{0}(\Delta,D)+h^{0}(\Delta,K_{\Delta}-D)\geq 
-\frac{D(D-K)}{2}+\chi_{\opn{top}}(\Delta)$
-in \cite[Conjecture 3.6]{MR4251610}.
-On the other hand, a tropical analog of Riemann--Roch theorem
-for higher dimensional tropical manifolds 
-(or tropical complexes) is not formulated
-since there hasn't been any good definition of 
-Euler characteristic of line bundles on tropical 
-manifolds as an extension of the above notions yet.
+\cite{mikhalkinTropicalCurvesTheir2008a}). 
+However, tropical Riemann--Roch theorem 
+for tropical varieties has been proved yet 
+as a generalization of 
+\cite{gathmannRiemannRochTheoremTropical2008a}.
 
-We also note the other dimensions of $\mb{T}$-semimodules 
-(which are invariant for $\mb{T}$-semimodules) are defined for 
-some authors 
-(see for instance 
-\cite[Definition 2.3]{mikhalkinTropicalCurvesTheir2008a}
-and \cite[p.8]{yoshitomi2011generators}) but 
-these dimensions have no tropical analog of 
-Riemann--Roch formula like 
-\cite{MR2355607,gathmannRiemannRochTheoremTropical2008a}.
-This is another difficulty of homological approach of 
-tropical Riemann--Roch formula. 
+However, there exist various difficulties for 
+\cref{question-tropical-euler} by root causes of 
+tropical geometry.
 
-From the successes of tropical homology 
-\cite{itenbergTropicalHomology2019b}, we 
-may expect the existence of transformation from 
-line bundles on tropical manifold to complexes of
-constructible sheaves whose Euler number 
-represents that of line bundle, but we need to 
-be careful of that we can also observe that
-the derived category $\opn{D}_{c}^{b}(B)$
-of constructible sheaves on 
-tropical manifold $B$ does not seem like a tropical 
-analog of the derived category of coherent 
-sheaves on algebraic variety directly.
-\myfootnote{One of reasons
-comes from the result in \cite{MR2449059,MR2565051}
-and homological mirror symmetry for 
-the derived category of coherent sheaves on complex split $n$-torus 
-$(\C^{\times})^{d}$, the derived wrapped Fukaya category of $T^{*}(S^{1})^{n}$
-by \cite{MR2822213}.
-Therefore, $\opn{D}_c^{b}((S^{1})^{d})$ should behave like 
-the derived category of coherent sheaves on 
-$(\C^{\times})^{d}$
-but not on some complex tori.
-We will see another reason in \cref{remark- }.
-}
+One of main difficulty for \cref{question-tropical-euler} 
+is that line bundles on tropical spaces are not sheaves of 
+Abelian groups but commutative monoids in general.
+For more detail about the previous related results of 
+tropical Riemann--Roch theorem
+and more difficulties for 
+\cref{question-tropical-euler}, see 
+\cref{section-tropical-riemann-roch}.
 
-As explained on the above, we need to attack, at least,
-the following question for formulating a certain 
-analog of HRR:
+On the other hand, we can get the following 
+observation from a great deal of studies:
+\begin{observation} \label{observation-tropical-euler}
+The Euler characteristic of the structure sheaf of 
+tropical manifold should be equal to 
+the topological Euler characteristic of it.
+\end{observation}
+See \cref{remark-list-tropical-euler} for the reason of 
+\cref{observation-tropical-euler}. 
+The obervation gives a hint for
+\cref{question-tropical-euler}.  
 
-\begin{question}
-What is a tropical analog of Euler number of sheaf 
-cohomology of line bundles on algebraic varieties for 
-tropical spaces ?
-\end{question}
 
-In this paper, we will pursue a different tropical
+
+
+
+
+
+In this paper, we pursue a different tropical
 analog of Euler number of line bundles with the help of 
 ideas on toric varieties, Morse theory,
 Strominger--Yau--Zaslow conjecture
@@ -427,13 +370,13 @@ and related topics.
 
 \begin{remark}
 \label{remark-todd-class}
-We also note about the RHS of \cref{equation-HRR} 
+We note about the RHS of \cref{equation-HRR} 
 for tropical manifolds. 
 The $1$-st Chern class $c_1(\mathcal{L})$ of 
 tropical line bundle $\mathcal{L}$ and 
 the Chow group of rational polyhedral spaces and 
 its cycle map is 
-well-studied ((適切な参考文献\cite{gross2019sheaftheoretic})),
+well-studied \cite{gross2019sheaftheoretic},
 and thus we can define the Chern character
 $\opn{ch}(\mathcal{L})$ of 
 $\mathcal{L}$ naturally.
@@ -664,6 +607,8 @@ Then, we have the following analog of
 
 %TODO: ラグランジュ切断に関して説明。
 
+\subsection{Lagrangian sections and 
+homological mirror symmetry}
 
 Another important point is that 
 we can consider the LHS of 
@@ -754,17 +699,10 @@ This is a certain analog of Riemann--Roch formula
 for elliptic curves.
 \end{example}
 The above example can be considered as a toy result 
-of SYZ conjecture and HMS conjecture for 
+of HMS conjecture and SYZ conjecture for 
 Calabi--Yau manifolds.
 
-%TODO: SYZとは
 
-\ind{Strominger-Yau-Zaslow conjecture}{Strominger-Yau-
-Zaslow conjecture} or 
-\ind{SYZ conjecture}{SYZ conjecture} is about 
-a concrete method to solve Kontsevich's Homological 
-Mirror Symmetry conjecture for Calabi-Yau manifolds
-\cite{stromingerMirrorSymmetryTduality1996}.
 
 \ind{Homological Mirror Symmetry}{Homological Mirror 
 Symmetry} or \ind{HMS}{HMS} is a conjecture about 
@@ -772,7 +710,7 @@ categorical equivalence between two different
 triangulated category derived from symplectic geometry 
 of Calabi-Yau manifold $\check{X}$ and complex geometry 
 of a Calabi-Yau manifold $\mathcal{X}$ (or a degenerate family of 
-Calabi-Yau manifold $X_t$):
+Calabi-Yau manifold $X_t$) \cite{MR1403918}:
 \myfootnote{One of important motivation of HMS 
 is a solution of 
 \ind{Classical Mirror Symmetry}{classical
@@ -818,6 +756,16 @@ Similar question is called
 Mirror Riemann--Roch conjecture in 
 \cite[Conjecture 4.9]{grossSpecialLagrangianFibrations1998a}.
 
+%TODO: SYZとは
+
+\ind{Strominger-Yau-Zaslow conjecture}{Strominger-Yau-
+Zaslow conjecture} or 
+\ind{SYZ conjecture}{SYZ conjecture} is a conjecture 
+in physics about 
+a concrete method to solve Kontsevich's Homological 
+Mirror Symmetry conjecture for Calabi-Yau manifolds
+\cite{stromingerMirrorSymmetryTduality1996}.
+
 ((See also 
 \cite[\textsection 1.3.2,
 \textsection 7.3.7]{MR2567952} for more details about 
@@ -853,14 +801,6 @@ This gives an interesting insight which is inspired from
 SYZ conjecture.
 (See \cref{rmk: floer-coherent-problem} 
 for detail about it.)
-
-This interpretation works for integral affine manifold 
-with singularities $B$ as a lattice point of $B$. 
-
-
-
-
-
 
 The following question is our approach.
 \begin{question}
@@ -931,17 +871,20 @@ with different data when we discuss of the mirror
 symmetry for $D^{b}(\opn{Coh}(X))$. 
 If $X$ is Fano, then a
 mirror of $D^{b}(\opn{Coh}(X))$ is a Fukaya 
-category defined from a Landau--Ginzburg model.
+category defined from a Landau--Ginzburg model
+$(\check{X},f)$.
 Such HMS is discussed for many authors, 
-but the relationships between HMS for 
-Fano manifold and SYZ mirror is not easier than 
+but the relationships between HMS and SYZ
+for Fano manifold
+are not easier than 
 for Calabi--Yau manifolds.
 
-However, for the recent study 
-in \cite{auroux2022lagrangian}, 
-SYZ mirror is studied for algebraic curves 
+However, in a recent study 
+\cite{auroux2022lagrangian}, 
+SYZ mirror is studied for the derived category 
+of coherent sheaves on algebraic curves 
 of general type. 
-They expect their SYZ mirror can be generalized for more
+They also expect their SYZ mirror can be generalized for more
 general varieties in \cite[{\textsection 7}]{auroux2022lagrangian}.
 Our approach and \cref{question-MRR} can be considered as 
 a toy model of their expectation. 
@@ -979,48 +922,11 @@ In particular, when $\mcal{L}=\mcal{O}_B$ then
 $\chi(\opn{LMD}^{\bullet}(B;s))=\chi_{\opn{top}}(B)$ ?
 \end{conjecture}
 
-We also expect the \cref{conjecture-tropical-MRR-preface}
-gives a hint of   
-"sheaf cohomology of tropical line bundle". 
 
-\begin{remark}
-Here is the list of the reason why the Euler 
-characteristic of structure sheaf of tropical manifold
-should be equal to the topological Euler characteristics of it.
-\begin{enumerate}
-\item If $B$ is a compact tropical curve and $D$ 
-is trivial divisor, then the tropical Riemann--Roch 
-formula in 
-\cite{gathmannRiemannRochTheoremTropical2008a}
-says $r(D)-r(K_B-D)=\chi_{\opn{top}}(B)=\frac{1}{2}\opn{deg}(-K_B)$. 
-\item If $B$ is a tropical surface satisfying a certain 
-good condition, then there exists the Noether formula
-$\chi_{\opn{top}}(B)=\frac{c_1(K_B)^{2} +c_2(B)}{12}$ 
-\cite[Theorem 5.1]{shawTropicalSurfaces2015a}.
-\myfootnote{We would like to thank Felipe Rinc\'on 
-for explaining about the unpublished recent works
-about Noether formula for general tropical surfaces.
-}
-\item 
-\cite[Corollary 2]{itenbergTropicalHomology2019b} says 
-that the Hodge number $h^{p,q}(Z_w)$ of a general fiber $Z_w$ of
-a one-parameter family $\mathcal{Z}$ of 
-complex projective varieties over a punctured disc which 
-has a tropical limit to a smooth projective 
-$\mathbb{Q}$-tropical variety $X$, 
-is equal to that of tropical homology 
-$H_{q}(B;\mathcal{F}_p)$ of it. If $p=0$, then
-$h^{0,q}(Z_w)=\dim_{\mathbb{R}}H_{q}(B;\mathbb{R})
-=\dim_{\mathbb{R}} H^{q}(B;\mathbb{R})$.
-Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
-\chi_{\opn{top}}(B)$.
-\end{enumerate}
-
-\end{remark}
 
 In this paper, we give a partial answer for compact tropical curves 
 and integral affine manifolds with Hessian form
-as test plays of the above question:
+as test plays of the above conjecture:
 
 \begin{theorem}[{\cref{theorem-MRR-tropical-curve},
 \cref{theorem-MRR-hesse}}] \label{thm: main}
@@ -1051,15 +957,16 @@ geometrical setting as a test play of our approach.
 \begin{remark}
 We expect our approach works for various style 
 of tropical spaces. 
+Our approach is 
+also inspired from Gross's 
+works in 
+\cite{grossSpecialLagrangianFibrations1998a} 
+and Gross--Siebert programs
+(see \cite[Conjecture 1.6]{MR3525095}).
 If SYZ conjecture for Calabi--Yau manifolds
 is true, our apporoach should
 be true for integral affine manifold 
 with singularities of Calabi--Yau type.
-Our approach is 
-also inspired from Gross's 
-works in 
-\cite{grossSpecialLagrangianFibrations1998a} and Gross--Siebert programs
-(see \cite[Conjecture 1.6]{MR3525095}).
 We expect that 
 our approach make sense for not only rational polyhedral
 spaces, integral affine manifold with singularities,
@@ -1069,7 +976,7 @@ in the sense of \cite[Definition 2.8]{cavalieri2020tropical}.
 \end{remark}
 
 \begin{remark}
-Our approach is deeply related with the theory of
+Our approach is related with the theory of
 geometric quantization. We write about it in 
 \cref{appendix-geometric-quantization}.
 \end{remark}
@@ -2730,7 +2637,7 @@ generalized version of local Morse data
 which can apply for our settings.
 \end{remark}
 
-\begin{definition}[{Continuous section}]
+\begin{definition}
 \label{definition-continuous-section}
 Let $C$ be a tropical curve and 
 $C_{0}\deq \{x\in C\mid \opn{val}(x)=2\}$.
@@ -3297,6 +3204,9 @@ integer slope.
 homological mirror symmetry of trivalent graphs}
 \label{section-syz-trivalent-graph}
 
+Our approach is mostly affected from 
+\cite{auroux2022lagrangian}.
+
 \begin{remark} \label{rmk: curve_mirror}
 When $C$ is a trivalent metric graph, 
 our Lagrangian sections are 
@@ -3324,32 +3234,30 @@ for more details).
 
 The mirror space $M$ of $X_K$ can be considered as a 
 topological compactification of $\check{X}_0(C)$.
-
 By a slight modification of $\check{X}_0(C)$, every 
 stratified smooth Lagrangian section of $\check{X}(C)$ 
-can be considered as an object of $\mcal{F}(M)$
+can be considered as an object of $\mcal{F}(M)$.
 
 The main difference between our setting and 
 that of \cite{auroux2022lagrangian} 
-is the definition of graded space $\opn{CF}(C,s)$. 
-Our approach has no good definition 
-of $m^{d}$-operations, but we define $\opn{CF}(C,s)$ 
+is the definition of graded space $\opn{LMD}(C,s)$. 
+Our approach haven't got no good definition 
+of $m^{d}$-operations yet, 
+but we can define $\opn{LMD}(C,s)$ 
 without Hamiltonian
 perturbations.
 \end{remark}
 
 The stratified torus fibration of Riemann surface is 
 closely related with pants decomposition, and thus
-Auroux--Efimov--Katzarkov in \cite{auroux2022lagrangian} expect the mirror symmetry 
+Auroux--Efimov--Katzarkov in \cite{auroux2022lagrangian} 
+expect a homological mirror symmetry 
 for projective hypersurfaces since they have higher 
 dimensional pants decomposition \cite{MR2079993} along
 tropical hypersurfaces.
-As a toy model of this question, we also pose a 
-following question as a higher version of the 
-correspondence above.
 
-Our approach is mostly affected from 
-\cite{auroux2022lagrangian}.
+
+
 
 \begin{definition}[{cf. \cite{auroux2022lagrangian}}]
 An admissible smooth Cartier divisor $s$ is 
@@ -3408,14 +3316,14 @@ C_{0,\vep}\deq \{p\in C\mid d_C(p,v)>\vep
 \text{ for all } v\in C\setminus C_0\}.
 \end{align}
 
-For a given $\vep>0$ and a \emph{signed tropical structure}
-on $C$ \cite{MR3076066}, 
+For a given $\vep>0$ (and a \emph{signed tropical structure}
+on $C$ \cite{MR3076066}), 
 $X_0(C)$ can be considered as a subset of a compact 
 Riemann surface $X$ whose complex structure is 
 compatible with $X(C_{0,\vep})$. 
 Such a $X$ is given by gluing triangles for 
 each open neighborhood of $p\in X_0(C)\setminus X(C_0)$
-properly.
+appropriately.
 Let $s$ be an admissible smooth Cartier divisor on $C$.
 $s|_{C_0}$ corresponds to a Lagrangian section of 
 $\check{\pi}_{C_0}$ from 
@@ -4459,6 +4367,13 @@ primary Kodaira surfaces and
 \end{remark}
 
 \section{For more examples}
+
+\subsection{Tropical multi-section}
+\label{section-tropical-multi-section}
+
+\subsection{K\"unneth-type formula}
+
+
 In the last section, we mention more examples of 
 tropical analog of the Euler number of 
 the sheaf cohomology of line bundles.
@@ -4499,12 +4414,12 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$;
   If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
   the Thom-Sebastiani theorem gives
   a certain K\"unneth formula for
-  $\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\dot{+}f_2,(v,w))$:
+  $\opn{LMD}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W},(v,w))$:
 \begin{align}
 \opn{LMD}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W},(v,w))
-\simeq \opn{LMD}^{\bullet}(f_1,\Z_{V})
+&\simeq \opn{LMD}^{\bullet}(f_1,\Z_{V})
 \otimes_{\Z} \opn{LMD}^{\bullet}(f_2,\Z_{W}), \quad \\
-\opn{ind}_{(v,w)}(f_1\dot{+}f_2)=\opn{ind}_v(f_1)\cdot \opn{ind}_v(f_2).
+\opn{ind}_{(v,w)}(f_1\dot{+}f_2)&=\opn{ind}_v(f_1)\cdot \opn{ind}_v(f_2).
 \end{align}
   From instance, if $f_1(x)=x_1^{2}+\cdots x_{m}^{2}$
   and $f_2(x)=-x_{m+1}^{2}-\cdots - x_{m+n}^{2}$ then we have
@@ -4595,6 +4510,144 @@ If such $m_d$ exists, this should be determined by the contribution of the modul
 
 
 \appendix
+
+\section{Tropical Riemann--Roch theorem and 
+its difficulty}
+\label{section-tropical-riemann-roch}
+
+Many authors have studied homological algebra of semimodules 
+or non-Abelian categories (e.g. 
+\cite{MR3051517,MR3211743,MR3939048,https://doi.org/10.48550/arxiv.2202.01573})
+but the theory of sheaf cohomology of 
+$\mathbb{T}$-semimodules on tropical spaces 
+have been not applied to prove a tropical
+analog of HRR or GRR yet.
+The difficulty of homological algebra of semimodules
+over idempotent semiring relates 
+with the difficulty of the formulation of
+higher dimensional
+Riemann--Roch theorem for tropical varieties.
+In fact, current tropical analogs of Riemann--Roch 
+theorem is not formulated and proved by 
+homological algebra of semimodules.
+
+We recall tropical Riemann--Roch theorem for tropical curves 
+in \cite{gathmannRiemannRochTheoremTropical2008a}. 
+The rank $r(D)$ of the linear system of a divisor $D$ 
+on tropical curve in 
+\cite{gathmannRiemannRochTheoremTropical2008a}
+is \emph{not} an invariant of $\mb{T}$-(semi)
+modules
+\myfootnote{In fact, 
+in \cite[Example 6.5]{yoshitomi2011generators} 
+the author give a simple example of divisors on 
+tropical curves such that 
+the rank of a divisor is different even though 
+the $\mathbb{T}$-semimodule of the global section of 
+tropical line bundle $\mcal{O}_C(D)$ is isomorphic.}
+but this is truly one of good analog of classical one 
+(see \cite[Lemma 2.4]{MR2448666}).
+The rank of linear system is generalized by Cartwright
+\cite{MR4131998,MR4251610}.
+Cartwright defines an invariant 
+$h^{0}(\Delta,D)$ for a divisor on tropical complex
+which is a certain analog of the dimension of
+the $0$-th cohomology of a line bundle on algebraic 
+variety in \cite[Definition 3.1]{MR4251610}.
+If $\dim \Delta=1$, then $h^{0}(\Delta,D)=r(D)+1$
+\cite[Proposition 3.3]{MR4251610}, and thus $h^{0}(\Delta,D)$
+is a generalization of $r(D)+1$ for tropical complexes. 
+Cartwright conjectured the Riemann--Roch inequality
+$h^{0}(\Delta,D)+h^{0}(\Delta,K_{\Delta}-D)\geq 
+\frac{D(D-K)}{2}+\chi_{\opn{top}}(\Delta)$
+in \cite[Conjecture 3.6]{MR4251610}.
+On the other hand, a tropical analog of Riemann--Roch theorem
+for higher dimensional tropical manifolds 
+(or tropical complexes) is not formulated
+since there hasn't been any good definition of 
+Euler characteristic of line bundles on tropical 
+manifolds as an extension of the above notions yet.
+
+We also note the other dimensions of $\mb{T}$-semimodules 
+(which are invariant for $\mb{T}$-semimodules) are defined for 
+some authors 
+(see for instance 
+\cite[Definition 2.3]{mikhalkinTropicalCurvesTheir2008a}
+and \cite[p.8]{yoshitomi2011generators}) but 
+these dimensions have no tropical analog of 
+Riemann--Roch formula like 
+\cite{MR2355607,gathmannRiemannRochTheoremTropical2008a}.
+
+\begin{remark} \label{remark-list-tropical-euler}
+Here is the list of the reason why the Euler 
+characteristic of structure sheaf of tropical manifold
+should be equal to the topological Euler characteristics of it.
+\begin{enumerate}
+\item If $B$ is a compact tropical curve and $D$ 
+is trivial divisor, then the tropical Riemann--Roch 
+formula in 
+\cite{gathmannRiemannRochTheoremTropical2008a}
+says $r(D)-r(K_B-D)=\chi_{\opn{top}}(B)=\frac{1}{2}\opn{deg}(-K_B)$. 
+\item If $B$ is a tropical surface satisfying a certain 
+good condition, then there exists the Noether formula
+$\chi_{\opn{top}}(B)=\frac{c_1(K_B)^{2} +c_2(B)}{12}$ 
+\cite[Theorem 5.1]{shawTropicalSurfaces2015a}.
+\myfootnote{We would like to thank Felipe Rinc\'on 
+for explaining about the unpublished recent works
+about Noether formula for general tropical surfaces.
+}
+\item 
+\cite[Corollary 2]{itenbergTropicalHomology2019b} says 
+that the Hodge number $h^{p,q}(Z_w)$ of a general fiber $Z_w$ of
+a one-parameter family $\mathcal{Z}$ of 
+complex projective varieties over a punctured disc which 
+has a tropical limit to a smooth projective 
+$\mathbb{Q}$-tropical variety $X$, 
+is equal to that of tropical homology 
+$H_{q}(B;\mathcal{F}_p)$ of it. If $p=0$, then
+$h^{0,q}(Z_w)=\dim_{\mathbb{R}}H_{q}(B;\mathbb{R})
+=\dim_{\mathbb{R}} H^{q}(B;\mathbb{R})$.
+Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
+\chi_{\opn{top}}(B)$.
+\end{enumerate}
+
+\end{remark}
+
+From the successes of the theory of
+ tropical (co)homology 
+\cite{itenbergTropicalHomology2019b}, we can pose 
+the following question:
+
+\begin{question} \label{qustion-tropical-lcc}
+Is there a transformation procedure 
+from line bundles on tropical manifold to complexes
+of constructible sheaves such that it is 
+compatible with \cite{itenbergTropicalHomology2019b}?
+\end{question}
+We need to 
+be careful of that we can also observe that
+the derived category $\opn{D}_{c}^{b}(B)$
+of constructible sheaves on 
+tropical manifold $B$ does not seem like a tropical 
+analog of the derived category of coherent 
+sheaves on algebraic variety directly.
+\myfootnote{One of reasons
+comes from the result in \cite{MR2449059,MR2565051}
+and homological mirror symmetry for 
+the derived category of coherent sheaves on complex split $n$-torus 
+$(\C^{\times})^{d}$, the derived wrapped Fukaya category of $T^{*}(S^{1})^{n}$
+by \cite{MR2822213}.
+Therefore, $\opn{D}_c^{b}((S^{1})^{d})$ should behave like 
+the derived category of coherent sheaves on 
+$(\C^{\times})^{d}$
+but not on some complex tori.
+
+}
+
+ Our approach is 
+not a sheaf theoretic approach, but we expect
+our apoorach gives a hint of 
+\cref{qustion-tropical-lcc} in future.
 
 \section{Radiance obstruction and geometric prequantization}
 \label{sec: BSRR}
