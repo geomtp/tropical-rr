@@ -933,8 +933,8 @@ as test plays of the above conjecture:
 Let $C$ (resp. $B$) be a compact tropical curve $C$ 
 (resp. $n$-dimensional integral 
 affine manifold $B$
-with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ an 
-admissible nondepraved
+with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ a
+weak-smooth admissible nondepraved
 Cartier data on $C$ (resp. $B$) such that 
 $\sharp(s\cap s_0)<\infty$. Then,
 \begin{align}
@@ -1305,17 +1305,20 @@ $(\mcal{F}^{\bullet},f,x)$.
 The other one is for emphasizing on analogy to
 Morse complexes.
 ((モース複体との類似性は後で \cref{example-} にて見る。))
-\item We don't assume $f$ satisfies some 
+\item The name of local Morse data may be misleading.
+We don't assume $f$ satisfies some 
 "Morse condition" since
  we need to use some $C^{\infty}$-function
 which is \emph{not} a Morse function in the sense of 
 stratified Morse theory. 
 We will give an explanation in 
 \cref{remark-nondeprave-curve}.
-((また、本論文では、条件の良し悪しを後で比較するために
-\cref{definition-local-morse-data} の$f$ に対しては
-何の条件も課さない。一方で、本論文では$f$ に対する
-条件 \cref{condition-isolated-singularity}を課す。))
+Moreover, 
+$\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f,x)$
+is closely related with (real) Milnor fiber, so
+the name \emph{(cohomological) local Milnor data} may 
+be more appropriate 
+than the name local Milnor data. 
 \item We also note that we need to use 
 the graded module $\opn{LMD}^{\bullet}(\mcal{F},f,x)$ instead of 
 the complex $R\Gamma_{\{f\geq f(x)\}}\mathcal{F}$ in order to define
@@ -2763,21 +2766,7 @@ This form defines an orientation number of
 section defined in \cref{proposition-admissible-section}.
 %NEXT: TP1のローテーションを定義する。 
 
-\begin{definition}[{Rotation number}]
-Let $s\colon \mathbb{T}P^{1} \to \check{X}(\mathbb{T}P^{1})$ 
-be the section of 
-$\check{\pi}_{\mathbb{T}P^{1}}$
-\end{definition}
-
-\begin{proposition}
-$\opn{rot}(s)=\opn{rot}(\iota^{*}\circ s)$.
-\end{proposition}
-
-\begin{proof}
-
-\end{proof}
-
-\begin{definition}[{rotation number}]
+\begin{definition}[{rotation number of closed interval}]
 Fix a closed interval $[a,b]$ in $\mathbb{T}P^{1}$.
 Let $s\colon [a,b]\to [a,b]\times \mathbb{R}/\mathbb{Z}$ be 
 a continuous section of the canonical projection
@@ -2790,21 +2779,39 @@ induced from $s$ and the canonical projection
 $q\colon [a,b]\times \mathbb{R}/\mathbb{Z} 
 \to \mathbb{R}/\mathbb{Z}$. Here, 
 we identify $\pi_1(\mathbb{R}/\mathbb{Z},0)\simeq \mathbb{Z}$
-via the canonical orientation.
+via the canonical orientation of $\mathbb{R}/\mathbb{Z}$.
 \end{definition}
 
-\begin{proposition}
-Fix an affine isomorphism $e\simeq [a,b]$ 
+\begin{proposition} \label{proposition-rotation-number}
+Let 
+$\phi \colon [a,b] \to [a,b]$ be an automorphism of 
+a closed interval in $\mathbb{T}P^{1}$, 
+$s\colon [a,b]\times \mathbb{R}/\mathbb{Z}$ and 
+$\varphi \colon [a,b]\times \mathbb{R}/\mathbb{Z} \to 
+[a,b]\times \mathbb{R}/\mathbb{Z}$ 
+the symplectic automorphism induced from $\phi$.
+Then, $\opn{rot}(\varphi\circ s)=\opn{rot}(s)$.
 \end{proposition}
+\begin{proof}
+Since every automorphism of 
+$[a,b]$ is a composition of the negation map 
+and a translation map, we only need to consider the case
+when $\phi$ is the negation map.
+In this case, $\varphi(x,y)=(b+a-x,-y)$ for 
+$(x,y)\in [a,b]\times \mathbb{R}/\mathbb{Z}$ if 
+$a,b\notin \{-\infty,\infty\}$.
+\end{proof}
 
-From the above proposition, we can define the 
+
+From \cref{proposition-admissible-section} and \cref{proposition-rotation-number}, we can define the 
 rotation number for every admissible smooth 
-Cartier divisors.
+Cartier divisors as follows.
 \begin{definition}[{cf. \cite{auroux2022lagrangian}}]
 The \emph{rotation number} of $s$ is the sum of
+the rotation number of all edges of $C$: 
 \begin{align}
 \opn{rot}(s)\deq \sum_{e\in \pi_0(C_0)}
-\opn{rot}(s|_{\opn{cl}(e)})
+\opn{rot}(s|_{\opn{cl}(e)}).
 \end{align}
 
 \end{definition}
@@ -3127,10 +3134,6 @@ of $C$ such that $s_0\cap s<\infty$. Then,
 \end{theorem}
 
 
-
-
-%TODO: 適切な箇所で See \cref{remark-non-admissible-divisor}
-
 \begin{remark}
 \label{remark-non-admissible-divisor}
 We explain the reason why we add admissible condition for 
@@ -3143,26 +3146,27 @@ Another reason is that we could not create
 convenient continuous sections like 
 \cref{definition-continuous-section} easily.
 
-The third reason is the most critical:
+The third reason is the most critical. 
+We will explain about this problem by the following 
+example:
 Let 
 $g$ be a weak-smooth function on 
 $\Gamma_3$
 such that 
 \begin{enumerate}
-\item $dg=(\frac{1}{2},\frac{1}{2})$
-\item $\opn{Crit}(g)=\Gamma_3\setminus \Gamma_3^{\circ}$
-\item $\sum_{p\in \opn{Crit}(g)}\opn{ind}_p(g)=2$
+\item $dg=(\frac{1}{2},\frac{1}{2})$,
+\item $\opn{Crit}(g)=\Gamma_3\setminus \Gamma_3^{\circ}$,
+\item $\sum_{p\in \opn{Crit}(g)}\opn{ind}_p(g)=2$.
 \end{enumerate}
 $g$ is admissible except $x=(0,0)$.
-There exists the following equation for local Morse index:
+If we generalize 
+\cref{theorem-MRR-tropical-curve} for $g$, 
+we need to add the index $\opn{ind}_x(g)$ at $x$ satisfying
 \begin{align}
 \sum_{p\in \opn{Crit}(g)}\opn{ind}_p(g)+
 \opn{ind}_x(g)=1=\chi_{\opn{top}}(\Gamma_3).
 \end{align}
-Therefore, if we generalize 
-\cref{theorem-MRR-tropical-curve} for non-admissible
-functions, we need to add the index at each non-admissible 
-point. At least, \cref{theorem-MRR-tropical-curve} is not
+At least, \cref{theorem-MRR-tropical-curve} is not
 true without correction the effect at non-admissible point
 of $g$.
 In this case, $\opn{ind}_x(g)$ should be $-1$.
@@ -3172,10 +3176,10 @@ On the other hand, the index of smooth Cartier
 divisor should be independent of the choice of
 Cartier data.
 Since $\opn{ind}_x(g+m)$ depends on the choice
-of monomials $m$, we need to choose a choice $m_0$
-of monomials with integer slope to 
-define the index of $g$ as a divisor.
-The author consider there is no canonical choice
+of monomials $m$, we need to choose a monomial $m_0$
+with integer slope to 
+define the index of $g$ at $x$ as a divisor.
+We consider there is no canonical choice
 of $m_0$ for $g$ as a principal divisor without
 assumption admissibility.
 Every admissible function $f$ has a canonical choice
@@ -3411,7 +3415,7 @@ noticed the above correspondence.
 We can also consider the following question as 
 like \cite{auroux2022lagrangian}.
 
-\begin{question}
+\begin{question} \label{question-tropical-complex-rr}
 Can we generalize the 
 above correspondence \ref{equation-local-RR}
 for more general the complement of
@@ -3422,7 +3426,7 @@ How about for pants decomposition of
 
 We add two comments about the above question. 
 First, the Bergman fan $\Sigma$ of a given complex 
-hyperplane arrangement $\mathcal{A}$ does \emph{not} 
+(projective) hyperplane arrangement $\mathcal{A}$ does \emph{not} 
 determine 
 the homotopy type of the complement of (projective) 
 hyperplane
@@ -3435,8 +3439,8 @@ $\rho\colon T_{|\Sigma|,0}^{\mathbb{Z}}\to
 \mathbb{R}/\mathbb{Z}$ since 
 $T_{|\Sigma|,0}^{\mathbb{Z}}\simeq 
 H_1(U(\mathcal{A});\mathbb{Z})$.
-$\rho$ is a natural generalization of $U(1)$-flat 
-bundle on pants discussed the above.
+Therefore, we hope that we can get an affirmative answer 
+for \cref{question-tropical-complex-rr}.
 
 \section{Proof for integral affine manifold with Hessian form.}
 \label{section-integral-affine-manifold}
@@ -3557,13 +3561,13 @@ a tropical torus as mentioned in \cite[5.2]{MR1882331}.
 
 \begin{remark}
 The integral affine structure itself is a very strict condition.
-
 \ind{Chern's conjecture}{Chern's conjecture} states 
 every closed affine manifold $B_0$ has zero topological 
 Euler characteristic.
 If $B_0$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
-This conjecture is true for special affine manifold \cite{MR3665000}
-, i.e., an affine manifold $(B, \{U_i,\psi_i\}_{i\in I})$ such that 
+This conjecture is true for 
+\emph{special affine manifold} \cite{MR3665000},
+i.e., an affine manifold $(B, \{U_i,\psi_i\}_{i\in I})$ such that 
 $ $
 Therefore, every closed integral affine manifold satisfies Chern's conjecture since the orientable double over of an integral affine manifold has a compatible special integral affine structure.
 \myfootnote{We have not checked 
@@ -3576,7 +3580,7 @@ and \cite{MR3665000}.
 
 \begin{remark}[{Relationships between symplectic geometry}]
 Integral affine manifolds naturally appear 
-as a base space of Lagrangian torus fibration 
+as base spaces of Lagrangian torus fibration 
 \cite{duistermaatGlobalActionangleCoordinates1980a}. 
 Besides, the deformation space of 
 special Lagrangian submanifolds of
@@ -3584,8 +3588,9 @@ a Calabi-Yau $n$-fold with a nowhere vanishing
 holomorphic $n$-form has 
 an integral affine structure with 
 a Hessian metric by McLean's theorem \cite{MR1664890}.
-Every integral affine manifold has 
-the following canonical torus fibrations.
+See also \cref{appendix-geometric-quantization} 
+for the relationships between integral affine manifolds 
+and geometric quantization. 
 \end{remark}
 
 
@@ -3988,7 +3993,8 @@ Our condition of \'etale is different from that of
 when $X$ and $Y$ are integral affine manifolds.
 \end{remark}
 
-A typical example of non-\'etale covering map is given
+A typical example of non-\'etale covering map 
+in our sense is given
 from the $n$-th Frobenious endomorphism 
 $\opn{Fr}_{n,X}^{\natural}\colon \mathcal{O}_X \to \mathcal{O}_X; f\mapsto nf$ of 
 the structure sheaf of tropical manifolds. 
@@ -4017,6 +4023,9 @@ If $X=\mathbb{R}^{d}$, then $X^{(n)}$ is
 isomorphic to $X$ and 
 $\opn{Fr}_{n,X}$ corresponds to 
 the $n$-th dilation map of $X$.
+The Fronenious morphism is 
+\'etale on the meaning in 
+\cite{grossMirrorSymmetryLogarithmic2006a}.
 
 
 If $B_0$ is a integral affine manifold, 
@@ -4177,7 +4186,7 @@ The condition $\pi_2(B_0)=0$ may seem to be technical
 and strict, but this condition is 
 closely related with a classical conjecture.
 \ind{Markus's conjecture}{Markus conjecture} states every closed
-special affine manifold is complete (in the sense of $(G,X)$-manifold)
+affine manifold is complete (in the sense of $(G,X)$-manifold)
 if and only if its orientable double cover 
 has a compatible special affine structure 
 \cite[p.53]{markus1963cosmological}.
