@@ -1336,10 +1336,10 @@ properties of them.
 From \cref{equation-exact-local} and by taking stalks,
 we have the following distinguished triangle:
 \begin{align}
-R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet} \to 
+(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x \to 
 \mathcal{F}_x^{\bullet}\to 
 (R\Gamma_{\{f<f(x)\}}\mathcal{F}^{\bullet})_x\to 
-R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet}[1].
+(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x[1].
 \end{align}
 
 
@@ -1746,7 +1746,7 @@ $f$ is the image $(f)^{\mathrm{sm}}$ of $f$.
 We write $\opn{CDiv}^{\infty}(B)$ for 
 $H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
 We will see a smooth Cartier divisor is
-an analog of Lagrangian section 
+an analog of Lagrangian section in 
 \cref{proposition-cartier-lagrangian}.
 In the next subsection, 
 we will define an analog of Floer complex of 
@@ -2014,7 +2014,7 @@ $\{U_i\}_{i\in I}$ an open cover of $S$ and
 $f_i\colon U_i \to \mathbb{R}$ a $(0,0)$-superform
 on $U_i$. The set 
 $\{(U_i,f_i)\}_{i\in I}$ is 
-a \emph{local data} of $s$ if 
+a \emph{local smooth Cartier data} for $s$ if 
 $s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all 
 $i\in I$. The set $\{(U_i,f_i)\}_{i\in I}$ is a
 \emph{local smooth Cartier data} if 
@@ -2035,7 +2035,7 @@ admissible.
 \end{definition}
 
 Let $s_0$ be the principal smooth Cartier data of 
-the zero function on $S$. Then, a pair 
+a constant function on $S$. Then, a pair 
 $(s_0,s)$ of smooth Cartier divisors is admissible
 if and only if $s$ is admissible.
 If a smooth Cartier divisor is admissible, 
@@ -2045,7 +2045,7 @@ admissibility condition.
 \begin{definition}
 Let $(s,s')$ be a pair of smooth Cartier divisors and 
 $\{(U_i,f_i)\}_{i\in I}$ a local smooth Cartier data
-of $s-s'$. The intersection set of the pair 
+for $s-s'$. The intersection set of the pair 
 $(s,s')$ is the following set
 \begin{align}
 s'\cap s\deq \set{x\in S \mid  df_i(x)\in 
@@ -2055,7 +2055,7 @@ s'\cap s\deq \set{x\in S \mid  df_i(x)\in
 \end{definition}
 
 The set $s'\cap s$ is independent of the choice of 
-a local smooth Cartier data. 
+a local smooth Cartier data for $s-s'$. 
 
 %TODO: 下の節に移動
 
@@ -2168,7 +2168,7 @@ the following set is finite;
 
 
 Let $\{(U_p,f_p)\}_{p\in s\cap s_0}$ 
-be a local intersection data of $s$.
+be a local intersection data for $s$.
 
 \begin{align}
 \opn{LMD}^{\bullet}_{A}(s',s)\deq 
@@ -2230,19 +2230,18 @@ In this case, the "cohomology" of
 $\opn{LMD}^{\bullet}_{\mathbb{Q}}(S;s)$ is independent of the choice of 
 differential of $\opn{LMD}^{\bullet}(S;s,\Q)$.
 This is a tropical analog of Kodaira's vanishing theorem
-for a (multiple of) positive line bundle, i.e., a holomorphic line bundle $\mcal{L}$ with a 
-K\"ahler form on a complex manifold $M$: 
+for a (multiple of) positive line bundle
+$\mathcal{L}$ on a complex manifold $M$: 
 \begin{align}
 H^{\bullet}(M;\mcal{L}^{-1})\simeq H^{n}(M;\mcal{L}^{-1})[-n].
 \end{align}
 The name of Bohr--Sommerfeld type comes from 
 the set $s_0\cap s$ can be considered as the set of 
 Bohr--Sommerfeld point if $S$ is a strictly integral affine manifold 
-with a Hessian form by SYZ mirror pair.
+with a Hessian form by semi-flat SYZ mirror pair
+(see \cref{sec: BSRR}).
 The name of strongly-positive follows 
 from \cite{MR2892935}.
-See \cref{sec: BSRR} for more details if 
-you are interested in Bohr--Sommerfeld points.
 \end{example}
 
 The following proposition is an analog of \'{e}tale multiplicity of Euler characteristics
@@ -2516,8 +2515,8 @@ vertex}
 The goal of this subsection is to prove a certain 
 analog of tropical Riemann--Roch theorem for
 a compact smooth tropical 
-curves satisfying \cref{condition-Rn}. 
-From the definition of tropical curves, we will prove
+curves satisfying \cref{condition-Rn}, i.e., 
+we will prove
 the following theorem:
 \begin{theorem}
 \label{theorem-MRR-metric-graph}
@@ -2534,6 +2533,7 @@ $s_0\cap s$ is finite. Then,
 \end{theorem}
 We will prove a generalized version of 
 \cref{theorem-MRR-metric-graph} in the next subsection.
+
 Let $\Gamma_{n}$ be the projectivization of 
 a certein tropical module defined in 
 \cite[2.2]{mikhalkinTropicalCurvesTheir2008a}.
@@ -2659,11 +2659,12 @@ $\check{X}_0(C_0)$ is just a
 cylinder with infinity length.
 $\check{X}_0(\mathbb{R})$ has a canonical homeomorphism:
 $\Phi \colon \check{X}_0(\mathbb{R})\to 
-\mathbb{R}\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee};
+\mathbb{R}\times (\mathbb{R}^{\vee}/\mathbb{Z}^{\vee});
 (p,q dx_p)\mapsto (p,q)$.
 \begin{align}
 \check{X}_0(\mathbb{T}P^{1})\simeq 
-\{(-\infty,0)\}\cup(\mathbb{R}\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee})
+\{(-\infty,0)\}\cup(\mathbb{R}\times 
+\mathbb{R}^{\vee}/\mathbb{Z}^{\vee})
 \cup \{(+\infty,0)\}.
 \end{align}
 The negation map
@@ -2764,7 +2765,6 @@ and thus there exists a canonical orientation induced
 from the symplectic form on $\check{X}(C_0)$.
 This form defines an orientation number of 
 section defined in \cref{proposition-admissible-section}.
-%NEXT: TP1のローテーションを定義する。 
 
 \begin{definition}[{rotation number of closed interval}]
 Fix a closed interval $[a,b]$ in $\mathbb{T}P^{1}$.
@@ -2795,7 +2795,7 @@ Then, $\opn{rot}(\varphi\circ s)=\opn{rot}(s)$.
 \begin{proof}
 Since every automorphism of 
 $[a,b]$ is a composition of the negation map 
-and a translation map, we only need to consider the case
+with a translation map, we only need to consider the case
 when $\phi$ is the negation map.
 In this case, $\varphi(x,y)=(b+a-x,-y)$ for 
 $(x,y)\in [a,b]\times \mathbb{R}/\mathbb{Z}$ if 
@@ -2857,8 +2857,6 @@ analog of a closed annulus in $\mathbb{C}$ but not for
 a complex projective line. In fact, $X(C_0)$ 
 has a standard complex structure which is holomorphic to
 an open annulus in $\mathbb{C}$.
-See also \cref{remark-relative-divisor}.
-%TODO: ここにつながる話を書く。
 \end{remark}
 
 \begin{proposition}
@@ -2877,7 +2875,7 @@ We can calculate from
 \end{proof}
 
 A good point of the rotation number and the 
-Euler number of $s$ satisfies the 
+Euler number of $s$ is the 
 following Meyer--Vietoris type lemma.
 
 \begin{proposition}
@@ -2945,7 +2943,7 @@ $C$. We will prove the theorem by mathematical
 induction for the cardinality of 
 $\pi_0(C\setminus (s_0 \cap s))$, i.e., the 
 number of edges of the cell decomposition.
-When $\pi_0(C\setminus (s_0 \cap s))=1$, 
+When $\sharp\pi_0(C\setminus (s_0 \cap s))=1$, 
 $C$ is homeomorphic to a closed interval 
 or a closed circle and 
 $\sharp (s_0\cap s)\leq 2$ 
@@ -2955,11 +2953,10 @@ true from \cref{proposition-n-valent} directly.
 
 Suppose \cref{theorem-MRR-metric-graph} is true
 for all smooth Cartier divisor $s$ on 
-$C$ such that $\pi_0(C\setminus (s_0 \cap s))=n$.
-
+$C$ such that $\sharp \pi_0(C\setminus (s_0 \cap s))=n$.
 Let $C$ be a $1$-dimensional 
 compact rational polyhedral space
-such that $\pi_0(C\setminus (s_0 \cap s))=n+1$.
+such that $\sharp\pi_0(C\setminus (s_0 \cap s))=n+1$.
 
 Then, we can choose a pair of proper subgraph $C',C''$ of
 $C$ such that
@@ -3452,17 +3449,17 @@ MR2181810,
 grossMirrorSymmetryLogarithmic2006a} and 
 \cite[Chapter 6]{MR2567952}.
 
-\begin{definition}
+\begin{definition} \label{definition-integral-affine-manifold}
 An $n$-dimensional \emph{integral affine 
 (resp. strongly integral affine, affine)} manifold
 is a pair of an $n$-dimensional differential manifold $B_0$ 
-and an atlas $\{(U_i,\psi_i)\}_{i \in I}$ of $B$ such that 
+and an atlas $\{(U_i,\psi_i)\}_{i \in I}$ of $B_0$ such that 
 $\psi_i \circ \psi_j^{-1}$ is a restriction of 
 an element in $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{R}^{n}$
 (resp. $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{Z}^{n}$,
 $\opn{GL}_n(\mathbb{R})\ltimes \mathbb{R}^{n}$) for any $i,j\in I$.
 \end{definition}
-Without
+The name is by
 \begin{remark}
 An (integral) affine manifold is a special case of 
 $(G,X)$-manifolds \cite[3.3]{MR1435975}.
