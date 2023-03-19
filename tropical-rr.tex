@@ -2425,10 +2425,9 @@ associated with the presheaf $U\mapsto
 \end{example}
 
 The pairs of adjoint functors $Rf_! \dashv f^{!}$ 
-induces the trace map $\opn{Tr}_{f,\mathcal{F}^{\bullet}}\colon Rf_!f^{!}\mathcal{F}^{\bullet}
+induces the \emph{trace map} $\opn{Tr}_{f,\mathcal{F}^{\bullet}}\colon Rf_!f^{!}\mathcal{F}^{\bullet}
 \to \mathcal{F}^{\bullet}$ for each 
 $\mathcal{F}^{\bullet}\in \opn{Ob}(\opn{D}^{b}(A_X))$.
-
 We follow the notation $\opn{Tr}_f$ from 
 \cite[p.20]{MR1299726}.
 Let $f\colon X\to Y $ and $g\colon Y\to Z$ be 
@@ -2452,16 +2451,7 @@ Ra_{Z!}(\opn{Tr}_{g\circ f,\upomega_{Z}^{\bullet}})
 =Ra_{Z!}(\opn{Tr}_{g,\upomega_{Z}^{\bullet}})
 \circ Ra_{Y!}(\opn{Tr}_{f,\upomega_{Y}^{\bullet}}).
 \end{align}
-For simplicity, we write $\int_f\deq 
-R^{\bullet}a_{Y!}(\opn{Tr}_{f})\colon 
-\mathbb{H}^{\bullet}_c(X;\upomega_{X}^{\bullet})\to 
-\mathbb{H}^{\bullet}_c(Y;\upomega_{Y}^{\bullet})$
-and $\int_X\deq \int_{a_X}$
-(cf. ).
 
-From \cref{equation-trace-push}, 
-$\int_{g\circ f}=\int_{g}\circ \int_{f}$, i.e., 
-$\int_f$ is the pushforward of $f$.
 
 \begin{example}
 Let $\pi \colon X\to Y$ be a covering map of topological 
@@ -2487,10 +2477,6 @@ R \mathcal{H}om_{A_X}(
 \mathcal{D}_{A_X}(\mathcal{F}^{\bullet}),
 \mathcal{D}_{A_X}(\mathcal{G}^{\bullet})).
 \end{align}
-
-Of course, the trace map is different from the usual integration 
-but this map corresponds to the latter 
-for specially good space such like compact manifolds.
 
 \section{Proof for compact tropical curves}
 In this section, we prove \cref{thm: main} for 
@@ -3471,7 +3457,7 @@ different terminologies for different authors.
 For instance, an integral (resp. strongly integral) affine manifold 
 is called a tropical affine manifold (resp. integral affine manifold)
 in \cite[Definition 1.22]{MR2722115}. 
-The terminology of strongly integral affine manifold is originally used
+The terminology `strongly integral affine manifold' is originally used
 in \cite[Remark 5.10]{MR3079343}.
 \end{remark}
 
@@ -3694,9 +3680,9 @@ b_f^{p}\colon \mathcal{F}^{p}_{\mathbb{Z},Y}\to
 f_* \mathcal{F}^{p}_{\mathbb{Z},X} \to
 Rf_*\mathcal{F}^{p}_{\mathbb{Z},X}
 \end{align}
-for all $p\in \mathbb{Z}_{geq 0}$ and the pullback 
+for all $p\in \mathbb{Z}_{\geq 0}$ and the pullback 
 $f^{*}\colon 
-\mb{H}^{\bullet}(X';\mcal{F}_{\Z, X'}^{\bullet})\to 
+\mb{H}^{\bullet}(Y;\mcal{F}_{\Z, Y}^{\bullet})\to 
 \mb{H}^{\bullet}(X;\mcal{F}_{\Z, X}^{\bullet})$
 \cite[Proposition 4.17]{gross2019sheaftheoretic}.
 The pullback $f^{*}$ is a graded ring homomorphism. 
@@ -3773,15 +3759,33 @@ $H_{0,q}^{\opn{BM}}(X;\Z)=
 H^{-q}R\opn{Hom}(A_X,\upomega_X^{\bullet})$ 
 is equal to the classical $p$-th Borel--Moore homology
 \cite[Lemma 4.8]{gross2019sheaftheoretic}.
-We recall some important properties of 
-classical Borel--Moore homology.
+We note $H_{0,0}^{\opn{BM}}(X;\mathbb{Z})\simeq 
+ \mathbb{Z}$ if 
+$X$ is compact and path-connected.
+The isomorphism follows from the universal 
+coefficient theorem and 
+$H^{1}_c(X;\mathbb{Z})$ is finitely generated and
+torsion-free 
+\cite[VI.Proposition 5.3]{iversenCohomologySheaves1986a}.
 
-If $\upomega_X\simeq \mcal{F}[d]$ for a sheaf $\mcal{F}$,
-$H_i^{\opn{BM}}(X;A)\simeq H^{d-i}(X;\mcal{F})$.
+Let $f$ be a proper morphism of rational polyhedral 
+spaces.
+Then, there exists the pushforward
+$f_*\colon H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})
+\to H_{p,q}^{\mathrm{BM}}(Y;\mathbb{Z})$
+of tropical Borel--Moore homology 
+\cite[Definition 4.9]{gross2019sheaftheoretic}:
+\begin{align}
+f_*(\psi)\deq \opn{Tr}_{f,\upomega_Y^{\bullet}}\circ 
+Rf_!\psi \circ b_{f}^{p}[q]\in 
+\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
+\mathcal{F}^{p}_{\mathbb{Z},Y}[q],\upomega_Y^{\bullet}).
+\end{align}
 
-\begin{definition}
-  
-\end{definition}
+Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
+morphism of rational polyhedral spaces.
+Then, $f_*\circ g_*=(f\circ g)_*$.
+
 
 $\cdot \frown \cdot \colon
 H^{i,j}(X;\mathbb{Z}) \times 
@@ -3793,9 +3797,19 @@ c\frown \alpha \deq  \alpha\circ \mu_X \circ
 (c\otimes \opn{id}).
 \end{align}
 
-If $p=q=i=j=n$, then the cap product $c\frown \alpha$ 
+If $p=i,q=j$, then the cap product $c\frown \alpha$ 
 is just the composition $\alpha \circ c$ of 
-morphisms.
+morphisms:
+\begin{align} \label{equation-composition-cap}
+\cdot \frown \cdot =\cdot \circ \cdot \colon
+\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
+\mathbb{Z}_X,\mathcal{F}^{p}_{\mathbb{Z},X}[q])\times
+\opn{Hom}_{D^{b}(\mathbb{Z}_X)}
+(\mathcal{F}^{p}_{\mathbb{Z},X}[q],\upomega_X^{\bullet})
+\to 
+\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\mathbb{Z}_X,
+\upomega_X^{\bullet}).
+\end{align}
 
 Let $f\colon X \to Y $ be a proper morphism of 
 rational polyhedral spaces.
@@ -3813,29 +3827,10 @@ Then, there exists the following natural isomorphism,
 which is called the Poincar\'e--Verdier duality 
 \cite[Theorem 6.2]{gross2019sheaftheoretic}:
 \begin{align}
-\opn{PVD}\colon \mathcal{F}_{\mathbb{Z},X}^{n-p}[n]
+\opn{PVD}^{(n-p)}_X\colon \mathcal{F}_{\mathbb{Z},X}^{n-p}[n]
 \simeq 
 \mathcal{D}_{\mathbb{Z}_X}(\mathcal{F}_{\mathbb{Z},X}^{p}).
 \end{align}
-
-First, 
-
-
-
-\begin{align}
-\mathbb{Z}_X \simeq\mathscr{Z}_n^{X}\simeq 
-\mathcal{H}om(\mathcal{F}^{n}_{\mathbb{Z},X},
-\mathcal{H}^{n}_X).
-\end{align}
-The second isomorphism is true for $n$-dimensional rational polyhedral 
-spaces \cite[Proposition 5.1]{gross2019sheaftheoretic}.
-
-If $p=0$, then the above isomorphism is given the 
-composition of the natural isomorphisms 
-$\mathcal{F}^{n}_{\mathbb{Z},X}\to \mathcal{H}^{n}_X$ and 
-$\mathcal{H}^{n}_X[n]\to \upomega_X^{\bullet}$.
-
-
 
 The Poincar\'e--Verdier duality and the 
 Hom-tensor adjoint induce
@@ -3855,123 +3850,66 @@ with coefficients in $\mathbb{Z}$ was firstly
 proved in \cite[Theorem 5.3]{MR3894860}
 under a slight technical assumption.
 
-If $p=q=0$, then $\opn{PVD}$ is an element of 
-$H_{n,n}^{\opn{BM}}(X;\mathbb{Z})$. 
-We call the element the \emph{fundamental class} of $X$.
 
-From 
-
+We recall the constrcution 
+of $\opn{PVD}^{(n)}_X$ in \cite{gross2019sheaftheoretic}.
+Let $\mathscr{Z}_n^{X}$ be the sheaf of tropical 
+$n$-cycles \cite[Definition 3.5]{gross2019sheaftheoretic}
+on a tropical manifold $X$ and 
+$\mathcal{H}^{n}_X$ the $n$-th 
+homology sheaf \cite[Definition 4.6]{gross2019sheaftheoretic}.
+Then, there exists the following isomorphism:
 \begin{align}
-\opn{Hom}_{\opn{D}^{b}(\Z_X)}
-(\upomega_X^{\bullet},\upomega_X^{\bullet})\simeq H_{n,n}^{\mathrm{BM}}(X;\mathbb{Z}) ; \psi \mapsto \psi\circ [X]
+\mathbb{Z}_X \simeq\mathscr{Z}_n^{X}\simeq 
+\mathcal{H}om(\mathcal{F}^{n}_{\mathbb{Z},X},
+\mathcal{H}^{n}_X).
 \end{align}
 
-Since $X$ is a locally compact space, 
-$H^{1}_c(X;\Z)$ is free 
-(cf. 
-\cite[VI. Proposition 5.3]{iversenCohomologySheaves1986a})
-and thus $H_{0,0}^{\opn{BM}}(X;\Z)\simeq 
-H^{n,n}(X;\Z)=H^{n}(X;
-\mathcal{F}_{\mathbb{Z},X}^{n})\simeq \Z$ if 
-$X$ is compact and path-connected.
+The second isomorphism is true for $n$-dimensional rational polyhedral 
+spaces \cite[Proposition 5.1]{gross2019sheaftheoretic}.
+The constant function
+$1_{\opn{reg}}\colon X_{\opn{reg}} \to \mathbb{Z}; 
+x\mapsto 1$ defines a generator of 
+$Z_n(X)=\Gamma(X;\mathscr{Z}_n^{X})\simeq 
+\opn{Hom}(\mathcal{F}^{n}_{\mathbb{Z},X},
+\mathcal{H}^{n}_X)\simeq 
+\opn{Hom}_{D^{b}(X)}(\mathcal{F}^{n}_{\mathbb{Z},X}[n],
+\upomega_X^{\bullet})$ if $X$ is connected.
+In particular, $1_{X_{\opn{reg}}}$ defines a 
+natural morphism 
+$\mathcal{F}^{n}_{\mathbb{Z},X}[n]\to \mathcal{H}^{n}_X[n] 
+\to \upomega_X^{\bullet}$.
+This morphism is just $\opn{PVD}^{(n)}_X$.
+We call $[X]\deq \opn{PVD}_X^{(n)}$
+the \emph{fundamental class} of $X$.
+(We omit the proof that the fundamental class in this 
+paper is equal to that of 
+\cite[Definition 4.8]{MR3894860}.)
 
-\begin{align}
-H^{\opn{BM}}_{n,n}(X,\Z)&\simeq 
-\opn{Hom}_{\opn{D}^{b}(\Z_X)}
-(\upomega_X^{\bullet},\upomega_X^{\bullet})\simeq
- \opn{Hom}_{\opn{D}^{b}(\Z)}(Ra_!\upomega_X^{\bullet},\Z), \\ 
-H^{n,n}(X;\mathbb{Z})&\simeq 
-\opn{Hom}_{\opn{D}^{b}(\Z_X)}(\mathbb{Z}_X,
-\upomega_X^{\bullet})
-\simeq  \opn{Hom}_{\opn{D}^{b}(\Z)}(Ra_!\Z_X,\Z).
+
+If $X$ is compact, then $a_{X}$ is proper. 
+In this case,
+we can define the \emph{trace map} 
+of tropical cohomology like complex manifolds 
+(e.g. \cite[Example 13.A.3]{MR2810322}):
+\begin{align}  
+\int_X \colon H^{n,n}(X;\mathbb{Z})\to 
+H_{0,0}^{\opn{BM}}(\{\opn{pt}\};\mathbb{Z})\simeq 
+\mathbb{Z}; \alpha \mapsto a_{X*}(\alpha \frown [X]).
 \end{align}
 
-The first isomorphism follows from the universal 
-coefficient theorem and 
-$H^{1}_c(X;\mathbb{Z})$ is torsion-free 
-\cite[VI.Proposition 5.3]{iversenCohomologySheaves1986a}.
-Let $f$ be a proper morphism of rational polyhedral 
-spaces.
-Then, there exists the pushforward
-$f_*\colon H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})
-\to H_{p,q}^{\mathrm{BM}}(Y;\mathbb{Z})$
-of tropical Borel--Moore homology 
-\cite[Definition 4.9]{gross2019sheaftheoretic}.
-
-
-\begin{align}
-f_*(\psi)\deq \opn{Tr}_{f,\upomega_Y^{\bullet}}\circ 
-Rf_!\psi \circ b_{f}^{p}\in 
-\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
-\mathcal{F}^{p}_{\mathbb{Z},Y}[q],\upomega_Y^{\bullet})
-\end{align}
-
-Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
-morphism of rational polyhedral spaces.
-Then, $f_*\circ g_*=(f\circ g)_*$.
-
-The pushforward of tropical Borel--Moore homology
-is compatible with the pushforward of tropical cycles
-\cite[Definition 3.6]{gross2019sheaftheoretic}.
-In particular, there exists the following commutative 
-diagram:
-\begin{equation}
-\begin{tikzcd}
- Z_k(X) \arrow[r,"{f_*}"] \arrow[d,"{\opn{cyc}_X}"']
- & Z_{k}(Y) \arrow[d,"{\opn{cyc}_Y}"] \\
- H_{k,k}^{\mathrm{BM}}(X;\mathbb{Z}) 
-\arrow[r,"f_*"]
- & H_{k,k}^{\mathrm{BM}}(Y;\mathbb{Z}).
-\end{tikzcd}
-\end{equation}
-
-
-
-Let $w\colon X_{\mathrm{reg}}\to \mathbb{Z}$ be 
-a weight function on $X$ \cite[Definition 4.8]{MR3894860}.
-If the pair $(X,w)$ is an (abstract) tropical space, 
-then $w$ defines the \emph{fundamental class} 
-$[X]\in H_{n,n}^{\mathrm{BM}}(X;\mathbb{Z})$ of 
-$(X,w)$.
-If a tropical space $X$ is a tropical manifold, 
-then the weight function is just a constant 
-function $1_{X_{\mathrm{reg}}}\colon X_{\opn{reg}}\to \mathbb{Z};
-x\mapsto 1$.
-We stress that the fundamental class of tropical 
-manifolds itself defined without 
-a choice of orientations like complex manifolds.
-
-\begin{proposition}[{Fundamental class}]
-There exists the following commutative diagram:
-\begin{equation}
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGAAkA9YMUsAL4AKABoBuADoSAtnRwALAEaLgALQEBKASAGl0mXPkIoAjOSq1GLNpx59BQgJqSZcpSvVadekBmx4CIjITC3pmVkQQDgB9YDJiAR4pWQUAJ2lgACEAWQFhcWS3ZTVNb31-IyIzEOow60iYuPJE4EK0jJy8pxcU9xKNHQsYKABzeCJQADNUiGkkMhAcCCQAJlqrCJApAGMoCBwAAilpiAB3MAPkEQoQagY6RRgGAAUDAOMQVKwR+RwykBOc0QCyWSDMlnCbCkWDAOGik3+gLB1FBiAAzOtIZEdntDscZudLo4bropjMgWtFst0Zj6gDogAqQYCIA
-\begin{tikzcd}
-{{H^{n,n}(X;\mathbb{Z})}} \arrow[d, "{\cdot \frown [X]}"'] \arrow[r, "\int_f"] & {{H^{n,n}(Y;\mathbb{Z})}} \arrow[d, "{\cdot \frown [Y]}"] \\
-{H_{0,0}^{\mathrm{BM}}(X;\mathbb{Z})} \arrow[r, "f_*"]                         & {H_{0,0}^{\mathrm{BM}}(Y;\mathbb{Z})}                    
-\end{tikzcd}.
-\end{equation}
-\end{proposition}
-
-\begin{example}
-Let $f\deq a_X$ for a pure $n$-dimensional compact 
-tropical manifolds. 
-By identifying $H_{0,0}^{\mathrm{BM}}(\{\mathrm{pt}\};
-\mathbb{Z})\simeq \opn{End}(\mathbb{Z})$ with 
-$\mathbb{Z}$, the above commutative diagram gives
-\begin{align}
-\int_{X}\alpha =a_{X*}(\alpha \frown [X]).
-\end{align}
-
-\end{example}
-
-
+The fundamental class $[X]$ of a connected compact
+tropical manifold is a generator of 
+$H_{n,n}^{\opn{BM}}(X;\mathbb{Z})$, and thus we 
+can define the degree of a proper morphism like this.
 \begin{definition}[{cf. \cite[Definition 2.11]{MR3668972}}]
 Let $f\colon X \to Y$ be a proper morphism of 
 $n$-dimensional compact tropical manifolds.
 The (tropical) degree $\opn{deg}_{\opn{trop}}(f)$ of $f$ is the integer $m$
-such that $f_*([X])=m[Y]$.
+such that $f_*([X])=m[Y]$. 
 \end{definition}
-
+We write $\opn{deg}_{\opn{trop}}(f)$ by $\opn{deg}(f)$
+for simolicity.
 
 
 From projection formula, every element 
@@ -4044,9 +3982,8 @@ The Fronenious morphism is
 \'etale on the meaning in 
 \cite{grossMirrorSymmetryLogarithmic2006a}.
 
+\subsection{Sheaf cohomology for integral affine manfiolds}
 
-If $B_0$ is a integral affine manifold, 
-$\mcal{O}^{\times}_{B_0}$ is a locally constant sheaf and the quotient sheaf $\mcal{W}^{1}_{\Z,B_0}$ is a $\Z$-local system on $B_0$.
 
 \begin{Not}
   Usually, integral affine manifolds are used as a special case of integral affine manifold with singularities and we also want to treat like this in many cases.
@@ -4120,100 +4057,6 @@ then $s$ is the image of an one-time Hamiltonian flow of $s'$
 on $\check{X}(B_0)$
 \cite[Exercise 6.65]{MR2567952}.
 
-If $B_0$ is an integral affine manifold such 
-that $\pi_2(B_0)=0$, then $\pi_2(\check{X}(B_0))=0$.
-In this case, $\pi_2(\check{X}(B_0),L_s)=0$ for 
-any Lagrangian section of 
-$\check{\pi}_{B_0}\colon \check{X}(B_0)\to B_0$
-(see \cref{proposition-unobstructed-lagrangian}).
-In this case, every 
-pseudoholomorphic disk 
-$\psi\colon D\to \check{X}(B_0)$ such that 
-$\psi(\partial D)\subset L_s$ is zero.
-In particular, $L_s$ is 
-\emph{tautologically unobstructed} defined in
-\cite[(2.50)]{MR3656481}.
-
-We also note about Floer cohomology of 
-Lagrangian sections.
-Every Lagrangian section
-$L_s\xto{i} \check{X}(B_0)\xto{\check{\pi}_{B_0}}  B_0$
-induces a homomorphism of 
-cohomology 
-$H^{\bullet}(B_0;\mathbb{F}_2)\to 
-H^{\bullet}(\check{X}(B_0);\mathbb{F}_2)
-\to 
-H^{\bullet}(L_s;\mathbb{F}_2)$.
-In particular, 
-$i^{*}(\check{\pi}_{B_0}^{*}(w_2(B_0)))=w_2(L_s)$ and 
-thus any Lagrangian section $L_s$ satisfies the 
-condition \cite[(2.54)]{MR3656481}.
-Every Lagrangian section $L_s$ has 
-a canonical lifting to a Lagrangian 
-brane $\mathscr{L}_s$ as describled in 
-\cite[5.2]{MR1882331}.
-If a pair $(L_s,L_s')$ of Lagrangian sections 
-intersects transversally, then the graded 
-module of Floer complex of the pair
-$(\mathscr{L}_s,\mathscr{L}_{s'})$
-(over $\Lambda_{\opn{nov}}^{\mathbb{C}}$) 
-is the following:
-\begin{align}
-\opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'};
-\Lambda_{\opn{nov}}^{\mathbb{C}})
-\deq \bigoplus_{p\in L_s\cap L_{s'}}
-\Lambda_{\opn{nov}}^{\mathbb{C}}
-[-\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)].
-\end{align}
-Here, $\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)$ is 
-the Maslov index of the pair 
-$(\mathscr{L}_s,\mathscr{L}_{s'})$ at $p$.
-In this case, the Maslov index at $p$
-is equal to the Morse index of the 
-local intersection data $f_{p}$ of 
-the smooth divisor $s'-s$ at $p$
-\cite[Remark 13]{MR1882331}. Therefore, 
-if $L_s$ and $L_s'$ interesects 
-transversally, then there exists the following
-isomorphism of graded modules:
-\begin{align}
-\opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'};
-\Lambda_{\opn{nov}}^{\mathbb{C}})
-\simeq 
-\opn{LMD}^{\bullet}_{\Lambda_{\opn{nov}}^{\mathbb{C}}}
-(s',s).
-\end{align}
-This isomorphism supports our analog of graded module
-of Floer complex is compatible with the classical 
-Floer complex.
-
-Therefore, every pair $(L_1,L_2)$ of Lagrangian section
-of $B_0$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
-Floer cohomology $\opn{HF}^{\bullet}(\mathscr{L}_1,
-\mathscr{L}_2)$. 
-Therefore, its Euler number is equal to the intersection of 
-$L_1$ and $L_2$ (up to signature). We can 
-see this fact from \cite[Remark 13]{MR1882331} directly.
-Therefore, if $L_s$ and $L_s'$ interesects 
-transversally, then there exists 
-
-
-\begin{remark}
-The condition $\pi_2(B_0)=0$ may seem to be technical
-and strict, but this condition is 
-closely related with a classical conjecture.
-\ind{Markus's conjecture}{Markus conjecture} states every closed
-affine manifold is complete (in the sense of $(G,X)$-manifold)
-if and only if its orientable double cover 
-has a compatible special affine structure 
-\cite[p.53]{markus1963cosmological}.
-Every integral affine manifold is a double cover of 
-a special integral affine manifold and thus 
-the universal cover of closed integral affine 
-manifold is homeomorphic to a Euclidean space and 
-$\pi_{2}(B_0)=0$ if Markus conjecture 
-is true.
-\end{remark}
 
 
 
@@ -4391,6 +4234,106 @@ primary Kodaira surfaces and
 \cite{MR3079343,MR3894860} for tropical Klein bottles.
 
 \end{remark}
+
+\subsection{Relationship between Floer cohomology
+and integral affine manifolds}
+
+
+If $B_0$ is an integral affine manifold such 
+that $\pi_2(B_0)=0$, then $\pi_2(\check{X}(B_0))=0$.
+In this case, $\pi_2(\check{X}(B_0),L_s)=0$ for 
+any Lagrangian section of 
+$\check{\pi}_{B_0}\colon \check{X}(B_0)\to B_0$
+(see \cref{proposition-unobstructed-lagrangian}).
+In this case, every 
+pseudoholomorphic disk 
+$\psi\colon D\to \check{X}(B_0)$ such that 
+$\psi(\partial D)\subset L_s$ is zero.
+In particular, $L_s$ is 
+\emph{tautologically unobstructed} defined in
+\cite[(2.50)]{MR3656481}.
+
+We also note about Floer cohomology of 
+Lagrangian sections.
+Every Lagrangian section
+$L_s\xto{i} \check{X}(B_0)\xto{\check{\pi}_{B_0}}  B_0$
+induces a homomorphism of 
+cohomology 
+$H^{\bullet}(B_0;\mathbb{F}_2)\to 
+H^{\bullet}(\check{X}(B_0);\mathbb{F}_2)
+\to 
+H^{\bullet}(L_s;\mathbb{F}_2)$.
+In particular, 
+$i^{*}(\check{\pi}_{B_0}^{*}(w_2(B_0)))=w_2(L_s)$ and 
+thus any Lagrangian section $L_s$ satisfies the 
+condition \cite[(2.54)]{MR3656481}.
+Every Lagrangian section $L_s$ has 
+a canonical lifting to a Lagrangian 
+brane $\mathscr{L}_s$ as describled in 
+\cite[5.2]{MR1882331}.
+If a pair $(L_s,L_s')$ of Lagrangian sections 
+intersects transversally, then the graded 
+module of Floer complex of the pair
+$(\mathscr{L}_s,\mathscr{L}_{s'})$
+(over $\Lambda_{\opn{nov}}^{\mathbb{C}}$) 
+is the following:
+\begin{align}
+\opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'};
+\Lambda_{\opn{nov}}^{\mathbb{C}})
+\deq \bigoplus_{p\in L_s\cap L_{s'}}
+\Lambda_{\opn{nov}}^{\mathbb{C}}
+[-\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)].
+\end{align}
+Here, $\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)$ is 
+the Maslov index of the pair 
+$(\mathscr{L}_s,\mathscr{L}_{s'})$ at $p$.
+In this case, the Maslov index at $p$
+is equal to the Morse index of the 
+local intersection data $f_{p}$ of 
+the smooth divisor $s'-s$ at $p$
+\cite[Remark 13]{MR1882331}. Therefore, 
+if $L_s$ and $L_s'$ interesects 
+transversally, then there exists the following
+isomorphism of graded modules:
+\begin{align}
+\opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'};
+\Lambda_{\opn{nov}}^{\mathbb{C}})
+\simeq 
+\opn{LMD}^{\bullet}_{\Lambda_{\opn{nov}}^{\mathbb{C}}}
+(s',s).
+\end{align}
+This isomorphism supports our analog of graded module
+of Floer complex is compatible with the classical 
+Floer complex.
+
+Therefore, every pair $(L_1,L_2)$ of Lagrangian section
+of $B_0$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
+Floer cohomology $\opn{HF}^{\bullet}(\mathscr{L}_1,
+\mathscr{L}_2)$. 
+Therefore, its Euler number is equal to the intersection of 
+$L_1$ and $L_2$ (up to signature). We can 
+see this fact from \cite[Remark 13]{MR1882331} directly.
+Therefore, if $L_s$ and $L_s'$ interesects 
+transversally, then there exists 
+
+
+\begin{remark}
+The condition $\pi_2(B_0)=0$ may seem to be technical
+and strict, but this condition is 
+closely related with a classical conjecture.
+\ind{Markus's conjecture}{Markus conjecture} states every closed
+affine manifold is complete (in the sense of $(G,X)$-manifold)
+if and only if its orientable double cover 
+has a compatible special affine structure 
+\cite[p.53]{markus1963cosmological}.
+Every integral affine manifold has a double cover of 
+a special integral affine manifold and thus 
+the universal cover of closed integral affine 
+manifold is homeomorphic to a Euclidean space and 
+$\pi_{2}(B_0)=0$ if Markus conjecture 
+is true.
+\end{remark}
+
 
 \section{For more examples}
 
