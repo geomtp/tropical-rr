@@ -3459,7 +3459,8 @@ an element in $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{R}^{n}$
 (resp. $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{Z}^{n}$,
 $\opn{GL}_n(\mathbb{R})\ltimes \mathbb{R}^{n}$) for any $i,j\in I$.
 \end{definition}
-The name is by
+The name `strongly integral affine' comes from 
+\cite[Remark 7.18]{sepethesis}.
 \begin{remark}
 An (integral) affine manifold is a special case of 
 $(G,X)$-manifolds \cite[3.3]{MR1435975}.
@@ -3606,28 +3607,41 @@ studied in the field of Hessian geometry as a vector bundle
 with a flat connection
 (e.g. \cite[Chapter 7]{MR2293045}).
 Let $\mathcal{F}^{p}_{\mathbb{Z},X}$ be 
-the sheaf of  defined in 
-\cite[2.4]{mikhalkinTropicalEigenwaveIntermediate2014a}.
+the sheaf defined in 
+\cite[2.4]{mikhalkinTropicalEigenwaveIntermediate2014a}
+where $p\in \mathbb{Z}_{\geq 0}$.
  (We follow the notation in \cite[Definition 2.4]{MR3894860}.)
 If $X$ is a tropical manifold, then 
 $\mathcal{F}^{p}_{\mathbb{Z},X}$ is equal 
 to the sheaf $\Omega_{X}^{p}$ of tropical $p$-forms 
 \cite[Definition 2.7]{gross2019sheaftheoretic}
 (see \cite[Remark 2.8]{gross2019sheaftheoretic}).
+Throughout in this paper, we assume every rational polyhedral space $X$
+satisfies $\Omega_X^{p}\simeq \mathcal{F}_{\mathbb{Z},X}^{p}$
+for all $p$.
+Let $\mathcal{W}_{p,X}^{\mathbb{Z}}
+\deq \mathcal{H}om(\mathcal{F}^{p}_{\mathbb{Z},X},\mathbb{Z}_X)$
+be the sheaf of $p$-th wave tangent spaces 
+\cite{yamamotoTropicalContractionsIntegral2021,mikhalkinTropicalEigenwaveIntermediate2014a}.
 We set $\mathcal{F}^{p}_{X}\deq 
 \mathcal{F}^{p}_{\mathbb{Z}, X}
+\otimes_{\mathbb{Z}_X}\mathbb{R}_X$ and 
+$\mathcal{W}_{p,X}\deq 
+\mathcal{W}_{p,X}^{\mathbb{Z}}
 \otimes_{\mathbb{Z}_X}\mathbb{R}_X$.
+
+
 
 \begin{example}
 If $B_0$ is an integral affine manifold, then 
 $\mathcal{F}^{p}_{\mathbb{Z},B_0}\simeq 
 \bigwedge^{p}_{i=1} \mathcal{T}_{\mathbb{Z},B_0}^{\vee}$ for 
-all $p\in \mathbb{Z}_{\geq 0}$.
+all $p\in \mathbb{Z}_{\geq 0}$ and
+$\mathcal{W}^{\mathbb{Z}}_{p,B_0}\simeq 
+\bigwedge_{i=1}^{p}\mathcal{T}_{\mathbb{Z},B_0}$.
 \end{example}
 
-From now on, we assume every rational polyhedral space $X$
-satisfies $\Omega_X^{p}\simeq \mathcal{F}_{\mathbb{Z},X}^{p}$
-for all $p$. 
+ 
 
 We recall some results about tropical superforms from
 \cite{MR3903579,smacka2017differential}.
@@ -3640,7 +3654,8 @@ In fact, $\mathcal{A}_X^{0,0}$ is isomorphic to
 the sheaf $\mathcal{C}^{\infty}(X)$ of smooth functions 
 on $X$ if $X$ is an integral affine manifold.
 \end{example}
-The bigraded sheaf $\mathcal{A}_X^{\bullet,*}$ has a bigraded
+The bigraded sheaf $\mathcal{A}_X^{\bullet,*}$ has 
+a canonical bigraded
 complex structure
 $(\mathcal{A}_X^{\bullet,*},d',d'')$.
 
@@ -3672,11 +3687,19 @@ Therefore, we can calculate the multiplication of
 $\mb{H}^{\bullet}(X;\mcal{F}_{\mathbb{Z},X}^{\bullet})$ by 
 cup product of each $H^{q}(X;\mcal{F}_{\mathbb{Z},X}^{p})$ easily.
 
-Let $f\colon X\to X'$ be a morphism of rational polyhedral 
-space. Then, this induces the pullback $f^{-1}\colon 
+Let $f\colon X\to Y$ be a morphism of rational polyhedral 
+space. Then, this induces a canonical morphism
+\begin{align}
+b_f^{p}\colon \mathcal{F}^{p}_{\mathbb{Z},Y}\to 
+f_* \mathcal{F}^{p}_{\mathbb{Z},X} \to
+Rf_*\mathcal{F}^{p}_{\mathbb{Z},X}
+\end{align}
+for all $p\in \mathbb{Z}_{geq 0}$ and the pullback 
+$f^{*}\colon 
 \mb{H}^{\bullet}(X';\mcal{F}_{\Z, X'}^{\bullet})\to 
 \mb{H}^{\bullet}(X;\mcal{F}_{\Z, X}^{\bullet})$
-and this is a graded ring homomorphism \cite[Proposition 4.17]{gross2019sheaftheoretic}. 
+\cite[Proposition 4.17]{gross2019sheaftheoretic}.
+The pullback $f^{*}$ is a graded ring homomorphism. 
 
 The canonical monomorphism $\mcal{O}^{\times}_X \to \mcal{A}^{0,0}_X$
 induces the following commutative diagram 
@@ -3704,7 +3727,8 @@ Every row and column of the diagram (\ref{equation-smooth-cartier-diagram}) is e
 and $\mcal{A}_{X}^{0,0}/\mcal{O}^{\times}_X
   \simeq \mcal{Z}^{1}_X/\mcal{F}_{\Z,X}^{1}$ from the snake lemma.
 The right column exact sequence of \cref{equation-smooth-cartier-diagram} is called
-the \ind{tropical exponential sequence}{tropicalexponentialexactsequence}, 
+the 
+\ind{tropical exponential sequence}{tropicalexponentialexactsequence}
 (e.g. \cite{MR3894860}).
 
 By taking the long exact sequence for 
@@ -3712,14 +3736,15 @@ By taking the long exact sequence for
 \begin{align} \label{equation-tropical-cartier}
 c_1\colon \opn{CaDiv}^{\infty}(X)\to \opn{Pic}(X)\to 
 H^{1}(X;\mathcal{F}_{\mathbb{Z},X}^{1}); s\mapsto D_s 
-\mapsto c_1(s)=c_1(D_s).
+\mapsto c_1(D_s).
 \end{align}
 The second morphism of (\ref{equation-tropical-cartier}) is 
-called the Chern class map in \cite[5]{mikhalkinTropicalCurvesTheir2008a}.
+called the Chern class map of 
+$\opn{Pic}(X)$ in \cite[5]{mikhalkinTropicalCurvesTheir2008a}.
 Let $f\colon X\to Y$ be a morphism of 
 two rational polyhedral spaces.
 From definition of morphism of rational polyhedral space
-and a natural morphism of superforms 
+and a naturally induced morphism of superforms 
 \cite[Lemma 2.21]{MR3903579},
 $f$ induces the pullback 
 $f^{*}\colon \opn{CaDiv}^{\infty}(Y)\to \opn{CaDiv}^{\infty}(X)$ 
@@ -3732,22 +3757,21 @@ by \cite[Proposition 4.17]{gross2019sheaftheoretic}.
 
 \subsection{Verdier duality and Borel--Moore homology
 for tropical spaces}
-
-Every rational polyhedral space $X$ is locally compact and $\Z$ is has finite homological dimension.
-Thus, we can use Verdier duality of tropical spaces.
+In this subsection, we recall Verdier duality for
+tropical manifolds.
+Every rational polyhedral space $X$ is locally compact, 
+and thus we can use Verdier duality of tropical spaces.
 We set $H^{p,q}(X;\mathbb{Z})\deq 
 H^{q}(X;\mathcal{F}_{\mathbb{Z},X}^{p})$.
-
-
-
-The The $(p,q)$-th Borel-Moore homology of $X$ is
+The The $(p,q)$-th Borel--Moore homology of $X$ is
 \begin{align}
 H^{\opn{BM}}_{p,q}(X;\Z)\deq 
 H^{-q}R\opn{Hom}(\mathcal{F}_{\mathbb{Z},X}^{p},\upomega_X^{\bullet})\simeq 
 \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\mathcal{F}_{\mathbb{Z},X}^{p}[q],\upomega_X^{\bullet}).
 \end{align}
 $H_{0,q}^{\opn{BM}}(X;\Z)=
-H^{-q}R\opn{Hom}(A_X,\upomega_X^{\bullet})$ is equal to the classical Borel-Moore homology
+H^{-q}R\opn{Hom}(A_X,\upomega_X^{\bullet})$ 
+is equal to the classical $p$-th Borel--Moore homology
 \cite[Lemma 4.8]{gross2019sheaftheoretic}.
 We recall some important properties of 
 classical Borel--Moore homology.
@@ -3874,14 +3898,10 @@ $f_*\colon H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})
 of tropical Borel--Moore homology 
 \cite[Definition 4.9]{gross2019sheaftheoretic}.
 
-\begin{align}
-b_f\colon \mathcal{F}^{p}_{\mathbb{Z},Y}\to 
-Rf_*\mathcal{F}^{p}_{\mathbb{Z},X}
-\end{align}
 
 \begin{align}
 f_*(\psi)\deq \opn{Tr}_{f,\upomega_Y^{\bullet}}\circ 
-Rf_!\psi \circ b_{f}\in 
+Rf_!\psi \circ b_{f}^{p}\in 
 \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
 \mathcal{F}^{p}_{\mathbb{Z},Y}[q],\upomega_Y^{\bullet})
 \end{align}
@@ -4813,7 +4833,9 @@ Fukaya categories of higher genus closed surfaces in
 
 \subsubsection{Semi-flat SYZ mirror pair}
 
-We add some notes about integral affine manifolds $B_0$, and its SYZ-pair $\check{X}(B_0), X(B_0)$ from \cite[Chapter 6]{MR2567952} and \cite{MR2737696,MR3079343}
+We add some notes about integral affine manifolds $B_0$,
+and its SYZ-pair $\check{X}(B_0), X(B_0)$ from 
+\cite[Chapter 6]{MR2567952} and \cite{sepethesis}.
 
 \begin{definition}
 \label{definition-SYZ-torus-fibration}
