@@ -900,7 +900,7 @@ of a tropical analog of HRR.
 \begin{conjecture}[{Tropical Mirror Riemann--Roch Problem
 (\cref{conjecture-tropical-MRR})}]
 \label{conjecture-tropical-MRR-preface}
-Let $B$ be a compact tropical manifold and $\mcal{L}$
+Let $B$ be a purely $n$-dimensional compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
 $\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
  Let $s$ be a "generic"
@@ -913,10 +913,8 @@ Then,
 \chi(\opn{LMD}^{\bullet}(B;s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
 \end{align}
 where $\int_B$ is the trace map 
-$\mb{H}^{n}(B;\mcal{F}_{\Z, B}^{n})\to \Z$
-induced from the counit 
-$Ra_{B!}a_{B}^{!}\mathbb{Z}_{\{\mathrm{pt}\}}
-\to \mathbb{Z}_{\{\mathrm{pt}\}}$.
+$H^{n,n}(B;\mathbb{Z})\to \mathbb{Z}$
+induced from the fundamental class $[B]$ of $B$.
 
 In particular, when $\mcal{L}=\mcal{O}_B$ then
 $\chi(\opn{LMD}^{\bullet}(B;s))=\chi_{\opn{top}}(B)$ ?
@@ -1746,8 +1744,8 @@ $f$ is the image $(f)^{\mathrm{sm}}$ of $f$.
 We write $\opn{CDiv}^{\infty}(B)$ for 
 $H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
 We will see a smooth Cartier divisor is
-an analog of Lagrangian section in 
-\cref{proposition-cartier-lagrangian}.
+an analog of Lagrangian section 
+(\cref{proposition-cartier-lagrangian}).
 In the next subsection, 
 we will define an analog of Floer complex of 
 Lagrangian submanifolds
@@ -3784,13 +3782,15 @@ Rf_!\psi \circ b_{f}^{p}[q]\in
 
 Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
 morphism of rational polyhedral spaces.
-Then, $f_*\circ g_*=(f\circ g)_*$.
+Then, $f_*\circ g_*=(f\circ g)_*$ from .
 
-
-$\cdot \frown \cdot \colon
+\begin{align}
+\cdot \frown \cdot \colon
 H^{i,j}(X;\mathbb{Z}) \times 
 H_{p,q}^{\opn{BM}}(X;\mathbb{Z})\to 
-H_{p-i,q-j}^{\opn{BM}}(X;\mathbb{Z});(c,\alpha) \mapsto c\frown \alpha$.
+H_{p-i,q-j}^{\opn{BM}}(X;\mathbb{Z});(c,\alpha) 
+\mapsto c\frown \alpha.
+\end{align}
 
 \begin{align}
 c\frown \alpha \deq  \alpha\circ \mu_X \circ 
@@ -4118,8 +4118,9 @@ $H^{\bullet}(T;\mathcal{F}_{\mathbb{Z},B}^{\bullet})
 \cite[Theorem 47]{MR4229604} and the cycle map), 
 we get 
 $\frac{1}{n!}\int_{T}c_1(s)^{n}$ is equal to the determinant
-of the linear part of $dq_s$. The intersection number of the image $L_s$ Lagrangian
-section and the zero section $L_0$ is equal to
+of the linear part of $dq_s$. 
+The intersection number of Lagrangian
+section $L_s$ and the zero section $L_0$ is equal to
 $\chi(\opn{LMD}^{\bullet}(L_0,L_s))$ up to 
 signature
 \myfootnote{The signature only depends on
