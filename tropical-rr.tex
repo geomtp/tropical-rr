@@ -3530,8 +3530,9 @@ Euler characteristic.
 If $B_0$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
 This conjecture is true for 
 \emph{special affine manifold} \cite{MR3665000},
-i.e., an affine manifold $(B, \{U_i,\psi_i\}_{i\in I})$ such that 
-$ $
+i.e., an affine manifold $(B, \{U_i,\psi_i\}_{i\in I})$ 
+whose transition map is 
+in $\opn{SL}_n(\mathbb{R})\ltimes \mathbb{R}^{n}$.
 Therefore, every closed integral affine manifold satisfies Chern's conjecture since the orientable double over of an integral affine manifold has a compatible special integral affine structure.
 \myfootnote{We have not checked 
 the original source of Chern's conjecture yet.
@@ -3766,6 +3767,18 @@ Rf_!\psi \circ b_{f}^{p}[q]\in
 \mathcal{F}^{p}_{\mathbb{Z},Y}[q],\upomega_Y^{\bullet}).
 \end{align}
 
+If $p=0$, $q=0$ and $f=a_X$, 
+then $b^{0}_{a_X}$ is just a counit for 
+the adjoint $a^{-1}_X\dashv Ra_{X*}$.
+Therefore, we can identify
+$a_{X*}\colon H_{\opn{BM}}^{0,0}(X;\mathbb{Z})
+\to H_{\opn{BM}}^{0,0}(\{\opn{pt}\};\mathbb{Z})$
+with $\opn{Hom}_{D(\mathbb{Z})}(\mathbb{Z},\opn{Tr}_{a_X,\mathbb{Z}})$
+by the adjoint isomorphism
+$\opn{Hom}_{D(\mathbb{Z}_X)}(a_X^{-1}\mathbb{Z},
+\upomega_X^{\bullet})\simeq 
+\opn{Hom}_{D(\mathbb{Z})}(\mathbb{Z},Ra_{X*}\upomega_X^{\bullet})$. 
+if $a_X$ is proper.
 Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
 morphism of rational polyhedral spaces.
 Then, $f_*\circ g_*=(f\circ g)_*$ from 
@@ -3871,15 +3884,18 @@ $\mathcal{F}^{n}_{\mathbb{Z},X}[n]\to \mathcal{H}^{n}_X[n]
 This morphism is just $\opn{PVD}^{(n)}_X$.
 We call $[X]\deq \opn{PVD}_X^{(n)}$
 the \emph{fundamental class} of $X$.
-(We omit the proof that the fundamental class in this 
+(We omit to prove that the fundamental class in this 
 paper is equal to that of 
 \cite[Definition 4.8]{MR3894860}.)
-
+We stress that every fundamental class of an integral affine 
+manifold (as tropical manifold) 
+is determined without the data of orientation
+like that of complex manifolds.
 
 If $X$ is compact, then $a_{X}$ is proper. 
 In this case,
 we can define the \emph{trace map} 
-of tropical cohomology like complex manifolds 
+on tropical cohomology like complex manifolds 
 (e.g. \cite[Example 13.A.3]{MR2810322}):
 \begin{align}  
 \int_X \colon H^{n,n}(X;\mathbb{Z})\to 
@@ -3899,8 +3915,6 @@ such that $f_*([X])=m[Y]$.
 \end{definition}
 We write $\opn{deg}_{\opn{trop}}(f)$ by $\opn{deg}(f)$
 for simplicity.
-We can calculate the degree of proper morphism of equi-dimensional 
-tropical manifolds by 
 
 From projection formula, every element 
 $c\in H^{n,n}(Y;\mathbb{Z})$ have the following equation:
@@ -3936,10 +3950,9 @@ if $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.
 Our condition of \'etale is different from that of 
 \cite[Definition 1.1]{grossMirrorSymmetryLogarithmic2006a}
 when $X$ and $Y$ are integral affine manifolds.
-\end{remark}
-
 A typical example of non-\'etale covering map 
-in our sense is given
+in our sense but \'etale on the meaning in 
+\cite{grossMirrorSymmetryLogarithmic2006a} is given
 from the $n$-th Frobenious endomorphism 
 $\opn{Fr}_{n,X}^{\natural}\colon \mathcal{O}_X \to \mathcal{O}_X; f\mapsto nf$ of 
 the structure sheaf of tropical manifolds. 
@@ -3968,9 +3981,7 @@ If $X=\mathbb{R}^{d}$, then $X^{(n)}$ is
 isomorphic to $X$ and 
 $\opn{Fr}_{n,X}$ corresponds to 
 the $n$-th dilation map of $X$.
-The Fronenious morphism is 
-\'etale on the meaning in 
-\cite{grossMirrorSymmetryLogarithmic2006a}.
+\end{remark}
 
 \subsection{Sheaf cohomology for integral affine manfiolds}
 
@@ -4004,7 +4015,7 @@ Another important thing is that
 $\mcal{Z}^{1}(B_0)/\mcal{T}_{\Z,B_0}^{\vee}$
  (resp. $\mcal{C}^{\infty}(T^{*}B_0)/\mcal{T}_{\Z,B_0}^{\vee}$) 
 is isomorphic to the sheaf of germs of Lagrangian sections 
-(resp. smooth sections ) of the Lagrangian torus fibration 
+(resp. smooth sections) of the Lagrangian torus fibration 
 $\check{f}_{B_0}\colon \check{X}(B_0)\to B_0$ 
 \cite[(2.7), (2.11)]{duistermaatGlobalActionangleCoordinates1980a}.
 
@@ -4878,6 +4889,35 @@ For simplicity, we write
 $\upomega_X^{\bullet}\deq 
 \upomega_{\mathbb{Z}_X}^{\bullet}$.
 
+$\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
+\deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
+\upomega_{A_X}^{\bullet})$.
+
+The dual functor
+$\mathcal{D}_{A_X}\colon \opn{D}^{b}(X)\to 
+\opn{D}^{b}(X); \mathcal{F}^{\bullet} \to  R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
+\upomega_{A_X}^{\bullet})$
+has the following canonical isomorphism when 
+$\mathcal{D}_{A_X}(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}))
+\simeq \mathcal{G}^{\bullet}$ by the hom-tensor adjoint
+\cite[Proposition 2.6.3]{MR1299726}:
+\begin{align}
+R\mathcal{H}om_{A_X}
+(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}),
+\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})) 
+& \simeq R\mathcal{H}om_{A_X}
+(\mathcal{F}^{\bullet}\otimes^{L}_{A_X}
+\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}),
+\upomega_{A_X}^{\bullet}) \\
+& \simeq R\mathcal{H}om_{A_X}
+(\mathcal{F}^{\bullet},
+\mathcal{D}_{A_X}(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}))) \\
+& \simeq R\mathcal{H}om_{A_X}
+(\mathcal{F}^{\bullet},
+\mathcal{G}^{\bullet}).
+\end{align}
+
+
 \begin{example}
 If $X$ is a topological manifold of dimension $n$, 
 $\upomega^{\bullet}_{X}\simeq \opn{or}_{X}^{\Z}[n]$ 
@@ -4918,31 +4958,7 @@ Ra_{Z!}(\opn{Tr}_{g\circ f,\upomega_{Z}^{\bullet}})
 
 
 
-$\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
-\deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
-\upomega_{A_X}^{\bullet})$.
 
-The dual functor
-$\mathcal{D}_{A_X}\colon \opn{D}^{b}(X)\to \opn{D}^{b}(X)$
-has the following canonical isomorphism when 
-$\mathcal{D}_{A_X}(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}))
-\simeq \mathcal{G}^{\bullet}$ by the hom-tensor adjoint
-\cite[Proposition 2.6.3]{MR1299726}:
-\begin{align}
-R\mathcal{H}om_{A_X}
-(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}),
-\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})) 
-& \simeq R\mathcal{H}om_{A_X}
-(\mathcal{F}^{\bullet}\otimes^{L}_{A_X}
-\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}),
-\upomega_{A_X}^{\bullet}) \\
-& \simeq R\mathcal{H}om_{A_X}
-(\mathcal{F}^{\bullet},
-\mathcal{D}_{A_X}(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}))) \\
-& \simeq R\mathcal{H}om_{A_X}
-(\mathcal{F}^{\bullet},
-\mathcal{G}^{\bullet}).
-\end{align}
 
 
 \bibliography{lattice_points_surface}
