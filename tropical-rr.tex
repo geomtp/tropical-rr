@@ -1746,6 +1746,24 @@ $H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
 We will see a smooth Cartier divisor is
 an analog of Lagrangian section 
 (\cref{proposition-cartier-lagrangian}).
+We also use the following representation of 
+smooth Cartier divisor like 
+\cite[Definition 4.0.12]{MR2810322}.
+\begin{definition}[{smooth Cartier local data}]
+Let $s\in \opn{CDiv}^{\infty}(S)$, 
+$\{U_i\}_{i\in I}$ an open cover of $S$ and 
+$f_i\colon U_i \to \mathbb{R}$ a $(0,0)$-superform
+on $U_i$. The set 
+$\{(U_i,f_i)\}_{i\in I}$ is 
+a \emph{local smooth Cartier data} for $s$ if 
+$s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all 
+$i\in I$. The set $\{(U_i,f_i)\}_{i\in I}$ is a
+\emph{local smooth Cartier data} if 
+$\{(U_i,f_i)\}_{i\in I}$ is a local data of a smooth
+Cartier divisor.
+\end{definition}
+
+
 In the next subsection, 
 we will define an analog of Floer complex of 
 Lagrangian submanifolds
@@ -1782,10 +1800,22 @@ the micro-support of sheaves in order to define it.
 First, we recall about the micro-support of sheaves 
 from \cite{MR1299726}.
 Let $X$ be a real analytic manifold and let
-$\mcal{F}\in\opn{Ob}(\opn{D}^{b}(A_X))$ and
-$\opn{SS}(\mcal{F})$ the micro-support of $\mcal{F}$
-\cite[Definition 5.1.2]{MR1299726}.
-\begin{definition}
+$\mcal{F}^{\bullet}\in\opn{Ob}(\opn{D}^{b}(A_X))$ and
+$\opn{SS}(\mcal{F}^{\bullet})$ 
+the micro-support of $\mcal{F}^{\bullet}$:
+\begin{definition}[{Citation 
+\cite[Definition 5.1.2]{MR1299726}}]
+The element $p\in T^{*}X$ 
+is not in $\opn{SS}(\mathcal{F}^{\bullet})$
+if there exists an open neighborhood $U$ of $p$ such 
+that for any $x_1\in X$ any any real 
+function $\psi$ of class $C^{\alpha}$ defined 
+in a neighborhood of $x_1$, with $\psi(x_1)=0$,
+$d\psi(x_1)\in U$, we have
+\begin{align}
+(R\Gamma_{\{\psi(x)\geq 0\}}(\mathcal{F}^{\bullet}|_U))_{x_1}
+\simeq 0.
+\end{align}
 
 \end{definition}
 
@@ -1798,56 +1828,42 @@ the forgetful functor
 $\psi_X \colon \opn{D}^{b}(A_X)\to \opn{D}^{b}(\Z_X)$
 preserves the microsupport of $\mcal{F}$ 
 \cite[Remark 5.1.5]{MR1299726}.
-For simplicity,
-$\opn{SS}(\mcal{F})_x\deq \opn{SS}(\mcal{F}) \cap T^{*}_x X$.
-From definition of the micro-support of sheaves, 
-$\opn{SS}(\mcal{F}|_{U})_x=\opn{SS}(\mcal{F})_x$
-for any open neighborhood $U$ of $x$ via the canonical 
-isomorphism $T^{*}_xX\to T^{*}_xU$.
 
 \begin{example}
 If $M$ is a closed submanifold of $X$, then
 $\opn{SS}(A_{M\subset X})=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
 \end{example}
-Let $f\colon X \to Y$ be a smooth morphism of 
-smooth manifolds and $\mathcal{F}\in 
-D^{b}(A_Y)$. Then,
-\begin{align}
-\opn{SS}(f^{-1}\mathcal{F}^{\bullet})=
-{}^{t}f'(f_\pi^{-1}(\opn{SS}(\mathcal{F}^{\bullet})))
-\end{align}
-See \cite[Proposition 5.4.5 (i)]{MR1299726}.
-In particular, 
-$\opn{SS}(\mathcal{F})_x=\opn{SS}(\mathcal{F}|_U)_x$
-for any open neighborhood of $x$.
+For simplicity,
+$\opn{SS}(\mcal{F})_x\deq \opn{SS}(\mcal{F}) \cap T^{*}_x X$.
+From definition of the micro-support of sheaves, 
+$\opn{SS}(\mcal{F}|_{U})_x=\opn{SS}(\mcal{F})_x$
+for any open neighborhood $U$ of $x$.
+
+
 
 Fix a polyhedral set $S$ 
 in $\mathbb{R}^{n}$.
 Let 
 $\mathcal{F}^{1}_{\mathbb{Z},S}
 \deq \mathcal{O}^{\times}_S/\mathbb{R}_{S}$
-and 
+,
 $\mathcal{F}^{1}_{S}\deq 
 \mathcal{F}^{1}_{\mathbb{Z},S}
-\otimes_{\mathbb{Z}_S} \mathbb{R}_S$.
+\otimes_{\mathbb{Z}_S} \mathbb{R}_S$ 
+and $T_x S\deq \opn{Hom}_{\mathbb{Z}}(
+\mathcal{F}^{1}_{\mathbb{Z},S},\mathbb{R})$.
 From definition of polyhedral set, 
 we can see 
 the stalk $(\mathcal{F}^{1}_{\mathbb{Z},S})_x$
 at $x$ is a free 
 $\mathbb{Z}$-module of finite rank.
 
-From definition of superforms on 
-polyhedral spaces 
-\cite[Definition 2.10, 2.24]{MR3903579}, we 
-can define the set of \emph{critical points} 
-of $(0,0)$-superform on rational polyhedral space
-like that of smooth function on differential
-manifolds.
-From the compatibility of pullback of extended
-affine map and the differential $d''$
-\cite[Lemma 2.21]{MR3903579}, we can 
-describe the set of critical point of 
-$(0,0)$-superform as follows:
+In order to define the admissible condition,
+we define the subset $\opn{SS}(S)_x$ of cotangent
+space $(\mathcal{F}^{1}_{S})_x$ at $x\in S$ for 
+a rational polyhedral
+space $S$ satisfying \cref{condition-Rn}.
+
 
 %TODO: きちんとかく
 Let $S$ be a rational polyhedral space satisfying
@@ -1861,18 +1877,20 @@ $V$ of $0$ in $\opn{LC}_x S$ and $\phi \colon V\to S$
 such that $\phi_x$ is an open immersion onto an 
 open subset $U_x$ of $S$ as a 
 rational polyhedral space.
-This open immersion represents a unique morphism
-of germs such that $d_x\phi\colon T_x S=T_0(\opn{LC}_xS) \to T_x S$
-is the idenity 
+This open immersion induces a unique isomorphism
+$d_x\phi\colon T_0(\opn{LC}_xS) \to T_x S$
+of tangent space 
 \cite[Proposition 2.5]{gross2019sheaftheoretic}.
-From now con, we identify 
-$T_0(\opn{LC}_x S)$ with $T_x S$.
-
-We set the following subset of $\mathcal{F}_{\mathbb{Z},S,x}^{1}$:
+$d_x \phi$ does not depend on the choice of 
+$\phi$.
+\begin{definition}
+For the above notation, we set
 \begin{align}
 \opn{SS}(S)_x\deq 
-\opn{SS}(((\mathbb{Z}_{T_x S})_{\opn{LC}_x S})_x).
+d_x\phi(\opn{SS}((\mathbb{Z}_{T_x S})_{\opn{LC}_x S})_0).
 \end{align}
+
+\end{definition}
 
 In general, $\opn{SS}(S)_x$  
 is complicated, but this is related with the 
@@ -1903,16 +1921,15 @@ We also note $\opn{Lin}(\opn{LC}_x S)$ is equal to
 the real wave tangent vector space of $S$ at 
 $x$ (See \cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
 \cite[Definition 2.16, Remark 2.21]{yamamotoTropicalContractionsIntegral2021}).
-Various rational polyhedral spaces satisfy the 
-following condition.
-\begin{condition}
+
+\begin{proposition}
 \label{condition-good-linearity-space}
 Let $S$ be a rational polyhedral space 
 satisfying \cref{condition-Rn} and the following
 equation for any $x\in S$. 
 \begin{align}
 \opn{span}_{{\mathbb{R}}}\opn{SS}(S)_x=
-\opn{Lin}(\opn{LC}_xS)^{\bot}(\simeq 
+\opn{Lin}(\opn{LC}_xS)^{\bot}(= 
 (\mathcal{W}_{1,S}^{\mathbb{R}})_{x}^{\bot}).
 \end{align}
 where $(V)^{\bot}$ the orthogonal complement of 
@@ -1920,8 +1937,61 @@ $V$ for the standard pairing of dual vector spaces
 and $(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}$ is 
 the stalk of the sheaf of (real) wave tangent 
 vector spaces of $S$ at $x$. 
+\end{proposition}
+\begin{proof}
+Since
+$\opn{LC}_x S\simeq 
+\opn{Lin}(\opn{LC}_x S)\times 
+(\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))$, and thus
+\begin{align}
+\opn{SS}(\opn{LC}_x S)_0\simeq \{0\}\times 
+\opn{SS}(\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))_0.
+\end{align}
+Thus, we only need to prove 
+$\opn{span}_{\mathbb{R}}\opn{SS}(\opn{LC}_x S)_0=
+(\mathcal{F}_{S}^{1})_x $ if 
+$\opn{Lin}(\opn{LC}_x S)=\{0\}$.
+From now on, we assume $\opn{Lin}(\opn{LC}_x S)=\{0\}$.
+Next, we prove the following inclusion:
+\begin{align}
+  (\bigcap_{y \in (\opn{LC}_xS)_{\opn{reg}}} 
+\opn{span}_{\mathbb{R}} U_y)^{\bot}=
+\sum_{y \in (\opn{LC}_xS)_{\opn{reg}}} 
+(\opn{span}_{\mathbb{R}} U_y)^{\bot} \subset 
+\opn{span}_{\mathbb{R}}\opn{SS}(\opn{LC}_x S)_0.
+\end{align}
+where $U_y$ is the intersection 
+$(\opn{LC}_xS)_{\opn{reg}}$ with a sufficiently 
+small open ball $V_y$ of $y$ in $T_0(\opn{LC}_xS)$.
+If the diameter of $V_y$ is sufficiently small, 
+then $\opn{span}_{\mathbb{R}} U_y$ is independent of 
+the choice of $V_y$. 
+Let $h\in (\opn{span}_{\mathbb{R}} U_y)^{\bot}$ and 
+$\rho_{V_y}\colon T_0 (\opn{LC}_x S)\to \mathbb{R}$
+be a smooth function such that 
+$\{z \in T_0 (\opn{LC}_x S) \mid \rho_{V_y}(z)<0\}=V_y$.
+Since $h(z)=0$ for $z\in U_y$, we have
+\begin{align}
+\chi(\{z\in \opn{LC}_x S\mid h(z)+\rho_{V_y}(z)<0\})
+-\chi(\{z\in \opn{LC}_x S\mid h(z)<0\})=1.
+\end{align}
+Therefore, $h+\rho_{V_y}$ or $h$ induces 
+$h\in \opn{SS}(\opn{LC}_x S)_0$.
+\end{proof}
 
-\end{condition}
+From definition of superforms on 
+polyhedral spaces 
+\cite[Definition 2.10, 2.24]{MR3903579}, we 
+can define the set of \emph{critical points} 
+of $(0,0)$-superform on rational polyhedral space
+like that of smooth function on differential
+manifolds.
+From the compatibility of pullback of extended
+affine map and the differential $d''$
+\cite[Lemma 2.21]{MR3903579}, we can 
+describe the set of critical point of 
+$(0,0)$-superform as follows:
+
 
 For instance, if $S$ is a tropical curve 
 or integral affine manifold, 
@@ -1945,7 +2015,7 @@ if
 \end{align}
 \end{condition}
 %TODO: 表記の理由を何とかする。
-(Be careful for this definition is \emph{not} 
+(Be careful for this terminology is \emph{not} 
 compatible with admissible Morse functions defined 
 in \cite[p.156]{MR1336822}.)
 
@@ -2000,25 +2070,6 @@ From \cref{equation-smoooth-cartier-divisor-sequence},
 
 
 
-We also use the following representation of 
-smooth Cartier divisor like 
-\cite[Definition 4.0.12]{MR2810322}.
-
-
-
-\begin{definition}[{smooth Cartier local data}]
-Let $s\in \opn{CDiv}^{\mathrm{sm}}(S)$, 
-$\{U_i\}_{i\in I}$ an open cover of $S$ and 
-$f_i\colon U_i \to \mathbb{R}$ a $(0,0)$-superform
-on $U_i$. The set 
-$\{(U_i,f_i)\}_{i\in I}$ is 
-a \emph{local smooth Cartier data} for $s$ if 
-$s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all 
-$i\in I$. The set $\{(U_i,f_i)\}_{i\in I}$ is a
-\emph{local smooth Cartier data} if 
-$\{(U_i,f_i)\}_{i\in I}$ is a local data of a smooth
-Cartier divisor.
-\end{definition}
 
 \begin{definition}[{smooth admissible Cartier divisor}]
 \label{definition-admissible-smooth-cartier-divisor}
@@ -2213,8 +2264,10 @@ Cartier data of $s$.
 $s$ is 
 \emph{Bohr--Sommerfeld type},
 \emph{strongly-positive}
-or \emph{Hessian type} if
-$f_i$ is strictly convex for any $i\in I$. 
+or \emph{Hessian type} if every
+$f_i$ is locally a resctriction of a strictly convex 
+function on an open neighborhood of $T_0(\opn{LC}_x)S$ 
+for any $i\in I$. 
 This is a certain analog of positive form on
 complex manifolds. In this case, 
 \begin{align}
@@ -2388,93 +2441,10 @@ $\bigcup_{x\in sigma \in \mathscr{P}}\sigma=
 \opn{Lin}(S,x)$.
 
 \fi
-\subsection{Verdier duality}
-%TODO: Verdier 双対のまとめ
-We will use this subsection 
-in \cref{section-integral-affine-manifold}.
-
-The Verdier duality holds for the following general form
-\cite[Proposition 3.1.10]{MR1299726}
-
-
-\begin{theorem}[{Verdier duality and 
-Borel--Moore homology}]
-Let $f\colon X\to Y$ be a continuous map between locally 
-compact Hausdorff space s. If $f_!$ has finite cohomological
-dimension, 
-\begin{align}
-R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{Hom}_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}),        \\
-R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}).
-\end{align}
-\end{theorem}
 
 
 
-The \emph{dualizing complex} over $A$ of $X$ is 
-$\upomega_{A_X}\deq a^{!}_{X}A_{\{\opn{pt}\}}$.
 
-\begin{example}
-If $X$ is a topological manifold of dimension $n$, 
-$\upomega^{\bullet}_{X}\simeq \opn{or}_{X}^{\Z}[n]$ 
-where $\opn{or}_{X}^{\mathbb{Z}}[n]$ is the sheaf 
-associated with the presheaf $U\mapsto 
-\opn{Hom}(H^{n}_c(U;\mathbb{Z}_{X}),\mathbb{Z})$
-\cite[Proposition 3.3.6]{MR1299726}.
-\end{example}
-
-The pairs of adjoint functors $Rf_! \dashv f^{!}$ 
-induces the \emph{trace map} $\opn{Tr}_{f,\mathcal{F}^{\bullet}}\colon Rf_!f^{!}\mathcal{F}^{\bullet}
-\to \mathcal{F}^{\bullet}$ for each 
-$\mathcal{F}^{\bullet}\in \opn{Ob}(\opn{D}^{b}(A_X))$.
-We follow the notation $\opn{Tr}_f$ from 
-\cite[p.20]{MR1299726}.
-Let $f\colon X\to Y $ and $g\colon Y\to Z$ be 
-a continuous map and $f_!,g_!$ has finite cohomological 
-dimension. Then, $(g\circ f)^{!}=f^{!}\circ g^{!}$
-\cite[Proposition 3.1.8]{MR1299726}.
-In particular, $\upomega_X=f^{!}\upomega_Y$.
-From elemental properties of the composition of
-adjoint functors \cite[p.103]{MR1712872}, we have
-\begin{align}
-\label{equation-trace}
-\opn{Tr}_{g\circ f,\mathcal{F}^{\bullet}}=
-\opn{Tr}_{g,\mathcal{F}^{\bullet}} 
-\circ Rg_!(\opn{Tr}_{f,g^{!}(\mathcal{F}^{\bullet})}).
-\end{align}
-By the global section functor with compact support and
-\cref{equation-trace}, we have
-\begin{align}
-\label{equation-trace-push}
-Ra_{Z!}(\opn{Tr}_{g\circ f,\upomega_{Z}^{\bullet}})
-=Ra_{Z!}(\opn{Tr}_{g,\upomega_{Z}^{\bullet}})
-\circ Ra_{Y!}(\opn{Tr}_{f,\upomega_{Y}^{\bullet}}).
-\end{align}
-
-
-\begin{example}
-Let $\pi \colon X\to Y$ be a covering map of topological 
-degree $n$.
-\end{example}
-
-If
-
-$\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
-\deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
-\upomega_{A_X})$.
-
-The dual functor
-$\mathcal{D}_{A_X}\colon \opn{D}^{b}(X)\to \opn{D}^{b}(X)$
-has the following canonical isomorphism when 
-$\mathcal{F}^{\bullet},\mathcal{G}^{\bullet}$ are 
-cohomologically constructible 
-\cite[Proposition 3.4.6]{MR1299726}. 
-\begin{align}
-R \mathcal{H}om_{A_X}(\mathcal{G}^{\bullet},
-\mathcal{F}^{\bullet})\simeq 
-R \mathcal{H}om_{A_X}(
-\mathcal{D}_{A_X}(\mathcal{F}^{\bullet}),
-\mathcal{D}_{A_X}(\mathcal{G}^{\bullet})).
-\end{align}
 
 \section{Proof for compact tropical curves}
 In this section, we prove \cref{thm: main} for 
@@ -3171,14 +3141,26 @@ $x\notin \opn{Crit}(g+m)$ for every monomial with
 integer slope.
 \end{remark}
 
-%TODO: positive と豊富の差
-% \begin{remark}
-% If $s$ is a Bohr--Sommerfeld type smooth Cartier on 
-% a compact tropical curve, then 
-% $\opn{deg}(D_s)=\sharp(s_0\cap s)-
-%\chi_{\mathrm{top}}(C)
-% \geq \sharp (C\setminus C_0)+g-1$
-% \end{remark}
+\begin{remark}
+Our definition of smooth Cartier divisor 
+has an analog of positive divisor by using 
+the local data $\{(U_i,f_i)\}_{i\in I}$ as 
+explained in \cref{example-tropical-kodaira-vanishing}.
+However, this positive divisor is different 
+from ample line bundles for tropical curves. 
+If $s$ is a positive smooth Cartier divisor, then
+$\chi(\opn{LMD}(C;s))=\sharp(s_0\cap s)\geq \sharp 
+(C\setminus C_{\opn{reg}})$. 
+Thus, $\chi(\opn{LMD}(C;s))\geq 2g(C)-2$
+when $C$ is a compact trivalent
+graph with no $1$-valent vertex. This means that
+$\opn{deg}(s)\geq 3g(C)-3$.
+On the other hand, every divisor $D$ satisfying
+$\opn{deg}(D)>0$ is ample \cite[Corollary 43]{MR2892941}.
+In other words, there is no direct tropical
+analog of Kodaira embedding theorem
+in tropical geometry.
+\end{remark}
 
 
 \subsection{Relationships between previous results}
@@ -3443,8 +3425,7 @@ an element in $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{R}^{n}$
 (resp. $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{Z}^{n}$,
 $\opn{GL}_n(\mathbb{R})\ltimes \mathbb{R}^{n}$) for any $i,j\in I$.
 \end{definition}
-The name `strongly integral affine' comes from 
-\cite[Remark 7.18]{sepethesis}.
+
 \begin{remark}
 An (integral) affine manifold is a special case of 
 $(G,X)$-manifolds \cite[3.3]{MR1435975}.
@@ -3455,8 +3436,8 @@ different terminologies for different authors.
 For instance, an integral (resp. strongly integral) affine manifold 
 is called a tropical affine manifold (resp. integral affine manifold)
 in \cite[Definition 1.22]{MR2722115}. 
-The terminology `strongly integral affine manifold' is originally used
-in \cite[Remark 5.10]{MR3079343}.
+The terminology `strongly integral affine manifold' 
+comes from \cite[Remark 5.10]{MR3079343}.
 \end{remark}
 
 
@@ -3710,7 +3691,8 @@ Here $\mcal{Z}^{q}_{X}\deq
 Every row and column of the diagram (\ref{equation-smooth-cartier-diagram}) is exact
 and $\mcal{A}_{X}^{0,0}/\mcal{O}^{\times}_X
   \simeq \mcal{Z}^{1}_X/\mcal{F}_{\Z,X}^{1}$ from the snake lemma.
-The right column exact sequence of \cref{equation-smooth-cartier-diagram} is called
+The left column short exact sequence of 
+\cref{equation-smooth-cartier-diagram} is called
 the 
 \ind{tropical exponential sequence}{tropicalexponentialexactsequence}
 (e.g. \cite{MR3894860}).
@@ -3743,11 +3725,15 @@ by \cite[Proposition 4.17]{gross2019sheaftheoretic}.
 for tropical spaces}
 In this subsection, we recall Verdier duality for
 tropical manifolds.
+See \cref{section-verdier-dual} if you do not familiar 
+with Verdier duality.
 Every rational polyhedral space $X$ is locally compact, 
 and thus we can use Verdier duality of tropical spaces.
 We set $H^{p,q}(X;\mathbb{Z})\deq 
-H^{q}(X;\mathcal{F}_{\mathbb{Z},X}^{p})$.
-The The $(p,q)$-th Borel--Moore homology of $X$ is
+H^{q}(X;\mathcal{F}_{\mathbb{Z},X}^{p})$. 
+Let $\upomega_X^{\bullet}$ be the dualizing complex 
+of $D^{b}(\mathbb{Z}_X)$.
+The $(p,q)$-th Borel--Moore homology of $X$ is
 \begin{align}
 H^{\opn{BM}}_{p,q}(X;\Z)\deq 
 H^{-q}R\opn{Hom}(\mathcal{F}_{\mathbb{Z},X}^{p},\upomega_X^{\bullet})\simeq 
@@ -3782,7 +3768,8 @@ Rf_!\psi \circ b_{f}^{p}[q]\in
 
 Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
 morphism of rational polyhedral spaces.
-Then, $f_*\circ g_*=(f\circ g)_*$ from .
+Then, $f_*\circ g_*=(f\circ g)_*$ from 
+\cref{equation-trace}.
 
 \begin{align}
 \cdot \frown \cdot \colon
@@ -3792,12 +3779,7 @@ H_{p-i,q-j}^{\opn{BM}}(X;\mathbb{Z});(c,\alpha)
 \mapsto c\frown \alpha.
 \end{align}
 
-\begin{align}
-c\frown \alpha \deq  \alpha\circ \mu_X \circ 
-(c\otimes \opn{id}).
-\end{align}
-
-If $p=i,q=j$, then the cap product $c\frown \alpha$ 
+If $p=i$ and $q=j$, then the cap product $c\frown \alpha$ 
 is just the composition $\alpha \circ c$ of 
 morphisms:
 \begin{align} \label{equation-composition-cap}
@@ -3813,7 +3795,10 @@ morphisms:
 
 Let $f\colon X \to Y $ be a proper morphism of 
 rational polyhedral spaces.
-
+Then, there exists the projective formula 
+for $\alpha\in H_{p,q}^{\mathrm{BM}}(X)$
+and $c\in H^{i,j}(Y)$ 
+\cite[Proposition 4.18]{gross2019sheaftheoretic}:
 \begin{align}
   f_*(f^{*}c\frown \alpha)=
 c\frown f_*\alpha\in H_{p-i,q-j}^{\opn{BM}}(Y).
@@ -3831,20 +3816,24 @@ which is called the Poincar\'e--Verdier duality
 \simeq 
 \mathcal{D}_{\mathbb{Z}_X}(\mathcal{F}_{\mathbb{Z},X}^{p}).
 \end{align}
-
+where $\mathcal{D}_{\mathbb{Z}_X}(\mathcal{F}^{\bullet})
+\deq R\mathcal{H}om_{\mathbb{Z}_X}(\mathcal{F}^{\bullet}
+,\upomega^{\bullet}_X)$ for 
+$\mathcal{F}^{\bullet}\in D^{b}(\mathbb{Z}_X)$.
 The Poincar\'e--Verdier duality and the 
 Hom-tensor adjoint induce
 the following isomorphism.
 \begin{align}
-R\opn{Hom}(\mathbb{Z}_X,
+H^{n-p,n-q}(X;\mathbb{Z})=
+R^{0}\opn{Hom}(\mathbb{Z}_X,
 \mathcal{F}_{\mathbb{Z},X}^{n-p}[n-q])\simeq 
-R\opn{Hom}(\mathcal{F}_{\mathbb{Z},X}^{p}[q],
-\upomega_{X}^{\bullet}).
+R^{0}\opn{Hom}(\mathcal{F}_{\mathbb{Z},X}^{p}[q],
+\upomega_{X}^{\bullet})=
+H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z}).
 \end{align}
 This is the Poincar\'e duality
 for tropical manifolds 
 \cite[Corollary 6.3]{gross2019sheaftheoretic}.
-
 The Poincar\'e duality for tropical manifold
 with coefficients in $\mathbb{Z}$ was firstly 
 proved in \cite[Theorem 5.3]{MR3894860}
@@ -3864,8 +3853,8 @@ Then, there exists the following isomorphism:
 \mathcal{H}om(\mathcal{F}^{n}_{\mathbb{Z},X},
 \mathcal{H}^{n}_X).
 \end{align}
-
-The second isomorphism is true for $n$-dimensional rational polyhedral 
+The first isomorphism comes from \cite[Lemma 2.4]{MR3041763} and
+the second isomorphism is true for $n$-dimensional rational polyhedral 
 spaces \cite[Proposition 5.1]{gross2019sheaftheoretic}.
 The constant function
 $1_{\opn{reg}}\colon X_{\opn{reg}} \to \mathbb{Z}; 
@@ -3901,7 +3890,7 @@ H_{0,0}^{\opn{BM}}(\{\opn{pt}\};\mathbb{Z})\simeq
 The fundamental class $[X]$ of a connected compact
 tropical manifold is a generator of 
 $H_{n,n}^{\opn{BM}}(X;\mathbb{Z})$, and thus we 
-can define the degree of a proper morphism like this.
+can define the degree of a proper morphism.
 \begin{definition}[{cf. \cite[Definition 2.11]{MR3668972}}]
 Let $f\colon X \to Y$ be a proper morphism of 
 $n$-dimensional compact tropical manifolds.
@@ -3909,15 +3898,16 @@ The (tropical) degree $\opn{deg}_{\opn{trop}}(f)$ of $f$ is the integer $m$
 such that $f_*([X])=m[Y]$. 
 \end{definition}
 We write $\opn{deg}_{\opn{trop}}(f)$ by $\opn{deg}(f)$
-for simolicity.
-
+for simplicity.
+We can calculate the degree of proper morphism of equi-dimensional 
+tropical manifolds by 
 
 From projection formula, every element 
 $c\in H^{n,n}(Y;\mathbb{Z})$ have the following equation:
 \begin{align}
 \int_{X}f^{*}c
-=a_{Y,*}(f_*(f^{*}c\frown [X]))
-=a_{Y,*}(c\frown \opn{deg}(f)[Y])
+=a_{Y*}(f_*(f^{*}c\frown [X]))
+=a_{Y*}(c\frown \opn{deg}(f)[Y])
 =\opn{deg}(f)\int_Y c.
 \end{align}
 
@@ -4778,8 +4768,7 @@ Fukaya categories of higher genus closed surfaces in
 \subsubsection{Semi-flat SYZ mirror pair}
 
 We add some notes about integral affine manifolds $B_0$,
-and its SYZ-pair $\check{X}(B_0), X(B_0)$ from 
-\cite[Chapter 6]{MR2567952} and \cite{sepethesis}.
+from \cite[Chapter 6]{MR2567952} and \cite{sepethesis}.
 
 \begin{definition}
 \label{definition-SYZ-torus-fibration}
@@ -4799,7 +4788,7 @@ Let's see the topological properties of $X(B_0)$ and $\check{X}(B_0)$.
 
 Since integral affine condition is very strict, so $X(B_0)$ (resp. $\check{X}(B_0)$) is a special class of complex (resp. symplectic) manifold.
 
-Since each fiber of the fibration $f_{B_0}$ and 
+Since each fiber of the fibrations $f_{B_0}$ and 
 $\check{f}_{B_0}$ are compact,
 $f_{B_0}$ and $\check{f}_{B_0}$ are proper maps.
 In particular, if $B_0$ is compact then 
@@ -4815,7 +4804,9 @@ Then, $\pi_i(B_0)\simeq \pi_i(\check{X}(B_0))$
 for $i\geq 2$.
 In particular, 
 $\pi_i(B_0)=\pi_i(\check{X}(B_0))=0$ if 
-$B_0$ is complete and $\pi_2(B_0,L)=0$.
+$B_0$ is complete and $\pi_2(B_0,L_s)=0$ for any image
+$L_s$ of 
+Lagrangian section of $\check{f}_{B_0}\colon B_0 \to \check{X}(B_0)$.
 \end{proposition}
 \begin{proof}
 Let $\widetilde{X}$ be the universal cover of 
@@ -4849,17 +4840,109 @@ sequence of relative homotopy groups.
 \end{proof}
 
 
-\begin{example}
+
 If $B_0$ is an integral Hessian manifold, 
 $X(B_0)$ and $\check{X}(B_0)$ has a K\"ahler structure.
 
 Let $f:B_0' \to B_0$ be a finite unramified covering of $B_0$ such that $B_0'$ is a tropical torus.
 
-Then, $X(B_0',K')$ (resp. $\check{X}(B_0',K')$) 
+Then, $X(B_0')$ (resp. $\check{X}(B_0')$) 
 is a complex torus and an unramified finite cover 
-of $X(B_0,K)$ (resp. $\check{X}(B_0,K)$).
+of $X(B_0)$ (resp. $\check{X}(B_0)$).
+
+\subsection{Verdier duality} \label{section-verdier-dual}
+%TODO: Verdier 双対のまとめ
+In this subsection, we recall Verdier duality which 
+uses in \cref{section-integral-affine-manifold}.
+
+The Verdier duality holds for the following general form
+\cite[Proposition 3.1.10]{MR1299726}
+
+
+\begin{theorem}[{Verdier duality}]
+Let $f\colon X\to Y$ be a continuous map between locally 
+compact Hausdorff space s. If $f_!$ has finite cohomological
+dimension, 
+\begin{align}
+R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{Hom}_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}),        \\
+R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}).
+\end{align}
+\end{theorem}
+
+
+
+The \emph{dualizing complex} over $A$ of $X$ is 
+$\upomega_{A_X}^{\bullet}\deq a^{!}_{X}A_{\{\opn{pt}\}}$.
+
+For simplicity, we write 
+$\upomega_X^{\bullet}\deq 
+\upomega_{\mathbb{Z}_X}^{\bullet}$.
+
+\begin{example}
+If $X$ is a topological manifold of dimension $n$, 
+$\upomega^{\bullet}_{X}\simeq \opn{or}_{X}^{\Z}[n]$ 
+where $\opn{or}_{X}^{\mathbb{Z}}[n]$ is the sheaf 
+associated with the presheaf $U\mapsto 
+\opn{Hom}(H^{n}_c(U;\mathbb{Z}_{X}),\mathbb{Z})$
+\cite[Proposition 3.3.6]{MR1299726}.
 \end{example}
 
+The pairs of adjoint functors $Rf_! \dashv f^{!}$ 
+induces the \emph{trace map} $\opn{Tr}_{f,\mathcal{F}^{\bullet}}\colon Rf_!f^{!}\mathcal{F}^{\bullet}
+\to \mathcal{F}^{\bullet}$ for each 
+$\mathcal{F}^{\bullet}\in \opn{Ob}(\opn{D}^{b}(A_X))$.
+We follow the notation $\opn{Tr}_f$ from 
+\cite[p.20]{MR1299726}.
+Let $f\colon X\to Y $ and $g\colon Y\to Z$ be 
+a continuous map and $f_!,g_!$ has finite cohomological 
+dimension. Then, $(g\circ f)^{!}=f^{!}\circ g^{!}$
+\cite[Proposition 3.1.8]{MR1299726}.
+In particular, $\upomega_X=f^{!}\upomega_Y$.
+From elemental properties of the composition of
+adjoint functors \cite[p.103]{MR1712872}, we have
+\begin{align}
+\label{equation-trace}
+\opn{Tr}_{g\circ f,\mathcal{F}^{\bullet}}=
+\opn{Tr}_{g,\mathcal{F}^{\bullet}} 
+\circ Rg_!(\opn{Tr}_{f,g^{!}(\mathcal{F}^{\bullet})}).
+\end{align}
+By the global section functor with compact support and
+\cref{equation-trace}, we have
+\begin{align}
+\label{equation-trace-push}
+Ra_{Z!}(\opn{Tr}_{g\circ f,\upomega_{Z}^{\bullet}})
+=Ra_{Z!}(\opn{Tr}_{g,\upomega_{Z}^{\bullet}})
+\circ Ra_{Y!}(\opn{Tr}_{f,\upomega_{Y}^{\bullet}}).
+\end{align}
+
+
+
+
+$\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
+\deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
+\upomega_{A_X}^{\bullet})$.
+
+The dual functor
+$\mathcal{D}_{A_X}\colon \opn{D}^{b}(X)\to \opn{D}^{b}(X)$
+has the following canonical isomorphism when 
+$\mathcal{D}_{A_X}(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}))
+\simeq \mathcal{G}^{\bullet}$ by the hom-tensor adjoint
+\cite[Proposition 2.6.3]{MR1299726}:
+\begin{align}
+R\mathcal{H}om_{A_X}
+(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}),
+\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})) 
+& \simeq R\mathcal{H}om_{A_X}
+(\mathcal{F}^{\bullet}\otimes^{L}_{A_X}
+\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}),
+\upomega_{A_X}^{\bullet}) \\
+& \simeq R\mathcal{H}om_{A_X}
+(\mathcal{F}^{\bullet},
+\mathcal{D}_{A_X}(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}))) \\
+& \simeq R\mathcal{H}om_{A_X}
+(\mathcal{F}^{\bullet},
+\mathcal{G}^{\bullet}).
+\end{align}
 
 
 \bibliography{lattice_points_surface}
