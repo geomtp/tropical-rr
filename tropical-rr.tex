@@ -1806,14 +1806,14 @@ the micro-support of $\mcal{F}^{\bullet}$:
 \begin{definition}[{Citation 
 \cite[Definition 5.1.2]{MR1299726}}]
 The element $p\in T^{*}X$ 
-is not in $\opn{SS}(\mathcal{F}^{\bullet})$
+is  $p\notin \opn{SS}(\mathcal{F}^{\bullet})$
 if there exists an open neighborhood $U$ of $p$ such 
 that for any $x_1\in X$ any any real 
 function $\psi$ of class $C^{\alpha}$ defined 
 in a neighborhood of $x_1$, with $\psi(x_1)=0$,
 $d\psi(x_1)\in U$, we have
 \begin{align}
-(R\Gamma_{\{\psi(x)\geq 0\}}(\mathcal{F}^{\bullet}|_U))_{x_1}
+(R\Gamma_{\{\psi(x)\geq 0\}}(\mathcal{F}^{\bullet}))_{x_1}
 \simeq 0.
 \end{align}
 
@@ -1821,10 +1821,9 @@ $d\psi(x_1)\in U$, we have
 
 As remarked in \cite[Remark 5.1.6]{MR1299726},
 $\opn{SS}(\mcal{F})$ depends only on the 
-$C^{1}$-structure of $X$.\footnote{この一文ほぼ丸々引用の文だけどだい
+$C^{1}$-structure of $X$ \footnote{この一文ほぼ丸々引用の文だけどだい
 大丈夫?}
-In particular, 
-the forgetful functor 
+, and the forgetful functor 
 $\psi_X \colon \opn{D}^{b}(A_X)\to \opn{D}^{b}(\Z_X)$
 preserves the microsupport of $\mcal{F}$ 
 \cite[Remark 5.1.5]{MR1299726}.
@@ -2277,7 +2276,7 @@ complex manifolds. In this case,
 \bigoplus_{x\in s_0\cap -s} 
 H^{n}(S,S\setminus\{x\};\mathbb{Q})[-n].
 \end{align}
-In this case, the "cohomology" of 
+In this case, the `cohomology' of 
 $\opn{LMD}^{\bullet}_{\mathbb{Q}}(S;s)$ is independent of the choice of 
 differential of $\opn{LMD}^{\bullet}(S;s,\Q)$.
 This is a tropical analog of Kodaira's vanishing theorem
@@ -2719,6 +2718,30 @@ and thus there exists a canonical orientation induced
 from the symplectic form on $\check{X}(C_0)$.
 This form defines an orientation number of 
 section defined in \cref{proposition-admissible-section}.
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,302); %set diagram left start at 0, and has height of 302
+
+    %Shape: Ellipse [id:dp7113644287533367] 
+    \draw   (220,160.5) .. controls (220,138.13) and (230.07,120) .. (242.5,120) .. controls (254.93,120) and (265,138.13) .. (265,160.5) .. controls (265,182.87) and (254.93,201) .. (242.5,201) .. controls (230.07,201) and (220,182.87) .. (220,160.5) -- cycle ;
+    %Shape: Ellipse [id:dp2574876106229609] 
+    \draw   (385,160.5) .. controls (385,138.13) and (395.07,120) .. (407.5,120) .. controls (419.93,120) and (430,138.13) .. (430,160.5) .. controls (430,182.87) and (419.93,201) .. (407.5,201) .. controls (395.07,201) and (385,182.87) .. (385,160.5) -- cycle ;
+    %Straight Lines [id:da9747654267031158] 
+    \draw    (242.5,120) -- (407.5,120) ;
+    %Straight Lines [id:da6388065944921051] 
+    \draw    (242.5,201) -- (407.5,201) ;
+    %Straight Lines [id:da44727041223554886] 
+    \draw  [dash pattern={on 15pt off 1.5pt}]  (220,160.5) -- (385,160.5) ;
+    %Curve Lines [id:da44274218397801035] 
+    \draw    (220,160.5) .. controls (263,97.5) and (348,224.5) .. (385,160.5) ;
+  \end{tikzpicture}
+
+  \caption{A continuous section $s\colon [0,1]\to [0,1]\times \mathbb{R}/\mathbb{Z}$}
+\end{figure}
 
 \begin{definition}[{rotation number of closed interval}]
 Fix a closed interval $[a,b]$ in $\mathbb{T}P^{1}$.
@@ -3935,7 +3958,7 @@ Then, $f_*[X]=\opn{cyc}_X(f_*1_{X_{\mathrm{reg}}})
 =m[\opn{cyc}_Y(1_{Y_{\mathrm{reg}}})]=m
 f_*[Y]$ from the commutative diagram of
 tropical cycle maps and the definition of the pushforward
-of tropical cycles.
+of tropical cycles \cite[Definition 3.6]{gross2019sheaftheoretic}.
 In this case, $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.
 \end{example}
 
@@ -4027,7 +4050,7 @@ Thus, the commutative diagram (\ref{equation-smooth-cartier-diagram}) is written
   \begin{tikzcd}
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
     & \mb{R}_{B_0} \arrow[r,equal] \arrow[d]                & \mb{R}_{B_0} \arrow[d]           &                      &   \\
-    0 \arrow[r] & \AffS_{\Z,B_0} \arrow[r] \arrow[d]         & \mcal{C}^{\infty}(B_0) \arrow[r] \arrow[d] & \mcal{C}^{\infty}(B_0)/\AffS_{\Z,B_0}  \arrow[r] \arrow[d,equal] & 0 \\
+    0 \arrow[r] & \mathcal{O}_{B_0}^{\times} \arrow[r] \arrow[d]         & \mcal{C}^{\infty}(B_0) \arrow[r] \arrow[d] & \mcal{C}^{\infty}(B_0)/\mathcal{O}_{B_0}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
     0 \arrow[r] & \mcal{T}_{\Z,B_0}^{\vee} \arrow[r] \arrow[d] & \opn{Lag}(T^{*}B_0) \arrow[r] \arrow[d]  & \opn{Lag}(\check{X}(B_0)) \arrow[r]   & 0 \\
     & 0 & 0 &  &
   \end{tikzcd}
@@ -4163,7 +4186,7 @@ a special case of \cite{MR4301560}.
 \begin{corollary}
 Let $s$ be a smooth local Cartier divisor on $B_0$ and 
 $\{(U_i,f_i)\}_{i\in I}$ a local smooth Cartier 
-data of $s$ such that $s_0\cap s<\infty$ and
+data of $s$ such that $\sharp (s_0\cap s)<\infty$ and
 every $f_i$ satisfies \cref{condition-local-analytic}.
 Then, the equation holds for $s$.
 \end{corollary}
@@ -4190,13 +4213,14 @@ According to \cite[5.3]{mikhalkinTropicalGeometryIts2006},
 the support of $k$-th Chern class of tropical manifold is 
 the $k$-skeleton of it.
 We don't know the definition of higher Chern class of tropical manifold $B$ except
-$n=1$ or $n=\dim B_0$. 
+$n=1$ or $n=\dim B_0$ (see \cref{remark-todd-class}).
 On the other hand, $\opn{ch}(B_0)$ should be trivial when $B$ is
 an integral affine manifold, since $B_0$ has empty
 $k$-skeleton except $k=n$.
 Thus, $c_{k}(B_0)$ should be $1$ except $k=0$, 
 i.e., $\opn{td}(B_0)$ should be $1$. 
-On the other hand, $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$
+On the other hand,
+ $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$
 since the tangent bundle on $X(B_0)$ is flat.
 \end{remark}
 
@@ -4781,29 +4805,33 @@ Fukaya categories of higher genus closed surfaces in
 We add some notes about integral affine manifolds $B_0$,
 from \cite[Chapter 6]{MR2567952} and \cite{sepethesis}.
 
-\begin{definition}
-\label{definition-SYZ-torus-fibration}
-\end{definition}
-
-%TODO: 適切な箇所に配置
-\begin{remark}
+The local system $\mathcal{T}_{\mathbb{Z}, B_0}$ defines 
+ a pair of torus fibration:
+\begin{equation} \label{definition-SYZ-torus-fibration}
+\begin{tikzcd}%[scale cd=0.9, row sep=scriptsize, column sep=small]
+T^{*}B_0/\mathcal{T}_{\Z , B_0}^{\vee} =:\hspace{-35pt} 
+&\check{X}(B_0) \arrow[rd,"\check{f}_{B_0}"'] 
+&   & X(B_0) \arrow[ld,"f_{B_0}"] 
+&\hspace{-35pt} \deq TB_0/\mathcal{T}_{\Z, B_0} \\
+& &  B_0 & &
+\end{tikzcd}.
+\end{equation}
 In some literature, the symbol $\check{X}$ and
-$X$ are opposite. In this paper, we choose the above
-symbolic rule in order to be compatible with the symbol of 
-\cref{definition-SYZ-torus-fibration}.
-\end{remark}
-
-From construction, $\check{X}(B_0), X(B_0)$ have the zero section.
-
-Let's see the topological properties of $X(B_0)$ and $\check{X}(B_0)$.
-
-Since integral affine condition is very strict, so $X(B_0)$ (resp. $\check{X}(B_0)$) is a special class of complex (resp. symplectic) manifold.
-
+$X$ are opposite. 
+$\check{X}(B_0)$ has a canonical symplectic structure 
+induced from $T^{*}B_0$, and each fiber of 
+$\check{f}_{B_0}$ is a Lagrangian torus.
+On the other hand, $X(B_0)$ has a canonical complex
+structure induced from $TB_0$ and integral affine 
+structure of $B_0$.
 Since each fiber of the fibrations $f_{B_0}$ and 
 $\check{f}_{B_0}$ are compact,
 $f_{B_0}$ and $\check{f}_{B_0}$ are proper maps.
 In particular, if $B_0$ is compact then 
 $\check{X}(B_0)$ and $X(B_0)$ are compact.
+
+Since integral affine condition is very strict, so 
+$X(B_0)$ (resp. $\check{X}(B_0)$) is also a special class of complex (resp. symplectic) manifold.
 
 \begin{proposition}
 
@@ -4853,7 +4881,8 @@ sequence of relative homotopy groups.
 
 
 If $B_0$ is an integral Hessian manifold, 
-$X(B_0)$ and $\check{X}(B_0)$ has a K\"ahler structure.
+$X(B_0)$ and $\check{X}(B_0)$ have K\"ahler structure 
+respectively.
 
 Let $f:B_0' \to B_0$ be a finite unramified covering of $B_0$ such that $B_0'$ is a tropical torus.
 
