@@ -1916,44 +1916,41 @@ We write $\opn{Lin}(Z)$ for the maximal linearity
 subspace of $Z$. If $P$ is a polyhedron in 
 $\mathbb{R}^{n}$, $\opn{Lin}(P)$ is the linearity space
 in the sense of \cite[p.60]{MR3287221}.
-We also note $\opn{Lin}(\opn{LC}_x S)$ is equal to 
-the real wave tangent vector space of $S$ at 
-$x$ (See \cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
-\cite[Definition 2.16, Remark 2.21]{yamamotoTropicalContractionsIntegral2021}).
+
 
 \begin{proposition}
 \label{condition-good-linearity-space}
 Let $S$ be a rational polyhedral space 
 satisfying \cref{condition-Rn} and the following
-equation for any $x\in S$. 
-\begin{align}
-\opn{span}_{{\mathbb{R}}}\opn{SS}(S)_x=
-\opn{Lin}(\opn{LC}_xS)^{\bot}(= 
-(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}^{\bot}).
+equation for any $x\in S$. Then,
+\begin{align} \label{equation-W-SS-Lin}
+(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}^{\bot}\subset 
+\opn{span}_{{\mathbb{R}}}\opn{SS}(S)_x\subset
+\opn{Lin}(\opn{LC}_xS)^{\bot}
 \end{align}
 where $(V)^{\bot}$ the orthogonal complement of 
 $V$ for the standard pairing of dual vector spaces
-and $(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}$ is 
+and $(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}=
+\mathcal{H}om(\mathcal{F}^{1}_{\mathbb{Z},S};\mathbb{R}_S)$ is 
 the stalk of the sheaf of (real) wave tangent 
-vector spaces of $S$ at $x$. 
+vector spaces of $S$ at $x$. (See \cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
+\cite[Definition 2.16, Remark 2.21]{yamamotoTropicalContractionsIntegral2021}).
 \end{proposition}
 \begin{proof}
 Since
 $\opn{LC}_x S\simeq 
 \opn{Lin}(\opn{LC}_x S)\times 
 (\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))$, and thus
-\begin{align}
+\begin{align} 
 \opn{SS}(\opn{LC}_x S)_0\simeq \{0\}\times 
-\opn{SS}(\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))_0.
+\opn{SS}(\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))_0
+\subset \opn{Lin}(\opn{LC}_xS)^{\bot}.
 \end{align}
-Thus, we only need to prove 
-$\opn{span}_{\mathbb{R}}\opn{SS}(\opn{LC}_x S)_0=
-(\mathcal{F}_{S}^{1})_x $ if 
-$\opn{Lin}(\opn{LC}_x S)=\{0\}$.
+
 From now on, we assume $\opn{Lin}(\opn{LC}_x S)=\{0\}$.
 Next, we prove the following inclusion:
 \begin{align}
-  (\bigcap_{y \in (\opn{LC}_xS)_{\opn{reg}}} 
+(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}^{\bot}=(\bigcap_{y \in (\opn{LC}_xS)_{\opn{reg}}} 
 \opn{span}_{\mathbb{R}} U_y)^{\bot}=
 \sum_{y \in (\opn{LC}_xS)_{\opn{reg}}} 
 (\opn{span}_{\mathbb{R}} U_y)^{\bot} \subset 
@@ -1977,6 +1974,18 @@ Since $h(z)=0$ for $z\in U_y$, we have
 Therefore, $h+\rho_{V_y}$ or $h$ induces 
 $h\in \opn{SS}(\opn{LC}_x S)_0$.
 \end{proof}
+
+\begin{remark}
+In many cases, the three vector space in 
+\cref{equation-W-SS-Lin} is equal. Let $S$ be the tropical hypersurface of
+$f=\max\{x_1,\ldots,x_n,1\}$ in $\mathbb{R}^{n}$. 
+We can see
+$\opn{span}_{{\mathbb{R}}}(\opn{SS}(S)_x)=\mathcal{F}_{S,x}^{1}$
+when $x\deq (0,\ldots,0)$. 
+Of course, the other points in $S$ satisfies 
+that the three vector space in 
+\cref{equation-W-SS-Lin} is equal.
+\end{remark}
 
 From definition of superforms on 
 polyhedral spaces 
@@ -2048,12 +2057,7 @@ connected.
 
 \begin{example}[{Hypersurfaces}]
 
-Let $S$ be the tropical hypersurface of
-$f=\max\{x_1,\ldots,x_n,1\}$ in $\mathbb{R}^{n}$.
-$\opn{span}_{{\mathbb{R}}}(\opn{SS}(S)_x)=\mathcal{F}_{S,x}^{1}$
-and $x\deq (0,\ldots,0)$.
-A smooth function $f\colon X\to {\mathbb{R}}$ is admissible at $x$
-if and only if $d''f(x)\in (\Z^{n})^{\vee}$.
+
 \end{example}
 
 
@@ -2740,7 +2744,7 @@ section defined in \cref{proposition-admissible-section}.
     \draw    (220,160.5) .. controls (263,97.5) and (348,224.5) .. (385,160.5) ;
   \end{tikzpicture}
 
-  \caption{A continuous section $s\colon [0,1]\to [0,1]\times \mathbb{R}/\mathbb{Z}$}
+\caption{A continuous section $s\colon [0,1]\to [0,1]\times \mathbb{R}/\mathbb{Z}$}
 \end{figure}
 
 \begin{definition}[{rotation number of closed interval}]
@@ -3253,7 +3257,7 @@ tropical hypersurfaces.
 An admissible smooth Cartier divisor $s$ is 
 \emph{simple} if there exists a local intersection data
 $\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
-$f_p$ is convex at all $p\in C\setminus C_0$.
+$f_p$ is strictly convex at all $p\in C\setminus C_0$.
 \end{definition}
 
 \subsubsection{Relationships between 
@@ -3981,7 +3985,7 @@ $\opn{Fr}_{n,X}^{\natural}\colon \mathcal{O}_X \to \mathcal{O}_X; f\mapsto nf$ o
 the structure sheaf of tropical manifolds. 
 This is a tropical analog of Frobenious morphism of 
 schemes in positive characteristic 
-(e.g. \cite[]{}). As like classical Frobenious morphism, 
+(e.g. \cite[IV. Remark 2.4.1]{hartshorneAlgebraicGeometry1977a}). As like classical Frobenious morphism, 
 the morphism $\opn{Fr}_{n,X}=(\opn{id}_X,\opn{Fr}_{n,X}^{\natural})$ of semiringed space does 
 not induce an endomorphism of tropical manifolds 
 (over $\mathbb{T}$), but
@@ -4007,13 +4011,6 @@ the $n$-th dilation map of $X$.
 \end{remark}
 
 \subsection{Sheaf cohomology for integral affine manfiolds}
-
-
-\begin{Not}
-  Usually, integral affine manifolds are used as a special case of integral affine manifold with singularities and we also want to treat like this in many cases.
-  Therefore, we write 
-$\AffS_{\Z,B_0}\deq \mcal{O}^{\times}_{B_0}$. We also use this notation for integral affine manifold with singularities.
-\end{Not}
 
 From now on we recall the commutative diagram (\ref{equation-smooth-cartier-diagram})
  for integral affine manifolds.
