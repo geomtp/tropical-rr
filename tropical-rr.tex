@@ -1106,7 +1106,7 @@ Let $f\colon Y\to X$ be a continuous map.
 $f$ induces the functor $f_!$ of
 the direct image with proper supports 
 \cite[(2.5.1)]{MR1299726}. 
-We note $a_{X,!}\mathcal{F}\simeq \Gamma_c(X;\mathcal{F})$.
+We note $a_{X!}\mathcal{F}\simeq \Gamma_c(X;\mathcal{F})$.
 
 Let $X$ be a topological space, $Z$ a locally closed 
 subset of $X$
@@ -1161,6 +1161,10 @@ and $\Gamma_{Z}(\cdot)$ is a left exact functor from
 $\opn{Mod}(A_X)$ to $\opn{Mod}(A_X)$ 
 \cite[Proposition 2.3.9 (i)]{MR1299726}.
 
+If $j\colon V\to X$ is an open inclusion of $X$, then 
+$\Gamma_V(\mathcal{F})\simeq j_*j^{-1}\mathcal{F}$ 
+\cite[Proposition 2.3.9 (iii)]{MR1299726}.
+
 Let $f\colon Y\to X$ be a continuous map,
 $\mathcal{F}\in \opn{Ob}(\catn{Mod}(A_X))$
 and $\mathcal{G}\in\opn{Ob}(\catn{Mod}(A_Y))$.
@@ -1185,7 +1189,7 @@ for any $\mathcal{F}^{\bullet}\in \opn{Ob}(\opn{D}^{b}(A_X))$
   R\Gamma_{Z'}(\mcal{F}^{\bullet})\to 
 R\Gamma_{Z}(\mcal{F}^{\bullet})\to 
 R\Gamma_{Z\setminus Z'}(\mcal{F}^{\bullet})\xto{[1]} 
-R\Gamma_{Z'}(\mcal{F}^{\bullet})[1]
+R\Gamma_{Z'}(\mcal{F}^{\bullet})[1].
 \end{align}
 
 
@@ -1197,10 +1201,13 @@ $X$.
 
 \begin{enumerate}
 \item Let $j:V\to X$ be an open inclusion and $Z$ be a 
-closed subset of $X$.
-Then, $\Gamma_{Z\cap V}(\mcal{F}|_V)(U)=
-\Gamma_{Z\cap U}(U\cap V;\mcal{F})=\Gamma_{Z\cap U}(\mcal{F})|_V(U)$
-for any open subset $U$.
+closed subset of $X$. Then, 
+
+\begin{align}
+\Gamma_{Z\cap V}(\mathcal{F}|_V)(U)
+\end{align}
+
+
 Therefore, $\Gamma_{Z\cap V}\circ j^{-1}=j^{-1}\circ \Gamma_{Z}$.
 
 \begin{align}
@@ -1340,14 +1347,16 @@ we have the following distinguished triangle:
 (R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x[1].
 \end{align}
 
+\begin{example}
 
+\end{example}
 
-The following proposition is useful:
+The following proposition is also useful:
 
 \begin{proposition} \label{prop-local-morse-data}
 Let $f\colon X\to \mathbb{R}$ be a continuous function
 on $X$, $S$ a closed subset
-of $X$, $x\in S$. Then,
+of $X$ and $x\in S$. Then,
 \begin{align} 
 \opn{LMD}^{\bullet}((A_{X})_S,f,x
 ) \simeq \varinjlim_{U\in\opn{Nbh}(x,X)} 
@@ -1357,14 +1366,13 @@ of $X$, $x\in S$. Then,
 
 \end{proposition}
 
-Here, $\tilde{H}^{i-1}(X;A)$ is the reduced cohomology 
+Here, $\tilde{H}^{i-1}(X;A)$ is the $(i-1)$-th reduced cohomology 
 group
 of $A_X$ and $\opn{Nbh}(x,X)$ the set of open neighborhoods
 of $x$ in $X$. 
 \begin{proof}
 If the first isomorphism is true, then the rest
-isomorphisms are also true from the definition of 
-the stalk of sheaves.
+isomorphisms are also true.
 From definition of $(A_{X})_S$, 
 $((A_{X})_S)_x\simeq A$.
 There exists the following Cartesian square of 
@@ -2151,6 +2159,15 @@ here.
 
 \begin{example}
 
+\begin{enumerate}
+\item 
+Let $C$ be a compact trivalent tropical curve.
+The stratified torus fibration $\check{X}(C)$ is equal to 
+the stratified space associated
+with a trivalent metric graph defined in \cite{auroux2022lagrangian}
+as a set.
+\end{enumerate}
+
 \end{example}
 
 Let $s$ be a smooth 
@@ -2183,13 +2200,7 @@ From the admissibility condition and
 \end{definition}
 If $B_0$ is an integral affine manifold, then
 $\check{X}(B_0)$ is equal to the classical one as a set. 
-\begin{example}[{metric graph}]
-Let $C$ be a compact trivalent tropical curve.
-The stratified torus fibration $\check{X}(C)$ is equal to 
-the stratified space associated
-with a trivalent metric graph defined in \cite{auroux2022lagrangian}
-as a set.
-\end{example}
+
 
 In this paper, we
 define the graded module of a given admissible pair 
@@ -2219,7 +2230,8 @@ for all $p\in s\cap s_0$,
 
 %TODO: 
 
-\begin{definition}
+\begin{definition}[{Local Morse data for smooth divisor}]
+
 Let $S$ be a rational polyhedral space 
 satisfying \cref{condition-Rn} and 
 .
@@ -2228,7 +2240,7 @@ the following set is finite;
 
 
 Let $\{(U_p,f_p)\}_{p\in s\cap s_0}$ 
-be a local intersection data for $s$.
+be an intersection data for $s$.
 
 \begin{align}
 \opn{LMD}^{\bullet}_{A}(s',s)\deq 
