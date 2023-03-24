@@ -1202,14 +1202,11 @@ $X$.
 \begin{enumerate}
 \item Let $j:V\to X$ be an open inclusion and $Z$ be a 
 closed subset of $X$. Then, 
-
 \begin{align}
-\Gamma_{Z\cap V}(\mathcal{F}|_V)(U)
+\Gamma_{Z\cap V}(\mathcal{F}|_V)=\Gamma_{Z}(\mathcal{F})|_V.
 \end{align}
-
-
-Therefore, $\Gamma_{Z\cap V}\circ j^{-1}=j^{-1}\circ \Gamma_{Z}$.
-
+We can see the above from definition or the following 
+equation:
 \begin{align}
 \Gamma_{j^{-1}(Z)} \circ j^{-1}
 =j^{-1}\circ j_*\circ \Gamma_{j^{-1}(Z)} \circ j^{-1}
@@ -1218,23 +1215,23 @@ Therefore, $\Gamma_{Z\cap V}\circ j^{-1}=j^{-1}\circ \Gamma_{Z}$.
 =j^{-1} \circ \Gamma_Z.
 \end{align}
 
-In particular, for any point $v\in V$
+In particular, for any point $v\in V$ we have
 \begin{align}
-(R(\Gamma_{Z\cap V}(\mcal{F}|_{V}))_v\simeq 
-(R(j^{-1}\circ \Gamma_{Z})(\mcal{F}))_v\simeq 
-R\Gamma_{Z}(\mcal{F})_v.
+(R\Gamma_{Z\cap V}(\mcal{F}|_{V}))_v\simeq 
+(R\Gamma_{Z}(\mcal{F}))_v.
 \end{align}
 Therefore, the stalk is independent of 
 the choice of $V (\ni v)$.
-\item Let $i: Y\to X$ be a closed inclusion.
+\item Let $i: S\to X$ be a closed inclusion.
 Since $i_!=i_*$ and $i_!$ is exact,
 \begin{align}
-  i^{-1}R\Gamma_{Z}(i_*\mcal{F})\simeq i^{-1}R(\Gamma_{Z}\circ j_*)\mcal{F}
+  i^{-1}R\Gamma_{Z}(i_*\mcal{F})\simeq 
+i^{-1}R(\Gamma_{Z}\circ i_*)\mcal{F}
   \simeq i^{-1}R(i_*\circ \Gamma_{i^{-1}(Z)})\mcal{F}
-  \simeq R\Gamma_{Z\cap Y}\mcal{F}
+  \simeq R\Gamma_{Z\cap S}\mcal{F}
 \end{align}
 In particular, $(R\Gamma_{Z}(i_*\mcal{F}))_v
-  \simeq (R\Gamma_{Z\cap Y}\mcal{F})_v$ for $v\in Y$.
+  \simeq (R\Gamma_{Z\cap S}\mcal{F})_v$ for $v\in Y$.
 \end{enumerate}
 
 \end{example}
