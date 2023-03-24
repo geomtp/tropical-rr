@@ -1881,7 +1881,8 @@ $d_x\phi\colon T_0(\opn{LC}_xS) \to T_x S$
 of tangent space 
 \cite[Proposition 2.5]{gross2019sheaftheoretic}.
 $d_x \phi$ does not depend on the choice of 
-$\phi$.
+$\phi$. We frequently identify $T_0(\opn{LC}_x S)$ with 
+$T_x S$ for simplicity.
 \begin{definition}
 For the above notation, we set
 \begin{align}
@@ -1890,6 +1891,8 @@ d_x\phi(\opn{SS}((\mathbb{Z}_{T_x S})_{\opn{LC}_x S})_0).
 \end{align}
 
 \end{definition}
+
+
 
 In general, $\opn{SS}(S)_x$  
 is complicated, but this is related with the 
@@ -1940,14 +1943,13 @@ vector spaces of $S$ at $x$. (See \cite[1.3]{mikhalkinTropicalEigenwaveIntermedi
 Since
 $\opn{LC}_x S\simeq 
 \opn{Lin}(\opn{LC}_x S)\times 
-(\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))$, and thus
+(\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))$, we have
 \begin{align} 
 \opn{SS}(\opn{LC}_x S)_0\simeq \{0\}\times 
 \opn{SS}(\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))_0
 \subset \opn{Lin}(\opn{LC}_xS)^{\bot}.
 \end{align}
 
-From now on, we assume $\opn{Lin}(\opn{LC}_x S)=\{0\}$.
 Next, we prove the following inclusion:
 \begin{align}
 (\mathcal{W}_{1,S}^{\mathbb{R}})_{x}^{\bot}=(\bigcap_{y \in (\opn{LC}_xS)_{\opn{reg}}} 
@@ -1977,15 +1979,28 @@ $h\in \opn{SS}(\opn{LC}_x S)_0$.
 
 \begin{remark}
 In many cases, the three vector space in 
-\cref{equation-W-SS-Lin} is equal. Let $S$ be the tropical hypersurface of
+\cref{equation-W-SS-Lin} is equal.
+For instance, if $S$ is a tropical curve 
+or integral affine manifold, 
+then $S$ satisfies this condition.
+Let $S$ be the tropical hypersurface of
 $f=\max\{x_1,\ldots,x_n,1\}$ in $\mathbb{R}^{n}$. 
 We can see
-$\opn{span}_{{\mathbb{R}}}(\opn{SS}(S)_x)=\mathcal{F}_{S,x}^{1}$
+$((\mathcal{W}_{1,S}^{\mathbb{R}})_{x})^{\bot}=\opn{span}_{{\mathbb{R}}}(\opn{SS}(S)_x)=\mathcal{F}_{S,x}^{1}$
 when $x\deq (0,\ldots,0)$. 
 Of course, the other points in $S$ satisfies 
 that the three vector space in 
-\cref{equation-W-SS-Lin} is equal.
+\cref{equation-W-SS-Lin} is equal. If 
+$S=\mathbb{R}_{\geq 0}$, then 
+$((\mathcal{W}_{1,S}^{\mathbb{R}})_{0})^{\bot}=\{0\}$ and
+$\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)=
+(\opn{Lin}(\opn{LC}_x S))^{\bot}=\mathbb{R}$. 
+We expect the middle and right vector space in 
+\cref{equation-W-SS-Lin} is equal for various 
+important cases.
 \end{remark}
+
+From now on, we define the admissible conditon.
 
 From definition of superforms on 
 polyhedral spaces 
@@ -1999,14 +2014,6 @@ affine map and the differential $d''$
 \cite[Lemma 2.21]{MR3903579}, we can 
 describe the set of critical point of 
 $(0,0)$-superform as follows:
-
-
-For instance, if $S$ is a tropical curve 
-or integral affine manifold, 
-then $S$ satisfies \cref{condition-good-linearity-space}.
-
-We expect that almost rational polyhedral spaces 
-satisfies \cref{condition-good-linearity-space}.
 
 Let $f\colon S \to \mathbb{R}$ be a $(0,0)$-superform on 
 $\mathbb{R}$. The differential $d''f\in \mathcal{A}^{0,1}_S$ of $f$ has the 
@@ -2034,9 +2041,9 @@ Therefore, we can define the admissibility condition
 for principal divisors directly.
 \begin{remark}
 If $\opn{span}_{{\mathbb{R}}}
-(\opn{SS}(S)_x)=\mathcal{F}_{S,x}^{1}$,
+(\opn{SS}(S)_x)=(\mathcal{F}_{S}^{1})_x$,
 $f$ is admissible if and only if 
-$d''f(x)\in \mathcal{F}_{\mathbb{Z},S,x}^{1}$.
+$d''f(x)\in (\mathcal{F}_{\mathbb{Z},S}^{1})_x$.
 Therefore, admissibility
 condition is not an open condition.
 If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
@@ -2055,10 +2062,7 @@ connected.
 
 %TODO: 下の節に移動
 
-\begin{example}[{Hypersurfaces}]
 
-
-\end{example}
 
 
 
@@ -2077,8 +2081,8 @@ From \cref{equation-smoooth-cartier-divisor-sequence},
 \begin{definition}[{smooth admissible Cartier divisor}]
 \label{definition-admissible-smooth-cartier-divisor}
 A smooth Cartier divisor $s$ is \emph{admissible} 
-if there exists a local data $\{(U_i,f_i)\}_{i\in I}$ 
-of $s$
+if there exists a local Cartier data $\{(U_i,f_i)\}_{i\in I}$ 
+for $s$
 such that $f_i$ is admissible for all $i\in I$. 
 In general, a pair $(s',s)$ of smooth 
 Cartier divisors $s,s'$ is 
@@ -2118,11 +2122,11 @@ Let $\check{X}(S)_x$ be
 the real torus defined as follows:
 \begin{align}
 \check{X}(S)_x\deq  
-(\mathcal{F}_{\mathbb{Z},S,x}^{1}/(\opn{span}_{{\mathbb{R}}}
+((\mathcal{F}_{\mathbb{Z},S,x}^{1}/\opn{span}_{{\mathbb{R}}}
 (\opn{SS}(S)_x))\cap \mathcal{F}_{\mathbb{Z},S,x}^{1})\otimes_{\Z} {\mathbb{R}}/\Z.
 \end{align}
 We call the union $\check{X}(S)\deq \bigcup_{x\in S}\check{X}(S)_x$
-the \emph{stratified torus 
+the underlying set of the \emph{stratified torus 
 fibration} of $S$.
 For simplicity, we give a (tentative) 
 topological structure of $\check{X}(S)$ as follows
@@ -2145,6 +2149,10 @@ We won't pursue about
 topological structures of $\check{X}(S)$ 
 here.
 
+\begin{example}
+
+\end{example}
+
 Let $s$ be a smooth 
 Cartier divisor on $S$ and $\{(U_i,f_i)\}_{i\in I}$ a local
 smooth Cartier data of $s$. 
@@ -2159,7 +2167,7 @@ the following equation:
 \label{equation-torus-fiber}
 \opn{pr}_x^{-1}(0)
 =\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)+
-\mathcal{F}^{1}_{\mathbb{Z},S,x}.
+(\mathcal{F}^{1}_{\mathbb{Z},S})_x.
 \end{align}
 
 Let $\check{\pi}_S\colon \check{X}(S)\to S$ be the 
@@ -2191,12 +2199,12 @@ In order to define the graded module, we define the
 local intersection data of 
 the admissible pair $(s',s)$.
 
-\begin{definition}[{local intersection data}]
+\begin{definition}[{intersection data}]
 Fix a compact rational polyhedral space $B$ satisfying 
 \cref{condition-Rn}.
 Let $s$ be an admissible smooth Cartier divisor 
 on $S$ such that $\sharp (s\cap s_0)<\infty$. 
-A \emph{local intersection data} of $s$ is the set 
+A \emph{intersection data} of $s$ is the set 
 $\{(U_p,f_p)\}_{p\in s\cap s_0}$ of open subsets
 $U_i$ of $B$ and (0,0)-superforms
 $f_p\colon U_p \to \mathbb{R}$ indexed by 
