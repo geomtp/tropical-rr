@@ -1192,6 +1192,36 @@ R\Gamma_{Z\setminus Z'}(\mcal{F}^{\bullet})\xto{[1]}
 R\Gamma_{Z'}(\mcal{F}^{\bullet})[1].
 \end{align}
 
+\begin{example}
+\label{example-local-cohomology}
+Let $Z$ be a open subset of $X$ 
+$\mathcal{F}^{\bullet}=A_{X}$ 
+and $U=Z\setminus Z'$.
+By taking the global 
+section for \cref{equation-exact-local}, we get 
+the following exact sequence from 
+\cite[Proposition 2.3.9 (iv)]{MR1299726}:
+\begin{align}
+  \cdots \to H^{i}_{Z'}(X;A_X)\to
+H^{i}(Z;A_{Z})\to H^{i}(U;A_U)\to 
+H^{i+1}_{Z'}(X;A_X) \to \cdots.
+\end{align}
+If $H^{\bullet}(X;A_X)$ and $H^{\bullet}(U;A_U)$ 
+is isomorphic to the singular cohomology of $X$ and $U$
+respectively, $H^{\bullet}_{Z'}(X;A_X)$ is isomorphic to
+the singular cohomology group of the topological space 
+pair $(Z,U)$.
+The cohomology $H^{\bullet}_{\{x\}}(X;A_X)$ is called
+the local cohomology of $X$ at $x$.
+If $Z$ is acyclic and $x\in Z$, then $H^{\bullet}_{\{x\}}(X;A_X)$ is 
+isomorphic to the $(-1)$-shift of the reduced cohomology 
+$\tilde{H}^{\bullet-1}(Z\setminus \{x\};
+A_{Z\setminus \{x\}})$
+of the constant sheaf on $Z\setminus \{x\}$.
+(see 
+\cite[p.199]{hatcherAlgebraicTopology2002a} for 
+reduced singular cohomology.)
+\end{example}
 
 \begin{example}
 
@@ -1231,42 +1261,21 @@ i^{-1}R(\Gamma_{Z}\circ i_*)\mcal{F}
   \simeq R\Gamma_{Z\cap S}\mcal{F}
 \end{align}
 In particular, $(R\Gamma_{Z}(i_*\mcal{F}))_v
-  \simeq (R\Gamma_{Z\cap S}\mcal{F})_v$ for $v\in Y$.
+  \simeq (R\Gamma_{Z\cap S}\mcal{F})_v$ for $v\in S$.
 \end{enumerate}
 
-\end{example}
-
-
-\begin{example}
-\label{example-local-cohomology}
-Let $Z$ be a open subset of $X$ 
-$\mathcal{F}^{\bullet}=A_{X}$ 
-and $U=Z\setminus Z'$.
-By taking the global 
-section for \cref{equation-exact-local}, we get 
-the following exact sequence from 
-\cite[Proposition 2.3.9 (iv)]{MR1299726}:
-\begin{align}
-  \cdots \to H^{i}_{Z'}(X;A_X)\to
-H^{i}(Z;A_{Z})\to H^{i}(U;A_U)\to 
-H^{i+1}_{Z'}(X;A_X) \to \cdots.
+By combining the above two examples, for an open 
+subset $V' (\ni v)$ of $S$ we get 
+\begin{align} \label{equation-local-stalk}
+(R\Gamma_{Z}((A_{X})_S))_v\simeq 
+(R\Gamma_{Z\cap S}(A_{S}))_v\simeq
+(R\Gamma_{Z\cap S\cap V'}(A_{V'}))_v.
 \end{align}
-If $H^{\bullet}(X;A_X)$ and $H^{\bullet}(U;A_U)$ 
-is isomorphic to the singular cohomology of $X$ and $U$
-respectively, $H^{\bullet}_{Z'}(X;A_X)$ is isomorphic to
-the singular cohomology group of the topological space 
-pair $(Z,U)$.
-The cohomology $H^{\bullet}_{\{x\}}(X;A_X)$ is called
-the local cohomology of $X$ at $x$.
-If $Z$ is acyclic, then $H^{\bullet}_{\{x\}}(X;A_X)$ is 
-isomorphic to the $(-1)$-shift of the reduced cohomology 
-$\tilde{H}^{\bullet-1}(Z\setminus \{x\};
-A_{Z\setminus \{x\}})$
-of the constant sheaf on $Z\setminus \{x\}$.
-(see 
-\cite[p.199]{hatcherAlgebraicTopology2002a} for 
-reduced singular cohomology.)
+
 \end{example}
+
+
+
 
 \subsection{Local index}
 
@@ -1327,13 +1336,16 @@ the complex $R\Gamma_{\{f\geq f(x)\}}\mathcal{F}$ in order to define
 a graded module associated with line bundle on tropical
 spaces. See also \cref{remark-differential-graded-module} for more about 
 this reason.
-%TODO: Reamrk3.7から
 \end{enumerate}
 \end{remark}
 
 Before we see some important examples of cohomological
 local Morse datum, we will see some elementary
 properties of them.
+
+
+
+
 
 From \cref{equation-exact-local} and by taking stalks,
 we have the following distinguished triangle:
@@ -1344,30 +1356,32 @@ we have the following distinguished triangle:
 (R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x[1].
 \end{align}
 
-\begin{example}
-
-\end{example}
-
-The following proposition is also useful:
+By \cref{equation-local-stalk}, we get the following
+isomorphism:
 
 \begin{proposition} \label{prop-local-morse-data}
 Let $f\colon X\to \mathbb{R}$ be a continuous function
 on $X$, $S$ a closed subset
-of $X$ and $x\in S$. Then,
+of $X$, $V$ open subset of $S$ and $x\in S$. Then,
 \begin{align} 
 \opn{LMD}^{\bullet}((A_{X})_S,f,x
-) \simeq \varinjlim_{U\in\opn{Nbh}(x,X)} 
-\tilde{H}^{\bullet-1}(S\cap \{f<f(x)\}\cap U;A) 
-\simeq \opn{LMD}^{\bullet}(A_S,f|_S,x).
+) &\simeq  
+\opn{LMD}^{\bullet}(A_S,f|_S,x)
+\simeq \opn{LMD}^{\bullet}(A_{V},f|_V,x) \\
+&\simeq \varinjlim_{U\in\opn{Nbh}(x,S)} 
+\tilde{H}^{\bullet-1}(S\cap \{f<f(x)\}\cap U;A).
 \end{align}
-
-\end{proposition}
 
 Here, $\tilde{H}^{i-1}(X;A)$ is the $(i-1)$-th reduced cohomology 
 group
-of $A_X$ and $\opn{Nbh}(x,X)$ the set of open neighborhoods
+of $A_X$ and $\opn{Nbh}(x,S)$ the set of open neighborhoods
 of $x$ in $X$. 
+\end{proposition}
 \begin{proof}
+The fist and second isomorphism follows from
+\cref{equation-local-stalk} by 
+replacing $Z$ (resp. $V'$) with 
+$\{f\geq f(x)\}$ (resp. $V$).
 If the first isomorphism is true, then the rest
 isomorphisms are also true.
 From definition of $(A_{X})_S$, 
@@ -1394,7 +1408,7 @@ From the elemental properties of higher direct image
 (e.g. \cite[II. Proposition 5.11]{iversenCohomologySheaves1986a}), we have
 \begin{align}
   (R^{n} (j \circ i')_* A_{S\cap \{f<f(x)\}})_x\simeq 
-\varinjlim_{U\in \opn{Nbh}(x,X)} 
+\varinjlim_{U\in \opn{Nbh}(x,S)} 
 H^{n}(S\cap \{f<f(x)\}\cap U;A).
 \end{align}
 The second isomorphism 
@@ -1605,8 +1619,6 @@ scheme.
 % effectively.
 % Let $\mcal{F}$ be a 
 
-% We will develop this without condition 
-
 % Every real analytic function is \emph{nondepraved} 
 % \cite[Part I, Definition. 2.3,]{MR932724} and
 % every nondepraved function $f\colon \to {\mathbb{R}}$ satisfies Whitney b-condition
@@ -1815,10 +1827,10 @@ is  $p\notin \opn{SS}(\mathcal{F}^{\bullet})$
 if there exists an open neighborhood $U$ of $p$ such 
 that for any $x_1\in X$ any any real 
 function $\psi$ of class $C^{\alpha}$ defined 
-in a neighborhood of $x_1$, with $\psi(x_1)=0$,
+in a neighborhood $V$ of $x_1$, with 
 $d\psi(x_1)\in U$, we have
 \begin{align}
-(R\Gamma_{\{\psi(x)\geq 0\}}(\mathcal{F}^{\bullet}))_{x_1}
+(R\Gamma_{\{\psi(x)\geq \psi(x_1)\}}(\mathcal{F}^{\bullet}|_V))_{x_1}
 \simeq 0.
 \end{align}
 
@@ -2034,7 +2046,7 @@ if
 \setminus \mathcal{F}_{\mathbb{Z},S,x}^{1}.
 \end{align}
 \end{condition}
-%TODO: 表記の理由を何とかする。
+
 (Be careful for this terminology is \emph{not} 
 compatible with admissible Morse functions defined 
 in \cite[p.156]{MR1336822}.)
@@ -2057,15 +2069,7 @@ set of admissible cotangent vector at $x$ is dense and
 connected.
 \end{remark}
 
-% \begin{remark}
-% $\opn{span}_{{\mathbb{R}}}(\opn{SS}(A_S))$ is equal to the orthogonal vector space of
-% the linearity space of $S$ at $x$, i.e., the maximal vector space
-% which is containded in $S$ at $x$ locally. 
-% We use the language of microsupport for revealing the 
-% reason of the condition of admissibility.
-% \end{remark}
 
-%TODO: 下の節に移動
 
 
 
@@ -2212,8 +2216,8 @@ Fix a compact rational polyhedral space $B$ satisfying
 \cref{condition-Rn}.
 Let $s$ be an admissible smooth Cartier divisor 
 on $S$ such that $\sharp (s\cap s_0)<\infty$. 
-A \emph{intersection data} of $s$ is the set 
-$\{(U_p,f_p)\}_{p\in s\cap s_0}$ of open subsets
+An \emph{intersection data} of $s$ is the set 
+$\{(U_p,f_p)\}_{p\in s\cap s_0}$ of pairs of open subsets
 $U_i$ of $B$ and (0,0)-superforms
 $f_p\colon U_p \to \mathbb{R}$ indexed by 
 $ s\cap s_0$ 
@@ -2231,14 +2235,10 @@ for all $p\in s\cap s_0$,
 
 Let $S$ be a rational polyhedral space 
 satisfying \cref{condition-Rn} and 
-.
-Let $s=\{(U_i,f_i)\}_{i\in I}$ be a admissible smooth Cartier divisor such that
-the following set is finite;
-
-
-Let $\{(U_p,f_p)\}_{p\in s\cap s_0}$ 
+$s$ be an admissible smooth Cartier divisor such that
+the following set is finite and $\{(U_p,f_p)\}_{p\in s\cap s_0}$ 
 be an intersection data for $s$.
-
+We set
 \begin{align}
 \opn{LMD}^{\bullet}_{A}(s',s)\deq 
 \bigoplus_{x\in s' \cap s} 
@@ -2265,7 +2265,8 @@ $\mathfrak{m}_1$ of
 $\opn{LMD}^{\bullet}_{A}(S;s)$ as an analog of
 Floer cohomology. We don't have, however,
 the definition of the true differential of 
-$\opn{LMD}^{\bullet}_A(S;s)$ in general except when
+$\opn{LMD}^{\bullet}_A(S;s)$ in general except when 
+$A=\Lambda_{\mathrm{nov}}^{\mathbb{C}}$ and
 $\opn{LMD}^{\bullet}_{A}(S;s)$ is equal to a Floer complex
 of Lagrangian submanifolds (e.g. \cite[5.2]{MR1882331}).
 \end{remark}
@@ -2291,15 +2292,15 @@ for any $i\in I$.
 This is a certain analog of positive form on
 complex manifolds. In this case, 
 \begin{align}
-\opn{LMD}^{\bullet}_{\mathbb{Q}}(S;s)\simeq 
-\bigoplus_{x\in s_0 \cap s} \Q[0], \quad
-\opn{LMD}^{\bullet}_{\mathbb{Q}}(S;-s)\simeq 
+\opn{LMD}^{\bullet}_{A}(S;s)\simeq 
+\bigoplus_{x\in s_0 \cap s} A[0], \quad
+\opn{LMD}^{\bullet}_{A}(S;-s)\simeq 
 \bigoplus_{x\in s_0\cap -s} 
-H^{n}(S,S\setminus\{x\};\mathbb{Q})[-n].
+H^{n}(S,S\setminus\{x\};A)[-n].
 \end{align}
 In this case, the `cohomology' of 
-$\opn{LMD}^{\bullet}_{\mathbb{Q}}(S;s)$ is independent of the choice of 
-differential of $\opn{LMD}^{\bullet}(S;s,\Q)$.
+$\opn{LMD}^{\bullet}_{A}(S;s)$ is independent of the choice of 
+differential of $\opn{LMD}^{\bullet}(S;s,A)$.
 This is a tropical analog of Kodaira's vanishing theorem
 for a (multiple of) positive line bundle
 $\mathcal{L}$ on a complex manifold $M$: 
@@ -2539,15 +2540,12 @@ vector space of $C$
 Let $\Sigma$ be the support of a $1$-dimensonal 
 finite convex polyhedral fan $\mathbb{R}^{n}$ such that
 $\Sigma$ spans $\mathbb{R}^{n}$.
-\begin{enumerate}
-\item $\Sigma$ satisfies
-\cref{condition-good-linearity-space} at $x=(0,\ldots,0)$.
-\item Let $f\colon \Sigma\to \mathbb{R}$ be a 
+Let $f\colon \Sigma\to \mathbb{R}$ be a 
 $(0,0)$-superform on $\Sigma$. Then, 
 $f$ is admissible at $x=(0,\ldots,0)$ if and only if 
 $df(x)\in (\mathcal{F}^{1}_{\mathbb{Z},\Sigma})_x\simeq (\mathbb{Z}^{n})^{\vee}$
 or $\opn{Lin}(\Sigma,x)\simeq \mathbb{R}$.
-\end{enumerate}
+
 \end{proposition}
 
 \begin{proof}
