@@ -1115,7 +1115,7 @@ For a given sheaf $\mathcal{F}$ on $X$,
 \begin{align}
 \mcal{F}|_{Z}\deq i^{-1}\mcal{F}, \quad 
 \mcal{F}_Z\deq i_! i^{-1}\mcal{F}, \quad 
-(A_X)_Z\deq i_!i^{-1}A_X.
+(A_X)_Z\deq i_!i^{-1}A_X, \quad \Gamma(Z;\mathcal{F})=\Gamma(Z;\mathcal{F}|_{Z})
 \end{align}
 
 From \cite[Proposition 2.5.4]{MR1299726}, $i_!$ is exact 
@@ -1161,6 +1161,8 @@ and $\Gamma_{Z}(\cdot)$ is a left exact functor from
 $\opn{Mod}(A_X)$ to $\opn{Mod}(A_X)$ 
 \cite[Proposition 2.3.9 (i)]{MR1299726}.
 
+
+
 If $j\colon V\to X$ is an open inclusion of $X$, then 
 $\Gamma_V(\mathcal{F})\simeq j_*j^{-1}\mathcal{F}$ 
 \cite[Proposition 2.3.9 (iii)]{MR1299726}.
@@ -1178,6 +1180,11 @@ f^{-1}\mathcal{F}_Z\simeq
 \mathcal{G}.
 \end{align}
 
+Let $\mathscr{I}$ be the full subcategory of 
+$\opn{Mod}(A_X)$ consisting of flabby sheaves. 
+Then $\mathscr{I}$ is $\Gamma_{Z}$-injective and
+$\Gamma_{Z}(\mathcal{I})\in\mathscr{I}$ for 
+$\mathcal{I}\in \mathscr{I}$.
 
 Let $X$ be a topological space, $Z$ be a locally 
 closed subset of $X$ and $Z'$ a closed subset of $Z$.
@@ -1244,12 +1251,18 @@ equation:
 =j^{-1}\circ \Gamma_V \circ \Gamma_Z
 =j^{-1} \circ \Gamma_Z.
 \end{align}
-
+$j^{-1}=j^{!}$, and thus 
+$R\Gamma_{j^{-1}(Z)} \circ j^{-1}=j^{-1}\circ R\Gamma_Z$.
+Here, we used $j^{!}$ is the right adjoint of 
+the exact functor $j_!$.
 In particular, for any point $v\in V$ we have
 \begin{align}
 (R\Gamma_{Z\cap V}(\mcal{F}|_{V}))_v\simeq 
 (R\Gamma_{Z}(\mcal{F}))_v.
 \end{align}
+
+
+
 Therefore, the stalk is independent of 
 the choice of $V (\ni v)$.
 \item Let $i: S\to X$ be a closed inclusion.
@@ -1290,10 +1303,10 @@ or microlocal stalk in \cite{MR4132582}.
 Let $f\colon X\to {\mathbb{R}}$ be a continuous map on a 
 topological space $X$ and $x\in X$. Fix 
 $\mathcal{F}^{\bullet}\in 
-\opn{Ob}(\opn{D}^{b}(\catn{Mod}(\mathbb{Z}_X)))$.
+\opn{Ob}(\opn{D}^{b}(\catn{Mod}(A_X)))$.
 The cohomology group of the local (cohomological) Morse 
 data of the pair $(\mathcal{F}^{\bullet},f)$ at $x$ 
-is the following group: 
+is the following $A$-module: 
 \begin{align}
 \opn{LMD}^{\bullet}(\mcal{F}^{\bullet},f,x)\deq 
 H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x.
@@ -1302,7 +1315,8 @@ H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x.
 The \emph{local Morse index} of $f$ at $x$ is the 
 following number:
 \begin{align} \label{equation-local-index}
-\opn{ind}_x(f)\deq \chi(\opn{LMD}^{\bullet}(\mathbb{Z}_X,f,x)).
+\opn{ind}_x^{A}(f)\deq \chi(\opn{LMD}^{\bullet}(A_X,f,x)), \quad
+\opn{ind}_x(f) \deq \opn{ind}_x^{\mathbb{Z}}(f).
 \end{align}
 
 \end{definition}
@@ -1347,14 +1361,7 @@ properties of them.
 
 
 
-From \cref{equation-exact-local} and by taking stalks,
-we have the following distinguished triangle:
-\begin{align}
-(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x \to 
-\mathcal{F}_x^{\bullet}\to 
-(R\Gamma_{\{f<f(x)\}}\mathcal{F}^{\bullet})_x\to 
-(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x[1].
-\end{align}
+
 
 By \cref{equation-local-stalk}, we get the following
 isomorphism:
@@ -1381,38 +1388,102 @@ of $x$ in $X$.
 The fist and second isomorphism follows from
 \cref{equation-local-stalk} by 
 replacing $Z$ (resp. $V'$) with 
-$\{f\geq f(x)\}$ (resp. $V$).
-If the first isomorphism is true, then the rest
-isomorphisms are also true.
-From definition of $(A_{X})_S$, 
-$((A_{X})_S)_x\simeq A$.
-There exists the following Cartesian square of 
-inclusion maps:
-Let $i\colon S\to X$, 
-$j\colon \{f<f(x)\}\to X$, 
-$i'\colon S\cap \{f<f(x)\} \to \{f<f(x)\}$ and 
-$j'\colon S\cap \{f<f(x)\} \to S$
- be the inclusion maps.
-Then, 
-$j^{-1}\circ i_!\simeq i'_!\circ j'^{-1}$ 
-\cite[Proposition 2.5.11]{MR1299726}.
-Besides, $i,i'$ are closed inclusion maps, and thus
-we have the following quasi-isomorphisms:
+$\{f\geq f(x)\}$ (resp. $V$) and the isomorphism
+$H^{\bullet}(\mathcal{F}^{\bullet})_x\simeq 
+H^{\bullet}(\mathcal{F}^{\bullet}_x)$ for any 
+$\mathcal{F}^{\bullet}\in D^{b}(A_X)$ and $x\in X$.
+
+From now on, we may assume $S=X$.
+From \cref{equation-exact-local} and by taking stalks,
+we have the following distinguished triangle:
 \begin{align}
-R\Gamma_{\{f<f(x)\}}(A_{X})_S\simeq 
-Rj_*\circ j^{-1} \circ i_! \circ i^{-1}A_X&\simeq 
-R (j \circ i')_*\circ (i\circ j')^{-1}A_X \\
-&\simeq R (j \circ i')_* A_{S\cap \{f<f(x)\}}.
+(R\Gamma_{\{f\geq f(x)\}}A_S)_x \to 
+(A_S)_x\to 
+(R\Gamma_{\{f<f(x)\}}A_S)_x\to 
+(R\Gamma_{\{f\geq f(x)\}}A_S)_x[1].
 \end{align}
+Let $j\colon \{f<f(x)\}\to S$ be the open inclusion map. 
+We can see 
+$R\Gamma_{\{f< f(x)\}}\simeq Rj_*\circ j^{-1}$
+from $j^{-1}=j^{!}$ preserve injectives.
 From the elemental properties of higher direct image
-(e.g. \cite[II. Proposition 5.11]{iversenCohomologySheaves1986a}), we have
+(e.g. \cite[II. Proposition 5.11]{iversenCohomologySheaves1986a}),
+we have
 \begin{align}
-  (R^{n} (j \circ i')_* A_{S\cap \{f<f(x)\}})_x\simeq 
+(R^{i}\Gamma_{\{f< f(x)\}}A_S)_x\simeq 
+(R^{i}j_* A_{\{f<f(x)\}})_x \simeq 
 \varinjlim_{U\in \opn{Nbh}(x,S)} 
-H^{n}(S\cap \{f<f(x)\}\cap U;A).
+H^{i}(\{f<f(x)\}\cap U;A).
 \end{align}
-The second isomorphism 
 \end{proof}
+
+If $X$ is a locally compact space, then there exists a 
+closed and compact neighborhood $S$ of $x\in X$. 
+By the second isomorphism of \cref{prop-local-morse-data},
+we have 
+$\opn{LMD}^{\bullet}(A_X,f,x)\simeq 
+\opn{LMD}^{\bullet}(A_S,f|_S,x)$, so 
+we can choose sufficently small compact neighborhood 
+of $x$.  
+
+We will see several examples of local Morse data 
+and index for manifolds.
+
+\begin{example}
+Let $f\colon \mathbb{R}^{n}\to \mathbb{R}$ be a 
+continuous function and 
+$\bar{B}(x,\varepsilon)$ (resp. $B(x,\varepsilon)$)  
+the closed (resp. open) ball with radius 
+$\varepsilon\in \mathbb{R}_{>0}$ and 
+center $x\in \mathbb{R}^{n}$. Then, 
+\begin{align}
+\opn{LMD}(A_{\mathbb{R}^{n}},f,x)\simeq 
+\opn{LMD}(A_{B(x,\varepsilon)},f|_{B(x,\varepsilon)},x) \simeq 
+\opn{LMD}(A_{\bar{B}(x,\varepsilon)},
+f|_{\bar{B}(x,\varepsilon)},x).
+\end{align}
+
+If $f$ is smooth and has an isolated \emph{nondepraved} 
+critical point at $x$, then 
+$f^{-1}(f(x))\setminus \{x\}$ is a smooth submanifold 
+and $\{f^{-1}(f(x))\setminus \{x\},\{x\} \}$ induces 
+a stratification satisfying Whitney's condition B
+\cite[Part I.2.5.1. Lemma]{MR932724}. 
+Let 
+$r\colon \mathbb{R}^{n}\to \mathbb{R};(x_1,\ldots ,x_n)
+\to \sum_{i=1}^{n}x_i^{2}$.
+For sufficiently small $\varepsilon$, 
+$\partial \bar{B}(x,\varepsilon) \cap f^{-1}(f(x))$ 
+intersect transversely \cite[Part I.3.5.1. Lemma]{MR932724},
+and thus $\partial \bar{B}(x,\varepsilon) \cap f^{-1}(f(x))$
+is also a submanifold and compact.
+A relative version of Ehresmann's lemma induces the 
+homeomorphism the following pairs of smooth manifold 
+with boundary:
+\begin{align}
+&(\bar{B}(x,\varepsilon)\setminus \{x\}, 
+f^{-1}(f(x))\cap \bar{B}(x,\epsilon)\setminus \{f(x)\}) \\
+\simeq & ((0,\epsilon] \times \partial \bar{B}(x,\varepsilon),
+(0,\epsilon] \times
+(\partial \bar{B}(x,\varepsilon) \cap f^{-1}(f(x)))).
+\end{align}
+The proof of relative version of Ehresmann's lemma is 
+in 
+\href{https://mathoverflow.net/questions/358543/a-relative-version-of-ehresmanns-theorem}{complex geometry - A relative version of Ehresmann's theorem - MathOverflow}
+
+
+This homeomorphism is classically proved when 
+$f$ is real analytic function
+\cite[Theorem 2.10]{MR0239612}.
+The homeomorphism induces 
+\begin{align}
+\opn{LMD}^{\bullet}(A_{\bar{B}(x,\varepsilon)},
+f|_{\bar{B}(x,\varepsilon)},x)\simeq 
+\tilde{H}^{\bullet-1}(\partial \bar{B}(x,\varepsilon) 
+\cap \{f<f(x)\};A).
+\end{align}
+
+\end{example}
 
 By \cref{prop-local-morse-data}, we can calculate
 of local Morse index of a continuous function on 
@@ -1422,8 +1493,7 @@ we can apply the micro local index formula
 \cite[Theorem 9.5.6]{MR1299726} for 
 constructible sheaves on real manifolds.
 
-We will see several examples of local Morse data 
-and index for manifolds.
+
 
 \begin{condition}
 \label{condition-isolated-singularity}
@@ -1496,9 +1566,7 @@ We mainly follow from \cite[3.2]{MR3779558} for this example.
 Fix $X\deq S\deq \mathbb{R}^{n}$.
 Let $f\colon {\mathbb{R}}^{n}\to {\mathbb{R}}$ be a real polynomial function
 which has with one isolated critical point at $x$.
-Let's calculate 
-$\chi (\opn{LMD}^{\bullet}(\Z_X,f,x))
-=\chi(\tilde{H}^{\bullet-1}(\{f<f(x)\};\Z))$.
+
 Let $B_{\vep,x}\deq \set{y\in {\mathbb{R}}^{n}\mid \|x-y\|\leq \vep}$
 for $\vep \in \mathbb{R}_{> 0}$,
 $S_{\vep,x}\deq\partial B_{\vep,x}$ and 
@@ -1518,7 +1586,7 @@ $(S_{\vep,x}\cap \{f<f(x)\})\times (0,\vep]$.
 Besides, $S_{\vep,x}\cap \{f<f(x)\}\simeq 
 f^{-1}(-\delta)\cap B_{\vep,x}$
 for sufficiently small $\vep>\delta>0$ 
-\cite[Lemma 5.10]{MR0239612}.
+\cite[Lemma 11.3]{MR0239612}.
 $f^{-1}(-\delta)\cap B_{\vep,x}$ is called 
 the (negative) \emph{real Milnor fiber}.
 By Khimshiashvili [Himšiašvili] formula \cite{MR0458467}, we have
@@ -1653,8 +1721,8 @@ From \cref{example-local-cohomology} and
 
 
 If $S$ is a purely tropical $n$-manifold, then 
-$\opn{LMD}^{\bullet}(A_S,-f|_S,x)\simeq H^{n}(S,S\setminus\{x\},
-\mathbb{Z})[-n]$ since every Bergman fan has a subdivision 
+$\opn{LMD}^{\bullet}(\mathbb{Z}_S,-f|_S,x)\simeq H^{n}(S,S\setminus\{x\},
+\mathbb{Z})[-n]$ since every Bergman fan has a good subdivision 
 \cite[Theorem 1]{MR2185977} and its link is shellable
 (e.g. \cite[7.9.1. Theorem]{MR1165544}).
 The vanishing property of the local cohomology is conjectured for
