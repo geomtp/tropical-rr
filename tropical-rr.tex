@@ -931,8 +931,8 @@ as test plays of the above conjecture:
 Let $C$ (resp. $B$) be a compact tropical curve $C$ 
 (resp. $n$-dimensional integral 
 affine manifold $B$
-with a Hessian form) and $s=\{(U_i,f_i)\}_{i\in I}$ a
-weak-smooth admissible nondepraved
+with a Hessian form) and $s$ a
+weak-smooth (resp. locally analytic) admissible nondepraved
 Cartier data on $C$ (resp. $B$) such that 
 $\sharp(s\cap s_0)<\infty$. Then,
 \begin{align}
@@ -1294,9 +1294,9 @@ subset $V' (\ni v)$ of $S$ we get
 
 The following stalk complex (or graded module) is 
 the most important notion
-for this paper which is naturally appeared from 
-microlocal sheaf theory 
-which is called "local Morse datum" in \cite[p.271]{MR2031639} 
+for this paper which is naturally appeared in
+microlocal sheaf theory \cite{MR1299726}, 
+and which is called "local Morse datum" in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
 \begin{definition}[{Cohomological local Morse datum}]
 \label{definition-local-morse-data}
@@ -1309,11 +1309,15 @@ data of the pair $(\mathcal{F}^{\bullet},f)$ at $x$
 is the following $A$-module: 
 \begin{align}
 \opn{LMD}^{\bullet}(\mcal{F}^{\bullet},f,x)\deq 
-H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x.
+H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
+=H^{\bullet}(R\Gamma_c(\{x\};R\Gamma_{\{f\geq f(x)\}}
+\mathcal{F}^{\bullet})).
 \end{align}
 
 The \emph{local Morse index} of $f$ at $x$ is the 
-following number:
+following numbe if 
+$R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
+\in \opn{D}^{b}(\catn{mod}(A))$:
 \begin{align} \label{equation-local-index}
 \opn{ind}_x^{A}(f)\deq \chi(\opn{LMD}^{\bullet}(A_X,f,x)), \quad
 \opn{ind}_x(f) \deq \opn{ind}_x^{\mathbb{Z}}(f).
@@ -1417,17 +1421,56 @@ H^{i}(\{f<f(x)\}\cap U;A).
 \end{align}
 \end{proof}
 
+\begin{example}
+Let $f\colon X \to \mathbb{R}$ a continuous function 
+such that $\{f<f(x_0)\}\cap S=\emptyset$ and 
+$\{f=f(x_0)\}\cap S=\{x_0\}$ for some $x_0\in X$. 
+Then,
+\begin{align}
+\opn{LMD}^{\bullet}(A_S,f|_{S},x_0)\simeq A[0].
+\end{align}
+
+\end{example}
+
+\begin{example} \label{example-fundamental-system}
+Let $\{U_j\}_{j\in J}$ be an open fundamental system of 
+$x\in X$ satisfying
+$H^{\bullet}(\{f<f(x)\}\cap U_j;A)\simeq 
+H^{\bullet}(\{f<f(x)\}\cap U_{j'};A)$ via the 
+inclusion map $U_{j'}\hookto U_j$. Then, 
+\begin{align}
+\opn{LMD}^{\bullet}(A_X,f,x)\simeq H^{\bullet-1}(\{f<f(x)\}\cap U_j;A).
+\end{align}
+
+\end{example}
+
+\begin{example}[{\cite[p.22]{MR2031639}}]
+From Morse lemma, every Morse function with a critical 
+point at $x$ satisfies the \cref{condition-local-analytic}.
+Fix $X=S={\mathbb{R}}^{n}$.
+A polynomial function 
+$f\colon {\mathbb{R}}^{n}\to {\mathbb{R}};(x_1,\ldots,x_n)\mapsto x_1^{2}+
+\cdots+x_n^{2}$ gives the following local Morse data:
+\begin{align}
+    \opn{LMD}^{\bullet}(\Z_S,f,x)\simeq \tilde{H}^{\bullet-1}(\emp;\Z_S),
+    \quad \opn{LMD}^{\bullet}(\Z_S,-f,x) \simeq \tilde{H}^{\bullet-1}(S^{n-1};\Z_S).
+  \end{align}
+\end{example}
+
+
 If $X$ is a locally compact space, then there exists a 
 closed and compact neighborhood $S$ of $x\in X$. 
 By the second isomorphism of \cref{prop-local-morse-data},
 we have 
 $\opn{LMD}^{\bullet}(A_X,f,x)\simeq 
 \opn{LMD}^{\bullet}(A_S,f|_S,x)$, so 
-we can choose sufficently small compact neighborhood 
-of $x$.  
+we can choose a sufficiently small closed and 
+compact neighborhood 
+of $x$. 
 
-We will see several examples of local Morse data 
-and index for manifolds.
+
+
+We will see several examples of local Morse data.
 
 \begin{example}
 Let $f\colon \mathbb{R}^{n}\to \mathbb{R}$ be a 
@@ -1451,27 +1494,35 @@ a stratification satisfying Whitney's condition B
 \cite[Part I.2.5.1. Lemma]{MR932724}. 
 Let 
 $r\colon \mathbb{R}^{n}\to \mathbb{R};(x_1,\ldots ,x_n)
-\to \sum_{i=1}^{n}x_i^{2}$.
+\to \sum_{i=1}^{n}x_i^{2}$
+and $S(x,\varepsilon)\deq \partial \bar{B}(x,\varepsilon)$.
 For sufficiently small $\varepsilon$, 
-$\partial \bar{B}(x,\varepsilon) \cap f^{-1}(f(x))$ 
+$S(x,\varepsilon) \cap \{f=f(x)\}$ 
 intersect transversely \cite[Part I.3.5.1. Lemma]{MR932724},
-and thus $\partial \bar{B}(x,\varepsilon) \cap f^{-1}(f(x))$
+and thus $S(x,\varepsilon) \cap \{f=f(x)\}$
 is also a submanifold and compact.
 A relative version of Ehresmann's lemma induces the 
 homeomorphism the following pairs of smooth manifold 
 with boundary:
 \begin{align}
 &(\bar{B}(x,\varepsilon)\setminus \{x\}, 
-f^{-1}(f(x))\cap \bar{B}(x,\epsilon)\setminus \{f(x)\}) \\
-\simeq & ((0,\epsilon] \times \partial \bar{B}(x,\varepsilon),
+ \bar{B}(x,\epsilon)\cap \{f=f(x)\} \setminus \{x\}) \\ 
+\simeq & ((0,\epsilon] \times S(x,\varepsilon),
 (0,\epsilon] \times
-(\partial \bar{B}(x,\varepsilon) \cap f^{-1}(f(x)))).
+(S(x,\varepsilon) \cap \{f=f(x)\})). \notag
 \end{align}
 The proof of relative version of Ehresmann's lemma is 
 in 
 \href{https://mathoverflow.net/questions/358543/a-relative-version-of-ehresmanns-theorem}{complex geometry - A relative version of Ehresmann's theorem - MathOverflow}
-
-
+Besides, there exists a homeomorphism of pairs of
+topological spaces:
+\begin{align}
+(\bar{B}(x,\varepsilon),\bar{B}(x,\varepsilon)\cap \{f=f(x)\})
+\simeq (\opn{Cone}(\partial \bar{B}(x,\varepsilon)),
+\opn{Cone}(S(x,\varepsilon) \cap \{f=f(x)\})).
+\end{align}
+Here $\opn{Cone}(X)$ is the topological cone over
+$X$.
 This homeomorphism is classically proved when 
 $f$ is real analytic function
 \cite[Theorem 2.10]{MR0239612}.
@@ -1479,11 +1530,14 @@ The homeomorphism induces
 \begin{align}
 \opn{LMD}^{\bullet}(A_{\bar{B}(x,\varepsilon)},
 f|_{\bar{B}(x,\varepsilon)},x)\simeq 
-\tilde{H}^{\bullet-1}(\partial \bar{B}(x,\varepsilon) 
+\tilde{H}^{\bullet-1}(S(x,\varepsilon) 
 \cap \{f<f(x)\};A).
 \end{align}
 
 \end{example}
+
+
+
 
 By \cref{prop-local-morse-data}, we can calculate
 of local Morse index of a continuous function on 
@@ -1495,26 +1549,10 @@ constructible sheaves on real manifolds.
 
 
 
-\begin{condition}
-\label{condition-isolated-singularity}
-$f\colon X\to \mathbb{R}$ is a $C^{1}$-function on a 
-smooth manifold $X$ with an isolated singularity
-at $x$ and $S$ is a connected closed subset of $X$ which is homeomorphic to 
-an open subset of a finite cell complex. 
-\end{condition}
+We also use the following locally analytic 
+condition frequently:
 
-\begin{example}
-Since $\tilde{H}^{\bullet}(\emp;A)=A[1]$, 
-if $f$ is a convex $C^{1}$-function with an isolated 
-critical point at $x$ then
-$\opn{LMD}^{\bullet}(A_{S},f|_S,x)\simeq A[0]$.
-\end{example}
-
-%NEXT: nondepraveを書くか?
-
-We also use the locally analytic condition frequently:
-
-\begin{condition}
+\begin{condition}[{locally analytic}]
 \label{condition-local-analytic}
 $f\colon X\to \mathbb{R}$ is a $C^{\infty}$-function
 with an isolated singularity at $x$ such that 
@@ -1541,25 +1579,6 @@ graded module of our sense and Floer complex of Lagrangian
 submanifolds.
 \end{remark}
 
-From now on, we see some typical examples of local
-Morse data satisfying 
-in the case $S=X$.
-
-\begin{example}[{\cite[p.22]{MR2031639}}]
-From Morse lemma, every Morse function with a critical 
-point at $x$ satisfies the \cref{condition-local-analytic}.
-Fix $X=S={\mathbb{R}}^{n}$.
-A polynomial function 
-$f\colon {\mathbb{R}}^{n}\to {\mathbb{R}};(x_1,\ldots,x_n)\mapsto x_1^{2}+
-\cdots+x_n^{2}$ gives the following local Morse data:
-\begin{align}
-    \opn{LMD}^{\bullet}(\Z_S,f,x)\simeq \tilde{H}^{\bullet-1}(\emp;\Z_S),
-    \quad \opn{LMD}^{\bullet}(\Z_S,-f,x) \simeq \tilde{H}^{\bullet-1}(S^{n-1};\Z_S).
-  \end{align}
-\end{example}
-
-
-
 \begin{example}[{Real Milnor fiber}] 
 \label{example-milnor-morse-data}
 We mainly follow from \cite[3.2]{MR3779558} for this example.
@@ -1573,14 +1592,6 @@ $S_{\vep,x}\deq\partial B_{\vep,x}$ and
 $\opn{Cone}(X)$ the cone of a topological space $X$
 \cite[Example 4.4]{hatcherAlgebraicTopology2002a}.
 
-There exists a homeomorphism of pairs of
-topological spaces:
-\begin{align}
-(B_{\vep,x},B_{\vep,x}\cap \{f=f(x)\})\simeq 
-(\opn{Cone}(S_{\vep,x}),\opn{Cone}(S_{\vep,x}\cap \{f=f(x)\}))
-\end{align}
-for sufficiently small $\vep$
-\cite[Theorem 2.10]{MR0239612}.
 From this $B_{\vep,x}\cap\{f<f(x)\}$ is homeomorphic to
 $(S_{\vep,x}\cap \{f<f(x)\})\times (0,\vep]$.
 Besides, $S_{\vep,x}\cap \{f<f(x)\}\simeq 
@@ -1589,7 +1600,7 @@ for sufficiently small $\vep>\delta>0$
 \cite[Lemma 11.3]{MR0239612}.
 $f^{-1}(-\delta)\cap B_{\vep,x}$ is called 
 the (negative) \emph{real Milnor fiber}.
-By Khimshiashvili [Himšiašvili] formula \cite{MR0458467}, we have
+By Khimshiashvili [Him\v{s}ia\v{s}vili] formula \cite{MR0458467}, we have
 \begin{align} \label{equation-Khimshiashvili}
   \opn{ind}_x(f)
 =1-\chi(f^{-1}(-\delta)\cap B_{\vep,x})
@@ -1619,37 +1630,41 @@ at $x\in X$,
 and this is a special case of
 the following microlocal index theorem:
 
-\begin{theorem}[{\cite[Theorem 9.5.6]{MR1299726}}]
-Let $X$ be a compact analytic manifold and 
-$f$ a real analytic function, $\mathcal{F}$ 
-a constructible sheaf on $X$ such that 
-$\sigma_{df}(X)\cap \opn{SS}(\mathcal{F})
-\subset \{(x;d\phi(x))\}$.
-Then, 
+
+
+\begin{condition}[{\cite[Proposition 5.4.20]{MR1299726}}]
+Let $X$ be a 
+\end{condition}
+
+\begin{proposition}[{\cite[Proposition 5.4.20]{MR1299726}}]
+Let $X$ be a 
+
 \begin{align}
-\chi(\opn{LMD}(\mcal{F},f,x))
-=\sharp ([\sigma_df]\cap \opn{CC}(\mcal{F})).
+\chi(H^{\bullet}(X;\mathcal{F}^{\bullet}))=
+\chi (\bigoplus_{x\in \check{\pi}_{M}(
+\Lambda_f\cap \opn{SS}(\iota_*\mathcal{F}^{\bullet}))}
+\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f,x))
 \end{align}
-Here, $\opn{CC}(\mcal{F})$ is the characteristic cycle of 
-$\mathcal{F}$ and $[\sigma_{df}]$ a cycle of 
-$\sigma_{df}\colon X\to T^{*}X$ defined in 
-\cite[Definition 9.3.5]{MR1299726}.
-\end{theorem}
 
-\begin{remark}
-The microlocal index theorem is generalized for more general 
-class of functions by several researchers.
-\end{remark}
-
+\end{proposition}
+This proposition can be considered as the intersection 
+of two Lagrangian cycles in $T^{*}X$ when 
+$\mathcal{F}$ is an constructible sheaves,
+see \cite[Corollary 9.5.2,Theorem 9.5.6]{MR1299726}.
+This is called the microlocal index formula or Kashiwara's 
+index formula.
 \begin{example}
 Let $M$ be a compact integral affine manifold and $S$  
 a compact rational polyhedral subspace in $M$. 
-From the microlocal index theorem, we have
+Let $f\colon M \to \mathbb{R}$ be a smooth function on
+satisfying 
+
 \begin{align}
-\chi(H^{\bullet}(M;\iota_*A_S))
-=\sharp ([df]\cap \opn{CC}(\iota_* A_S))
-=\sharp (\opn{CC}(A_M)\cap \opn{CC}(\iota_* A_S)).
+\chi(H^{\bullet}(M;\iota_*k_S))
+=\chi(\bigoplus_{x\in \check{\pi}_{M}(\Lambda_f\cap \opn{SS}(\iota_*k_S))} \opn{LMD}^{\bullet}(k_S,f,x))
+=\sharp (\opn{CC}(k_M)\cap \opn{CC}(\iota_* k_S)).
 \end{align}
+for any smooth function $f\colon M\to \mathbb{R}$.
 Therefore, this is a certain sheaf theoretic version of 
 Poincar\'e--Hopf theorem for some polyhedral spaces. Under
 the philosophy of this paper, $H^{\bullet}(M;\iota_*A_S)\simeq 
@@ -1660,7 +1675,61 @@ $\opn{Ext}^{\bullet}(\mcal{O}_X,\iota_*\mcal{O}_Z)$ for closed embedding of
 scheme.
 \end{example}
 
+\begin{example}[{cf. \cite[3.2]{MR3779558}}]
+Let $U$ be an open neighborhood of the origin 
+$0\in \mathbb{R}^{n}$,
+$f\colon U\to \mathbb{R}$ be a smooth 
+function 
+with a unique isolated critical point at $0$ and 
+$S=\bar{B}(0,\varepsilon)$ a closed ball with radius 
+$\epsilon >0$ at the origin and 
+$r(x)\deq \sum_{i=1}^{n}x_i^{2}-\varepsilon$.
+Then, 
+\begin{align}
+\opn{SS}((k_{U})_{\bar{B}(0,\epsilon)})=
+\{(x;cdr(x))\in T^*U\mid x\in \bar{B}(x,\epsilon), 
+c\in \mathbb{R}_{\geq 0}\}.
+\end{align}
 
+Therefore, if $f|_{S(0,\varepsilon)}$ is 
+a Morse function, then by 
+\cite[Proposition 5.4.20]{MR1299726}
+\begin{align} \label{equation-local-poincare-hopf}
+\chi(H^{\bullet}(S;k))=
+\sum_{x\in \check{\pi}(\Lambda_f\cap 
+\opn{SS}((k_{U})_{\bar{B}(0,\epsilon)}))\cap S(0,\epsilon)}
+\chi(\opn{LMD}^{\bullet}(k_{S},f|_S,x))
++\chi(\opn{LMD}^{\bullet}(k_{S},f|_S,0))=1.
+\end{align}
+We can purturb $f$ with $\tilde{f}$ for a sufficiently 
+small compact neighborhood $K \subset S$ on such that 
+$\tilde{f}$ is a Morse function and 
+$\tilde{f}|_{S\setminus K}=f|_{S\setminus K}$.
+\cref{equation-local-poincare-hopf} for $\tilde{f}$
+induces 
+\begin{align}
+\chi(\opn{LMD}^{\bullet}(k_{S},f|_S,0))
+=\sum_{x\in \opn{Crit}(\tilde{f})}
+\chi(\opn{LMD}^{\bullet}(k_{S},\tilde{f}|_S,0)).
+\end{align}
+Let $k=\mathbb{Q}$. Then, each 
+$\chi(\opn{LMD}^{\bullet}(k_{S},\tilde{f}|_S,0))$
+for $x\in \opn{Crit}(\tilde{f})$
+is equal to the Poincar\'e--Hopf index of 
+$\opn{grad}(\tilde{f})$ at $x$.
+Besides, the degree map 
+$\frac{\opn{grad}\tilde{f}}{|\opn{grad}\tilde{f}|}\colon 
+S(0,\varepsilon) \to S^{n-1}$ is 
+homotopic to $\frac{\opn{grad}f}{|\opn{grad}f|}\colon 
+S(0,\varepsilon) \to S^{n-1}$, so we get 
+\begin{align}
+\opn{ind}_x^{\mathbb{Q}}(f)=
+\sum_{x\in \opn{Crit}(\tilde{f})}
+\opn{ind}^{\opn{PH}}_x(\opn{grad}(\tilde{f}))=
+\opn{ind}^{\opn{PH}}_x(\opn{grad}(f)).
+\end{align}
+
+\end{example}
 
 
 
@@ -1697,32 +1766,31 @@ scheme.
 % $f$.
 
 \begin{remark}[{A vanishing properties
-for some good fan}]
+for some cone}]
 Fix $X\deq \mathbb{R}^{n}$.
 Let $f\colon X\to {\mathbb{R}}$ be a convex $C^{1}$-
 function $X$ with the minimum point $x$
-and $S$ be the support of 
-a polyhedral fan $\Sigma$ in $X$.
+and $S$ be a cone in $X$, i.e., 
+$rS=S$ for all $r\in \mathbb{R}_{> 0}$.
 One of trivial but remarkable point is that
 \begin{align}
-\opn{ind}_x(f|_S,0)\not\simeq (-1)^{n}
-\opn{ind}_x(-f|_S,0)
+|\opn{ind}_x(f|_S,0)|\neq |\opn{ind}_x(-f|_S,0)|
 \end{align}
 except for special cases such like
 \cref{example-milnor-morse-data}.
-From \cref{example-local-cohomology} and
-\cref{prop-local-morse-data}, we have
+From \cref{example-local-cohomology},
+\cref{prop-local-morse-data} and
+\cref{example-fundamental-system}, we have
 \begin{align}
 \opn{LMD}^{\bullet}(A_S,-f|_S,0)=
-\tilde{H}^{\bullet-1}(S\setminus \{x\};A_{S})
-\simeq H^{\bullet}_{\{x\}}(S;A_S).
+\tilde{H}^{\bullet-1}(S\setminus \{x\};A_{S}).
 \end{align}
 
 
 
-If $S$ is a purely tropical $n$-manifold, then 
-$\opn{LMD}^{\bullet}(\mathbb{Z}_S,-f|_S,x)\simeq H^{n}(S,S\setminus\{x\},
-\mathbb{Z})[-n]$ since every Bergman fan has a good subdivision 
+If $S$ is a purely $n$-dimensional Bergman fan, then 
+$\opn{LMD}^{\bullet}(\mathbb{Z}_S,-f|_S,x)\simeq 
+H^{n-1}(S\setminus\{x\};\mathbb{Z})[-n+1]$ since every Bergman fan has a good subdivision 
 \cite[Theorem 1]{MR2185977} and its link is shellable
 (e.g. \cite[7.9.1. Theorem]{MR1165544}).
 The vanishing property of the local cohomology is conjectured for
@@ -1736,7 +1804,9 @@ through codimension $1$ \cite[Theorem 3.3.5]{MR3287221}
 this conjecture is true when $\dim S \leq 2$.
 This phenomenon gives a certain analog of Kodaira vanishing theorem for 
 positive line bundles, see 
-also \cref{example-tropical-kodaira-vanishing}.
+also \cref{example-tropical-kodaira-vanishing}. 
+A certain shellability for tropical fans is studied in
+\cite{amini2021homology}.
 \end{remark}
 
 \subsection{Smooth Cartier divisors on rational 
@@ -2125,9 +2195,8 @@ $m\in \mathcal{O}_{S}^{\times}(U_x)$.
 Therefore, we can define the admissibility condition
 for principal divisors directly.
 \begin{remark}
-If $\opn{span}_{{\mathbb{R}}}
-(\opn{SS}(S)_x)=(\mathcal{F}_{S}^{1})_x$,
-$f$ is admissible if and only if 
+Suppose $(\opn{SS}(S)_x)=(\mathcal{F}_{S}^{1})_x$. 
+Then, $f$ is admissible if and only if 
 $d''f(x)\in (\mathcal{F}_{\mathbb{Z},S}^{1})_x$.
 Therefore, admissibility
 condition is not an open condition.
@@ -2136,23 +2205,6 @@ If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
 set of admissible cotangent vector at $x$ is dense and 
 connected.
 \end{remark}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-From \cref{equation-smoooth-cartier-divisor-sequence},
-
-
 
 
 \begin{definition}[{smooth admissible Cartier divisor}]
@@ -2205,23 +2257,7 @@ the real torus defined as follows:
 We call the union $\check{X}(S)\deq \bigcup_{x\in S}\check{X}(S)_x$
 the underlying set of the \emph{stratified torus 
 fibration} of $S$.
-For simplicity, we give a (tentative) 
-topological structure of $\check{X}(S)$ as follows
-(but we consider this topological structure is 
-\emph{not good}):
-\begin{align}
-{}_k(S)\deq \set{x\in S\mid \dim \opn{SS}(S)_x=k}, \quad
-{}_k\check{X}(S)=\check{\pi}_{S}^{-1}({}_k(S)).
-\end{align}
-Each ${}_k\check{X}(S)$ has a canonical torus fibration 
-structure, and
-$\bigsqcup_{k=0}^{\dim S} S\cap {}_k\check{X}(S)$ has 
-a canonical identity continuous map 
-$i\colon \bigsqcup_{k=0}^{\dim S} S\cap {}_k\check{X}(S)
-\to S$.
-The topological structure of $\check{X}(S)$ is 
-the adjunction space of the above identity map
-$S \cup_{i} (\bigsqcup_{k=0} {}_k\check{X}(S))$.
+
 We won't pursue about
 topological structures of $\check{X}(S)$ 
 here.
@@ -2657,7 +2693,9 @@ at $x$.
 \begin{example}
 When $p+q=3$, 
 \begin{align}
-\opn{ind}_v(s_{3,0})=1, \quad \opn{ind}_v(s_{2,1})=0, \quad \opn{ind}_v(s_{1,2})=-1, \quad \opn{ind}_v(s_{0,3})=-2.
+\opn{ind}_x(s_{3,0})=1, \quad 
+\opn{ind}_x(s_{2,1})=0, \quad \opn{ind}_x(s_{1,2})=-1, 
+\quad \opn{ind}_x(s_{0,3})=-2.
 \end{align}
 \end{example}
 
@@ -3176,7 +3214,7 @@ The Morse complex of $s$ the following graded module:
 \tilde{H}^{\bullet-1}
 (U_p\cap \{\tilde{f_p}<\tilde{f_p}(p)\};\mathbb{Z}).
 \end{align}
-Here, $(U_p,\tilde{f}_p)_{p\in s_0\cap s}$ is a local 
+Here, $(U_p,\tilde{f}_p)_{p\in s_0\cap s}$ is an
 intersection data of $s$.
 \end{definition}
 
