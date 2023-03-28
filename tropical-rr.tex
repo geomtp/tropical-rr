@@ -78,7 +78,7 @@
 \newtheorem*{conjecture*}{Conjecture}
 \newtheorem{Rule}[theorem]{Rule}
 \newtheorem*{Rule*}{Rule}
-\newtheorem{Not}[theorem]{Notation}
+\newtheorem{notation}[theorem]{Notation}
 \newtheorem*{Not*}{Notation}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem*{corollary*}{Corollary}
@@ -1000,7 +1000,7 @@ in the case of tropical curves,
   so we write down a shortcut course of this paper as below:
 \end{Note}
 
-\begin{Not}
+\begin{notation} \label{notation-general}
 
 We will use the following notation in this paper:
 
@@ -1009,6 +1009,31 @@ We will use the following notation in this paper:
 \begin{align*}
 \{f<f(v)\}\deq \set{x\in X\mid f(x)< f(v)},\quad
 \{f\geq f(v)\}\deq \set{x\in X\mid f(x)\geq f(v)}.
+\end{align*}
+\item  For $n\in \mathbb{Z}_{\geq 1}$,
+$\|\cdot \|_{\mathbb{R}^{n}}\colon 
+\mathbb{R}^{n}\to \mathbb{R};(x_1,\ldots,x_n)\mapsto 
+\sqrt{\sum_{i=1}^{n}x_i^{2}}$.
+\item For simplicity, $\mathbb{R}^{0}\deq \{0\}$ 
+and 
+$\|\cdot\|_{\mathbb{R}^{0}}\colon \mathbb{R}^{0}\to \mathbb{R}
+; x\mapsto 0$.
+\item For $n\in \mathbb{Z}_{\geq 0}$, $\varepsilon,\varepsilon'\in \mathbb{R}_{\geq 0}$
+and $x \in \mathbb{R}^{n}$, 
+\begin{align*}
+B^{n}_{\varepsilon}(x)\deq 
+\{v\in \mathbb{R}^{n}\mid \|x-v\|_{\mathbb{R}^{n}}
+\leq \varepsilon\},
+& \quad  
+S^{n-1}_{\varepsilon}(x)\deq \partial B^{n}_{\varepsilon}(x),
+\quad \bar{B}^{n}_{\varepsilon}(x)\deq 
+B^{n}_{\varepsilon}(x)\cup \partial B^{n}_{\varepsilon}(x),  \\
+B_{\varepsilon,\varepsilon'}^{n}(x)\deq 
+B^{n}_{\varepsilon}(x)\setminus 
+\bar{B}^{n}_{\varepsilon '}(x), 
+& \quad \bar{B}_{\varepsilon,\varepsilon'}^{n}(x)\deq 
+B_{\varepsilon,\varepsilon'}^{n}(x)\cup 
+\partial B_{\varepsilon,\varepsilon'}^{n}(x).
 \end{align*}
 \item $\opn{Crit}(f)$: the subset of critical points of
 a $C^{1}$-function $f$ on a smooth manifold.
@@ -1029,16 +1054,18 @@ of bounded complexes of a given abelian category
 $\mathcal{C}$.
 \end{itemize}
 
-\end{Not}
+\end{notation}
 
 \begin{Note}
 We also impose the following assumption for simplicity in this paper:
 \begin{itemize}
 \item Any topological space is Hausdorff and
 locally compact unless otherwise specified.
-\item Any ring is a commutative ring with unity.
+\item Any ring is a ring with unity.
 \item We identify any ring $A$ with a constant sheaf on
 $\{\opn{pt}\}$ with fiber $A$.
+\item We identify any $A$-module with a sheaf of 
+$A_{\{\opn{pt}\}}$-module.
 \item Any $C^{\alpha}$-manifold is paracompact for 
 $\alpha=0,1,\ldots,\infty,\omega$.
 \item We mainly use min-plus algebra.
@@ -1314,6 +1341,9 @@ H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
 \mathcal{F}^{\bullet})).
 \end{align}
 
+Let $Y\deq \{x\in X\mid \}$
+
+
 The \emph{local Morse index} of $f$ at $x$ is the 
 following numbe if 
 $R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
@@ -1356,6 +1386,17 @@ spaces. See also \cref{remark-differential-graded-module} for more about
 this reason.
 \end{enumerate}
 \end{remark}
+
+We mostly 
+want to use the local Morse index in this paper,
+so we assume the following condition
+
+\begin{condition}[{finitely generated condition}]
+The triple $(\mathcal{F}^{\bullet},f,x)$ satisfies
+that $(R\Gamma_{\{f\geq f(x)\}}(\mathcal{F}^{\bullet}))_x$ 
+is in $\opn{D}^{b}(\catn{mod}(A))$.
+\end{condition}
+
 
 Before we see some important examples of cohomological
 local Morse datum, we will see some elementary
@@ -1444,18 +1485,66 @@ inclusion map $U_{j'}\hookto U_j$. Then,
 
 \end{example}
 
-\begin{example}[{\cite[p.22]{MR2031639}}]
-From Morse lemma, every Morse function with a critical 
-point at $x$ satisfies the \cref{condition-local-analytic}.
-Fix $X=S={\mathbb{R}}^{n}$.
-A polynomial function 
-$f\colon {\mathbb{R}}^{n}\to {\mathbb{R}};(x_1,\ldots,x_n)\mapsto x_1^{2}+
-\cdots+x_n^{2}$ gives the following local Morse data:
+\begin{example}
+\label{example-morse-index}
+In this example we see
+the local Morse index of is a certain generalization of 
+Poincar\'e--Hopf index of the gradient 
+$\opn{grad}(f)$ of a smooth function $f$ 
+when $f$ is a Morse function. 
+we recall \cref{notation-general}
+and set
 \begin{align}
-    \opn{LMD}^{\bullet}(\Z_S,f,x)\simeq \tilde{H}^{\bullet-1}(\emp;\Z_S),
-    \quad \opn{LMD}^{\bullet}(\Z_S,-f,x) \simeq \tilde{H}^{\bullet-1}(S^{n-1};\Z_S).
-  \end{align}
+f_{n,m}\colon \mathbb{R}^{n}\times \mathbb{R}^{m}\to \mathbb{R};
+(x,y)\mapsto \|x\|_{\mathbb{R}^{n}}^2
+-\|y\|_{\mathbb{R}^{m}}^2.
+\end{align}
+In order to calculate 
+$\opn{LMD}^{\bullet}(A_{\mathbb{R}^{n+m}},f_{n,m},0)$, we 
+see
+\begin{align}
+\partial (\bar{B}^{n}_{\varepsilon}(0)
+\times \bar{B}^{m}_{\varepsilon}(0))=
+& S^{n-1}_{\varepsilon}(0)\times B^{m}_{\varepsilon}(0) 
+\cup B^{n}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0) \\
+& \cup 
+S^{n-1}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0) \\
+=& \{\|\cdot\|_{\mathbb{R}^{n}}=\varepsilon\} 
+\times \{\|\cdot\|_{\mathbb{R}^{m}} < \varepsilon\} 
+\cup \{\|\cdot\|_{\mathbb{R}^{n}} < \varepsilon\} \times 
+\{\|\cdot\|_{\mathbb{R}^{m}}= \varepsilon\} \\
+& \cup 
+\{\|\cdot\|_{\mathbb{R}^{n}}=\varepsilon\} \times 
+\{\|\cdot\|_{\mathbb{R}^{m}}= \varepsilon\}.
+\end{align}
+
+Therefore,  
+\begin{align}
+\partial (\bar{B}^{n}_{\varepsilon}(0)
+\times \bar{B}^{m}_{\varepsilon}(0)\cap 
+\{f_{n,m}<f_{n,m}(0)\}
+= B^{n}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0).
+\end{align}
+
+The above equation and \cref{prop-local-morse-data} 
+gives
+\begin{align}
+\opn{LMD}^{\bullet}(A_{\mathbb{R}^{n+m}},f_{n,m},0)\simeq 
+\tilde{H}^{\bullet-1}(S^{m-1};A_S) \simeq A[-m],& \\
+\opn{ind}^{A}_{0}(f_{n,m})=(-1)^{m}=
+\opn{ind}^{\opn{PH}}_{0}(\opn{grad}(f_{n,m})).&
+\end{align}
+Here, $\opn{ind}^{\opn{PH}}_{(0,0)}(\opn{grad}(f_{n,m}))$ is 
+the Poincar\'e-Hopf index of $f_{n,m}$ at 
+the origin $0$.
+From Morse lemma,
+for every critical point $x$ on a Morse function 
+$f\colon X\to \mathbb{R}$ on a smooth manifold 
+$\opn{ind}_x^{A}(f)=\opn{ind}^{\opn{PH}}_x(f)$. 
+This equation can be generalized for more cases.
 \end{example}
+
+
 
 
 If $X$ is a locally compact space, then there exists a 
@@ -1472,69 +1561,7 @@ of $x$.
 
 We will see several examples of local Morse data.
 
-\begin{example}
-Let $f\colon \mathbb{R}^{n}\to \mathbb{R}$ be a 
-continuous function and 
-$\bar{B}(x,\varepsilon)$ (resp. $B(x,\varepsilon)$)  
-the closed (resp. open) ball with radius 
-$\varepsilon\in \mathbb{R}_{>0}$ and 
-center $x\in \mathbb{R}^{n}$. Then, 
-\begin{align}
-\opn{LMD}(A_{\mathbb{R}^{n}},f,x)\simeq 
-\opn{LMD}(A_{B(x,\varepsilon)},f|_{B(x,\varepsilon)},x) \simeq 
-\opn{LMD}(A_{\bar{B}(x,\varepsilon)},
-f|_{\bar{B}(x,\varepsilon)},x).
-\end{align}
 
-If $f$ is smooth and has an isolated \emph{nondepraved} 
-critical point at $x$, then 
-$f^{-1}(f(x))\setminus \{x\}$ is a smooth submanifold 
-and $\{f^{-1}(f(x))\setminus \{x\},\{x\} \}$ induces 
-a stratification satisfying Whitney's condition B
-\cite[Part I.2.5.1. Lemma]{MR932724}. 
-Let 
-$r\colon \mathbb{R}^{n}\to \mathbb{R};(x_1,\ldots ,x_n)
-\to \sum_{i=1}^{n}x_i^{2}$
-and $S(x,\varepsilon)\deq \partial \bar{B}(x,\varepsilon)$.
-For sufficiently small $\varepsilon$, 
-$S(x,\varepsilon) \cap \{f=f(x)\}$ 
-intersect transversely \cite[Part I.3.5.1. Lemma]{MR932724},
-and thus $S(x,\varepsilon) \cap \{f=f(x)\}$
-is also a submanifold and compact.
-A relative version of Ehresmann's lemma induces the 
-homeomorphism the following pairs of smooth manifold 
-with boundary:
-\begin{align}
-&(\bar{B}(x,\varepsilon)\setminus \{x\}, 
- \bar{B}(x,\epsilon)\cap \{f=f(x)\} \setminus \{x\}) \\ 
-\simeq & ((0,\epsilon] \times S(x,\varepsilon),
-(0,\epsilon] \times
-(S(x,\varepsilon) \cap \{f=f(x)\})). \notag
-\end{align}
-The proof of relative version of Ehresmann's lemma is 
-in 
-\href{https://mathoverflow.net/questions/358543/a-relative-version-of-ehresmanns-theorem}{complex geometry - A relative version of Ehresmann's theorem - MathOverflow}
-Besides, there exists a homeomorphism of pairs of
-topological spaces:
-\begin{align}
-(\bar{B}(x,\varepsilon),\bar{B}(x,\varepsilon)\cap \{f=f(x)\})
-\simeq (\opn{Cone}(\partial \bar{B}(x,\varepsilon)),
-\opn{Cone}(S(x,\varepsilon) \cap \{f=f(x)\})).
-\end{align}
-Here $\opn{Cone}(X)$ is the topological cone over
-$X$.
-This homeomorphism is classically proved when 
-$f$ is real analytic function
-\cite[Theorem 2.10]{MR0239612}.
-The homeomorphism induces 
-\begin{align}
-\opn{LMD}^{\bullet}(A_{\bar{B}(x,\varepsilon)},
-f|_{\bar{B}(x,\varepsilon)},x)\simeq 
-\tilde{H}^{\bullet-1}(S(x,\varepsilon) 
-\cap \{f<f(x)\};A).
-\end{align}
-
-\end{example}
 
 
 
@@ -1542,10 +1569,7 @@ f|_{\bar{B}(x,\varepsilon)},x)\simeq
 By \cref{prop-local-morse-data}, we can calculate
 of local Morse index of a continuous function on 
 a given polyhedral complex by the theory of sheaves on 
-real manifolds. In particular, 
-we can apply the micro local index formula 
-\cite[Theorem 9.5.6]{MR1299726} for 
-constructible sheaves on real manifolds.
+real manifolds.
 
 
 
@@ -1579,62 +1603,62 @@ graded module of our sense and Floer complex of Lagrangian
 submanifolds.
 \end{remark}
 
-\begin{example}[{Real Milnor fiber}] 
-\label{example-milnor-morse-data}
-We mainly follow from \cite[3.2]{MR3779558} for this example.
-Fix $X\deq S\deq \mathbb{R}^{n}$.
-Let $f\colon {\mathbb{R}}^{n}\to {\mathbb{R}}$ be a real polynomial function
-which has with one isolated critical point at $x$.
-
-Let $B_{\vep,x}\deq \set{y\in {\mathbb{R}}^{n}\mid \|x-y\|\leq \vep}$
-for $\vep \in \mathbb{R}_{> 0}$,
-$S_{\vep,x}\deq\partial B_{\vep,x}$ and 
-$\opn{Cone}(X)$ the cone of a topological space $X$
-\cite[Example 4.4]{hatcherAlgebraicTopology2002a}.
-
-From this $B_{\vep,x}\cap\{f<f(x)\}$ is homeomorphic to
-$(S_{\vep,x}\cap \{f<f(x)\})\times (0,\vep]$.
-Besides, $S_{\vep,x}\cap \{f<f(x)\}\simeq 
-f^{-1}(-\delta)\cap B_{\vep,x}$
-for sufficiently small $\vep>\delta>0$ 
-\cite[Lemma 11.3]{MR0239612}.
-$f^{-1}(-\delta)\cap B_{\vep,x}$ is called 
-the (negative) \emph{real Milnor fiber}.
-By Khimshiashvili [Him\v{s}ia\v{s}vili] formula \cite{MR0458467}, we have
-\begin{align} \label{equation-Khimshiashvili}
-  \opn{ind}_x(f)
-=1-\chi(f^{-1}(-\delta)\cap B_{\vep,x})
-=\opn{ind}_{\opn{PH}}(\opn{grad} f,x).
-\end{align}
-Here, $\opn{ind}_{\opn{PH}}(\opn{grad} f,x)$ is the 
-Poincar\'e--Hopf index of the gradient of $f$ for the standard 
-inner product on ${\mathbb{R}}^{n}$.
-We can generalize the above for real analytic functions with 
-at most isolated singular points. 
-In this case, there exists the following \emph{special} symmetry:
+First, we recall about the micro-support of sheaves 
+from \cite{MR1299726}.
+Let $X$ be a real analytic manifold and let
+$\mcal{F}^{\bullet}\in\opn{Ob}(\opn{D}^{b}(A_X))$ and
+$\opn{SS}(\mcal{F}^{\bullet})$ 
+the micro-support of $\mcal{F}^{\bullet}$:
+\begin{definition}[{Citation 
+\cite[Definition 5.1.2]{MR1299726}}]
+The element $p\in T^{*}X$ 
+is  $p\notin \opn{SS}(\mathcal{F}^{\bullet})$
+if there exists an open neighborhood $U$ of $p$ such 
+that for any $x_1\in X$ any any real 
+function $\psi$ of class $C^{\alpha}$ defined 
+in a neighborhood $V$ of $x_1$, with 
+$d\psi(x_1)\in U$, we have
 \begin{align}
-\chi(\opn{ind}_x(f))=
-(-1)^{\dim S}\chi(\opn{ind}_x(-f)).
+(R\Gamma_{\{\psi \geq \psi(x_1)\}}(\mathcal{F}^{\bullet}|_V))_{x_1}
+\simeq 0,\, \mathrm{i.e.} \, , 
+\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet}|_V,\psi,x_1)
+\simeq 0.
 \end{align}
-This symmetry is not true if $S$ is not a manifold at $x$
-in general. 
+
+\end{definition}
+
+As remarked in \cite[Remark 5.1.6]{MR1299726},
+$\opn{SS}(\mcal{F})$ depends only on the 
+$C^{1}$-structure of $X$ \footnote{この一文ほぼ丸々引用の文だけどだい
+大丈夫?}
+, and the forgetful functor 
+$\psi_X \colon \opn{D}^{b}(A_X)\to \opn{D}^{b}(\Z_X)$
+preserves the microsupport of $\mcal{F}$ 
+\cite[Remark 5.1.5]{MR1299726}.
+
+\begin{example}
+If $M$ is a closed submanifold of $X$, then
+$\opn{SS}((A_{X})_M)=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
 \end{example}
-
-The equation $\opn{ind}_v(f)=
-\opn{ind}_{\opn{PH}}(\opn{grad} f,x)$ in 
-\cref{example-milnor-morse-data}
-can be considered 
-as the intersection number 
-$\sharp ([\sigma_{df}]\cap [T^{*}_X X])_x$ of cycles in $T^{*}X$
-at $x\in X$,
-and this is a special case of
-the following microlocal index theorem:
-
-
+For simplicity,
+$\opn{SS}(\mcal{F})_x\deq \opn{SS}(\mcal{F}) \cap T^{*}_x X$.
+From definition of the micro-support of sheaves, 
+$\opn{SS}(\mcal{F}|_{U})_x=\opn{SS}(\mcal{F})_x$
+for any open neighborhood $U$ of $x$.
 
 \begin{condition}[{\cite[Proposition 5.4.20]{MR1299726}}]
 Let $X$ be a 
 \end{condition}
+
+Let 
+
+\begin{align}
+\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)\deq 
+\bigoplus_{x\in \check{\pi}_{M}(
+\Lambda_f\cap \opn{SS}(\mathcal{F}^{\bullet}))}
+\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f,x)
+\end{align}
+
 
 \begin{proposition}[{\cite[Proposition 5.4.20]{MR1299726}}]
 Let $X$ be a 
@@ -1684,15 +1708,18 @@ with a unique isolated critical point at $0$ and
 $S=\bar{B}(0,\varepsilon)$ a closed ball with radius 
 $\epsilon >0$ at the origin and 
 $r(x)\deq \sum_{i=1}^{n}x_i^{2}-\varepsilon^{2}$.
-Then, 
+Then, from \cite[Proposition 5.3.3]{MR1299726}
 \begin{align}
 \opn{SS}((k_{U})_{\bar{B}(0,\epsilon)})=
 \{(x;\lambda dr(x))\in T^*U\mid x\in \bar{B}(x,\epsilon), 
 \lambda\in \mathbb{R}_{\geq 0}, \lambda r(x)=0\}.
 \end{align}
 
-Therefore, if $f|_{S(0,\varepsilon)}$ is 
-a Morse function, then by 
+Therefore, if $f|_{S}$ is 
+a Morse function on a smooth manifold with boundary except 
+at $0$, then $\{f=f(x)\}\cap S$ is a manifold with corners.
+Therefore, 
+ by 
 \cite[Proposition 5.4.20]{MR1299726}
 \begin{align} \label{equation-local-poincare-hopf}
 \chi(H^{\bullet}(S;k))=
@@ -1712,18 +1739,19 @@ induces
 =\sum_{x\in \opn{Crit}(\tilde{f})}
 \chi(\opn{LMD}^{\bullet}(k_{S},\tilde{f}|_S,x)).
 \end{align}
-Let $k=\mathbb{Q}$. Then, each 
+We already see 
 $\chi(\opn{LMD}^{\bullet}(k_{S},\tilde{f}|_S,x))$
 for $x\in \opn{Crit}(\tilde{f})$
 is equal to the Poincar\'e--Hopf index of 
-$\opn{grad}(\tilde{f})$ at $x$.
+$\opn{grad}(\tilde{f})$ at $x$ in 
+\cref{example-morse-index}.
 Besides, the degree map 
 $\frac{\opn{grad}\tilde{f}}{|\opn{grad}\tilde{f}|}\colon 
-S(0,\varepsilon) \to S^{n-1}$ is 
+S_{\varepsilon}(0) \to S^{n-1}$ is 
 homotopic to $\frac{\opn{grad}f}{|\opn{grad}f|}\colon 
-S(0,\varepsilon) \to S^{n-1}$, so we get 
+S_{\varepsilon}(0) \to S^{n-1}$, so we get 
 \begin{align}
-\opn{ind}_x^{\mathbb{Q}}(f)=
+\opn{ind}_x^{k}(f)=
 \sum_{x\in \opn{Crit}(\tilde{f})}
 \opn{ind}^{\opn{PH}}_x(\opn{grad}(\tilde{f}))=
 \opn{ind}^{\opn{PH}}_x(\opn{grad}(f)).
@@ -1764,6 +1792,104 @@ S(0,\varepsilon) \to S^{n-1}$, so we get
 
 % Let $S$ be a rational PL set in ${\mathbb{R}}^{n}$ and
 % $f$.
+
+The following example is a typical example of
+
+
+\begin{example}
+Let $f\colon \mathbb{R}^{n}\to \mathbb{R}$ be a 
+continuous function and 
+$\varepsilon$ a 
+sufficiently small positive real number. Then, 
+\begin{align}
+\opn{LMD}(A_{\mathbb{R}^{n}},f,x)\simeq 
+\opn{LMD}(A_{\bar{B}_{\varepsilon}^{n}(x)},
+f|_{\bar{B}_{\varepsilon}^{n}(x)},x) \simeq 
+\opn{LMD}(A_{\bar{B}_{\varepsilon}^{n}(x)},
+f|_{\bar{B}_{\varepsilon}^{n}(x)},x).
+\end{align}
+
+If $f$ is smooth and has a unique isolated \emph{nondepraved} 
+critical point at $x$, then 
+$\{\{f=f(x)\}\setminus \{x\}$ is a smooth submanifold 
+and $\{\{f=f(x)\}\setminus \{x\},\{x\} \}$ induces 
+a stratification satisfying Whitney's condition B
+\cite[Part I.2.5.1. Lemma]{MR932724}. 
+
+For sufficiently small $\varepsilon\in \mathbb{R}_{> 0}$, 
+$S_{\varepsilon}(x) \cap \{f=f(x)\}$ 
+intersect transversely \cite[Part I.3.5.1. Lemma]{MR932724},
+and thus $S_{\varepsilon}(x) \cap \{f=f(x)\}$
+is also a submanifold and compact.
+A relative version of Ehresmann's lemma for 
+$\|\cdot\|_{\mathbb{R}^{n}}^2$ induces the 
+following homeomorphism of pairs of smooth manifold 
+with boundary:
+\begin{align}
+&(\bar{B}_{\varepsilon}^{n}(x)\setminus \{x\}, 
+ \bar{B}_{\varepsilon}^{n}(x)\cap \{f=f(x)\} \setminus \{x\}) \\ 
+\simeq & ((0,\epsilon] \times S_{\varepsilon}^{n-1}(x),
+(0,\epsilon] \times
+(S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\})). \notag
+\end{align}
+The proof of relative version of Ehresmann's lemma is 
+in 
+\href{https://mathoverflow.net/questions/358543/a-relative-version-of-ehresmanns-theorem}{complex geometry - A relative version of Ehresmann's theorem - MathOverflow}
+Besides, there exists a homeomorphism of pairs of
+topological spaces:
+\begin{align}
+(\bar{B}_{\varepsilon}^{n}(x),
+\bar{B}_{\varepsilon}^{n}(x)\cap \{f=f(x)\})
+\simeq (\opn{Cone}(S_{\varepsilon}^{n-1}(x)),
+\opn{Cone}(S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\})).
+\end{align}
+Here $\opn{Cone}(X)$ is the topological cone over
+$X$ \cite[Example 4.4]{hatcherAlgebraicTopology2002a}.
+This homeomorphism is classically proved when 
+$f$ is real analytic function
+\cite[Theorem 2.10]{MR0239612}.
+The homeomorphism induces 
+\begin{align}
+\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(x)},
+f|_{\bar{B}_{\varepsilon}(x)},x)\simeq 
+\tilde{H}^{\bullet-1}(S_{\varepsilon}^{n-1}(x)
+\cap \{f<f(x)\};A).
+\end{align}
+
+By Alexander duality, 
+$H^{\bullet}(S_{\varepsilon}^{n-1}(x)\setminus \{f=f(x)\};A)$ 
+is graded $A$-module of finite rank, so 
+is $\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(x)},
+f|_{\bar{B}_{\varepsilon}(x)},x)$.
+
+We also add explanation of real Milnor fiber from
+\cite[3.2]{MR3779558}.
+If $f$ is a real analytic, then 
+$S_{\varepsilon}^{n-1}(x)\cap \{f\leq f(x)\}\simeq 
+f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$
+for sufficiently small $\vep>\delta>0$.
+$f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$ is called 
+the (negative) \emph{real Milnor fiber}.
+By Khimshiashvili [Him\v{s}ia\v{s}vili] formula \cite{MR0458467}, we have
+\begin{align} \label{equation-Khimshiashvili}
+  \opn{ind}_x(f)
+=1-\chi(f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x))
+=\opn{ind}^{\opn{PH}}_{x}(\opn{grad} f).
+\end{align}
+Here, $\opn{ind}^{\opn{PH}}_x(\opn{grad} f)$ is the 
+Poincar\'e--Hopf index of the gradient of $f$ for the standard 
+inner product on ${\mathbb{R}}^{n}$.
+We can generalize the above for real analytic functions with 
+at most isolated singular points. 
+In this case, there exists the following \emph{special} symmetry:
+\begin{align}
+\chi(\opn{ind}_x(f))=
+(-1)^{\dim S}\chi(\opn{ind}_x(-f)).
+\end{align}
+This symmetry is not true if $S$ is not a manifold at $x$
+in general. 
+
+\end{example}
 
 \begin{remark}[{A vanishing properties
 for some cone}]
@@ -1952,46 +2078,7 @@ polyhedral spaces.
 We need to the notion of 
 the micro-support of sheaves in order to define it.
 
-First, we recall about the micro-support of sheaves 
-from \cite{MR1299726}.
-Let $X$ be a real analytic manifold and let
-$\mcal{F}^{\bullet}\in\opn{Ob}(\opn{D}^{b}(A_X))$ and
-$\opn{SS}(\mcal{F}^{\bullet})$ 
-the micro-support of $\mcal{F}^{\bullet}$:
-\begin{definition}[{Citation 
-\cite[Definition 5.1.2]{MR1299726}}]
-The element $p\in T^{*}X$ 
-is  $p\notin \opn{SS}(\mathcal{F}^{\bullet})$
-if there exists an open neighborhood $U$ of $p$ such 
-that for any $x_1\in X$ any any real 
-function $\psi$ of class $C^{\alpha}$ defined 
-in a neighborhood $V$ of $x_1$, with 
-$d\psi(x_1)\in U$, we have
-\begin{align}
-(R\Gamma_{\{\psi(x)\geq \psi(x_1)\}}(\mathcal{F}^{\bullet}|_V))_{x_1}
-\simeq 0.
-\end{align}
 
-\end{definition}
-
-As remarked in \cite[Remark 5.1.6]{MR1299726},
-$\opn{SS}(\mcal{F})$ depends only on the 
-$C^{1}$-structure of $X$ \footnote{この一文ほぼ丸々引用の文だけどだい
-大丈夫?}
-, and the forgetful functor 
-$\psi_X \colon \opn{D}^{b}(A_X)\to \opn{D}^{b}(\Z_X)$
-preserves the microsupport of $\mcal{F}$ 
-\cite[Remark 5.1.5]{MR1299726}.
-
-\begin{example}
-If $M$ is a closed submanifold of $X$, then
-$\opn{SS}(A_{M\subset X})=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
-\end{example}
-For simplicity,
-$\opn{SS}(\mcal{F})_x\deq \opn{SS}(\mcal{F}) \cap T^{*}_x X$.
-From definition of the micro-support of sheaves, 
-$\opn{SS}(\mcal{F}|_{U})_x=\opn{SS}(\mcal{F})_x$
-for any open neighborhood $U$ of $x$.
 
 
 
@@ -2098,7 +2185,9 @@ vector spaces of $S$ at $x$. (See \cite[1.3]{mikhalkinTropicalEigenwaveIntermedi
 Since
 $\opn{LC}_x S\simeq 
 \opn{Lin}(\opn{LC}_x S)\times 
-(\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))$, we have
+(\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))$
+and 
+\cite[Proposition 5.4.1]{MR1299726}, we have
 \begin{align} 
 \opn{SS}(\opn{LC}_x S)_0\simeq \{0\}\times 
 \opn{SS}(\opn{LC}_x S/\opn{Lin}(\opn{LC}_x S))_0
@@ -4081,7 +4170,7 @@ T_{x}^{\mathbb{Z}} X\to T_{f(x)}^{\mathbb{Z}}Y$ is
 isomorphic.
 Then, $f_*[X]=\opn{cyc}_X(f_*1_{X_{\mathrm{reg}}})
 =m[\opn{cyc}_Y(1_{Y_{\mathrm{reg}}})]=m
-f_*[Y]$ from the commutative diagram of
+[Y]$ from the commutative diagram of
 tropical cycle maps and the definition of the pushforward
 of tropical cycles \cite[Definition 3.6]{gross2019sheaftheoretic}.
 In this case, $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.
@@ -4290,8 +4379,9 @@ the zero section transversely. We can see that
 $\sharp(L_{dq_s}\cap L_0)=|\det dq_s|$ directly, and thus
 we get \cref{equation-Hesse-RR}. 
 
-(ii) If $\det dq=0$, we can choose a smooth vector bundle $v$ on 
-$\check{X}(T)$ such that the one-time flow $\phi$ of $v$ make 
+(ii) If $\det dq=0$, we can choose a smooth vector field
+ $v$ on $\check{X}(T)$ such that the one-time flow 
+$\phi$ of $v$ make 
 $\phi(L_{dq_s})\cap L_0=\emp$. 
 Thus, $\chi(\opn{LMD}^{\bullet}(T,s))=0$.
 \end{proof}
@@ -4348,7 +4438,7 @@ positive real number $\vep >0$ and
 a Morse function $f$ on $B_0$, 
 $\chi(\opn{LMD}^{\bullet}(B_0,s))=
 \chi_{\opn{top}}(B_0)=0$ is 
-truly a special case of Poincar\'e--Hopf theorem for $B_0$.
+truly a special case of microlocal Poincar\'e--Hopf theorem for $B_0$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
   \cite{rau2020tropical}. This analogue is about tropical Euler characteristic
 $\chi_{\opn{trop}}(B_0)\deq 
@@ -4569,7 +4659,8 @@ has the following equations:
 \end{corollary}
 \begin{proof}
 Since 
-$\opn{SS}(F\boxtimes^{L} G)\subset \opn{SS}(F)\times \opn{SS}(G)$
+$\opn{SS}(F\boxtimes^{L} G)\subset 
+\opn{SS}(F)\times \opn{SS}(G)$
 \cite[Proposition 5.4.1]{MR1299726},
 $s\boxtimes s'$ is also admissible.
 
