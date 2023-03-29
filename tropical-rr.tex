@@ -1360,8 +1360,7 @@ $R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
 One of this is for easy to see the triple 
 $(\mcal{F}^{\bullet},f,x)$. 
 The other one is for emphasizing on analogy to
-Morse complexes.
-((モース複体との類似性は後で \cref{example-} にて見る。))
+Morse complexes, see \cref{example-poincare-hopf}.
 \item The name of local Morse data may be misleading.
 We don't assume $f$ satisfies some 
 "Morse condition" since
@@ -1735,68 +1734,61 @@ $\opn{Ext}^{\bullet}(\mcal{O}_X,\iota_*\mcal{O}_Z)$ for closed embedding of
 scheme.
 \end{example}
 
-\begin{example}[{cf. \cite[3.2]{MR3779558}}]
+\begin{example}[{cf. \cite[Exercise V.12]{MR1299726}}]
+\label{example-poincare-hopf}
 Let $U$ be an open neighborhood of the origin 
 $0\in \mathbb{R}^{n}$,
 $f\colon U\to \mathbb{R}$ be a smooth 
 function 
-with a unique isolated critical point at $0$ and 
-$S=\bar{B}(0,\varepsilon)$ a closed ball with radius 
-$\varepsilon >0$ at the origin and 
-$r(x)\deq \sum_{i=1}^{n}x_i^{2}-\varepsilon^{2}$.
-Then, from \cite[Proposition 5.3.3]{MR1299726}
-\begin{align}
-\opn{SS}((k_{U})_{\bar{B}(0,\varepsilon)})=
-\{(x;\lambda dr(x))\in T^*U\mid x\in \bar{B}(0,\varepsilon), 
-\lambda\in \mathbb{R}_{\geq 0}, \lambda r(x)=0\}.
-\end{align}
-
-Therefore, if $f|_{S}$ is 
-a Morse function on a smooth manifold with boundary except 
-at $0$, then $\{f=f(x)\}\cap S$ is a manifold with corners.
-Therefore, 
- by 
-\cite[Proposition 5.4.20]{MR1299726}
+with a unique isolated critical point at $0$. 
+From \cref{prop-local-morse-data},
+$\opn{LMD}^{\bullet}(A_U,f,0)\simeq 
+\opn{LMD}^{\bullet}(A_{B_{\varepsilon}(0)},
+f|_{B_{\varepsilon}(0)},0)\simeq 
+\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(0)},
+f|_{\bar{B}_{\varepsilon}(0)},0)$ 
+for a sufficiently small $\varepsilon \in \mathbb{R}_{>0}$.
+Fix $\varepsilon$ and an open inclusion of $j\colon U \to M$
+where $M$ is a compact smooth manifold,
+$x_0\deq j(0)$ and $K\deq j(\bar{B}_{\varepsilon}(0))$. 
+$S^{n}$ is a typical example of $M$.
+The sheaf $\mathcal{C}^{\infty}(M)$ of smooth functions 
+on $M$ is c-soft, so we can extend
+$f|_{\bar{B}_{\varepsilon}(0)}$ to 
+$f_0\in C^{\infty}(M)$.
+From \cref{prop-local-morse-data}, 
+$\opn{LMD}^{\bullet}(A_M,f_0,x_0)
+\simeq \opn{LMD}^{\bullet}(A_U,f,0)$.
+By Morse perturbation, we can deform 
+$f_0$ a smooth function $f_1$ such that 
+$f_0|_{K}=f_1|K$ and $f_1$ is nondegenerate except at 
+$x$. If $\opn{LMD}^{\bullet}(A_U,f,0)$ is 
+a finitely generated graded $A$-module,
+then we have
 \begin{align} \label{equation-local-poincare-hopf}
-\chi(H^{\bullet}(S;k))=
-\sum_{x\in \check{\pi}(\Lambda_f\cap 
-\opn{SS}((k_{U})_{\bar{B}(0,\varepsilon)}))\cap S(0,\varepsilon)}
-\chi(\opn{LMD}^{\bullet}(k_{S},f|_S,x))
-+\chi(\opn{LMD}^{\bullet}(k_{S},f|_S,0))=1.
+\chi(H^{\bullet}(M;A))=
+\chi(\opn{LMD}^{\bullet}(A_M,f_1,x_0))+
+\sum_{x\in \opn{Crit}(f_1)\setminus \{x_0\}}
+\chi(\opn{LMD}^{\bullet}(A_M,f_1,x)).
 \end{align}
-We can purturb $f$ with $\tilde{f}$ for a sufficiently 
-small compact neighborhood $K \subset S$ on such that 
-$\tilde{f}$ is a Morse function and 
-$\tilde{f}|_{U\setminus K}=f|_{U\setminus K}$.
-\cref{equation-local-poincare-hopf} for $\tilde{f}$
-induces 
+by \cite[Proposition 5.4.20]{MR1299726}.
+From Poincar\'e--Hopf theorem and 
+\cref{example-morse-index}, 
 \begin{align}
-\chi(\opn{LMD}^{\bullet}(k_{S},f|_S,0))
-=\sum_{x\in \opn{Crit}(\tilde{f})}
-\chi(\opn{LMD}^{\bullet}(k_{S},\tilde{f}|_S,x)).
+\opn{ind}_0^{A}(f)=
+\opn{ind}_x^{A}(f_1) =
+\opn{ind}_x^{\opn{PH}}(\opn{grad}(f_1))=
+\opn{ind}_0^{\opn{PH}}(\opn{grad}(f)). 
 \end{align}
-We already see 
-$\chi(\opn{LMD}^{\bullet}(k_{S},\tilde{f}|_S,x))$
-for $x\in \opn{Crit}(\tilde{f})$
-is equal to the Poincar\'e--Hopf index of 
-$\opn{grad}(\tilde{f})$ at $x$ in 
-\cref{example-morse-index}.
-Besides, the degree map 
-$\frac{\opn{grad}\tilde{f}}{|\opn{grad}\tilde{f}|}\colon 
-S_{\varepsilon}(0) \to S^{n-1}$ is 
-homotopic to $\frac{\opn{grad}f}{|\opn{grad}f|}\colon 
-S_{\varepsilon}(0) \to S^{n-1}$, so we get 
-\begin{align}
-\opn{ind}_x^{k}(f)=
-\sum_{x\in \opn{Crit}(\tilde{f})\cap K}
-\opn{ind}^{\opn{PH}}_x(\opn{grad}(\tilde{f}))=
-\opn{ind}^{\opn{PH}}_x(\opn{grad}(f)).
-\end{align}
-
+Here, $\opn{ind}^{\opn{PH}}_x(\opn{grad} f)$ is the 
+Poincar\'e--Hopf index of the gradient of $f$ 
+for a fixed Riemannian metric.
 We note
-$\opn{LMD}^{\bullet}(k_M,\tilde{f})$ is isomorphic
-to the graded module of a $k$-valued Morse complex
-of $\tilde{f}$.
+$\opn{LMD}^{\bullet}(A_M,\tilde{f})=
+\bigoplus_{x\in \opn{Crit}(\tilde{f})}
+\opn{LMD}^{\bullet}(A_M,\tilde{f},x)$ is isomorphic
+to the graded module of an $A$-valued Morse complex of 
+$\tilde{f}$ when $\tilde{f}$ is a Morse function.
 \end{example}
 
 
@@ -1912,22 +1904,10 @@ $f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$ is called
 the (negative) \emph{real Milnor fiber}.
 By Khimshiashvili [Him\v{s}ia\v{s}vili] formula \cite{MR0458467}, we have
 \begin{align} \label{equation-Khimshiashvili}
-  \opn{ind}_x(f)
+  \opn{ind}_x^{A}(f)
 =1-\chi(f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x))
-=\opn{ind}^{\opn{PH}}_{x}(\opn{grad} f).
+=\opn{ind}^{\opn{PH}}_{x}(\opn{grad}(f)).
 \end{align}
-Here, $\opn{ind}^{\opn{PH}}_x(\opn{grad} f)$ is the 
-Poincar\'e--Hopf index of the gradient of $f$ for the standard 
-inner product on ${\mathbb{R}}^{n}$.
-We can generalize the above for real analytic functions with 
-at most isolated singular points. 
-In this case, there exists the following \emph{special} symmetry:
-\begin{align}
-\chi(\opn{ind}_x(f))=
-(-1)^{\dim S}\chi(\opn{ind}_x(-f)).
-\end{align}
-This symmetry is not true if $S$ is not a manifold at $x$
-in general. 
 
 \end{example}
 
@@ -1943,7 +1923,7 @@ One of trivial but remarkable point is that
 |\opn{ind}_x(f|_S,0)|\neq |\opn{ind}_x(-f|_S,0)|
 \end{align}
 except for special cases such like
-\cref{example-milnor-morse-data}.
+\cref{example-poincare-hopf}.
 From \cref{example-local-cohomology},
 \cref{prop-local-morse-data} and
 \cref{example-fundamental-system}, we have
@@ -1955,8 +1935,8 @@ From \cref{example-local-cohomology},
 
 
 If $S$ is a purely $n$-dimensional Bergman fan, then 
-$\opn{LMD}^{\bullet}(\mathbb{Z}_S,-f|_S,x)\simeq 
-H^{n-1}(S\setminus\{x\};\mathbb{Z})[-n+1]$ since every Bergman fan has a good subdivision 
+$\opn{LMD}^{\bullet}(A_S,-f|_S,x)\simeq 
+H^{n-1}(S\setminus\{x\};A)[-n+1]$ since every Bergman fan has a good subdivision 
 \cite[Theorem 1]{MR2185977} and its link is shellable
 (e.g. \cite[7.9.1. Theorem]{MR1165544}).
 The vanishing property of the local cohomology is conjectured for
@@ -2709,7 +2689,7 @@ the condition $df(x')\in\sigma^{\bot}$ for all
 $x'\in U_x\cap O(\sigma)$ gives 
 $(df|_{U_{x}\setminus X_{\sigma}})^{\infty}\subset 
 -\overline{\Lambda}_{\sigma}^{\infty}$.
-In other words, the stratified Lagrangian submanifold 
+In other words, the stratified Lagrangian section 
 of a smooth Cartier divisor on a tropical toric variety
 can be considered as 
 an object of wrapped Fukaya category in the sense of
