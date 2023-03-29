@@ -1062,6 +1062,7 @@ We also impose the following assumption for simplicity in this paper:
 \item Any topological space is Hausdorff and
 locally compact unless otherwise specified.
 \item Any ring is a ring with unity.
+\item $A$ is a PID.
 \item We identify any ring $A$ with a constant sheaf on
 $\{\opn{pt}\}$ with fiber $A$.
 \item We identify any $A$-module with a sheaf of 
@@ -1317,7 +1318,7 @@ subset $V' (\ni v)$ of $S$ we get
 
 
 
-\subsection{Local index}
+\subsection{Local Morse data and index}
 
 The following stalk complex (or graded module) is 
 the most important notion
@@ -1341,11 +1342,8 @@ H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
 \mathcal{F}^{\bullet})).
 \end{align}
 
-Let $Y\deq \{x\in X\mid \}$
-
-
 The \emph{local Morse index} of $f$ at $x$ is the 
-following numbe if 
+following number if 
 $R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
 \in \opn{D}^{b}(\catn{mod}(A))$:
 \begin{align} \label{equation-local-index}
@@ -1603,9 +1601,27 @@ graded module of our sense and Floer complex of Lagrangian
 submanifolds.
 \end{remark}
 
-First, we recall about the micro-support of sheaves 
+\begin{notation}
+
+We denote $Y\deq 
+\{x\in X\mid \opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f,x)
+\not \simeq 0\}$ and set
+
+\begin{align}
+\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)\deq 
+\bigoplus_{x\in Y}
+\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f,x).
+\end{align}
+\end{notation}
+
+The graded module $\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)$
+behaves like the graded part of a Morse complex in Morse 
+homology when $X$ is a smooth manifold.
+
+Next, we recall about the micro-support of sheaves 
 from \cite{MR1299726}.
-Let $X$ be a real analytic manifold and let
+Let $X$ be a $C^{\alpha}$ manifold for
+$\alpha\in\{1,2,\ldots,\infty,\omega\}$ and let
 $\mcal{F}^{\bullet}\in\opn{Ob}(\opn{D}^{b}(A_X))$ and
 $\opn{SS}(\mcal{F}^{\bullet})$ 
 the micro-support of $\mcal{F}^{\bullet}$:
@@ -1646,34 +1662,54 @@ From definition of the micro-support of sheaves,
 $\opn{SS}(\mcal{F}|_{U})_x=\opn{SS}(\mcal{F})_x$
 for any open neighborhood $U$ of $x$.
 
+
+and $\check{\pi}_{X}\colon T^{*}X\to X$
+is the cotangent bundle. 
+
+
+
+The following condition is useful.
 \begin{condition}[{\cite[Proposition 5.4.20]{MR1299726}}]
-Let $X$ be a 
+\label{condition-global-morse}
+Let $X$ be a smooth manifold,
+$\mathcal{F}^{\bullet}\in \opn{D}^{b}(A_X)$,
+and $f\colon X\to \mathbb{R}$ a smooth function.
+The pair $(\mathcal{F}^{\bullet},f)$ satisfies
+\begin{enumerate}
+\item for all $t\in \mathbb{R}$, 
+$\{x\in\opn{supp}(\mathcal{F}^{\bullet})\mid f(x)\leq t\}$ 
+is compact,
+\item $\sharp (\Lambda_f\cap \opn{SS}(\mathcal{F}^{\bullet}))
+<\infty$ where $\Lambda_f$ is the image of 1-form 
+$df\colon X\to T^{*}X$,
+\item the graded module 
+$\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)$ 
+is finitely generated.
+
+
+
+\end{enumerate}
+
 \end{condition}
 
-Let 
 
-\begin{align}
-\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)\deq 
-\bigoplus_{x\in \check{\pi}_{M}(
-\Lambda_f\cap \opn{SS}(\mathcal{F}^{\bullet}))}
-\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f,x)
-\end{align}
+
+
+
 
 
 \begin{proposition}[{\cite[Proposition 5.4.20]{MR1299726}}]
-Let $X$ be a 
-
+Under the \cref{condition-global-morse}, 
 \begin{align}
 \chi(H^{\bullet}(X;\mathcal{F}^{\bullet}))=
-\chi (\bigoplus_{x\in \check{\pi}_{M}(
-\Lambda_f\cap \opn{SS}(\iota_*\mathcal{F}^{\bullet}))}
-\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f,x))
+\chi (\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)).
 \end{align}
 
 \end{proposition}
 This proposition can be considered as the intersection 
 of two Lagrangian cycles in $T^{*}X$ when 
-$\mathcal{F}$ is an constructible sheaves,
+$\mathcal{F}^{\bullet}$ is a complex of 
+constructible sheaves,
 see \cite[Corollary 9.5.2,Theorem 9.5.6]{MR1299726}.
 This is called the microlocal index formula or Kashiwara's 
 index formula.
@@ -1706,12 +1742,12 @@ $f\colon U\to \mathbb{R}$ be a smooth
 function 
 with a unique isolated critical point at $0$ and 
 $S=\bar{B}(0,\varepsilon)$ a closed ball with radius 
-$\epsilon >0$ at the origin and 
+$\varepsilon >0$ at the origin and 
 $r(x)\deq \sum_{i=1}^{n}x_i^{2}-\varepsilon^{2}$.
 Then, from \cite[Proposition 5.3.3]{MR1299726}
 \begin{align}
-\opn{SS}((k_{U})_{\bar{B}(0,\epsilon)})=
-\{(x;\lambda dr(x))\in T^*U\mid x\in \bar{B}(x,\epsilon), 
+\opn{SS}((k_{U})_{\bar{B}(0,\varepsilon)})=
+\{(x;\lambda dr(x))\in T^*U\mid x\in \bar{B}(0,\varepsilon), 
 \lambda\in \mathbb{R}_{\geq 0}, \lambda r(x)=0\}.
 \end{align}
 
@@ -1724,7 +1760,7 @@ Therefore,
 \begin{align} \label{equation-local-poincare-hopf}
 \chi(H^{\bullet}(S;k))=
 \sum_{x\in \check{\pi}(\Lambda_f\cap 
-\opn{SS}((k_{U})_{\bar{B}(0,\epsilon)}))\cap S(0,\epsilon)}
+\opn{SS}((k_{U})_{\bar{B}(0,\varepsilon)}))\cap S(0,\varepsilon)}
 \chi(\opn{LMD}^{\bullet}(k_{S},f|_S,x))
 +\chi(\opn{LMD}^{\bullet}(k_{S},f|_S,0))=1.
 \end{align}
@@ -1752,11 +1788,15 @@ homotopic to $\frac{\opn{grad}f}{|\opn{grad}f|}\colon
 S_{\varepsilon}(0) \to S^{n-1}$, so we get 
 \begin{align}
 \opn{ind}_x^{k}(f)=
-\sum_{x\in \opn{Crit}(\tilde{f})}
+\sum_{x\in \opn{Crit}(\tilde{f})\cap K}
 \opn{ind}^{\opn{PH}}_x(\opn{grad}(\tilde{f}))=
 \opn{ind}^{\opn{PH}}_x(\opn{grad}(f)).
 \end{align}
 
+We note
+$\opn{LMD}^{\bullet}(k_M,\tilde{f})$ is isomorphic
+to the graded module of a $k$-valued Morse complex
+of $\tilde{f}$.
 \end{example}
 
 
@@ -1828,8 +1868,8 @@ with boundary:
 \begin{align}
 &(\bar{B}_{\varepsilon}^{n}(x)\setminus \{x\}, 
  \bar{B}_{\varepsilon}^{n}(x)\cap \{f=f(x)\} \setminus \{x\}) \\ 
-\simeq & ((0,\epsilon] \times S_{\varepsilon}^{n-1}(x),
-(0,\epsilon] \times
+\simeq & ((0,\varepsilon] \times S_{\varepsilon}^{n-1}(x),
+(0,\varepsilon] \times
 (S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\})). \notag
 \end{align}
 The proof of relative version of Ehresmann's lemma is 
@@ -1943,7 +1983,6 @@ polyhedral spaces}
 We recall about line bundles on 
 rational polyhedral spaces and mention the notion of
 \emph{smooth Cartier divisor}.
-
 We mainly follow 
 from \cite{MR3903579,gross2019sheaftheoretic}.
 
@@ -1963,7 +2002,7 @@ Every isomorphism class of
 tropical line bundles on $B$ is parametrized by 
 $H^{1}(B;\mathcal{O}^{\times}_B)$
 \cite[Proposition 3.13]{gross2019sheaftheoretic}.
-The group $H^{1}(B, \mcal{O}^{\times}_B))$ is called 
+The group $H^{1}(B;\mcal{O}^{\times}_B))$ is called 
 the \emph{Picard group} of $B$.
 There exists the following exact sequence:
 \begin{align}
@@ -2075,12 +2114,9 @@ In this subsection, we define
 the \emph{admissibility condition} for
 smooth Cartier divisors on rational 
 polyhedral spaces.
-We need to the notion of 
-the micro-support of sheaves in order to define it.
-
-
-
-
+We will define an analog of a Morse complex
+without differential for admissible divisors 
+later.
 
 Fix a polyhedral set $S$ 
 in $\mathbb{R}^{n}$.
@@ -2331,32 +2367,50 @@ s'\cap s\deq \set{x\in S \mid  df_i(x)\in
 The set $s'\cap s$ is independent of the choice of 
 a local smooth Cartier data for $s-s'$. 
 
-%TODO: 下の節に移動
+\subsection{Stratified torus fibration}
+\label{section-stratified-torus-fibration}
+We will explain the set $s'\cap s$ is the 
+intersection of two `Lagrangian sections' of
+stratified torus fibration in the next subsection.
+We can skip this subsection for following 
+our main theorem.  
 
+Let $S$ be a rational polyhedral space satisfying
+\cref{condition-Rn}.
+We can define a naive analog of Lagrangian torus 
+fibration 
+$\bigcup_{x\in S}(\mathcal{F}^{1}_{S})_x/
+(\mathcal{F}^{1}_{\mathbb{Z},S})_x \to S$
+for $S$. Instead of this fibration, 
+we define (the underlying set of) 
+another torus fibration as follows. 
 \begin{definition}[{Stratified torus fibration}]
 Let $S$ be a compact rational polyhedral space 
 satisfying \cref{condition-Rn}.
 Let $\check{X}(S)_x$ be 
 the real torus defined as follows:
 \begin{align}
-\check{X}(S)_x\deq  
-((\mathcal{F}_{\mathbb{Z},S,x}^{1}/\opn{span}_{{\mathbb{R}}}
-(\opn{SS}(S)_x))\cap \mathcal{F}_{\mathbb{Z},S,x}^{1})\otimes_{\Z} {\mathbb{R}}/\Z.
+\check{X}_0(S)_x\deq  
+(\mathcal{F}_{\mathbb{Z},S,x}^{1}/\opn{span}_{{\mathbb{R}}}
+(\opn{SS}(S)_x)\cap \mathcal{F}_{\mathbb{Z},S,x}^{1})\otimes_{\Z} {\mathbb{R}}/\Z.
 \end{align}
-We call the union $\check{X}(S)\deq \bigcup_{x\in S}\check{X}(S)_x$
+We call the union $\check{X}_0(S)\deq \bigcup_{x\in S}
+\check{X}_0(S)_x$
 the underlying set of the \emph{stratified torus 
 fibration} of $S$.
-
+\end{definition}
 We won't pursue about
-topological structures of $\check{X}(S)$ 
+topological structures of $\check{X}_0(S)$ 
 here.
 
 \begin{example}
 
 \begin{enumerate}
+\item If $B_0$ is an integral affine manifold, then
+$\check{X}_0(B_0)$ is equal to $\check{X}(B_0)$ as a set.
 \item 
 Let $C$ be a compact trivalent tropical curve.
-The stratified torus fibration $\check{X}(C)$ is equal to 
+The stratified torus fibration $\check{X}_0(C)$ is equal to 
 the stratified space associated
 with a trivalent metric graph defined in \cite{auroux2022lagrangian}
 as a set.
@@ -2364,39 +2418,89 @@ as a set.
 
 \end{example}
 
-Let $s$ be a smooth 
-Cartier divisor on $S$ and $\{(U_i,f_i)\}_{i\in I}$ a local
-smooth Cartier data of $s$. 
-The stratified Lagrangian section of $s$ is the image of the 
-differential  $\{df_i(x)\}_{i\in I}$ in $\check{X}(S)$
-by the caonical fiberwise projection 
-$\opn{pr}_x\colon \mathcal{F}_{S,x}^{1}
-\to \mathcal{F}_{S,x}^{1}/\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x) \to \check{X}(S)_x$ for any $x\in S$.
-This construction is well-defined since there exists 
-the following equation: 
+Let $\check{f}_S\colon \check{X}_0(S)\to S$ be the 
+canonical projection of stratified torus fibration of $S$.
+
+We recall the following elementary proposition 
+in order to define `Lagrangian section' for $\check{f}_S$.
+
+\begin{proposition}
+
+Let $M$ (resp. $N$) be a $\mathbb{Z}$-module and
+$i\colon M'\to M$ (resp. $j\colon N'\to N$) be the 
+inclusion map of submodules, and 
+$\opn{pr}\colon M\otimes_{\mathbb{Z}}N \to M/M'\otimes_{\mathbb{Z}} N/N'$
+is the canonical projection map induced from the following
+commutative diagram:
+\begin{equation}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFkAdTiPAW3gB9YNz50cACwBGU4AC0AvgoByIBaXSZc+QigCM5KrUYs27APTsA5N15YBcYaPHTZilWo0gM2PASIGekb0zKyIHJY2PPxCIpxikjLySsrmylaemr46RGRB1CGm4VzR9rHOiW4paRkKRjBQAObwRKAAZgBOEHxIZCA4EEgAzOrtXT2IQ9QDSABMoyCd3UgG-YOI815LE30ziHp1CkA
+\begin{tikzcd}
+M\otimes_{\mathbb{Z}}N \arrow[d] \arrow[r] & M/M'\otimes_{\mathbb{Z}}N \arrow[d] \\
+M\otimes_{\mathbb{Z}}N/N' \arrow[r]        & M/M'\otimes_{\mathbb{Z}}N/N'.       
+\end{tikzcd}
+\end{equation}
+Then, 
+\begin{align}
+\opn{pr}^{-1}(0)=\opn{Im}(i\otimes_{\mathbb{Z}}\opn{id}_N)+
+\opn{Im}(\opn{id}_M\otimes_{\mathbb{Z}}j).
+\end{align}
+\end{proposition}
+
+From the above proposition,
+the canonical projection
+$\opn{pr}_{S,x}\colon (\mathcal{F}_{S}^{1})_x\simeq 
+(\mathcal{F}_{S}^{1})_x\otimes_{\mathbb{Z}}\mathbb{R}
+\to \check{X}_0(S)_x$ satisfies 
 \begin{align}
 \label{equation-torus-fiber}
-\opn{pr}_x^{-1}(0)
+\opn{pr}_{S,x}^{-1}(0)
 =\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)+
-(\mathcal{F}^{1}_{\mathbb{Z},S})_x.
+(\mathcal{F}^{1}_{\mathbb{Z},S})_x
 \end{align}
+for all $x\in S$.
 
-Let $\check{\pi}_S\colon \check{X}(S)\to S$ be the 
-canonical projection of stratified torus fibration of $S$.
-Let $(s',s)$ be an admissible smooth Cartier pair and 
-$\{(U_i,f_i)\}_{i\in I}$ the local smooth Cartier data of $s-s'$.
-
-From the admissibility condition and
-\cref{equation-torus-fiber}, we have
+\begin{definition}
+Let $s$ be a smooth 
+Cartier divisor on $S$ and $\{(U_i,f_i)\}_{i\in I}$ a local
+smooth Cartier data for $s$. 
+The Lagrangian section associated with $s$ is the following
+section of $\check{f}_S$:
 \begin{align}
-\check{\pi}_S(L_{s'}\cap L_s)=s'\cap s.
+\check{s}\colon S \to \check{X}_0(S); x \mapsto \opn{pr}_{S,x} (df_i(x)).
 \end{align}
 \end{definition}
-If $B_0$ is an integral affine manifold, then
-$\check{X}(B_0)$ is equal to the classical one as a set. 
+
+The $\check{s}$ is independent of the choice of local 
+smooth Cartier data for $s$ since 
+$(\mathcal{F}^{1}_{S})_x/(\mathcal{F}^{1}_{\mathbb{Z},S})_x$
+is naturally isomorphic to
+$(\mathcal{F}^{1}_{\mathbb{Z},S})_x
+\otimes_{\mathbb{Z}}\mathbb{R}/\mathbb{Z}$.
+ 
+
+From the admissibility condition and
+\cref{equation-torus-fiber}, we get the following proposition.
+
+\begin{proposition}
+Let $(s',s)$ be an admissible smooth Cartier pair, 
+$\{(U_i,f_i)\}_{i\in I}$ the local smooth Cartier data 
+for $s-s'$ and $L_s\deq \opn{Im}(\check{s})$.
+Then,
+\begin{align}
+\check{f}_S(L_{s'}\cap L_s)=s'\cap s.
+\end{align}
+
+\end{proposition}
 
 
-In this paper, we
+
+
+
+
+ 
+\subsection{Local Morse data for admissible divisors}
+
+In this subsection, we
 define the graded module of a given admissible pair 
 $(s',s)$ of smooth Cartier divisor such that 
 $\sharp (s'\cap s)<\infty$.
@@ -2434,7 +2538,7 @@ be an intersection data for $s$.
 We set
 \begin{align}
 \opn{LMD}^{\bullet}_{A}(s',s)\deq 
-\bigoplus_{x\in s' \cap s} 
+\bigoplus_{p\in s' \cap s} 
 \opn{LMD}^{\bullet}(A_{U_p},f_{p},p), \quad 
 \opn{LMD}^{\bullet}(s',s)
 \deq \opn{LMD}^{\bullet}_{\mathbb{Z}}(s',s)\\
@@ -2444,8 +2548,6 @@ We set
 \opn{LMD}^{\bullet}_{\mathbb{Z}}(S;s).
 \end{align}
 \end{definition}
-
-We defined the 
 
 \begin{remark}
 \label{remark-differential-graded-module}
@@ -2554,20 +2656,20 @@ affine manifold with a Hessian form in the
 rest of this paper.
 
 \begin{remark}
-Obviously, $\opn{LMD}^{\bullet}(S;s,A)$ is not usually 
+Obviously, $\opn{LMD}^{\bullet}(S;s)$ is not usually 
 finitely generated and this is not invariant 
 for linearly equivalent smooth Cartier divisors
 if $S$ is not compact.
 This corresponds that Morse homology does not work directly
 for non-compact manifolds such 
 like for compact manifolds.
-Besides, $\chi(\opn{LMD}^{\bullet}(S;s,A))$ is \emph{not}
+Besides, $\chi(\opn{LMD}^{\bullet}(S;s))$ is \emph{not}
 an invariant for line bundles for general compact rational 
 polyhedral spaces. See also 
 \cref{remark-rotation-closed-interval}.  
 \end{remark}
 
-\begin{remark}
+\begin{remark}[*]
 
 We add some comments for the reason 
 why we assume \cref{condition-Rn} for simplicity.
@@ -2619,6 +2721,7 @@ and Morse categorical approach of moment polytopes
 We will discuss it in detail in the future.
 
 Our tropical Lagrangian section for toric varieties is 
+(a little bit)
 different from that of \cite{MR2240909,MR2529936}.
 See also \cite[Appendix C.2.]{MR2871160} for relationships
 between \cite{MR2871160} and \cite{MR2240909,MR2529936}.
@@ -2629,7 +2732,7 @@ $\opn{Fuk}(T^{*}M_{{\mathbb{R}}}/M;\overline{\Lambda}_{\Sigma})$
 is finally solved by the results in \cite{MR4132582}.
 \end{remark}
 
-\begin{remark}[{Ehrhart reciprocity revisit}]
+\begin{remark}[{*Ehrhart reciprocity revisit}]
 Let $s$ be an admissible smooth Cartier divisor on 
 tropical toric varieties in the sense of the above Remark.
 $\chi(X_{\Sigma},-s,A)=(-1)^{n}\sharp (\opn{int}(\mu_s(X_{\Sigma}))\cap \Z^{n})$ since
@@ -2817,7 +2920,7 @@ We set the following spaces:
 \check{X}_0(C)\deq \check{X}(C_0)\sqcup_{i,s}C.
 \end{align}
 Obviously, $\check{X}_0(C)$ has a canonical projection
-$\check{\pi}_C \colon \check{X}_0(C)\to C$.
+$\check{f}_C \colon \check{X}_0(C)\to C$.
 \end{definition}
 
 \begin{example}
@@ -2848,6 +2951,9 @@ This automorphism can be visualized as the 180-degree rotation of the
 cylinder.
 \end{example}
 
+The following proposition is a repeative work of
+\cref{section-stratified-torus-fibration}.
+
 \begin{proposition}[{continuous sections}]
 \label{proposition-admissible-section}
 Let $s$ be an admissible Cartier divisor 
@@ -2857,23 +2963,23 @@ Then,
 \begin{enumerate}
 \item There exists the following continuous map:
 \begin{align}
-s'\colon C\to \check{X}_0 (C); x\mapsto (x,df_{i}(x))
+\check{s}\colon C\to \check{X}_0 (C); x\mapsto (x,\opn{pr}_{C,x}(df_{i}(x)))
 \end{align}
-\item If $s_0'\colon C\to \check{X}_0 (C)$ be the 
-zero section, then $s_0\cap s=\check{\pi}_C(s_0'\cap s')$.
+\item If $\check{s}_0\colon C\to \check{X}_0 (C)$ be the 
+zero section, then $s_0\cap s=\check{\pi}_C(\check{s}_0\cap \check{s})$.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
 \begin{enumerate}
-\item First, we check $s'$ is well-defined.
+\item First, we check $\check{s}$ is well-defined.
 Choose $(U_i,f_i)$ and $(U_j,f_j)$ such that
 $U_i\cap U_j\neq \emp$. 
 Then, $df_i(x)-df_j(x)\in 
 (\mathcal{F}_{\mathbb{Z},C}^{1})_x$ and
 $df_i(x)\in (\mathcal{F}_{\mathbb{Z},C}^{1})_x$
 from \cref{proposition-admissible-curve} (2).
-Therefore, the construction of $s'$ is well-defined.
-$s'$ is continuous, obviously.
+Therefore, the construction of $\check{s}$ is well-defined.
+$\check{s}$ is continuous, obviously.
 \item Omit.
 \end{enumerate}
 \end{proof}
@@ -2921,9 +3027,9 @@ $s'$ on $C$
 
 $C_0$ is an integral affine manifold, 
 and thus $C_0$ has a standard Lagrangian torus fibration
-$\check{\pi}_{C_0}\colon \check{X}(C_0)\to C_0$ and
+$\check{f}_{C_0}\colon \check{X}(C_0)\to C_0$ and
 a dual torus fibration 
-$\pi_{C_0}\colon X(C_0)\to C_0$,
+$f_{C_0}\colon X(C_0)\to C_0$,
 (see \cref{definition-integral-affine-manifold}
 and \cref{definition-SYZ-torus-fibration}).
 
@@ -3022,7 +3128,8 @@ D_s=\{(f_j-f_i)\}_{i,j\in I}
 \end{align}
 
 \begin{proposition}
-Let $s$ be an admissible smooth Cartier divisor on $C$.
+Let $s$ be an admissible smooth Cartier divisor on
+a compact tropical curve $C$.
 \label{equation-rotation-number}
 \begin{align}
 \opn{rot}(s)=\opn{deg}(D_s)(=\int_{C} c_1(D_s)).
