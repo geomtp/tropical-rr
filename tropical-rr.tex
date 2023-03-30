@@ -1384,17 +1384,6 @@ this reason.
 \end{enumerate}
 \end{remark}
 
-We mostly 
-want to use the local Morse index in this paper,
-so we assume the following condition
-
-\begin{condition}[{finitely generated condition}]
-The triple $(\mathcal{F}^{\bullet},f,x)$ satisfies
-that $(R\Gamma_{\{f\geq f(x)\}}(\mathcal{F}^{\bullet}))_x$ 
-is in $\opn{D}^{b}(\catn{mod}(A))$.
-\end{condition}
-
-
 Before we see some important examples of cohomological
 local Morse datum, we will see some elementary
 properties of them.
@@ -1667,10 +1656,10 @@ is the cotangent bundle.
 
 
 
-The following condition is useful.
+The following condition and proposition is also important.
 \begin{condition}[{\cite[Proposition 5.4.20]{MR1299726}}]
 \label{condition-global-morse}
-Let $X$ be a smooth manifold,
+Let $X$ be a smooth manifold, $A$ a PID, 
 $\mathcal{F}^{\bullet}\in \opn{D}^{b}(A_X)$,
 and $f\colon X\to \mathbb{R}$ a smooth function.
 The pair $(\mathcal{F}^{\bullet},f)$ satisfies
@@ -1714,23 +1703,23 @@ This is called the microlocal index formula or Kashiwara's
 index formula.
 \begin{example}
 Let $M$ be a compact integral affine manifold and $S$  
-a compact rational polyhedral subspace in $M$. 
-Let $f\colon M \to \mathbb{R}$ be a smooth function on
-satisfying 
-
+a compact rational polyhedral subspace in $M$ and 
+$\iota\colon S\hookto M$ the inclusion map of $S$. 
+Let $f\colon M \to \mathbb{R}$ be a smooth function such
+that the pair $(\iota_*\mathbb{R}_S,f)$ satisfies 
+\cref{condition-global-morse}:
 \begin{align}
-\chi(H^{\bullet}(M;\iota_*k_S))
-=\chi(\bigoplus_{x\in \check{\pi}_{M}(\Lambda_f\cap \opn{SS}(\iota_*k_S))} \opn{LMD}^{\bullet}(k_S,f,x))
-=\sharp (\opn{CC}(k_M)\cap \opn{CC}(\iota_* k_S)).
+\chi(H^{\bullet}(M;\iota_*\mathbb{R}_S))
+=\chi(\opn{LMD}(\iota_*\mathbb{R}_S,f))
 \end{align}
 for any smooth function $f\colon M\to \mathbb{R}$.
 Therefore, this is a certain sheaf theoretic version of 
 Poincar\'e--Hopf theorem for some polyhedral spaces. Under
-the philosophy of this paper, $H^{\bullet}(M;\iota_*A_S)\simeq 
-\opn{Ext}^{\bullet}(A_M,\iota_*A_S)$
+the \cref{observation-tropical-euler}, 
+$H^{\bullet}(M;\iota_*k_S)$
  should be considered as a
 certain analog of 
-$\opn{Ext}^{\bullet}(\mcal{O}_X,\iota_*\mcal{O}_Z)$ for closed embedding of 
+$H^{\bullet}(X;\iota_*\mcal{O}_Z)$ for closed embedding of 
 scheme.
 \end{example}
 
@@ -1748,7 +1737,8 @@ f|_{B_{\varepsilon}(0)},0)\simeq
 \opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(0)},
 f|_{\bar{B}_{\varepsilon}(0)},0)$ 
 for a sufficiently small $\varepsilon \in \mathbb{R}_{>0}$.
-Fix $\varepsilon$ and an open inclusion of $j\colon U \to M$
+Fix $\varepsilon$ and an open smooth 
+inclusion of $j\colon U \to M$
 where $M$ is a compact smooth manifold,
 $x_0\deq j(0)$ and $K\deq j(\bar{B}_{\varepsilon}(0))$. 
 $S^{n}$ is a typical example of $M$.
@@ -1761,7 +1751,7 @@ $\opn{LMD}^{\bullet}(A_M,f_0,x_0)
 \simeq \opn{LMD}^{\bullet}(A_U,f,0)$.
 By Morse perturbation, we can deform 
 $f_0$ a smooth function $f_1$ such that 
-$f_0|_{K}=f_1|K$ and $f_1$ is nondegenerate except at 
+$f_0|_{K}=f_1|_K$ and $f_1$ is nondegenerate except at 
 $x$. If $\opn{LMD}^{\bullet}(A_U,f,0)$ is 
 a finitely generated graded $A$-module,
 then we have
@@ -1774,7 +1764,7 @@ then we have
 by \cite[Proposition 5.4.20]{MR1299726}.
 From Poincar\'e--Hopf theorem and 
 \cref{example-morse-index}, 
-\begin{align}
+\begin{align} \label{equation-poincare-hopf}
 \opn{ind}_0^{A}(f)=
 \opn{ind}_x^{A}(f_1) =
 \opn{ind}_x^{\opn{PH}}(\opn{grad}(f_1))=
@@ -2443,7 +2433,7 @@ for all $x\in S$.
 Let $s$ be a smooth 
 Cartier divisor on $S$ and $\{(U_i,f_i)\}_{i\in I}$ a local
 smooth Cartier data for $s$. 
-The Lagrangian section associated with $s$ is the following
+The \emph{stratified Lagrangian section} associated with $s$ is the following
 section of $\check{f}_S$:
 \begin{align}
 \check{s}\colon S \to \check{X}_0(S); x \mapsto \opn{pr}_{S,x} (df_i(x)).
@@ -2813,28 +2803,37 @@ vector space of $C$
 
 \begin{proposition}
 \label{proposition-admissible-curve}
-Let $\Sigma$ be the support of a $1$-dimensonal 
-finite convex polyhedral fan $\mathbb{R}^{n}$ such that
+Let $|\Sigma|$ be the support of a $1$-dimensonal 
+finite convex polyhedral fan $\Sigma$ $\mathbb{R}^{n}$ such that
 $\Sigma$ spans $\mathbb{R}^{n}$.
-Let $f\colon \Sigma\to \mathbb{R}$ be a 
-$(0,0)$-superform on $\Sigma$. Then, 
+Let $f\colon |\Sigma|\to \mathbb{R}$ be a 
+$(0,0)$-superform on $|\Sigma|$. Then, 
 $f$ is admissible at $x=(0,\ldots,0)$ if and only if 
-$df(x)\in (\mathcal{F}^{1}_{\mathbb{Z},\Sigma})_x\simeq (\mathbb{Z}^{n})^{\vee}$
-or $\opn{Lin}(\Sigma,x)\simeq \mathbb{R}$.
+$df(x)\in (\mathcal{F}^{1}_{\mathbb{Z},|\Sigma|})_x\simeq (\mathbb{Z}^{n})^{\vee}$
+or $\opn{Lin}(|\Sigma|,x)\simeq \mathbb{R}$.
 
 \end{proposition}
 
 \begin{proof}
-Obviously, $\opn{dim}_{\mathbb{R}}\opn{Lin}(\Sigma,x)=0$.
-Let $x_i^{*}$ be the $i$-th dual linear form on 
-$\mathbb{R}^{n}$ for the standard coordinate system on 
-$\mathbb{R}^{n}$ and 
-$h=\sum_{i=1}^{n} a_i x^{*}_i$ be a linear form
-such that $a_i<0$ for any $a_i$.
-Then, the lower set $\Gamma_{n+1}\cap \{h< 0\}$ is disconnected.
+Obviously, 
+$\opn{dim}_{\mathbb{R}}\opn{Lin}(|\Sigma|,x)\leq 1$.
+If $\opn{dim}_{\mathbb{R}}\opn{Lin}(|\Sigma |,x)=1$, 
+then $|\Sigma | \simeq \mathbb{R}$. 
+From now on, we assume $\dim_{\mathbb{R}}\opn{Lin}(|\Sigma|,x)=0$.
+Fix a vector $v_{\sigma}$ for $\sigma\in \Sigma \setminus\{0\}$ 
+such that $\opn{span}_{\mathbb{R}}(v_{\sigma})=\sigma$.
+We can choose a basis $\{v_{\sigma_i}\}_{i=1,\ldots, n}$ 
+from $\{v_{\sigma}\}_{\sigma \in \Sigma}$,
+and a linear form
+$h=\sum_{\sigma \in \Sigma \setminus\{0\}} a_\sigma v^{*}_\sigma$
+such that $a_\sigma<0$ for any 
+$\sigma \in \Sigma \setminus\{0\}$.
+Then, the lower set $|\Sigma|\cap \{h< 0\}$ is disconnected
+when $n\geq 2$. If $n=1$, $|\Sigma|\cap \{-h<0\}$ is 
+empty.
 Thus, 
-$\opn{span}_{\mathbb{R}}(\opn{SS}(\mathbb{Z}_{S\subset X})_x)
-=\mathbb{R}^{n}$ where $X=\mathbb{R}^{n}$ and $S=\Sigma$.
+$\opn{span}_{\mathbb{R}}(\opn{SS}((\mathbb{Z}_{X})_S)_x)
+=\mathbb{R}^{n}$ where $X=\mathbb{R}^{n}$ and $S=|\Sigma|$.
 \end{proof}
 
 
@@ -2937,13 +2936,14 @@ The following proposition is a repeative work of
 \begin{proposition}[{continuous sections}]
 \label{proposition-admissible-section}
 Let $s$ be an admissible Cartier divisor 
-$s=\{(U_i,f_i)\}_{i\in I}$ on a tropical curve with 
-no $1$-valent vertex. 
+$s=\{(U_i,f_i)\}_{i\in I}$ on a tropical curve 
+$C$ with no 1-valent vertex. 
 Then, 
 \begin{enumerate}
 \item There exists the following continuous map:
 \begin{align}
-\check{s}\colon C\to \check{X}_0 (C); x\mapsto (x,\opn{pr}_{C,x}(df_{i}(x)))
+\check{s}\colon C\to \check{X}_0 (C); x
+\mapsto (x,\opn{pr}_{C,x}(df_{i}(x))).
 \end{align}
 \item If $\check{s}_0\colon C\to \check{X}_0 (C)$ be the 
 zero section, then $s_0\cap s=\check{\pi}_C(\check{s}_0\cap \check{s})$.
@@ -4091,6 +4091,8 @@ Rf_!\psi \circ b_{f}^{p}[q]\in
 \mathcal{F}^{p}_{\mathbb{Z},Y}[q],\upomega_Y^{\bullet}).
 \end{align}
 
+\begin{example}
+
 If $p=0$, $q=0$ and $f=a_X$, 
 then $b^{0}_{a_X}$ is just a counit for 
 the adjoint $a^{-1}_X\dashv Ra_{X*}$.
@@ -4101,13 +4103,19 @@ with $\opn{Hom}_{D(\mathbb{Z})}(\mathbb{Z},\opn{Tr}_{a_X,\mathbb{Z}})$
 by the adjoint isomorphism
 $\opn{Hom}_{D(\mathbb{Z}_X)}(a_X^{-1}\mathbb{Z},
 \upomega_X^{\bullet})\simeq 
-\opn{Hom}_{D(\mathbb{Z})}(\mathbb{Z},Ra_{X*}\upomega_X^{\bullet})$. 
+\opn{Hom}_{D(\mathbb{Z})}(\mathbb{Z},Ra_{X*}\upomega_X^{\bullet})$
 if $a_X$ is proper.
+
+\end{example}
+
 Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
 morphism of rational polyhedral spaces.
 Then, $f_*\circ g_*=(f\circ g)_*$ from 
 \cref{equation-trace}.
 
+Tropical cohomology and tropical Borel--Moore homology 
+also have cap product 
+\cite[\textsection 4.6]{gross2019sheaftheoretic}:
 \begin{align}
 \cdot \frown \cdot \colon
 H^{i,j}(X;\mathbb{Z}) \times 
@@ -4482,8 +4490,8 @@ a special case of \cite{MR4301560}.
 Let $s$ be a smooth local Cartier divisor on $B_0$ and 
 $\{(U_i,f_i)\}_{i\in I}$ a local smooth Cartier 
 data of $s$ such that $\sharp (s_0\cap s)<\infty$ and
-every $f_i$ satisfies \cref{condition-local-analytic}.
-Then, the equation holds for $s$.
+every $(A_{U_i},f_i)$ satisfies \cref{condition-global-morse}.
+Then, the \cref{equation-Hesse-RR} holds for $s$.
 \end{corollary}
 
 \begin{proof}
@@ -4494,8 +4502,8 @@ such that $s'$ has a local smooth Cartier data
 $\{(U_i,\tilde{f}_i)\}_{i\in I}$ satisfying 
 $\tilde{f}_i$ is Morse, and 
 $f_i(x)=\tilde{f}_i(x)$ for the complement of 
-sufficiently small neighborhoods of $L_0\cap L_s$. 
-From \cref{equation-Khimshiashvili}, we have
+sufficiently small neighborhoods of $s_0\cap s$. 
+From \cref{equation-poincare-hopf}, we have
 $\chi(\opn{LMD}^{\bullet}(B_0,s))
 =\chi(\opn{LMD}^{\bullet}(B_0,s'))$.
 \end{proof}
@@ -4630,8 +4638,7 @@ Floer complex.
 Therefore, every pair $(L_1,L_2)$ of Lagrangian section
 of $B_0$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
 Floer cohomology $\opn{HF}^{\bullet}(\mathscr{L}_1,
-\mathscr{L}_2)$. 
-Therefore, its Euler number is equal to the intersection of 
+\mathscr{L}_2)$, and its Euler number is equal to the intersection of 
 $L_1$ and $L_2$ (up to signature). We can 
 see this fact from \cite[Remark 13]{MR1882331} directly.
 Therefore, if $L_s$ and $L_s'$ interesects 
