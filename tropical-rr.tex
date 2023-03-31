@@ -903,12 +903,11 @@ of a tropical analog of HRR.
 Let $B$ be a purely $n$-dimensional compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
 $\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
- Let $s$ be a "generic"
-extended smooth Cartier divisor satisfying an admissible condition 
+ Let $s$ be an admissible weak-smooth Cartier divisor satisfying an admissible condition 
 \cref{cond: admissible} which represents of $\mcal{L}$
 and its graded $\Z$-module $\opn{LMD}^{\bullet}(B;s)$
-of it.
-Then,
+of it. If $\opn{LMD}^{\bullet}(B;s)$ is bounded and 
+finitely generated, then
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(B;s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
 \end{align}
@@ -932,9 +931,11 @@ Let $C$ (resp. $B$) be a compact tropical curve $C$
 (resp. $n$-dimensional integral 
 affine manifold $B$
 with a Hessian form) and $s$ a
-weak-smooth (resp. locally analytic) admissible nondepraved
-Cartier data on $C$ (resp. $B$) such that 
-$\sharp(s\cap s_0)<\infty$. Then,
+weak-smooth admissible 
+Cartier divisor on $C$ (resp. $B$) such that 
+$\sharp(s\cap s_0)<\infty$ and 
+$\opn{LMD}^{\bullet}(B;s)$ is bounded and 
+finitely generated. Then,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=\int_C c_1(D_s)+\frac{1}{2}c_1(-K_C), \quad 
 \chi(\opn{LMD}^{\bullet}(B;s))=\int_B \frac{c_1(D_s)^{n}}{n!}.
@@ -946,7 +947,7 @@ is not in hyperplanes defined by the span of microsupport of
 cotangent sheaf of $C$. 
 
 
-We note that this theorem has already essentially proved for some
+We note that this theorem has already essentially been proved for some
 literature as a trivial corollary of homological mirror symmetry 
 in \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{rmk: curve_mirror} and \cref{rmk: integral_mirror} 
 for more details) but we reprove it in tropical  
@@ -1081,7 +1082,7 @@ $\alpha=0,1,\ldots,\infty,\omega$.
 \section{The cohomological local Morse datum}
 In this section we recall some elementary results
 for cohomological local Morse data of sheaves from
-\cite{MR2031639,MR1299726,MR4294126}.
+\cite{MR2031639,MR1299726}.
 
 
 
@@ -1157,12 +1158,8 @@ there exists the following exact sequence
 \mathcal{F}_Z \to \mathcal{F}_{Z'}\to 0.
 \end{align}
 
-\begin{example}
-
-\end{example}
-
 Let $\Gamma_{Z}(\mcal{F})$ be the sheaf of sections of 
-$\mcal{F}$ supported by $Z$
+$\mcal{F}$ supported by a locally closed subset $Z$
 \cite[Definition 2.3.8]{MR1299726} and 
 $\Gamma_{Z}(X;\mcal{F})$ the global section of 
 $\mathcal{F}$ supported by $Z$.
@@ -1175,7 +1172,7 @@ $Z$ as a closed subset of $U$ then we write
   \Gamma_Z(U;\mcal{F})\deq \opn{Ker}(\mcal{F}(U) \to 
 \mcal{F}(U\setminus Z)).
 \end{align}
-\item If $V$ is an open subset of $U$ contain $Z$ then
+\item If $V$ is an open subset of $U$ contain $Z$, then
 $\Gamma_{Z}(U;\mcal{F})\simeq \Gamma_{Z}(V;\mcal{F})$
 via the canonical morphism. Therefore, we can define
 $\Gamma_{Z}(X;\mcal{F})\deq \Gamma_{Z}(U;\mcal{F})$.
@@ -1212,7 +1209,7 @@ Let $\mathscr{I}$ be the full subcategory of
 $\opn{Mod}(A_X)$ consisting of flabby sheaves. 
 Then $\mathscr{I}$ is $\Gamma_{Z}$-injective and
 $\Gamma_{Z}(\mathcal{I})\in\mathscr{I}$ for 
-$\mathcal{I}\in \mathscr{I}$.
+$\mathcal{I}\in \mathscr{I}$ \cite[Proposition 2.4.6]{MR1299726}.
 
 Let $X$ be a topological space, $Z$ be a locally 
 closed subset of $X$ and $Z'$ a closed subset of $Z$.
@@ -1234,8 +1231,7 @@ $\mathcal{F}^{\bullet}=A_{X}$
 and $U=Z\setminus Z'$.
 By taking the global 
 section for \cref{equation-exact-local}, we get 
-the following exact sequence from 
-\cite[Proposition 2.3.9 (iv)]{MR1299726}:
+the following exact sequence:
 \begin{align}
   \cdots \to H^{i}_{Z'}(X;A_X)\to
 H^{i}(Z;A_{Z})\to H^{i}(U;A_U)\to 
@@ -1363,7 +1359,7 @@ The other one is for emphasizing on analogy to
 Morse complexes, see \cref{example-poincare-hopf}.
 \item The name of local Morse data may be misleading.
 We don't assume $f$ satisfies some 
-"Morse condition" since
+`Morse condition' since
  we need to use some $C^{\infty}$-function
 which is \emph{not} a Morse function in the sense of 
 stratified Morse theory. 
@@ -1454,7 +1450,8 @@ such that $\{f<f(x_0)\}\cap S=\emptyset$ and
 $\{f=f(x_0)\}\cap S=\{x_0\}$ for some $x_0\in X$. 
 Then,
 \begin{align}
-\opn{LMD}^{\bullet}(A_S,f|_{S},x_0)\simeq A[0].
+\opn{LMD}^{\bullet}(A_S,f|_{S},x_0)\simeq 
+\tilde{H}^{\bullet-1}(\emptyset;A)\simeq A[0].
 \end{align}
 
 \end{example}
@@ -1520,7 +1517,7 @@ gives
 \opn{ind}^{A}_{0}(f_{n,m})=(-1)^{m}=
 \opn{ind}^{\opn{PH}}_{0}(\opn{grad}(f_{n,m})).&
 \end{align}
-Here, $\opn{ind}^{\opn{PH}}_{(0,0)}(\opn{grad}(f_{n,m}))$ is 
+Here, $\opn{ind}^{\opn{PH}}_{0atod}(\opn{grad}(f_{n,m}))$ is 
 the Poincar\'e-Hopf index of $f_{n,m}$ at 
 the origin $0$.
 From Morse lemma,
@@ -1556,38 +1553,6 @@ By \cref{prop-local-morse-data}, we can calculate
 of local Morse index of a continuous function on 
 a given polyhedral complex by the theory of sheaves on 
 real manifolds.
-
-
-
-We also use the following locally analytic 
-condition frequently:
-
-\begin{condition}[{locally analytic}]
-\label{condition-local-analytic}
-$f\colon X\to \mathbb{R}$ is a $C^{\infty}$-function
-with an isolated singularity at $x$ such that 
-there exists a real analytic function $f_0$ on an open 
-subset $U$ of $\mathbb{R}^{n}$ and a smooth embedding
-$\phi \colon U\to X$ satisfying $x\in \phi(U)$ and
-$f_0=f\circ \phi$.
-\end{condition}
-
-\iffalse
-\begin{definition}
-
-\end{definition}
-\fi
-
-
-\begin{remark}
-Of course, \cref{condition-local-analytic} is tentative
-since various important
-features work under weaker condition for functions. 
-We mainly use this condition for
-simplicity of our claims and revealing a similarity between
-graded module of our sense and Floer complex of Lagrangian 
-submanifolds.
-\end{remark}
 
 \begin{notation}
 
@@ -1815,7 +1780,9 @@ $\tilde{f}$ when $\tilde{f}$ is a Morse function.
 % Let $S$ be a rational PL set in ${\mathbb{R}}^{n}$ and
 % $f$.
 
-The following example is a typical example of
+The following example is a typical example of 
+a bounded and finitely generated 
+$\opn{LMD}^{\bullet}(A_M,f)$.
 
 
 \begin{example}
@@ -1824,10 +1791,10 @@ continuous function and
 $\varepsilon$ a 
 sufficiently small positive real number. Then, 
 \begin{align}
-\opn{LMD}(A_{\mathbb{R}^{n}},f,x)\simeq 
-\opn{LMD}(A_{\bar{B}_{\varepsilon}^{n}(x)},
+\opn{LMD}^{\bullet}(A_{\mathbb{R}^{n}},f,x)\simeq 
+\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}^{n}(x)},
 f|_{\bar{B}_{\varepsilon}^{n}(x)},x) \simeq 
-\opn{LMD}(A_{\bar{B}_{\varepsilon}^{n}(x)},
+\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}^{n}(x)},
 f|_{\bar{B}_{\varepsilon}^{n}(x)},x).
 \end{align}
 
@@ -1855,7 +1822,7 @@ with boundary:
 (S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\})). \notag
 \end{align}
 The proof of relative version of Ehresmann's lemma is 
-in 
+in \cite{359708}
 \href{https://mathoverflow.net/questions/358543/a-relative-version-of-ehresmanns-theorem}{complex geometry - A relative version of Ehresmann's theorem - MathOverflow}
 Besides, there exists a homeomorphism of pairs of
 topological spaces:
@@ -1880,12 +1847,14 @@ f|_{\bar{B}_{\varepsilon}(x)},x)\simeq
 
 By Alexander duality, 
 $H^{\bullet}(S_{\varepsilon}^{n-1}(x)\setminus \{f=f(x)\};A)$ 
-is graded $A$-module of finite rank, so 
+is bounded and finitely generated, so 
 is $\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(x)},
 f|_{\bar{B}_{\varepsilon}(x)},x)$.
 
 We also add explanation of real Milnor fiber from
-\cite[3.2]{MR3779558}.
+\cite[3.2]{MR3779558}. Every isolated critical point 
+of real analytic function is nondepraved 
+\cite[Part I.2.4]{MR932724}.
 If $f$ is a real analytic, then 
 $S_{\varepsilon}^{n-1}(x)\cap \{f\leq f(x)\}\simeq 
 f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$
@@ -1936,7 +1905,7 @@ tropicalization of very affine algebraic variety by Hacking in
 Hacking also proved that conjecture is true for a suitable condition
 \cite[Theorem 2.5]{MR2452307}.
 Since any tropical varieties is connected
-through codimension $1$ \cite[Theorem 3.3.5]{MR3287221}
+through codimension $1$ \cite[Theorem 3.3.5]{MR3287221},
 this conjecture is true when $\dim S \leq 2$.
 This phenomenon gives a certain analog of Kodaira vanishing theorem for 
 positive line bundles, see 
@@ -2185,7 +2154,7 @@ and $(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}=
 \mathcal{H}om(\mathcal{F}^{1}_{\mathbb{Z},S};\mathbb{R}_S)$ is 
 the stalk of the sheaf of (real) wave tangent 
 vector spaces of $S$ at $x$. (See \cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
-\cite[Definition 2.16, Remark 2.21]{yamamotoTropicalContractionsIntegral2021}).
+\cite[Definition 2.16, Proposition 2.20, Remark 2.21]{yamamotoTropicalContractionsIntegral2021}).
 \end{proposition}
 \begin{proof}
 Since
@@ -2804,7 +2773,7 @@ vector space of $C$
 \begin{proposition}
 \label{proposition-admissible-curve}
 Let $|\Sigma|$ be the support of a $1$-dimensonal 
-finite convex polyhedral fan $\Sigma$ $\mathbb{R}^{n}$ such that
+finite convex polyhedral fan $|\Sigma|$ such that
 $\Sigma$ spans $\mathbb{R}^{n}$.
 Let $f\colon |\Sigma|\to \mathbb{R}$ be a 
 $(0,0)$-superform on $|\Sigma|$. Then, 
@@ -2840,8 +2809,8 @@ $\opn{span}_{\mathbb{R}}(\opn{SS}((\mathbb{Z}_{X})_S)_x)
 
 \begin{proposition}[{cf. \cite{knill2012graph}}]
 \label{proposition-n-valent}
-Let $s_{p,q}\colon \Sigma\to \mathbb{R}$ be 
-an admissible $(0,0)$-superform on $\Sigma$ 
+Let $s_{p,q}\colon |\Sigma|\to \mathbb{R}$ be 
+an admissible $(0,0)$-superform on $|\Sigma|$ 
 such that $\opn{Crit}(s_{p,q})=\{x\}$ where
 $x=(0,\ldots,0)$ and
 \begin{align}
@@ -3575,7 +3544,7 @@ Banchoff proved a polyhedral complex version of Poincar\'e--Hopf theorem
 for height functions \cite[Theorem 1]{MR225327}.
 The definition of the index $a(v,f)$ 
 \cite[p.246]{MR225327} which 
-he used for the theorem seems may seem different 
+he used for the theorem may seem different 
 from our index but essentially equal to it
 (see also \cite[p.143-144]{grunert2017piecewise} 
 for more detail about it).
@@ -3649,10 +3618,19 @@ in \cref{proposition-n-valent}.
 From the above condition, we can define 
 a flat $U(1)$-bundle on each pants of a 
 connected component of $X\setminus X(C_{0,\vep})$
-as like \cite[6.1.3]{MR2676658}. The $s_{2,1}$
+as like \cite[6.1.3]{MR2676658}.
+We remark the isomorphism
+$(\mathcal{F}_{\mathbb{Z},C}^{1})_p\otimes_{\mathbb{Z}}
+\mathbb{R}/\mathbb{Z}\simeq 
+H^1(\mathbb{P}^{1}\setminus 
+\{0,1,\infty\};\mathbb{R}/\mathbb{Z})$
+is important for this construction.
+The $s_{2,1}$
 corresponds a small pants and the $s_{1,2}$
 corresponds a large pants in 
 \cite[Definition 6.3]{MR2676658}.
+
+
 Each small pants and large pants have a local 
 Riemann--Roch number defined the theory of 
 localization of Dirac-type operator and its 
@@ -4119,8 +4097,8 @@ also have cap product
 \begin{align}
 \cdot \frown \cdot \colon
 H^{i,j}(X;\mathbb{Z}) \times 
-H_{p,q}^{\opn{BM}}(X;\mathbb{Z})\to 
-H_{p-i,q-j}^{\opn{BM}}(X;\mathbb{Z});(c,\alpha) 
+H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})\to 
+H_{p-i,q-j}^{\mathrm{BM}}(X;\mathbb{Z});(c,\alpha) 
 \mapsto c\frown \alpha.
 \end{align}
 
@@ -4438,7 +4416,7 @@ $q_s$ function on the universal cover $\tilde{T}$ of $T$
 \cite[3.3]{MR4229604}).
 
 From an explicit calculation of the ring structure of
-$H^{\bullet}(T;\mathcal{F}_{\mathbb{Z},B}^{\bullet})
+$\mathbb{H}^{\bullet}(T;\mathcal{F}_{\mathbb{Z},B}^{\bullet})
 \simeq \bigwedge H^{0}(T;\mathcal{F}_{\mathbb{Z},B}^{1})$
 (or Sumi's result
 \cite[Theorem 47]{MR4229604} and the cycle map), 
@@ -4447,7 +4425,7 @@ $\frac{1}{n!}\int_{T}c_1(s)^{n}$ is equal to the determinant
 of the linear part of $dq_s$. 
 The intersection number of Lagrangian
 section $L_s$ and the zero section $L_0$ is equal to
-$\chi(\opn{LMD}^{\bullet}(L_0,L_s))$ up to 
+$\chi(\opn{LMD}^{\bullet}(s_0,s))$ up to 
 signature
 \myfootnote{The signature only depends on
 the choice of 
@@ -4621,7 +4599,7 @@ is equal to the Morse index of the
 local intersection data $f_{p}$ of 
 the smooth divisor $s'-s$ at $p$
 \cite[Remark 13]{MR1882331}. Therefore, 
-if $L_s$ and $L_s'$ interesects 
+if $L_s$ and $L_{s'}$ intersect 
 transversally, then there exists the following
 isomorphism of graded modules:
 \begin{align}
@@ -4780,8 +4758,8 @@ $f_2= f_w-f_w(w)$;
 (R^{\bullet}_{\{f_v\geq f_v(v)\}}\Z_{U_v})_v
 \otimes_{\Z} (R^{\bullet}_{\{g_w\geq g_w(w)\}}\Z_{U_w})_w \\
 & \simeq
-\opn{LMD}^{\bullet}(X,s)\otimes_{\Z} 
-\opn{LMD}^{\bullet}(Y,s').
+\opn{LMD}^{\bullet}(X;s)\otimes_{\Z} 
+\opn{LMD}^{\bullet}(Y;s').
 \end{align}
 
 \end{proof}
