@@ -903,7 +903,7 @@ of a tropical analog of HRR.
 Let $B$ be a purely $n$-dimensional compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
 $\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
- Let $s$ be an admissible weak-smooth Cartier divisor satisfying an admissible condition 
+ Let $s$ be an admissible (weak-)smooth Cartier divisor satisfying an admissible condition 
 \cref{cond: admissible} which represents of $\mcal{L}$
 and its graded $\Z$-module $\opn{LMD}^{\bullet}(B;s)$
 of it. If $\opn{LMD}^{\bullet}(B;s)$ is bounded and 
@@ -1780,9 +1780,10 @@ $\tilde{f}$ when $\tilde{f}$ is a Morse function.
 % Let $S$ be a rational PL set in ${\mathbb{R}}^{n}$ and
 % $f$.
 
-The following example is a typical example of 
-a bounded and finitely generated 
-$\opn{LMD}^{\bullet}(A_M,f)$.
+The following example is a smooth function on a 
+smooth manifold with an unique isolated critical point such
+that $\opn{LMD}^{\bullet}(A_M,f)$ is bounded and 
+finitely generated.
 
 
 \begin{example}
@@ -1835,7 +1836,8 @@ topological spaces:
 Here $\opn{Cone}(X)$ is the topological cone over
 $X$ \cite[Example 4.4]{hatcherAlgebraicTopology2002a}.
 This homeomorphism is classically proved when 
-$f$ is real analytic function
+$f$ is real analytic function and $x$ is an 
+isolated critical point
 \cite[Theorem 2.10]{MR0239612}.
 The homeomorphism induces 
 \begin{align}
@@ -1895,7 +1897,7 @@ From \cref{example-local-cohomology},
 
 If $S$ is a purely $n$-dimensional Bergman fan, then 
 $\opn{LMD}^{\bullet}(A_S,-f|_S,x)\simeq 
-H^{n-1}(S\setminus\{x\};A)[-n+1]$ since every Bergman fan has a good subdivision 
+H^{n-1}(S\setminus\{x\};A)[-n]$ since every Bergman fan has a good subdivision 
 \cite[Theorem 1]{MR2185977} and its link is shellable
 (e.g. \cite[7.9.1. Theorem]{MR1165544}).
 The vanishing property of the local cohomology is conjectured for
@@ -1954,7 +1956,7 @@ There exists the following exact sequence:
 This is a smooth version of the following exact
 sequences associated with the sheaf 
 $\mcal{M}_B^{\times}$
-of (real valued) tropical rational functions:
+of (real valued) `tropical rational functions':
 \begin{align}
 \label{equation-cartier-divisor-sequence}
 0 \to \mcal{O}^{\times}_B \to \mcal{M}_B^{\times} 
@@ -2018,7 +2020,7 @@ a \emph{local smooth Cartier data} for $s$ if
 $s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all 
 $i\in I$. The set $\{(U_i,f_i)\}_{i\in I}$ is a
 \emph{local smooth Cartier data} if 
-$\{(U_i,f_i)\}_{i\in I}$ is a local data of a smooth
+$\{(U_i,f_i)\}_{i\in I}$ is a local data for a smooth
 Cartier divisor.
 \end{definition}
 
@@ -2041,9 +2043,9 @@ is in $\mathbb{R}^{n}$.
 
 The \cref{condition-Rn} is strict for rational polyhedral
 spaces, but it is enough to
-give a test play of our approaches.
+give a test play for our approaches.
 We will explain why we assume the \cref{condition-Rn}
-and how to solve it
+and how to overcome it
 for tropical curves in 
 \cref{section-tropical-curve-general}.
 
@@ -2067,7 +2069,7 @@ $\mathcal{F}^{1}_{S}\deq
 \mathcal{F}^{1}_{\mathbb{Z},S}
 \otimes_{\mathbb{Z}_S} \mathbb{R}_S$ 
 and $T_x S\deq \opn{Hom}_{\mathbb{Z}}(
-\mathcal{F}^{1}_{\mathbb{Z},S},\mathbb{R})$.
+(\mathcal{F}^{1}_{\mathbb{Z},S})_x,\mathbb{R})$.
 From definition of polyhedral set, 
 we can see 
 the stalk $(\mathcal{F}^{1}_{\mathbb{Z},S})_x$
@@ -2150,9 +2152,9 @@ equation for any $x\in S$. Then,
 \end{align}
 where $(V)^{\bot}$ the orthogonal complement of 
 $V$ for the standard pairing of dual vector spaces
-and $(\mathcal{W}_{1,S}^{\mathbb{R}})_{x}=
+and $\mathcal{W}_{1,S}^{\mathbb{R}}=
 \mathcal{H}om(\mathcal{F}^{1}_{\mathbb{Z},S};\mathbb{R}_S)$ is 
-the stalk of the sheaf of (real) wave tangent 
+the sheaf of (real) wave tangent 
 vector spaces of $S$ at $x$. (See \cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
 \cite[Definition 2.16, Proposition 2.20, Remark 2.21]{yamamotoTropicalContractionsIntegral2021}).
 \end{proposition}
@@ -2228,22 +2230,18 @@ can define the set of \emph{critical points}
 of $(0,0)$-superform on rational polyhedral space
 like that of smooth function on differential
 manifolds.
-From the compatibility of pullback of extended
-affine map and the differential $d''$
-\cite[Lemma 2.21]{MR3903579}, we can 
-describe the set of critical point of 
-$(0,0)$-superform as follows:
+
 
 Let $f\colon S \to \mathbb{R}$ be a $(0,0)$-superform on 
 $\mathbb{R}$. The differential $d''f\in \mathcal{A}^{0,1}_S$ of $f$ has the 
-differential vector $d''f (x)\in \mathcal{F}_{S,x}^{1}$ for any 
+differential vector $d''f (x)\in (\mathcal{F}_{S}^{1})_x$ for any 
 $x\in S$ from the definition of superforms.
 
 \begin{condition}[{admissibility}] \label{cond: admissible}
 A $(0,0)$-superform $f\colon S \to {\mathbb{R}}$ is \emph{admissible} at $x$ 
 if 
 \begin{align}
-(x,d''f(x))\notin (\opn{span}_{{\mathbb{R}}}
+d''f(x)\notin (\opn{span}_{{\mathbb{R}}}
 \opn{SS}(S)_x+\mathcal{F}_{\mathbb{Z},S,x}^{1})
 \setminus \mathcal{F}_{\mathbb{Z},S,x}^{1}.
 \end{align}
@@ -2259,11 +2257,11 @@ $m\in \mathcal{O}_{S}^{\times}(U_x)$.
 Therefore, we can define the admissibility condition
 for principal divisors directly.
 \begin{remark}
-Suppose $(\opn{SS}(S)_x)=(\mathcal{F}_{S}^{1})_x$. 
+Suppose $\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)=(\mathcal{F}_{S}^{1})_x$. 
 Then, $f$ is admissible if and only if 
 $d''f(x)\in (\mathcal{F}_{\mathbb{Z},S}^{1})_x$.
 Therefore, admissibility
-condition is not an open condition.
+condition may be not a generic condition.
 If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
 (\opn{SS}(S)_x)<\dim_{\mathbb{R}} \mathcal{F}_{S,x}^{1}$, the 
 set of admissible cotangent vector at $x$ is dense and 
@@ -2320,7 +2318,7 @@ We can define a naive analog of Lagrangian torus
 fibration 
 $\bigcup_{x\in S}(\mathcal{F}^{1}_{S})_x/
 (\mathcal{F}^{1}_{\mathbb{Z},S})_x \to S$
-for $S$. Instead of this fibration, 
+for $S$ (as a set). Instead of this fibration, 
 we define (the underlying set of) 
 another torus fibration as follows. 
 \begin{definition}[{Stratified torus fibration}]
@@ -2388,7 +2386,7 @@ Then,
 From the above proposition,
 the canonical projection
 $\opn{pr}_{S,x}\colon (\mathcal{F}_{S}^{1})_x\simeq 
-(\mathcal{F}_{S}^{1})_x\otimes_{\mathbb{Z}}\mathbb{R}
+(\mathcal{F}_{\mathbb{Z},S}^{1})_x\otimes_{\mathbb{Z}}\mathbb{R}
 \to \check{X}_0(S)_x$ satisfies 
 \begin{align}
 \label{equation-torus-fiber}
@@ -2505,8 +2503,9 @@ $\opn{LMD}^{\bullet}_{A}(S;s)$ is equal to a Floer complex
 of Lagrangian submanifolds (e.g. \cite[5.2]{MR1882331}).
 \end{remark}
 
-It is important that $\opn{LMD}^{\bullet}_{A}(S;s)$ is
-defined as a certain topological data, and thus
+It is important that 
+$\opn{LMD}^{\bullet}_{A}(S;s)\simeq \opn{LMD}^{\bullet}(A_{\coprod_{p} U_p},\coprod_p f_p)$ is
+for a given intersection data for $s$, and thus
 we can use topological tools for computation of 
 $\opn{LMD}^{\bullet}_{A}(S;s)$.
 
@@ -2583,7 +2582,8 @@ Let $S$ be a compact tropical manifold satisfying
 \cref{condition-Rn} and has the Todd class $\opn{td}(S)$ 
 of $S$ (see \cref{remark-todd-class}).
 Let $s$ be an admissible smooth Cartier divisor such that
-$s_0\cap s$ is finite. Then, 
+$s_0\cap s$ is finite, and $\opn{LMD}^{\bullet}(S;s)$ 
+is bounded and finitely generated. Then, 
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(S;s))=\int_{S}\opn{ch}(s)\opn{td}(S).
 \end{align}
@@ -2662,7 +2662,7 @@ We will discuss it in detail in the future.
 Our tropical Lagrangian section for toric varieties is 
 (a little bit)
 different from that of \cite{MR2240909,MR2529936}.
-See also \cite[Appendix C.2.]{MR2871160} for relationships
+See also \cite[Appendix C.2]{MR2871160} for relationships
 between \cite{MR2871160} and \cite{MR2240909,MR2529936}.
 We also note the mirror symmetry between the derived category of
 coherent sheaves on toric varieties $X_{\Sigma}$ and
@@ -2674,7 +2674,10 @@ is finally solved by the results in \cite{MR4132582}.
 \begin{remark}[{*Ehrhart reciprocity revisit}]
 Let $s$ be an admissible smooth Cartier divisor on 
 tropical toric varieties in the sense of the above Remark.
-$\chi(X_{\Sigma},-s,A)=(-1)^{n}\sharp (\opn{int}(\mu_s(X_{\Sigma}))\cap \Z^{n})$ since
+\begin{align}
+\chi(X_{\Sigma},-s,A)=(-1)^{n}\sharp 
+(\opn{int}(\mu_s(X_{\Sigma}))\cap \Z^{n}).
+\end{align} since
 the local Morse data at boundary lattice point is trivial.
 This is another interpretation of Ehrhart reciprocity of 
 lattice polytopes.
@@ -2772,7 +2775,7 @@ vector space of $C$
 
 \begin{proposition}
 \label{proposition-admissible-curve}
-Let $|\Sigma|$ be the support of a $1$-dimensonal 
+Let $|\Sigma|$ be the support of a pure $1$-dimensonal 
 finite convex polyhedral fan $|\Sigma|$ such that
 $\Sigma$ spans $\mathbb{R}^{n}$.
 Let $f\colon |\Sigma|\to \mathbb{R}$ be a 
@@ -2958,8 +2961,17 @@ $s_0\cap s'$ is a finite set.
 \end{proposition}
 \begin{proof}
 
-First, we 
-
+Choose an sufficently small open neighborhood 
+$U_p$ of $p\in C\setminus C_0$. Then, there exists a 
+$(0,0)$-superform $f\colon U_p \to \mathbb{R}$ such 
+that $(f)^{\mathrm{sm}}=s|_{U_p}$. Besides, there exists 
+a smooth function $f_0\colon U\to \mathbb{R}$ for 
+an open subset $U$ of $T_p C$.  
+which defines $f$. We can perturb $f$ with 
+$\tilde{f}$ such that 
+$d\tilde{f}(p)\in (\mathcal{F}_{\mathbb{Z},S}^{1})_p$
+and $f|_{U\setminus K}=\tilde{f}|_{U\setminus K}$ for 
+a sufficiently small compact neighborhood $K$ of $0$.  
 Next, we check that we can shoose $s'$ 
 such that $s\cap s'$ is a finite set.
 Fix an open edge $e \in E$ of $C$.
