@@ -3078,9 +3078,11 @@ the rotation number of all edges of $C$:
 Let $s\in \opn{CDiv}^{\infty}(C)$ be a smooth Cartier
 divisor and $(U_i,f_i)_{i\in I}$ smooth Cartier data
 of $s$. The data is \emph{good} if 
-every $U_i$ is contractible.
+every $U_i$ is isomorphic to a contractible open 
+neighborhood of $0$ in $\opn{LC}_{p}C$ where 
+$p\in U_i$.
 \end{definition}
-If a smooth Cartier data $(U_i,f_i)_{i\in I}$ of $s$ 
+If a smooth Cartier data $\{(U_i,f_i)\}_{i\in I}$ of $s$ 
 is good,
 we can calculate the divisor class $D_s$ of $s$ easily
 by using \v{C}ech cohomology of sheaves:
@@ -4658,7 +4660,7 @@ is true.
 \subsection{Tropical multi-section}
 \label{section-tropical-multi-section}
 
-\subsection{K\"unneth-type formula}
+\subsection{*K\"unneth-type formula}
 
 
 In the last section, we mention more examples of 
@@ -4680,7 +4682,7 @@ We don't use $\boxplus$ and $\oplus$ in place of
 $\dot{+}$
 to avoid confusion from tropical addition.}
 and 
-$\mu_{f_i}\mathcal{F}\deq R\Gamma_{f_i\geq 0}
+$\mu_{f_i}\mathcal{F}\deq R\Gamma_{\{f_i\geq 0\}}
 (\mathcal{F})|_{\{f_i=0\}}$.
 If the above data satisfies
 the condition of cohomological version of a Milnor 
@@ -4701,18 +4703,19 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$;
   If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
   the Thom-Sebastiani theorem gives
   a certain K\"unneth formula for
-  $\opn{LMD}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W},(v,w))$:
+  $\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\dot{+}f_2,(v,w))$:
 \begin{align}
-\opn{LMD}^{\bullet}(f_1\dot{+}f_2,\Z_{V\times W},(v,w))
-&\simeq \opn{LMD}^{\bullet}(f_1,\Z_{V})
-\otimes_{\Z} \opn{LMD}^{\bullet}(f_2,\Z_{W}), \quad \\
-\opn{ind}_{(v,w)}(f_1\dot{+}f_2)&=\opn{ind}_v(f_1)\cdot \opn{ind}_v(f_2).
+\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\dot{+}f_2,(v,w))
+&\simeq \opn{LMD}^{\bullet}(\Z_{V},f_1,v)
+\otimes_{\Z} \opn{LMD}^{\bullet}(\Z_{W},f_2,w), \quad \\
+\opn{ind}_{(v,w)}(f_1\dot{+}f_2)&=\opn{ind}_v(f_1)\cdot 
+\opn{ind}_w(f_2).
 \end{align}
-  From instance, if $f_1(x)=x_1^{2}+\cdots x_{m}^{2}$
-  and $f_2(x)=-x_{m+1}^{2}-\cdots - x_{m+n}^{2}$ then we have
+  From instance, if $f_1(x)=\|\cdot\|_{\mathbb{R}^{n}}^{2}$
+  and $f_2(x)=-\|\cdot\|_{\mathbb{R}^{m}}^{2}$ then we have
 \begin{align}
-    \opn{LMD}^{\bullet}(f_1\dot{+}f_2,\Z_{{\mathbb{R}}^{n+m}})
-    \simeq \tilde{H}^{\bullet}(S^{n-1},\Z)
+    \opn{LMD}^{\bullet}(\Z_{{\mathbb{R}}^{n+m}},f_1\dot{+}f_2,0)
+    \simeq \tilde{H}^{\bullet -1}(S^{n-1};\Z)
     \simeq \Z[-\opn{ind}_{\mathrm{Morse}}(f_1\dot{+}f_2,0)]
 \end{align}
   where $\opn{ind}_{\mathrm{Morse}}(f,0)$ is the Morse index
@@ -4720,10 +4723,11 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$;
 \end{example}
 
 We don't state a K\"unneth type formula for 
-local Morse data in a fully
+local Morse data of smooth divisors in a fully
 general setting, but the following corollary 
 is enough for performing that there exists 
-a K\"unneth type formula for local Morse data.
+a K\"unneth type formula for local Morse data
+of smooth divisors.
 
 \begin{corollary}[{K\"unneth formula}]
 Fix compact rational polyhedral spaces $X$ and $Y$
@@ -4749,11 +4753,11 @@ $\opn{SS}(F\boxtimes^{L} G)\subset
 $s\boxtimes s'$ is also admissible.
 
 Let $\{(U_v,f_v)\}_{v\in s_0\cap s}$
-(resp. $\{(U_w,g_w)\}_{v\in s_0\cap s}$) is a
-local intersection data of
-$\{(U_{v}\times U_w,f_v\boxplus g_w)\}_{
+(resp. $\{(U_w,g_w)\}_{v\in s_0\cap s'}$) is a
+local intersection data of $s$ (resp. $s'$), 
+and $\{(U_{v}\times U_w,f_v\boxplus g_w)\}_{
 (v,w)\in s_0 \cap 
-(s\boxtimes s')}$ is the 
+(s\boxtimes s')}$ the 
 corresponding local intersection data 
 of $s\boxtimes s'$.  
 We get an isomorphism of graded modules
@@ -4782,6 +4786,42 @@ the condition of cohomological version of Milnor fiber.
 Besides, we can find many smooth Cartier data satisfying 
 the condition, see \cite[p.35]{MR2031639}.  
 \end{remark}
+
+As a colloary, we get the following isomorphism 
+for the $n$-th symmetric product $S^{n}X$ of 
+rational polyhedral spaces even though 
+the $S^{n}X$ is not a rational polyhedral space. 
+
+\begin{corollary}
+Let $k$ be a field and $X$ a compact rational 
+polyhedral space satisfying \cref{condition-Rn} 
+and $s$ an admissible Cartier divisor 
+such that $\opn{LMD}^{\bullet}_k(X;s)$ is bounded, 
+finitely generated and 
+satisfies \cite[Assumption 1.1.1]{MR2031639} locally.
+Let $\opn{Sym}(s)$ be the $n$-th symmetric product of 
+$s$ defined like $s\boxtimes s'$ and 
+$\opn{LMD}^{\bullet}_{k}(S^{n}X;\opn{Sym}(s))$
+the local Morse data of $\opn{Sym}(s)$ defined like $s$.
+Then,
+\begin{align}
+\chi(\opn{LMD}_k^{\bullet}(S^{n}X;\opn{Sym}(s)))=
+\binom{n+\chi(\opn{LMD}_k^{\bullet}(X;s))-1
+}{n}.
+\end{align}
+
+\end{corollary}
+\begin{proof} 
+Every permutation
+$\sigma \colon X^{n}\to X^{n}$ induces a canonical 
+automorphism for
+$\opn{LMD}^{\bullet}_k(X;s)^{\otimes n}$ via
+Thom--Sebastiani formula 
+(see also \cite[Proposition 1.3.1]{MR2031639}). 
+From construction,
+we can apply Macdonald formula \cite{MR143204} for 
+$\opn{LMD}_k^{\bullet}(S^{n}X;\opn{Sym}(s))$.
+\end{proof}
 
 \section{Future works}
 
@@ -4989,20 +5029,24 @@ $\opn{dev}_{B_0}\colon \widetilde{B_0}\to M_{{\mathbb{R}}}$
 \cite[p.641]{goldmanRadianceObstructionParallel1984a} and projection
 $p:M_{{\mathbb{R}}}\to M_{{\mathbb{R}}}/M$. 
 Then, we can consider $B_0(\Z)$ as the intersection of 
-$s_{B_0}$ and the zero section of 
+$s_{B_0}$ and the zero section
+\footnote{引用なしで気づいたが、他に書いてある文献をあげるべきか？}
+of 
 $\pi_{B_0}:X(B_0)\to B_0$;
-
 \begin{align}
 B_0(\mathbb{Z})=\pi_{B_0}(s_0\cap s_{B_0})
 =\{p\in B_0 \mid  \check{\pi}_{B_0}^{-1}(p) 
 \text{ is a BS-orbit}\}.
 \end{align}
+This construction is a certain dual of semi-flat SYZ 
+transformation 
+(see \cite[Theorem 1.1]{MR1876073} or \cite[\textsection 9.1]{MR1882331}). 
 The following equation is firstly proved in 
 \cite[Corollary 4.1]{MR1461965} by using Atiyah--Singer index formula.
 \begin{align} \label{equation-lattice-index}
 \sharp (B_0(\Z))=\sharp (s_0\cap s_{B_0})
 =\opn{vol}(\check{X}(B_0))=\opn{vol}(B_0)
-=\chi(\mcal{L},\nabla).
+=\chi(\mcal{L},\nabla):
 \end{align}
 
 This equation is reproved in \cite{MR2676658} as a 
@@ -5020,14 +5064,14 @@ fibration $\pi_{\check{B}_0}\colon
 \check{X}(\check{B}_0)\to \check{B}_0$ of dual Hessian
 manifold $\check{B}_0$ \cite[Proposition 6.9]{MR2567952}.
 A similar result exists for projective toric manifolds 
-and the prequantum line bundle on them 
+and their prequantum line bundle 
 \cite[Theorem 3.20]{yamaguchimaster}. 
-Then, \cref{equation-lattice-index} can be considered
+
+\cref{equation-lattice-index} can be considered
 as a numerical version of \cref{equation-HMS-HF}
 for the semi-flat SYZ pair 
 ($\check{\pi}_{\check{B}_0}\colon \check{X}(\check{B}_0)
 \to \check{B}_0 \leftarrow X(\check{B}_0)\colon \pi_{\check{B}_0}$). 
-
 This observation was developed for 
 (simple) integral affine manifold with singularities
 $B$
@@ -5056,9 +5100,10 @@ form.
 The idea of considering the lattice point 
 $B(\mathbb{Z})$ of 
 integral affine manifold with singularities $B$ as 
-an index of a good basis of an ample line bundle of 
+a good basis of an ample line bundle of 
 a (degenerating) family of Calabi--Yau manifold is 
-deeply developed by Gross and Siebert. 
+deeply developed by Gross and Siebert 
+\cite[Conjecture 1.6]{MR3525095}. 
 
 
 
@@ -5189,7 +5234,7 @@ In this subsection, we recall Verdier duality which
 uses in \cref{section-integral-affine-manifold}.
 
 The Verdier duality holds for the following general form
-\cite[Proposition 3.1.10]{MR1299726}
+\cite[Proposition 3.1.10]{MR1299726}.
 
 
 \begin{theorem}[{Verdier duality}]
@@ -5201,19 +5246,26 @@ R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{H
 R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}).
 \end{align}
 \end{theorem}
-
-
-
 The \emph{dualizing complex} over $A$ of $X$ is 
 $\upomega_{A_X}^{\bullet}\deq a^{!}_{X}A_{\{\opn{pt}\}}$.
-
 For simplicity, we write 
 $\upomega_X^{\bullet}\deq 
 \upomega_{\mathbb{Z}_X}^{\bullet}$.
 
+\begin{example}
+If $X$ is a topological manifold of dimension $n$, 
+$\upomega^{\bullet}_{X}\simeq \opn{or}_{X}^{\Z}[n]$ 
+where $\opn{or}_{X}^{\mathbb{Z}}[n]$ is the sheaf 
+associated with the presheaf $U\mapsto 
+\opn{Hom}(H^{n}_c(U;\mathbb{Z}_{X}),\mathbb{Z})$
+\cite[Proposition 3.3.6]{MR1299726}.
+\end{example}
+
 $\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
 \deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
-\upomega_{A_X}^{\bullet})$.
+\upomega_{A_X}^{\bullet})$ 
+is called the  \emph{Verdier dual} of 
+$\mathcal{F}^{\bullet}$.
 
 The dual functor
 $\mathcal{D}_{A_X}\colon \opn{D}^{b}(X)\to 
@@ -5240,14 +5292,7 @@ R\mathcal{H}om_{A_X}
 \end{align}
 
 
-\begin{example}
-If $X$ is a topological manifold of dimension $n$, 
-$\upomega^{\bullet}_{X}\simeq \opn{or}_{X}^{\Z}[n]$ 
-where $\opn{or}_{X}^{\mathbb{Z}}[n]$ is the sheaf 
-associated with the presheaf $U\mapsto 
-\opn{Hom}(H^{n}_c(U;\mathbb{Z}_{X}),\mathbb{Z})$
-\cite[Proposition 3.3.6]{MR1299726}.
-\end{example}
+
 
 The pairs of adjoint functors $Rf_! \dashv f^{!}$ 
 induces the \emph{trace map} $\opn{Tr}_{f,\mathcal{F}^{\bullet}}\colon Rf_!f^{!}\mathcal{F}^{\bullet}
