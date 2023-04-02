@@ -2981,7 +2981,7 @@ Therefore, we can choose a smooth bump function $g$ on $e$ such
 that $f+g$ is nondegenerate. We can extend $g$ on $C$ 
 by zero, and thus $s+g$ is linearly equivalent to $s$.
 By repeating this, we get an admissible Cartier divisor
-$s'$ on $C$
+$s'$ on $C$ such that $\sharp (s\cap s')<\infty$.
 \end{proof}
 
 
@@ -4657,10 +4657,10 @@ is true.
 
 \section{For more examples}
 
-\subsection{Tropical multi-section}
+\subsection{*Tropical multi-section}
 \label{section-tropical-multi-section}
 
-\subsection{*K\"unneth-type formula}
+\subsection{K\"unneth-type formula}
 
 
 In the last section, we mention more examples of 
@@ -4787,26 +4787,43 @@ Besides, we can find many smooth Cartier data satisfying
 the condition, see \cite[p.35]{MR2031639}.  
 \end{remark}
 
-As a colloary, we get the following isomorphism 
-for the $n$-th symmetric product $S^{n}X$ of 
-rational polyhedral spaces even though 
+As another corollary, we get a formula
+for the $n$-th symmetric product 
+$S^{n}X\deq 
+(X^{n}/\mathfrak{S}_n,q_*^{\mathfrak{S}_n}\mathcal{O}_{X^{n}}^{\times})$ of 
+rational polyhedral spaces $X$ even though 
 the $S^{n}X$ is not a rational polyhedral space. 
-
+Here, $\mathfrak{S}_n$ is the $n$-th permuation group 
+and $q_*^{\mathfrak{S}_n}\mathcal{O}_{X^{n}}^{\times}$ the $\mathfrak{S}_n$-invariant 
+part of the pushforward $q_* \mathcal{O}_{X^{n}}^{\times}$ for the canonical projection 
+$q\colon X^{n}\to X^{n}/\mathfrak{S}_{n}$. In this case, 
+we can define the $n$-th symmetric product
+$\opn{Sym}^{n}(s)$ of 
+$s$ as an element of $H^{0}(X^{n}/\mathfrak{S}_n;
+q_*^{\mathfrak{S}_n}\mathcal{A}^{0,0}_{X^{n}}/
+q_*^{\mathfrak{S}_n}\mathcal{O}_{X^{n}}^{\times})$
+naturally.
+We temporaily define $\opn{Sym}^{n}(s)$ is admissible if
+the pullback $q^{*} \opn{Sym}^{n}(s)=s^{\boxtimes n}$ is 
+admissible. We also define 
+$s_0 \cap \opn{Sym}^{n}(s)\deq q_*(s_0\cap s^{\boxtimes n})$ 
+and $\opn{LMD}^{\bullet}_{A}(S^{n}X;\opn{Sym}^{n}(s))$ like 
+that of $s$.
 \begin{corollary}
-Let $k$ be a field and $X$ a compact rational 
+Let $k$ be a field of characteristic $0$ and $X$ a compact rational 
 polyhedral space satisfying \cref{condition-Rn} 
 and $s$ an admissible Cartier divisor 
 such that $\opn{LMD}^{\bullet}_k(X;s)$ is bounded, 
 finitely generated and 
 satisfies \cite[Assumption 1.1.1]{MR2031639} locally.
-Let $\opn{Sym}(s)$ be the $n$-th symmetric product of 
-$s$ defined like $s\boxtimes s'$ and 
-$\opn{LMD}^{\bullet}_{k}(S^{n}X;\opn{Sym}(s))$
-the local Morse data of $\opn{Sym}(s)$ defined like $s$.
+Let $\opn{Sym}^{n}(s)$ be the $n$-th symmetric product of 
+$s$ and
+$\opn{LMD}^{\bullet}_{k}(S^{n}X;\opn{Sym}^{n}(s))$
+the local Morse data of $\opn{Sym}^{n}(s)$.
 Then,
 \begin{align}
-\chi(\opn{LMD}_k^{\bullet}(S^{n}X;\opn{Sym}(s)))=
-\binom{n+\chi(\opn{LMD}_k^{\bullet}(X;s))-1
+\chi(\opn{LMD}_k^{\bullet}(S^{n}X;\opn{Sym}^{n}(s)))=
+\binom{n+\chi(\opn{LMD}_{k}^{\bullet}(X;s))-1
 }{n}.
 \end{align}
 
@@ -4820,8 +4837,13 @@ Thom--Sebastiani formula
 (see also \cite[Proposition 1.3.1]{MR2031639}). 
 From construction,
 we can apply Macdonald formula \cite{MR143204} for 
-$\opn{LMD}_k^{\bullet}(S^{n}X;\opn{Sym}(s))$.
+$\opn{LMD}_k^{\bullet}(S^{n}X;\opn{Sym}^{n}(s))$.
 \end{proof}
+
+\begin{remark}
+The same logic works for integral affine manifold with
+singularities.
+\end{remark}
 
 \section{Future works}
 
