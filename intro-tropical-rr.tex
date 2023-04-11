@@ -74,8 +74,8 @@
 \newtheorem*{Fact*}{Fact}
 \newtheorem{question}[theorem]{Question}
 \newtheorem*{question*}{Question}
-\newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem*{conjecture*}{Conjecture}
+\newtheorem{conjecture}[theorem]{予想}
+\newtheorem*{conjecture*}{予想}
 \newtheorem{Rule}[theorem]{Rule}
 \newtheorem*{Rule*}{Rule}
 \newtheorem{notation}[theorem]{Notation}
@@ -263,7 +263,8 @@ tropical curves and integral Hessian manifolds
 Hesse 計量は整アフィン多様体における
 K\"ahler 計量の類似である。
 
-コンパクトトロピカル曲線 $C$ 上の因子 $D$
+コンパクトトロピカル曲線 $C$ 上の Cartier 因子 
+$D\in \opn{CDiv}(C)$
 に関する Riemann--Roch の定理は
 Gathmann--Kerber によって Baker--Norine による
 グラフの Riemann--Roch の定理の一般化として
@@ -333,25 +334,127 @@ $\Phi_{\opn{SYZ}}$ を SYZ変換と呼ぶ。
 \simeq \opn{Ext}^{\bullet}_{\mathcal{O}_{\mathcal{X}}}(\Phi_{\opn{SYZ}}(\mathscr{L}_1),
 \Phi_{\opn{SYZ}}(\mathscr{L}_2))
 \end{align}
-
 があることが導かれる。ここで
 $\mathscr{L}_1$, $\mathscr{L}_2$ は、$\catn{fuk}(\check{X})$
 の対象であり、コンパクト Lagrange 部分多様体といくつかの追加
-データによって構成されている。$L_1$, $L_2$ をそれぞれ
-$[\mathscr{L}_1]$, $[\mathscr{L}_2]$ の Lagrange 部分多様体
+データによって構成されている。$[L_1]$, $[L_2]$ をそれぞれ
+$\mathscr{L}_1$, $\mathscr{L}_2$ の Lagrange 部分多様体
 のホモロジー類だとすると、定義より
 \begin{align}
 \chi(\opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2))=
 (-1)^{\frac{n(n-1)}{2}} \sharp ([L_1]\cap [L_2])
 \end{align}
 であることが導かれる。
+$\mathcal{X}(B)$ をトーリック多様体に一般化したものや、
+Mumford 曲線に一般化したSYZ予想とホモロジー的ミラー対称性
+も考察されている。その際の$\check{X}(B)$ 
+はシンプレクティック的構造をStrataとして持つ様な空間に
+置き換えられる。
 
 $B$ を整アフィン多様体とする。このとき、$B$ の構造から誘導される
 特殊ラグランジュトーラス束 
 $\check{X}(B)\to B$ と 
 双対トーラス束 $\mathcal{X}(B)\to B$ が定義される。
 $B$ 上のトロピカル直線束は、$H^{1}(B;\mathcal{O}^{\times}_B)$
-によってパラメトライズされているが、
+によってパラメトライズされており、滑らかな関数のなす層 
+$\mathcal{C}^{\infty}(B)$ への単射 
+$\mathcal{O}_{B}^{\times}\to \mathcal{C}^{\infty}(B)$ が誘導
+する $H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})$
+から $H^{1}(B;\mathcal{O}^{\times}_B)$ への全射を持つ。
+$H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})$
+の元は、整アフィン多様体上のトロピカル Cartier 因子と
+類似するものであり、本論文では区別のため滑らかな因子と
+読んでいる。このとき、次の同型
+\begin{align} \label{equation-lagrangian-section}
+H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})
+\simeq \{s\colon B\to \check{X}(B)\mid 
+\check{f}_{B}\circ s=\opn{id}_B, \,
+\opn{Im}(s) \text{ が Lagrange 部分多様体} \}
+\end{align}
+が成り立つ。\ref{equation-lagrangian-section} の
+右辺に属する元を Lagrange 切断と呼び、
+自然と $\catn{fuk}(\check{X}(B))$ の対象
+$\mathscr{L}_s$ とすることができ、
+SYZ 変換によって$\mathcal{X}(B)$ 上の直線束へと
+変換される。同型 (\ref{equation-lagrangian-section})
+より Lagrange 切断は $B$ の開被覆 $(U_i)_{i\in I}$ 
+とその上の関数
+Lagrange 切断 $s$ が、
+零切断 $s_0$ と横断的に交わる時、
+$p\in s_0\cap s$の開近傍上の関数$f_p\colon U_p\to \mathbb{R}$
+で、$df_p=s|_{U_p}$ かつ $p$で孤立特異点を持つもので 
+$\opn{HF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_s)$ を
+定義する複体は次のようになる。
+\begin{align}
+\opn{CF}^{\bullet}(\mathscr{L}_{s_0},
+\mathscr{L}_s)=\bigoplus_{p\in \opn{Im}(s_0)\cap \opn{Im}(s)}
+\Lambda^{\mathbb{C}}_{\mathrm{nov}}[-\opn{ind}_{\mathrm{Morse}}(f_p,p)]
+\end{align}
+と表現することができる。ここで
+$\opn{ind}_{\mathrm{Morse}}(f_p,p)$
+とは、$f_p$ の $p$ での Morse指数であり、
+$\Lambda^{\mathbb{C}}_{\mathrm{nov}}$ は
+$\mathbb{C}$ 上の Novikov 体である。
+ここで注目するべき点は、
+$\opn{HF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_{s})$
+は SYZ変換によって層コホモロジー
+$H^{\bullet}(\mathcal{X}(B);
+\Phi_{\opn{SYZ}}(\mathscr{L}_{s}))$
+と同型であるべきであり、
+$\opn{CF}^{\bullet}(\mathscr{L}_{s_0},
+\mathscr{L}_s)$は、次数つきベクトル空間としては、
+トロピカル幾何の言葉のみで表現されている二点である。
+
+これらを踏まえた上で論文著者は、SYZ 予想のトイモデルとして
+次の予想を提示する。
+
+\begin{conjecture}
+
+$X$ をコンパクトなトロピカル多様体とし、
+$\mathcal{L}$ を $X$ 上のトロピカル直線束とする。
+ここで、$X$ には `Todd 類' $\opn{td}(X)$ が
+トロピカルコホモロジー群 $H^{\bullet,*}(X;\mathbb{Z})$
+の元として定義されていると仮定する。
+このとき、$\mathcal{L}$ を表現するしかるべき条件を満たした
+`滑らかな因子 $s$' が存在し、$s$ が定義する次数つき
+$\mathbb{Z}$-加群 $\opn{LMD}^{\bullet}(X;s)$ に対して、
+$s$ の取り方によらず
+次の等式が成り立つ:
+\begin{align}
+\chi(\opn{LMD}^{\bullet}(X;s))=\int_{X}\opn{ch}(\mathcal{L})\opn{td}(X).
+\end{align}
+ここで、$\int_X$ はトレース写像であり、
+$\mathrm{ch}(\mathcal{L})$ は、$\mathcal{L}$ の全 Chern 類である。
+\end{conjecture}
+
+上述の $X$ 上の滑らかな因子 $s$ のしかるべき条件とは、本論文では次のような条件である。
+
+\begin{condition} \label{condition-good}
+(i) $X$ の座標系がすべて $\mathbb{R}^{n}$ 
+の凸多面体複体の開集合として取れるトロピカル多様体である。
+(ii) $s$ が admissible である。
+(iii) $\sharp (\opn{Im}(s_0)\cap \opn{Im}(s))<\infty$, 
+(iv) $\opn{LMD}^{\bullet}(X;s)$ が有限生成である。
+\end{condition}
+なお最後の条件は将来的に不要となると期待される。
+いくつか用語の説明を後回しにして、
+以上を踏まえた上での本論文の主結果(の弱い版)
+を述べると以下のようになる。
+
+\begin{theorem}
+$C$ (resp. $B$) をトロピカル曲線 (resp. Hesse 計量を持つ
+整アフィン多様体) とし、$\mathcal{L}$ をその上の直線束
+$s$ を $C$ (resp. $B$) 上の
+\cref{condition-good} を満たす滑らかな因子 $s$ 
+とする。このとき、次が成り立つ。
+\begin{align}
+\chi(\opn{LMD}^{\bullet}(C;s))=\int_C c_1(\mathcal{L})+
+\chi_{\opn{top}}(C), \quad
+\chi(\opn{LMD}^{\bullet}(B;s))=\int_B \frac{c_1(\mathcal{L})^n}{n!}
+\end{align}
+ \end{theorem}
+
+\section{局所 Morse データと証明の概略}
 
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}
