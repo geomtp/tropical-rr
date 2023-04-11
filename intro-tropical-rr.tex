@@ -1,0 +1,359 @@
+\documentclass[a4paper,dvipdfmx,reqno,12pt]{amsart}
+\synctex=1
+%
+%%%% packages
+\usepackage[utf8]{inputenc}
+\usepackage[dvipdfmx]{graphicx,color}%for images
+\usepackage{bm}%fonts
+\usepackage{tikz-cd}%
+\usetikzlibrary{cd}
+\usetikzlibrary{calc}
+\usepackage{amsmath,amsthm,amstext,amsfonts,amsbsy}% ほぼ必須
+\usepackage{amssymb}
+\usepackage{latexsym}% ほぼ必須
+\usepackage{makecell}%表のセル内で改行するためのパッケージ
+\usepackage{algpseudocode,algorithm}%疑似コード用
+\usepackage{todonotes}%comments
+\usepackage[margin=0.8in]{geometry}
+\usepackage{layout}
+\usepackage[T1]{fontenc}%font encoding
+\usepackage{physics}
+\usepackage{braket}%after physics
+\usepackage{mathtools,thmtools}
+\usepackage{imakeidx}%before hyperref for pagebackref
+\usepackage[pagebackref,dvipdfmx]{hyperref}
+\usepackage[capitalize]{cleveref}
+\hypersetup{
+     colorlinks = true,
+     citecolor  = blue,
+     linkcolor  = blue, 
+     urlcolor   = blue, 
+}
+%\usepackage{pxjahyper}%for hyperref in Japanese
+\usepackage{bookmark}
+\usepackage{dynkin-diagrams}
+
+%%%% imakeidx
+\makeindex
+\makeindex[name=not, title=Index, columns=2]
+\makeindex[name=sym, title=Symbol, columns=3]
+\makeindex[name=ref, title=Ref, columns=3]
+
+\newcommand{\ind}[2]{\emph{#1}\index{1{#2}@{#1}}}
+\newcommand{\indset}[3]{$#1 \deq #2 $ \index{0{#3}@$#1$} }
+\newcommand{\indse}[2]{{$#1$}\index{0{#2}@{$#1$}}}
+
+%%%%
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows}
+
+
+
+%%%%
+
+
+%%%% theoremstyle
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{definition*}{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem*{example*}{Example}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{Note}[theorem]{Note}
+\newtheorem*{Note*}{Note}
+\newtheorem{Ntc}[theorem]{Notice}
+\newtheorem*{Ntc*}{Notice}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{Fact}[theorem]{Fact}
+\newtheorem*{Fact*}{Fact}
+\newtheorem{question}[theorem]{Question}
+\newtheorem*{question*}{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{conjecture*}{Conjecture}
+\newtheorem{Rule}[theorem]{Rule}
+\newtheorem*{Rule*}{Rule}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem*{Not*}{Notation}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{Rmk*}{Remark}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem*{condition*}{Condition}
+\newtheorem{Conv}[theorem]{Convention}
+\newtheorem*{Conv*}{Convention}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem*{observation*}{Observation}
+%%%% newcommand
+
+%%%logic symbol
+\newcommand{\deq}{\coloneqq}
+
+\newcommand{\dbraket}[1]{\hspace{-1.5pt}\braket{\hspace{-2.2pt}\braket{#1}\hspace{-2.2pt}}}
+
+\newcommand{\textcmd}[1]{\texttt{\symbol{"5C}#1}}
+
+%%special sets
+\newcommand{\emp}{\varnothing}%emptyset
+\newcommand{\C}{\mathbb{C}}%complex number
+\newcommand{\Ha}{\mathbb{H}}%quaternion
+\newcommand{\F}{\mathbb{F}}%field
+\newcommand{\R}{\mathbb{R}}%real number
+\newcommand{\Q}{\mathbb{Q}}%rational number
+\newcommand{\Z}{\mathbb{Z}}%integer
+\newcommand{\N}{\mathbb{N}_{0}}%natural number
+\newcommand{\Pj}{\mathbb{P}}%bold p
+\newcommand{\vep}{\varepsilon}%varepsilon
+
+%%%%
+
+\newcommand{\mb}[1]{\mathbb{#1}}%blackboard bold (for math mode)
+\newcommand{\mcal}[1]{\mathcal{#1}}%
+
+\newcommand{\opn}[1]{\operatorname{#1}}
+\newcommand{\catn}[1]{\mathbf{#1}}
+
+\newcommand{\abk}[1]{\langle {#1} \rangle}%angle bracket 
+\newcommand{\Abk}[1]{\left \langle {#1} \right \rangle}%angle bracket (auto sizing)
+\newcommand{\dabk}[1]{\langle\! \langle {#1}\rangle \! \rangle}%double angle bracket
+\newcommand{\Dabk}[1]{\left \langle \! \left \langle {#1} \right \rangle \! \right \rangle}%double angle bracket
+\newcommand{\Sbk}[1]{\left[ {#1} ]\right }% square bracket [] (auto sizing)
+\newcommand{\Cbk}[1]{\left \{ {#1}\right \}}% curly bracket {} (auto sizing)
+\newcommand{\dcbk}[1]{\{\!\!\{ {#1}\}\!\!\}} % double curly bracket {{}} 
+\newcommand{\Dcbk}[1]{\left \{\!\! \left \{ {#1} \right\} \!\!\right \}} % double curly bracket {{}} (auto sizing)
+\newcommand{\Paren}[1]{\left ( {#1} \right )}%parenthesis () (auto sizing)
+\newcommand{\dparen}[1]{(\!({#1})\!)}%double parenthesis
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xgets}[1]{\xleftarrow{#1}}
+\newcommand{\hookto}{\hookrightarrow}
+
+
+%%%% 
+
+%%%% mathabx.sty (font) 
+\DeclareFontFamily{U}{matha}{\hyphenchar\font45}
+\DeclareFontShape{U}{matha}{m}{n}{
+      <5> <6> <7> <8> <9> <10> gen * matha
+      <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
+      }{}
+\DeclareSymbolFont{matha}{U}{matha}{m}{n}
+
+\DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathb}{m}{n}{
+      <5> <6> <7> <8> <9> <10> gen * mathb
+      <10.95> mathb10 <12> <14.4> <17.28> <20.74> <24.88> mathb12
+      }{}
+\DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
+
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+      <5> <6> <7> <8> <9> <10>
+      <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+      mathx10
+      }{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+
+%DeclareMathSymbol (from mathabx.sty)
+\DeclareMathSymbol{\bigboxslash}{\mathop}{mathx}{"FE}
+\DeclareMathSymbol{\bigboxtimes}{\mathop}{mathx}{"D2}
+%%%%
+
+%%%% MnSymbol.sty (font)
+\DeclareFontFamily{U}{MnSymbolC}{}
+\DeclareFontShape{U}{MnSymbolC}{m}{n}{
+  <-6> MnSymbolC5
+  <6-7> MnSymbolC6
+  <7-8> MnSymbolC7
+  <8-9> MnSymbolC8
+  <9-10> MnSymbolC9
+  <10-12> MnSymbolC10
+  <12-> MnSymbolC12}{}
+\DeclareFontShape{U}{MnSymbolC}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolC-Bold6
+  <7-8> MnSymbolC-Bold7
+  <8-9> MnSymbolC-Bold8
+  <9-10> MnSymbolC-Bold9
+  <10-12> MnSymbolC-Bold10
+  <12-> MnSymbolC-Bold12}{}
+
+\DeclareSymbolFont{MnSyC}{U}{MnSymbolC}{m}{n}
+
+%%%% DeclareMathSymbol (from MnSymbol.sty)
+
+\DeclareMathSymbol{\tplus}{\mathbin}{MnSyC}{43}
+\DeclareMathSymbol{\aplus}{\mathbin}{MnSyC}{190}
+
+%%%% renewcommand
+
+
+
+
+%%%% footnote
+
+\newcommand{\cfootnote}[1]{\footnote{#1}}
+
+\newcommand{\myfootnote}[1]{\hspace{-5pt}\footnote{#1}}
+
+\newcommand{\TB}{\mcal{T}_{B_0}}
+\newcommand{\TBZ}{\mcal{T}_{\Z,B_0}}
+\newcommand{\AffS}{{\mathop{\mcal{A}\!f\!\!f\!}\nolimits}}
+\newcommand{\FBZ}{\mcal{F}_{\Z,B}}
+\newcommand{\FB}{\mcal{F}_{B}}
+\newcommand{\simto}{ 
+\mathrel{\raisebox{0.13em}{${\sim}$}}
+\kern -0.75em \mathrel{\raisebox{-0.11em}{${\scriptstyle \to}$}}  
+}
+%%%% from 
+
+%%%% from  https://tex.stackexchange.com/questions/183702/formatting-back-references-in-bibliography-bibtex
+\renewcommand*{\backrefalt}[4]{
+    \ifcase #1 [Not cited.]%
+        \or        [Cited on p.#2.]%
+        \else      [Cited on p.#2.]%
+    \fi}
+
+
+\usepackage{mathrsfs}
+\usepackage{upgreek}
+\numberwithin{equation}{section}
+\title{On counting lattice points in some tropical spaces and beyond
+}
+\author[Y. Tsutsui]{Yuki Tsutsui}
+% \address{Graduate School of Mathematical Sciences,
+% The University of Tokyo, 3-8-1 Komaba, Meguro-Ku,
+% Tokyo, 153-8914, Japan}
+% \email{tyuki@ms.u-tokyo.ac.jp}
+% \date{\today}
+
+\begin{document}
+
+論文題目:
+
+On graded modules associated with line bundles on 
+tropical curves and integral Hessian manifolds
+(トロピカル曲線と整ヘッセ多様体上の直線束に付随した
+次数付き加群について)
+
+氏名: 筒井 勇樹
+
+本論文の目的は (1)トロピカル幾何学上の直線束を表現する
+良い条件をもつ滑らかな因子データに対して Euler 数を定義すること
+と(2)その定式化から自然と提起される Riemann--Roch 型の定理の
+新たな類似をトロピカル直線と Hesse 計量をもつ整アフィン多様体に対して
+証明することである。本論文の定式化におけるトロピカル曲線上の
+直線束の Riemann--Roch 型の定理の類似は Gathmann--Kerber
+によるトロピカル Riemann--Roch の定理とは異なるものである。
+
+\section{Riemann--Rochの定理のトロピカル幾何的類似の研究の背景}
+
+トロピカル幾何とは、ある種の凸多面体複体の台空間 $X$ とその上の
+局所的に整数係数アフィンな関数のなす層$\mathcal{O}_X^{\times}$
+の組を代数多様体の類似物とみなして研究する分野である。
+そのような空間をトロピカル多様体と呼ぶ。
+一次元トロピカル多様体をトロピカル曲線と呼び、
+トロピカル多様体であり境界なし微分多様体の構造を自然にもつ空間を
+整アフィン多様体と呼ぶ。
+Hesse 計量は整アフィン多様体における
+K\"ahler 計量の類似である。
+
+コンパクトトロピカル曲線 $C$ 上の因子 $D$
+に関する Riemann--Roch の定理は
+Gathmann--Kerber によって Baker--Norine による
+グラフの Riemann--Roch の定理の一般化として
+次のような等式として証明された。
+\begin{align}
+r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\mathrm{top}}(C)
+\end{align}
+ここで、$r(D)$ とは、$D$ の因子の線形系の階数であり、
+$K_C$ は$C$ の標準因子、$\chi_{\mathrm{top}}(C)$ は
+$C$ の位相的 Euler 数である。
+この等式を高次元の場合に一般化することは自然な考えであるが
+両辺ともに技術的な困難が存在する。代数幾何における
+Hirzebruch--Riemann--Roch の定理では、
+左辺は因子に付随する直線束の層コホモロジー群の
+Euler 数に、右辺は 直線束の Chern 類と Todd 類の
+カップ積で表現されるが、トロピカル幾何においては
+直線束の層コホモロジー群と Todd 類の類似物は一般には
+定義されていない。特に深刻なのは左辺であり、
+トロピカル直線束はアーベル群のなす層ではないため、
+層コホモロジー群を代数幾何の場合のように直接定義する
+ことができない。一方で、数多くの研究結果から
+トロピカル多様体の構造層の Euler 数の類似は
+トロピカル多様体上の定数層の Euler 数であると
+考えられている。
+
+\section{SYZ予想、局所層理論、および本研究のアイデア}
+
+本研究では、Strominger--Yau--Zaslow 予想 (SYZ予想)
+のアイデアと局所層理論の言葉を利用することで、
+境界を持たないトロピカル多様体上の直線束を表現する 
+admissible な滑らかな因子に対して
+Floer 複体もしくは Morse 複体の類似の
+次数付き加群を定義し、その次数つき加群の 
+Euler 数を 直線束の Euler 数のトロピカル類似とする。
+
+SYZ 予想とは、Calabi--Yau 多様体 $\check{X}$ の
+ミラー Calabi--Yau 多様体 $X$ が、
+ある位相多様体 $B$ への(特異ファイバーを許す)
+特殊 Lagrange トーラスのファイブレーション
+$\check{f}_{B}\colon \check{X}\to B$ の
+双対トーラスファイブレーション $f_{B}\colon X\to B$
+として得られるという弦理論にかかわる数理物理学における
+予想であり、この予想の数学的定式化および証明が 
+Kontsevich のホモロジカルミラー対称性の予想の
+証明を与えることが期待されている。
+
+ホモロジー的ミラー対称性とは、
+Calabi--Yau 多様体 $\check{X}$ に対してある
+Calabi--Yau 多様体 $\mathcal{X}$ が存在し、
+$\check{X}$ の導来深谷圏 $\catn{fuk}(\check{X})$ と
+連接層の導来圏 $\catn{coh}(\mathcal{X})$ が
+導来圏として擬同型
+\begin{align} \label{equation-hms}
+\catn{fuk}(\check{X})\simeq \catn{coh}(\mathcal{X})
+\end{align}
+であることを主張する予想である。
+SYZ予想の数学的定式化は、擬同型関手
+$\Phi_{\opn{SYZ}}\colon \catn{fuk}(\check{X})
+\to \catn{coh}(\mathcal{X})$ の具体的な構成法を
+与えると期待されており、
+$\Phi_{\opn{SYZ}}$ を SYZ変換と呼ぶ。
+
+ホモロジー的ミラー対称性 (\ref{equation-hms}) が
+存在するならば、Floer コホモロジーと Ext 群との間に
+\begin{align}
+\opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2)
+\simeq \opn{Ext}^{\bullet}_{\mathcal{O}_{\mathcal{X}}}(\Phi_{\opn{SYZ}}(\mathscr{L}_1),
+\Phi_{\opn{SYZ}}(\mathscr{L}_2))
+\end{align}
+
+があることが導かれる。ここで
+$\mathscr{L}_1$, $\mathscr{L}_2$ は、$\catn{fuk}(\check{X})$
+の対象であり、コンパクト Lagrange 部分多様体といくつかの追加
+データによって構成されている。$L_1$, $L_2$ をそれぞれ
+$[\mathscr{L}_1]$, $[\mathscr{L}_2]$ の Lagrange 部分多様体
+のホモロジー類だとすると、定義より
+\begin{align}
+\chi(\opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2))=
+(-1)^{\frac{n(n-1)}{2}} \sharp ([L_1]\cap [L_2])
+\end{align}
+であることが導かれる。
+
+$B$ を整アフィン多様体とする。このとき、$B$ の構造から誘導される
+特殊ラグランジュトーラス束 
+$\check{X}(B)\to B$ と 
+双対トーラス束 $\mathcal{X}(B)\to B$ が定義される。
+$B$ 上のトロピカル直線束は、$H^{1}(B;\mathcal{O}^{\times}_B)$
+によってパラメトライズされているが、
+
+\bibliography{lattice_points_surface}
+\bibliographystyle{halpha}
+
+\end{document}
