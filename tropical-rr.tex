@@ -235,9 +235,16 @@ Tokyo, 153-8914, Japan}
 \begin{document}
 
 \begin{abstract}
-We consider a tropical version of counting lattices point for 
-line bundles on tropical curves and integral affine manifold
-with a Hessian form.
+We consider a tropical analog of Euler characteristic 
+of line bundles of algebraic varieties for compact
+boundaryless tropical manifolds by using inspired
+ideas from Strominger--Yau--Zaslow conjecture 
+and Morse theory.
+As a test play, we prove a certain analog of 
+Riemann--Roch formula for compact tropical curves 
+and integral affine manifolds with a Hessian form.
+Our analog is different from tropical Riemann--Roch
+theorem that proved by Gathmann--Kerber.
 \end{abstract}
 \maketitle
 \section{Introduction}
@@ -903,8 +910,8 @@ of a tropical analog of HRR.
 Let $B$ be a purely $n$-dimensional compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
 $\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
- Let $s$ be an admissible (weak-)smooth Cartier divisor satisfying an admissible condition 
-\cref{cond: admissible} which represents of $\mcal{L}$
+ Let $s$ be an permissible (weak-)smooth Cartier divisor satisfying an permissible condition 
+\cref{cond: permissible} which represents of $\mcal{L}$
 and its graded $\Z$-module $\opn{LMD}^{\bullet}(B;s)$
 of it. If $\opn{LMD}^{\bullet}(B;s)$ is bounded and 
 finitely generated, then
@@ -931,7 +938,7 @@ Let $C$ (resp. $B$) be a compact tropical curve $C$
 (resp. $n$-dimensional integral 
 affine manifold $B$
 with a Hessian form) and $s$ a
-weak-smooth admissible 
+weak-smooth permissible 
 Cartier divisor on $C$ (resp. $B$) such that 
 $\sharp(s\cap s_0)<\infty$ and 
 $\opn{LMD}^{\bullet}(B;s)$ is bounded and 
@@ -1991,7 +1998,8 @@ $H^{1}(B;\mathcal{A}^{0,0}_B)=0$ and
 so $\delta'$ is also surjective.
 
 \begin{definition}[{smooth Cartier divisor}]
-A smooth Cartier divisor on $B$ is an element of
+A \emph{smooth Cartier divisor} or 
+\emph{$C^{\infty}$-Cartier divisor} on $B$ is an element of
 $H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
 Let 
 $(\cdot)^{\mathrm{sm}}\colon 
@@ -2060,7 +2068,7 @@ the \emph{admissibility condition} for
 smooth Cartier divisors on rational 
 polyhedral spaces.
 We will define an analog of a Morse complex
-without differential for admissible divisors 
+without differential for permissible divisors 
 later.
 
 Fix a polyhedral set $S$ 
@@ -2080,7 +2088,7 @@ the stalk $(\mathcal{F}^{1}_{\mathbb{Z},S})_x$
 at $x$ is a free 
 $\mathbb{Z}$-module of finite rank.
 
-In order to define the admissible condition,
+In order to define the permissible condition,
 we define the subset $\opn{SS}(S)_x$ of cotangent
 space $(\mathcal{F}^{1}_{S})_x$ at $x\in S$ for 
 a rational polyhedral
@@ -2122,10 +2130,10 @@ is complicated, but this is related with the
 follwoing vector 
 spaces:
 
-\begin{definition}[{Linearity subspace 
+\begin{definition}[{Lineality subspace 
 \cite[\textsection 2.1]{MR4246795}}]
 Let $Z$ be a subset of
-$\mathbb{R}^{n}$. A \emph{linearity subspace} of $Z$ is 
+$\mathbb{R}^{n}$. A \emph{lineality subspace} of $Z$ is 
 a linear subspace $V$ of
 $\mathbb{R}^{n}$ such that $x+s\in Z$ for all 
 $s\in Z$ and $x\in V$, i.e.,
@@ -2135,13 +2143,13 @@ Z+V=Z.
 where $Z+V$ is the Minkowski sum of $Z$ and $V$.
 \end{definition}
 If $0\in Z$, then 
-every linearity subspace of $Z$ is a subset of $Z$.
-If $V$ and $W$ are a linearity subspace of $Z$, 
+every lineality subspace of $Z$ is a subset of $Z$.
+If $V$ and $W$ are a lineality subspace of $Z$, 
 then the Minskowski sum $V+W$ is 
-also a linearity space.
-We write $\opn{lineal}(Z)$ for the maximal linearity 
+also a lineality space.
+We write $\opn{lineal}(Z)$ for the maximal lineality 
 subspace of $Z$. If $P$ is a polyhedron in 
-$\mathbb{R}^{n}$, $\opn{lineal}(P)$ is the linearity space
+$\mathbb{R}^{n}$, $\opn{lineal}(P)$ is the lineality space
 in the sense of \cite[p.60]{MR3287221}, see also 
 \cite[\textsection 5]{MR3041763}.
 
@@ -2227,7 +2235,7 @@ We expect the middle and right vector space in
 important cases.
 \end{remark}
 
-From now on, we define the admissible conditon.
+From now on, we define the permissiblity conditon.
 
 From definition of superforms on 
 polyhedral spaces 
@@ -2243,8 +2251,9 @@ $\mathbb{R}$. The differential $d''f\in \mathcal{A}^{0,1}_S$ of $f$ has the
 differential vector $d''f (x)\in (\mathcal{F}_{S}^{1})_x$ for any 
 $x\in S$ from the definition of superforms.
 
-\begin{condition}[{admissibility}] \label{cond: admissible}
-A $(0,0)$-superform $f\colon S \to {\mathbb{R}}$ is \emph{admissible} at $x$ 
+\begin{condition}[{permissiblity}] \label{cond: permissible}
+Let $S$ be a rational polyhedral space.
+A $(0,0)$-superform $f\colon S \to {\mathbb{R}}$ is \emph{permissible} at $x$ 
 if 
 \begin{align}
 d''f(x)\notin (\opn{span}_{{\mathbb{R}}}
@@ -2254,44 +2263,44 @@ d''f(x)\notin (\opn{span}_{{\mathbb{R}}}
 \end{condition}
 
 (Be careful for this terminology is \emph{not} 
-compatible with admissible Morse functions defined 
+compatible with permissible Morse functions defined 
 in \cite[p.156]{MR1336822}.)
 
-From definition, if $f$ is admissible at $x$ then
-$f|_{U_x}+m$ is also admissible at $x$ for any 
+From definition, if $f$ is permissible at $x$ then
+$f|_{U_x}+m$ is also permissible at $x$ for any 
 $m\in \mathcal{O}_{S}^{\times}(U_x)$.
 Therefore, we can define the admissibility condition
 for principal divisors directly.
 \begin{remark}
 Suppose $\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)=(\mathcal{F}_{S}^{1})_x$. 
-Then, $f$ is admissible if and only if 
+Then, $f$ is permissible if and only if 
 $d''f(x)\in (\mathcal{F}_{\mathbb{Z},S}^{1})_x$.
 Therefore, admissibility
 condition may be not a generic condition.
 If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
 (\opn{SS}(S)_x)<\dim_{\mathbb{R}} \mathcal{F}_{S,x}^{1}$, the 
-set of admissible cotangent vector at $x$ is dense and 
+set of permissible cotangent vector at $x$ is dense and 
 connected.
 \end{remark}
 
 
-\begin{definition}[{smooth admissible Cartier divisor}]
-\label{definition-admissible-smooth-cartier-divisor}
-A smooth Cartier divisor $s$ is \emph{admissible} 
+\begin{definition}[{smooth permissible Cartier divisor}]
+\label{definition-permissible-smooth-cartier-divisor}
+A smooth Cartier divisor $s$ is \emph{permissible} 
 if there exists a local Cartier data $\{(U_i,f_i)\}_{i\in I}$ 
 for $s$
-such that $f_i$ is admissible for all $i\in I$. 
+such that $f_i$ is permissible for all $i\in I$. 
 In general, a pair $(s',s)$ of smooth 
 Cartier divisors $s,s'$ is 
-\emph{admissible} if $s-s'$ is 
-admissible. 
+\emph{permissible} if $s-s'$ is 
+permissible. 
 \end{definition}
 
 Let $s_0$ be the principal smooth Cartier data of 
 a constant function on $S$. Then, a pair 
-$(s_0,s)$ of smooth Cartier divisors is admissible
-if and only if $s$ is admissible.
-If a smooth Cartier divisor is admissible, 
+$(s_0,s)$ of smooth Cartier divisors is permissible
+if and only if $s$ is permissible.
+If a smooth Cartier divisor is permissible, 
 then every local data satisfies the above 
 admissibility condition.
 
@@ -2425,7 +2434,7 @@ From the admissibility condition and
 \cref{equation-torus-fiber}, we get the following proposition.
 
 \begin{proposition}
-Let $(s',s)$ be an admissible smooth Cartier pair, 
+Let $(s',s)$ be an permissible smooth Cartier pair, 
 $\{(U_i,f_i)\}_{i\in I}$ the local smooth Cartier data 
 for $s-s'$ and $L_s\deq \opn{Im}(\check{s})$.
 Then,
@@ -2441,20 +2450,20 @@ Then,
 
 
  
-\subsection{Local Morse data for admissible divisors}
+\subsection{Local Morse data for permissible divisors}
 
 In this subsection, we
-define the graded module of a given admissible pair 
+define the graded module of a given permissible pair 
 $(s',s)$ of smooth Cartier divisor such that 
 $\sharp (s'\cap s)<\infty$.
 In order to define the graded module, we define the 
 local intersection data of 
-the admissible pair $(s',s)$.
+the permissible pair $(s',s)$.
 
 \begin{definition}[{intersection data}]
 Fix a compact rational polyhedral space $B$ satisfying 
 \cref{condition-Rn}.
-Let $s$ be an admissible smooth Cartier divisor 
+Let $s$ be an permissible smooth Cartier divisor 
 on $S$ such that $\sharp (s\cap s_0)<\infty$. 
 An \emph{intersection data} of $s$ is the set 
 $\{(U_p,f_p)\}_{p\in s\cap s_0}$ of pairs of open subsets
@@ -2474,7 +2483,7 @@ for all $p\in s_0\cap s$,
 
 Let $S$ be a rational polyhedral space 
 satisfying \cref{condition-Rn} and 
-$s$ be an admissible smooth Cartier divisor such that
+$s$ be an permissible smooth Cartier divisor such that
 the following set is finite and 
 $\{(U_p,f_p)\}_{p\in s_0\cap s}$ 
 be an intersection data for $s$.
@@ -2563,7 +2572,7 @@ map in this paper.
 \begin{proposition}
 \label{proposition-euler-number-etale}
 Let $B$ be a compact rational polyhedral space satisfying
-\cref{condition-Rn} and $s$ be an admissible smooth Cartier divisor
+\cref{condition-Rn} and $s$ be an permissible smooth Cartier divisor
 such that $s_0\cap s$ is a finite set.
 For $q \colon B' \to B$ be a tropical \`etale covering 
 map of $B$ of 
@@ -2587,7 +2596,7 @@ From now on, we can pose a detailed version of
 Let $S$ be a compact tropical manifold satisfying 
 \cref{condition-Rn} and has the Todd class $\opn{td}(S)$ 
 of $S$ (see \cref{remark-todd-class}).
-Let $s$ be an admissible smooth Cartier divisor such that
+Let $s$ be an permissible smooth Cartier divisor such that
 $s_0\cap s$ is finite, and $\opn{LMD}^{\bullet}(S;s)$ 
 is bounded and finitely generated. Then, 
 \begin{align}
@@ -2678,7 +2687,7 @@ is finally solved by the results in \cite{MR4132582}.
 \end{remark}
 
 \begin{remark}[{*Ehrhart reciprocity revisit}]
-Let $s$ be an admissible smooth Cartier divisor on 
+Let $s$ be an permissible smooth Cartier divisor on 
 tropical toric varieties in the sense of the above Remark.
 \begin{align}
 \chi(X_{\Sigma},-s,A)=(-1)^{n}\sharp 
@@ -2742,7 +2751,7 @@ the following theorem:
 Let $C$ be a compact tropical curve with 
 no $1$-valent vertex and 
 $\mathcal{L}$ be a line bundle on $C$.
-Let $s$ be a smooth admissible Cartier divisor which
+Let $s$ be a smooth permissible Cartier divisor which
 represents $\mathcal{L}$ such that 
 $s_0\cap s$ is finite. Then,
 \begin{align}
@@ -2780,13 +2789,13 @@ vector space of $C$
 
 
 \begin{proposition}
-\label{proposition-admissible-curve}
+\label{proposition-permissible-curve}
 Let $|\Sigma|$ be the support of a pure $1$-dimensonal 
 finite convex polyhedral fan $|\Sigma|$ such that
 $\Sigma$ spans $\mathbb{R}^{n}$.
 Let $f\colon |\Sigma|\to \mathbb{R}$ be a 
 $(0,0)$-superform on $|\Sigma|$. Then, 
-$f$ is admissible at $x=(0,\ldots,0)$ if and only if 
+$f$ is permissible at $x=(0,\ldots,0)$ if and only if 
 $df(x)\in (\mathcal{F}^{1}_{\mathbb{Z},|\Sigma|})_x\simeq (\mathbb{Z}^{n})^{\vee}$
 or $\opn{lineal}(|\Sigma|,x)\simeq \mathbb{R}$.
 
@@ -2819,7 +2828,7 @@ $\opn{span}_{\mathbb{R}}(\opn{SS}((\mathbb{Z}_{X})_S)_x)
 \begin{proposition}[{cf. \cite{knill2012graph}}]
 \label{proposition-n-valent}
 Let $s_{p,q}\colon |\Sigma|\to \mathbb{R}$ be 
-an admissible $(0,0)$-superform on $|\Sigma|$ 
+an permissible $(0,0)$-superform on $|\Sigma|$ 
 such that $\opn{Crit}(s_{p,q})=\{x\}$ where
 $x=(0,\ldots,0)$ and
 \begin{align}
@@ -2912,8 +2921,8 @@ The following proposition is a repeative work of
 \cref{section-stratified-torus-fibration}.
 
 \begin{proposition}[{continuous sections}]
-\label{proposition-admissible-section}
-Let $s$ be an admissible Cartier divisor 
+\label{proposition-permissible-section}
+Let $s$ be an permissible Cartier divisor 
 $s=\{(U_i,f_i)\}_{i\in I}$ on a tropical curve 
 $C$ with no 1-valent vertex. 
 Then, 
@@ -2935,7 +2944,7 @@ $U_i\cap U_j\neq \emp$.
 Then, $df_i(x)-df_j(x)\in 
 (\mathcal{F}_{\mathbb{Z},C}^{1})_x$ and
 $df_i(x)\in (\mathcal{F}_{\mathbb{Z},C}^{1})_x$
-from \cref{proposition-admissible-curve} (2).
+from \cref{proposition-permissible-curve} (2).
 Therefore, the construction of $\check{s}$ is well-defined.
 $\check{s}$ is continuous, obviously.
 \item Omit.
@@ -2945,7 +2954,7 @@ $\check{s}$ is continuous, obviously.
 
 As like \cite{auroux2022lagrangian},
 we also use the notion of the rotation number of 
-admissible Cartier divisor.
+permissible Cartier divisor.
 Fix a connected smooth tropical curve $C$
  and $C_0$ the 
 regular part of $C$.
@@ -2961,7 +2970,7 @@ $C_0$ is a disjoint union of open interval:
 Let $s=\{(U_i,f_i)\}_{i\in I}$ be a smooth Cartier divisor on a compact
 tropical curve $C$ with no 1-valent vertex.
 Then, there exists
-an admissible Cartier divisor $s'$ which is linearly
+an permissible Cartier divisor $s'$ which is linearly
 equivalent to $s$ and
 $s_0\cap s'$ is a finite set. 
 \end{proposition}
@@ -2986,7 +2995,7 @@ function $f$ on $e$.
 Therefore, we can choose a smooth bump function $g$ on $e$ such 
 that $f+g$ is nondegenerate. We can extend $g$ on $C$ 
 by zero, and thus $s+g$ is linearly equivalent to $s$.
-By repeating this, we get an admissible Cartier divisor
+By repeating this, we get an permissible Cartier divisor
 $s'$ on $C$ such that $\sharp (s\cap s')<\infty$.
 \end{proof}
 
@@ -3004,7 +3013,7 @@ $\check{X}(C_0)$ has a canonical symplectic structure
 and thus there exists a canonical orientation induced
 from the symplectic form on $\check{X}(C_0)$.
 This form defines an orientation number of 
-section defined in \cref{proposition-admissible-section}.
+section defined in \cref{proposition-permissible-section}.
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
@@ -3067,8 +3076,8 @@ $a,b\notin \{-\infty,\infty\}$.
 \end{proof}
 
 
-From \cref{proposition-admissible-section} and \cref{proposition-rotation-number}, we can define the 
-rotation number for every admissible smooth 
+From \cref{proposition-permissible-section} and \cref{proposition-rotation-number}, we can define the 
+rotation number for every permissible smooth 
 Cartier divisors as follows.
 \begin{definition}[{cf. \cite{auroux2022lagrangian}}]
 The \emph{rotation number} of $s$ is the sum of
@@ -3097,7 +3106,7 @@ D_s=\{(f_j-f_i)\}_{i,j\in I}
 \end{align}
 
 \begin{proposition}
-Let $s$ be an admissible smooth Cartier divisor on
+Let $s$ be an permissible smooth Cartier divisor on
 a compact tropical curve $C$.
 \label{equation-rotation-number}
 \begin{align}
@@ -3115,13 +3124,14 @@ The above proposition
 is \emph{not} true for general compact metric curves.
 Let $C\deq [0,1]$ be a closed interval
 and $f_n\colon C\to \mathbb{R};x \mapsto nx^{2}$.
-All $f_n$ is an admissible $(0,0)$-superform on $C$.
+All $f_n$ is an permissible $(0,0)$-superform on $C$.
 From the definition of smooth principal Cartier divisor,
 $\opn{deg}(D_{(f_n)^{\mathrm{sm}}})=0$. 
 A philosophical reason of this is that
 a closed interval with finite length is a tropical
 analog of a closed annulus in $\mathbb{C}$ but not for
-a complex projective line. In fact, $X(C_0)$ 
+a complex projective line (cf. 
+\cite[Definition 3.7]{MR3903579}). In fact, $X(C_0)$ 
 has a standard complex structure which is holomorphic to
 an open annulus in $\mathbb{C}$.
 \end{remark}
@@ -3129,7 +3139,7 @@ an open annulus in $\mathbb{C}$.
 \begin{proposition}
 \label{proposition-simple-interval-rr}
 Let $C=[a,b]$ be a closed interval in $\mathbb{R}$
-and $s$ an admissible smooth Cartier divisor 
+and $s$ an permissible smooth Cartier divisor 
 such that $s_0\cap s=\{a,b\}$. Then,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=\opn{rot}(s)+
@@ -3147,7 +3157,7 @@ following Meyer--Vietoris type lemma.
 
 \begin{proposition}
 \label{proposition-gluing-formula}
-Let $s$ be an admissible smooth Cartier divisor on a
+Let $s$ be an permissible smooth Cartier divisor on a
 compact metric graph $C$ such that $s_0\cap s<\infty$.
 Fix two closed metric subgraph of $C$ such that
 $C' \cup C''=C$ and $C'\cap C''\subset s_0 \cap s$.
@@ -3167,7 +3177,7 @@ and $i_{C''}\colon C''\to C$ induces
 \end{proposition}
 \begin{proof}
 From assumption $i^{*}_{C'}(s)$ and 
-$i^{*}_{C''}(s)$ are admissible.
+$i^{*}_{C''}(s)$ are permissible.
 The \cref{equation-rotation-sum} is true from
 the definition of rotation number. 
  Besides,
@@ -3289,7 +3299,9 @@ an open subset $V$ of $\mathbb{R}^{n}
 Let $\mathcal{A}_{\mathbb{T}^{n}}^{\mathrm{weak}}(U)$ 
 be the set of weak-smooth functions on $U$.
 \end{definition}
-
+We can naturally generalize the sheaf of weak-smooth functions 
+on rational polyhedral space by 
+\cite[Lemma 9]{itenbergTropicalHomology2019b}.
 \begin{example}
 Let 
 $g\in \mathbb{R}_{\geq 0}[x_1,\ldots,x_n]$ be a polynomial 
@@ -3368,10 +3380,10 @@ surjective.
 We can extend admissibility condition for
 weak-smooth functions and weak-smooth Cartier 
 divisors on $C$. In our case, every weak-smooth 
-Cartier divisor satisfies the admissible condition 
+Cartier divisor satisfies the permissible condition 
 at every $1$-valent vertex.
 \begin{definition}
-Let $s$ be an admissible weak-smooth Cartier divisor 
+Let $s$ be an permissible weak-smooth Cartier divisor 
 of $C$ such that $s_0\cap s<\infty$.
 The Morse complex of $s$ the following graded module:
 \begin{align}
@@ -3389,7 +3401,7 @@ repetition of the proof of
 
 \begin{theorem} \label{theorem-MRR-tropical-curve}
 Let $C$ be a compact tropical curve and 
-$s$ an admissible weak-smooth Cartier divisor 
+$s$ an permissible weak-smooth Cartier divisor 
 of $C$ such that $s_0\cap s<\infty$. Then,
 \begin{align}
   \chi(\opn{LMD}^{\bullet}(C,s))=\opn{deg}(s)+
@@ -3399,8 +3411,8 @@ of $C$ such that $s_0\cap s<\infty$. Then,
 
 
 \begin{remark}
-\label{remark-non-admissible-divisor}
-We explain the reason why we add admissible condition for 
+\label{remark-non-permissible-divisor}
+We explain the reason why we add permissible condition for 
 smooth Cartier divisors. 
 One of reasons is that there exists smooth function $f$
 on a polyhedral space $S$ and 
@@ -3422,7 +3434,7 @@ such that
 \item $\opn{Crit}(g)=\Gamma_3\setminus \Gamma_3^{\circ}$,
 \item $\sum_{p\in \opn{Crit}(g)}\opn{ind}_p(g)=2$.
 \end{enumerate}
-$g$ is admissible except $x=(0,0)$.
+$g$ is permissible except $x=(0,0)$.
 If we generalize 
 \cref{theorem-MRR-tropical-curve} for $g$, 
 we need to add the index $\opn{ind}_x(g)$ at $x$ satisfying
@@ -3431,7 +3443,7 @@ we need to add the index $\opn{ind}_x(g)$ at $x$ satisfying
 \opn{ind}_x(g)=1=\chi_{\opn{top}}(\Gamma_3).
 \end{align}
 At least, \cref{theorem-MRR-tropical-curve} is not
-true without correction the effect at non-admissible point
+true without correction the effect at non-permissible point
 of $g$.
 In this case, $\opn{ind}_x(g)$ should be $-1$.
 This condition is independent of the choice
@@ -3446,7 +3458,7 @@ define the index of $g$ at $x$ as a divisor.
 We consider there is no canonical choice
 of $m_0$ for $g$ as a principal divisor without
 assumption admissibility.
-Every admissible function $f$ has a canonical choice
+Every permissible function $f$ has a canonical choice
 of monomials which is determined by the condition 
 whether $x\in \opn{Crit}(f+m)$ or not.
 We could not use this condition for $g$ since 
@@ -3474,6 +3486,7 @@ In other words, there is no direct tropical
 analog of Kodaira embedding theorem
 in tropical geometry.
 \end{remark}
+
 
 
 \subsection{Relationships between previous results}
@@ -3540,7 +3553,7 @@ tropical hypersurfaces.
 
 
 \begin{definition}[{cf. \cite{auroux2022lagrangian}}]
-An admissible smooth Cartier divisor $s$ is 
+An permissible smooth Cartier divisor $s$ is 
 \emph{simple} if there exists a local intersection data
 $\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
 $f_p$ is strictly convex at all $p\in C\setminus C_0$.
@@ -3555,10 +3568,11 @@ theoretical Poincar\'e--Hopf theorem \cite{knill2012graph}
 or 
 Banchoff's critical point theorem \cite{MR225327}.
 We can easily see the index $i(v)$ defined in 
-\cite[3]{knill2012graph}
+\cite[\textsection 3]{knill2012graph}
 corresponds to $\opn{ind}_v(f)$ defined in 
 \cref{equation-local-index} (see also 
-\cref{proposition-n-valent} and \cite[7]{knill2012graph}).
+\cref{proposition-n-valent} and 
+\cite[\textsection 7]{knill2012graph}).
 
 Banchoff proved a polyhedral complex version of Poincar\'e--Hopf theorem
 for height functions \cite[Theorem 1]{MR225327}.
@@ -3604,7 +3618,7 @@ compatible with $X(C_{0,\vep})$.
 Such a $X$ is given by gluing triangles for 
 each open neighborhood of $p\in X_0(C)\setminus X(C_0)$
 appropriately.
-Let $s$ be an admissible smooth Cartier divisor on $C$.
+Let $s$ be an permissible smooth Cartier divisor on $C$.
 $s|_{C_0}$ corresponds to a Lagrangian section of 
 $\check{\pi}_{C_0}$ from 
 \cref{proposition-cartier-lagrangian}.
@@ -4533,7 +4547,7 @@ $\chi(\opn{LMD}^{\bullet}(B_0,s))=
 \chi_{\opn{top}}(B_0)=0$ is 
 truly a special case of microlocal Poincar\'e--Hopf theorem for $B_0$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
-  \cite{rau2020tropical}. This analogue is about tropical Euler characteristic
+  \cite{MR4540954}. This analogue is about tropical Euler characteristic
 $\chi_{\opn{trop}}(B_0)\deq 
 \chi(\mb{H}^{\bullet}(B_0;\mcal{F}_{B_0}^{\bullet}))$
   but not for topological Euler characteristic $\chi_{\opn{top}}(B)$.
@@ -4663,8 +4677,27 @@ is true.
 
 \section{For more examples}
 
-\subsection{*Tropical multi-section}
+\subsection{Tropical multidivisors and 
+Lagrangian multi-sections}
 \label{section-tropical-multi-section}
+
+Let $B_0$ an integral affine manifold. 
+Then, $B_0$ has 
+the notion of Lagrangian multi-section, 
+which is a mirror part of some 
+vector bundle on $X(B_0)$. 
+This can be considered as a certain analog of  
+tropical multidivisors on a compact tropical
+curve \cite{gross2022principal}, so we 
+can also define (permissible) 
+Lagrangian multi-sections
+for tropical curves and 
+the local Morse data of them naturally.
+We expect that our conjecture works for 
+them.
+
+
+
 
 \subsection{K\"unneth-type formula}
 
@@ -4738,12 +4771,12 @@ of smooth divisors.
 \begin{corollary}[{K\"unneth formula}]
 Fix compact rational polyhedral spaces $X$ and $Y$
 satisfying \cref{condition-Rn}.
-Let $s$ and $s'$ a admissible smooth Cartier divisor of $X$ and $Y$ 
+Let $s$ and $s'$ a permissible smooth Cartier divisor of $X$ and $Y$ 
 satisfying the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
 Then, the induced external tensor product 
 $s\boxtimes s'\deq \opn{pr}_X^{*} (s)+\opn{pr}_Y^{*}(s')
-\in \opn{CaDiv}^{\infty}(X\times Y)$ is also admissible and
+\in \opn{CaDiv}^{\infty}(X\times Y)$ is also permissible and
 has the following equations:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(X\times Y;s\boxtimes s'))=
@@ -4756,7 +4789,7 @@ Since
 $\opn{SS}(F\boxtimes^{L} G)\subset 
 \opn{SS}(F)\times \opn{SS}(G)$
 \cite[Proposition 5.4.1]{MR1299726},
-$s\boxtimes s'$ is also admissible.
+$s\boxtimes s'$ is also permissible.
 
 Let $\{(U_v,f_v)\}_{v\in s_0\cap s}$
 (resp. $\{(U_w,g_w)\}_{v\in s_0\cap s'}$) is a
@@ -4809,16 +4842,16 @@ $s$ as an element of $H^{0}(X^{n}/\mathfrak{S}_n;
 q_*^{\mathfrak{S}_n}\mathcal{A}^{0,0}_{X^{n}}/
 q_*^{\mathfrak{S}_n}\mathcal{O}_{X^{n}}^{\times})$
 naturally.
-We temporaily define $\opn{Sym}^{n}(s)$ is admissible if
+We temporaily define $\opn{Sym}^{n}(s)$ is permissible if
 the pullback $q^{*} \opn{Sym}^{n}(s)=s^{\boxtimes n}$ is 
-admissible. We also define 
+permissible. We also define 
 $s_0 \cap \opn{Sym}^{n}(s)\deq q_*(s_0\cap s^{\boxtimes n})$ 
 and $\opn{LMD}^{\bullet}_{A}(S^{n}X;\opn{Sym}^{n}(s))$ like 
 that of $s$.
 \begin{corollary}
 Let $k$ be a field of characteristic $0$ and $X$ a compact rational 
 polyhedral space satisfying \cref{condition-Rn} 
-and $s$ an admissible Cartier divisor 
+and $s$ an permissible Cartier divisor 
 such that $\opn{LMD}^{\bullet}_k(X;s)$ is bounded, 
 finitely generated and 
 satisfies \cite[Assumption 1.1.1]{MR2031639} locally.
@@ -5358,7 +5391,7 @@ Ra_{Z!}(\opn{Tr}_{g\circ f,\upomega_{Z}^{\bullet}})
 \circ Ra_{Y!}(\opn{Tr}_{f,\upomega_{Y}^{\bullet}}).
 \end{align}
 
-
+%TODO: lineality空間の話とweak-smoothの話を書く。
 
 
 
