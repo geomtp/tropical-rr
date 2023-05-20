@@ -235,33 +235,26 @@ Tokyo, 153-8914, Japan}
 \begin{document}
 
 \begin{abstract}
-We consider a tropical analog of Euler characteristic 
-of line bundles of algebraic varieties for compact
-boundaryless tropical manifolds by using inspired
-ideas from Strominger--Yau--Zaslow conjecture 
-and Morse theory.
-As a test play, we prove a certain analog of 
-Riemann--Roch formula for compact tropical curves 
-and integral affine manifolds with a Hessian form.
-Our analog is different from tropical Riemann--Roch
-theorem that proved by Gathmann--Kerber.
+We use ideas from the Strominger-Yau-Zaslow conjecture and 
+Morse theory to consider a tropical version of the Euler 
+characteristic of line bundles on algebraic varieties, 
+but this time for compact tropical manifolds without 
+boundaries. As a preliminary experiment,
+we prove a version of the Riemann-Roch formula 
+for compact tropical curves and integral affine 
+manifolds equipped with a Hessian form. 
+Our approach differs from the tropical Riemann-Roch 
+theorem established by Gathmann and Kerber.
 \end{abstract}
 \maketitle
 \section{Introduction}
 %TODO: 日本語で4000字の論文の要旨
 
+
 Tropical geometry is a combinatorial and convex 
 geometrical analog of
 algebraic geometry or analytic geometry.
-Some typical tropical variety comes from 
-a subvariety $X$ of an algebraic split torus 
-$(K^{\times})^{n}$
-by tropicalization $\opn{Trop}(X)$ of $X$.
-$\opn{Trop}(X)$ is an $\dim X$-dimensional 
-polyhedral complex satisfying a certain 
-balancing condion
-(see for instance 
-\cite[Theorem 3.2.3]{MR3287221}).
+
 
 The tropical Riemann--Roch theorem for a 
 divisor $D$ of tropical curves $C$ is proved 
@@ -270,9 +263,8 @@ as an extension of Riemann--Roch theorem for graphs
 \cite{MR2355607} (see also 
 \cite{mikhalkinTropicalCurvesTheir2008a}) as 
 the following equation: 
-
 \begin{align}
-r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\opn{top}}(C)
+r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\opn{top}}(C).
 \end{align}
 
 
@@ -3796,7 +3788,7 @@ by affine functions on $\mathbb{R}^{n}$.
 We call this coordinate system \emph{affine coordinate system} 
 of $U_i$. 
 
-\begin{definition}
+\begin{definition}[{cf. \cite[p.213]{MR413010}}]
 A \emph{Hessian metric} or \emph{metric of Hessian form} on an affine manifold 
 $(B,\{(U_i,\psi_i)\}_{i \in I})$.
 is a Riemannian metric $g$ such that 
@@ -3812,10 +3804,9 @@ The terminology
 Hessian manifold is called
 \ind{K\"ahler affine manifold}{Kahler affine manifold}
 in \cite{MR714338}, \ind{affine K\"ahler manifold}{affine Kahler manifold}
-or AK-manifold for short.
-In the respect of historical order, we should use the latter name.
-However, we usually use the former name for avoiding confusion
-with K\"ahler manifold with affine structure.
+or AK-manifold \cite{MR1882331} for short.
+To our knowledge, the notion of Hessian metric have already
+appeared in \cite{MR413010}.
 \end{remark}
 
 
@@ -3838,24 +3829,39 @@ naturally and this superform is a certain analog of
 K\"ahler form, so Hessian metric itself is called Hessian form.
 
 \begin{remark} \label{remark-compact-hessian}
+We recall a well-known result for 
+compact special affine manifold with 
+a Hessian form which is mentioned 
+in some literature
+(e.g. \cite[\textsection 5.2]{MR1882331}).
 By \cite[Theorem 2.1 and Corollary 2.3]{MR714338},
-every closed special Hessian manifold $(B_0,g)$ has 
+ every closed special Hessian manifold $(B_0,g)$ has 
 a flat Riemannian and Hessian metric $\tilde{g}$ such 
 that its volume form $\opn{vol}_{\tilde{g}}$ is parallel 
 with respect to the
 affine connection induced from the affine structure 
-on $B_0$.
-Therefore, the associated first and second Koszul 
+on $B_0$. Moreover, $\tilde{g}$ satisfies 
+real Monge--Amp\'ere equation, and thus
+the associated first and second Koszul 
 form of $\opn{vol}_{\tilde{g}}$ is trivial 
 \cite[Definition 3.1.2]{MR2293045}.
-By \cite[Theorem 8.3.3]{MR2293045}
+If $B$ is a special integral affine manifold with 
+a Hessian metric 
+$g=\sum_{k,l}\frac{\partial K}{\partial x_k \partial x_l}dx_k dx_l$, 
+then the K\"ahler metric $\omega=2\sqrt{-1}\partial \bar{\partial}
+(K\circ f_{B})$ on $X(B)$ is Ricci--flat if 
+and only if $K$ satisfies real Monge--Amp\'ere equation
+\cite[Proposition 6.14]{MR2567952}. 
+By applying the proof of \cite[Theorem 8.3.3]{MR2293045}
+for $\tilde{g}$,
 the Levi--Civita connection of $\tilde{g}$ is 
 equal to the affine connection of $B_0$ 
 \cite[Corollary 8.3.7]{MR2293045}. 
 By Bieberbach theorem, every closed flat Riemannian manifold 
-is covered by a Riemannian flat torus and thus every closed 
-integral Hessian manifold is an unramified cover of 
-a tropical torus as mentioned in \cite[5.2]{MR1882331}.
+is covered by a Riemannian flat torus 
+(see also \cite[Theorem 5.3]{MR862114}), and thus every closed 
+integral Hessian manifold is an unramified finite cover of 
+a tropical torus.
 \end{remark}
 
 \begin{remark}
@@ -3892,11 +3898,6 @@ See also \cref{appendix-geometric-quantization}
 for the relationships between integral affine manifolds 
 and geometric quantization. 
 \end{remark}
-
-
-
-
-
 
 
 \subsection{Tropical homology, Tropical superform and Cartier data}

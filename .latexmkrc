@@ -1,7 +1,7 @@
 $latexargs          = '-interaction=nonstopmode -synctex=1 -file-line-error';
 # $latexargs          = '-shell-escape -synctex=1';
 # $latexsilentargs    = $latexargs . ' -interaction=batchmode';
-$latex            = 'uplatex ' . $latexargs;
+ $latex            = 'uplatex ' . $latexargs;
 # $latex_silent     = 'uplatex ' . $latexsilentargs;
 # $latex            = 'platex ' . $latexargs;
 # $latex_silent     = 'platex ' . $latexsilentargs;

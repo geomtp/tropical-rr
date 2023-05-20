@@ -1,6 +1,5 @@
-\documentclass[a4paper,dvipdfmx,reqno,12pt]{amsart}
-\synctex=1
-%
+\documentclass[uplatex,dvipdfmx,12pt]{jsarticle}
+
 %%%% packages
 \usepackage[utf8]{inputenc}
 \usepackage[dvipdfmx]{graphicx,color}%for images
@@ -13,7 +12,7 @@
 \usepackage{latexsym}% ほぼ必須
 \usepackage{makecell}%表のセル内で改行するためのパッケージ
 \usepackage{algpseudocode,algorithm}%疑似コード用
-\usepackage{todonotes}%comments
+%\usepackage{todonotes}%comments
 \usepackage[margin=0.8in]{geometry}
 \usepackage{layout}
 \usepackage[T1]{fontenc}%font encoding
@@ -21,7 +20,7 @@
 \usepackage{braket}%after physics
 \usepackage{mathtools,thmtools}
 \usepackage{imakeidx}%before hyperref for pagebackref
-\usepackage[pagebackref,dvipdfmx]{hyperref}
+\usepackage[dvipdfmx]{hyperref}
 \usepackage[capitalize]{cleveref}
 \hypersetup{
      colorlinks = true,
@@ -29,29 +28,13 @@
      linkcolor  = blue, 
      urlcolor   = blue, 
 }
-%\usepackage{pxjahyper}%for hyperref in Japanese
-\usepackage{bookmark}
-\usepackage{dynkin-diagrams}
+\usepackage{mathrsfs}
+\usepackage{upgreek}
+\numberwithin{equation}{section}
 
-%%%% imakeidx
-\makeindex
-\makeindex[name=not, title=Index, columns=2]
-\makeindex[name=sym, title=Symbol, columns=3]
-\makeindex[name=ref, title=Ref, columns=3]
+\usepackage{titlesec}
 
-\newcommand{\ind}[2]{\emph{#1}\index{1{#2}@{#1}}}
-\newcommand{\indset}[3]{$#1 \deq #2 $ \index{0{#3}@$#1$} }
-\newcommand{\indse}[2]{{$#1$}\index{0{#2}@{$#1$}}}
-
-%%%%
-\usepackage{pgf,tikz,pgfplots}
-\pgfplotsset{compat=1.15}
-\usetikzlibrary{arrows}
-
-
-
-%%%%
-
+\titleformat*{\section}{\large\bfseries}
 
 %%%% theoremstyle
 
@@ -90,177 +73,80 @@
 \newtheorem*{Conv*}{Convention}
 \newtheorem{observation}[theorem]{Observation}
 \newtheorem*{observation*}{Observation}
-%%%% newcommand
+\newtheorem{expectation}[theorem]{メタ予想}
 
-%%%logic symbol
+% newcommand
 \newcommand{\deq}{\coloneqq}
-
-\newcommand{\dbraket}[1]{\hspace{-1.5pt}\braket{\hspace{-2.2pt}\braket{#1}\hspace{-2.2pt}}}
-
-\newcommand{\textcmd}[1]{\texttt{\symbol{"5C}#1}}
-
-%%special sets
-\newcommand{\emp}{\varnothing}%emptyset
-\newcommand{\C}{\mathbb{C}}%complex number
-\newcommand{\Ha}{\mathbb{H}}%quaternion
-\newcommand{\F}{\mathbb{F}}%field
-\newcommand{\R}{\mathbb{R}}%real number
-\newcommand{\Q}{\mathbb{Q}}%rational number
-\newcommand{\Z}{\mathbb{Z}}%integer
-\newcommand{\N}{\mathbb{N}_{0}}%natural number
-\newcommand{\Pj}{\mathbb{P}}%bold p
-\newcommand{\vep}{\varepsilon}%varepsilon
-
-%%%%
-
-\newcommand{\mb}[1]{\mathbb{#1}}%blackboard bold (for math mode)
-\newcommand{\mcal}[1]{\mathcal{#1}}%
-
 \newcommand{\opn}[1]{\operatorname{#1}}
 \newcommand{\catn}[1]{\mathbf{#1}}
+\newcommand{\beforesection}{\vspace{-20pt}}
+\newcommand{\aftersection}{\vspace{-10pt}}
 
-\newcommand{\abk}[1]{\langle {#1} \rangle}%angle bracket 
-\newcommand{\Abk}[1]{\left \langle {#1} \right \rangle}%angle bracket (auto sizing)
-\newcommand{\dabk}[1]{\langle\! \langle {#1}\rangle \! \rangle}%double angle bracket
-\newcommand{\Dabk}[1]{\left \langle \! \left \langle {#1} \right \rangle \! \right \rangle}%double angle bracket
-\newcommand{\Sbk}[1]{\left[ {#1} ]\right }% square bracket [] (auto sizing)
-\newcommand{\Cbk}[1]{\left \{ {#1}\right \}}% curly bracket {} (auto sizing)
-\newcommand{\dcbk}[1]{\{\!\!\{ {#1}\}\!\!\}} % double curly bracket {{}} 
-\newcommand{\Dcbk}[1]{\left \{\!\! \left \{ {#1} \right\} \!\!\right \}} % double curly bracket {{}} (auto sizing)
-\newcommand{\Paren}[1]{\left ( {#1} \right )}%parenthesis () (auto sizing)
-\newcommand{\dparen}[1]{(\!({#1})\!)}%double parenthesis
-\newcommand{\xto}[1]{\xrightarrow{#1}}
-\newcommand{\xgets}[1]{\xleftarrow{#1}}
-\newcommand{\hookto}{\hookrightarrow}
-
-
-%%%% 
-
-%%%% mathabx.sty (font) 
-\DeclareFontFamily{U}{matha}{\hyphenchar\font45}
-\DeclareFontShape{U}{matha}{m}{n}{
-      <5> <6> <7> <8> <9> <10> gen * matha
-      <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
-      }{}
-\DeclareSymbolFont{matha}{U}{matha}{m}{n}
-
-\DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
-\DeclareFontShape{U}{mathb}{m}{n}{
-      <5> <6> <7> <8> <9> <10> gen * mathb
-      <10.95> mathb10 <12> <14.4> <17.28> <20.74> <24.88> mathb12
-      }{}
-\DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
-
-\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
-\DeclareFontShape{U}{mathx}{m}{n}{
-      <5> <6> <7> <8> <9> <10>
-      <10.95> <12> <14.4> <17.28> <20.74> <24.88>
-      mathx10
-      }{}
-\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
-
-%DeclareMathSymbol (from mathabx.sty)
-\DeclareMathSymbol{\bigboxslash}{\mathop}{mathx}{"FE}
-\DeclareMathSymbol{\bigboxtimes}{\mathop}{mathx}{"D2}
-%%%%
-
-%%%% MnSymbol.sty (font)
-\DeclareFontFamily{U}{MnSymbolC}{}
-\DeclareFontShape{U}{MnSymbolC}{m}{n}{
-  <-6> MnSymbolC5
-  <6-7> MnSymbolC6
-  <7-8> MnSymbolC7
-  <8-9> MnSymbolC8
-  <9-10> MnSymbolC9
-  <10-12> MnSymbolC10
-  <12-> MnSymbolC12}{}
-\DeclareFontShape{U}{MnSymbolC}{b}{n}{
-  <-6> MnSymbolA-Bold5
-  <6-7> MnSymbolC-Bold6
-  <7-8> MnSymbolC-Bold7
-  <8-9> MnSymbolC-Bold8
-  <9-10> MnSymbolC-Bold9
-  <10-12> MnSymbolC-Bold10
-  <12-> MnSymbolC-Bold12}{}
-
-\DeclareSymbolFont{MnSyC}{U}{MnSymbolC}{m}{n}
-
-%%%% DeclareMathSymbol (from MnSymbol.sty)
-
-\DeclareMathSymbol{\tplus}{\mathbin}{MnSyC}{43}
-\DeclareMathSymbol{\aplus}{\mathbin}{MnSyC}{190}
-
-%%%% renewcommand
-
-
-
-
-%%%% footnote
-
-\newcommand{\cfootnote}[1]{\footnote{#1}}
-
-\newcommand{\myfootnote}[1]{\hspace{-5pt}\footnote{#1}}
-
-\newcommand{\TB}{\mcal{T}_{B_0}}
-\newcommand{\TBZ}{\mcal{T}_{\Z,B_0}}
-\newcommand{\AffS}{{\mathop{\mcal{A}\!f\!\!f\!}\nolimits}}
-\newcommand{\FBZ}{\mcal{F}_{\Z,B}}
-\newcommand{\FB}{\mcal{F}_{B}}
-\newcommand{\simto}{ 
-\mathrel{\raisebox{0.13em}{${\sim}$}}
-\kern -0.75em \mathrel{\raisebox{-0.11em}{${\scriptstyle \to}$}}  
+\title{論文内容の要旨
 }
-%%%% from 
-
-%%%% from  https://tex.stackexchange.com/questions/183702/formatting-back-references-in-bibliography-bibtex
-\renewcommand*{\backrefalt}[4]{
-    \ifcase #1 [Not cited.]%
-        \or        [Cited on p.#2.]%
-        \else      [Cited on p.#2.]%
-    \fi}
-
-
-\usepackage{mathrsfs}
-\usepackage{upgreek}
-\numberwithin{equation}{section}
-\title{On counting lattice points in some tropical spaces and beyond
-}
-\author[Y. Tsutsui]{Yuki Tsutsui}
+%\author[Y. Tsutsui]{Yuki Tsutsui}
 % \address{Graduate School of Mathematical Sciences,
 % The University of Tokyo, 3-8-1 Komaba, Meguro-Ku,
 % Tokyo, 153-8914, Japan}
 % \email{tyuki@ms.u-tokyo.ac.jp}
-% \date{\today}
+\date{}
+
+%layout
+
+
 
 \begin{document}
+\setlength{\baselineskip}{-5pt}
+\setlength{\parskip}{2pt}
 
+\maketitle
+{\large
+\noindent
 論文題目:
 
 On graded modules associated with line bundles on 
 tropical curves and integral Hessian manifolds
-(トロピカル曲線と整ヘッセ多様体上の直線束に付随した
+
+(トロピカル曲線と整Hesse多様体上の直線束に付随した
 次数付き加群について)
+}
 
+\vspace{5pt}
+
+\noindent
+{\large
 氏名: 筒井 勇樹
+}
 
-本論文の目的は (1)トロピカル幾何学上の直線束を表現する
-良い条件をもつ滑らかな因子データに対して Euler 数を定義すること
+\vspace{10pt}
+
+\setlength{\baselineskip}{-3pt}
+\setlength{\parskip}{2pt}
+
+本論文の目的はトロピカル幾何学上の直線束を表現する
+良い条件をもつ$C^{\infty}$級Cartierデータに対して次数つき加群を
+定義すること
 と(2)その定式化から自然と提起される Riemann--Roch 型の定理の
-新たな類似をトロピカル直線と Hesse 計量をもつ整アフィン多様体に対して
-証明することである。本論文の定式化におけるトロピカル曲線上の
+新たな類似をトロピカル曲線と Hesse 計量をもつ整アフィン多様体に対して
+証明する。本論文の定式化におけるトロピカル曲線上の
 直線束の Riemann--Roch 型の定理の類似は Gathmann--Kerber
-によるトロピカル Riemann--Roch の定理とは異なるものである。
+によるトロピカル Riemann--Roch の定理とは異なる。
+
+\beforesection
 
 \section{Riemann--Rochの定理のトロピカル幾何的類似の研究の背景}
 
-トロピカル幾何とは、ある種の凸多面体複体の台空間 $X$ とその上の
+\aftersection
+
+トロピカル幾何とは、ある条件を満たす多面複体の台空間 $S$ とその上の
 局所的に整数係数アフィンな関数のなす層 
-$\mathcal{O}_X^{\times}$
+$\mathcal{O}_S^{\times}$
 の組を代数多様体の類似物とみなして研究する分野である
 \cite{mikhalkinTropicalEigenwaveIntermediate2014a,
 gross2019sheaftheoretic}。
 そのような空間をトロピカル多様体と呼ぶ。
 一次元トロピカル多様体をトロピカル曲線と呼び、
+有限距離グラフは標準的なトロピカル曲線の構造を持つ。
 トロピカル多様体であり境界なし微分多様体の構造を自然にもつ空間を
 整アフィン多様体と呼ぶ。
 Hesse 計量は整アフィン多様体における
@@ -288,20 +174,23 @@ Euler 数に、右辺は 直線束の Chern 類と Todd 類の
 カップ積で表現されるが、トロピカル幾何においては
 直線束の層コホモロジー群と Todd 類の類似物は一般には
 定義されていない。特に深刻なのは左辺であり、
-トロピカル直線束はアーベル群のなす層ではないため、
-層コホモロジー群を代数幾何の場合のように直接定義する
-ことができない。一方で、数多くの研究結果から
+トロピカル直線束はアーベル群のなす層ではない。
+一方で、数多くの研究結果から
 トロピカル多様体の構造層の Euler 数の類似は
 トロピカル多様体上の定数層の Euler 数であると
 考えられている。
 
+\beforesection
+
 \section{SYZ予想および本研究の主結果}
+
+\aftersection
 
 本研究では、Strominger--Yau--Zaslow 予想 (SYZ予想)
 のアイデアと超局所層理論\cite{MR1299726}を
 利用することで、
 境界を持たないトロピカル多様体上の直線束を表現する 
-admissible な滑らかな因子に対して
+permissible な滑らかな因子に対して
 Floer 複体もしくは Morse 複体の類似の
 次数付き加群を定義し、その次数つき加群の 
 Euler 数を 直線束の Euler 数のトロピカル類似とする。
@@ -313,11 +202,11 @@ SYZ 予想\cite{stromingerMirrorSymmetryTduality1996}
 特殊 Lagrange トーラスのファイブレーション
 $\check{f}_{B}\colon \check{X}\to B$ の
 双対トーラスファイブレーション $f_{B}\colon X\to B$
-として得られるという弦理論にかかわる数理物理学における
+として得られるという弦理論に関わる数理物理学における
 予想であり、この予想の数学的定式化および証明が 
 Kontsevich のホモロジカルミラー対称性予想
 \cite{MR1403918}の
-証明を与えることが期待されている。
+証明を与えると期待されている。
 
 ホモロジー的ミラー対称性とは、
 Calabi--Yau 多様体 $\check{X}$ に対してある
@@ -334,8 +223,7 @@ $\Phi_{\opn{SYZ}}\colon \catn{fuk}(\check{X})
 \to \catn{coh}(\mathcal{X})$ の具体的な構成法を
 与えると期待されており、
 $\Phi_{\opn{SYZ}}$ を SYZ変換と呼ぶ。
-
-ホモロジー的ミラー対称性 (\ref{equation-hms}) が
+$\Phi_{\opn{SYZ}}$が
 存在するならば、Floer コホモロジーと Ext 群との間に
 \begin{align}
 \opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2)
@@ -354,12 +242,8 @@ $\mathscr{L}_1$, $\mathscr{L}_2$ の Lagrange 部分多様体
 \end{align}
 であることが導かれる。以上は Calabi--Yau 多様体に関する
 ホモロジー的ミラー対称性予想についてだが、
-$\mathcal{X}(B)$ をトーリック多様体に一般化したもの
-\cite{MR2449059}や、
 Mumford 曲線に一般化したもの\cite{auroux2022lagrangian}
-も考察されている。その際の$\check{X}(B)$ 
-はシンプレクティック的構造をStrataとして持つ様な空間に
-置き換えられる。
+も考察されている。
 
 $B$ をコンパクト整アフィン多様体とする。このとき、$B$ の
 構造から誘導される特殊Lagrangeトーラス束 
@@ -373,7 +257,8 @@ $\mathcal{O}_{B}^{\times}\to \mathcal{C}^{\infty}(B)$ が誘導
 から $H^{1}(B;\mathcal{O}^{\times}_B)$ への全射を持つ。
 $H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})$
 の元は、整アフィン多様体上のトロピカル Cartier 因子と
-類似するものであり、本論文では区別のため滑らかな因子と
+類似するものであり、本論文では区別のため$C^{\infty}$級
+Cartier データと
 読んでいる。このとき、次の同型
 \begin{align} \label{equation-lagrangian-section}
 H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})
@@ -381,7 +266,7 @@ H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})
 \check{f}_{B}\circ s=\opn{id}_B, \,
 \opn{Im}(s) \text{ が Lagrange 部分多様体} \}
 \end{align}
-が成り立つ。\ref{equation-lagrangian-section} の
+が成り立つ。(\ref{equation-lagrangian-section}) の
 右辺に属する元を Lagrange 切断と呼び、
 自然と $\catn{fuk}(\check{X}(B))$ の対象
 $\mathscr{L}_s$ とすることができ、
@@ -416,9 +301,9 @@ $\opn{CF}^{\bullet}(\mathscr{L}_{s_0},
 トロピカル幾何の言葉のみで表現されていることの二点である。
 
 これらを踏まえた上で博士論文提出者は、SYZ 予想のトイモデルとして
-次の予想を提示する。
+次のメタ予想を提示する。
 
-\begin{conjecture} \label{conjecture-mirror-tropical-rr}
+\begin{expectation} \label{conjecture-mirror-tropical-rr}
 
 $X$ をコンパクトなトロピカル多様体とし、
 $\mathcal{L}$ を $X$ 上のトロピカル直線束とする。
@@ -435,7 +320,7 @@ $s$ の取り方によらず
 \end{align}
 ここで、$\int_X$ はトレース写像であり、
 $\mathrm{ch}(\mathcal{L})$ は、$\mathcal{L}$ の全 Chern 類である。
-\end{conjecture}
+\end{expectation}
 $\opn{LMD}^{\bullet}(X;s)$ は次節で述べるが、
 コンパクト整アフィン多様体 $B$と横断的に交わる Lagrange 切断$s$
 に対しては、次数つきベクトル空間として
@@ -448,12 +333,12 @@ $\opn{LMD}^{\bullet}(B;s)\otimes_{\mathbb{Z}}
 
 \begin{condition} \label{condition-good}
 (i) $X$ の座標系がすべて $\mathbb{R}^{n}$ 
-の凸多面体複体の開集合として取れるトロピカル多様体である。
-(ii) $s$ が admissible である。
+の凸多面体の開集合として取れるトロピカル多様体である。
+(ii) $s$ が permissible である。
 (iii) $\sharp (\opn{Im}(s_0)\cap \opn{Im}(s))<\infty$。
 (iv) $\opn{LMD}^{\bullet}(X;s)$ が有限生成である。
 \end{condition}
-なお最後の条件は将来的に不要となると期待している。
+なお条件(iv)は将来的に不要となると期待している。
 いくつか用語の説明を後回しにして、
 以上を踏まえた上での本論文の主結果(の弱い版)
 を述べると以下のようになる。
@@ -482,11 +367,17 @@ $s$ を $C$ (resp. $B$) 上の
 \cite{auroux2022lagrangian} の特殊例ともみなせるが、
 本提出論文の証明はトロピカル幾何学の言葉のみで完結しており、
 左辺に関しても上述のものとは異なるものである。
+
+\beforesection
+
 \section{局所 Morse データと証明の概略}
+
+\aftersection
+
 この節では、\cref{condition-good} (i) を満たしている
 有理凸多面体空間 $S$ とその上の滑らかな因子
 $s\in H^{0}(S;\mathcal{A}_{S}^{0,0}/\mathcal{O}^{\times}_S)$
-に対する admissibility 条件と 
+に対する permissiblity 条件と 
 $\opn{LMD}^{\bullet}(S;s)$ について説明する。
 ここで $\mathcal{A}^{0,0}_S$ は $S$ 上の $(0,0)$-superform
 のなす層のことである\cite{MR3903579}。まず、$s$は局所的には、$X$の開集合上の 
@@ -510,7 +401,7 @@ $T_x X$を微分多様体とみなしたときの、
 $\phi_* \phi^{-1}\mathbb{Z}_{T_x S}$ のマイクロ台と
 原点での$T_x X$の余接ベクトル空間との交叉である。
 このとき、
-$f\colon U \to \mathbb{R}$ が $x$ にて admissible 
+$f\colon U \to \mathbb{R}$ が $x$ にて permissible
 とは、次の条件を満たすことである。
 \begin{align}
 df(x)\notin\opn{span}_{\mathbb{R}}(\opn{SS}_x(S))+
@@ -523,7 +414,7 @@ $\check{X}_0(S)_x\deq ((\mathcal{F}^{1}_{\mathbb{Z},S})_x/
 \opn{span}_{\mathbb{R}}(\opn{SS}_x(S))\cap 
 (\mathcal{F}^{1}_{\mathbb{Z},S})_x)\otimes_{\mathbb{Z}}
 \mathbb{R}/\mathbb{Z}$ が定義され、
-admissible な滑らかな因子 $s$ に対して写像
+permissible な$C^{\infty}$級因子 $s$ に対して写像
 $\check{s}\colon S\to \check{X}_0(S)\deq 
 \bigcup_{x\in S} \check{X}_0(S)_x$ が定義される。 
 そして標準的な射影 $\check{f}_{S}\colon \check{X}_0(S)\to S$
@@ -564,7 +455,10 @@ K\"unneth 型の定理が成り立つことを層における
 Thom--Sebastiani型の定理\cite{MR2031639}を
 用いることで示している。
 
+\aftersection
+
+{\small
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}
-
+}
 \end{document}
