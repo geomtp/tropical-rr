@@ -93,11 +93,15 @@
 
 %layout
 
+%package
 
+\usepackage{lineno}
 
 \begin{document}
 \setlength{\baselineskip}{-5pt}
 \setlength{\parskip}{2pt}
+
+\linenumbers
 
 \maketitle
 {\large
@@ -169,12 +173,12 @@ $C$ の位相的 Euler 数である。
 この等式を高次元の場合に一般化することは自然な考えであるが
 両辺ともに技術的な困難が存在する。代数幾何における
 Hirzebruch--Riemann--Roch の定理では、
-左辺は因子に付随する直線束の層コホモロジー群の
+左辺は因子に付随する直線束の層コホモロジーの
 Euler 数に、右辺は 直線束の Chern 類と Todd 類の
 カップ積で表現されるが、トロピカル幾何においては
-直線束の層コホモロジー群と Todd 類の類似物は一般には
-定義されていない。特に深刻なのは左辺であり、
-トロピカル直線束はアーベル群のなす層ではない。
+直線束の層コホモロジーと Todd 類の類似物は一般には
+定義されていない。特に、
+トロピカル直線束は Abel 群のなす層ではない。
 一方で、数多くの研究結果から
 トロピカル多様体の構造層の Euler 数の類似は
 トロピカル多様体上の定数層の Euler 数であると
@@ -197,32 +201,19 @@ Euler 数を 直線束の Euler 数のトロピカル類似とする。
 
 SYZ 予想\cite{stromingerMirrorSymmetryTduality1996}
 とは、Calabi--Yau 多様体 $\check{X}$ の
-ミラー Calabi--Yau 多様体 $X$ が、
+ミラー Calabi--Yau 多様体 $\mathcal{X}$ が、
 ある位相多様体 $B$ への(特異ファイバーを許す)
 特殊 Lagrange トーラスのファイブレーション
 $\check{f}_{B}\colon \check{X}\to B$ の
-双対トーラスファイブレーション $f_{B}\colon X\to B$
+双対トーラスファイブレーション $f_{B}\colon 
+\mathcal{X}\to B$
 として得られるという弦理論に関わる数理物理学における
-予想であり、この予想の数学的定式化および証明が 
-Kontsevich のホモロジカルミラー対称性予想
-\cite{MR1403918}の
-証明を与えると期待されている。
-
-ホモロジー的ミラー対称性とは、
-Calabi--Yau 多様体 $\check{X}$ に対してある
-Calabi--Yau 多様体 $\mathcal{X}$ が存在し、
-$\check{X}$ の導来深谷圏 $\catn{fuk}(\check{X})$ と
-連接層の導来圏 $\catn{coh}(\mathcal{X})$ が
-導来圏として擬同型
-\begin{align} \label{equation-hms}
-\catn{fuk}(\check{X})\simeq \catn{coh}(\mathcal{X})
-\end{align}
-であることを主張する予想である。
-SYZ予想の数学的定式化は、擬同型関手
-$\Phi_{\opn{SYZ}}\colon \catn{fuk}(\check{X})
-\to \catn{coh}(\mathcal{X})$ の具体的な構成法を
-与えると期待されており、
-$\Phi_{\opn{SYZ}}$ を SYZ変換と呼ぶ。
+予想であり、この予想の数学的定式化は、
+$\check{X}$の導来深谷圏 $\mathrm{fuk}(\check{X})$ から
+ $\mathcal{X}$ 上の連接層の導来圏$\mathrm{coh}(\mathcal{X})$
+への擬同型関手$\Phi_{\mathrm{SYZ}}$ を誘導すると
+期待されている。この$\Phi_{\mathrm{SYZ}}$を
+SYZ変換と呼ぶ。
 $\Phi_{\opn{SYZ}}$が
 存在するならば、Floer コホモロジーと Ext 群との間に
 \begin{align}
@@ -233,19 +224,23 @@ $\Phi_{\opn{SYZ}}$が
 があることが導かれる。ここで
 $\mathscr{L}_1$, $\mathscr{L}_2$ は、$\catn{fuk}(\check{X})$
 の対象であり、コンパクト Lagrange 部分多様体といくつかの追加
-データによって構成されている。$[L_1]$, $[L_2]$ をそれぞれ
-$\mathscr{L}_1$, $\mathscr{L}_2$ の Lagrange 部分多様体
-のホモロジー類だとすると、定義より
-\begin{align}
-\chi(\opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2))=
-(-1)^{\frac{n(n-1)}{2}} \sharp ([L_1]\cap [L_2])
-\end{align}
-であることが導かれる。以上は Calabi--Yau 多様体に関する
+データによって構成されている。
+% $[L_1]$, $[L_2]$ をそれぞれ
+% $\mathscr{L}_1$, $\mathscr{L}_2$ の Lagrange 部分多様体
+% のホモロジー類だとすると、定義より
+% \begin{align}
+% \chi(\opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2))=
+% (-1)^{\frac{n(n-1)}{2}} \sharp ([L_1]\cap [L_2])
+% \end{align}
+% であることが導かれる。
+以上は Calabi--Yau 多様体に関する
 ホモロジー的ミラー対称性予想についてだが、
 Mumford 曲線に一般化したもの\cite{auroux2022lagrangian}
 も考察されている。
 
-$B$ をコンパクト整アフィン多様体とする。このとき、$B$ の
+$B$ を
+($\pi_2(B)=0$となる)
+コンパクト整アフィン多様体とする。このとき、$B$ の
 構造から誘導される特殊Lagrangeトーラス束 
 $\check{X}(B)\to B$ と 
 双対トーラス束 $\mathcal{X}(B)\to B$ が定義される。
@@ -279,13 +274,13 @@ Lagrange 切断 $s$ が、
 $p\in s_0\cap s$の開近傍上の関数$f_p\colon U_p\to \mathbb{R}$
 で、$df_p=s|_{U_p}$ かつ $p$で孤立特異点を持つもので 
 $\opn{HF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_s)$ を
-定義する複体は次のようになる。
+定義する複体は次のようになる\cite{MR1882331}。
 \begin{align}
 \opn{CF}^{\bullet}(\mathscr{L}_{s_0},
 \mathscr{L}_s)=\bigoplus_{p\in \check{f}_{B}(\opn{Im}(s_0)\cap \opn{Im}(s))}
 \Lambda^{\mathbb{C}}_{\mathrm{nov}}[-\opn{ind}_{\mathrm{Morse}}(f_p,p)]
 \end{align}
-と表現することができる\cite{MR1882331}。ここで
+ここで
 $\opn{ind}_{\mathrm{Morse}}(f_p,p)$
 とは、$f_p$ の $p$ での Morse指数であり、
 $\Lambda^{\mathbb{C}}_{\mathrm{nov}}$ は
@@ -311,7 +306,7 @@ $\mathcal{L}$ を $X$ 上のトロピカル直線束とする。
 トロピカルコホモロジー群 $H^{\bullet,*}(X;\mathbb{Z})$
 の元として定義されていると仮定する。
 このとき、$\mathcal{L}$ を表現するしかるべき条件を満たした
-`滑らかな因子 $s$' が存在し、$s$ が定義する次数つき
+$C^{\infty}$ Cartier 因子 $s$ が存在し、$s$ が定義する次数つき
 $\mathbb{Z}$-加群 $\opn{LMD}^{\bullet}(X;s)$ に対して、
 $s$ の取り方によらず
 次の等式が成り立つ:
