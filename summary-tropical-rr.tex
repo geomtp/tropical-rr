@@ -13,7 +13,8 @@
 \usepackage{makecell}%表のセル内で改行するためのパッケージ
 \usepackage{algpseudocode,algorithm}%疑似コード用
 %\usepackage{todonotes}%comments
-\usepackage[margin=0.8in]{geometry}
+\usepackage[top=0.8in,left=0.8in,right=0.8in,
+bottom=1.1in]{geometry}
 \usepackage{layout}
 \usepackage[T1]{fontenc}%font encoding
 \usepackage{physics}
@@ -74,13 +75,14 @@
 \newtheorem{observation}[theorem]{Observation}
 \newtheorem*{observation*}{Observation}
 \newtheorem{expectation}[theorem]{メタ予想}
+\newtheorem{fact}[theorem]{事実}
 
 % newcommand
 \newcommand{\deq}{\coloneqq}
 \newcommand{\opn}[1]{\operatorname{#1}}
 \newcommand{\catn}[1]{\mathbf{#1}}
-\newcommand{\beforesection}{\vspace{-20pt}}
-\newcommand{\aftersection}{\vspace{-10pt}}
+\newcommand{\beforesection}{\vspace{-15pt}}
+\newcommand{\aftersection}{\vspace{-8pt}}
 
 \title{論文内容の要旨
 }
@@ -96,6 +98,28 @@
 %package
 
 \usepackage{lineno}
+
+\newcommand*\patchAmsMathEnvironmentForLineno[1]{
+  \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+  \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+  \renewenvironment{#1}
+     {\linenomath\csname old#1\endcsname}
+     {\csname oldend#1\endcsname\endlinenomath}}
+\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{
+  \patchAmsMathEnvironmentForLineno{#1}
+  \patchAmsMathEnvironmentForLineno{#1*}}
+\AtBeginDocument{
+\patchBothAmsMathEnvironmentsForLineno{equation}
+\patchBothAmsMathEnvironmentsForLineno{align}
+\patchBothAmsMathEnvironmentsForLineno{flalign}
+\patchBothAmsMathEnvironmentsForLineno{alignat}
+\patchBothAmsMathEnvironmentsForLineno{gather}
+\patchBothAmsMathEnvironmentsForLineno{multline}
+}
+
+\usepackage{framed}
+\setlength{\OuterFrameSep}{-4pt}
+\setlength{\FrameSep}{3pt}
 
 \begin{document}
 \setlength{\baselineskip}{-5pt}
@@ -124,16 +148,15 @@ tropical curves and integral Hessian manifolds
 
 \vspace{10pt}
 
-\setlength{\baselineskip}{-3pt}
+\setlength{\baselineskip}{4pt}
 \setlength{\parskip}{2pt}
 
-本論文の目的はトロピカル幾何学上の直線束を表現する
+本論文の目的は境界のないトロピカル多様体上の直線束を表現する
 良い条件をもつ$C^{\infty}$級Cartierデータに対して次数つき加群を
 定義すること
 と(2)その定式化から自然と提起される Riemann--Roch 型の定理の
 新たな類似をトロピカル曲線と Hesse 計量をもつ整アフィン多様体に対して
-証明する。本論文の定式化におけるトロピカル曲線上の
-直線束の Riemann--Roch 型の定理の類似は Gathmann--Kerber
+証明することである。なおこの類似は Gathmann--Kerber
 によるトロピカル Riemann--Roch の定理とは異なる。
 
 \beforesection
@@ -161,7 +184,7 @@ $D\in \opn{CDiv}(C)$
 に関する Riemann--Roch の定理は
 Gathmann--Kerber
 \cite{gathmannRiemannRochTheoremTropical2008a} によって 
-Baker--Norine \cite{MR2355607}による
+Baker--Norine による
 グラフの Riemann--Roch の定理の一般化として
 次のような等式として証明された。
 \begin{align} \label{equation-tropical-rr}
@@ -170,19 +193,24 @@ r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\mathrm{top}}(C)
 ここで、$r(D)$ とは、$D$ の因子の線形系の階数であり、
 $K_C$ は$C$ の標準因子、$\chi_{\mathrm{top}}(C)$ は
 $C$ の位相的 Euler 数である。
-この等式を高次元の場合に一般化することは自然な考えであるが
-両辺ともに技術的な困難が存在する。代数幾何における
-Hirzebruch--Riemann--Roch の定理では、
-左辺は因子に付随する直線束の層コホモロジーの
-Euler 数に、右辺は 直線束の Chern 類と Todd 類の
-カップ積で表現されるが、トロピカル幾何においては
-直線束の層コホモロジーと Todd 類の類似物は一般には
-定義されていない。特に、
-トロピカル直線束は Abel 群のなす層ではない。
-一方で、数多くの研究結果から
-トロピカル多様体の構造層の Euler 数の類似は
-トロピカル多様体上の定数層の Euler 数であると
-考えられている。
+この等式を高次元に一般化することは自然な考えであるが、
+両辺ともに技術的な困難が存在する。
+% 代数幾何における
+% Hirzebruch--Riemann--Roch の定理では、
+% 左辺は因子に付随する直線束の層コホモロジーの
+% Euler 数に、右辺は 直線束の Chern 類と Todd 類の
+% カップ積で表現されるが、トロピカル幾何においては
+% 直線束の層コホモロジーと Todd 類の類似物は一般には
+% 定義されていない。
+特に左辺は、
+トロピカル直線束は Abel 群のなす層ではないという
+根本的な問題が原因である。
+% \textcolor{gray}{
+% 一方で、数多くの研究結果から
+% トロピカル多様体の構造層の Euler 数の類似は
+% トロピカル多様体上の定数層の Euler 数であると
+% 考えられている。
+% }
 
 \beforesection
 
@@ -194,7 +222,7 @@ Euler 数に、右辺は 直線束の Chern 類と Todd 類の
 のアイデアと超局所層理論\cite{MR1299726}を
 利用することで、
 境界を持たないトロピカル多様体上の直線束を表現する 
-permissible な滑らかな因子に対して
+permissible な$C^{\infty}$級Cartierデータに対して
 Floer 複体もしくは Morse 複体の類似の
 次数付き加群を定義し、その次数つき加群の 
 Euler 数を 直線束の Euler 数のトロピカル類似とする。
@@ -205,23 +233,25 @@ SYZ 予想\cite{stromingerMirrorSymmetryTduality1996}
 ある位相多様体 $B$ への(特異ファイバーを許す)
 特殊 Lagrange トーラスのファイブレーション
 $\check{f}_{B}\colon \check{X}\to B$ の
-双対トーラスファイブレーション $f_{B}\colon 
+双対 $f_{B}\colon 
 \mathcal{X}\to B$
-として得られるという弦理論に関わる数理物理学における
+として得られるという弦理論に由来する数理物理の
 予想であり、この予想の数学的定式化は、
 $\check{X}$の導来深谷圏 $\mathrm{fuk}(\check{X})$ から
  $\mathcal{X}$ 上の連接層の導来圏$\mathrm{coh}(\mathcal{X})$
 への擬同型関手$\Phi_{\mathrm{SYZ}}$ を誘導すると
-期待されている。この$\Phi_{\mathrm{SYZ}}$を
+期待されている。$\Phi_{\mathrm{SYZ}}$を
 SYZ変換と呼ぶ。
-$\Phi_{\opn{SYZ}}$が
-存在するならば、Floer コホモロジーと Ext 群との間に
-\begin{align}
-\opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2)
-\simeq \opn{Ext}^{\bullet}_{\mathcal{O}_{\mathcal{X}}}(\Phi_{\opn{SYZ}}(\mathscr{L}_1),
-\Phi_{\opn{SYZ}}(\mathscr{L}_2))
-\end{align}
-があることが導かれる。ここで
+% $\Phi_{\opn{SYZ}}$が
+% 存在するならば、Floer コホモロジーには
+% 次の同型
+% \begin{align}
+% \opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2)
+% \simeq \opn{Ext}^{\bullet}_{\mathcal{O}_{\mathcal{X}}}(\Phi_{\opn{SYZ}}(\mathscr{L}_1),
+% \Phi_{\opn{SYZ}}(\mathscr{L}_2))
+% \end{align}
+% が存在する。
+ここで
 $\mathscr{L}_1$, $\mathscr{L}_2$ は、$\catn{fuk}(\check{X})$
 の対象であり、コンパクト Lagrange 部分多様体といくつかの追加
 データによって構成されている。
@@ -233,116 +263,141 @@ $\mathscr{L}_1$, $\mathscr{L}_2$ は、$\catn{fuk}(\check{X})$
 % (-1)^{\frac{n(n-1)}{2}} \sharp ([L_1]\cap [L_2])
 % \end{align}
 % であることが導かれる。
-以上は Calabi--Yau 多様体に関する
-ホモロジー的ミラー対称性予想についてだが、
+元々のSYZ予想はCalabi--Yau 多様体に対する予想だが、
 Mumford 曲線に一般化したもの\cite{auroux2022lagrangian}
 も考察されている。
 
 $B$ を
-($\pi_2(B)=0$となる)
+$\pi_2(B)=0$となる
 コンパクト整アフィン多様体とする。このとき、$B$ の
 構造から誘導される特殊Lagrangeトーラス束 
 $\check{X}(B)\to B$ と 
 双対トーラス束 $\mathcal{X}(B)\to B$ が定義される。
-$B$ 上のトロピカル直線束は、$H^{1}(B;\mathcal{O}^{\times}_B)$
-によってパラメトライズされており、滑らかな関数のなす層 
-$\mathcal{C}^{\infty}(B)$ への単射 
-$\mathcal{O}_{B}^{\times}\to \mathcal{C}^{\infty}(B)$ が誘導
-する $H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})$
-から $H^{1}(B;\mathcal{O}^{\times}_B)$ への全射を持つ。
-$H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})$
-の元は、整アフィン多様体上のトロピカル Cartier 因子と
-類似するものであり、本論文では区別のため$C^{\infty}$級
-Cartier データと
-読んでいる。このとき、次の同型
-\begin{align} \label{equation-lagrangian-section}
-H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})
-\simeq \{s\colon B\to \check{X}(B)\mid 
-\check{f}_{B}\circ s=\opn{id}_B, \,
-\opn{Im}(s) \text{ が Lagrange 部分多様体} \}
-\end{align}
-が成り立つ。(\ref{equation-lagrangian-section}) の
-右辺に属する元を Lagrange 切断と呼び、
-自然と $\catn{fuk}(\check{X}(B))$ の対象
-$\mathscr{L}_s$ とすることができ、
-SYZ 変換によって$\mathcal{X}(B)$ 上の直線束へと
-変換される。同型 (\ref{equation-lagrangian-section})
-より Lagrange 切断は $B$ の開被覆 $(U_i)_{i\in I}$ 
-とその上の関数
-Lagrange 切断 $s$ が、
-零切断 $s_0$ と横断的に交わる時、
-$p\in s_0\cap s$の開近傍上の関数$f_p\colon U_p\to \mathbb{R}$
-で、$df_p=s|_{U_p}$ かつ $p$で孤立特異点を持つもので 
-$\opn{HF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_s)$ を
-定義する複体は次のようになる\cite{MR1882331}。
-\begin{align}
-\opn{CF}^{\bullet}(\mathscr{L}_{s_0},
-\mathscr{L}_s)=\bigoplus_{p\in \check{f}_{B}(\opn{Im}(s_0)\cap \opn{Im}(s))}
-\Lambda^{\mathbb{C}}_{\mathrm{nov}}[-\opn{ind}_{\mathrm{Morse}}(f_p,p)]
-\end{align}
-ここで
-$\opn{ind}_{\mathrm{Morse}}(f_p,p)$
-とは、$f_p$ の $p$ での Morse指数であり、
-$\Lambda^{\mathbb{C}}_{\mathrm{nov}}$ は
-$\mathbb{C}$ 上の Novikov 体である。
-ここで注目するべき点は、
-$\opn{HF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_{s})$
-は SYZ変換によって層コホモロジー
-$H^{\bullet}(\mathcal{X}(B);
-\Phi_{\opn{SYZ}}(\mathscr{L}_{s}))$
-と同型であり\cite{MR4301560}、
-$\opn{CF}^{\bullet}(\mathscr{L}_{s_0},
-\mathscr{L}_s)$は次数つきベクトル空間としては、
-トロピカル幾何の言葉のみで表現されていることの二点である。
+この$\check{X}(B)$と$\mathcal{X}(B)$のSYZ変換は
+\cite{MR1882331,MR4301560}などで深く研究されている。
 
-これらを踏まえた上で博士論文提出者は、SYZ 予想のトイモデルとして
+\begin{fact}
+\hspace{-8pt} (i) $\mathbb{Z}$係数の傾きをもつ局所アフィン
+な関数のなす層
+$\mathcal{O}_B^{\times}$から$C^{\infty}$級関数のなす層
+$\mathcal{C}^{\infty}_B$への単射がトロピカルPicard群への全射
+$H^{0}(B;\mathcal{C}^{\infty}_B/\mathcal{O}_B^{\times})
+\to H^{1}(B;\mathcal{O}_B^{\times})$ を導く。
+
+\hspace{-10pt} (ii) 任意の元 $s\in 
+H^{0}(B;\mathcal{C}^{\infty}_B/\mathcal{O}_B^{\times})$ 
+はLagrange切断$\mathscr{L}_s$と呼ばれる、
+$\catn{fuk}(\check{X}(B))$ の対象とみなせる、Lagrange
+部分多様体と対応し、
+$\mathscr{L}_s$のSYZ変換$\mathcal{L}_s$は$\mathcal{X}(B)$上の
+直線束である。
+
+\hspace{-12pt} (iii) SYZ変換は、Floerコホモロジー
+$\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$
+と$\opn{Ext}^{\bullet}
+(\mathcal{L}_s,\mathcal{L}_{s'})$ との同型を誘導する。
+
+\hspace{-12pt} (iv) 
+$\mathscr{L}_s$と$\mathscr{L}_{s'}$が横断的に交わるなら、
+$\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$を
+定義する複体$\opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$
+の次数付き加群成分は、$B,s,s'$のみで記述できる。
+\end{fact}
+% $B$ 上のトロピカル直線束は、$H^{1}(B;\mathcal{O}^{\times}_B)$
+% によってパラメトライズされており、滑らかな関数のなす層 
+% $\mathcal{C}^{\infty}(B)$ への単射 
+% $\mathcal{O}_{B}^{\times}\to \mathcal{C}^{\infty}(B)$ が誘導
+% する $H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})$
+% から $H^{1}(B;\mathcal{O}^{\times}_B)$ への全射を持つ。
+% $H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})$
+% の元は、整アフィン多様体上のトロピカル Cartier 因子の
+% 類似であり、本論文では$C^{\infty}$級
+% Cartier データと
+% 読ぶ。このとき、
+% \begin{align} \label{equation-lagrangian-section}
+% H^{0}(B;\mathcal{C}^{\infty}(B)/\mathcal{O}_{B}^{\times})
+% \simeq \{s\colon B\to \check{X}(B)\mid 
+% \check{f}_{B}\circ s=\opn{id}_B, \,
+% \opn{Im}(s) \text{ が Lagrange 部分多様体} \}
+% \end{align}
+% が成り立つ。(\ref{equation-lagrangian-section}) の
+% 右辺に属する元を Lagrange 切断と呼び、
+% 自然と $\catn{fuk}(\check{X}(B))$ の対象
+% $\mathscr{L}_s$ とみなせ、
+% SYZ 変換によって$\mathcal{X}(B)$ 上の直線束へと
+% 変換される。同型 (\ref{equation-lagrangian-section})
+% より Lagrange 切断は $B$ の開被覆 $(U_i)_{i\in I}$ 
+% とその上の関数
+% Lagrange 切断 $s$ が、
+% 零切断 $s_0$ と横断的に交わる時、
+% $p\in s_0\cap s$の開近傍上の関数$f_p\colon U_p\to \mathbb{R}$
+% で、$df_p=s|_{U_p}$ かつ $p$で孤立特異点を持つもので 
+% $\opn{HF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_s)$ を
+% 定義する複体は次のようになる\cite{MR1882331}。
+% \begin{align}
+% \opn{CF}^{\bullet}(\mathscr{L}_{s_0},
+% \mathscr{L}_s)=\bigoplus_{p\in \check{f}_{B}(\opn{Im}(s_0)\cap \opn{Im}(s))}
+% \Lambda^{\mathbb{C}}_{\mathrm{nov}}[-\opn{ind}_{\mathrm{Morse}}(f_p,p)]
+% \end{align}
+% ここで
+% $\opn{ind}_{\mathrm{Morse}}(f_p,p)$
+% とは、$f_p$ の $p$ での Morse指数であり、
+% $\Lambda^{\mathbb{C}}_{\mathrm{nov}}$ は
+% $\mathbb{C}$ 上の Novikov 体である。
+% ここで注目するべき点は、
+% $\opn{HF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_{s})$
+% は SYZ変換によって層コホモロジー
+% $H^{\bullet}(\mathcal{X}(B);
+% \Phi_{\opn{SYZ}}(\mathscr{L}_{s}))$
+% と同型であり\cite{MR4301560}、
+% $\opn{CF}^{\bullet}(\mathscr{L}_{s_0},
+% \mathscr{L}_s)$は次数つきベクトル空間としては、
+% トロピカル幾何の言葉のみで表現されていることの二点である。
+
+上の事実を踏まえ、SYZ 予想のトイモデルとして
 次のメタ予想を提示する。
 
 \begin{expectation} \label{conjecture-mirror-tropical-rr}
 
-$X$ をコンパクトなトロピカル多様体とし、
-$\mathcal{L}$ を $X$ 上のトロピカル直線束とする。
-ここで、$X$ には `Todd 類' $\opn{td}(X)$ が
-トロピカルコホモロジー群 $H^{\bullet,*}(X;\mathbb{Z})$
+$S$ をコンパクトなトロピカル多様体とし、
+$\mathcal{L}$ を $S$ 上のトロピカル直線束とする。
+ここで、$S$ には `Todd 類' $\opn{td}(S)$ が
+トロピカルコホモロジー群 $H^{\bullet,*}(S;\mathbb{Z})$
 の元として定義されていると仮定する。
 このとき、$\mathcal{L}$ を表現するしかるべき条件を満たした
-$C^{\infty}$ Cartier 因子 $s$ が存在し、$s$ が定義する次数つき
-$\mathbb{Z}$-加群 $\opn{LMD}^{\bullet}(X;s)$ に対して、
+$C^{\infty}$ Cartier データ $s$ が存在し、$s$ が定義する次数つき
+$\mathbb{Z}$-加群 $\opn{LMD}^{\bullet}(S;s)$ に対して、
 $s$ の取り方によらず
 次の等式が成り立つ:
 \begin{align}
-\chi(\opn{LMD}^{\bullet}(X;s))=\int_{X}\opn{ch}(\mathcal{L})\opn{td}(X).
+\chi(\opn{LMD}^{\bullet}(S;s))=
+\int_{S}\opn{ch}(\mathcal{L})\opn{td}(S).
 \end{align}
-ここで、$\int_X$ はトレース写像であり、
+ここで、$\int_S$ はトレース写像であり、
 $\mathrm{ch}(\mathcal{L})$ は、$\mathcal{L}$ の全 Chern 類である。
 \end{expectation}
-$\opn{LMD}^{\bullet}(X;s)$ は次節で述べるが、
-コンパクト整アフィン多様体 $B$と横断的に交わる Lagrange 切断$s$
-に対しては、次数つきベクトル空間として
+$\opn{LMD}^{\bullet}(S;s)$ は次節で述べるが、
+コンパクト整アフィン多様体 $B$と
+$\mathscr{L}_s$が零切断と横断的に交わる$s$
+の組に対しては、複素係数Novikov体 
+$\Lambda^{\mathbb{C}}_{\mathrm{nov}}$
+上の次数つき加群として
 $\opn{LMD}^{\bullet}(B;s)\otimes_{\mathbb{Z}}
-\Lambda^{\mathbb{C}}_{\mathrm{nov}}=
+\Lambda^{\mathbb{C}}_{\mathrm{nov}}\simeq
 \opn{CF}^{\bullet}(\mathscr{L}_{s_0},
 \mathscr{L}_s)$ となる。
-
-上述の $X$ 上の滑らかな因子 $s$ のしかるべき条件とは、本論文では次のような条件である。
-
-\begin{condition} \label{condition-good}
-(i) $X$ の座標系がすべて $\mathbb{R}^{n}$ 
-の凸多面体の開集合として取れるトロピカル多様体である。
-(ii) $s$ が permissible である。
-(iii) $\sharp (\opn{Im}(s_0)\cap \opn{Im}(s))<\infty$。
-(iv) $\opn{LMD}^{\bullet}(X;s)$ が有限生成である。
-\end{condition}
-なお条件(iv)は将来的に不要となると期待している。
-いくつか用語の説明を後回しにして、
-以上を踏まえた上での本論文の主結果(の弱い版)
-を述べると以下のようになる。
+% なお条件(iv)は将来的に不要となると期待している。
+本論文の主結果は、\cref{conjecture-mirror-tropical-rr}
+への肯定的な部分解答であり、
+用語や条件の説明を後回しにすると、
+以下のようになる。
 
 \begin{theorem} \label{theorem-main}
 $C$ (resp. $B$) をコンパクトなトロピカル曲線 (resp. Hesse 計量を持つ
 整アフィン多様体) とし、$\mathcal{L}$ をその上の直線束
 $s$ を $C$ (resp. $B$) 上の
-\cref{condition-good} を満たす滑らかな因子 $s$ 
+\cref{condition-good} を満たす$C^{\infty}$
+Cartierデータ $s$ 
 とする。このとき、次が成り立つ。
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=\int_C c_1(\mathcal{L})+
@@ -350,18 +405,19 @@ $s$ を $C$ (resp. $B$) 上の
 \chi(\opn{LMD}^{\bullet}(B;s))=\int_B \frac{c_1(\mathcal{L})^n}{n!}
 \end{align}
 \end{theorem}
-トロピカル曲線の定理\ref{theorem-main} の右辺は
-(\ref{equation-tropical-rr}) の右辺と同じである。
-一般にトロピカル多様体の Todd 類 は定義されていないが、
-トロピカル多様体の Chern 類が
-満たすべき条件から $\opn{td}(B)=1$ であるべきであることが
-わかるため、定理\ref{theorem-main} は
-\cref{conjecture-mirror-tropical-rr}
-への肯定的な部分解答であるといえる。
-この二つの結果はSYZ変換を介して \cite{MR4301560} や 
-\cite{auroux2022lagrangian} の特殊例ともみなせるが、
-本提出論文の証明はトロピカル幾何学の言葉のみで完結しており、
-左辺に関しても上述のものとは異なるものである。
+% トロピカル曲線の定理\ref{theorem-main} の右辺は
+% (\ref{equation-tropical-rr}) の右辺と同じである。
+% 一般にトロピカル多様体の Todd 類 は未定義だが、
+% トロピカル多様体の Chern 類が
+% 満たすべき条件から $\opn{td}(B)=1$ であるべきだと
+% わかるため、定理\ref{theorem-main} は
+% \cref{conjecture-mirror-tropical-rr}
+% への肯定的な部分解答であるといえる。
+% \textcolor{gray}{
+% この結果はSYZ変換を介して \cite{MR4301560} や 
+% \cite{auroux2022lagrangian} の特殊例ともみなせるが、
+% 本提出論文の証明はトロピカル幾何学の言葉のみで完結しており、
+% 左辺に関しても上述のものとは異なるものである。}
 
 \beforesection
 
@@ -369,13 +425,15 @@ $s$ を $C$ (resp. $B$) 上の
 
 \aftersection
 
-この節では、\cref{condition-good} (i) を満たしている
-有理凸多面体空間 $S$ とその上の滑らかな因子
+この節では、
+\cref{condition-good} (i) を満たしている
+有理多面空間 $S$ とその上の$C^{\infty}$級Cartierデータ
 $s\in H^{0}(S;\mathcal{A}_{S}^{0,0}/\mathcal{O}^{\times}_S)$
-に対する permissiblity 条件と 
+に対する\cref{condition-good}と 
 $\opn{LMD}^{\bullet}(S;s)$ について説明する。
 ここで $\mathcal{A}^{0,0}_S$ は $S$ 上の $(0,0)$-superform
-のなす層のことである\cite{MR3903579}。まず、$s$は局所的には、$X$の開集合上の 
+のなす層のことである\cite{MR3903579}。まず、$s$は局所的には、
+$S$の開集合上の 
 $(0,0)$ superform $f\colon U\to \mathbb{R}$
 によって表現されており、各点 $x$ において
 全微分ベクトル $df(x)\in(\mathcal{F}_{S}^{1})_x$ 
@@ -426,12 +484,25 @@ $s$ の局所 Morse データは層の局所 Morse データを用いること�
 \end{align}
 ここで、$f_p\colon U_p\to \mathbb{R}$ とは、
 $p$ の十分小さな近傍 $U_p$ 上の $(0,0)$-superform で
-$s|_{U_p}$ が $f_p$ の定義する滑らかな主因子と一致し、
-$p$ にのみ特異点を持つものである。 
-\cref{equation-local-morse-data}の右辺の直和成分は
-局所 Morse データもしくは、micro-stalk と呼ばれるものの
-コホモロジー群であり、超局所層理論において基本的なものである
-\cite{MR2031639,MR1299726}。
+$s|_{U_p}$ が $f_p$ の定義する$C^{\infty}$級Cartierデータ
+と一致し、$p$ にのみ特異点を持つものである。
+% \textcolor{gray}{ 
+% \cref{equation-local-morse-data}の右辺の直和成分は
+% 局所 Morse データもしくは、micro-stalk と呼ばれるものの
+% コホモロジーであり、超局所層理論において基本的なものである
+% \cite{MR2031639,MR1299726}。
+% }
+
+前述の $C^{\infty}$級Cartierデータ
+$s$ のしかるべき条件とは、本論文では次の条件である。
+
+\begin{condition} \label{condition-good}
+(i) $S$ の座標系がすべて $\mathbb{R}^{n}$ 
+の凸多面体の開集合として取れるトロピカル多様体である。
+(ii) $s$ が permissible である。
+(iii) $\sharp (s_0\cap s)<\infty$。
+(iv) $\opn{LMD}^{\bullet}(S;s)$ が有限生成。
+\end{condition}
 
 コンパクトトロピカル曲線における、定理\ref{theorem-main}の証明は、
 各閉区間に対して定理\ref{theorem-main}を証明し、
@@ -440,12 +511,11 @@ Hesse 計量をもつコンパクト整アフィン多様体については、
 Hesse 計量をもつコンパクト整アフィン多様体は Cheng--Yau
 の結果\cite{MR714338}より、トロピカルトーラスの有限不分岐被覆によって
 得られることとトロピカルコホモロジーとトロピカル Borel--Moore
-ホモロジーとのカップ積に関する射影公式
+ホモロジーの射影公式
 \cite{gross2019sheaftheoretic}を利用することで
-トロピカルトーラスの場合に帰着させることで示した。
-また本論文では、有理多面体空間 $S$ 上の滑らかな因子 $s$ と
-有理多面体空間 $S'$上の滑らかな因子$s'$が\cref{condition-good}
-を満たしかつコホモロジー的な Milnor 条件を満たすとき、
+示した。
+また本論文では、\cref{condition-good}を少し強めた
+$C^{\infty}$級Cartierデータに対して
 K\"unneth 型の定理が成り立つことを層における
 Thom--Sebastiani型の定理\cite{MR2031639}を
 用いることで示している。
