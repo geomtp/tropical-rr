@@ -254,20 +254,44 @@ theorem established by Gathmann and Kerber.
 Tropical geometry is a combinatorial and convex 
 geometrical analog of
 algebraic geometry or analytic geometry.
-A main geometrical object in tropical geometry 
-is modelled by 
-a rational polyhedral sapce, see 
+In tropical geometry,
+a main geometric object is represented by 
+a \emph{rational polyhedral sapce}, see 
 \cite[Definition 6.1]{gross2019sheaftheoretic}. 
 A \emph{tropical manifold} is 
 a rational polyhedral space which are locally 
 isomorphic to the direct product of a 
-Bergman fan and a tropical affine space 
+Bergman fan $\Sigma_M$ for some loopless 
+matroid $M$ and a tropical affine space 
 $\overline{\mathbb{R}}^{k}$,
 see \cite[Definition 6.1]{gross2019sheaftheoretic} 
-or  
+or the original definition of tropical manifold 
+in \cite[Definition 1.14]{mikhalkinTropicalEigenwaveIntermediate2014a}.
+A typical example of tropical manifold is 
+\emph{tropical curve}
+\cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a}
+(see also \cite[Definition 1.1]{gathmannRiemannRochTheoremTropical2008a}
+for a combinatorical definition of tropical curve).
+In this paper, the term `tropical curve' refers to a 
+$1$-dimensional tropical manifold.
+Every (finite) metric graph 
+(with no $1$-valent vertex) also has 
+a natural structure of tropical curve 
+\cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
+
+Many examples of tropical manifolds (or tropical spaces) 
+are obtained from a certain type of limits of 
+degeneration family of algebraic varieties or 
+\emph{tropicalization}. 
+The former limit is called the \emph{tropical limit}
+\cite{itenbergTropicalHomology2019b}, and 
+the fundamental properties of tropicalization 
+are detailed in \cite{MR3287221}. 
+Algebraic varieties and tropical varieties are 
+strongly connected through these operations.
 
 The tropical Riemann--Roch theorem for a 
-divisor $D$ of tropical curves $C$ is proved 
+divisor $D$ on a compact (and connected) tropical curve $C$ is proved 
 by Gathemann--Kerber \cite{gathmannRiemannRochTheoremTropical2008a}
 as an extension of Riemann--Roch theorem for graphs
 \cite{MR2355607} (see also 
@@ -276,6 +300,8 @@ the following equation:
 \begin{align}
 r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\opn{top}}(C).
 \end{align}
+
+The $r(D)$ means that 
 
 
 The Hirzebruch--Riemann--Roch theorem (HRR for short) and 
@@ -1954,7 +1980,8 @@ There exists the following exact sequence:
 This is a smooth version of the following exact
 sequences associated with the sheaf 
 $\mcal{M}_B^{\times}$
-of (real valued) `tropical rational functions':
+of (real valued) `tropical rational functions'
+\cite[Definition 4.1]{MR3894860}:
 \begin{align}
 \label{equation-cartier-divisor-sequence}
 0 \to \mcal{O}^{\times}_B \to \mcal{M}_B^{\times} 
@@ -2015,10 +2042,10 @@ $\{U_i\}_{i\in I}$ an open cover of $S$ and
 $f_i\colon U_i \to \mathbb{R}$ a $(0,0)$-superform
 on $U_i$. The set 
 $\{(U_i,f_i)\}_{i\in I}$ is 
-a \emph{local smooth Cartier data} for $s$ if 
+a \emph{smooth Cartier local data} for $s$ if 
 $s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all 
 $i\in I$. The set $\{(U_i,f_i)\}_{i\in I}$ is a
-\emph{local smooth Cartier data} if 
+\emph{smooth Cartier local data} if 
 $\{(U_i,f_i)\}_{i\in I}$ is a local data for a smooth
 Cartier divisor.
 \end{definition}
