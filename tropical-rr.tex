@@ -223,8 +223,8 @@
 \usepackage{mathrsfs}
 \usepackage{upgreek}
 \numberwithin{equation}{section}
-\title{On counting lattice points in some tropical spaces and beyond
-}
+\title{Graded modules associated with line bundles on 
+tropical curves and integral Hessian manifolds}
 \author[Y. Tsutsui]{Yuki Tsutsui}
 \address{Graduate School of Mathematical Sciences,
 The University of Tokyo, 3-8-1 Komaba, Meguro-Ku,
@@ -250,6 +250,7 @@ theorem established by Gathmann and Kerber.
 \section{Introduction}
 %TODO: 日本語で4000字の論文の要旨
 
+\subsection{Background}
 
 Tropical geometry is a combinatorial and convex 
 geometrical analog of
@@ -263,7 +264,8 @@ a rational polyhedral space which are locally
 isomorphic to the direct product of a 
 Bergman fan $\Sigma_M$ for some loopless 
 matroid $M$ and a tropical affine space 
-$\overline{\mathbb{R}}^{k}$,
+$\overline{\mathbb{R}}^{k}=
+(\mathbb{R}\cup\{+\infty\})^{k}$,
 see \cite[Definition 6.1]{gross2019sheaftheoretic} 
 or the original definition of tropical manifold 
 in \cite[Definition 1.14]{mikhalkinTropicalEigenwaveIntermediate2014a}.
@@ -279,17 +281,22 @@ Every (finite) metric graph
 a natural structure of tropical curve 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
 
-Many examples of tropical manifolds (or tropical spaces) 
+Many important examples of tropical manifolds (or tropical 
+varieties) 
 are obtained from a certain type of limits of 
 degeneration family of algebraic varieties or 
 \emph{tropicalization}. 
 The former limit is called the \emph{tropical limit}
 \cite{itenbergTropicalHomology2019b}, and 
 the fundamental properties of tropicalization 
-are detailed in \cite{MR3287221}. 
-Algebraic varieties and tropical varieties are 
+are detailed in the tropical geometry 
+textbook \cite{MR3287221}. 
+Algebraic geometry and tropical geometry are 
 strongly connected through these operations.
 
+Finding tropical analogues of various theorems 
+in algebraic geometry is one of the 
+important themes in the study of tropical geometry.
 The tropical Riemann--Roch theorem for a 
 divisor $D$ on a compact (and connected) tropical curve $C$ is proved 
 by Gathemann--Kerber \cite{gathmannRiemannRochTheoremTropical2008a}
@@ -301,96 +308,95 @@ the following equation:
 r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\opn{top}}(C).
 \end{align}
 
-The $r(D)$ means that 
+Here, $r(D)$ is the rank of the linear system of 
+$D$, $K_C$ the canonical divisor of $C$
+and $\chi_{\opn{top}}(C)$ is the topological 
+Euler characteristic of $C$.
 
-
-The Hirzebruch--Riemann--Roch theorem (HRR for short) and 
-the Grothendieck--Riemann--Roch theorem (GRR for short) 
-are monumental works in
-algebraic geometry (or complex geometry). 
-Here is the statement of HRR for holomorphic line bundles on 
-projective complex manifolds.
+It is natural to consider a tropical analog of 
+the Hirzebruch--Riemann--Roch theorem
+(HRR for short), 
+a higher-dimensional version of the Riemann--Roch theorem, 
+but there are many difficulties in such a generalization.
+In other words, tropical Riemann--Roch theorem 
+for tropical manifolds has been proved yet 
+as a generalization of 
+\cite{gathmannRiemannRochTheoremTropical2008a}.
+Let's recall the Hirzebruch--Riemann--Roch 
+theorem for complex line bundles on 
+projective complex manifolds 
+before explaining about the difficulties.
 \begin{theorem}[{\cite{MR0202713}}]
 Let $X$ be a compact projective complex manifold and
 $\mathcal{L}$ a holomorphic line bundle on $X$.
 Then there exists the following equation:
 \begin{align} \label{equation-HRR}
 \chi(H^{\bullet}(X;\mathcal{L}))
-=\int_X \opn{ch}(\mathcal{L})\opn{td}(X).
+=\int_X \opn{ch}(\mathcal{L})\opn{td}(X)
 \end{align}
+where $\opn{ch}(\mathcal{L})$ is the Chern character 
+of $\mathcal{L}$, 
+$\opn{td}(X)$ the Todd class of $X$
+and $\int_X$ the trace map of $X$. 
 \end{theorem}
-
-The HRR is generalized for 
+We note the HRR is generalized for 
 general compact complex 
 manifolds as a corollary of Atiyah--Singer index 
-theorem.
+theorem. Besides, the HRR for projective complex 
+manifold is a special case 
+of Grothendieck--Riemann--Roch theorem (GRR for short). 
 
-Since the Euler number of line bundle is invariant for 
-degeneration of varieties
-
-(e.g. \cite[p.50]{MR2514037}), 
-and thus we can expect calculate (or estimate)
-the Euler number of many interesting line bundles
-by the geometry of dual complex of degeneration 
-for a good family of algebraic variety or 
-tropicalization.
-
-Besides, we can also consider the following question:
-
-\begin{question} \label{question-tropical-euler}
-What is a tropical analog of Euler number of sheaf 
-cohomology of line bundles on algebraic varieties for 
-tropical spaces? Is there some analogs of HRR or GRR 
-for tropical varieties?
-\end{question}
-
-This is the main topic of our paper.
-In particular, we mainly focus on
-the former question.
-
-
-However, tropical Riemann--Roch theorem 
-for tropical varieties has been proved yet 
-as a generalization of 
-\cite{gathmannRiemannRochTheoremTropical2008a}.
-
-However, there exist various difficulties for 
-\cref{question-tropical-euler} by root causes of 
-tropical geometry.
-
-One of main difficulty for \cref{question-tropical-euler} 
-is that line bundles on tropical spaces are not sheaves of 
-Abelian groups but commutative monoids in general.
-For more detail about the previous related results of 
+The main issue in formulating the HRR 
+for line bundles over 
+tropical manifolds is that 
+tropical analogs of 
+$\chi(H^{\bullet}(X;\mathcal{L}))$ and 
+$\opn{td}(X)$ have not yet been defined in general.
+In particular, the reason why the Euler number 
+of line bundles over tropical varieties cannot 
+be defined is due to a root cause 
+that the basic theory of homological 
+algebra cannot be used, 
+because line bundles over tropical 
+varieties are not sheaves of Abelian groups
+but commutative monoids.
+(For more detail about the previous related results of 
 tropical Riemann--Roch theorem
 and more difficulties for 
-\cref{question-tropical-euler}, see 
-\cref{section-tropical-riemann-roch}.
+this problem, see 
+\cref{section-tropical-riemann-roch}.)
 
-On the other hand, we can get the following 
-observation from a great deal of studies:
-\begin{observation} \label{observation-tropical-euler}
-The Euler characteristic of the structure sheaf of 
-tropical manifold should be equal to 
-the topological Euler characteristic of it.
-\end{observation}
-See \cref{remark-list-tropical-euler} for the reason of 
-\cref{observation-tropical-euler}. 
-The obervation gives a hint for
-\cref{question-tropical-euler}.  
-
-
-
-
-
-
+The following question is the main theme of this 
+paper.
+\begin{question} \label{question-tropical-euler}
+What is a tropical analog of Euler 
+characteristic of sheaf 
+cohomology of line bundles on algebraic varieties for 
+tropical manifolds? Is there some analogs of the HRR 
+for this Euler characteristic?
+\end{question}
 
 In this paper, we pursue a different tropical
-analog of Euler number of line bundles with the help of 
-ideas on toric varieties, Morse theory,
-Strominger--Yau--Zaslow conjecture
-(SYZ conjecture for short), geometric prequantization
-and related topics.
+analog of Euler characteristic of line bundles with the help of 
+ideas on toric varieties, geometric prequantization,
+Morse theory, Strominger--Yau--Zaslow conjecture
+(SYZ conjecture for short), and related topics.
+Especially, our approach for 
+\cref{question-tropical-euler} is mostly
+related with SYZ conjecture.
+
+\subsection{}
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{remark}
 \label{remark-todd-class}
