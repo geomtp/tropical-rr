@@ -240,10 +240,10 @@ Morse theory to consider a tropical version of the Euler
 characteristic of line bundles on algebraic varieties, 
 but this time for compact tropical manifolds without 
 boundaries. As a preliminary experiment,
-we prove a version of the Riemann-Roch formula 
+we prove a version of the Riemann--Roch formula 
 for compact tropical curves and integral affine 
 manifolds equipped with a Hessian form. 
-Our approach differs from the tropical Riemann-Roch 
+Our approach differs from the tropical Riemann--Roch 
 theorem established by Gathmann and Kerber.
 \end{abstract}
 \maketitle
@@ -379,24 +379,24 @@ for this Euler characteristic?
 In this paper, we pursue a different tropical
 analog of Euler characteristic of line bundles with the help of 
 ideas on toric varieties, geometric prequantization,
-Morse theory, Strominger--Yau--Zaslow conjecture
+Morse theory, \emph{Strominger--Yau--Zaslow conjecture}
 (SYZ conjecture for short), and related topics.
 Especially, our approach for 
-\cref{question-tropical-euler} is mostly
-related with SYZ conjecture.
-
-\subsection{}
-
-
-
-
-
-
-
-
-
-
-
+\cref{question-tropical-euler} is 
+strongly influenced by the ideas of the SYZ conjecture.
+Roughly speaking, our apporoach is to define
+the `Floer complex without differential' instead 
+of the `sheaf cohomology of tropical line bundles' 
+under the philosophy of \emph{Homological Mirror 
+Symmetry}. 
+In the next section, we will explain the SYZ conjecture 
+within the scope necessary for our approach, 
+pose a certain conjecture,
+and state the main theorem of this paper.
+If you are interested in how our approach 
+relates to toric geometry and geometric quantization, 
+please see \cref{section-toric-geometry} and 
+\cref{appendix-geometric-quantization} respectively.
 
 \begin{remark}
 \label{remark-todd-class}
@@ -423,249 +423,127 @@ See also \cite[5.3]{mikhalkinTropicalGeometryIts2006} and
 \cite[Definition 3.20]{shawTropicalSurfaces2015a}.
 \end{remark}
 
-\subsection{Counting lattice point of lattice polytopes}
-In this subsection, we explain some backgrounds of 
-our approach of our definition of Euler characteristic
-of tropical line bundles.
-
-In the case of some special line bundles on
-tropical toric variety, our definition of Euler 
-characteristic of tropical line bundle is essentially same with the
-number of lattice points of the lattice polytope of it.
-
-Before explaining about it, we recall some 
-elemental properties of projective toric varieties over 
-$\mathbb{C}$.
-((See also \cite{MR2810322} for fundamental
-properties of classical toric varieties.))
-Let $P$ be a $n$-dimensional lattice polytope in 
-$\mathbb{R}^{n}$, $X_P$ the projective toric variety
-of $P$, $\mathcal{L}_P$ the line bundle on 
-$X_P$ of $P$.
-The sheaf cohomology of $\mathcal{L}_P$ has 
-the following explicit isomorphisms:
-\begin{align}
-H^{\bullet}(X_P;\mathcal{L}_P)=
-H^{0}(X_P;\mathcal{L}_P)\simeq
-\bigoplus_{u\in P\cap \mathbb{Z}^{n}} \mathbb{C}z^{u},
-\label{equation-danilov-formula} \\
-H^{\bullet}(X_P;\mathcal{L}_P^{\vee})=
-H^{n}(X_P;\mathcal{L}_P^{\vee})\simeq 
-\bigoplus_{u\in \opn{int}(P)\cap \mathbb{Z}^{n}}\mathbb{C}z^{u}.
-\end{align}
-In particular, we have
-\begin{align} \label{equation-ehrhart-reciprocity}
-\chi(H^{\bullet}(X;\mathcal{L}_P))=
-\sharp (P\cap \mathbb{Z}^{n}), \quad 
-\chi(H^{\bullet}(X;\mathcal{L}_P^{\vee}))=
-\sharp (\opn{int}(P)\cap \mathbb{Z}^{n}).
-\end{align}
-By \cref{equation-danilov-formula}, we can interpret HRR 
-for smooth toric varieties 
-as follows:
-\begin{align}
-\label{equation-toric-HRR}
-\sharp (P\cap \mathbb{Z}^{n})
-=\int_{X_P}\opn{ch}(\mathcal{L}_P)\opn{td}(X_P).
-\end{align}
-The prototype slogan of our approach
-for a tropical analog of HRR is 
-a realization of \cref{equation-toric-HRR}
-for tropical manifolds.
-We also note \cref{equation-danilov-formula} 
-has a differential geometrical interpretation,
-see also \cref{appendix-geometric-quantization}. 
-
-
-Next, we will interpret the LHS of 
-\cref{equation-toric-HRR} by the language
-of tropical toric varieties.
-\myfootnote{
-In \cite{MR4155409},
-new Ehrhart theory of tropical geometry appear, 
-but this is different from our approach.
-}
-In this paper, we mainly use max-plus algebra for 
-tropical geometry.
-
-
-Basic concepts and properties 
-of tropical toric varieties is studied and 
-explained in \cite{MR2428356,MR2511632,meyer2011intersection,MR3287221}.
-Let $P$ be an $n$-dimensional convex lattice polytope in
-$(\mathbb{R}^{n})^{\vee}$ and
-$f\colon \mathbb{R}^{n} \to \mathbb{R}$ a 
-smooth function which is defined as follows:
-\begin{align}
-  f(x)\deq\log (\sum_{u\in P\cap (\mathbb{Z}^{n})^{\vee}} 
-\opn{exp}(a_u+\abk{u,x})),\quad  (a_u\in \mathbb{R}).
-\label{equation-log-polynomial} 
-\end{align}
-Here 
-$\abk{\cdot,\cdot}\colon 
-(\mathbb{R}^{n})^{\vee}\times \mathbb{R}^{n}\to\mathbb{R}$
-is the canonical pairing of a vector space and its dual.
-
-We note $f$ is a Laurent polynomial function over the 
-log semiring. 
-In fact, $f=\opn{log}\circ p\circ \opn{exp}$ 
-for some polynomial 
-$p\in \mathbb{R}_{\geq 0}[x_1^{\pm},\ldots,x_n^{\pm}]
-\setminus \{0\}$ over the semifield of nonnegative
-real numbers and $\opn{log}$ is a semifield isomorphism
-from definition.
-This observation is well-known and important 
-for our approach.
-Let $x_1,\ldots,x_n$ be the standard coordinates of 
-$\mathbb{R}^{n}$.
-The differential
-$df:{\mathbb{R}}^{n}\to ({\mathbb{R}}^{n})^{\vee}; x\mapsto 
-(\frac{\partial f}{\partial x_1}(x),\ldots,\frac{\partial f}{\partial x_n}(x))$ 
-is an embedding onto the (relative) interior of $P$
-\cite[p.124 Exercise]{MR1301331}. 
-The differential map is also naturally appeared as an 
-exponential family in algebraic statistic,
-information geometry and Hessian geometry.
-\begin{example}
-Let $f\colon \mathbb{R} \to {\mathbb{R}}; x\mapsto \log (1+e^{x})$ be a soft 
-plus function. When we take a dequantization of $f$,
-we get a ReLU $f^{\opn{trop}}(x)=\max\{0,x\}$ which 
-is frequently used in machine learning.
-The differential is a sigmoid function 
-$df(x)=\frac{e^{x}}{1+e^{x}}$ and 
-the image of $df$ is the open interval $(0,1)$.
-\myfootnote{
-The softmax function also are appeared 
-naturally in a similar way 
-when we consider tropical projective spaces.}
-\end{example}
-
-From now on, we assume 
-$a_u=1$ for all $u\in P\cap \mathbb{Z}^{n}$ for simplicity.
-We can naturally extend $df$ on tropical projective toric 
-varieties and then the extension map is called the \emph{tropical moment map}
-$\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$ 
-\cite[Definition 2.1 (2)]{MR2428356}.
-Instead of moment map for Hamiltonian action of Lie group on
-symplectic manifold, we
-need not assume convex lattice polytope is Delzant.
-This is a tropical analog of algebraic moment map 
-for toric varieties
-(see for example
-\cite[\textsection 12.2]{MR2810322}).
-
-Let 
-$q: ({\mathbb{R}}^{n})^{\vee}\to ({\mathbb{R}}^{n})^{\vee}/(\Z^{n})^{\vee}$ 
-a canonical projection map.
-Then the number of set of the intersection point of 
-the graph of $q\circ \mu_P^{\opn{trop}}$ and 
-that of zero map 
-$0_{X_P^{\opn{trop}}}\colon X_P^{\opn{trop}} \to
-({\mathbb{R}}^{n})^{\vee}/(\Z^{n})^{\vee}$ is equal to the 
-number of lattice points in $P$:
-\begin{align}
-\label{equation-moment-map-intersection}
-\sharp (0_{X_P^{\opn{trop}}}\cap q\circ\mu_P^{\opn{trop}})
-=\sharp (P \cap \Z^{n}).
-\end{align}
-On the other hand, from \cref{equation-log-polynomial} 
-we can construct data $\{(U_i,f_i)\}_{i\in I}$ of 
-pairs of open subsets 
-$U_i$ of $X_{P}^{\opn{trop}}$ and 
-"smooth functions" $f_i\colon U_i \to \mathbb{R}$. 
-The data is very similar with elements of 
-$\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})\deq H^{0}(X_{P}^{\opn{trop}};
-\mcal{A}^{0,0}_{X_{P}^{\opn{trop}}}/
-\mathcal{O}^{\times}_{X_{P}^{\opn{trop}}})$.
-\myfootnote{
-Be careful that this data is not an element
-of $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ since
- the former collection of smooth functions is not constant
-at any neighborhood of the corner of $X_{P}^{\opn{trop}}$,
-i.e., the fixed point of the torus action on tropical 
-toric varieties.
-In particular, every (0,0)-superform on 
-$\mathbb{T}^n$ is constant at 
-$(-\infty,\ldots,-\infty)$.
-
-By adding functions 
-$\opn{log}\circ f \circ\opn{exp}$ for some smooth function
-$f\colon \mathbb{R}_{\geq 0}^{n}\to \mathbb{R}_{>0}$,
-we can overcome this weak point.
-}
-$\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ is a
-smooth version of the group of tropical Cartier divisor
-$\opn{CaDiv}(X_{P}^{\opn{trop}})$ 
-\cite[Definition 4.2]{MR3894860}
-which is defined by the sheaf of $(0,0)$-super forms 
-$\mcal{A}^{0,0}_X$ on 
-polyhedral spaces.
-\begin{example} \label{eg: TP1Cartier}
-Fix a continuous function $f\colon \mathbb{R}\to \mathbb{R}; 
-x\mapsto \opn{log}(1+e^{nx})$.
-Its differential induces a homeomorphism 
-from $\mathbb{T}P^1$ onto $[0,n]$. 
-$\mathbb{T}P^{1}$ is covered by two open subsets:
-$U_1\deq \mathbb{T}$ and $U_2\deq \mb{R}\cup\{+\infty\}$.
-Take two continuous functions on each $U_i$ as follows:
-\begin{align}
-f_{1,n}\colon \mathbb{T}\to \mathbb{T};
-x \mapsto \log (1+e^{nx}),\quad
-f_{2,n}\colon \mb{R}\cup\{+\infty\} \to 
-\mathbb{T};
-x\mapsto \log(1+e^{nx})-nx.
-\end{align}
-
-Data $\{(U_i,f_{i,n})\}_{i=1,2}$ defines an element 
-$D_n\deq (f_{1,n}-f_{2,n}=nx)\in 
-H^{1}(\mb{T}P^1;\mcal{O}_{\mb{T}P^1}^{\times})\simeq \Z$
-as a \v{C}ech cocycle.
-Then, we have the following analog of 
-\cref{equation-toric-HRR}:
-\begin{align}
-\label{equation-MRR-tropical-line}
-\sharp([0,n]\cap \Z)=\opn{deg}(D_n)+1=
-\opn{deg}(D_n)+\chi_{\opn{top}}(\mb{T}P^1).
-\end{align}
-\end{example}
-
-
-
-
-
-
-
 %TODO: ラグランジュ切断に関して説明。
 
-\subsection{Lagrangian sections and 
-homological mirror symmetry}
+\subsection{SYZ conjecture and Lagrangian sections}
 
-Another important point is that 
-we can consider the LHS of 
-\cref{equation-moment-map-intersection}
-as the intersection number 
-of two "Lagrangian submanifolds".
-We now explain about this meaning by
-using the theory of integral affine manifolds.
+The \emph{Strominger--Yau--Zaslow conjecture} is
+a conjecture in mathmatical physics 
+derived from string theory \cite{stromingerMirrorSymmetryTduality1996}. 
+The SYZ conjecture 
+predicts that a mirror $\mathcal{X}$ of 
+a given Calabi--Yau manifold
+$\check{X}$ gets from the dual 
+$f_B\colon \mathcal{X} \to B$
+of a special Lagrangian torus fibration 
+$\check{f}_{B}\colon \check{X} \to B$ onto 
+a topological manifold $B$.
+A mathematical formulation of this conjecture is 
+expected to induce a quasi-equivalent
+functor $\Phi_{\mathrm{SYZ}}$ 
+from the Fukaya category 
+$\catn{fuk}(\check{X})$ of $\check{X}$ 
+to the derived category of coherent sheaves 
+$\catn{coh}(\mathcal{X})$ on $\mathcal{X}$, i.e.,
+a concrete solution of 
+Kontsevich's Homological 
+Mirror Symmetry conjecture for Calabi-Yau manifolds
+\cite{MR1403918}:
+\begin{align} \label{equation-SYZ}
+  \Phi_{\mathrm{SYZ}} \colon 
+\catn{fuk}(\check{X})\simto \catn{coh}(\mathcal{X}).
+\end{align}
+The \emph{Fukaya category} of $\check{X}$ 
+is a $A_{\infty}$-category
+whose object are compact Lagrangian submanifold
+$\check{X}$ with additional data. 
+To our knowledge, the general definition 
+of the Fukaya category of Calabi--Yau manifold
+will be appeared in \cite{afooo}.
+The tranformation by $\Phi_{\mathrm{SYZ}}$ is called 
+the \emph{SYZ transform}. 
+
+Well-known examples of special Lagrangian torus 
+fibration is comes from integral affine manifolds.
 An $n$-dimensional 
-\emph{integral affine manifold} $B_0$ 
+\emph{integral affine manifold} $B$ 
 is a differential manifold 
 with a fixed atlas whose transition maps is locally in 
 $\opn{GL}(n,\mathbb{Z})\ltimes \mathbb{R}^{n}$.
 Every integral affine manifold is a tropical manifold.
 Historically, integral affine manifolds are 
 deeply-studied in the field of symplectic geometry 
-as a base space of Lagrangian torus fibration before
-the terminology "tropical geometry" appear.
+as base spaces of Lagrangian torus fibrations 
+\cite{duistermaatGlobalActionangleCoordinates1980a} before
+the term `tropical geometry' appeared.
 
 Every integral affine manifold $B_0$ has 
 a canonical $\mathbb{Z}$-local system 
-$\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$ of integer
-valued cotangent vectors. 
-The integral affine structure of $B_0$ induces a
-torus fibration 
-$f\colon \colon T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}
-\to B_0$ and 
+$\mathcal{T}^{\vee}_{\mathbb{Z},B}$ of integer
+valued cotangent vectors. The integral affine 
+structure of $B$ induces a canonical 
+Lagrangian torus fibration 
+$\check{f}_{B}\colon \check{X}(B)
+\to B$ and its dual 
+$f_{B}\colon \mathcal{X}(B)\to B$
+\cite{MR1882331}.
+The SYZ mirror associated with 
+integral affine manifold is well-studied in 
+\cite{MR1882331,MR3728639,MR3656481,MR4301560}.
+
+The following proposition are important for 
+understanding our approach.
+
+\begin{proposition}
+Let $B$ be a compact integral affine manifold
+such that $\pi_2(B)=0$
+and $\catn{fuk}(\check{X}(B))$ 
+the Fukaya category of $\check{X}(B)$ in the 
+sense of \cite{MR4301560}.
+\begin{enumerate}
+\setlength{\leftskip}{-12pt}
+\item The canonical injection 
+$\mathcal{O}^{\times}_{B}\hookto \mathcal{C}^{\infty}_{B}$
+induces a surjection 
+$H^{0}(B;\mathcal{C}^{\infty}_{B}/
+\mathcal{O}^{\times}_{B})
+\to H^{1}(B;\mathcal{O}^{\times}_{B})$.
+\item Every element 
+$s\in H^{0}(B;\mathcal{C}^{\infty}_{B}/
+\mathcal{O}^{\times}_{B})$ corresponds to 
+a \emph{Lagrangian section}, a section $g$ of 
+$\check{f}_{B}$ such that $\opn{Im}(g)$ is 
+a Lagrangian submanifold of 
+$\check{X}(B)$. Besides, 
+$g$ can be considered as an object
+$\mathscr{L}_{s}$ of 
+$\catn{fuk}(\check{X}(B))$ by a standard choice of 
+additional data.
+\item The SYZ transform 
+$\mathcal{L}_s$ of $\mathscr{L}_s$ is a line bundle
+on $\mathcal{X}(B)$.
+\item The SYZ transform induces 
+the canonical isomorphism 
+$\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})
+\simeq \opn{Ext}^{\bullet}_{\mathcal{O}_{\mathcal{X}(B)}}(\mathcal{L}_s,\mathcal{L}_{s'})$
+where $\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$
+is the Floer cohomology.
+\item If $\mathscr{L}_s$ and 
+$\mathscr{L}_{s'}$ intesect transversally, then 
+a Floer complex 
+$\opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$
+of $\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$ 
+can be written by $s,s'$ and $B$
+except the differential of 
+$\opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$.
+In particular, $s$ and $s'$ 
+determine the Euler characteristic 
+$\chi(\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'}))$.
+\end{enumerate}
+
+\end{proposition}
+
+
 $T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$ has 
 a standard symplectic structure induced from that of 
 cotangent bundle $T^{*}B_0$.
@@ -691,16 +569,14 @@ both $\sigma_{df}(B)$ (resp. $s_{df}(B)$) are Lagrangian
 submanifolds of $T^{*}B_0$ 
 (resp. $T^*B/\check{\Lambda}$).
 
-\emph{Lagrangian sections} is a section 
-$s\colon B_0\to \check{X}(B_0)$ such that 
-$\opn{Im} s$ is a Lagrangian submanifolds.
+
 
 \index{Lagrangian section@Lagrangian section}
 which is well-studied in the field of homological 
 mirror symmetry 
 (see for instance \cite{MR1882331}).
 In general, every element $D$ of Picard group of 
-integral affine manifold $B$ has a smooth Cartier
+integral affine manifold $B$ has a $C^{\infty}$-Cartier
 divisor $s\in \opn{CDiv}^{\infty}(B)$ whose divisor 
 class is equal to $D$ and 
 $s$ induces a Lagrangian section of 
@@ -714,7 +590,7 @@ a similar formula of
 (\ref{equation-MRR-tropical-line}) easily.
 Let $f_n\colon \mathbb{R}\to \mathbb{R};
 x\mapsto \frac{n}{2}x^{2}$ be a quadratic polynomial.
-The polynomial induces a smooth Cartier divisor 
+The polynomial induces a $C^{\infty}$-Cartier divisor 
 $s_n$ on $\mathbb{R}/\mathbb{Z}$ naturally.
 The associated Lagrangian section of $f_n$ is
 $s_n'\colon\mathbb{R}/\mathbb{Z}\to 
@@ -748,18 +624,13 @@ mirror symmetry}
 which was appeared from string theory 
 but we will not discuss about this 
 since this solution is still an open question.}
-\begin{align}
-  \Phi \colon \opn{D}^{\pi}(\opn{Fuk}(\check{X}))\simeq 
-\opn{D}^{b}(\opn{Coh}(\mathcal{X})).
-\end{align}
+
 The RHS is called the derived category of 
 Fukaya category of $\check{X}$ and 
 $\mathcal{X}$ is a Calabi--Yau manifold over 
 the Novikov field $\Lambda^{\mathbb{C}}_{\mathrm{nov}}$ 
 with $\mathbb{C}$-coefficients.
-To our knowledge, the general definition 
-of the Fukaya category of Calabi--Yau manifold
-will be appeared in \cite{afooo}.
+
 HMS induces an isomorphism between (Lagrangian) 
 Floer cohomology of a pair of Lagrangian branes 
 $(\mathscr{L}_0,\mathscr{L})$ and 
@@ -801,15 +672,7 @@ Mirror Symmetry conjecture for Calabi-Yau manifolds
 \textsection 7.3.7]{MR2567952} for more details about 
 SYZ conjecture.))
 
-SYZ conjecture gives a concrete method to create 
-a $A_{\infty}$-functor 
-$\Phi_{\mathrm{SYZ}}\colon 
-\opn{Fuk}(\check{X})\to D^{b}(\opn{Coh}(
-\mathcal{X}))$
-which induces a quasi-equivalence
-induces a quasi-equivalence 
-$D^{\pi}(\opn{Fuk}(\check{X}))\simeq 
-D^{b}(\opn{Coh}(\mathcal{X}))$.
+
 
 Under assumption of SYZ conjecture, 
 every Lagrangian section 
@@ -824,34 +687,6 @@ If SYZ conjecture is true, the equation should be
 true for closed integral affine manifolds.
 
 
-In particular, Lagrangian sections are mirror of line bundles on
-mirror varieties. 
-In this paper, we consider a 
-This gives an interesting insight which is inspired from
-SYZ conjecture.
-(See \cref{rmk: floer-coherent-problem} 
-for detail about it.)
-
-The following question is our approach.
-\begin{question}
-\label{question-MRR}
-Can we replace the $X(B_0)$ with $B_0$ and generalized 
-for tropical manifolds?
-In particular, is there an analog of Floer complex of
-Lagrangian submanifolds for line bundles on 
-tropical spaces?  
-\end{question}
-
-For the toric varieties, we can pose the following 
-concrete question.
-
-\begin{question}
-How should we consider the "intersection number" 
-of intersection points at the boundary? In particular,
-what is a good interpretation the 
-\cref{equation-danilov-formula} and 
-as an analog of Floer cohomology?
-\end{question}
 
 Some readers may think this question do not make sense
 because of elementary properties of 
@@ -916,11 +751,7 @@ of coherent sheaves on algebraic curves
 of general type. 
 They also expect their SYZ mirror can be generalized for more
 general varieties in \cite[{\textsection 7}]{auroux2022lagrangian}.
-Our approach and \cref{question-MRR} can be considered as 
-a toy model of their expectation. 
 
-The following \cref{conjecture-tropical-MRR-preface}
-is the detail version of \cref{question-MRR}.
 It is not formulated as a mathematical 
 conjecture since we don't know the definition of Todd 
 class of $n$ ($\geq 3$) dimensional tropical manifolds,
@@ -933,7 +764,7 @@ of a tropical analog of HRR.
 Let $B$ be a purely $n$-dimensional compact tropical manifold and $\mcal{L}$
 be a line bundle on it. Suppose $B$ has the Todd class
 $\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
- Let $s$ be an permissible (weak-)smooth Cartier divisor satisfying an permissible condition 
+ Let $s$ be an permissible (weak-)$C^{\infty}$-Cartier divisor satisfying an permissible condition 
 \cref{cond: permissible} which represents of $\mcal{L}$
 and its graded $\Z$-module $\opn{LMD}^{\bullet}(B;s)$
 of it. If $\opn{LMD}^{\bullet}(B;s)$ is bounded and 
@@ -972,7 +803,7 @@ finitely generated. Then,
 \end{align}
 \end{theorem}
 
-The condition of admissibility is that every cotangent vector 
+The condition of permissibility is that every cotangent vector 
 is not in hyperplanes defined by the span of microsupport of
 cotangent sheaf of $C$. 
 
@@ -1004,11 +835,7 @@ in the sense of \cite[Definition 2.8]{cavalieri2020tropical}.
 
 \end{remark}
 
-\begin{remark}
-Our approach is related with the theory of
-geometric quantization. We write about it in 
-\cref{appendix-geometric-quantization}.
-\end{remark}
+
 
 \textit{Acknowledgments:}
 We also thank for Kentaro Yamaguchi for explaining about
@@ -1036,6 +863,11 @@ in the case of tropical curves,
 We will use the following notation in this paper:
 
 \begin{itemize}
+
+%\setlength{\itemsep}{-2pt}
+\setlength{\parskip}{0pt}
+\setlength{\leftskip}{-20pt}
+
 \item For every continuous function $f\colon X\to {\mathbb{R}}$,
 \begin{align*}
 \{f<f(v)\}\deq \set{x\in X\mid f(x)< f(v)},\quad
@@ -1090,6 +922,7 @@ $\mathcal{C}$.
 \begin{Note}
 We also impose the following assumption for simplicity in this paper:
 \begin{itemize}
+\setlength{\leftskip}{-20pt}
 \item Any topological space is Hausdorff and
 locally compact unless otherwise specified.
 \item Any ring is a ring with unity.
@@ -1110,7 +943,7 @@ $\alpha=0,1,\ldots,\infty,\omega$.
 \end{Note}
 
 \section{The cohomological local Morse datum}
-In this section we recall some elementary results
+In this section, we recall some elementary results
 for cohomological local Morse data of sheaves from
 \cite{MR2031639,MR1299726}.
 
@@ -1241,7 +1074,7 @@ Then $\mathscr{I}$ is $\Gamma_{Z}$-injective and
 $\Gamma_{Z}(\mathcal{I})\in\mathscr{I}$ for 
 $\mathcal{I}\in \mathscr{I}$ \cite[Proposition 2.4.6]{MR1299726}.
 
-Let $X$ be a topological space, $Z$ be a locally 
+Let $X$ be a topological space, $Z$ a locally 
 closed subset of $X$ and $Z'$ a closed subset of $Z$.
 
 There exists the following distinguished triangle 
@@ -1953,7 +1786,7 @@ polyhedral spaces}
 
 We recall about line bundles on 
 rational polyhedral spaces and mention the notion of
-\emph{smooth Cartier divisor}.
+\emph{$C^{\infty}$-Cartier divisor}.
 We mainly follow 
 from \cite{MR3903579,gross2019sheaftheoretic}.
 
@@ -2021,8 +1854,8 @@ $\mathcal{A}^{0,0}_B$ is a fine sheaf
 $H^{1}(B;\mathcal{A}^{0,0}_B)=0$ and 
 so $\delta'$ is also surjective.
 
-\begin{definition}[{smooth Cartier divisor}]
-A \emph{smooth Cartier divisor} or 
+\begin{definition}[{$C^{\infty}$-Cartier divisor}]
+A \emph{$C^{\infty}$-Cartier divisor} or 
 \emph{$C^{\infty}$-Cartier divisor} on $B$ is an element of
 $H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
 Let 
@@ -2031,27 +1864,27 @@ H^{0}(B;\mathcal{A}^{0,0}_B)\to
 H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$ 
 be a morphism defined from 
 (\ref{equation-smoooth-cartier-divisor-sequence}).
-The \emph{principal smooth Cartier divisor} of a $(0,0)$-superform 
+The \emph{principal $C^{\infty}$-Cartier divisor} of a $(0,0)$-superform 
 $f$ is the image $(f)^{\mathrm{sm}}$ of $f$.
 \end{definition}
 We write $\opn{CDiv}^{\infty}(B)$ for 
 $H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
-We will see a smooth Cartier divisor is
+We will see a $C^{\infty}$-Cartier divisor is
 an analog of Lagrangian section 
 (\cref{proposition-cartier-lagrangian}).
 We also use the following representation of 
-smooth Cartier divisor like 
+$C^{\infty}$-Cartier divisor like 
 \cite[Definition 4.0.12]{MR2810322}.
-\begin{definition}[{smooth Cartier local data}]
+\begin{definition}[{$C^{\infty}$-Cartier local data}]
 Let $s\in \opn{CDiv}^{\infty}(S)$, 
 $\{U_i\}_{i\in I}$ an open cover of $S$ and 
 $f_i\colon U_i \to \mathbb{R}$ a $(0,0)$-superform
 on $U_i$. The set 
 $\{(U_i,f_i)\}_{i\in I}$ is 
-a \emph{smooth Cartier local data} for $s$ if 
+a \emph{$C^{\infty}$-Cartier local data} for $s$ if 
 $s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all 
 $i\in I$. The set $\{(U_i,f_i)\}_{i\in I}$ is a
-\emph{smooth Cartier local data} if 
+\emph{$C^{\infty}$-Cartier local data} if 
 $\{(U_i,f_i)\}_{i\in I}$ is a local data for a smooth
 Cartier divisor.
 \end{definition}
@@ -2060,7 +1893,7 @@ Cartier divisor.
 In the next subsection, 
 we will define an analog of Floer complex of 
 Lagrangian submanifolds
-(without differential) for some good smooth Cartier 
+(without differential) for some good $C^{\infty}$-Cartier 
 divisors on rational polyhedral space satisfying 
 the following condition:
 
@@ -2088,8 +1921,8 @@ for tropical curves in
 \subsection{Admissible conditions}
 
 In this subsection, we define 
-the \emph{admissibility condition} for
-smooth Cartier divisors on rational 
+the \emph{permissibility condition} for
+$C^{\infty}$-Cartier divisors on rational 
 polyhedral spaces.
 We will define an analog of a Morse complex
 without differential for permissible divisors 
@@ -2293,13 +2126,13 @@ in \cite[p.156]{MR1336822}.)
 From definition, if $f$ is permissible at $x$ then
 $f|_{U_x}+m$ is also permissible at $x$ for any 
 $m\in \mathcal{O}_{S}^{\times}(U_x)$.
-Therefore, we can define the admissibility condition
+Therefore, we can define the permissibility condition
 for principal divisors directly.
 \begin{remark}
 Suppose $\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)=(\mathcal{F}_{S}^{1})_x$. 
 Then, $f$ is permissible if and only if 
 $d''f(x)\in (\mathcal{F}_{\mathbb{Z},S}^{1})_x$.
-Therefore, admissibility
+Therefore, permissibility
 condition may be not a generic condition.
 If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
 (\opn{SS}(S)_x)<\dim_{\mathbb{R}} \mathcal{F}_{S,x}^{1}$, the 
@@ -2310,7 +2143,7 @@ connected.
 
 \begin{definition}[{smooth permissible Cartier divisor}]
 \label{definition-permissible-smooth-cartier-divisor}
-A smooth Cartier divisor $s$ is \emph{permissible} 
+A $C^{\infty}$-Cartier divisor $s$ is \emph{permissible} 
 if there exists a local Cartier data $\{(U_i,f_i)\}_{i\in I}$ 
 for $s$
 such that $f_i$ is permissible for all $i\in I$. 
@@ -2320,17 +2153,17 @@ Cartier divisors $s,s'$ is
 permissible. 
 \end{definition}
 
-Let $s_0$ be the principal smooth Cartier data of 
+Let $s_0$ be the principal $C^{\infty}$-Cartier data of 
 a constant function on $S$. Then, a pair 
-$(s_0,s)$ of smooth Cartier divisors is permissible
+$(s_0,s)$ of $C^{\infty}$-Cartier divisors is permissible
 if and only if $s$ is permissible.
-If a smooth Cartier divisor is permissible, 
+If a $C^{\infty}$-Cartier divisor is permissible, 
 then every local data satisfies the above 
-admissibility condition.
+permissibility condition.
 
 \begin{definition}
-Let $(s,s')$ be a pair of smooth Cartier divisors and 
-$\{(U_i,f_i)\}_{i\in I}$ a local smooth Cartier data
+Let $(s,s')$ be a pair of $C^{\infty}$-Cartier divisors and 
+$\{(U_i,f_i)\}_{i\in I}$ a local $C^{\infty}$-Cartier data
 for $s-s'$. The intersection set of the pair 
 $(s,s')$ is the following set
 \begin{align}
@@ -2341,7 +2174,7 @@ s'\cap s\deq \set{x\in S \mid  df_i(x)\in
 \end{definition}
 
 The set $s'\cap s$ is independent of the choice of 
-a local smooth Cartier data for $s-s'$. 
+a local $C^{\infty}$-Cartier data for $s-s'$. 
 
 \subsection{Stratified torus fibration}
 \label{section-stratified-torus-fibration}
@@ -2438,7 +2271,7 @@ for all $x\in S$.
 \begin{definition}
 Let $s$ be a smooth 
 Cartier divisor on $S$ and $\{(U_i,f_i)\}_{i\in I}$ a local
-smooth Cartier data for $s$. 
+$C^{\infty}$-Cartier data for $s$. 
 The \emph{stratified Lagrangian section} associated with $s$ is the following
 section of $\check{f}_S$:
 \begin{align}
@@ -2447,19 +2280,19 @@ section of $\check{f}_S$:
 \end{definition}
 
 The $\check{s}$ is independent of the choice of local 
-smooth Cartier data for $s$ since 
+$C^{\infty}$-Cartier data for $s$ since 
 $(\mathcal{F}^{1}_{S})_x/(\mathcal{F}^{1}_{\mathbb{Z},S})_x$
 is naturally isomorphic to
 $(\mathcal{F}^{1}_{\mathbb{Z},S})_x
 \otimes_{\mathbb{Z}}\mathbb{R}/\mathbb{Z}$.
  
 
-From the admissibility condition and
+From the permissibility condition and
 \cref{equation-torus-fiber}, we get the following proposition.
 
 \begin{proposition}
-Let $(s',s)$ be an permissible smooth Cartier pair, 
-$\{(U_i,f_i)\}_{i\in I}$ the local smooth Cartier data 
+Let $(s',s)$ be an permissible $C^{\infty}$-Cartier pair, 
+$\{(U_i,f_i)\}_{i\in I}$ the local $C^{\infty}$-Cartier data 
 for $s-s'$ and $L_s\deq \opn{Im}(\check{s})$.
 Then,
 \begin{align}
@@ -2478,7 +2311,7 @@ Then,
 
 In this subsection, we
 define the graded module of a given permissible pair 
-$(s',s)$ of smooth Cartier divisor such that 
+$(s',s)$ of $C^{\infty}$-Cartier divisor such that 
 $\sharp (s'\cap s)<\infty$.
 In order to define the graded module, we define the 
 local intersection data of 
@@ -2487,7 +2320,7 @@ the permissible pair $(s',s)$.
 \begin{definition}[{intersection data}]
 Fix a compact rational polyhedral space $B$ satisfying 
 \cref{condition-Rn}.
-Let $s$ be an permissible smooth Cartier divisor 
+Let $s$ be an permissible $C^{\infty}$-Cartier divisor 
 on $S$ such that $\sharp (s\cap s_0)<\infty$. 
 An \emph{intersection data} of $s$ is the set 
 $\{(U_p,f_p)\}_{p\in s\cap s_0}$ of pairs of open subsets
@@ -2507,7 +2340,7 @@ for all $p\in s_0\cap s$,
 
 Let $S$ be a rational polyhedral space 
 satisfying \cref{condition-Rn} and 
-$s$ be an permissible smooth Cartier divisor such that
+$s$ be an permissible $C^{\infty}$-Cartier divisor such that
 the following set is finite and 
 $\{(U_p,f_p)\}_{p\in s_0\cap s}$ 
 be an intersection data for $s$.
@@ -2551,7 +2384,7 @@ $\opn{LMD}^{\bullet}_{A}(S;s)$.
 \begin{example}
 \label{example-tropical-kodaira-vanishing}
 Let $S$ be a tropical manifold, 
-$s$ a smooth Cartier divisor on $S$ 
+$s$ a $C^{\infty}$-Cartier divisor on $S$ 
 and $\{(f_i,U_i)\}_{i\in I}$ the local smooth 
 Cartier data of $s$. 
 $s$ is 
@@ -2596,7 +2429,7 @@ map in this paper.
 \begin{proposition}
 \label{proposition-euler-number-etale}
 Let $B$ be a compact rational polyhedral space satisfying
-\cref{condition-Rn} and $s$ be an permissible smooth Cartier divisor
+\cref{condition-Rn} and $s$ be an permissible $C^{\infty}$-Cartier divisor
 such that $s_0\cap s$ is a finite set.
 For $q \colon B' \to B$ be a tropical \`etale covering 
 map of $B$ of 
@@ -2620,7 +2453,7 @@ From now on, we can pose a detailed version of
 Let $S$ be a compact tropical manifold satisfying 
 \cref{condition-Rn} and has the Todd class $\opn{td}(S)$ 
 of $S$ (see \cref{remark-todd-class}).
-Let $s$ be an permissible smooth Cartier divisor such that
+Let $s$ be an permissible $C^{\infty}$-Cartier divisor such that
 $s_0\cap s$ is finite, and $\opn{LMD}^{\bullet}(S;s)$ 
 is bounded and finitely generated. Then, 
 \begin{align}
@@ -2636,7 +2469,7 @@ rest of this paper.
 \begin{remark}
 Obviously, $\opn{LMD}^{\bullet}(S;s)$ is not usually 
 finitely generated and this is not invariant 
-for linearly equivalent smooth Cartier divisors
+for linearly equivalent $C^{\infty}$-Cartier divisors
 if $S$ is not compact.
 This corresponds that Morse homology does not work directly
 for non-compact manifolds such 
@@ -2647,98 +2480,7 @@ polyhedral spaces. See also
 \cref{remark-rotation-closed-interval}.  
 \end{remark}
 
-\begin{remark}[*]
 
-We add some comments for the reason 
-why we assume \cref{condition-Rn} for simplicity.
-Of course, $\mathbb{T}P^{1}$ does not satisfies
-\cref{condition-Rn}. In this case, 
-
-A canonical topological semifield isomorphism 
-$({\mathbb{R}}_{\geq 0},+,\cdot)\simto 
-(\mb{T},\oplus_{\opn{log}},+);x\mapsto \log(x)$
-induces a homeomorphism ${\mathbb{R}}_{\geq 0}^{n}\simeq \mb{T}^{n}$
-naturally and we can define a smooth function on 
-$\mb{T}^{n}$ by the pullback of the smooth function on 
-${\mathbb{R}}_{\geq 0}^{n}$ such that its derivative at $x$ in
-the stalk of the sheaf of affine function
-(with a real valued slope) on $\mb{T}^{n}$
-(see also \cref{definition-weak-smooth}).
- By repeating
-the construction of the sheaf of $(0,0)$-superforms on 
-rational polyhedral spaces, we can extend the sheaf of
-$(0,0)$-superforms appropriately.
-For instance, \cref{eg: TP1Cartier} satisfies 
-these conditions. We can generalize about it for toric
-varieties and this gives a tropical theoretic interpretation 
-of the wrapped Fukaya category for the mirror of
-(complete) toric varieties by \cite{MR2871160}.
-For instance, let $U_{x}$ be a small open neighborhood of 
-a given point $x$ in a tropical toric open strata $O(\sigma)$
- corresponds to a convex cone $\sigma$ of a fan.
-Then, the slope of a smooth function $f$ on $U_{x}$ at $x$
-should be in $\sigma^{\bot}$ since the set of 
-invertible element
-in the dual cone $\sigma^{\vee}$ of $\sigma$ is $\sigma^{\bot}$.
-This condition corresponds to the condition for the Lagrangian
-in $\opn{Fuk}(T^{*}M_{{\mathbb{R}}}/M;\overline{\Lambda}_{\sigma})$ 
-\cite[3.1]{MR2871160} since
-the condition $df(x')\in\sigma^{\bot}$ for all 
-$x'\in U_x\cap O(\sigma)$ gives 
-$(df|_{U_{x}\setminus X_{\sigma}})^{\infty}\subset 
--\overline{\Lambda}_{\sigma}^{\infty}$.
-In other words, the stratified Lagrangian section 
-of a smooth Cartier divisor on a tropical toric variety
-can be considered as 
-an object of wrapped Fukaya category in the sense of
-\cite{MR2871160} naturally. This interpretation is 
-an intermediate of wrapped Fukaya categorical approach by
-\cite{MR2871160}
-and Morse categorical approach of moment polytopes
-(e.g. \cite{MR4234675}).
-We will discuss it in detail in the future.
-
-Our tropical Lagrangian section for toric varieties is 
-(a little bit)
-different from that of \cite{MR2240909,MR2529936}.
-See also \cite[Appendix C.2]{MR2871160} for relationships
-between \cite{MR2871160} and \cite{MR2240909,MR2529936}.
-We also note the mirror symmetry between the derived category of
-coherent sheaves on toric varieties $X_{\Sigma}$ and
-the wrapped Fukaya category 
-$\opn{Fuk}(T^{*}M_{{\mathbb{R}}}/M;\overline{\Lambda}_{\Sigma})$
-is finally solved by the results in \cite{MR4132582}.
-\end{remark}
-
-\begin{remark}[{*Ehrhart reciprocity revisit}]
-Let $s$ be an permissible smooth Cartier divisor on 
-tropical toric varieties in the sense of the above Remark.
-\begin{align}
-\chi(X_{\Sigma},-s,A)=(-1)^{n}\sharp 
-(\opn{int}(\mu_s(X_{\Sigma}))\cap \Z^{n}).
-\end{align} since
-the local Morse data at boundary lattice point is trivial.
-This is another interpretation of Ehrhart reciprocity of 
-lattice polytopes.
-\end{remark}
-
-
-
-\iffalse
-From definition,
-\begin{align}
-df(x)\notin \opn{lineal}(S,x)^{\bot} 
-\Rightleftarrows df|_{\opn{lineal}(S,x)}(x)\ne 0
-\end{align}
-
-Fix a polyhedral fan structure $\mathscr{P}$ of 
-$S/\opn{lineal}(S,x)$. The pullback induced from
-$\opn{pr}\colon S\to S/\opn{lineal}(S,x)$ induces 
-a fan structure on
-$\bigcup_{x\in sigma \in \mathscr{P}}\sigma=
-\opn{lineal}(S,x)$.
-
-\fi
 
 
 
@@ -2991,7 +2733,7 @@ $C_0$ is a disjoint union of open interval:
 \end{align}
 
 \begin{proposition}
-Let $s=\{(U_i,f_i)\}_{i\in I}$ be a smooth Cartier divisor on a compact
+Let $s=\{(U_i,f_i)\}_{i\in I}$ be a $C^{\infty}$-Cartier divisor on a compact
 tropical curve $C$ with no 1-valent vertex.
 Then, there exists
 an permissible Cartier divisor $s'$ which is linearly
@@ -3114,14 +2856,14 @@ the rotation number of all edges of $C$:
 \end{definition}
 
 \begin{definition}
-Let $s\in \opn{CDiv}^{\infty}(C)$ be a smooth Cartier
-divisor and $(U_i,f_i)_{i\in I}$ smooth Cartier data
+Let $s\in \opn{CDiv}^{\infty}(C)$ be a $C^{\infty}$-Cartier
+divisor and $(U_i,f_i)_{i\in I}$ $C^{\infty}$-Cartier data
 of $s$. The data is \emph{good} if 
 every $U_i$ is isomorphic to a contractible open 
 neighborhood of $0$ in $\opn{LC}_{p}C$ where 
 $p\in U_i$.
 \end{definition}
-If a smooth Cartier data $\{(U_i,f_i)\}_{i\in I}$ of $s$ 
+If a $C^{\infty}$-Cartier data $\{(U_i,f_i)\}_{i\in I}$ of $s$ 
 is good,
 we can calculate the divisor class $D_s$ of $s$ easily
 by using \v{C}ech cohomology of sheaves:
@@ -3130,7 +2872,7 @@ D_s=\{(f_j-f_i)\}_{i,j\in I}
 \end{align}
 
 \begin{proposition}
-Let $s$ be an permissible smooth Cartier divisor on
+Let $s$ be an permissible $C^{\infty}$-Cartier divisor on
 a compact tropical curve $C$.
 \label{equation-rotation-number}
 \begin{align}
@@ -3139,7 +2881,7 @@ a compact tropical curve $C$.
 \end{proposition}
 
 \begin{proof}
-Compare the \v{C}ech cocycle between smooth Cartier data and ordinary Cartier data.
+Compare the \v{C}ech cocycle between $C^{\infty}$-Cartier data and ordinary Cartier data.
 \end{proof}
 
 \begin{remark}
@@ -3163,7 +2905,7 @@ an open annulus in $\mathbb{C}$.
 \begin{proposition}
 \label{proposition-simple-interval-rr}
 Let $C=[a,b]$ be a closed interval in $\mathbb{R}$
-and $s$ an permissible smooth Cartier divisor 
+and $s$ an permissible $C^{\infty}$-Cartier divisor 
 such that $s_0\cap s=\{a,b\}$. Then,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=\opn{rot}(s)+
@@ -3181,7 +2923,7 @@ following Meyer--Vietoris type lemma.
 
 \begin{proposition}
 \label{proposition-gluing-formula}
-Let $s$ be an permissible smooth Cartier divisor on a
+Let $s$ be an permissible $C^{\infty}$-Cartier divisor on a
 compact metric graph $C$ such that $s_0\cap s<\infty$.
 Fix two closed metric subgraph of $C$ such that
 $C' \cup C''=C$ and $C'\cap C''\subset s_0 \cap s$.
@@ -3224,7 +2966,7 @@ We can generalize
 \label{proposition-MRR-1-dim-poly-space}
 Let $C$ be a compact pure $1$-dimensional rational 
 polyhedral space satisfying \cref{condition-Rn} 
-and $s$ a smooth Cartier divisor on $C$. Then,
+and $s$ a $C^{\infty}$-Cartier divisor on $C$. Then,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=\opn{rot}(s)+
 \chi_{\opn{top}}(C).
@@ -3253,7 +2995,7 @@ In this case, \cref{theorem-MRR-metric-graph} is
 true from \cref{proposition-n-valent} directly.
 
 Suppose \cref{theorem-MRR-metric-graph} is true
-for all smooth Cartier divisor $s$ on 
+for all $C^{\infty}$-Cartier divisor $s$ on 
 $C$ such that $\sharp \pi_0(C\setminus (s_0 \cap s))=n$.
 Let $C$ be a $1$-dimensional 
 compact rational polyhedral space
@@ -3292,9 +3034,9 @@ and \cref{equation-rotation-number}.
 We will prove MRR for compact tropical curve 
 without \cref{condition-Rn}. 
 For general tropical curve $C$ with $1$-valent
-vertex and smooth Cartier divisor 
+vertex and $C^{\infty}$-Cartier divisor 
 $s\in\Gamma(C;\mathcal{A}^{0,0}_C/\mathcal{O}^{\times}_C)$,
-we cannot choose a smooth Cartier divisor $s'$ which
+we cannot choose a $C^{\infty}$-Cartier divisor $s'$ which
 is linearly equivalent to $s$ and $s_0\cap s'<\infty$.
 The reason of this fact is that every 
 $(0,0)$-superform on a compact tropical curve 
@@ -3311,7 +3053,8 @@ tropical curves.
 
 \begin{definition} \label{definition-weak-smooth}
 Let $\opn{exp}\colon \mathbb{T}^{n}\to 
-\mathbb{R}_{\geq 0}^{n}$ be an exponential map of 
+\mathbb{R}_{\geq 0}^{n}$ be the coordinate-wise 
+exponential map of 
 $\mathbb{T}^{n}$ and $U$ an open subset of 
 $\mathbb{T}^{n}$.
 A continuous function $f\colon U\to \mathbb{R}$
@@ -3386,10 +3129,10 @@ and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
 We can replace $\mathcal{A}_C^{0,0}$ with 
 $\mathcal{A}_C^{\opn{weak}}$
 on \cref{equation-smoooth-cartier-divisor-sequence}
-and thus we can also define smooth Cartier divisors
+and thus we can also define $C^{\infty}$-Cartier divisors
 for weak-smooth functions. 
 \begin{definition}
-A \emph{weak-smooth Cartier divisor} of $C$ is a 
+A \emph{weak-$C^{\infty}$-Cartier divisor} of $C$ is a 
 element of $\Gamma(C;\mathcal{A}_C^{\opn{weak}}/
 \mathcal{O}^{\times}_C)$.
 \end{definition}
@@ -3401,13 +3144,13 @@ $\delta\colon \Gamma(C;\mathcal{A}_C^{\opn{weak}}/
 surjective.
 
 
-We can extend admissibility condition for
-weak-smooth functions and weak-smooth Cartier 
+We can extend permissibility condition for
+weak-smooth functions and weak-$C^{\infty}$-Cartier 
 divisors on $C$. In our case, every weak-smooth 
 Cartier divisor satisfies the permissible condition 
 at every $1$-valent vertex.
 \begin{definition}
-Let $s$ be an permissible weak-smooth Cartier divisor 
+Let $s$ be an permissible weak-$C^{\infty}$-Cartier divisor 
 of $C$ such that $s_0\cap s<\infty$.
 The Morse complex of $s$ the following graded module:
 \begin{align}
@@ -3425,7 +3168,7 @@ repetition of the proof of
 
 \begin{theorem} \label{theorem-MRR-tropical-curve}
 Let $C$ be a compact tropical curve and 
-$s$ an permissible weak-smooth Cartier divisor 
+$s$ an permissible weak-$C^{\infty}$-Cartier divisor 
 of $C$ such that $s_0\cap s<\infty$. Then,
 \begin{align}
   \chi(\opn{LMD}^{\bullet}(C,s))=\opn{deg}(s)+
@@ -3437,7 +3180,7 @@ of $C$ such that $s_0\cap s<\infty$. Then,
 \begin{remark}
 \label{remark-non-permissible-divisor}
 We explain the reason why we add permissible condition for 
-smooth Cartier divisors. 
+$C^{\infty}$-Cartier divisors. 
 One of reasons is that there exists smooth function $f$
 on a polyhedral space $S$ and 
 $x\notin\opn{Crit}(f|_S)$ such that
@@ -3472,7 +3215,7 @@ of $g$.
 In this case, $\opn{ind}_x(g)$ should be $-1$.
 This condition is independent of the choice
 of $g$ satisfying the above condition.
-On the other hand, the index of smooth Cartier
+On the other hand, the index of $C^{\infty}$-Cartier
 divisor should be independent of the choice of
 Cartier data.
 Since $\opn{ind}_x(g+m)$ depends on the choice
@@ -3481,7 +3224,7 @@ with integer slope to
 define the index of $g$ at $x$ as a divisor.
 We consider there is no canonical choice
 of $m_0$ for $g$ as a principal divisor without
-assumption admissibility.
+assumption permissibility.
 Every permissible function $f$ has a canonical choice
 of monomials which is determined by the condition 
 whether $x\in \opn{Crit}(f+m)$ or not.
@@ -3491,13 +3234,13 @@ integer slope.
 \end{remark}
 
 \begin{remark}
-Our definition of smooth Cartier divisor 
+Our definition of $C^{\infty}$-Cartier divisor 
 has an analog of positive divisor by using 
 the local data $\{(U_i,f_i)\}_{i\in I}$ as 
 explained in \cref{example-tropical-kodaira-vanishing}.
 However, this positive divisor is different 
 from ample line bundles for tropical curves. 
-If $s$ is a positive smooth Cartier divisor, then
+If $s$ is a positive $C^{\infty}$-Cartier divisor, then
 $\chi(\opn{LMD}(C;s))=\sharp(s_0\cap s)\geq \sharp 
 (C\setminus C_{\opn{reg}})$. 
 Thus, $\chi(\opn{LMD}(C;s))\geq 2g(C)-2$
@@ -3577,7 +3320,7 @@ tropical hypersurfaces.
 
 
 \begin{definition}[{cf. \cite{auroux2022lagrangian}}]
-An permissible smooth Cartier divisor $s$ is 
+An permissible $C^{\infty}$-Cartier divisor $s$ is 
 \emph{simple} if there exists a local intersection data
 $\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
 $f_p$ is strictly convex at all $p\in C\setminus C_0$.
@@ -3642,7 +3385,7 @@ compatible with $X(C_{0,\vep})$.
 Such a $X$ is given by gluing triangles for 
 each open neighborhood of $p\in X_0(C)\setminus X(C_0)$
 appropriately.
-Let $s$ be an permissible smooth Cartier divisor on $C$.
+Let $s$ be an permissible $C^{\infty}$-Cartier divisor on $C$.
 $s|_{C_0}$ corresponds to a Lagrangian section of 
 $\check{\pi}_{C_0}$ from 
 \cref{proposition-cartier-lagrangian}.
@@ -4419,10 +4162,10 @@ Let $B_0$ be an integral affine manifold. Then,
 \end{proposition}
 
 In particular, a multi-valued function $K$ of a Hessian 
-metric of $B_0$ induces a smooth Cartier divisor on $B_0$
+metric of $B_0$ induces a $C^{\infty}$-Cartier divisor on $B_0$
 and a Lagrangian submanifold of $\check{X}(B_0)$.
 
-If two smooth Cartier divisors $s,s'$ are linearly equivalent, 
+If two $C^{\infty}$-Cartier divisors $s,s'$ are linearly equivalent, 
 i.e., $f=s-s'\in C^{\infty}(B_0)$, 
 then $s$ is the image of an one-time Hamiltonian flow of $s'$
 on $\check{X}(B_0)$
@@ -4448,7 +4191,7 @@ on $\check{X}(B_0)$
 \begin{theorem} \label{theorem-MRR-hesse}
   Let $B_0$ be a $n$-dimensional compact 
 integral affine manifold with a Hessian form and
-  $s$ a smooth Cartier divisor such that $L_s$ intersects 
+  $s$ a $C^{\infty}$-Cartier divisor such that $L_s$ intersects 
 with the zero section transversely. Then,
   \begin{align} \label{equation-Hesse-RR}
     \chi(B_0,s)=\frac{1}{n!}\int_{B_0}c_1(s)^{n}.
@@ -4533,17 +4276,17 @@ a special case of \cite{MR3656481,MR4301560}.
 
 \begin{corollary}
 Let $s$ be a smooth local Cartier divisor on $B_0$ and 
-$\{(U_i,f_i)\}_{i\in I}$ a local smooth Cartier 
+$\{(U_i,f_i)\}_{i\in I}$ a local $C^{\infty}$-Cartier 
 data of $s$ such that $\sharp (s_0\cap s)<\infty$ and
 every $(A_{U_i},f_i)$ satisfies \cref{condition-global-morse}.
 Then, the \cref{equation-Hesse-RR} holds for $s$.
 \end{corollary}
 
 \begin{proof}
-Let $\{(U_i,f_i)\}_{i\in I}$ be a local smooth Cartier
+Let $\{(U_i,f_i)\}_{i\in I}$ be a local $C^{\infty}$-Cartier
 data of $s$. We can deform $s$ with a linearly equivalent
 smooth divisor $s'$ 
-such that $s'$ has a local smooth Cartier data 
+such that $s'$ has a local $C^{\infty}$-Cartier data 
 $\{(U_i,\tilde{f}_i)\}_{i\in I}$ satisfying 
 $\tilde{f}_i$ is Morse, and 
 $f_i(x)=\tilde{f}_i(x)$ for the complement of 
@@ -4804,7 +4547,7 @@ of smooth divisors.
 \begin{corollary}[{K\"unneth formula}]
 Fix compact rational polyhedral spaces $X$ and $Y$
 satisfying \cref{condition-Rn}.
-Let $s$ and $s'$ a permissible smooth Cartier divisor of $X$ and $Y$ 
+Let $s$ and $s'$ a permissible $C^{\infty}$-Cartier divisor of $X$ and $Y$ 
 satisfying the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
 Then, the induced external tensor product 
@@ -4855,7 +4598,7 @@ $f_2= f_w-f_w(w)$;
 \begin{remark}
 In the proof of the above corollary, we only use
 the condition of cohomological version of Milnor fiber. 
-Besides, we can find many smooth Cartier data satisfying 
+Besides, we can find many $C^{\infty}$-Cartier data satisfying 
 the condition, see \cite[p.35]{MR2031639}.  
 \end{remark}
 
@@ -5224,8 +4967,7 @@ geometer}
 
 \begin{remark}[{Reason why Calabi--Yau's condition is needed}]
 
-We explain why we need Calabi--Yau's condition is needed for
-homological mirror symmetry in this section.
+
 
 We note that Abouzaid constructed ($\mathbb{Z}/2\mathbb{Z}$-graded)
 Fukaya categories of higher genus closed surfaces in
@@ -5254,8 +4996,8 @@ T^{*}B_0/\mathcal{T}_{\Z , B_0}^{\vee} =:\hspace{-35pt}
 & &  B_0 & &
 \end{tikzcd}.
 \end{equation}
-In some literature, the symbol $\check{X}$ and
-$X$ are opposite. 
+In some references, the symbol $\check{X}$ and
+$X$ are reversed. 
 $\check{X}(B_0)$ has a canonical symplectic structure 
 induced from $T^{*}B_0$, and each fiber of 
 $\check{f}_{B_0}$ is a Lagrangian torus.
@@ -5426,7 +5168,311 @@ Ra_{Z!}(\opn{Tr}_{g\circ f,\upomega_{Z}^{\bullet}})
 
 %TODO: lineality空間の話とweak-smoothの話を書く。
 
+\section{Counting lattice point of lattice polytopes}
+\label{section-toric-geometry}
+In this subsection, we explain some backgrounds of 
+our approach of our definition of Euler characteristic
+of tropical line bundles.
 
+Another important point is that 
+we can consider the LHS of 
+\cref{equation-moment-map-intersection}
+as the intersection number 
+of two "Lagrangian submanifolds".
+
+In the case of some special line bundles on
+tropical toric variety, our definition of Euler 
+characteristic of tropical line bundle is essentially same with the
+number of lattice points of the lattice polytope of it.
+
+Before explaining about it, we recall some 
+elemental properties of projective toric varieties over 
+$\mathbb{C}$.
+((See also \cite{MR2810322} for fundamental
+properties of classical toric varieties.))
+Let $P$ be a $n$-dimensional lattice polytope in 
+$\mathbb{R}^{n}$, $X_P$ the projective toric variety
+of $P$, $\mathcal{L}_P$ the line bundle on 
+$X_P$ of $P$.
+The sheaf cohomology of $\mathcal{L}_P$ has 
+the following explicit isomorphisms:
+\begin{align}
+H^{\bullet}(X_P;\mathcal{L}_P)=
+H^{0}(X_P;\mathcal{L}_P)\simeq
+\bigoplus_{u\in P\cap \mathbb{Z}^{n}} \mathbb{C}z^{u},
+\label{equation-danilov-formula} \\
+H^{\bullet}(X_P;\mathcal{L}_P^{\vee})=
+H^{n}(X_P;\mathcal{L}_P^{\vee})\simeq 
+\bigoplus_{u\in \opn{int}(P)\cap \mathbb{Z}^{n}}\mathbb{C}z^{u}.
+\end{align}
+In particular, we have
+\begin{align} \label{equation-ehrhart-reciprocity}
+\chi(H^{\bullet}(X;\mathcal{L}_P))=
+\sharp (P\cap \mathbb{Z}^{n}), \quad 
+\chi(H^{\bullet}(X;\mathcal{L}_P^{\vee}))=
+\sharp (\opn{int}(P)\cap \mathbb{Z}^{n}).
+\end{align}
+By \cref{equation-danilov-formula}, we can interpret HRR 
+for smooth toric varieties 
+as follows:
+\begin{align}
+\label{equation-toric-HRR}
+\sharp (P\cap \mathbb{Z}^{n})
+=\int_{X_P}\opn{ch}(\mathcal{L}_P)\opn{td}(X_P).
+\end{align}
+The prototype slogan of our approach
+for a tropical analog of HRR is 
+a realization of \cref{equation-toric-HRR}
+for tropical manifolds.
+We also note \cref{equation-danilov-formula} 
+has a differential geometrical interpretation,
+see also \cref{appendix-geometric-quantization}. 
+
+
+Next, we will interpret the LHS of 
+\cref{equation-toric-HRR} by the language
+of tropical toric varieties.
+\myfootnote{
+In \cite{MR4155409},
+new Ehrhart theory of tropical geometry appear, 
+but this is different from our approach.
+}
+In this paper, we mainly use max-plus algebra for 
+tropical geometry.
+
+
+Basic concepts and properties 
+of tropical toric varieties is studied and 
+explained in \cite{MR2428356,MR2511632,meyer2011intersection,MR3287221}.
+Let $P$ be an $n$-dimensional convex lattice polytope in
+$(\mathbb{R}^{n})^{\vee}$ and
+$f\colon \mathbb{R}^{n} \to \mathbb{R}$ a 
+smooth function which is defined as follows:
+\begin{align}
+  f(x)\deq\log (\sum_{u\in P\cap (\mathbb{Z}^{n})^{\vee}} 
+\opn{exp}(a_u+\abk{u,x})),\quad  (a_u\in \mathbb{R}).
+\label{equation-log-polynomial} 
+\end{align}
+Here 
+$\abk{\cdot,\cdot}\colon 
+(\mathbb{R}^{n})^{\vee}\times \mathbb{R}^{n}\to\mathbb{R}$
+is the canonical pairing of a vector space and its dual.
+
+We note $f$ is a Laurent polynomial function over the 
+log semiring. 
+In fact, $f=\opn{log}\circ p\circ \opn{exp}$ 
+for some polynomial 
+$p\in \mathbb{R}_{\geq 0}[x_1^{\pm},\ldots,x_n^{\pm}]
+\setminus \{0\}$ over the semifield of nonnegative
+real numbers and $\opn{log}$ is a semifield isomorphism
+from definition.
+This observation is well-known and important 
+for our approach.
+Let $x_1,\ldots,x_n$ be the standard coordinates of 
+$\mathbb{R}^{n}$.
+The differential
+$df:{\mathbb{R}}^{n}\to ({\mathbb{R}}^{n})^{\vee}; x\mapsto 
+(\frac{\partial f}{\partial x_1}(x),\ldots,\frac{\partial f}{\partial x_n}(x))$ 
+is an embedding onto the (relative) interior of $P$
+\cite[p.124 Exercise]{MR1301331}. 
+The differential map is also naturally appeared as an 
+exponential family in algebraic statistic,
+information geometry and Hessian geometry.
+\begin{example}
+Let $f\colon \mathbb{R} \to {\mathbb{R}}; x\mapsto \log (1+e^{x})$ be a soft 
+plus function. When we take a dequantization of $f$,
+we get a ReLU $f^{\opn{trop}}(x)=\max\{0,x\}$ which 
+is frequently used in machine learning.
+The differential is a sigmoid function 
+$df(x)=\frac{e^{x}}{1+e^{x}}$ and 
+the image of $df$ is the open interval $(0,1)$.
+\myfootnote{
+The softmax function also are appeared 
+naturally in a similar way 
+when we consider tropical projective spaces.}
+\end{example}
+
+From now on, we assume 
+$a_u=1$ for all $u\in P\cap \mathbb{Z}^{n}$ for simplicity.
+We can naturally extend $df$ on tropical projective toric 
+varieties and then the extension map is called the \emph{tropical moment map}
+$\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$ 
+\cite[Definition 2.1 (2)]{MR2428356}.
+Instead of moment map for Hamiltonian action of Lie group on
+symplectic manifold, we
+need not assume convex lattice polytope is Delzant.
+This is a tropical analog of algebraic moment map 
+for toric varieties
+(see for example
+\cite[\textsection 12.2]{MR2810322}).
+
+Let 
+$q: ({\mathbb{R}}^{n})^{\vee}\to ({\mathbb{R}}^{n})^{\vee}/(\Z^{n})^{\vee}$ 
+a canonical projection map.
+Then the number of set of the intersection point of 
+the graph of $q\circ \mu_P^{\opn{trop}}$ and 
+that of zero map 
+$0_{X_P^{\opn{trop}}}\colon X_P^{\opn{trop}} \to
+({\mathbb{R}}^{n})^{\vee}/(\Z^{n})^{\vee}$ is equal to the 
+number of lattice points in $P$:
+\begin{align}
+\label{equation-moment-map-intersection}
+\sharp (0_{X_P^{\opn{trop}}}\cap q\circ\mu_P^{\opn{trop}})
+=\sharp (P \cap \Z^{n}).
+\end{align}
+On the other hand, from \cref{equation-log-polynomial} 
+we can construct data $\{(U_i,f_i)\}_{i\in I}$ of 
+pairs of open subsets 
+$U_i$ of $X_{P}^{\opn{trop}}$ and 
+"smooth functions" $f_i\colon U_i \to \mathbb{R}$. 
+The data is very similar with elements of 
+$\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})\deq H^{0}(X_{P}^{\opn{trop}};
+\mcal{A}^{0,0}_{X_{P}^{\opn{trop}}}/
+\mathcal{O}^{\times}_{X_{P}^{\opn{trop}}})$.
+\myfootnote{
+Be careful that this data is not an element
+of $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ since
+ the former collection of smooth functions is not constant
+at any neighborhood of the corner of $X_{P}^{\opn{trop}}$,
+i.e., the fixed point of the torus action on tropical 
+toric varieties.
+In particular, every (0,0)-superform on 
+$\mathbb{T}^n$ is constant at 
+$(-\infty,\ldots,-\infty)$.
+
+By adding functions 
+$\opn{log}\circ f \circ\opn{exp}$ for some smooth function
+$f\colon \mathbb{R}_{\geq 0}^{n}\to \mathbb{R}_{>0}$,
+we can overcome this weak point.
+}
+$\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ is a
+smooth version of the group of tropical Cartier divisor
+$\opn{CaDiv}(X_{P}^{\opn{trop}})$ 
+\cite[Definition 4.2]{MR3894860}
+which is defined by the sheaf of $(0,0)$-super forms 
+$\mcal{A}^{0,0}_X$ on 
+polyhedral spaces.
+\begin{example} \label{eg: TP1Cartier}
+Fix a continuous function $f\colon \mathbb{R}\to \mathbb{R}; 
+x\mapsto \opn{log}(1+e^{nx})$.
+Its differential induces a homeomorphism 
+from $\mathbb{T}P^1$ onto $[0,n]$. 
+$\mathbb{T}P^{1}$ is covered by two open subsets:
+$U_1\deq \mathbb{T}$ and $U_2\deq \mb{R}\cup\{+\infty\}$.
+Take two continuous functions on each $U_i$ as follows:
+\begin{align}
+f_{1,n}\colon \mathbb{T}\to \mathbb{T};
+x \mapsto \log (1+e^{nx}),\quad
+f_{2,n}\colon \mb{R}\cup\{+\infty\} \to 
+\mathbb{T};
+x\mapsto \log(1+e^{nx})-nx.
+\end{align}
+
+Data $\{(U_i,f_{i,n})\}_{i=1,2}$ defines an element 
+$D_n\deq (f_{1,n}-f_{2,n}=nx)\in 
+H^{1}(\mb{T}P^1;\mcal{O}_{\mb{T}P^1}^{\times})\simeq \Z$
+as a \v{C}ech cocycle.
+Then, we have the following analog of 
+\cref{equation-toric-HRR}:
+\begin{align}
+\label{equation-MRR-tropical-line}
+\sharp([0,n]\cap \Z)=\opn{deg}(D_n)+1=
+\opn{deg}(D_n)+\chi_{\opn{top}}(\mb{T}P^1).
+\end{align}
+\end{example}
+
+\begin{remark}[*]
+
+We add some comments for the reason 
+why we assume \cref{condition-Rn} for simplicity.
+Of course, $\mathbb{T}P^{1}$ does not satisfies
+\cref{condition-Rn}. In this case, 
+
+A canonical topological semifield isomorphism 
+$({\mathbb{R}}_{\geq 0},+,\cdot)\simto 
+(\mb{T},\oplus_{\opn{log}},+);x\mapsto \log(x)$
+induces a homeomorphism ${\mathbb{R}}_{\geq 0}^{n}\simeq \mb{T}^{n}$
+naturally and we can define a smooth function on 
+$\mb{T}^{n}$ by the pullback of the smooth function on 
+${\mathbb{R}}_{\geq 0}^{n}$ such that its derivative at $x$ in
+the stalk of the sheaf of affine function
+(with a real valued slope) on $\mb{T}^{n}$
+(see also \cref{definition-weak-smooth}).
+ By repeating
+the construction of the sheaf of $(0,0)$-superforms on 
+rational polyhedral spaces, we can extend the sheaf of
+$(0,0)$-superforms appropriately.
+For instance, \cref{eg: TP1Cartier} satisfies 
+these conditions. We can generalize about it for toric
+varieties and this gives a tropical theoretic interpretation 
+of the wrapped Fukaya category for the mirror of
+(complete) toric varieties by \cite{MR2871160}.
+For instance, let $U_{x}$ be a small open neighborhood of 
+a given point $x$ in a tropical toric open strata $O(\sigma)$
+ corresponds to a convex cone $\sigma$ of a fan.
+Then, the slope of a smooth function $f$ on $U_{x}$ at $x$
+should be in $\sigma^{\bot}$ since the set of 
+invertible element
+in the dual cone $\sigma^{\vee}$ of $\sigma$ is $\sigma^{\bot}$.
+This condition corresponds to the condition for the Lagrangian
+in $\opn{Fuk}(T^{*}M_{{\mathbb{R}}}/M;\overline{\Lambda}_{\sigma})$ 
+\cite[3.1]{MR2871160} since
+the condition $df(x')\in\sigma^{\bot}$ for all 
+$x'\in U_x\cap O(\sigma)$ gives 
+$(df|_{U_{x}\setminus X_{\sigma}})^{\infty}\subset 
+-\overline{\Lambda}_{\sigma}^{\infty}$.
+In other words, the stratified Lagrangian section 
+of a $C^{\infty}$-Cartier divisor on a tropical toric variety
+can be considered as 
+an object of wrapped Fukaya category in the sense of
+\cite{MR2871160} naturally. This interpretation is 
+an intermediate of wrapped Fukaya categorical approach by
+\cite{MR2871160}
+and Morse categorical approach of moment polytopes
+(e.g. \cite{MR4234675}).
+We will discuss it in detail in the future.
+
+Our tropical Lagrangian section for toric varieties is 
+(a little bit)
+different from that of \cite{MR2240909,MR2529936}.
+See also \cite[Appendix C.2]{MR2871160} for relationships
+between \cite{MR2871160} and \cite{MR2240909,MR2529936}.
+We also note the mirror symmetry between the derived category of
+coherent sheaves on toric varieties $X_{\Sigma}$ and
+the wrapped Fukaya category 
+$\opn{Fuk}(T^{*}M_{{\mathbb{R}}}/M;\overline{\Lambda}_{\Sigma})$
+is finally solved by the results in \cite{MR4132582}.
+\end{remark}
+
+\begin{remark}[{*Ehrhart reciprocity revisit}]
+Let $s$ be an permissible $C^{\infty}$-Cartier divisor on 
+tropical toric varieties in the sense of the above Remark.
+\begin{align}
+\chi(X_{\Sigma},-s,A)=(-1)^{n}\sharp 
+(\opn{int}(\mu_s(X_{\Sigma}))\cap \Z^{n}).
+\end{align} since
+the local Morse data at boundary lattice point is trivial.
+This is another interpretation of Ehrhart reciprocity of 
+lattice polytopes.
+\end{remark}
+
+
+
+\iffalse
+From definition,
+\begin{align}
+df(x)\notin \opn{lineal}(S,x)^{\bot} 
+\Rightleftarrows df|_{\opn{lineal}(S,x)}(x)\ne 0
+\end{align}
+
+Fix a polyhedral fan structure $\mathscr{P}$ of 
+$S/\opn{lineal}(S,x)$. The pullback induced from
+$\opn{pr}\colon S\to S/\opn{lineal}(S,x)$ induces 
+a fan structure on
+$\bigcup_{x\in sigma \in \mathscr{P}}\sigma=
+\opn{lineal}(S,x)$.
+
+\fi
 
 
 \bibliography{lattice_points_surface}
