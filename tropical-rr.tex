@@ -401,14 +401,32 @@ please see \cref{section-toric-geometry} and
 \begin{remark}
 \label{remark-todd-class}
 We note about the RHS of \cref{equation-HRR} 
-for tropical manifolds. 
+for tropical manifolds.
+Let $S$ be a compact and connected 
+purely $n$-dimensional tropical manifolds.
+The \emph{tropical cohomology}
+$H^{\bullet,*}(S;\mathbb{Z})$ 
+\cite{mikhalkinTropicalEigenwaveIntermediate2014a,
+itenbergTropicalHomology2019b}
+behaves like singular cohomology 
+$H^{\bullet}(X;\mathbb{Z})$ 
+of complex manifolds $X$.
+We adopted the notation for tropical cohomology 
+from \cite{MR3894860}. 
+The trace map 
+$\int_S\colon H^{\bullet,*}(S;\mathbb{Z})
+\to \mathbb{Z}$ also exists like 
+complex manifolds, see 
+\cref{equation-trace-integration}.  
 The $1$-st Chern class $c_1(\mathcal{L})$ of 
 tropical line bundle $\mathcal{L}$ and 
 the Chow group of rational polyhedral spaces and 
-its cycle map is 
-well-studied \cite{gross2019sheaftheoretic},
+its cycle map is also 
+well-studied,
 and thus we can define the Chern character
-$\opn{ch}(\mathcal{L})$ of 
+$\opn{ch}(\mathcal{L})\deq 
+\sum_{n=0}^{\infty}\frac{c_1(\mathcal{L})^{n}}{n!}
+\in H^{\bullet,*}(S;\mathbb{Z})$ of 
 $\mathcal{L}$ naturally.
 On the other hand, the Todd class of tropical manifold
 have not been studied well enough yet  
@@ -425,7 +443,7 @@ See also \cite[5.3]{mikhalkinTropicalGeometryIts2006} and
 
 %TODO: ラグランジュ切断に関して説明。
 
-\subsection{SYZ conjecture and Lagrangian sections}
+\subsection{SYZ conjecture and main results}
 
 The \emph{Strominger--Yau--Zaslow conjecture} is
 a conjecture in mathmatical physics 
@@ -462,9 +480,13 @@ of the Fukaya category of Calabi--Yau manifold
 will be appeared in \cite{afooo}.
 The tranformation by $\Phi_{\mathrm{SYZ}}$ is called 
 the \emph{SYZ transform}. 
+((See also 
+\cite[\textsection 1.3.2,
+\textsection 7.3.7]{MR2567952} for more details about 
+SYZ conjecture.))
 
 Well-known examples of special Lagrangian torus 
-fibration is comes from integral affine manifolds.
+fibration comes from integral affine manifolds.
 An $n$-dimensional 
 \emph{integral affine manifold} $B$ 
 is a differential manifold 
@@ -476,7 +498,6 @@ deeply-studied in the field of symplectic geometry
 as base spaces of Lagrangian torus fibrations 
 \cite{duistermaatGlobalActionangleCoordinates1980a} before
 the term `tropical geometry' appeared.
-
 Every integral affine manifold $B_0$ has 
 a canonical $\mathbb{Z}$-local system 
 $\mathcal{T}^{\vee}_{\mathbb{Z},B}$ of integer
@@ -486,15 +507,18 @@ Lagrangian torus fibration
 $\check{f}_{B}\colon \check{X}(B)
 \to B$ and its dual 
 $f_{B}\colon \mathcal{X}(B)\to B$
-\cite{MR1882331}.
+\cite{MR1882331}. In this case 
+the mirror $\mathcal{X}(B)$ is defined as a 
+rigid analytic space.
 The SYZ mirror associated with 
 integral affine manifold is well-studied in 
 \cite{MR1882331,MR3728639,MR3656481,MR4301560}.
 
-The following proposition are important for 
+The following previous results are important for 
 understanding our approach.
 
 \begin{proposition}
+\label{proposition-semi-flat-syz}
 Let $B$ be a compact integral affine manifold
 such that $\pi_2(B)=0$
 and $\catn{fuk}(\check{X}(B))$ 
@@ -511,13 +535,13 @@ $H^{0}(B;\mathcal{C}^{\infty}_{B}/
 \item Every element 
 $s\in H^{0}(B;\mathcal{C}^{\infty}_{B}/
 \mathcal{O}^{\times}_{B})$ corresponds to 
-a \emph{Lagrangian section}, a section $g$ of 
-$\check{f}_{B}$ such that $\opn{Im}(g)$ is 
+a \emph{Lagrangian section}, a section $\sigma_s$ of 
+$\check{f}_{B}$ such that $L_s\deq\opn{Im}(\sigma_s)$ is 
 a Lagrangian submanifold of 
 $\check{X}(B)$. Besides, 
-$g$ can be considered as an object
+$L_s$ can be considered as an object
 $\mathscr{L}_{s}$ of 
-$\catn{fuk}(\check{X}(B))$ by a standard choice of 
+$\catn{fuk}(\check{X}(B))$ by choosing an
 additional data.
 \item The SYZ transform 
 $\mathcal{L}_s$ of $\mathscr{L}_s$ is a line bundle
@@ -527,7 +551,13 @@ the canonical isomorphism
 $\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})
 \simeq \opn{Ext}^{\bullet}_{\mathcal{O}_{\mathcal{X}(B)}}(\mathcal{L}_s,\mathcal{L}_{s'})$
 where $\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$
-is the Floer cohomology.
+is the (Lagrangian) Floer cohomology.
+In particular, the following isomorphism holds 
+for the zero section $s_0$ and $s$:
+\begin{align}
+\opn{HF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_s)
+\simeq H^{\bullet}(\mathcal{X}(B);\mathcal{L}_s).
+\end{align}
 \item If $\mathscr{L}_s$ and 
 $\mathscr{L}_{s'}$ intesect transversally, then 
 a Floer complex 
@@ -543,45 +573,91 @@ $\chi(\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'}))$.
 
 \end{proposition}
 
-
-$T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$ has 
-a standard symplectic structure induced from that of 
-cotangent bundle $T^{*}B_0$.
-We write $\check{X}(B_0)\deq 
-T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$
-Let $f\colon B\to \mathbb{R}$ be a 
-smooth function on a smooth manifold $B$.
-$f$ defines a section 
-$\sigma_{df}\colon B\to T^{*}B; x\mapsto (x;df(x))$ of 
-the cotangent bundle $\pi\colon T^{*}B\to B$.
-We note that the intersection number of 
-$\sigma_{df}$ and the zero section of the cotangent
-bundle is equal to the topological Euler characteristic
-of $B$ if $B$ is compact.
-If $B$ is an integral affine manifold,
-$\sigma_{df}$ induces a section 
-$s_{df}\colon B\to T^*B/\Lambda$ of a torus fibration
-$\check{\pi}_B\colon T^*B/\Lambda \to B$ via a canonical 
-projection $\pi \colon T^*B\to T^*B/\Lambda$.
-$T^{*}B_0$ and $\check{X}(B_0)\deq T^*B\to T^*B/\Lambda$
-has a canonical symplectic structure and
-both $\sigma_{df}(B)$ (resp. $s_{df}(B)$) are Lagrangian 
-submanifolds of $T^{*}B_0$ 
-(resp. $T^*B/\check{\Lambda}$).
+\cref{proposition-semi-flat-syz}. (1), (5), and
+the first part of (2) will be explained further 
+in \cref{affine}.
 
 
+In a recent study 
+\cite{auroux2022lagrangian}, 
+SYZ mirror sostudied for the derived category 
+of coherent sheaves on algebraic curves 
+of general type. 
+They also expect their SYZ mirror can be generalized for more
+general varieties in \cite[{\textsection 7}]{auroux2022lagrangian}.
 
-\index{Lagrangian section@Lagrangian section}
-which is well-studied in the field of homological 
-mirror symmetry 
-(see for instance \cite{MR1882331}).
-In general, every element $D$ of Picard group of 
-integral affine manifold $B$ has a $C^{\infty}$-Cartier
-divisor $s\in \opn{CDiv}^{\infty}(B)$ whose divisor 
-class is equal to $D$ and 
-$s$ induces a Lagrangian section of 
-$\check{\pi}_{B_0}\colon \check{X}(B)\to B$.
+From now on, we present the following conjecture
+for boundaryless tropical manifolds 
+\cite[\textsection 4.2]{MR4246795},
+inspired by \cref{proposition-semi-flat-syz}
+and various related works including 
+\cite{auroux2022lagrangian}.
+Let's recall \cref{remark-todd-class} for notations 
+to read the conjecture.
 
+\begin{conjecture}[{Tropical Mirror Riemann--Roch Problem
+(\cref{conjecture-tropical-MRR})}]
+\label{conjecture-tropical-MRR-preface}
+Let $S$ be a compact and connected 
+purely $n$-dimensional
+boundaryless tropical manifold and $\mcal{L}$
+be a line bundle on it. Then, there exists a 
+cohomology class
+$\opn{td}(S) \in H^{\bullet,*}(S;\mathbb{Z})$ 
+and $s$ a $C^{\infty}$-Cartier divisor satisfying 
+an permissible condition 
+(\cref{cond: permissible}) which represents of $\mcal{L}$
+and its graded $\Z$-module $\opn{LMD}^{\bullet}(S;s)$
+of it (\cref{definition-local-morse-data-divisor}). 
+If $\opn{LMD}^{\bullet}(S;s)$ is bounded and 
+finitely generated, then
+\begin{align}
+\chi(\opn{LMD}^{\bullet}(S;s))=
+\int_S \opn{ch}(\mcal{L})\opn{td}(S).
+\end{align}
+
+
+In particular, 
+$\chi(\opn{LMD}^{\bullet}(S;s))=\chi_{\opn{top}}(S)$
+when $\mcal{L}$ is trivial?
+\end{conjecture}
+
+The name of this problem is inspired by a similar
+conjecture in 
+\cite[Conjecture 4.9]{grossSpecialLagrangianFibrations1998a}.
+
+the Novikov field $\Lambda^{\mathbb{C}}_{\mathrm{nov}}$ 
+with $\mathbb{C}$-coefficients.
+
+In this paper, we give a partial answer for compact tropical curves 
+and integral affine manifolds with Hessian form
+as test plays of the above conjecture:
+
+\begin{theorem}[{\cref{theorem-MRR-tropical-curve},
+\cref{theorem-MRR-hesse}}] \label{thm: main}
+Let $C$ (resp. $B$) be a compact tropical curve $C$ 
+(resp. $n$-dimensional integral 
+affine manifold $B$
+with a Hessian form) and $s$ a
+weak-smooth permissible 
+Cartier divisor on $C$ (resp. $B$) such that 
+$\sharp(s\cap s_0)<\infty$ and 
+$\opn{LMD}^{\bullet}(B;s)$ is bounded and 
+finitely generated. Then,
+\begin{align}
+\chi(\opn{LMD}^{\bullet}(C;s))=\int_C c_1(D_s)+\frac{1}{2}c_1(-K_C), \quad 
+\chi(\opn{LMD}^{\bullet}(B;s))=\int_B \frac{c_1(D_s)^{n}}{n!}.
+\end{align}
+\end{theorem}
+
+
+
+
+We note that this theorem has already essentially been proved for some
+literature as a trivial corollary of homological mirror symmetry 
+in \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{rmk: curve_mirror} and \cref{rmk: integral_mirror} 
+for more details) but we reprove it in tropical  
+geometrical setting as a test play of our approach.
 
 \begin{example}
 If $B$ is a tropical elliptic curve 
@@ -597,96 +673,33 @@ $s_n'\colon\mathbb{R}/\mathbb{Z}\to
 \check{X}(\mathbb{R}/\mathbb{Z});x\mapsto (x;nx)$.
 Then,
 \begin{align}
-\sharp(0_{\check{X}(\mathbb{R}/\mathbb{Z})}\cap 
+\chi(\opn{LMD}(B;s))=\sharp(0_{\check{X}(\mathbb{R}/\mathbb{Z})}\cap 
 s_n'(\mathbb{R}/\mathbb{Z}))
 =\opn{deg}(s_n)+\chi_{\opn{top}}(\mathbb{R}/\mathbb{Z}). 
 \end{align}
 This is a certain analog of Riemann--Roch formula 
 for elliptic curves.
 \end{example}
-The above example can be considered as a toy result 
-of HMS conjecture and SYZ conjecture for 
-Calabi--Yau manifolds.
 
-
-
-\ind{Homological Mirror Symmetry}{Homological Mirror 
-Symmetry} or \ind{HMS}{HMS} is a conjecture about 
-categorical equivalence between two different 
-triangulated category derived from symplectic geometry 
-of Calabi-Yau manifold $\check{X}$ and complex geometry 
-of a Calabi-Yau manifold $\mathcal{X}$ (or a degenerate family of 
-Calabi-Yau manifold $X_t$) \cite{MR1403918}:
-\myfootnote{One of important motivation of HMS 
-is a solution of 
-\ind{Classical Mirror Symmetry}{classical
-mirror symmetry} 
-which was appeared from string theory 
-but we will not discuss about this 
-since this solution is still an open question.}
-
-The RHS is called the derived category of 
-Fukaya category of $\check{X}$ and 
-$\mathcal{X}$ is a Calabi--Yau manifold over 
-the Novikov field $\Lambda^{\mathbb{C}}_{\mathrm{nov}}$ 
-with $\mathbb{C}$-coefficients.
-
-HMS induces an isomorphism between (Lagrangian) 
-Floer cohomology of a pair of Lagrangian branes 
-$(\mathscr{L}_0,\mathscr{L})$ and 
-Ext group of coherent sheaves:
-\begin{align} \label{equation-HMS-HF}
-\opn{HF}^{\bullet}(\mathscr{L}_0,\mathscr{L})
-\simeq  \opn{Ext}^{\bullet}_{\mcal{O}_{\mcal{X}}}
-(\Phi(\mathscr{L}_0),\Phi(\mathscr{L})).
-\end{align}
-
-In partivcular, if $\Phi(\mathscr{L}_0)
-  \simeq \mcal{O}_{\mathcal{X}}$ and 
-$\Phi(\mathscr{L})$ is a line bundle on $\mathcal{X}$,
-then we have the following equation 
-from HMS and HRR:
-\begin{align}
-\label{equation-MRR}
-\chi (\opn{HF}^{\bullet}(\mathscr{L}_0,\mathscr{L}))=
-\int_{\mathcal{X}}\opn{ch}(\Phi(\mathscr{L}))
-\opn{td}(\mathcal{X}).
-\end{align}
-
-Similar question is called 
-Mirror Riemann--Roch conjecture in 
-\cite[Conjecture 4.9]{grossSpecialLagrangianFibrations1998a}.
-
-%TODO: SYZとは
-
-\ind{Strominger-Yau-Zaslow conjecture}{Strominger-Yau-
-Zaslow conjecture} or 
-\ind{SYZ conjecture}{SYZ conjecture} is a conjecture 
-in physics about 
-a concrete method to solve Kontsevich's Homological 
-Mirror Symmetry conjecture for Calabi-Yau manifolds
-\cite{stromingerMirrorSymmetryTduality1996}.
-
-((See also 
-\cite[\textsection 1.3.2,
-\textsection 7.3.7]{MR2567952} for more details about 
-SYZ conjecture.))
-
-
-
-Under assumption of SYZ conjecture, 
-every Lagrangian section 
-$s_{B_0}\colon B_0\to \check{X}(B_0)$ 
-should map to a line bundle on 
-$\mathcal{X}(B_0)$. 
-In this paper, Floer cohomology means that 
-Lagrangian Floer cohomology.
-
-
-If SYZ conjecture is true, the equation should be
-true for closed integral affine manifolds.
-
-
+\begin{remark}
+We expect our approach works for various style 
+of tropical spaces. 
+Our approach is 
+also inspired from Gross's 
+works 
+\cite{grossSpecialLagrangianFibrations1998a} 
+and Gross--Siebert programs
+(see \cite[Conjecture 1.6]{MR3525095}).
+If SYZ conjecture for Calabi--Yau manifolds
+is true, our apporoach should
+be true for integral affine manifold 
+with singularities of Calabi--Yau type.
+We expect that 
+our approach make sense for not only rational polyhedral
+spaces, integral affine manifold with singularities,
+but also for tropical spaces 
+in the sense of \cite[Definition 2.8]{cavalieri2020tropical}.
+\end{remark}
 
 Some readers may think this question do not make sense
 because of elementary properties of 
@@ -704,13 +717,11 @@ cohomology, there exists the
 following isomorphism:
 \begin{align}
 \label{equation-floer-poincare}
-\chi (\opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2;\mathbb{F}_2))
+\chi (\opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2))
 =(-1)^{n} 
-\chi(\opn{HF}^{\bullet}(\mathscr{L}_2,\mathscr{L}_1;\mathbb{F}_2)).
+\chi(\opn{HF}^{\bullet}(\mathscr{L}_2,\mathscr{L}_1)).
 \end{align}
-This property is also true for 
-the Floer cohomology over $\Lambda_{\opn{nov}}$ when 
-$\check{X}$ is Calabi--Yau.
+
 On the other hand, let $X$ be a complete smooth 
 complex manifold and $\mathcal{L}_1$, $\mathcal{L}_2$ be a
 line bundle on $X$. Then, by Serre duality there exists 
@@ -743,98 +754,6 @@ but the relationships between HMS and SYZ
 for Fano manifold
 are not easier than 
 for Calabi--Yau manifolds.
-
-However, in a recent study 
-\cite{auroux2022lagrangian}, 
-SYZ mirror is studied for the derived category 
-of coherent sheaves on algebraic curves 
-of general type. 
-They also expect their SYZ mirror can be generalized for more
-general varieties in \cite[{\textsection 7}]{auroux2022lagrangian}.
-
-It is not formulated as a mathematical 
-conjecture since we don't know the definition of Todd 
-class of $n$ ($\geq 3$) dimensional tropical manifolds,
-but we write it for showing a slogan of formulation 
-of a tropical analog of HRR.
-
-\begin{conjecture}[{Tropical Mirror Riemann--Roch Problem
-(\cref{conjecture-tropical-MRR})}]
-\label{conjecture-tropical-MRR-preface}
-Let $B$ be a purely $n$-dimensional compact tropical manifold and $\mcal{L}$
-be a line bundle on it. Suppose $B$ has the Todd class
-$\opn{td}(B) \in \mb{H}^{\bullet}(B;\mcal{F}_{\Z, B}^{\bullet})$.
- Let $s$ be an permissible (weak-)$C^{\infty}$-Cartier divisor satisfying an permissible condition 
-\cref{cond: permissible} which represents of $\mcal{L}$
-and its graded $\Z$-module $\opn{LMD}^{\bullet}(B;s)$
-of it. If $\opn{LMD}^{\bullet}(B;s)$ is bounded and 
-finitely generated, then
-\begin{align}
-\chi(\opn{LMD}^{\bullet}(B;s))=\int_B \opn{ch}(\mcal{L})\opn{td}(B).
-\end{align}
-where $\int_B$ is the trace map 
-$H^{n,n}(B;\mathbb{Z})\to \mathbb{Z}$
-induced from the fundamental class $[B]$ of $B$.
-
-In particular, when $\mcal{L}=\mcal{O}_B$ then
-$\chi(\opn{LMD}^{\bullet}(B;s))=\chi_{\opn{top}}(B)$ ?
-\end{conjecture}
-
-
-
-In this paper, we give a partial answer for compact tropical curves 
-and integral affine manifolds with Hessian form
-as test plays of the above conjecture:
-
-\begin{theorem}[{\cref{theorem-MRR-tropical-curve},
-\cref{theorem-MRR-hesse}}] \label{thm: main}
-Let $C$ (resp. $B$) be a compact tropical curve $C$ 
-(resp. $n$-dimensional integral 
-affine manifold $B$
-with a Hessian form) and $s$ a
-weak-smooth permissible 
-Cartier divisor on $C$ (resp. $B$) such that 
-$\sharp(s\cap s_0)<\infty$ and 
-$\opn{LMD}^{\bullet}(B;s)$ is bounded and 
-finitely generated. Then,
-\begin{align}
-\chi(\opn{LMD}^{\bullet}(C;s))=\int_C c_1(D_s)+\frac{1}{2}c_1(-K_C), \quad 
-\chi(\opn{LMD}^{\bullet}(B;s))=\int_B \frac{c_1(D_s)^{n}}{n!}.
-\end{align}
-\end{theorem}
-
-The condition of permissibility is that every cotangent vector 
-is not in hyperplanes defined by the span of microsupport of
-cotangent sheaf of $C$. 
-
-
-We note that this theorem has already essentially been proved for some
-literature as a trivial corollary of homological mirror symmetry 
-in \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{rmk: curve_mirror} and \cref{rmk: integral_mirror} 
-for more details) but we reprove it in tropical  
-geometrical setting as a test play of our approach.
-
-\begin{remark}
-We expect our approach works for various style 
-of tropical spaces. 
-Our approach is 
-also inspired from Gross's 
-works in 
-\cite{grossSpecialLagrangianFibrations1998a} 
-and Gross--Siebert programs
-(see \cite[Conjecture 1.6]{MR3525095}).
-If SYZ conjecture for Calabi--Yau manifolds
-is true, our apporoach should
-be true for integral affine manifold 
-with singularities of Calabi--Yau type.
-We expect that 
-our approach make sense for not only rational polyhedral
-spaces, integral affine manifold with singularities,
-but also for tropical spaces 
-in the sense of \cite[Definition 2.8]{cavalieri2020tropical}.
-
-\end{remark}
-
 
 
 \textit{Acknowledgments:}
@@ -1893,13 +1812,13 @@ Cartier divisor.
 In the next subsection, 
 we will define an analog of Floer complex of 
 Lagrangian submanifolds
-(without differential) for some good $C^{\infty}$-Cartier 
+(without differential) for good $C^{\infty}$-Cartier 
 divisors on rational polyhedral space satisfying 
 the following condition:
 
 \begin{condition}
 \label{condition-Rn}
-Let $B$ be a rational polyhedral space with 
+Let $S$ be a rational polyhedral space with 
 a coordinate system $\{(U_i,\phi_i)\}_{i\in I}$
 such that the image of each chart 
 $\phi_i\colon U_i \to \mathbb{T}^{n}$
@@ -1909,8 +1828,8 @@ is in $\mathbb{R}^{n}$.
 The \cref{condition-Rn} is strict for rational polyhedral
 spaces, but it is enough to
 give a test play for our approaches.
-If $B$ is a boundaryless 
-\cite[\textsection 4.2]{MR4246795}, $B$ 
+If $S$ is a boundaryless 
+\cite[\textsection 4.2]{MR4246795}, $S$ 
 satisfies \cref{condition-Rn}.
 
 We will explain why we assume the \cref{condition-Rn}
@@ -1918,7 +1837,7 @@ and how to overcome it
 for tropical curves in 
 \cref{section-tropical-curve-general}.
 
-\subsection{Admissible conditions}
+\subsection{Permissible conditions}
 
 In this subsection, we define 
 the \emph{permissibility condition} for
@@ -2337,7 +2256,7 @@ for all $p\in s_0\cap s$,
 \end{definition}
 
 \begin{definition}[{Local Morse data for smooth divisor}]
-
+\label{definition-local-morse-data-divisor}
 Let $S$ be a rational polyhedral space 
 satisfying \cref{condition-Rn} and 
 $s$ be an permissible $C^{\infty}$-Cartier divisor such that
@@ -2421,6 +2340,14 @@ The name of strongly-positive follows
 from \cite{MR2892935}.
 \end{example}
 
+\begin{condition}
+\label{condition-good-divisor}
+$s$ is a permissible $C^{\infty}$-Cartier divisor of 
+$S$ such that $s_0\cap s$ is finite and 
+$\opn{LMD}^{\bullet}(S;s)$ is bounded and 
+finitely generated.
+\end{condition}
+
 The following proposition is an analog of \'{e}tale multiplicity of Euler characteristics
 (cf. \cite[Proposition 1.1.28]{MR2095471}).
 Let's see \cref{definition-etale-covering} for 
@@ -2446,8 +2373,10 @@ Besides, we can apply Meyer--Vietoris exact sequence
 for $\opn{LMD}^{\bullet}(B;s)$ under a suitable condition.
 We will use this feature for tropical curves (see
 \cref{proposition-gluing-formula}).
-From now on, we can pose a detailed version of 
-\cref{conjecture-tropical-MRR-preface}.
+
+
+
+
 \begin{conjecture} 
 \label{conjecture-tropical-MRR}
 Let $S$ be a compact tropical manifold satisfying 
@@ -4017,7 +3946,8 @@ In this case,
 we can define the \emph{trace map} 
 on tropical cohomology like complex manifolds 
 (e.g. \cite[Example 13.A.3]{MR2810322}):
-\begin{align}  
+\begin{align} 
+\label{equation-trace-integration}
 \int_X \colon H^{n,n}(X;\mathbb{Z})\to 
 H_{0,0}^{\opn{BM}}(\{\opn{pt}\};\mathbb{Z})\simeq 
 \mathbb{Z}; \alpha \mapsto a_{X*}(\alpha \frown [X]).
@@ -4979,6 +4909,35 @@ Fukaya categories of higher genus closed surfaces in
 
 
 \subsection{Integral affine manifold and Floer cohomology}
+
+$T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$ has 
+a standard symplectic structure induced from that of 
+cotangent bundle $T^{*}B_0$.
+We write $\check{X}(B_0)\deq 
+T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$
+Let $f\colon B\to \mathbb{R}$ be a 
+smooth function on a smooth manifold $B$.
+$f$ defines a section 
+$\sigma_{df}\colon B\to T^{*}B; x\mapsto (x;df(x))$ of 
+the cotangent bundle $\pi\colon T^{*}B\to B$.
+We note that the intersection number of 
+$\sigma_{df}$ and the zero section of the cotangent
+bundle is equal to the topological Euler characteristic
+of $B$ if $B$ is compact.
+If $B$ is an integral affine manifold,
+$\sigma_{df}$ induces a section 
+$s_{df}\colon B\to T^*B/\Lambda$ of a torus fibration
+$\check{\pi}_B\colon T^*B/\Lambda \to B$ via a canonical 
+projection $\pi \colon T^*B\to T^*B/\Lambda$.
+$T^{*}B_0$ and $\check{X}(B_0)\deq T^*B\to T^*B/\Lambda$
+has a canonical symplectic structure and
+both $\sigma_{df}(B)$ (resp. $s_{df}(B)$) are Lagrangian 
+submanifolds of $T^{*}B_0$ 
+(resp. $T^*B/\check{\Lambda}$).
+
+
+
+\index{Lagrangian section@Lagrangian section}
 
 \subsubsection{Semi-flat SYZ mirror pair}
 
