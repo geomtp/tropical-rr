@@ -402,8 +402,7 @@ please see \cref{section-toric-geometry} and
 \label{remark-todd-class}
 We note about the RHS of \cref{equation-HRR} 
 for tropical manifolds.
-Let $S$ be a compact and connected 
-purely $n$-dimensional tropical manifolds.
+Let $S$ be a compact tropical manifolds.
 The \emph{tropical cohomology}
 $H^{\bullet,*}(S;\mathbb{Z})$ 
 \cite{mikhalkinTropicalEigenwaveIntermediate2014a,
@@ -551,7 +550,9 @@ the canonical isomorphism
 $\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})
 \simeq \opn{Ext}^{\bullet}_{\mathcal{O}_{\mathcal{X}(B)}}(\mathcal{L}_s,\mathcal{L}_{s'})$
 where $\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$
-is the (Lagrangian) Floer cohomology.
+is the (Lagrangian) Floer cohomology (over the 
+Novikov field $\Lambda_{\mathrm{nov}}^{\mathbb{C}}$
+with $\mathbb{C}$-coefficients).
 In particular, the following isomorphism holds 
 for the zero section $s_0$ and $s$:
 \begin{align}
@@ -560,7 +561,7 @@ for the zero section $s_0$ and $s$:
 \end{align}
 \item If $\mathscr{L}_s$ and 
 $\mathscr{L}_{s'}$ intesect transversally, then 
-a Floer complex 
+the Floer complex 
 $\opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$
 of $\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$ 
 can be written by $s,s'$ and $B$
@@ -572,10 +573,10 @@ $\chi(\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'}))$.
 \end{enumerate}
 
 \end{proposition}
-
 \cref{proposition-semi-flat-syz}. (1), (5), and
 the first part of (2) will be explained further 
-in \cref{affine}.
+in \cref{section-integral-affine-manifold} 
+and \cref{affine}.
 
 
 In a recent study 
@@ -583,8 +584,10 @@ In a recent study
 SYZ mirror sostudied for the derived category 
 of coherent sheaves on algebraic curves 
 of general type. 
-They also expect their SYZ mirror can be generalized for more
-general varieties in \cite[{\textsection 7}]{auroux2022lagrangian}.
+They also expect their SYZ mirror can be 
+generalized for more
+general varieties in 
+\cite[{\textsection 7}]{auroux2022lagrangian}.
 
 From now on, we present the following conjecture
 for boundaryless tropical manifolds 
@@ -598,74 +601,96 @@ to read the conjecture.
 \begin{conjecture}[{Tropical Mirror Riemann--Roch Problem
 (\cref{conjecture-tropical-MRR})}]
 \label{conjecture-tropical-MRR-preface}
-Let $S$ be a compact and connected 
-purely $n$-dimensional
-boundaryless tropical manifold and $\mcal{L}$
-be a line bundle on it. Then, there exists a 
-cohomology class
-$\opn{td}(S) \in H^{\bullet,*}(S;\mathbb{Z})$ 
-and $s$ a $C^{\infty}$-Cartier divisor satisfying 
-an permissible condition 
-(\cref{cond: permissible}) which represents of $\mcal{L}$
-and its graded $\Z$-module $\opn{LMD}^{\bullet}(S;s)$
-of it (\cref{definition-local-morse-data-divisor}). 
-If $\opn{LMD}^{\bullet}(S;s)$ is bounded and 
-finitely generated, then
+For any compact tropical manifold $S$
+satisfying \cref{condition-Rn}, 
+there exists an element $\opn{td}(S)$ of the tropical 
+cohomology group $H^{\bullet,*}(S;\mathbb{Z})$ such that, 
+for any tropical line bundle $\mathcal{L}$ on $S$ and 
+any $C^{\infty}$-Cartier divisor $s$ representing 
+$\mathcal{L}$ that satisfies 
+\cref{condition-good-divisor}, 
+the following equation holds:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(S;s))=
 \int_S \opn{ch}(\mcal{L})\opn{td}(S).
 \end{align}
-
+Here, $\opn{LMD}^{\bullet}(S;s)$ is a graded $\Z$-module 
+associated with $s$ 
+(\cref{definition-local-morse-data-divisor}). 
 
 In particular, 
 $\chi(\opn{LMD}^{\bullet}(S;s))=\chi_{\opn{top}}(S)$
 when $\mcal{L}$ is trivial?
 \end{conjecture}
-
-The name of this problem is inspired by a similar
-conjecture in 
-\cite[Conjecture 4.9]{grossSpecialLagrangianFibrations1998a}.
-
-the Novikov field $\Lambda^{\mathbb{C}}_{\mathrm{nov}}$ 
-with $\mathbb{C}$-coefficients.
-
-In this paper, we give a partial answer for compact tropical curves 
-and integral affine manifolds with Hessian form
-as test plays of the above conjecture:
-
-\begin{theorem}[{\cref{theorem-MRR-tropical-curve},
-\cref{theorem-MRR-hesse}}] \label{thm: main}
-Let $C$ (resp. $B$) be a compact tropical curve $C$ 
-(resp. $n$-dimensional integral 
-affine manifold $B$
-with a Hessian form) and $s$ a
-weak-smooth permissible 
-Cartier divisor on $C$ (resp. $B$) such that 
-$\sharp(s\cap s_0)<\infty$ and 
-$\opn{LMD}^{\bullet}(B;s)$ is bounded and 
-finitely generated. Then,
+The \cref{condition-Rn} is for simplicity 
+of the definition $C^{\infty}$-Cartier divisor.
+The graded module $\opn{LMD}^{\bullet}(S;s)$ is 
+an analog of the Floer complex of the pair of Lagrangian 
+sections. In fact, if $B$ is a compact integral affine 
+manifold and $s$ is a $C^{\infty}$-Cartier divisor of 
+$B$ such that its Lagrangian section $\mathscr{L}_s$ intersects 
+with the zero section $\mathscr{L}_{s_0}$ transversely,
+then 
 \begin{align}
-\chi(\opn{LMD}^{\bullet}(C;s))=\int_C c_1(D_s)+\frac{1}{2}c_1(-K_C), \quad 
-\chi(\opn{LMD}^{\bullet}(B;s))=\int_B \frac{c_1(D_s)^{n}}{n!}.
+\opn{CF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_{s})
+\simeq \opn{LMD}^{\bullet}(S;s)\otimes_{\mathbb{Z}}
+\Lambda_{\mathrm{nov}}^{\mathbb{C}}.
+\end{align}
+However, $\opn{LMD}^{\bullet}(S;s)$ is different 
+from any Floer complex of the pair of Lagrangian 
+submanifolds when $S$ is not an integral affine 
+manifold, see also \cref{remark-calabi-yau-condition}. 
+To define $\opn{LMD}^{\bullet}(S;s)$, 
+we use tools in microlocal sheaf theory.
+The main results of this paper is that 
+the construction of the 
+$\opn{LMD}^{\bullet}(S;s)$ and affirmative 
+proofs of \cref{conjecture-tropical-MRR-preface}
+for compact tropical curves and integral affine 
+manifolds with Hessian forms. 
+
+\begin{theorem}[{\cref{theorem-MRR-tropical-curve}}] 
+\label{theorem-MRR-curve-preface}
+Let $C$ be a compact tropical curve.
+For any tropical line bundle 
+$\mathcal{L}$ on $B$ and any $C^{\infty}$-Cartier
+divisor satisfying \cref{condition-good-divisor},
+the following equation holds:
+\begin{align}
+\chi(\opn{LMD}^{\bullet}(C;s))=
+\int_C c_1(\mathcal{L})+\frac{1}{2}c_1(-K_C). 
 \end{align}
 \end{theorem}
 
+\begin{theorem}[{\cref{theorem-MRR-hesse}}]
+\label{theorem-MRR-hesse-preface}
+Let $B$ be an $n$-dimensional compact integral affine manifold $B$ with 
+a Hessian form. For any tropical line bundle 
+$\mathcal{L}$ on $B$ and any $C^{\infty}$-Cartier
+divisor satisfying \cref{condition-good-divisor},
+the following equation holds:
+\begin{align}
+\chi(\opn{LMD}^{\bullet}(B;s))=
+\int_B \frac{c_1(\mathcal{L})^{n}}{n!}.
+\end{align}
+
+\end{theorem}
 
 
+We note that our results has highly related with 
+ \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{rmk: curve_mirror} and \cref{rmk: integral_mirror} 
+for more details), but our theorems 
+are self-contained within the language of tropical 
+geometry and their proofs do not use the SYZ
+transform.
 
-We note that this theorem has already essentially been proved for some
-literature as a trivial corollary of homological mirror symmetry 
-in \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{rmk: curve_mirror} and \cref{rmk: integral_mirror} 
-for more details) but we reprove it in tropical  
-geometrical setting as a test play of our approach.
 
 \begin{example}
-If $B$ is a tropical elliptic curve 
-$\mathbb{R}/\mathbb{Z}$, then we can check there exists 
-a similar formula of 
-(\ref{equation-MRR-tropical-line}) easily.
-Let $f_n\colon \mathbb{R}\to \mathbb{R};
-x\mapsto \frac{n}{2}x^{2}$ be a quadratic polynomial.
+Let $B$ is a tropical elliptic curve 
+$\mathbb{R}/\mathbb{Z}$ and
+$f_n\colon \mathbb{R}\to \mathbb{R};
+x\mapsto \frac{n}{2}x^{2}$ be a quadratic polynomial
+for some $n\in \mathbb{Z}\setminus\{0\}$.
 The polynomial induces a $C^{\infty}$-Cartier divisor 
 $s_n$ on $\mathbb{R}/\mathbb{Z}$ naturally.
 The associated Lagrangian section of $f_n$ is
@@ -673,12 +698,12 @@ $s_n'\colon\mathbb{R}/\mathbb{Z}\to
 \check{X}(\mathbb{R}/\mathbb{Z});x\mapsto (x;nx)$.
 Then,
 \begin{align}
-\chi(\opn{LMD}(B;s))=\sharp(0_{\check{X}(\mathbb{R}/\mathbb{Z})}\cap 
-s_n'(\mathbb{R}/\mathbb{Z}))
+\chi(\opn{LMD}^{\bullet}(B;s_n))=
+\sharp(L_{s_0}\cap L_{s_n})=n
 =\opn{deg}(s_n)+\chi_{\opn{top}}(\mathbb{R}/\mathbb{Z}). 
 \end{align}
-This is a certain analog of Riemann--Roch formula 
-for elliptic curves.
+This is a typical example of 
+\cref{conjecture-tropical-MRR-preface}.
 \end{example}
 
 \begin{remark}
@@ -701,60 +726,104 @@ but also for tropical spaces
 in the sense of \cite[Definition 2.8]{cavalieri2020tropical}.
 \end{remark}
 
-Some readers may think this question do not make sense
-because of elementary properties of 
-Lagrangian Floer cohomology. 
-We explain typical one of these features as follows.
-
+\begin{remark}
+\label{remark-calabi-yau-condition}
+We note a typical property of Lagrangian 
+Floer cohomology which is far from that of 
+$\opn{LMD}^{\bullet}(S;s)$ when $S$ is not 
+an integral affine manifold.
 Let $\check{X}$ be a $2n$-dimensional 
 compact symplectic manifold and 
-$\mathscr{L}_1,\mathscr{L}_2$
-Lagrangian branes of $\check{X}$.
-From definition of ($\mathbb{Z}/2\mathbb{Z}$-graded) 
+$L_1,L_2$
+compact Lagrangian submanifolds of $\check{X}$ 
+which has the ($\mathbb{Z}/2\mathbb{Z}$-graded)
+Floer cohomology, (see 
+\cite[Theorem 1.5]{}).
+From definition of  
 Floer cohomology and 
 property of intersection number of cycles of singular 
 cohomology, there exists the
 following isomorphism:
 \begin{align}
 \label{equation-floer-poincare}
-\chi (\opn{HF}^{\bullet}(\mathscr{L}_1,\mathscr{L}_2))
+\chi (\opn{HF}^{\bullet}(L_1,L_2))
 =(-1)^{n} 
-\chi(\opn{HF}^{\bullet}(\mathscr{L}_2,\mathscr{L}_1)).
+\chi(\opn{HF}^{\bullet}(L_2,L_1)).
 \end{align}
 
-On the other hand, let $X$ be a complete smooth 
-complex manifold and $\mathcal{L}_1$, $\mathcal{L}_2$ be a
-line bundle on $X$. Then, by Serre duality there exists 
+On the other hand, let $\mathcal{X}$ be a 
+$n$-dimensional
+projective manifold and $\mathcal{L}_1$, $\mathcal{L}_2$ be a
+line bundle on $\mathcal{X}$. 
+Then, by Serre duality there exists 
 the following equation:
 \begin{align}
 \label{equation-serre-duality}
-\chi(\opn{Ext}^{\bullet}_{\mcal{O}_X}
+\chi(\opn{Ext}^{\bullet}_{\mcal{O}_{\mathcal{X}}}
 (\mcal{L}_2,\mcal{L}_1))
-= (-1)^{n}\chi(\opn{Ext}^{\bullet}_{\mcal{O}_X}
-(\mcal{L}_1,\mcal{L}_2\otimes_{\mathcal{O}_X} \upomega_X)).
+&= (-1)^{n}\chi(\opn{Ext}^{\bullet}_{\mcal{O}_{\mathcal{X}}}
+(\mcal{L}_1,\mcal{L}_2\otimes_{\mathcal{O}_{\mathcal{X}}} 
+\upomega_{\mathcal{X}})), \\
+\label{equation-serre-line}
+\chi(H^{\bullet}(\mathcal{X};\mathcal{L}_1^{\vee}))
+&= (-1)^{n}\chi(H^{\bullet}(\mathcal{L}_1
+\otimes_{\mathcal{O}_{\mathcal{X}}}\upomega_{\mathcal{X}})).
 \end{align}
-Here $\upomega_X$ is the canonical bundle on $X$.
-If $X$ is a mirror of $\check{X}$, then 
+Here $\upomega_{\mathcal{X}}$ is the canonical bundle on $X$.
+If $\mathcal{X}$ is a mirror of $\check{X}$, then 
 the (\ref{equation-floer-poincare}) and 
 (\ref{equation-serre-duality}) should be compatible.
 Obviously, 
-$\upomega_X$ is not trivial for many complex manifolds $X$,
+$\upomega_{\mathcal{X}}$ is not trivial for many 
+projective manifolds $\mathcal{X}$,
 and thus we cannot consider the mirror cohomology of 
 $\opn{Ext}^{\bullet}(\mathcal{L}_2,\mathcal{L}_1)$
 from classical Lagrangian Floer cohomology directly.
+Our
 Therefore, we need to replace $\check{X}$ 
 with different data when we discuss of the mirror 
-symmetry for $D^{b}(\opn{Coh}(X))$. 
-If $X$ is Fano, then a
-mirror of $D^{b}(\opn{Coh}(X))$ is a Fukaya 
-category defined from a Landau--Ginzburg model
+symmetry for $\catn{coh}(\mathcal{X})$. 
+If $\mathcal{X}$ is Fano, then a
+mirror of $\mathcal{X}$ is not a symplectic 
+manifold but a Landau--Ginzburg model
 $(\check{X},f)$.
 Such HMS is discussed for many authors, 
 but the relationships between HMS and SYZ
 for Fano manifold
 are not easier than 
 for Calabi--Yau manifolds.
+On the other hand, the Euler characteristic 
+$\chi(\opn{LMD}^{\bullet}(S;s))$ of 
+a permissible $C^{\infty}$-Cartier divisor
+$s$ on a tropical manifold $S$ behaves 
+like \cref{equation-serre-line} for various 
+cases.
 
+\end{remark}
+
+\subsection{Outline of this paper}
+
+This paper is organized as follows:
+In Section 2, we define the permissible conditions 
+and local Morse data $\opn{LMD}^{\bullet}(S;s)$ for 
+$C^{\infty}$-Cartier divisors $s$ on a boundaryless
+tropical manifolds.
+In Section 3, we prove 
+\cref{theorem-MRR-curve-preface}.
+In Section 4, we prove 
+\cref{theorem-MRR-hesse} after preparing from 
+the theory of tropical cohomology.
+In Section 5, we explain 
+more examples satisfying Riemann--Roch type 
+formula.
+
+\begin{Note}[Guide for reading this paper]
+  In order to reveal the relationships between our study
+  and other topics, we cannot avoid introducing various
+  notions. However, our results are almost elementary
+in the case of tropical curves,
+  so we write down a shortcut course of this paper as below:
+\end{Note}
 
 \textit{Acknowledgments:}
 We also thank for Kentaro Yamaguchi for explaining about
@@ -767,15 +836,7 @@ pointing out some mistakes.
 This work was supported by JSPS KAKENHI 
 Grant Number 21J14529.
 
-This paper is organized as follows:
 
-\begin{Note}[Guide for reading this paper]
-  In order to reveal the relationships between our study
-  and other topics, we cannot avoid introducing various
-  notions. However, our results are almost elementary
-in the case of tropical curves,
-  so we write down a shortcut course of this paper as below:
-\end{Note}
 
 \begin{notation} \label{notation-general}
 
@@ -2355,24 +2416,25 @@ the definition of tropical \`etale covering
 map in this paper.
 \begin{proposition}
 \label{proposition-euler-number-etale}
-Let $B$ be a compact rational polyhedral space satisfying
-\cref{condition-Rn} and $s$ be an permissible $C^{\infty}$-Cartier divisor
+Let $S$ be a compact rational polyhedral space satisfying
+\cref{condition-Rn} and $s$ be an permissible 
+$C^{\infty}$-Cartier divisor
 such that $s_0\cap s$ is a finite set.
-For $q \colon B' \to B$ be a tropical \`etale covering 
-map of $B$ of 
+For $q \colon S' \to S$ be a tropical \`etale covering 
+map of $S$ of 
 (topological) degree 
 $\opn{deg}_{\opn{top}}(q)$,
 \begin{align}
-\chi(\opn{LMD}^{\bullet}(B';q^{*}(s)))=
-\opn{deg}_{\opn{top}}(q)\chi(\opn{LMD}^{\bullet}(B;s)).
+\chi(\opn{LMD}^{\bullet}(S';q^{*}(s)))=
+\opn{deg}_{\opn{top}}(q)\chi(\opn{LMD}^{\bullet}(S;s)).
 \end{align}
 \end{proposition}
 
 The proof of \cref{proposition-euler-number-etale} is trivial from definition.
 Besides, we can apply Meyer--Vietoris exact sequence 
 for $\opn{LMD}^{\bullet}(B;s)$ under a suitable condition.
-We will use this feature for tropical curves (see
-\cref{proposition-gluing-formula}).
+We will use this feature for tropical curves
+(\cref{proposition-gluing-formula}).
 
 
 
@@ -2416,16 +2478,15 @@ polyhedral spaces. See also
 
 
 \section{Proof for compact tropical curves}
-In this section, we prove \cref{thm: main} for 
-compact tropical curves
-(see \cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a} 
-for the definition of tropical curves).
+In this section, we prove \cref{theorem-MRR-curve-preface}. 
+(See \cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a} 
+for the definition of tropical curves.)
 Our proof is highly effected from 
-\cite{knill2012graph,MR2676658,auroux2022lagrangian}
-\footnote{Our proof idea comes from 
+\cite{knill2012graph,MR2676658,auroux2022lagrangian}.
+Our proof idea comes from 
 \cite{knill2012graph,MR2676658} at first.  
 The current proof is modified after reading 
-\cite{auroux2022lagrangian}.}.
+\cite{auroux2022lagrangian}.
 We also mainly follow the notation used in 
 \cite{auroux2022lagrangian}.
 Some propositions which have already proved as a special case
@@ -3061,7 +3122,7 @@ on \cref{equation-smoooth-cartier-divisor-sequence}
 and thus we can also define $C^{\infty}$-Cartier divisors
 for weak-smooth functions. 
 \begin{definition}
-A \emph{weak-$C^{\infty}$-Cartier divisor} of $C$ is a 
+A \emph{$C^{\infty}$-Cartier divisor} of $C$ is a 
 element of $\Gamma(C;\mathcal{A}_C^{\opn{weak}}/
 \mathcal{O}^{\times}_C)$.
 \end{definition}
@@ -4714,41 +4775,7 @@ Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
 
 \end{remark}
 
-From the successes of the theory of
- tropical (co)homology 
-\cite{itenbergTropicalHomology2019b}, we can pose 
-the following question:
 
-\begin{question} \label{qustion-tropical-lcc}
-Is there a transformation procedure 
-from line bundles on tropical manifold to complexes
-of constructible sheaves such that it is 
-compatible with \cite{itenbergTropicalHomology2019b}?
-\end{question}
-We need to 
-be careful of that we can also observe that
-the derived category $\opn{D}_{c}^{b}(B)$
-of constructible sheaves on 
-tropical manifold $B$ does not seem like a tropical 
-analog of the derived category of coherent 
-sheaves on algebraic variety directly.
-\myfootnote{One of reasons
-comes from the result in \cite{MR2449059,MR2565051}
-and homological mirror symmetry for 
-the derived category of coherent sheaves on complex split $n$-torus 
-$(\C^{\times})^{d}$, the derived wrapped Fukaya category of $T^{*}(S^{1})^{n}$
-by \cite{MR2822213}.
-Therefore, $\opn{D}_c^{b}((S^{1})^{d})$ should behave like 
-the derived category of coherent sheaves on 
-$(\C^{\times})^{d}$
-but not on some complex tori.
-
-}
-
- Our approach is 
-not a sheaf theoretic approach, but we expect
-our apoorach gives a hint of 
-\cref{qustion-tropical-lcc} in future.
 
 \section{Radiance obstruction and geometric prequantization}
 \label{sec: BSRR}
@@ -4815,11 +4842,12 @@ This construction is a certain dual of semi-flat SYZ
 transformation 
 (see \cite[Theorem 1.1]{MR1876073} or \cite[\textsection 9.1]{MR1882331}). 
 The following equation is firstly proved in 
-\cite[Corollary 4.1]{MR1461965} by using Atiyah--Singer index formula.
+\cite[Corollary 4.1]{MR1461965} by using 
+Atiyah--Singer index formula:
 \begin{align} \label{equation-lattice-index}
 \sharp (B_0(\Z))=\sharp (s_0\cap s_{B_0})
 =\opn{vol}(\check{X}(B_0))=\opn{vol}(B_0)
-=\chi(\mcal{L},\nabla):
+=\chi(\mcal{L},\nabla).
 \end{align}
 
 This equation is reproved in \cite{MR2676658} as a 
@@ -4891,22 +4919,7 @@ https://doi.org/10.48550/arxiv.1904.04076}).
 
 
 \section{Etc of HMS and SYZ}
-
-\subsection{A crash course of SYZ mirror for tropical 
-geometer}
-
-\begin{remark}[{Reason why Calabi--Yau's condition is needed}]
-
-
-
-We note that Abouzaid constructed ($\mathbb{Z}/2\mathbb{Z}$-graded)
-Fukaya categories of higher genus closed surfaces in
-\cite{MR2383898}. 
-\end{remark}
-
-
-
-
+\label{appendix-integral-affine-manifold}
 
 \subsection{Integral affine manifold and Floer cohomology}
 
