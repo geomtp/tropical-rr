@@ -258,14 +258,31 @@ algebraic geometry or analytic geometry.
 In tropical geometry,
 a main geometric object is represented by 
 a \emph{rational polyhedral sapce}, see 
-\cite[Definition 6.1]{gross2019sheaftheoretic}. 
+\cite[Definition 2.2]{gross2019sheaftheoretic}. 
+A rational polyhedral space is a pair 
+$(S,\mathcal{O}^{\times}_S)$ of a 
+topological space $S$ and 
+the sheaf $\mathcal{O}^{\times}_S$ of 
+locally affine linear functions with 
+$\mathbb{Z}$-valued slopes such that 
+$S$ is locally isomorphic to an open subset
+of a polyhedral subset of tropical affine 
+spaces $\overline{\mathbb{R}}^{k}=
+(\mathbb{R}\cup\{+\infty\})^{k}$.
+$\mathcal{O}_S^{\times}$ is a tropical analog
+of the sheaf $\mathcal{O}_X^{\times}$ of 
+units of the structure sheaf $\mathcal{O}_X$ of 
+algebraic varieties $X$.
+The first cohomology 
+$H^{1}(S;\mathcal{O}_S^{\times})$ parameterize the 
+isomorphism classes of (tropical) line bundles on $S$
+\cite[Proposition 3.13]{gross2019sheaftheoretic}.
 A \emph{tropical manifold} is 
 a rational polyhedral space which are locally 
 isomorphic to the direct product of a 
 Bergman fan $\Sigma_M$ for some loopless 
 matroid $M$ and a tropical affine space 
-$\overline{\mathbb{R}}^{k}=
-(\mathbb{R}\cup\{+\infty\})^{k}$,
+$\overline{\mathbb{R}}^{k}$,
 see \cite[Definition 6.1]{gross2019sheaftheoretic} 
 or the original definition of tropical manifold 
 in \cite[Definition 1.14]{mikhalkinTropicalEigenwaveIntermediate2014a}.
@@ -280,6 +297,7 @@ Every (finite) metric graph
 (with no $1$-valent vertex) also has 
 a natural structure of tropical curve 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
+
 
 Many important examples of tropical manifolds (or tropical 
 varieties) 
@@ -397,7 +415,9 @@ If you are interested in how our approach
 relates to toric geometry and geometric quantization, 
 please see \cref{section-toric-geometry} and 
 \cref{appendix-geometric-quantization} respectively.
-
+In this paper, we don't discuss the general theory of 
+the Todd class of $S$
+(see also \cref{remark-todd-class}).
 \begin{remark}
 \label{remark-todd-class}
 We note about the RHS of \cref{equation-HRR} 
@@ -411,7 +431,7 @@ behaves like singular cohomology
 $H^{\bullet}(X;\mathbb{Z})$ 
 of complex manifolds $X$.
 We adopted the notation for tropical cohomology 
-from \cite{MR3894860}. 
+from \cite[Definition 2.6]{MR3894860}. 
 The trace map 
 $\int_S\colon H^{\bullet,*}(S;\mathbb{Z})
 \to \mathbb{Z}$ also exists like 
@@ -477,12 +497,14 @@ $\check{X}$ with additional data.
 To our knowledge, the general definition 
 of the Fukaya category of Calabi--Yau manifold
 will be appeared in \cite{afooo}.
+Therefore, in the context of mirror symmetry, 
+it is often the case that one investigates 
+a quasi-isomorphism between the $A_{\infty}$-category, 
+which should become a subcategory of the Fukaya category, 
+and $\catn{coh}(\mathcal{X})$.
 The tranformation by $\Phi_{\mathrm{SYZ}}$ is called 
 the \emph{SYZ transform}. 
-((See also 
-\cite[\textsection 1.3.2,
-\textsection 7.3.7]{MR2567952} for more details about 
-SYZ conjecture.))
+
 
 Well-known examples of special Lagrangian torus 
 fibration comes from integral affine manifolds.
@@ -523,6 +545,10 @@ such that $\pi_2(B)=0$
 and $\catn{fuk}(\check{X}(B))$ 
 the Fukaya category of $\check{X}(B)$ in the 
 sense of \cite{MR4301560}.
+Let $\mathcal{O}_{B}^{\times}$ be the sheaf of 
+affine functions with $\mathbb{Z}$-valued slopes and 
+$\mathcal{C}^{\infty}_{B}$ the sheaf of 
+$C^{\infty}$-functions. Then,
 \begin{enumerate}
 \setlength{\leftskip}{-12pt}
 \item The canonical injection 
@@ -534,8 +560,9 @@ $H^{0}(B;\mathcal{C}^{\infty}_{B}/
 \item Every element 
 $s\in H^{0}(B;\mathcal{C}^{\infty}_{B}/
 \mathcal{O}^{\times}_{B})$ corresponds to 
-a \emph{Lagrangian section}, a section $\sigma_s$ of 
-$\check{f}_{B}$ such that $L_s\deq\opn{Im}(\sigma_s)$ is 
+a \emph{Lagrangian section}, a section 
+$\check{s}$ of 
+$\check{f}_{B}$ such that $L_s\deq\opn{Im}(\check{s})$ is 
 a Lagrangian submanifold of 
 $\check{X}(B)$. Besides, 
 $L_s$ can be considered as an object
@@ -576,7 +603,7 @@ $\chi(\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'}))$.
 \cref{proposition-semi-flat-syz}. (1), (5), and
 the first part of (2) will be explained further 
 in \cref{section-integral-affine-manifold} 
-and \cref{affine}.
+and \cref{appendix-integral-affine-manifold}.
 
 
 In a recent study 
@@ -601,8 +628,8 @@ to read the conjecture.
 \begin{conjecture}[{Tropical Mirror Riemann--Roch Problem
 (\cref{conjecture-tropical-MRR})}]
 \label{conjecture-tropical-MRR-preface}
-For any compact tropical manifold $S$
-satisfying \cref{condition-Rn}, 
+For any compact boundaryless tropical manifold $S$
+\cite[\textsection 4.2]{MR4246795}, 
 there exists an element $\opn{td}(S)$ of the tropical 
 cohomology group $H^{\bullet,*}(S;\mathbb{Z})$ such that, 
 for any tropical line bundle $\mathcal{L}$ on $S$ and 
@@ -622,8 +649,6 @@ In particular,
 $\chi(\opn{LMD}^{\bullet}(S;s))=\chi_{\opn{top}}(S)$
 when $\mcal{L}$ is trivial?
 \end{conjecture}
-The \cref{condition-Rn} is for simplicity 
-of the definition $C^{\infty}$-Cartier divisor.
 The graded module $\opn{LMD}^{\bullet}(S;s)$ is 
 an analog of the Floer complex of the pair of Lagrangian 
 sections. In fact, if $B$ is a compact integral affine 
@@ -639,7 +664,8 @@ then
 However, $\opn{LMD}^{\bullet}(S;s)$ is different 
 from any Floer complex of the pair of Lagrangian 
 submanifolds when $S$ is not an integral affine 
-manifold, see also \cref{remark-calabi-yau-condition}. 
+manifold, see also \cref{remark-calabi-yau-condition} 
+if you are interested in this. 
 To define $\opn{LMD}^{\bullet}(S;s)$, 
 we use tools in microlocal sheaf theory.
 The main results of this paper is that 
@@ -658,7 +684,8 @@ divisor satisfying \cref{condition-good-divisor},
 the following equation holds:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=
-\int_C c_1(\mathcal{L})+\frac{1}{2}c_1(-K_C). 
+\int_C c_1(\mathcal{L})+\frac{1}{2}c_1(-K_C)
+=\opn{deg}(\mathcal{L})+\chi_{\opn{top}}(C). 
 \end{align}
 \end{theorem}
 
@@ -678,7 +705,7 @@ the following equation holds:
 
 
 We note that our results has highly related with 
- \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{rmk: curve_mirror} and \cref{rmk: integral_mirror} 
+ \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{section-syz-trivalent-graph} and \cref{rmk: integral_mirror} 
 for more details), but our theorems 
 are self-contained within the language of tropical 
 geometry and their proofs do not use the SYZ
@@ -702,7 +729,7 @@ Then,
 \sharp(L_{s_0}\cap L_{s_n})=n
 =\opn{deg}(s_n)+\chi_{\opn{top}}(\mathbb{R}/\mathbb{Z}). 
 \end{align}
-This is a typical example of 
+This is a typical example of a weaker version of 
 \cref{conjecture-tropical-MRR-preface}.
 \end{example}
 
@@ -715,7 +742,7 @@ works
 \cite{grossSpecialLagrangianFibrations1998a} 
 and Gross--Siebert programs
 (see \cite[Conjecture 1.6]{MR3525095}).
-If SYZ conjecture for Calabi--Yau manifolds
+If the SYZ conjecture for Calabi--Yau manifolds
 is true, our apporoach should
 be true for integral affine manifold 
 with singularities of Calabi--Yau type.
@@ -1453,14 +1480,15 @@ If $M$ is a closed submanifold of $X$, then
 $\opn{SS}((A_{X})_M)=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
 \end{example}
 For simplicity,
-$\opn{SS}(\mcal{F})_x\deq \opn{SS}(\mcal{F}) \cap T^{*}_x X$.
+$\opn{SS}(\mcal{F})_x\deq \opn{SS}(\mcal{F}) 
+\cap T^{*}_x X$ 
+and $\check{\pi}_{X}\colon T^{*}X\to X$
+is the cotangent bundle.
 From definition of the micro-support of sheaves, 
 $\opn{SS}(\mcal{F}|_{U})_x=\opn{SS}(\mcal{F})_x$
 for any open neighborhood $U$ of $x$.
 
 
-and $\check{\pi}_{X}\colon T^{*}X\to X$
-is the cotangent bundle. 
 
 
 
@@ -1505,8 +1533,8 @@ Under the \cref{condition-global-morse},
 This proposition can be considered as the intersection 
 of two Lagrangian cycles in $T^{*}X$ when 
 $\mathcal{F}^{\bullet}$ is a complex of 
-constructible sheaves,
-see \cite[Corollary 9.5.2,Theorem 9.5.6]{MR1299726}.
+constructible sheaves on an analytic manifold,
+see \cite[Corollary 9.5.2, Theorem 9.5.6]{MR1299726}.
 This is called the microlocal index formula or Kashiwara's 
 index formula.
 \begin{example}
@@ -1765,18 +1793,19 @@ polyhedral spaces}
 
 
 We recall about line bundles on 
-rational polyhedral spaces and mention the notion of
-\emph{$C^{\infty}$-Cartier divisor}.
+rational polyhedral spaces and discuss the notion of
+\emph{$C^{\infty}$-Cartier divisor}
+for boundaryless rational polyhedral spaces.
 We mainly follow 
 from \cite{MR3903579,gross2019sheaftheoretic}.
 
 %TODO: 引用の整理
 
-Let $B$ be a rational polyhedral space, 
-$\mathcal{O}^{\times}_B$ the sheaf of 
-locally integral affine linear function on $B$
-and $\mathcal{A}^{0,0}_B$ the sheaf of 
-$(0,0)$-superforms on $B$. 
+Let $S$ be a rational polyhedral space, 
+$\mathcal{O}^{\times}_S$ the sheaf of 
+locally integral affine linear function on $S$
+and $\mathcal{A}^{0,0}_S$ the sheaf of 
+$(0,0)$-superforms on $S$. 
 As like tropical line bundles on tropical curves
 \cite[Definition 4.4]{mikhalkinTropicalCurvesTheir2008a},
 there exists the notion of tropical line bundle on 
@@ -1806,6 +1835,9 @@ of (real valued) `tropical rational functions'
 0 \to \mcal{O}^{\times}_B \to \mcal{M}_B^{\times} 
 \to \mcal{M}_B^{\times}/\mathcal{O}^{\times}_B\to 0.
 \end{align}
+There are several different definitions of a 
+`tropical rational function' 
+(for example, see \cite{mikhalkin2018tropical}).
 By taking a global section of the
 short exact sequence 
 (\ref{equation-cartier-divisor-sequence}),
@@ -1834,10 +1866,11 @@ $\mathcal{A}^{0,0}_B$ is a fine sheaf
 $H^{1}(B;\mathcal{A}^{0,0}_B)=0$ and 
 so $\delta'$ is also surjective.
 
-\begin{definition}[{$C^{\infty}$-Cartier divisor}]
-A \emph{$C^{\infty}$-Cartier divisor} or 
-\emph{$C^{\infty}$-Cartier divisor} on $B$ is an element of
-$H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
+\begin{definition}
+Let $S$ be a boundaryless rational polyhedral space.
+A \emph{$C^{\infty}$-Cartier divisor} on 
+$S$ is an element of
+$H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)$.
 Let 
 $(\cdot)^{\mathrm{sm}}\colon 
 H^{0}(B;\mathcal{A}^{0,0}_B)\to 
@@ -1847,8 +1880,8 @@ be a morphism defined from
 The \emph{principal $C^{\infty}$-Cartier divisor} of a $(0,0)$-superform 
 $f$ is the image $(f)^{\mathrm{sm}}$ of $f$.
 \end{definition}
-We write $\opn{CDiv}^{\infty}(B)$ for 
-$H^{0}(B;\mathcal{A}^{0,0}_{B}/\mathcal{O}^{\times}_B)$.
+We write $\opn{CDiv}^{\infty}(S)$ for 
+$H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)$.
 We will see a $C^{\infty}$-Cartier divisor is
 an analog of Lagrangian section 
 (\cref{proposition-cartier-lagrangian}).
@@ -1865,8 +1898,8 @@ a \emph{$C^{\infty}$-Cartier local data} for $s$ if
 $s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all 
 $i\in I$. The set $\{(U_i,f_i)\}_{i\in I}$ is a
 \emph{$C^{\infty}$-Cartier local data} if 
-$\{(U_i,f_i)\}_{i\in I}$ is a local data for a smooth
-Cartier divisor.
+$\{(U_i,f_i)\}_{i\in I}$ is a local data for 
+a $C^{\infty}$-Cartier divisor.
 \end{definition}
 
 
@@ -1875,9 +1908,9 @@ we will define an analog of Floer complex of
 Lagrangian submanifolds
 (without differential) for good $C^{\infty}$-Cartier 
 divisors on rational polyhedral space satisfying 
-the following condition:
+the following \emph{boundaryless condition}:
 
-\begin{condition}
+\begin{condition}[{\cite[\textsection 4.2]{MR4246795}}]
 \label{condition-Rn}
 Let $S$ be a rational polyhedral space with 
 a coordinate system $\{(U_i,\phi_i)\}_{i\in I}$
@@ -1889,9 +1922,7 @@ is in $\mathbb{R}^{n}$.
 The \cref{condition-Rn} is strict for rational polyhedral
 spaces, but it is enough to
 give a test play for our approaches.
-If $S$ is a boundaryless 
-\cite[\textsection 4.2]{MR4246795}, $S$ 
-satisfies \cref{condition-Rn}.
+
 
 We will explain why we assume the \cref{condition-Rn}
 and how to overcome it
@@ -2099,10 +2130,6 @@ d''f(x)\notin (\opn{span}_{{\mathbb{R}}}
 \end{align}
 \end{condition}
 
-(Be careful for this terminology is \emph{not} 
-compatible with permissible Morse functions defined 
-in \cite[p.156]{MR1336822}.)
-
 From definition, if $f$ is permissible at $x$ then
 $f|_{U_x}+m$ is also permissible at $x$ for any 
 $m\in \mathcal{O}_{S}^{\times}(U_x)$.
@@ -2121,7 +2148,7 @@ connected.
 \end{remark}
 
 
-\begin{definition}[{smooth permissible Cartier divisor}]
+\begin{definition}[{permissible $C^{\infty}$-Cartier divisor}]
 \label{definition-permissible-smooth-cartier-divisor}
 A $C^{\infty}$-Cartier divisor $s$ is \emph{permissible} 
 if there exists a local Cartier data $\{(U_i,f_i)\}_{i\in I}$ 
@@ -2133,10 +2160,9 @@ Cartier divisors $s,s'$ is
 permissible. 
 \end{definition}
 
-Let $s_0$ be the principal $C^{\infty}$-Cartier data of 
-a constant function on $S$. Then, a pair 
-$(s_0,s)$ of $C^{\infty}$-Cartier divisors is permissible
-if and only if $s$ is permissible.
+Let $s_0$ be the zero $C^{\infty}$-Cartier data on $S$. 
+Then, a pair $(s_0,s)$ of $C^{\infty}$-Cartier divisors 
+is permissible if and only if $s$ is permissible.
 If a $C^{\infty}$-Cartier divisor is permissible, 
 then every local data satisfies the above 
 permissibility condition.
@@ -2154,7 +2180,7 @@ s'\cap s\deq \set{x\in S \mid  df_i(x)\in
 \end{definition}
 
 The set $s'\cap s$ is independent of the choice of 
-a local $C^{\infty}$-Cartier data for $s-s'$. 
+a local data for $s-s'$. 
 
 \subsection{Stratified torus fibration}
 \label{section-stratified-torus-fibration}
@@ -2271,8 +2297,9 @@ From the permissibility condition and
 \cref{equation-torus-fiber}, we get the following proposition.
 
 \begin{proposition}
-Let $(s',s)$ be an permissible $C^{\infty}$-Cartier pair, 
-$\{(U_i,f_i)\}_{i\in I}$ the local $C^{\infty}$-Cartier data 
+Let $(s',s)$ be an permissible $C^{\infty}$-Cartier pair
+on a boundaryless rational polyhedral space, 
+$\{(U_i,f_i)\}_{i\in I}$ the local data 
 for $s-s'$ and $L_s\deq \opn{Im}(\check{s})$.
 Then,
 \begin{align}
@@ -2363,7 +2390,7 @@ $\opn{LMD}^{\bullet}_{A}(S;s)$.
 
 \begin{example}
 \label{example-tropical-kodaira-vanishing}
-Let $S$ be a tropical manifold, 
+Let $S$ be a boundaryless rational polyhedral space, 
 $s$ a $C^{\infty}$-Cartier divisor on $S$ 
 and $\{(f_i,U_i)\}_{i\in I}$ the local smooth 
 Cartier data of $s$. 
@@ -2400,6 +2427,10 @@ with a Hessian form by semi-flat SYZ mirror pair
 The name of strongly-positive follows 
 from \cite{MR2892935}.
 \end{example}
+
+The following is the `good' conditions for 
+$C^{\infty}$-Cartier divisor 
+$s$ to consider Riemann--Roch type theorems.
 
 \begin{condition}
 \label{condition-good-divisor}
@@ -2441,18 +2472,20 @@ We will use this feature for tropical curves
 
 \begin{conjecture} 
 \label{conjecture-tropical-MRR}
-Let $S$ be a compact tropical manifold satisfying 
-\cref{condition-Rn} and has the Todd class $\opn{td}(S)$ 
-of $S$ (see \cref{remark-todd-class}).
-Let $s$ be an permissible $C^{\infty}$-Cartier divisor such that
-$s_0\cap s$ is finite, and $\opn{LMD}^{\bullet}(S;s)$ 
-is bounded and finitely generated. Then, 
+For any compact boundaryless tropical manifold $S$, 
+there exists an element $\opn{td}(S)$ of the tropical 
+cohomology group $H^{\bullet,*}(S;\mathbb{Z})$ such that, 
+for any tropical line bundle $\mathcal{L}$ on $S$ and 
+any $C^{\infty}$-Cartier divisor $s$ representing 
+$\mathcal{L}$ that satisfies 
+\cref{condition-good-divisor}, 
+the following equation holds:
 \begin{align}
-\chi(\opn{LMD}^{\bullet}(S;s))=\int_{S}\opn{ch}(s)\opn{td}(S).
+\chi(\opn{LMD}^{\bullet}(S;s))=
+\int_S \opn{ch}(\mcal{L})\opn{td}(S).
 \end{align}
 \end{conjecture}
-In this paper, we don't discuss the general theory of 
-Todd class of $S$.
+
 We will prove it for tropical curves and integral 
 affine manifold with a Hessian form in the 
 rest of this paper.
@@ -2504,7 +2537,7 @@ we will prove
 the following theorem:
 \begin{theorem}
 \label{theorem-MRR-metric-graph}
-Let $C$ be a compact tropical curve with 
+Let $C$ be a compact and connected tropical curve with 
 no $1$-valent vertex and 
 $\mathcal{L}$ be a line bundle on $C$.
 Let $s$ be a smooth permissible Cartier divisor which
@@ -3256,8 +3289,7 @@ homological mirror symmetry of trivalent graphs}
 
 Our approach is mostly affected from 
 \cite{auroux2022lagrangian}.
-
-\begin{remark} \label{rmk: curve_mirror}
+\label{section-syz-trivalent-graph}
 When $C$ is a trivalent metric graph, 
 our Lagrangian sections are 
 almost the same with that of fiberwise wrapped Fukaya category 
@@ -3296,7 +3328,7 @@ of $m^{d}$-operations yet,
 but we can define $\opn{LMD}(C,s)$ 
 without Hamiltonian
 perturbations.
-\end{remark}
+
 
 The stratified torus fibration of Riemann surface is 
 closely related with pants decomposition, and thus
@@ -3320,10 +3352,11 @@ $f_p$ is strictly convex at all $p\in C\setminus C_0$.
 Poincar\'e--Hopf theorem for graphs}
 
 \cref{theorem-MRR-metric-graph} can be considered 
-as a certain variation of Knill's graph 
+as a $C^{\infty}$-version of Knill's graph 
 theoretical Poincar\'e--Hopf theorem \cite{knill2012graph}
 or 
-Banchoff's critical point theorem \cite{MR225327}.
+Banchoff's critical point theorem \cite{MR225327}
+when the line bundle on a tropical curve is trivial.
 We can easily see the index $i(v)$ defined in 
 \cite[\textsection 3]{knill2012graph}
 corresponds to $\opn{ind}_v(f)$ defined in 
@@ -4009,7 +4042,7 @@ on tropical cohomology like complex manifolds
 (e.g. \cite[Example 13.A.3]{MR2810322}):
 \begin{align} 
 \label{equation-trace-integration}
-\int_X \colon H^{n,n}(X;\mathbb{Z})\to 
+\int_X \colon H^{\bullet,*}(X;\mathbb{Z})\to 
 H_{0,0}^{\opn{BM}}(\{\opn{pt}\};\mathbb{Z})\simeq 
 \mathbb{Z}; \alpha \mapsto a_{X*}(\alpha \frown [X]).
 \end{align}
@@ -4026,7 +4059,6 @@ such that $f_*([X])=m[Y]$.
 \end{definition}
 We write $\opn{deg}_{\opn{trop}}(f)$ by $\opn{deg}(f)$
 for simplicity.
-
 From projection formula, every element 
 $c\in H^{n,n}(Y;\mathbb{Z})$ have the following equation:
 \begin{align}
@@ -4096,7 +4128,7 @@ the $n$-th dilation map of $X$.
 
 \subsection{Sheaf cohomology for integral affine manfiolds}
 
-From now on we recall the commutative diagram (\ref{equation-smooth-cartier-diagram})
+From now on, we recall the commutative diagram (\ref{equation-smooth-cartier-diagram})
  for integral affine manifolds.
 In this case, every sheaf naturally comes 
 from symplectic geometry.
@@ -4157,7 +4189,7 @@ metric of $B_0$ induces a $C^{\infty}$-Cartier divisor on $B_0$
 and a Lagrangian submanifold of $\check{X}(B_0)$.
 
 If two $C^{\infty}$-Cartier divisors $s,s'$ are linearly equivalent, 
-i.e., $f=s-s'\in C^{\infty}(B_0)$, 
+i.e., $s-s'\in C^{\infty}(B_0)$, 
 then $s$ is the image of an one-time Hamiltonian flow of $s'$
 on $\check{X}(B_0)$
 \cite[Exercise 6.65]{MR2567952}.
@@ -4185,7 +4217,7 @@ integral affine manifold with a Hessian form and
   $s$ a $C^{\infty}$-Cartier divisor such that $L_s$ intersects 
 with the zero section transversely. Then,
   \begin{align} \label{equation-Hesse-RR}
-    \chi(B_0,s)=\frac{1}{n!}\int_{B_0}c_1(s)^{n}.
+\chi(\opn{LMD}^{\bullet}(B_0,s))=\frac{1}{n!}\int_{B_0}c_1(s)^{n}.
   \end{align}
 \end{theorem}
 
@@ -4227,13 +4259,13 @@ of the linear part of $dq_s$.
 The intersection number of Lagrangian
 section $L_s$ and the zero section $L_0$ is equal to
 $\chi(\opn{LMD}^{\bullet}(s_0,s))$ up to 
-signature
-\myfootnote{The signature only depends on
+signature.
+(The signature only depends on
 the choice of 
 an orientation of $\check{X}(B_0)$. 
 The definition of the intersection number of smooth 
 submanifolds is in \cite[5.2]{MR1336822} or 
-\cite[0.4]{griffithsPrinciplesAlgebraicGeometry1994a}}. 
+\cite[0.4]{griffithsPrinciplesAlgebraicGeometry1994a}.)
 
 Every linearly equivalent 
 class is given by a one-time Hamiltonian flow on 
@@ -5204,11 +5236,9 @@ see also \cref{appendix-geometric-quantization}.
 Next, we will interpret the LHS of 
 \cref{equation-toric-HRR} by the language
 of tropical toric varieties.
-\myfootnote{
-In \cite{MR4155409},
-new Ehrhart theory of tropical geometry appear, 
-but this is different from our approach.
-}
+
+
+
 In this paper, we mainly use max-plus algebra for 
 tropical geometry.
 
@@ -5258,10 +5288,9 @@ is frequently used in machine learning.
 The differential is a sigmoid function 
 $df(x)=\frac{e^{x}}{1+e^{x}}$ and 
 the image of $df$ is the open interval $(0,1)$.
-\myfootnote{
-The softmax function also are appeared 
+The softmax function are also appeared 
 naturally in a similar way 
-when we consider tropical projective spaces.}
+when we consider tropical projective spaces.
 \end{example}
 
 From now on, we assume 
@@ -5297,10 +5326,7 @@ we can construct data $\{(U_i,f_i)\}_{i\in I}$ of
 pairs of open subsets 
 $U_i$ of $X_{P}^{\opn{trop}}$ and 
 "smooth functions" $f_i\colon U_i \to \mathbb{R}$. 
-The data is very similar with elements of 
-$\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})\deq H^{0}(X_{P}^{\opn{trop}};
-\mcal{A}^{0,0}_{X_{P}^{\opn{trop}}}/
-\mathcal{O}^{\times}_{X_{P}^{\opn{trop}}})$.
+
 \myfootnote{
 Be careful that this data is not an element
 of $\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ since
@@ -5317,13 +5343,7 @@ $\opn{log}\circ f \circ\opn{exp}$ for some smooth function
 $f\colon \mathbb{R}_{\geq 0}^{n}\to \mathbb{R}_{>0}$,
 we can overcome this weak point.
 }
-$\opn{CaDiv}^{\infty}(X_{P}^{\opn{trop}})$ is a
-smooth version of the group of tropical Cartier divisor
-$\opn{CaDiv}(X_{P}^{\opn{trop}})$ 
-\cite[Definition 4.2]{MR3894860}
-which is defined by the sheaf of $(0,0)$-super forms 
-$\mcal{A}^{0,0}_X$ on 
-polyhedral spaces.
+
 \begin{example} \label{eg: TP1Cartier}
 Fix a continuous function $f\colon \mathbb{R}\to \mathbb{R}; 
 x\mapsto \opn{log}(1+e^{nx})$.
@@ -5428,7 +5448,9 @@ This is another interpretation of Ehrhart reciprocity of
 lattice polytopes.
 \end{remark}
 
-
+In \cite{MR4155409},
+new Ehrhart theory of tropical geometry appear, 
+but this is different from our approach.
 
 \iffalse
 From definition,
