@@ -201,8 +201,8 @@
 
 \newcommand{\myfootnote}[1]{\hspace{-5pt}\footnote{#1}}
 
-\newcommand{\TB}{\mcal{T}_{B_0}}
-\newcommand{\TBZ}{\mcal{T}_{\Z,B_0}}
+\newcommand{\TB}{\mcal{T}_{B}}
+\newcommand{\TBZ}{\mcal{T}_{\Z,B}}
 \newcommand{\AffS}{{\mathop{\mcal{A}\!f\!\!f\!}\nolimits}}
 \newcommand{\FBZ}{\mcal{F}_{\Z,B}}
 \newcommand{\FB}{\mcal{F}_{B}}
@@ -223,7 +223,7 @@
 \usepackage{mathrsfs}
 \usepackage{upgreek}
 \numberwithin{equation}{section}
-\title{Graded modules associated with line bundles on 
+\title[Graded modules associated with line bundles]{Graded modules associated with line bundles on 
 tropical curves and integral Hessian manifolds}
 \author[Y. Tsutsui]{Yuki Tsutsui}
 \address{Graduate School of Mathematical Sciences,
@@ -520,7 +520,7 @@ deeply-studied in the field of symplectic geometry
 as base spaces of Lagrangian torus fibrations 
 \cite{duistermaatGlobalActionangleCoordinates1980a} before
 the term `tropical geometry' appeared.
-Every integral affine manifold $B_0$ has 
+Every integral affine manifold $B$ has 
 a canonical $\mathbb{Z}$-local system 
 $\mathcal{T}^{\vee}_{\mathbb{Z},B}$ of integer
 valued cotangent vectors. The integral affine 
@@ -584,6 +584,7 @@ with $\mathbb{C}$-coefficients).
 In particular, the following isomorphism holds 
 for the zero section $s_0$ and $s$:
 \begin{align}
+\label{equation-hf-sheaf-cohomology}
 \opn{HF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_s)
 \simeq H^{\bullet}(\mathcal{X}(B);\mathcal{L}_s).
 \end{align}
@@ -626,8 +627,7 @@ and various related works including
 Let's recall \cref{remark-todd-class} for notations 
 to read the conjecture.
 
-\begin{conjecture}[{Tropical Mirror Riemann--Roch Problem
-(\cref{conjecture-tropical-MRR})}]
+\begin{conjecture}
 \label{conjecture-tropical-MRR-preface}
 For any compact boundaryless tropical manifold $S$
 \cite[\textsection 4.2]{MR4246795}, 
@@ -640,9 +640,9 @@ $\mathcal{L}$ that satisfies
 the following equation holds:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(S;s))=
-\int_S \opn{ch}(\mcal{L})\opn{td}(S).
+\int_S \opn{ch}(\mcal{L})\opn{td}(S)
 \end{align}
-Here, $\opn{LMD}^{\bullet}(S;s)$ is a graded $\Z$-module 
+where $\opn{LMD}^{\bullet}(S;s)$ is a graded $\Z$-module 
 associated with $s$ 
 (\cref{definition-local-morse-data-divisor}). 
 
@@ -690,7 +690,7 @@ the following equation holds:
 \end{align}
 \end{theorem}
 
-\begin{theorem}[{\cref{theorem-MRR-hesse}}]
+\begin{theorem}
 \label{theorem-MRR-hesse-preface}
 Let $B$ be an $n$-dimensional compact integral affine manifold $B$ with 
 a Hessian form. For any tropical line bundle 
@@ -836,10 +836,10 @@ In Section 2, we define the permissible conditions
 and local Morse data $\opn{LMD}^{\bullet}(S;s)$ for 
 $C^{\infty}$-Cartier divisors $s$ on a boundaryless
 tropical manifolds.
-In Section 3, we prove 
+Section 3 contains the proof of 
 \cref{theorem-MRR-curve-preface}.
 In Section 4, we prove 
-\cref{theorem-MRR-hesse} after preparing from 
+\cref{theorem-MRR-hesse-preface} after preparing from 
 the theory of tropical cohomology.
 In Section 5, we explain 
 more examples satisfying Riemann--Roch type 
@@ -1318,6 +1318,8 @@ H^{i}(\{f<f(x)\}\cap U;A).
 \end{align}
 \end{proof}
 
+We will see several examples of local Morse data.
+
 \begin{example}
 Let $f\colon X \to \mathbb{R}$ a continuous function 
 such that $\{f<f(x_0)\}\cap S=\emptyset$ and 
@@ -1416,7 +1418,6 @@ of $x$.
 
 
 
-We will see several examples of local Morse data.
 
 
 
@@ -1582,7 +1583,7 @@ inclusion of $j\colon U \to M$
 where $M$ is a compact smooth manifold,
 $x_0\deq j(0)$ and $K\deq j(\bar{B}_{\varepsilon}(0))$. 
 $S^{n}$ is a typical example of $M$.
-The sheaf $\mathcal{C}^{\infty}(M)$ of smooth functions 
+The sheaf $\mathcal{C}^{\infty}_M$ of smooth functions 
 on $M$ is c-soft, so we can extend
 $f|_{\bar{B}_{\varepsilon}(0)}$ to 
 $f_0\in C^{\infty}(M)$.
@@ -1590,28 +1591,31 @@ From \cref{prop-local-morse-data},
 $\opn{LMD}^{\bullet}(A_M,f_0,x_0)
 \simeq \opn{LMD}^{\bullet}(A_U,f,0)$.
 By Morse perturbation, we can deform 
-$f_0$ a smooth function $f_1$ such that 
+$f_0$ to a smooth function $f_1$ such that 
 $f_0|_{K}=f_1|_K$ and $f_1$ is nondegenerate except at 
-$x$. If $\opn{LMD}^{\bullet}(A_U,f,0)$ is 
+$x_0$. If $\opn{LMD}^{\bullet}(A_U,f,0)$ is 
 a finitely generated graded $A$-module,
 then we have
 \begin{align} \label{equation-local-poincare-hopf}
 \chi(H^{\bullet}(M;A))=
 \chi(\opn{LMD}^{\bullet}(A_M,f_1,x_0))+
 \sum_{x\in \opn{Crit}(f_1)\setminus \{x_0\}}
-\chi(\opn{LMD}^{\bullet}(A_M,f_1,x)).
+\chi(\opn{LMD}^{\bullet}(A_M,f_1,x))
 \end{align}
-by \cite[Proposition 5.4.20]{MR1299726}.
+by \cite[Proposition 5.4.20]{MR1299726}
+when $\opn{LMD}^{\bullet}(A_M,f_1,x_0)$ is finitely
+generated.
 From Poincar\'e--Hopf theorem and 
 \cref{example-morse-index}, 
 \begin{align} \label{equation-poincare-hopf}
 \opn{ind}_0^{A}(f)=
 \opn{ind}_x^{A}(f_1) =
 \opn{ind}_x^{\opn{PH}}(\opn{grad}(f_1))=
-\opn{ind}_0^{\opn{PH}}(\opn{grad}(f)). 
+\opn{ind}_0^{\opn{PH}}(\opn{grad}(f)) 
 \end{align}
-Here, $\opn{ind}^{\opn{PH}}_x(\opn{grad} f)$ is the 
-Poincar\'e--Hopf index of the gradient of $f$ 
+where $\opn{ind}^{\opn{PH}}_x(\opn{grad} f)$ is the 
+Poincar\'e--Hopf index at $x$ of the gradient
+vector field of $f$ 
 for a fixed Riemannian metric.
 We note
 $\opn{LMD}^{\bullet}(A_M,\tilde{f})=
@@ -1698,8 +1702,7 @@ with boundary:
 (S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\})). \notag
 \end{align}
 The proof of relative version of Ehresmann's lemma is 
-in \cite{359708}
-\href{https://mathoverflow.net/questions/358543/a-relative-version-of-ehresmanns-theorem}{complex geometry - A relative version of Ehresmann's theorem - MathOverflow}
+in \cite{359708}.
 Besides, there exists a homeomorphism of pairs of
 topological spaces:
 \begin{align}
@@ -2226,8 +2229,8 @@ here.
 \begin{example}
 
 \begin{enumerate}
-\item If $B_0$ is an integral affine manifold, then
-$\check{X}_0(B_0)$ is equal to $\check{X}(B_0)$ as a set.
+\item If $B$ is an integral affine manifold, then
+$\check{X}_0(B)$ is equal to $\check{X}(B)$ as a set.
 \item 
 Let $C$ be a compact trivalent tropical curve.
 The stratified torus fibration $\check{X}_0(C)$ is equal to 
@@ -2473,27 +2476,6 @@ We will use this feature for tropical curves
 (\cref{proposition-gluing-formula}).
 
 
-
-
-\begin{conjecture} 
-\label{conjecture-tropical-MRR}
-For any compact boundaryless tropical manifold $S$, 
-there exists an element $\opn{td}(S)$ of the tropical 
-cohomology group $H^{\bullet,*}(S;\mathbb{Z})$ such that, 
-for any tropical line bundle $\mathcal{L}$ on $S$ and 
-any $C^{\infty}$-Cartier divisor $s$ representing 
-$\mathcal{L}$ that satisfies 
-\cref{condition-good-divisor}, 
-the following equation holds:
-\begin{align}
-\chi(\opn{LMD}^{\bullet}(S;s))=
-\int_S \opn{ch}(\mcal{L})\opn{td}(S).
-\end{align}
-\end{conjecture}
-
-We will prove it for tropical curves and integral 
-affine manifold with a Hessian form in the 
-rest of this paper.
 
 \begin{remark}
 Obviously, $\opn{LMD}^{\bullet}(S;s)$ is not usually 
@@ -3296,9 +3278,10 @@ Our approach is mostly affected from
 \cite{auroux2022lagrangian}.
 \label{section-syz-trivalent-graph}
 When $C$ is a trivalent metric graph, 
-our Lagrangian sections are 
-almost the same with that of fiberwise wrapped Fukaya category 
-$\mcal{F}(M)$ \cite[3.1]{auroux2022lagrangian}.
+our $X_0(C)$ are 
+almost the trivalent cofiguration $M$ of 
+$2$-spheres in 
+\cite[3.1]{auroux2022lagrangian}.
 Here, $M$ is the
 union of $\C P^{1}$'s whose intersection complex is $C$, 
 i.e., every edge of $C$ corresponds
@@ -3308,6 +3291,11 @@ The mirror manifold of $M$ is an algebraic curve $X_K$
 from Mumford's construction using the dual intersection
 complex $C$.
 
+The similarity of $X_0(C)$ and $M$ is evident,
+so below we will write the manin differences
+between  
+we will list the differences between 
+$X_0(C)$ and $M$ below.
 The local model of $M$ comes from the critical locus
 of the potential function of a (A-side) Landau--Ginzburg 
 model $(\C^{3},-xyz)$. There exists a (Orlov) functor
@@ -3549,8 +3537,8 @@ grossMirrorSymmetryLogarithmic2006a} and
 \begin{definition} \label{definition-integral-affine-manifold}
 An $n$-dimensional \emph{integral affine 
 (resp. strongly integral affine, affine)} manifold
-is a pair of an $n$-dimensional differential manifold $B_0$ 
-and an atlas $\{(U_i,\psi_i)\}_{i \in I}$ of $B_0$ such that 
+is a pair of an $n$-dimensional differential manifold $B$ 
+and an atlas $\{(U_i,\psi_i)\}_{i \in I}$ of $B$ such that 
 $\psi_i \circ \psi_j^{-1}$ is a restriction of 
 an element in $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{R}^{n}$
 (resp. $\opn{GL}_n(\mathbb{Z})\ltimes \mathbb{Z}^{n}$,
@@ -3577,14 +3565,14 @@ integral affine manifold as explained
 in \cite[2.1]{MR2181810} 
 and every integral affine manifold is a special case of 
 tropical manifold. 
-Every integral affine structure of $B_0$ induces a 
-canonical local system $\mathcal{T}_{\mathbb{Z},B_0}$ 
+Every integral affine structure of $B$ induces a 
+canonical local system $\mathcal{T}_{\mathbb{Z},B}$ 
 of integer valued vector bundle and the dual 
-local system $\mathcal{T}_{\mathbb{Z},B_0}^{\vee}$ of it.
+local system $\mathcal{T}_{\mathbb{Z},B}^{\vee}$ of it.
 
 
 
-Let $(B_0,\{(U_i,\psi_i)\}_{i \in I})$ be an affine manifold.
+Let $(B,\{(U_i,\psi_i)\}_{i \in I})$ be an affine manifold.
 Every  $U_i$ has a coordinate system $\{x_k\}_{k=1,\ldots,n}$ 
 induced from a coordinate system formed 
 by affine functions on $\mathbb{R}^{n}$.
@@ -3638,12 +3626,12 @@ a Hessian form which is mentioned
 in some literature
 (e.g. \cite[\textsection 5.2]{MR1882331}).
 By \cite[Theorem 2.1 and Corollary 2.3]{MR714338},
- every closed special Hessian manifold $(B_0,g)$ has 
+ every closed special Hessian manifold $(B,g)$ has 
 a flat Riemannian and Hessian metric $\tilde{g}$ such 
 that its volume form $\opn{vol}_{\tilde{g}}$ is parallel 
 with respect to the
 affine connection induced from the affine structure 
-on $B_0$. Moreover, $\tilde{g}$ satisfies 
+on $B$. Moreover, $\tilde{g}$ satisfies 
 real Monge--Amp\'ere equation, and thus
 the associated first and second Koszul 
 form of $\opn{vol}_{\tilde{g}}$ is trivial 
@@ -3658,7 +3646,7 @@ and only if $K$ satisfies real Monge--Amp\'ere equation
 By applying the proof of \cite[Theorem 8.3.3]{MR2293045}
 for $\tilde{g}$,
 the Levi--Civita connection of $\tilde{g}$ is 
-equal to the affine connection of $B_0$ 
+equal to the affine connection of $B$ 
 \cite[Corollary 8.3.7]{MR2293045}. 
 By Bieberbach theorem, every closed flat Riemannian manifold 
 is covered by a Riemannian flat torus 
@@ -3670,9 +3658,9 @@ a tropical torus.
 \begin{remark}
 The integral affine structure itself is a very strict condition.
 \ind{Chern's conjecture}{Chern's conjecture} states 
-every closed affine manifold $B_0$ has zero topological 
+every closed affine manifold $B$ has zero topological 
 Euler characteristic.
-If $B_0$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
+If $B$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
 This conjecture is true for 
 \emph{special affine manifold} \cite{MR3665000},
 i.e., an affine manifold $(B, \{U_i,\psi_i\}_{i\in I})$ 
@@ -3739,12 +3727,12 @@ $\mathcal{W}_{p,X}\deq
 
 
 \begin{example}
-If $B_0$ is an integral affine manifold, then 
-$\mathcal{F}^{p}_{\mathbb{Z},B_0}\simeq 
-\bigwedge^{p}_{i=1} \mathcal{T}_{\mathbb{Z},B_0}^{\vee}$ for 
+If $B$ is an integral affine manifold, then 
+$\mathcal{F}^{p}_{\mathbb{Z},B}\simeq 
+\bigwedge^{p}_{i=1} \mathcal{T}_{\mathbb{Z},B}^{\vee}$ for 
 all $p\in \mathbb{Z}_{\geq 0}$ and
-$\mathcal{W}^{\mathbb{Z}}_{p,B_0}\simeq 
-\bigwedge_{i=1}^{p}\mathcal{T}_{\mathbb{Z},B_0}$.
+$\mathcal{W}^{\mathbb{Z}}_{p,B}\simeq 
+\bigwedge_{i=1}^{p}\mathcal{T}_{\mathbb{Z},B}$.
 \end{example}
 
  
@@ -4139,25 +4127,25 @@ In this case, every sheaf naturally comes
 from symplectic geometry.
 
 Of course, 
-$\mcal{A}_{B_0}^{0,0}=\mcal{C}^{\infty}(B_0)$ and
-$\mcal{Z}^{1}_{B_0}$ is the sheaf of 
-closed $1$-form on $B_0$.
-We recall the sheaf $\mcal{Z}^{1}_{B_0}$ can be 
+$\mcal{A}_{B}^{0,0}=\mcal{C}^{\infty}_{B}$ and
+$\mcal{Z}^{1}_{B}$ is the sheaf of 
+closed $1$-form on $B$.
+We recall the sheaf $\mcal{Z}^{1}_{B}$ can be 
 considered as the sheaf 
-$\opn{Lag}(T^{*}B_0)$ of Lagrangian sections 
-$s:U \to T^{*}U$ for open set $U \subset B_0$ 
+$\opn{Lag}(T^{*}B)$ of Lagrangian sections 
+$s:U \to T^{*}U$ for open set $U \subset B$ 
 (see \cite[3.2]{MR1853077} or some standard textbook
 of symplectic geometry).
-The $\mcal{T}_{\Z,B_0}^{\vee}$ is isomorphic to
+The $\mcal{T}_{\Z,B}^{\vee}$ is isomorphic to
 the period lattice of 
-$\check{f}_{B_0}\colon \check{X}(B_0)\to B_0$ 
+$\check{f}_{B}\colon \check{X}(B)\to B$ 
  \cite{duistermaatGlobalActionangleCoordinates1980a}.
 Another important thing is that 
-$\mcal{Z}^{1}(B_0)/\mcal{T}_{\Z,B_0}^{\vee}$
- (resp. $\mcal{C}^{\infty}(T^{*}B_0)/\mcal{T}_{\Z,B_0}^{\vee}$) 
+$\mcal{Z}^{1}(B)/\mcal{T}_{\Z,B}^{\vee}$
+ (resp. $\mcal{C}^{\infty}_{B}(T^{*}B)/\mcal{T}_{\Z,B}^{\vee}$) 
 is isomorphic to the sheaf of germs of Lagrangian sections 
 (resp. smooth sections) of the Lagrangian torus fibration 
-$\check{f}_{B_0}\colon \check{X}(B_0)\to B_0$ 
+$\check{f}_{B}\colon \check{X}(B)\to B$ 
 \cite[(2.7), (2.11)]{duistermaatGlobalActionangleCoordinates1980a}.
 
 
@@ -4167,9 +4155,9 @@ Thus, the commutative diagram (\ref{equation-smooth-cartier-diagram}) is written
 \begin{equation} \label{equation-cartier-lagrangian}
   \begin{tikzcd}
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
-    & \mb{R}_{B_0} \arrow[r,equal] \arrow[d]                & \mb{R}_{B_0} \arrow[d]           &                      &   \\
-    0 \arrow[r] & \mathcal{O}_{B_0}^{\times} \arrow[r] \arrow[d]         & \mcal{C}^{\infty}(B_0) \arrow[r] \arrow[d] & \mcal{C}^{\infty}(B_0)/\mathcal{O}_{B_0}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
-    0 \arrow[r] & \mcal{T}_{\Z,B_0}^{\vee} \arrow[r] \arrow[d] & \opn{Lag}(T^{*}B_0) \arrow[r] \arrow[d]  & \opn{Lag}(\check{X}(B_0)) \arrow[r]   & 0 \\
+    & \mb{R}_{B} \arrow[r,equal] \arrow[d]                & \mb{R}_{B} \arrow[d]           &                      &   \\
+    0 \arrow[r] & \mathcal{O}_{B}^{\times} \arrow[r] \arrow[d]         & \mathcal{C}^{\infty}_{B} \arrow[r] \arrow[d] & \mathcal{C}^{\infty}_{B}/\mathcal{O}_{B}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
+    0 \arrow[r] & \mcal{T}_{\Z,B}^{\vee} \arrow[r] \arrow[d] & \opn{Lag}(T^{*}B) \arrow[r] \arrow[d]  & \opn{Lag}(\check{X}(B)) \arrow[r]   & 0 \\
     & 0 & 0 &  &
   \end{tikzcd}
 \end{equation}
@@ -4182,21 +4170,22 @@ before:
 
 \begin{proposition}
 \label{proposition-cartier-lagrangian}
-Let $B_0$ be an integral affine manifold. Then,
+Let $B$ be an integral affine manifold. Then,
 \begin{align}
-\opn{CDiv}^{\infty}(B_0)\simeq \Gamma(B_0;
-\opn{Lag}(\check{X}(B_0)));s\mapsto L_s.
+\opn{CDiv}^{\infty}(B)\simeq \Gamma(B;
+\opn{Lag}(\check{X}(B)));s\mapsto L_s.
 \end{align}
 \end{proposition}
 
 In particular, a multi-valued function $K$ of a Hessian 
-metric of $B_0$ induces a $C^{\infty}$-Cartier divisor on $B_0$
-and a Lagrangian submanifold of $\check{X}(B_0)$.
+metric of $B$ induces a $C^{\infty}$-Cartier divisor on $B$
+and a Lagrangian submanifold of $\check{X}(B)$.
 
 If two $C^{\infty}$-Cartier divisors $s,s'$ are linearly equivalent, 
-i.e., $s-s'\in C^{\infty}(B_0)$, 
+i.e., $s-s'=(f)^{\mathrm{sm}}$ for some
+$f\in C^{\infty}(B)$, 
 then $s$ is the image of an one-time Hamiltonian flow of $s'$
-on $\check{X}(B_0)$
+on $\check{X}(B)$
 \cite[Exercise 6.65]{MR2567952}.
 
 
@@ -4217,32 +4206,33 @@ on $\check{X}(B_0)$
 
 
 \begin{theorem} \label{theorem-MRR-hesse}
-  Let $B_0$ be a $n$-dimensional compact 
+Let $B$ be a $n$-dimensional compact 
 integral affine manifold with a Hessian form and
-  $s$ a $C^{\infty}$-Cartier divisor such that $L_s$ intersects 
+$s$ a $C^{\infty}$-Cartier divisor such that its
+Lagrangian section $L_s$ intersects 
 with the zero section transversely. Then,
   \begin{align} \label{equation-Hesse-RR}
-\chi(\opn{LMD}^{\bullet}(B_0,s))=\frac{1}{n!}\int_{B_0}c_1(s)^{n}.
+\chi(\opn{LMD}^{\bullet}(B,s))=\frac{1}{n!}\int_{B}c_1(s)^{n}.
   \end{align}
 \end{theorem}
 
 \begin{proof}
 
 As mentioned in \cref{remark-compact-hessian},
-$B_0$ is a finite unramified cover of tropical tori $T$.
-Fix an \'etale cover $p:T \to B_0$ of $B_0$.
+$B$ is a finite unramified cover of tropical tori $T$.
+Fix an \'etale cover $p:T \to B$ of $B$.
 If \cref{theorem-MRR-hesse} is true for tropical tori,
 then \cref{theorem-MRR-hesse} is also true for compact
 integral manifold with a Hessian form from
 \cref{proposition-euler-number-etale} for $p$:
 \begin{align}
-\chi(\opn{LMD}^{\bullet}(B_0;s))
+\chi(\opn{LMD}^{\bullet}(B;s))
 =\opn{deg}(p)^{-1}\chi(\opn{LMD}^{\bullet}(T;p^{*}(s)))
 =\opn{deg}(p)^{-1}\frac{1}{n!}\int_T c_1(p^{*}s)^{n}
-=\frac{1}{n!}\int_{B_0}c_1(s)^{n}.
+=\frac{1}{n!}\int_{B}c_1(s)^{n}.
 \end{align}
 
-From now, we assume $B_0=T$.
+From now, we assume $B=T$.
 Let $s$ be an element of 
 $\Gamma(T;\mcal{C}^{\infty}(T)/\mcal{O}_{T}^{\times})\simeq
 \Gamma(T;\opn{Lag}(\check{X}(T)))$.
@@ -4267,17 +4257,17 @@ $\chi(\opn{LMD}^{\bullet}(s_0,s))$ up to
 signature.
 (The signature only depends on
 the choice of 
-an orientation of $\check{X}(B_0)$. 
+an orientation of $\check{X}(B)$. 
 The definition of the intersection number of smooth 
 submanifolds is in \cite[5.2]{MR1336822} or 
 \cite[0.4]{griffithsPrinciplesAlgebraicGeometry1994a}.)
 
 Every linearly equivalent 
 class is given by a one-time Hamiltonian flow on 
-$\check{X}(B_0)$ by the pullback $\check{\pi}_{B_0}^{*}(h)$
-of a smooth function $h$ on $B_0$.
-We note the one-time flow of submanifold of $\check{X}(B_0)$ does not change
-the homology class in $H^{\bullet}(\check{X}(B_0);\Z)$ and
+$\check{X}(B)$ by the pullback $\check{\pi}_{B}^{*}(h)$
+of a smooth function $h$ on $B$.
+We note the one-time flow of submanifold of $\check{X}(B)$ does not change
+the homology class in $H^{\bullet}(\check{X}(B);\Z)$ and
 the intersection number \cite[5.2.1. Theorem]{MR1336822}.
 Therefore, 
 $\chi(\opn{LMD}^{\bullet}(T,s))=
@@ -4297,31 +4287,21 @@ $\phi(L_{dq_s})\cap L_0=\emp$.
 Thus, $\chi(\opn{LMD}^{\bullet}(T,s))=0$.
 \end{proof}
 
-\begin{remark} \label{rmk: integral_mirror}
-This theorem also can be considered as
-a special case of \cite{MR3656481,MR4301560}.
-\end{remark}
-
-\begin{corollary}
-Let $s$ be a smooth local Cartier divisor on $B_0$ and 
-$\{(U_i,f_i)\}_{i\in I}$ a local $C^{\infty}$-Cartier 
-data of $s$ such that $\sharp (s_0\cap s)<\infty$ and
-every $(A_{U_i},f_i)$ satisfies \cref{condition-global-morse}.
-Then, the \cref{equation-Hesse-RR} holds for $s$.
-\end{corollary}
-
-\begin{proof}
-Let $\{(U_i,f_i)\}_{i\in I}$ be a local $C^{\infty}$-Cartier
-data of $s$. We can deform $s$ with a linearly equivalent
-smooth divisor $s'$ 
+\begin{proof}[{Proof of \cref{theorem-MRR-hesse-preface}}]
+Let $\{(U_i,f_i)\}_{i\in I}$ be a local 
+data for $s$.
+We can deform $s$ with a linearly equivalent to a 
+$C^{\infty}$-Cartier divisor $s'$ 
 such that $s'$ has a local $C^{\infty}$-Cartier data 
 $\{(U_i,\tilde{f}_i)\}_{i\in I}$ satisfying 
 $\tilde{f}_i$ is Morse, and 
 $f_i(x)=\tilde{f}_i(x)$ for the complement of 
 sufficiently small neighborhoods of $s_0\cap s$. 
 From \cref{equation-poincare-hopf}, we have
-$\chi(\opn{LMD}^{\bullet}(B_0,s))
-=\chi(\opn{LMD}^{\bullet}(B_0,s'))$.
+$\chi(\opn{LMD}^{\bullet}(B,s))
+=\chi(\opn{LMD}^{\bullet}(B,s'))$.
+Therefore, \cref{theorem-MRR-hesse} 
+for $s'$ proves \cref{theorem-MRR-hesse-preface}.
 \end{proof}
 
 
@@ -4332,28 +4312,28 @@ According to \cite[5.3]{mikhalkinTropicalGeometryIts2006},
 the support of $k$-th Chern class of tropical manifold is 
 the $k$-skeleton of it.
 We don't know the definition of higher Chern class of tropical manifold $B$ except
-$n=1$ or $n=\dim B_0$ (see \cref{remark-todd-class}).
-On the other hand, $\opn{ch}(B_0)$ should be trivial when $B$ is
-an integral affine manifold, since $B_0$ has empty
-$k$-skeleton except $k=n$.
-Thus, $c_{k}(B_0)$ should be $1$ except $k=0$, 
-i.e., $\opn{td}(B_0)$ should be $1$. 
+$n=1$ or $n=\dim B$ (see \cref{remark-todd-class}).
+On the other hand, $\opn{ch}(B)$ should be trivial when $B$ is
+an integral affine manifold, since $B=B_{\mathrm{reg}}$.
+Thus, $c_{k}(B)$ should be $1$ except $k=0$, 
+i.e., $\opn{td}(B)$ should be $1$. 
 On the other hand,
- $\hat{\mcal{A}}(X(B_0))=\opn{td}(X(B_0))=1$
-since the tangent bundle on $X(B_0)$ is flat.
+ $\hat{\mcal{A}}(X(B))=\opn{td}(X(B))=1$
+since the tangent bundle on $X(B)$ has a flat
+structure.
 \end{remark}
 
 \begin{remark}
 When $s=\vep (f)^{\opn{sm}}$ for a sufficiently small
 positive real number $\vep >0$ and 
-a Morse function $f$ on $B_0$, 
-$\chi(\opn{LMD}^{\bullet}(B_0,s))=
-\chi_{\opn{top}}(B_0)=0$ is 
-truly a special case of microlocal Poincar\'e--Hopf theorem for $B_0$.
+a Morse function $f$ on $B$, 
+$\chi(\opn{LMD}^{\bullet}(B,s))=
+\chi_{\opn{top}}(B)=0$ is 
+truly a special case of microlocal Poincar\'e--Hopf theorem for $B$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
   \cite{MR4540954}. This analogue is about tropical Euler characteristic
-$\chi_{\opn{trop}}(B_0)\deq 
-\chi(\mb{H}^{\bullet}(B_0;\mcal{F}_{B_0}^{\bullet}))$
+$\chi_{\opn{trop}}(B)\deq 
+\chi(\mb{H}^{\bullet}(B;\mcal{F}_{B}^{\bullet}))$
   but not for topological Euler characteristic $\chi_{\opn{top}}(B)$.
 \end{remark}
 
@@ -4362,17 +4342,17 @@ There exists a complete and compact integral affine manifold
   which has no Hessian form.
 As pointed out in \cite[Example 1.14]{grossMirrorSymmetryLogarithmic2006a}
 and \cite[p.403]{MR1461965}, there exists an integral affine manifold
-$B_0$ such that
-$X(B_0)$ is a primary Kodaira surface and $X(B_0)$
-and $\check{X}(B_0)$
+$B$ such that
+$X(B)$ is a primary Kodaira surface and $X(B)$
+and $\check{X}(B)$
 are diffeomorphic to a Thurston's example of a symplectic but
 not K\"ahler manifold in \cite{MR402764}.
-Hence, $X(B_0)$ is not K\"ahler and $B_0$ has no
-Hessian form since every Hessian form on $B_0$ induces a 
+Hence, $X(B)$ is not K\"ahler and $B$ has no
+Hessian form since every Hessian form on $B$ induces a 
 standard K\"ahler form
-on $X(B_0)$.
+on $X(B)$.
 We can see explicit calculations of 
-$H^{\bullet}(B_0;\mathcal{F}_{\mathbb{Z},B_0}^{\bullet})$
+$H^{\bullet}(B;\mathcal{F}_{\mathbb{Z},B}^{\bullet})$
 for tropical primary Kodaira surfaces in \cite{maehara2023}.
 See \cite{MR1422337} for more details about tropical 
 primary Kodaira surfaces and 
@@ -4384,15 +4364,15 @@ primary Kodaira surfaces and
 and integral affine manifolds}
 
 
-If $B_0$ is an integral affine manifold such 
-that $\pi_2(B_0)=0$, then $\pi_2(\check{X}(B_0))=0$.
-In this case, $\pi_2(\check{X}(B_0),L_s)=0$ for 
+If $B$ is an integral affine manifold such 
+that $\pi_2(B)=0$, then $\pi_2(\check{X}(B))=0$.
+In this case, $\pi_2(\check{X}(B),L_s)=0$ for 
 any Lagrangian section of 
-$\check{\pi}_{B_0}\colon \check{X}(B_0)\to B_0$
+$\check{\pi}_{B}\colon \check{X}(B)\to B$
 (see \cref{proposition-unobstructed-lagrangian}).
 In this case, every 
 pseudoholomorphic disk 
-$\psi\colon D\to \check{X}(B_0)$ such that 
+$\psi\colon D\to \check{X}(B)$ such that 
 $\psi(\partial D)\subset L_s$ is zero.
 In particular, $L_s$ is 
 \emph{tautologically unobstructed} defined in
@@ -4401,15 +4381,15 @@ In particular, $L_s$ is
 We also note about Floer cohomology of 
 Lagrangian sections.
 Every Lagrangian section
-$L_s\xto{i} \check{X}(B_0)\xto{\check{\pi}_{B_0}}  B_0$
+$L_s\xto{i} \check{X}(B)\xto{\check{\pi}_{B}}  B$
 induces a homomorphism of 
 cohomology 
-$H^{\bullet}(B_0;\mathbb{F}_2)\to 
-H^{\bullet}(\check{X}(B_0);\mathbb{F}_2)
+$H^{\bullet}(B;\mathbb{F}_2)\to 
+H^{\bullet}(\check{X}(B);\mathbb{F}_2)
 \to 
 H^{\bullet}(L_s;\mathbb{F}_2)$.
 In particular, 
-$i^{*}(\check{\pi}_{B_0}^{*}(w_2(B_0)))=w_2(L_s)$ and 
+$i^{*}(\check{\pi}_{B}^{*}(w_2(B)))=w_2(L_s)$ and 
 thus any Lagrangian section $L_s$ satisfies the 
 condition \cite[(2.54)]{MR3656481}.
 Every Lagrangian section $L_s$ has 
@@ -4452,7 +4432,7 @@ of Floer complex is compatible with the classical
 Floer complex.
 
 Therefore, every pair $(L_1,L_2)$ of Lagrangian section
-of $B_0$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
+of $B$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
 Floer cohomology $\opn{HF}^{\bullet}(\mathscr{L}_1,
 \mathscr{L}_2)$, and its Euler number is equal to the intersection of 
 $L_1$ and $L_2$ (up to signature). We can 
@@ -4462,7 +4442,7 @@ transversally, then there exists
 
 
 \begin{remark}
-The condition $\pi_2(B_0)=0$ may seem to be technical
+The condition $\pi_2(B)=0$ may seem to be technical
 and strict, but this condition is 
 closely related with a classical conjecture.
 \ind{Markus's conjecture}{Markus conjecture} states every closed
@@ -4474,7 +4454,7 @@ Every integral affine manifold has a double cover of
 a special integral affine manifold and thus 
 the universal cover of closed integral affine 
 manifold is homeomorphic to a Euclidean space and 
-$\pi_{2}(B_0)=0$ if Markus conjecture 
+$\pi_{2}(B)=0$ if Markus conjecture 
 is true.
 \end{remark}
 
@@ -4485,11 +4465,11 @@ is true.
 Lagrangian multi-sections}
 \label{section-tropical-multi-section}
 
-Let $B_0$ an integral affine manifold. 
-Then, $B_0$ has 
+Let $B$ an integral affine manifold. 
+Then, $B$ has 
 the notion of Lagrangian multi-section, 
 which is a mirror part of some 
-vector bundle on $X(B_0)$. 
+vector bundle on $X(B)$. 
 This can be considered as a certain analog of  
 tropical multidivisors on a compact tropical
 curve \cite{gross2022principal}, so we 
@@ -4566,7 +4546,8 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$;
 \end{example}
 
 We don't state a K\"unneth type formula for 
-local Morse data of smooth divisors in a fully
+local Morse data for $C^{\infty}$-Cartier
+divisors in a fully
 general setting, but the following corollary 
 is enough for performing that there exists 
 a K\"unneth type formula for local Morse data
@@ -4694,13 +4675,6 @@ The same logic works for integral affine manifold with
 singularities.
 \end{remark}
 
-\section{Future works}
-
-A difficult problem is about what is the differential $m_1$ or higher multiplication $m_d$ for tropical manifolds.
-If such $m_d$ exists, this should be determined by the contribution of the moduli space of tropical Morse tree for tropical manifold.
-\begin{question}
-  Is there a Morse $A_{\infty}$-precategory for tropical manifolds?
-\end{question}
 
 
 
@@ -4749,10 +4723,12 @@ but this is truly one of good analog of classical one
 The rank of linear system is generalized by Cartwright
 \cite{MR4131998,MR4251610}.
 Cartwright defines an invariant 
-$h^{0}(\Delta,D)$ for a divisor on tropical complex
-which is a certain analog of the dimension of
+$h^{0}(\Delta,D)$ for a divisor on a tropical complex
+\cite[Definition 3.1]{MR4251610}.
+The $h^{0}(\Delta,D)$ is a certain 
+analog of the dimension of
 the $0$-th cohomology of a line bundle on algebraic 
-variety in \cite[Definition 3.1]{MR4251610}.
+variety.
 If $\dim \Delta=1$, then $h^{0}(\Delta,D)=r(D)+1$
 \cite[Proposition 3.3]{MR4251610}, and thus $h^{0}(\Delta,D)$
 is a generalization of $r(D)+1$ for tropical complexes. 
@@ -4813,7 +4789,129 @@ Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
 
 \end{remark}
 
+\section{Etc of HMS and SYZ}
+\label{appendix-integral-affine-manifold}
 
+\subsection{Integral affine manifold and Floer cohomology}
+
+$T^{*}B/\mathcal{T}^{\vee}_{\mathbb{Z},B}$ has 
+a standard symplectic structure induced from that of 
+cotangent bundle $T^{*}B$.
+We write $\check{X}(B)\deq 
+T^{*}B/\mathcal{T}^{\vee}_{\mathbb{Z},B}$
+Let $f\colon B\to \mathbb{R}$ be a 
+smooth function on a smooth manifold $B$.
+$f$ defines a section 
+$\sigma_{df}\colon B\to T^{*}B; x\mapsto (x;df(x))$ of 
+the cotangent bundle $\pi\colon T^{*}B\to B$.
+We note that the intersection number of 
+$\sigma_{df}$ and the zero section of the cotangent
+bundle is equal to the topological Euler characteristic
+of $B$ if $B$ is compact.
+If $B$ is an integral affine manifold,
+$\sigma_{df}$ induces a section 
+$s_{df}\colon B\to T^*B/\Lambda$ of a torus fibration
+$\check{\pi}_B\colon T^*B/\Lambda \to B$ via a canonical 
+projection $\pi \colon T^*B\to T^*B/\Lambda$.
+$T^{*}B$ and $\check{X}(B)\deq T^*B\to T^*B/\Lambda$
+has a canonical symplectic structure and
+both $\sigma_{df}(B)$ (resp. $s_{df}(B)$) are Lagrangian 
+submanifolds of $T^{*}B$ 
+(resp. $T^*B/\check{\Lambda}$).
+
+
+
+\index{Lagrangian section@Lagrangian section}
+
+\subsubsection{Semi-flat SYZ mirror pair}
+
+We add some notes about integral affine manifolds $B$,
+from \cite[Chapter 6]{MR2567952} and \cite{sepethesis}.
+
+The local system $\mathcal{T}_{\mathbb{Z}, B}$ defines 
+ a pair of torus fibration:
+\begin{equation} \label{definition-SYZ-torus-fibration}
+\begin{tikzcd}%[scale cd=0.9, row sep=scriptsize, column sep=small]
+T^{*}B/\mathcal{T}_{\Z , B}^{\vee} =:\hspace{-35pt} 
+&\check{X}(B) \arrow[rd,"\check{f}_{B}"'] 
+&   & X(B) \arrow[ld,"f_{B}"] 
+&\hspace{-35pt} \deq TB/\mathcal{T}_{\Z, B} \\
+& &  B & &
+\end{tikzcd}.
+\end{equation}
+In some references, the symbol $\check{X}$ and
+$X$ are reversed. 
+$\check{X}(B)$ has a canonical symplectic structure 
+induced from $T^{*}B$, and each fiber of 
+$\check{f}_{B}$ is a Lagrangian torus.
+On the other hand, $X(B)$ has a canonical complex
+structure induced from $TB$ and integral affine 
+structure of $B$.
+Since each fiber of the fibrations $f_{B}$ and 
+$\check{f}_{B}$ are compact,
+$f_{B}$ and $\check{f}_{B}$ are proper maps.
+In particular, if $B$ is compact then 
+$\check{X}(B)$ and $X(B)$ are compact.
+
+Since integral affine condition is very strict, so 
+$X(B)$ (resp. $\check{X}(B)$) is also a special class of complex (resp. symplectic) manifold.
+
+\begin{proposition}
+
+\label{proposition-unobstructed-lagrangian}
+Let $B$ be a connected integral affine manifold 
+and $L$ a Lagrangian section of 
+$\check{\pi}_{B}\colon \check{X}(B)\to B$. 
+Then, $\pi_i(B)\simeq \pi_i(\check{X}(B))$ 
+for $i\geq 2$.
+In particular, 
+$\pi_i(B)=\pi_i(\check{X}(B))=0$ if 
+$B$ is complete and $\pi_2(B,L_s)=0$ for any image
+$L_s$ of 
+Lagrangian section of $\check{f}_{B}\colon B \to \check{X}(B)$.
+\end{proposition}
+\begin{proof}
+Let $\widetilde{X}$ be the universal cover of 
+a topological space $X$.
+
+
+We note $\pi_{i}(X,p)\simeq 
+\pi_{i}(\widetilde{X},\tilde{p})$ for $i\geq 2$ and 
+$\pi_{i}(X\times Y,(p,q))\simeq \pi_i(X,p)
+\times \pi_i(Y,q)$. Therefore,
+\begin{align}
+\pi_{i}(\check{X}(B))\simeq 
+\pi_{i}(\widetilde{\check{X}(B)})\simeq 
+\pi_{i}(\widetilde{T^{*}B})\simeq 
+\pi_{i}(T^{*}\widetilde{B})\simeq 
+\pi_{i}(T_p^* B)\times \pi_{i}(\widetilde{B})\simeq 
+\pi_{i}(B).
+\end{align}
+Thus, we have 
+$\pi_{i}(B)\simeq \pi_{i}(\check{X}(B))\simeq 
+\pi_{i}(X(B))$. 
+
+Let $i\colon L\to \check{X}(B)$ be the inclusion map of 
+$L$.
+Since $L$ is a section of 
+$\check{\pi}_{B}$, 
+$i_*\colon \pi_i(L)\to \pi_i(\check{X}(B))$ is 
+injective. Therefore, we get 
+$\pi_2(\check{X}(B),L)=0$ by considering the long exact
+sequence of relative homotopy groups.
+\end{proof}
+
+If $B$ is an integral Hessian manifold, 
+$X(B)$ and $\check{X}(B)$ have K\"ahler structure 
+respectively.
+This fact that $X(B)$ is a finite unramified quotient
+of a complex torus follows from $\pi_2(X(B))=0$ 
+and Bogomolov--Beauville decomposition theorem.
+Let $f:B' \to B$ be a finite unramified covering of $B$ such that $B'$ is a tropical torus.
+
+Then, $X(B')$ (resp. $\check{X}(B')$) 
+is a complex torus and an unramified finite cover 
+of $X(B)$ (resp. $\check{X}(B)$). 
 
 \section{Radiance obstruction and geometric prequantization}
 \label{sec: BSRR}
@@ -4825,10 +4923,10 @@ from \cite{1999math......2027T,MR3525095}.
 
 A symplectic manifold $(M,\omega)$ is \ind{prequantizable}{prequantizable}
 if the de Rham cohomology class $[\omega]$ of $\omega$ is in $H^2(X;\Z)$. 
-An integral affine manifold $B_0$ has a strongly integral affine structure 
+An integral affine manifold $B$ has a strongly integral affine structure 
 if and only if the de Rham cohomology class of 
-$\omega_{\opn{std}}(\in \check{X}(B_0))$ is in 
-$H^{2}(\check{X}(B_0);\mathbb{Z})$
+$\omega_{\opn{std}}(\in \check{X}(B))$ is in 
+$H^{2}(\check{X}(B);\mathbb{Z})$
 (see for example 
 \cite[Lemma 2.8]{MR4275791}).
 
@@ -4851,41 +4949,40 @@ of BS-orbits.
 
 
 
-If $B_0$ is a strongly integral affine manifold,
-we can define the set of lattice points $B_0(\Z)$ 
-on $B_0$ for a fixed strongly integral affine structure from 
+If $B$ is a strongly integral affine manifold,
+we can define the set of lattice points $B(\Z)$ 
+on $B$ for a fixed strongly integral affine structure from 
 the inverse image $\phi^{-1}_i(U_i\cap M)$ of each atlas.
 In other words, we can define 
-"$\underline{\Z}_{\max}$-rational points" of $B_0$.
+"$\underline{\Z}_{\max}$-rational points" of $B$.
 
 
 We can create a canonical section 
-$s_{B_0}\colon B_0 \to X(B_0)$ of the torus fibration
- $\pi_B:X(B_0)\to B_0$
+$s_{B}\colon B \to X(B)$ of the torus fibration
+ $\pi_B:X(B)\to B$
 induced from the graph of the composition map of developing map
-$\opn{dev}_{B_0}\colon \widetilde{B_0}\to M_{{\mathbb{R}}}$ 
+$\opn{dev}_{B}\colon \widetilde{B}\to M_{{\mathbb{R}}}$ 
 \cite[p.641]{goldmanRadianceObstructionParallel1984a} and projection
 $p:M_{{\mathbb{R}}}\to M_{{\mathbb{R}}}/M$. 
-Then, we can consider $B_0(\Z)$ as the intersection of 
-$s_{B_0}$ and the zero section
-\footnote{引用なしで気づいたが、他に書いてある文献をあげるべきか？}
-of 
-$\pi_{B_0}:X(B_0)\to B_0$;
+Then, we can consider $B(\Z)$ as the intersection of 
+$s_{B}$ and the zero section of 
+$\pi_{B}:X(B)\to B$;
 \begin{align}
-B_0(\mathbb{Z})=\pi_{B_0}(s_0\cap s_{B_0})
-=\{p\in B_0 \mid  \check{\pi}_{B_0}^{-1}(p) 
+\label{equation-bohr-sommerfeld-riemann-roch}
+B(\mathbb{Z})=\pi_{B}(s_0\cap s_{B})
+=\{p\in B \mid  \check{\pi}_{B}^{-1}(p) 
 \text{ is a BS-orbit}\}.
 \end{align}
 This construction is a certain dual of semi-flat SYZ 
 transformation 
 (see \cite[Theorem 1.1]{MR1876073} or \cite[\textsection 9.1]{MR1882331}). 
 The following equation is firstly proved in 
-\cite[Corollary 4.1]{MR1461965} by using 
-Atiyah--Singer index formula:
+\cite[Corollary 4.1]{MR1461965} as a corollary of 
+the index formula for reducible non-negative polarizations:
 \begin{align} \label{equation-lattice-index}
-\sharp (B_0(\Z))=\sharp (s_0\cap s_{B_0})
-=\opn{vol}(\check{X}(B_0))=\opn{vol}(B_0)
-=\chi(\mcal{L},\nabla).
+\sharp (B(\Z))=\sharp (s_0\cap s_{B})
+=\opn{vol}(\check{X}(B))=\opn{vol}(B)
+=\int_{\check{X}(B)}\opn{ch}(\mathcal{L})\hat{\mathcal{A}}(T(\check{X}(B))).
 \end{align}
 
 This equation is reproved in \cite{MR2676658} as a 
@@ -4897,209 +4994,59 @@ Calabi--Yau manifolds is studied in
 \cite{1999math......2027T} under 
 the name of the \emph{numerical quantization problem}.
 
-If $B_0$ has a Hessian potential (multivalued) function $K$, then $s_{B_0}$ can be 
+\cref{equation-lattice-index} can be considered
+as a numerical version of \cref{equation-hf-sheaf-cohomology} 
+when $B$ has a Hessian form.
+If $B$ has a Hessian form, then $s_{B}$ can be 
 considered as a Lagrangian section of the dual torus 
-fibration $\pi_{\check{B}_0}\colon 
-\check{X}(\check{B}_0)\to \check{B}_0$ of dual Hessian
-manifold $\check{B}_0$ \cite[Proposition 6.9]{MR2567952}.
+fibration $\pi_{\check{B}}\colon 
+\check{X}(\check{B})\to \check{B}$ of dual Hessian
+manifold $\check{B}$ \cite[Proposition 6.9]{MR2567952}.
 A similar result exists for projective toric manifolds 
 and their prequantum line bundle 
-\cite[Theorem 3.20]{yamaguchimaster}. 
-
-\cref{equation-lattice-index} can be considered
-as a numerical version of \cref{equation-HMS-HF}
-for the semi-flat SYZ pair 
-($\check{\pi}_{\check{B}_0}\colon \check{X}(\check{B}_0)
-\to \check{B}_0 \leftarrow X(\check{B}_0)\colon \pi_{\check{B}_0}$). 
-This observation was developed for 
-(simple) integral affine manifold with singularities
-$B$
-and toric degeneration by Gross and Siebert. 
+\cite[Theorem 3.20]{yamaguchimaster}.  
+These observations was developed for 
+(simple) integral affine manifolds with singularities
+$B$ and the associated toric degenerations 
+by Gross and Siebert. 
 Gross and Siebert conjectured 
 that the set $B(\mathbb{Z})$ of integer points of 
-$B$ forms a basis of the global section a 
-relatively ample line bundle of a toric degeneration.
-
-
-\begin{remark}
-The \cref{equation-lattice-index} is 
-true for closed integral affine manifold 
-such that $X(B_0)$ is not K\"ahlerian, i.e., 
-not Calabi-Yau type.
-In this case,
-the prequantum line bundle cannot be considered as
-a mirror Lagrangian submanifold induced from a Hessain
-form.
-\end{remark}
-
-
-
-\begin{remark}
-
-The idea of considering the lattice point 
-$B(\mathbb{Z})$ of 
-integral affine manifold with singularities $B$ as 
-a good basis of an ample line bundle of 
-a (degenerating) family of Calabi--Yau manifold is 
-deeply developed by Gross and Siebert 
-\cite[Conjecture 1.6]{MR3525095}. 
-
-
-
-
-We also mention that a geometrical reasoning 
-of numerical quantization problem without
-mirror symmetry is studied by several authors 
+$B$ forms a canonical basis of the global section a 
+relatively ample line bundle of a toric 
+degeneration of Calabi--Yau manifolds
+\cite[Conjecture 1.6]{MR3525095}.
+We also mention that the numerical quantization problem 
+is developed by several other perspectives
 (e.g. \cite{MR2879247,
 https://doi.org/10.48550/arxiv.1904.04076}).
-\end{remark}
 
 
 
-\section{Etc of HMS and SYZ}
-\label{appendix-integral-affine-manifold}
-
-\subsection{Integral affine manifold and Floer cohomology}
-
-$T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$ has 
-a standard symplectic structure induced from that of 
-cotangent bundle $T^{*}B_0$.
-We write $\check{X}(B_0)\deq 
-T^{*}B_0/\mathcal{T}^{\vee}_{\mathbb{Z},B_0}$
-Let $f\colon B\to \mathbb{R}$ be a 
-smooth function on a smooth manifold $B$.
-$f$ defines a section 
-$\sigma_{df}\colon B\to T^{*}B; x\mapsto (x;df(x))$ of 
-the cotangent bundle $\pi\colon T^{*}B\to B$.
-We note that the intersection number of 
-$\sigma_{df}$ and the zero section of the cotangent
-bundle is equal to the topological Euler characteristic
-of $B$ if $B$ is compact.
-If $B$ is an integral affine manifold,
-$\sigma_{df}$ induces a section 
-$s_{df}\colon B\to T^*B/\Lambda$ of a torus fibration
-$\check{\pi}_B\colon T^*B/\Lambda \to B$ via a canonical 
-projection $\pi \colon T^*B\to T^*B/\Lambda$.
-$T^{*}B_0$ and $\check{X}(B_0)\deq T^*B\to T^*B/\Lambda$
-has a canonical symplectic structure and
-both $\sigma_{df}(B)$ (resp. $s_{df}(B)$) are Lagrangian 
-submanifolds of $T^{*}B_0$ 
-(resp. $T^*B/\check{\Lambda}$).
 
 
 
-\index{Lagrangian section@Lagrangian section}
-
-\subsubsection{Semi-flat SYZ mirror pair}
-
-We add some notes about integral affine manifolds $B_0$,
-from \cite[Chapter 6]{MR2567952} and \cite{sepethesis}.
-
-The local system $\mathcal{T}_{\mathbb{Z}, B_0}$ defines 
- a pair of torus fibration:
-\begin{equation} \label{definition-SYZ-torus-fibration}
-\begin{tikzcd}%[scale cd=0.9, row sep=scriptsize, column sep=small]
-T^{*}B_0/\mathcal{T}_{\Z , B_0}^{\vee} =:\hspace{-35pt} 
-&\check{X}(B_0) \arrow[rd,"\check{f}_{B_0}"'] 
-&   & X(B_0) \arrow[ld,"f_{B_0}"] 
-&\hspace{-35pt} \deq TB_0/\mathcal{T}_{\Z, B_0} \\
-& &  B_0 & &
-\end{tikzcd}.
-\end{equation}
-In some references, the symbol $\check{X}$ and
-$X$ are reversed. 
-$\check{X}(B_0)$ has a canonical symplectic structure 
-induced from $T^{*}B_0$, and each fiber of 
-$\check{f}_{B_0}$ is a Lagrangian torus.
-On the other hand, $X(B_0)$ has a canonical complex
-structure induced from $TB_0$ and integral affine 
-structure of $B_0$.
-Since each fiber of the fibrations $f_{B_0}$ and 
-$\check{f}_{B_0}$ are compact,
-$f_{B_0}$ and $\check{f}_{B_0}$ are proper maps.
-In particular, if $B_0$ is compact then 
-$\check{X}(B_0)$ and $X(B_0)$ are compact.
-
-Since integral affine condition is very strict, so 
-$X(B_0)$ (resp. $\check{X}(B_0)$) is also a special class of complex (resp. symplectic) manifold.
-
-\begin{proposition}
-
-\label{proposition-unobstructed-lagrangian}
-Let $B_0$ be a connected integral affine manifold 
-and $L$ a Lagrangian section of 
-$\check{\pi}_{B_0}\colon \check{X}(B_0)\to B_0$. 
-Then, $\pi_i(B_0)\simeq \pi_i(\check{X}(B_0))$ 
-for $i\geq 2$.
-In particular, 
-$\pi_i(B_0)=\pi_i(\check{X}(B_0))=0$ if 
-$B_0$ is complete and $\pi_2(B_0,L_s)=0$ for any image
-$L_s$ of 
-Lagrangian section of $\check{f}_{B_0}\colon B_0 \to \check{X}(B_0)$.
-\end{proposition}
-\begin{proof}
-Let $\widetilde{X}$ be the universal cover of 
-a topological space $X$.
-
-
-We note $\pi_{i}(X,p)\simeq 
-\pi_{i}(\widetilde{X},\tilde{p})$ for $i\geq 2$ and 
-$\pi_{i}(X\times Y,(p,q))\simeq \pi_i(X,p)
-\times \pi_i(Y,q)$. Therefore,
-\begin{align}
-\pi_{i}(\check{X}(B_0))\simeq 
-\pi_{i}(\widetilde{\check{X}(B_0)})\simeq 
-\pi_{i}(\widetilde{T^{*}B_0})\simeq 
-\pi_{i}(T^{*}\widetilde{B_0})\simeq 
-\pi_{i}(T_p^* B_0)\times \pi_{i}(\widetilde{B_0})\simeq 
-\pi_{i}(B_0).
-\end{align}
-Thus, we have 
-$\pi_{i}(B_0)\simeq \pi_{i}(\check{X}(B_0))\simeq 
-\pi_{i}(X(B_0))$. 
-
-Let $i\colon L\to \check{X}(B_0)$ be the inclusion map of 
-$L$.
-Since $L$ is a section of 
-$\check{\pi}_{B_0}$, 
-$i_*\colon \pi_i(L)\to \pi_i(\check{X}(B_0))$ is 
-injective. Therefore, we get 
-$\pi_2(\check{X}(B_0),L)=0$ by considering the long exact
-sequence of relative homotopy groups.
-\end{proof}
-
-If $B_0$ is an integral Hessian manifold, 
-$X(B_0)$ and $\check{X}(B_0)$ have K\"ahler structure 
-respectively.
-This fact that $X(B_0)$ is a finite unramified quotient
-of a complex torus follows from $\pi_2(X(B_0))=0$ 
-and Bogomolov--Beauville decomposition theorem.
-Let $f:B_0' \to B_0$ be a finite unramified covering of $B_0$ such that $B_0'$ is a tropical torus.
-
-Then, $X(B_0')$ (resp. $\check{X}(B_0')$) 
-is a complex torus and an unramified finite cover 
-of $X(B_0)$ (resp. $\check{X}(B_0)$). 
 
 
 
-\subsection{Verdier duality} \label{section-verdier-dual}
+\section{Verdier duality} 
+\label{section-verdier-dual}
 %TODO: Verdier 双対のまとめ
 In this subsection, we recall Verdier duality which 
-uses in \cref{section-integral-affine-manifold}.
-
-The Verdier duality holds for the following general form
-\cite[Proposition 3.1.10]{MR1299726}.
-
+uses in \cref{section-integral-affine-manifold}
+from \cite[Chapter 3]{MR1299726}.
 
 \begin{theorem}[{Verdier duality}]
+\label{theorem-relative-verdier}
 Let $f\colon X\to Y$ be a continuous map between locally 
 compact Hausdorff space s. If $f_!$ has finite cohomological
-dimension, 
+dimension, then
 \begin{align}
 R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{Hom}_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}),        \\
 R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\mcal{H}om_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}).
 \end{align}
 \end{theorem}
+The proof of \cref{theorem-relative-verdier} is in 
+\cite[Proposition 3.1.10]{MR1299726}.
 The \emph{dualizing complex} over $A$ of $X$ is 
 $\upomega_{A_X}^{\bullet}\deq a^{!}_{X}A_{\{\opn{pt}\}}$.
 For simplicity, we write 
