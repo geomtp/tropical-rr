@@ -34,14 +34,6 @@
 \usepackage{dynkin-diagrams}
 
 %%%% imakeidx
-\makeindex
-\makeindex[name=not, title=Index, columns=2]
-\makeindex[name=sym, title=Symbol, columns=3]
-\makeindex[name=ref, title=Ref, columns=3]
-
-\newcommand{\ind}[2]{\emph{#1}\index{1{#2}@{#1}}}
-\newcommand{\indset}[3]{$#1 \deq #2 $ \index{0{#3}@$#1$} }
-\newcommand{\indse}[2]{{$#1$}\index{0{#2}@{$#1$}}}
 
 %%%%
 \usepackage{pgf,tikz,pgfplots}
@@ -606,7 +598,9 @@ $\chi(\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'}))$.
 the first part of (2) will be explained further 
 in \cref{section-integral-affine-manifold} 
 and \cref{appendix-integral-affine-manifold}.
-
+If Markus conjecture is true, then the 
+assumption $\pi_2(B)=0$ is not necesary,
+see \cref{remark-markus-conjecture}.
 
 In a recent study 
 \cite{auroux2022lagrangian}, 
@@ -648,7 +642,9 @@ associated with $s$
 
 In particular, 
 $\chi(\opn{LMD}^{\bullet}(S;s))=\chi_{\opn{top}}(S)$
-when $\mcal{L}$ is trivial?
+when $\mcal{L}$ is trivial.
+Besides, such a $C^{\infty}$-divisor $s$ exists
+for any $\mathcal{L}$.
 \end{conjecture}
 The graded module $\opn{LMD}^{\bullet}(S;s)$ is 
 an analog of the Floer complex of the pair of Lagrangian 
@@ -681,13 +677,15 @@ manifolds with Hessian forms.
 Let $C$ be a compact tropical curve.
 For any tropical line bundle 
 $\mathcal{L}$ on $B$ and any $C^{\infty}$-Cartier
-divisor satisfying \cref{condition-good-divisor},
+divisor $s$ satisfying \cref{condition-good-divisor},
 the following equation holds:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=
 \int_C c_1(\mathcal{L})+\frac{1}{2}c_1(-K_C)
 =\opn{deg}(\mathcal{L})+\chi_{\opn{top}}(C). 
 \end{align}
+Besides, such a $C^{\infty}$-divisor $s$ exists
+for any $\mathcal{L}$.
 \end{theorem}
 
 \begin{theorem}
@@ -701,15 +699,18 @@ the following equation holds:
 \chi(\opn{LMD}^{\bullet}(B;s))=
 \int_B \frac{c_1(\mathcal{L})^{n}}{n!}.
 \end{align}
-
+Besides, such a $C^{\infty}$-divisor $s$ exists
+for any $\mathcal{L}$.
 \end{theorem}
 
 
 We note that our results has highly related with 
- \cite{MR4301560} and \cite{auroux2022lagrangian} (see \cref{section-syz-trivalent-graph} and \cref{rmk: integral_mirror} 
+ \cite{MR4301560} and \cite{auroux2022lagrangian} 
+(see \cref{section-syz-trivalent-graph} and 
+\cref{section-floer-lmd} 
 for more details), but our theorems 
 are self-contained within the language of tropical 
-geometry and their proofs do not use the SYZ
+geometry and our proofs do not use the SYZ
 transform.
 
 
@@ -857,11 +858,21 @@ in the case of tropical curves,
 We would like to thank Felipe Rinc\'on 
 for explaining about the unpublished recent works
 about Noether formula for general tropical surfaces.
+We also thanks Jin Miyazawa
+for explaining us a heart of localization of 
+the index of Dirac operator and answering some 
+questions about it.
+We also thank Yoshinori Gongyo for 
+giving a question about relationships 
+between a kind of Pick's formula for
+tropical Kummer surfaces and Atiyah--Singer
+index formula. This question gives me 
+an opportunity to know \cite{MR2676658}.
 We also thank for Kentaro Yamaguchi for explaining about
 \cite{MR4234675} and his results of master thesis 
 \cite{yamaguchimaster}. We thank for Yuto Yamamoto for
-explaining about the radiance obstruction of integral 
-affine manifold with singularities and Gross--Siebert
+explaining and answering question about the radiance obstructions, eigenwaves,
+and Gross--Siebert
 programs. We thanks for Masanori Kobayashi for 
 pointing out some mistakes. 
 This work was supported by JSPS KAKENHI 
@@ -944,9 +955,7 @@ $\{\opn{pt}\}$ with fiber $A$.
 $A_{\{\opn{pt}\}}$-module.
 \item Any $C^{\alpha}$-manifold is paracompact for 
 $\alpha=0,1,\ldots,\infty,\omega$.
-\item We mainly use min-plus algebra.
-\myfootnote{We write down the reason of this in 
-\cref{rmk: mix vs max}.}
+\item We mainly use max-plus algebra.
 \end{itemize}
 
 
@@ -1472,12 +1481,12 @@ $d\psi(x_1)\in U$, we have
 \end{definition}
 
 As remarked in \cite[Remark 5.1.6]{MR1299726},
-$\opn{SS}(\mcal{F})$ depends only on the 
-$C^{1}$-structure of $X$ \footnote{この一文ほぼ丸々引用の文だけどだい
+the dependence of the micro-support $\opn{SS}(\mcal{F})$ is solely 
+on the $C^{1}$-structure of $X$ \footnote{この一文ほぼ丸々引用の文だけどだい
 大丈夫?}
 , and the forgetful functor 
-$\psi_X \colon \opn{D}^{b}(A_X)\to \opn{D}^{b}(\Z_X)$
-preserves the microsupport of $\mcal{F}$ 
+$\phi_X \colon \opn{D}^{b}(A_X)\to \opn{D}^{b}(\Z_X)$
+preserves the micro-support of $\mcal{F}$ 
 \cite[Remark 5.1.5]{MR1299726}.
 
 \begin{example}
@@ -1527,7 +1536,8 @@ is finitely generated.
 
 
 
-\begin{proposition}[{\cite[Proposition 5.4.20]{MR1299726}}]
+\begin{proposition}[{\cite[Proposition 5.4.20]{MR1299726},
+\cite[Remark 1.2]{MR1160840}}]
 Under the \cref{condition-global-morse}, 
 \begin{align}
 \chi(H^{\bullet}(X;\mathcal{F}^{\bullet}))=
@@ -1542,6 +1552,22 @@ constructible sheaves on an analytic manifold,
 see \cite[Corollary 9.5.2, Theorem 9.5.6]{MR1299726}.
 This is called the microlocal index formula or Kashiwara's 
 index formula.
+
+\begin{remark}
+We can cahnge \cref{condition-global-morse}.(2) 
+to a weaker version \cite[(H.2)]{MR1160840}:
+\begin{enumerate}
+\setlength{\leftskip}{0pt}
+\item[(2)'] $\check{\pi}_X(\Lambda_f\cap \opn{SS}(\mathcal{F}^{\bullet}))$
+is a finite disjoint union of compact subsets of $X$ and
+$f|_{\check{\pi}_X(\Lambda_f\cap \opn{SS}(\mathcal{F}^{\bullet}))}$ 
+is locally constant.
+\end{enumerate}
+If $X$ is compact and $f$ is constant, then 
+the pair $(A_X,f)$ satisfies 
+\cref{condition-global-morse}.(1),(3) and (2)'.
+\end{remark}
+
 \begin{example}
 Let $M$ be a compact integral affine manifold and $S$  
 a compact rational polyhedral subspace in $M$ and 
@@ -1902,12 +1928,9 @@ $\{U_i\}_{i\in I}$ an open cover of $S$ and
 $f_i\colon U_i \to \mathbb{R}$ a $(0,0)$-superform
 on $U_i$. The set 
 $\{(U_i,f_i)\}_{i\in I}$ is 
-a \emph{$C^{\infty}$-Cartier local data} for $s$ if 
+a \emph{local data} for $s$ if 
 $s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all 
-$i\in I$. The set $\{(U_i,f_i)\}_{i\in I}$ is a
-\emph{$C^{\infty}$-Cartier local data} if 
-$\{(U_i,f_i)\}_{i\in I}$ is a local data for 
-a $C^{\infty}$-Cartier divisor.
+$i\in I$. 
 \end{definition}
 
 
@@ -2333,11 +2356,11 @@ local intersection data of
 the permissible pair $(s',s)$.
 
 \begin{definition}[{intersection data}]
-Fix a compact rational polyhedral space $B$ satisfying 
-\cref{condition-Rn}.
+Fix a bounaryless 
+rational polyhedral space $S$.
 Let $s$ be an permissible $C^{\infty}$-Cartier divisor 
 on $S$ such that $\sharp (s\cap s_0)<\infty$. 
-An \emph{intersection data} of $s$ is the set 
+An \emph{intersection data} for $s$ is the set 
 $\{(U_p,f_p)\}_{p\in s\cap s_0}$ of pairs of open subsets
 $U_i$ of $B$ and (0,0)-superforms
 $f_p\colon U_p \to \mathbb{R}$ indexed by 
@@ -2349,13 +2372,17 @@ for all $p\in s_0\cap s$,
 \item $\opn{Crit}(f_p)=\{p\}$ for all $p\in s_0\cap s$,
 \item $f_p(p)=0$ for all $p\in s_0\cap s$.
 \end{enumerate}
+An intersection data for a permissible pair 
+$(s',s)$ of $C^{\infty}$-Cartier divisor is 
+an intersection data for $s-s'$.
 \end{definition}
 
-\begin{definition}[{Local Morse data for smooth divisor}]
+\begin{definition}[{Local Morse data for 
+$C^{\infty}$-Cartier divisors}]
 \label{definition-local-morse-data-divisor}
-Let $S$ be a rational polyhedral space 
-satisfying \cref{condition-Rn} and 
-$s$ be an permissible $C^{\infty}$-Cartier divisor such that
+Let $S$ be a boudaryless rational polyhedral space 
+and $s$ be an permissible 
+$C^{\infty}$-Cartier divisor such that
 the following set is finite and 
 $\{(U_p,f_p)\}_{p\in s_0\cap s}$ 
 be an intersection data for $s$.
@@ -2455,8 +2482,8 @@ the definition of tropical \`etale covering
 map in this paper.
 \begin{proposition}
 \label{proposition-euler-number-etale}
-Let $S$ be a compact rational polyhedral space satisfying
-\cref{condition-Rn} and $s$ be an permissible 
+Let $S$ be a compact boundaryless rational polyhedral 
+space and $s$ be an permissible 
 $C^{\infty}$-Cartier divisor
 such that $s_0\cap s$ is a finite set.
 For $q \colon S' \to S$ be a tropical \`etale covering 
@@ -2873,7 +2900,7 @@ every $U_i$ is isomorphic to a contractible open
 neighborhood of $0$ in $\opn{LC}_{p}C$ where 
 $p\in U_i$.
 \end{definition}
-If a $C^{\infty}$-Cartier data $\{(U_i,f_i)\}_{i\in I}$ of $s$ 
+If a local data $\{(U_i,f_i)\}_{i\in I}$ for $s$ 
 is good,
 we can calculate the divisor class $D_s$ of $s$ easily
 by using \v{C}ech cohomology of sheaves:
@@ -2891,7 +2918,14 @@ a compact tropical curve $C$.
 \end{proposition}
 
 \begin{proof}
-Compare the \v{C}ech cocycle between $C^{\infty}$-Cartier data and ordinary Cartier data.
+We can create an ordinary Cartier divisor $D$
+from a $C^{\infty}$-Cartier divisor $s$ such 
+that its divisor class is equivalent by 
+using a \v{C}ech cocycle representation. 
+Then, we can easily calculate the 
+\cref{equation-rotation-number} for 
+an typical $D$. The degree of $D$ is 
+invariant for any choice of $D$.
 \end{proof}
 
 \begin{remark}
@@ -3278,11 +3312,11 @@ Our approach is mostly affected from
 \cite{auroux2022lagrangian}.
 \label{section-syz-trivalent-graph}
 When $C$ is a trivalent metric graph, 
-our $X_0(C)$ are 
+our $\check{X}_0(C)$ are 
 almost the trivalent cofiguration $M$ of 
 $2$-spheres in 
 \cite[3.1]{auroux2022lagrangian}.
-Here, $M$ is the
+Here, the space $M$ is the
 union of $\C P^{1}$'s whose intersection complex is $C$, 
 i.e., every edge of $C$ corresponds
 $\C P^{1}$ and every trivalent vertex of $C$ corresponds
@@ -3291,60 +3325,54 @@ The mirror manifold of $M$ is an algebraic curve $X_K$
 from Mumford's construction using the dual intersection
 complex $C$.
 
-The similarity of $X_0(C)$ and $M$ is evident,
+The similarity of $\check{X}_0(C)$ and $M$ is evident 
+since $M$ is a compactification of $\check{X}_0(C)$ 
+as a topological space,
 so below we will write the manin differences
 between  
 we will list the differences between 
 $X_0(C)$ and $M$ below.
-The local model of $M$ comes from the critical locus
+\begin{enumerate}
+\setlength{\leftskip}{-12pt}
+  \item The local model of $M$ comes from the critical locus
 of the potential function of a (A-side) Landau--Ginzburg 
-model $(\C^{3},-xyz)$. There exists a (Orlov) functor
-from $\opn{Fuk}(\C^{3},-xyz)$ 
-to $\opn{wFuk}((\C^{\times})^2)$ which is compatible
-with the pushforward 
-$i_*\colon \opn{Perf}(V(1+x_1+x_2))\to \opn{Perf}((K^{\times})^{2})$. 
-of the inclusion $i\colon V(1+x_1+x_2)\hookto (K^{\times})^2$
-via mirror functors (see \cite[2.]{auroux2022lagrangian}
-for more details). 
+model $(\C^{3},-xyz)$.
+  \item If a $C^{\infty}$-Cartier divisor $s$ on $C$ 
+satisfies 
+\cref{condition-good-divisor} and has an interesection 
+data $\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
+$f_p$ is strictly convex at all $p\in C\setminus C_0$, 
+then $\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
+(C;s)$ corresponds to the 
+Floer complex \cite[(3.2)]{auroux2022lagrangian}
+as a graded modules, but 
+the both are different each other if not. 
+In particular, the graded modules associated with 
+an intersection point $p\in s_0\cap s$ may not 
+be a shift of $1$-dimensional vector space.
+\item We don't know the differential $\mathfrak{m}_1$ 
+for $\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
+(C;s)$ in general.
+\end{enumerate}
 
-The mirror space $M$ of $X_K$ can be considered as a 
-topological compactification of $\check{X}_0(C)$.
-By a slight modification of $\check{X}_0(C)$, every 
-stratified smooth Lagrangian section of $\check{X}(C)$ 
-can be considered as an object of $\mcal{F}(M)$.
-
-The main difference between our setting and 
-that of \cite{auroux2022lagrangian} 
-is the definition of graded space $\opn{LMD}(C,s)$. 
-Our approach haven't got no good definition 
-of $m^{d}$-operations yet, 
-but we can define $\opn{LMD}(C,s)$ 
-without Hamiltonian
-perturbations.
 
 
 The stratified torus fibration of Riemann surface is 
-closely related with pants decomposition, and thus
-Auroux--Efimov--Katzarkov in \cite{auroux2022lagrangian} 
-expect a homological mirror symmetry 
-for projective hypersurfaces since they have higher 
+closely related with pants decomposition and 
+there exists a higher 
 dimensional pants decomposition \cite{MR2079993} along
 tropical hypersurfaces.
-
-
-
-
-\begin{definition}[{cf. \cite{auroux2022lagrangian}}]
-An permissible $C^{\infty}$-Cartier divisor $s$ is 
-\emph{simple} if there exists a local intersection data
-$\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
-$f_p$ is strictly convex at all $p\in C\setminus C_0$.
-\end{definition}
-
+Auroux--Efimov--Katzarkov  
+expect a SYZ conjecture
+for projective hypersurfaces 
+in \cite[\textsection 7]{auroux2022lagrangian}.
+Our $\check{X}(S)$ for a boundaryless
+rational polyhedral spaces $S$ may give a hint for 
+a generalization of their expectation.  
 \subsubsection{Relationships between 
 Poincar\'e--Hopf theorem for graphs}
 
-\cref{theorem-MRR-metric-graph} can be considered 
+\cref{theorem-MRR-curve-preface} can be considered 
 as a $C^{\infty}$-version of Knill's graph 
 theoretical Poincar\'e--Hopf theorem \cite{knill2012graph}
 or 
@@ -3373,8 +3401,8 @@ for more detail about it).
 \subsubsection{Relationships with a localization of 
 index on compact Riemann surfaces.}
 
-We mention the relationship between 
-\cref{theorem-MRR-tropical-curve} and
+We mention relationships between 
+\cref{theorem-MRR-curve-preface} and
 \cite[6]{MR2676658}.
 For simplicity,
 we assume $C$ is a compact trivalent tropical curve, i.e.,
@@ -3405,23 +3433,19 @@ Let $s$ be an permissible $C^{\infty}$-Cartier divisor on $C$.
 $s|_{C_0}$ corresponds to a Lagrangian section of 
 $\check{\pi}_{C_0}$ from 
 \cref{proposition-cartier-lagrangian}.
-By SYZ transformation,
-\myfootnote{By philosophy of SYZ mirror symmetry,
-we should consider Lagrangian section 
-as a mirror of complex line bundle,
-and we also explain about it for tropical tori in 
-\cref{example-SYZ-trasform-tori}.
-}
+By topological SYZ transformation 
+(see for example \cite{MR1876073} or 
+\cite[\textsection 9.1]{MR1882331}),
 $s|_ {C_0}$ induces a family of $U(1)$-holonomoy for
 each torus fiber $\pi_{C_0}^{-1}(p)$ and defines a 
 complex line bundle on $C_{0,\vep}$. From now on, 
 we suppose $s_0\cap s<\infty$. 
-Let $\{(U_p, f_p)\}_{p\in s_0\cap s}$ be the local intersection data 
-of $s$ such that 
+Let $\{(U_p, f_p)\}_{p\in s_0\cap s}$ be the
+ intersection data 
+for $s$ such that 
 $\{x\in C\mid d_C(p,x)\leq \vep\}\subset U_p$ for
 all $p\in C\setminus C_0$.
-
-Besides, we suppose 
+Besides, we assume 
 $(s\cap s_0)\setminus C_{0,\vep}=C\setminus C_0$ and $s$ satisfies the following cocycle
 condition for each $p\in C\setminus C_0$:
 \begin{align}
@@ -3453,12 +3477,6 @@ Riemann--Roch number defined the theory of
 localization of Dirac-type operator and its 
 number is equal 
 to our index by the above correspondence.
-\myfootnote{
-We also thanks Jin Miyazawa
-for explaining us a heart of localization of 
-the index of Dirac operator and answering some 
-questions about it.}
-
 The following equation is a correspondence about 
 local index $\opn{ind}_v$ and the Local 
 Riemann--Roch number under the above 
@@ -3473,15 +3491,7 @@ identification \cite[Theorem 6.7]{MR2676658}.
 \end{align}
 The origin of our approach firstly comes from the 
 above correspondence.
-\myfootnote{
-We also thank Yoshinori Gongyo for 
-giving a question about relationships 
-between a kind of Pick's formula for
-tropical Kummer surfaces and Atiyah--Singer
-index formula. This question gives me 
-an opportunity to learn geometric prequantization and
-Bohr--Sommerfeld points.
-}
+
 From this correspondence, 
 our theorem for tropical curve can be 
 proved by the theory of localization of index 
@@ -3593,8 +3603,8 @@ We follows the terminology Hessian metric and Hessian manifold
 from \cite{MR2293045}.
 The terminology 
 Hessian manifold is called
-\ind{K\"ahler affine manifold}{Kahler affine manifold}
-in \cite{MR714338}, \ind{affine K\"ahler manifold}{affine Kahler manifold}
+\emph{K\"ahler affine manifold}
+in \cite{MR714338}, \emph{affine K\"ahler manifold}
 or AK-manifold \cite{MR1882331} for short.
 To our knowledge, the notion of Hessian metric have already
 appeared in \cite{MR413010}.
@@ -3657,7 +3667,7 @@ a tropical torus.
 
 \begin{remark}
 The integral affine structure itself is a very strict condition.
-\ind{Chern's conjecture}{Chern's conjecture} states 
+\emph{Chern's conjecture} states 
 every closed affine manifold $B$ has zero topological 
 Euler characteristic.
 If $B$ is a closed flat Riemannian manifold, Chern's conjecture is true from Chern--Gauss--Bonnet formula.
@@ -3823,7 +3833,7 @@ and $\mcal{A}_{X}^{0,0}/\mcal{O}^{\times}_X
 The left column short exact sequence of 
 \cref{equation-smooth-cartier-diagram} is called
 the 
-\ind{tropical exponential sequence}{tropicalexponentialexactsequence}
+\emph{tropical exponential sequence}
 (e.g. \cite{MR3894860}).
 
 By taking the long exact sequence for 
@@ -4314,7 +4324,7 @@ the $k$-skeleton of it.
 We don't know the definition of higher Chern class of tropical manifold $B$ except
 $n=1$ or $n=\dim B$ (see \cref{remark-todd-class}).
 On the other hand, $\opn{ch}(B)$ should be trivial when $B$ is
-an integral affine manifold, since $B=B_{\mathrm{reg}}$.
+an integral affine manifold, since $B=B_{0}$.
 Thus, $c_{k}(B)$ should be $1$ except $k=0$, 
 i.e., $\opn{td}(B)$ should be $1$. 
 On the other hand,
@@ -4329,7 +4339,7 @@ positive real number $\vep >0$ and
 a Morse function $f$ on $B$, 
 $\chi(\opn{LMD}^{\bullet}(B,s))=
 \chi_{\opn{top}}(B)=0$ is 
-truly a special case of microlocal Poincar\'e--Hopf theorem for $B$.
+truly a special case of Poincar\'e--Hopf theorem for $B$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
   \cite{MR4540954}. This analogue is about tropical Euler characteristic
 $\chi_{\opn{trop}}(B)\deq 
@@ -4362,10 +4372,10 @@ primary Kodaira surfaces and
 
 \subsection{Relationship between Floer cohomology
 and integral affine manifolds}
+\label{section-floer-lmd}
 
-
-If $B$ is an integral affine manifold such 
-that $\pi_2(B)=0$, then $\pi_2(\check{X}(B))=0$.
+If $B$ is an compact integral affine manifold 
+such that $\pi_2(B)=0$, then $\pi_2(\check{X}(B))=0$.
 In this case, $\pi_2(\check{X}(B),L_s)=0$ for 
 any Lagrangian section of 
 $\check{\pi}_{B}\colon \check{X}(B)\to B$
@@ -4377,9 +4387,6 @@ $\psi(\partial D)\subset L_s$ is zero.
 In particular, $L_s$ is 
 \emph{tautologically unobstructed} defined in
 \cite[(2.50)]{MR3656481}.
-
-We also note about Floer cohomology of 
-Lagrangian sections.
 Every Lagrangian section
 $L_s\xto{i} \check{X}(B)\xto{\check{\pi}_{B}}  B$
 induces a homomorphism of 
@@ -4396,6 +4403,14 @@ Every Lagrangian section $L_s$ has
 a canonical lifting to a Lagrangian 
 brane $\mathscr{L}_s$ as describled in 
 \cite[5.2]{MR1882331}.
+Therefore, every Lagrangian section of 
+$\check{f}_B\colon \check{X}(B)\to B$
+has a lift to an object of Fukaya category
+of $\check{X}(B)$ in the sense of 
+\cite{MR4301560}.
+
+We also note about Floer cohomology of 
+a pair of Lagrangian sections.
 If a pair $(L_s,L_s')$ of Lagrangian sections 
 intersects transversally, then the graded 
 module of Floer complex of the pair
@@ -4403,8 +4418,7 @@ $(\mathscr{L}_s,\mathscr{L}_{s'})$
 (over $\Lambda_{\opn{nov}}^{\mathbb{C}}$) 
 is the following:
 \begin{align}
-\opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'};
-\Lambda_{\opn{nov}}^{\mathbb{C}})
+\opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})
 \deq \bigoplus_{p\in L_s\cap L_{s'}}
 \Lambda_{\opn{nov}}^{\mathbb{C}}
 [-\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)].
@@ -4430,22 +4444,20 @@ isomorphism of graded modules:
 This isomorphism supports our analog of graded module
 of Floer complex is compatible with the classical 
 Floer complex.
-
 Therefore, every pair $(L_1,L_2)$ of Lagrangian section
-of $B$ has a ($\mathbb{Z}/2\mathbb{Z}$-graded)
+of $B$ has a 
 Floer cohomology $\opn{HF}^{\bullet}(\mathscr{L}_1,
-\mathscr{L}_2)$, and its Euler number is equal to the intersection of 
-$L_1$ and $L_2$ (up to signature). We can 
+\mathscr{L}_2)$, and its Euler 
+characteristic is equal to the intersection number 
+of $L_1$ and $L_2$ (up to signature). We can 
 see this fact from \cite[Remark 13]{MR1882331} directly.
-Therefore, if $L_s$ and $L_s'$ interesects 
-transversally, then there exists 
-
 
 \begin{remark}
+\label{remark-markus-conjecture}
 The condition $\pi_2(B)=0$ may seem to be technical
 and strict, but this condition is 
 closely related with a classical conjecture.
-\ind{Markus's conjecture}{Markus conjecture} states every closed
+The \emph{Markus's conjecture} states every closed
 affine manifold is complete (in the sense of $(G,X)$-manifold)
 if and only if its orientable double cover 
 has a compatible special affine structure 
@@ -4454,7 +4466,7 @@ Every integral affine manifold has a double cover of
 a special integral affine manifold and thus 
 the universal cover of closed integral affine 
 manifold is homeomorphic to a Euclidean space and 
-$\pi_{2}(B)=0$ if Markus conjecture 
+$\pi_{2}(B)=0$ if the Markus conjecture 
 is true.
 \end{remark}
 
@@ -4465,22 +4477,26 @@ is true.
 Lagrangian multi-sections}
 \label{section-tropical-multi-section}
 
-Let $B$ an integral affine manifold. 
+Let $B$ an integral affine manifold
+(with singularities). 
 Then, $B$ has 
 the notion of Lagrangian multi-section, 
 which is a mirror part of some 
 vector bundle on $X(B)$. 
-This can be considered as a certain analog of  
+Every (unramified) Lagrangian multi-sections 
+can be considered as a certain analog of  
 tropical multidivisors on a compact tropical
-curve \cite{gross2022principal}, so we 
-can also define (permissible) 
-Lagrangian multi-sections
+curve \cite[Definition 3.1]{gross2022principal}, 
+so we can also define (permissible) 
+$C^{\infty}$-Cartier multidivisors
 for tropical curves and 
-the local Morse data of them naturally.
-We expect that our conjecture works for 
-them.
-
-
+the local Morse data of them naturally, 
+and thus we can generalize 
+\cref{theorem-MRR-tropical-curve} for 
+permissible $C^{\infty}$-Cartier 
+multidivisors by
+the Riemann--Hurwitz formula for tropical 
+curves \cite[Theorem 2.14]{MR2525845}. 
 
 
 \subsection{K\"unneth-type formula}
@@ -4821,7 +4837,7 @@ submanifolds of $T^{*}B$
 
 
 
-\index{Lagrangian section@Lagrangian section}
+
 
 \subsubsection{Semi-flat SYZ mirror pair}
 
@@ -4921,7 +4937,8 @@ In this subsection, we recall the relationships lattice points of
 strongly integral affine manifolds and geometric quantization 
 from \cite{1999math......2027T,MR3525095}.
 
-A symplectic manifold $(M,\omega)$ is \ind{prequantizable}{prequantizable}
+A symplectic manifold $(M,\omega)$ is 
+\emph{prequantizable}
 if the de Rham cohomology class $[\omega]$ of $\omega$ is in $H^2(X;\Z)$. 
 An integral affine manifold $B$ has a strongly integral affine structure 
 if and only if the de Rham cohomology class of 
@@ -4931,13 +4948,19 @@ $H^{2}(\check{X}(B);\mathbb{Z})$
 \cite[Lemma 2.8]{MR4275791}).
 
 From the theory of connection on a vector bundle,
- there exists a complex line bundle $\mcal{L}$ with a $U(1)$-connection $\nabla$ and $R_{\nabla}=-2\pi\sqrt{-1}\omega$.  Such pair $(\mcal{L},\nabla)$ is called \ind{prequantum line bundle}{prequantum line bundle} over $M$. Obviously, $c_1(\mcal{L})=[\omega]$.
+ there exists a complex line bundle $\mcal{L}$ with a $U(1)$-connection $\nabla$ and $R_{\nabla}=-2\pi\sqrt{-1}\omega$.  
+Such pair $(\mcal{L},\nabla)$ is called 
+\emph{prequantum line bundle} over $M$. 
+Obviously, $c_1(\mcal{L})=[\omega]$.
 Let $L$ be a Lagrangian submanifold of $(M,\omega)$.
 Then, $\nabla|_{L}$ is a flat $U(1)$-connection from definition.
 $L$ is a 
-\ind{Bohr--Sommerfeld orbit}{bohr-sommerfeld orbit} 
+\emph{Bohr--Sommerfeld orbit} 
 (BS-orbit for short)
-if $\nabla|_{L}$ is a trivial connection on $L$. Let $\pi :M\to B$ be a Lagrangian fibration. A point $x\in B$ is \ind{Bohr--Sommerfeld point}{bohr-sommerfeld point} if $\pi^{-1}(x)$ is a Bohr-Sommerfeld orbit.
+if $\nabla|_{L}$ is a trivial connection on $L$. Let $\pi :M\to B$ be a Lagrangian fibration. 
+A point $x\in B$ is 
+\emph{Bohr--Sommerfeld point} 
+if $\pi^{-1}(x)$ is a Bohr-Sommerfeld orbit.
 
 The origin of Bohr--Sommerfeld orbit comes from
 Old Quantum Theory.
@@ -5062,15 +5085,16 @@ associated with the presheaf $U\mapsto
 \cite[Proposition 3.3.6]{MR1299726}.
 \end{example}
 
-$\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
+The complex $\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
 \deq R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
 \upomega_{A_X}^{\bullet})$ 
-is called the  \emph{Verdier dual} of 
+is called the \emph{Verdier dual} of 
 $\mathcal{F}^{\bullet}$.
 
 The dual functor
-$\mathcal{D}_{A_X}\colon \opn{D}^{b}(X)\to 
-\opn{D}^{b}(X); \mathcal{F}^{\bullet} \to  R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
+$\mathcal{D}_{A_X}\colon 
+\opn{D}^{b}(\catn{Mod}(A_X))\to 
+\opn{D}^{b}(\catn{Mod}(A_X)); \mathcal{F}^{\bullet} \to  R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
 \upomega_{A_X}^{\bullet})$
 has the following canonical isomorphism when 
 $\mathcal{D}_{A_X}(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}))
@@ -5424,7 +5448,5 @@ $\bigcup_{x\in sigma \in \mathscr{P}}\sigma=
 
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}
-
-\printindex
 
 \end{document}
