@@ -356,7 +356,7 @@ general compact complex
 manifolds as a corollary of Atiyah--Singer index 
 theorem. Besides, the HRR for projective complex 
 manifold is a special case 
-of Grothendieck--Riemann--Roch theorem (GRR for short). 
+of the Grothendieck--Riemann--Roch theorem (GRR for short). 
 
 The main issue in formulating the HRR 
 for line bundles over 
@@ -389,9 +389,10 @@ for this Euler characteristic?
 \end{question}
 
 In this paper, we pursue a different tropical
-analog of Euler characteristic of line bundles with the help of 
+analog of the Euler characteristic of line bundles with the help of 
 ideas on toric varieties, geometric prequantization,
-Morse theory, \emph{Strominger--Yau--Zaslow conjecture}
+Morse theory, microlocal sheaf theory,
+the \emph{Strominger--Yau--Zaslow conjecture}
 (SYZ conjecture for short), and related topics.
 Especially, our approach for 
 \cref{question-tropical-euler} is 
@@ -401,7 +402,7 @@ the `Floer complex without differential' instead
 of the `sheaf cohomology of tropical line bundles' 
 under the philosophy of \emph{Homological Mirror 
 Symmetry}. 
-In the next section, we will explain the SYZ conjecture 
+In the next subsection, we will explain the SYZ conjecture 
 within the scope necessary for our approach, 
 pose a certain conjecture,
 and state the main theorem of this paper.
@@ -469,6 +470,7 @@ $f_B\colon \mathcal{X} \to B$
 of a special Lagrangian torus fibration 
 $\check{f}_{B}\colon \check{X} \to B$ onto 
 a topological manifold $B$.
+The two fibrations may have singular fibers.
 A mathematical formulation of this conjecture is 
 expected to induce a quasi-equivalent
 functor $\Phi_{\mathrm{SYZ}}$ 
@@ -644,7 +646,7 @@ associated with $s$
 In particular, 
 $\chi(\opn{LMD}^{\bullet}(S;s))=\chi_{\opn{top}}(S)$
 when $\mcal{L}$ is trivial.
-Besides, such a $C^{\infty}$-divisor $s$ exists
+Besides, such a $C^{\infty}$-Cartier divisor $s$ exists
 for any $\mathcal{L}$.
 \end{conjecture}
 The graded module $\opn{LMD}^{\bullet}(S;s)$ is 
@@ -690,7 +692,7 @@ the following equation holds:
 \int_C c_1(\mathcal{L})+\frac{1}{2}c_1(-K_C)
 =\opn{deg}(\mathcal{L})+\chi_{\opn{top}}(C). 
 \end{align}
-Besides, such a $C^{\infty}$-divisor $s$ exists
+Besides, such a $C^{\infty}$-Cartier divisor $s$ exists
 for any $\mathcal{L}$.
 \end{theorem}
 
@@ -705,12 +707,12 @@ the following equation holds:
 \chi(\opn{LMD}^{\bullet}(B;s))=
 \int_B \frac{c_1(\mathcal{L})^{n}}{n!}.
 \end{align}
-Besides, such a $C^{\infty}$-divisor $s$ exists
+Besides, such a $C^{\infty}$-Cartier divisor $s$ exists
 for any $\mathcal{L}$.
 \end{theorem}
 
 
-We note that our results has highly related with 
+We note that our results are highly related with 
  \cite{MR4301560} and \cite{auroux2022lagrangian} 
 (see \cref{section-syz-trivalent-graph} and 
 \cref{section-floer-lmd} 
@@ -772,8 +774,8 @@ compact symplectic manifold and
 $L_1,L_2$
 compact Lagrangian submanifolds of $\check{X}$ 
 which has the ($\mathbb{Z}/2\mathbb{Z}$-graded)
-Floer cohomology, (see 
-\cite[Theorem 1.5]{}).
+Floer cohomology under a certain condition, 
+(for example, see \cite[Theorem 1.5]{MR3220941}).
 From definition of  
 Floer cohomology and 
 property of intersection number of cycles of singular 
@@ -781,9 +783,9 @@ cohomology, there exists the
 following isomorphism:
 \begin{align}
 \label{equation-floer-poincare}
-\chi (\opn{HF}^{\bullet}(L_1,L_2))
+\chi (\opn{HF}^{\bullet}(L_2,L_1))
 =(-1)^{n} 
-\chi(\opn{HF}^{\bullet}(L_2,L_1)).
+\chi(\opn{HF}^{\bullet}(L_1,L_2)).
 \end{align}
 
 On the other hand, let $\mathcal{X}$ be a 
@@ -812,7 +814,7 @@ Obviously,
 $\upomega_{\mathcal{X}}$ is not trivial for many 
 projective manifolds $\mathcal{X}$,
 and thus we cannot consider the mirror cohomology of 
-$\opn{Ext}^{\bullet}(\mathcal{L}_2,\mathcal{L}_1)$
+$\opn{Ext}^{\bullet}_{\mathcal{O}_{\mathcal{X}}}(\mathcal{L}_2,\mathcal{L}_1)$
 from classical Lagrangian Floer cohomology directly.
 Our
 Therefore, we need to replace $\check{X}$ 
@@ -933,8 +935,6 @@ B_{\varepsilon,\varepsilon'}^{n}(x)\cup
 \end{align*}
 \item $\opn{Crit}(f)$: the subset of critical points of
 a $C^{1}$-function $f$ on a smooth manifold.
-\item   $X\sqcup_{f,g}Y$: the pushout of the diagram
-  $X\xgets{f} S\xto{g} Y$.
 \item $\{\opn{pt}\}$: the topological space of 
 a fixed singleton set.
 \item $a_X\colon X\to \{\opn{pt}\}$:
@@ -1208,13 +1208,13 @@ subset $V' (\ni v)$ of $S$ we get
 
 
 
-\subsection{Local Morse data and index}
+\subsection{Cohomological local Morse data and index}
 
 The following stalk complex (or graded module) is 
 the most important notion
 for this paper which is naturally appeared in
 microlocal sheaf theory \cite{MR1299726}, 
-and which is called "local Morse datum" in \cite[p.271]{MR2031639} 
+and which is called ``local Morse datum'' in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
 \begin{definition}[{Cohomological local Morse datum}]
 \label{definition-local-morse-data}
@@ -1222,8 +1222,8 @@ Let $f\colon X\to {\mathbb{R}}$ be a continuous map on a
 topological space $X$ and $x\in X$. Fix 
 $\mathcal{F}^{\bullet}\in 
 \opn{Ob}(\opn{D}^{b}(\catn{Mod}(A_X)))$.
-The cohomology group of the local (cohomological) Morse 
-data of the pair $(\mathcal{F}^{\bullet},f)$ at $x$ 
+The cohomology group of the \emph{cohomological local Morse 
+data} of the pair $(\mathcal{F}^{\bullet},f)$ at $x$ 
 is the following $A$-module: 
 \begin{align}
 \opn{LMD}^{\bullet}(\mcal{F}^{\bullet},f,x)\deq 
@@ -1242,6 +1242,12 @@ $R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
 \end{align}
 
 \end{definition}
+
+In this paper, we simply say 
+\emph{local Morse data} as cohomological Morse data 
+if we are not afraid of confusing it with local Morse data
+in the theory of stratified Morse theory 
+\cite[Part I. Definition 3.5.2]{MR932724}.
 
 \begin{remark}
 \begin{enumerate}
@@ -1264,7 +1270,7 @@ $\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f,x)$
 is closely related with (real) Milnor fiber, so
 the name \emph{(cohomological) local Milnor data} may 
 be more appropriate 
-than the name local Milnor data. 
+than the name cohomological local Morse data. 
 \item We also note that we need to use 
 the graded module $\opn{LMD}^{\bullet}(\mcal{F},f,x)$ instead of 
 the complex $R\Gamma_{\{f\geq f(x)\}}\mathcal{F}$ in order to define
@@ -1703,12 +1709,14 @@ finitely generated.
 
 
 \begin{example}
-Let $f\colon \mathbb{R}^{n}\to \mathbb{R}$ be a 
-continuous function and 
+Let $f\colon M\to \mathbb{R}$ be a 
+$C^{\infty}$-function on a compact smooth
+Riemannian manifold 
+$(M,g)$ and 
 $\varepsilon$ a 
 sufficiently small positive real number. Then, 
 \begin{align}
-\opn{LMD}^{\bullet}(A_{\mathbb{R}^{n}},f,x)\simeq 
+\opn{LMD}^{\bullet}(A_{M},f,x)\simeq 
 \opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}^{n}(x)},
 f|_{\bar{B}_{\varepsilon}^{n}(x)},x) \simeq 
 \opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}^{n}(x)},
@@ -1720,11 +1728,11 @@ critical point at $x$, then
 $\{\{f=f(x)\}\setminus \{x\}$ is a smooth submanifold 
 and $\{\{f=f(x)\}\setminus \{x\},\{x\} \}$ induces 
 a stratification satisfying Whitney's condition B
-\cite[Part I.2.5.1. Lemma]{MR932724}. 
-
+\cite[Part I. Lemma 2.5.1]{MR932724}. 
+We can assume $f$
 For sufficiently small $\varepsilon\in \mathbb{R}_{> 0}$, 
 $S_{\varepsilon}(x) \cap \{f=f(x)\}$ 
-intersect transversely \cite[Part I.3.5.1. Lemma]{MR932724},
+intersect transversely \cite[Part I. Lemma 3.5.1]{MR932724},
 and thus $S_{\varepsilon}(x) \cap \{f=f(x)\}$
 is also a submanifold and compact.
 A relative version of Ehresmann's lemma for 
@@ -1845,11 +1853,39 @@ from \cite{MR3903579,gross2019sheaftheoretic}.
 
 %TODO: 引用の整理
 
-Let $S$ be a rational polyhedral space, 
+Let $S$ be a rational polyhedral space
+\cite[Definition 2.2]{gross2019sheaftheoretic}, 
 $\mathcal{O}^{\times}_S$ the sheaf of 
 locally integral affine linear function on $S$
 and $\mathcal{A}^{0,0}_S$ the sheaf of 
-$(0,0)$-superforms on $S$. 
+$(0,0)$-superforms on $S$ 
+\cite[Definition 2.24]{MR3903579}. 
+
+\begin{remark}
+In \cite{MR3903579},the sheaf of superforms 
+defined for polyhedral spaces with 
+face structures \cite[Definition 2.4.(c)]{gross2019sheaftheoretic}.
+We can also define the sheaf of $(0,0)$-superforms for 
+rational polyhedral spaces as the same way,
+at least.
+\end{remark}
+
+In various scenes, we assume rational polyhedral spaces
+satisfies the following \emph{boundaryless condition}:
+
+\begin{condition}[{\cite[\textsection 4.2]{MR4246795}}]
+\label{condition-Rn}
+Let $S$ be a rational polyhedral space  
+a coordinate system $\{(U_i,\phi_i)\}_{i\in I}$
+such that the image of each chart 
+$\phi_i\colon U_i \to \mathbb{T}^{n}$
+is in $\mathbb{R}^{n}$.
+\end{condition}
+
+The \cref{condition-Rn} is strict for rational polyhedral
+spaces, but it is enough to
+give a test play for our approaches.
+
 As like tropical line bundles on tropical curves
 \cite[Definition 4.4]{mikhalkinTropicalCurvesTheir2008a},
 there exists the notion of tropical line bundle on 
@@ -1872,15 +1908,15 @@ There exists the following exact sequence:
 This is a smooth version of the following exact
 sequences associated with the sheaf 
 $\mcal{M}_S^{\times}$
-of (real valued) `tropical rational functions'
+of (real valued) \emph{tropical rational functions}
 \cite[Definition 4.1]{MR3894860}:
 \begin{align}
 \label{equation-cartier-divisor-sequence}
 0 \to \mcal{O}^{\times}_S \to \mcal{M}_S^{\times} 
 \to \mcal{M}_S^{\times}/\mathcal{O}^{\times}_S\to 0.
 \end{align}
-There are several different definitions of a 
-`tropical rational function' 
+There are several different definitions of  
+tropical rational function 
 (for example, see \cite{mikhalkin2018tropical}).
 By taking a global section of the
 short exact sequence 
@@ -1892,10 +1928,10 @@ H^{0}(S;\mcal{M}_S^{\times}/\mathcal{O}^{\times}_S)
 We note $H^{1}(S;\mcal{M}_{S}^{\times})=0$, 
 and thus $\delta$ is surjective
 \cite[Lemma 4.5, Proposition 4.6]{MR3894860}.
-The element $H^{0}(B;\mcal{M}_B^{\times}/\mathcal{O}^{\times}_B)$
-is called a \emph{Cartier divisor} on $B$.
+The element $H^{0}(S;\mcal{M}_S^{\times}/\mathcal{O}^{\times}_S)$
+is called a \emph{Cartier divisor} on $S$.
 Therefore, for every line bundle $\mathcal{L}$ on a rational polyhedral 
-space, there exists a Cartier divisor $s$ 
+space, there exists a Cartier divisor $D$ 
 which represents $\mathcal{L}$.
 
 By taking a global section of the
@@ -1903,10 +1939,10 @@ short exact sequence
 (\ref{equation-smoooth-cartier-divisor-sequence}),
 there also exists a connecting homomorphism 
 $\delta' \colon 
-H^{0}(B;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)
+H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)
 \to H^{1}(S;\mathcal{O}^{\times}_S)$. 
 $\mathcal{A}^{0,0}_S$ is a fine sheaf 
-\cite[Proposition 2.26]{MR3903579}, so 
+\cite[Lemma 2.7, Proposition 2.26]{MR3903579}, so 
 $H^{1}(S;\mathcal{A}^{0,0}_S)=0$ and 
 so $\delta'$ is also surjective.
 
@@ -1930,6 +1966,10 @@ when $S$ is a boundaryless rational polyhedral space.
 We will see a $C^{\infty}$-Cartier divisor is
 an analog of Lagrangian section 
 (\cref{proposition-cartier-lagrangian}).
+It's difficult to explain the reason why we assume 
+$S$ is boundaryless now, 
+so this explanation is done in 
+\cref{section-tropical-curve-general}.
 We also use the following representation of 
 $C^{\infty}$-Cartier divisor like 
 \cite[Definition 4.0.12]{MR2810322}.
@@ -1949,26 +1989,12 @@ In the next subsection,
 we will define an analog of Floer complex of 
 Lagrangian submanifolds
 (without differential) for good $C^{\infty}$-Cartier 
-divisors on rational polyhedral space satisfying 
-the following \emph{boundaryless condition}:
+divisors on boundaryless rational polyhedral spaces.
 
-\begin{condition}[{\cite[\textsection 4.2]{MR4246795}}]
-\label{condition-Rn}
-Let $S$ be a rational polyhedral space with 
-a coordinate system $\{(U_i,\phi_i)\}_{i\in I}$
-such that the image of each chart 
-$\phi_i\colon U_i \to \mathbb{T}^{n}$
-is in $\mathbb{R}^{n}$.
-\end{condition}
-
-The \cref{condition-Rn} is strict for rational polyhedral
-spaces, but it is enough to
-give a test play for our approaches.
 
 
 We will explain why we assume the \cref{condition-Rn}
-and how to overcome it
-for tropical curves in 
+and how to overcome it for tropical curves in 
 \cref{section-tropical-curve-general}.
 
 \subsection{Permissible conditions}
@@ -2006,29 +2032,28 @@ space $S$.
 
 
 %TODO: きちんとかく
-Let $S$ be a boundaryless rational polyhedral space, 
+Let $S$ be a rational polyhedral space, 
 $x\in S$ and $\opn{LC}_x S$ the 
 local cone of $S$ at $x$ 
 \cite[2.2]{gross2019sheaftheoretic}.
 This is a subset of the tangent vector space
-$T_{x}S$ at $x$ which spans of $T_{x}S$.
+$T_{x}S$ at $x$ which spans of $T_{x}S$
+\cite[Corollary 2.6]{gross2019sheaftheoretic}.
 Then, there exists an open neighborhood 
-$V$ of $0$ in $\opn{LC}_x S$ and $\phi \colon V\to S$ 
-such that $\phi_x$ is an open immersion onto an 
-open subset $U_x$ of $S$ as a 
-rational polyhedral space.
-This open immersion induces a unique isomorphism
-$d_x\phi\colon T_0(\opn{LC}_xS) \to T_x S$
-of tangent space 
+$V$ of $0$ in $\opn{LC}_x S$ and
+a canonical morphism $\phi \colon V\to S$ 
+such that $\phi(0)=x$ and
+$d_{0}\phi\colon T_0(\opn{LC}_xS) \simto T_x S$
 \cite[Proposition 2.5]{gross2019sheaftheoretic}.
-$d_x \phi$ does not depend on the choice of 
-$\phi$. We frequently identify $T_0(\opn{LC}_x S)$ with 
+The $d_0 \phi$ does not depend on the choice of 
+$V$. 
+We frequently identify $T_0(\opn{LC}_x S)$ with 
 $T_x S$ for simplicity.
 \begin{definition}
 For the above notation, we set
 \begin{align}
 \opn{SS}(S)_x\deq 
-d_x\phi(\opn{SS}((\mathbb{Z}_{T_x S})_{\opn{LC}_x S})_0).
+d_0\phi(\opn{SS}((\mathbb{Z}_{T_x S})_{\opn{LC}_x S})_0).
 \end{align}
 
 \end{definition}
@@ -2066,9 +2091,8 @@ in the sense of \cite[p.60]{MR3287221}, see also
 
 \begin{proposition}
 \label{condition-good-linearity-space}
-Let $S$ be a rational polyhedral space 
-satisfying \cref{condition-Rn} and the following
-equation for any $x\in S$. Then,
+Let $S$ be a boundaryless rational polyhedral space 
+and $x\in S$. Then,
 \begin{align} \label{equation-W-SS-Lin}
 (\mathcal{W}_{1,S}^{\mathbb{R}})_{x}^{\bot}\subset 
 \opn{span}_{{\mathbb{R}}}\opn{SS}(S)_x\subset
@@ -2145,8 +2169,9 @@ We expect the middle and right vector space in
 important cases.
 \end{remark}
 
-From now on, we define the permissiblity conditon.
-
+From now on, we define the permissiblity condition 
+for $C^{\infty}$-Cartier divisors on boundaryless
+rational polyhedral spaces.
 From definition of superforms on 
 polyhedral spaces 
 \cite[Definition 2.10, 2.24]{MR3903579}, we 
@@ -2154,15 +2179,14 @@ can define the set of \emph{critical points}
 of $(0,0)$-superform on rational polyhedral space
 like that of $C^{\infty}$-function on differential
 manifolds.
-
-
 Let $f\colon S \to \mathbb{R}$ be a $(0,0)$-superform on 
-$\mathbb{R}$. The differential $d''f\in \mathcal{A}^{0,1}_S$ of $f$ has the 
+a boundaryless rational polyhedral space $S$. 
+The differential $d''f\in \mathcal{A}^{0,1}_S$ of $f$ has the 
 differential vector $d''f (x)\in (\mathcal{F}_{S}^{1})_x$ for any 
 $x\in S$ from the definition of superforms.
 
 \begin{condition}[{permissiblity}] \label{cond: permissible}
-Let $S$ be a rational polyhedral space.
+Let $S$ be a boundaryless rational polyhedral space.
 A $(0,0)$-superform $f\colon S \to {\mathbb{R}}$ is \emph{permissible} at $x$ 
 if 
 \begin{align}
@@ -2193,7 +2217,7 @@ connected.
 \begin{definition}[{permissible $C^{\infty}$-Cartier divisor}]
 \label{definition-permissible-smooth-cartier-divisor}
 A $C^{\infty}$-Cartier divisor $s$ is \emph{permissible} 
-if there exists a local Cartier data $\{(U_i,f_i)\}_{i\in I}$ 
+if there exists a local data $\{(U_i,f_i)\}_{i\in I}$ 
 for $s$
 such that $f_i$ is permissible for all $i\in I$. 
 In general, a pair $(s',s)$ of smooth 
@@ -2210,7 +2234,8 @@ then every local data satisfies the above
 permissibility condition.
 
 \begin{definition}
-Let $(s,s')$ be a pair of $C^{\infty}$-Cartier divisors and 
+Let $(s,s')$ be a permissible pair of 
+$C^{\infty}$-Cartier divisors and 
 $\{(U_i,f_i)\}_{i\in I}$ a local $C^{\infty}$-Cartier data
 for $s-s'$. The intersection set of the pair 
 $(s,s')$ is the following set
@@ -2242,8 +2267,7 @@ for $S$ (as a set). Instead of this fibration,
 we define (the underlying set of) 
 another torus fibration as follows. 
 \begin{definition}[{Stratified torus fibration}]
-Let $S$ be a compact rational polyhedral space 
-satisfying \cref{condition-Rn}.
+Let $S$ be a compact rational polyhedral space.
 Let $\check{X}(S)_x$ be 
 the real torus defined as follows:
 \begin{align}
@@ -2261,7 +2285,7 @@ topological structures of $\check{X}_0(S)$
 here.
 
 \begin{example}
-
+{\setlength{\leftmargini}{22pt}
 \begin{enumerate}
 \item If $B$ is an integral affine manifold, then
 $\check{X}_0(B)$ is equal to $\check{X}(B)$ as a set.
@@ -2272,7 +2296,7 @@ the stratified space associated
 with a trivalent metric graph defined in \cite{auroux2022lagrangian}
 as a set.
 \end{enumerate}
-
+}
 \end{example}
 
 Let $\check{f}_S\colon \check{X}_0(S)\to S$ be the 
@@ -2317,9 +2341,9 @@ $\opn{pr}_{S,x}\colon (\mathcal{F}_{S}^{1})_x\simeq
 for all $x\in S$.
 
 \begin{definition}
-Let $s$ be a smooth 
-Cartier divisor on $S$ and $\{(U_i,f_i)\}_{i\in I}$ a local
-$C^{\infty}$-Cartier data for $s$. 
+Let $s$ be a $C^{\infty}$-Cartier divisor 
+on a boundaryless rational polyhedral space $S$ 
+and $\{(U_i,f_i)\}_{i\in I}$ a local data for $s$. 
 The \emph{stratified Lagrangian section} associated with $s$ is the following
 section of $\check{f}_S$:
 \begin{align}
@@ -2327,7 +2351,7 @@ section of $\check{f}_S$:
 \end{align}
 \end{definition}
 
-The $\check{s}$ is independent of the choice of local 
+The $\check{s}$ is independent of the choice of local
 $C^{\infty}$-Cartier data for $s$ since 
 $(\mathcal{F}^{1}_{S})_x/(\mathcal{F}^{1}_{\mathbb{Z},S})_x$
 is naturally isomorphic to
@@ -2339,7 +2363,7 @@ From the permissibility condition and
 \cref{equation-torus-fiber}, we get the following proposition.
 
 \begin{proposition}
-Let $(s',s)$ be an permissible $C^{\infty}$-Cartier pair
+Let $(s',s)$ be a permissible $C^{\infty}$-Cartier pair
 on a boundaryless rational polyhedral space, 
 $\{(U_i,f_i)\}_{i\in I}$ the local data 
 for $s-s'$ and $L_s\deq \opn{Im}(\check{s})$.
@@ -2356,14 +2380,15 @@ Then,
 
 
  
-\subsection{Local Morse data for permissible divisors}
+\subsection{Cohomological local Morse data for permissible divisors}
 
 In this subsection, we
 define the graded module of a given permissible pair 
-$(s',s)$ of $C^{\infty}$-Cartier divisor such that 
+$(s',s)$ of $C^{\infty}$-Cartier divisors such that 
 $\sharp (s'\cap s)<\infty$.
-In order to define the graded module, we define the 
-local intersection data of 
+In order to define the graded module
+$\opn{LMD}^{\bullet}(s',s)$, we define the 
+intersection data of 
 the permissible pair $(s',s)$.
 
 \begin{definition}[{intersection data}]
@@ -2373,7 +2398,7 @@ Let $s$ be an permissible $C^{\infty}$-Cartier divisor
 on $S$ such that $\sharp (s\cap s_0)<\infty$. 
 An \emph{intersection data} for $s$ is the set 
 $\{(U_p,f_p)\}_{p\in s\cap s_0}$ of pairs of open subsets
-$U_i$ of $B$ and (0,0)-superforms
+$U_i$ of $S$ and (0,0)-superforms
 $f_p\colon U_p \to \mathbb{R}$ indexed by 
 $ s_0\cap s$ 
 such that
@@ -2384,11 +2409,11 @@ for all $p\in s_0\cap s$,
 \item $f_p(p)=0$ for all $p\in s_0\cap s$.
 \end{enumerate}
 An intersection data for a permissible pair 
-$(s',s)$ of $C^{\infty}$-Cartier divisor is 
+$(s',s)$ of $C^{\infty}$-Cartier divisors is 
 an intersection data for $s-s'$.
 \end{definition}
 
-\begin{definition}[{Local Morse data for 
+\begin{definition}[{Cohomological local Morse data for 
 $C^{\infty}$-Cartier divisors}]
 \label{definition-local-morse-data-divisor}
 Let $S$ be a boudaryless rational polyhedral space 
@@ -2422,7 +2447,7 @@ $\mathfrak{m}_1$ of
 $\opn{LMD}^{\bullet}_{A}(S;s)$ as an analog of
 Floer cohomology. We don't have, however,
 the definition of the true differential of 
-$\opn{LMD}^{\bullet}_A(S;s)$ in general except when 
+$\opn{LMD}^{\bullet}_A(S;s)$ in general, except when 
 $A=\Lambda_{\mathrm{nov}}^{\mathbb{C}}$ and
 $\opn{LMD}^{\bullet}_{A}(S;s)$ is equal to a Floer complex
 of Lagrangian submanifolds (e.g. \cite[5.2]{MR1882331}).
@@ -2431,15 +2456,14 @@ of Lagrangian submanifolds (e.g. \cite[5.2]{MR1882331}).
 It is important that 
 $\opn{LMD}^{\bullet}_{A}(S;s)\simeq \opn{LMD}^{\bullet}(A_{\coprod_{p} U_p},\coprod_p f_p)$ is
 for a given intersection data for $s$, and thus
-we can use topological tools for computation of 
+we can use topological tools for computations of 
 $\opn{LMD}^{\bullet}_{A}(S;s)$.
 
 \begin{example}
 \label{example-tropical-kodaira-vanishing}
 Let $S$ be a boundaryless rational polyhedral space, 
 $s$ a $C^{\infty}$-Cartier divisor on $S$ 
-and $\{(f_i,U_i)\}_{i\in I}$ the local smooth 
-Cartier data of $s$. 
+and $\{(f_i,U_i)\}_{i\in I}$ the local data of $s$. 
 $s$ is 
 \emph{Bohr--Sommerfeld type},
 \emph{strongly-positive}
@@ -2480,7 +2504,7 @@ $s$ to consider Riemann--Roch type theorems.
 
 \begin{condition}
 \label{condition-good-divisor}
-$s$ is a permissible $C^{\infty}$-Cartier divisor of 
+$s$ is a permissible $C^{\infty}$-Cartier divisor on 
 $S$ such that $s_0\cap s$ is finite and 
 $\opn{LMD}^{\bullet}(S;s)$ is bounded and 
 finitely generated.
@@ -2496,9 +2520,9 @@ map in this paper.
 Let $S$ be a compact boundaryless rational polyhedral 
 space and $s$ be an permissible 
 $C^{\infty}$-Cartier divisor
-such that $s_0\cap s$ is a finite set.
-For $q \colon S' \to S$ be a tropical \`etale covering 
-map of $S$ of 
+satisfying \cref{condition-good-divisor}.
+For a tropical \`etale covering 
+map $q \colon S' \to S$ of 
 (topological) degree 
 $\opn{deg}_{\opn{top}}(q)$,
 \begin{align}
@@ -2509,7 +2533,7 @@ $\opn{deg}_{\opn{top}}(q)$,
 
 The proof of \cref{proposition-euler-number-etale} is trivial from definition.
 Besides, we can apply Meyer--Vietoris exact sequence 
-for $\opn{LMD}^{\bullet}(B;s)$ under a suitable condition.
+for $\opn{LMD}^{\bullet}(S;s)$ under a suitable condition.
 We will use this feature for tropical curves
 (\cref{proposition-gluing-formula}).
 
@@ -2543,7 +2567,7 @@ Our proof is highly effected from
 \cite{knill2012graph,MR2676658,auroux2022lagrangian}.
 Our proof idea comes from 
 \cite{knill2012graph,MR2676658} at first.  
-The current proof is modified after reading 
+The current proof is a modified version after reading 
 \cite{auroux2022lagrangian}.
 We also mainly follow the notation used in 
 \cite{auroux2022lagrangian}.
@@ -2556,8 +2580,8 @@ vertex}
 
 The goal of this subsection is to prove a certain 
 analog of tropical Riemann--Roch theorem for
-a compact smooth tropical 
-curves satisfying \cref{condition-Rn}, i.e., 
+a boundaryless compact smooth tropical 
+curves, i.e., 
 we will prove
 the following theorem:
 \begin{theorem}
@@ -2569,9 +2593,12 @@ Let $s$ be a smooth permissible Cartier divisor which
 represents $\mathcal{L}$ such that 
 $s_0\cap s$ is finite. Then,
 \begin{align}
-  \chi(\opn{LMD}^{\bullet}(C,s))=\opn{deg}(s)+
-\chi_{\opn{top}}(C)=\opn{deg}(\mathcal{L})+1-g(C).
+  \chi(\opn{LMD}^{\bullet}(C;s))=\opn{deg}(s)+
+\chi_{\opn{top}}(C)=\opn{deg}(\mathcal{L})+1-g(C)
 \end{align}
+where $g(C)$ is the genus of $C$, i.e., the first
+Betti number of $C$ 
+\cite[Definition 1.1.(a)]{gathmannRiemannRochTheoremTropical2008a}.
 \end{theorem}
 We will prove a generalized version of 
 \cref{theorem-MRR-metric-graph} in the next subsection.
@@ -2579,7 +2606,9 @@ We will prove a generalized version of
 Let $\Gamma_{n}$ be the projectivization of 
 a certein tropical module defined in 
 \cite[2.2]{mikhalkinTropicalCurvesTheir2008a}.
-$\mathbb{P}(\mathbb{T}^{n})=\mathbb{T}P^{n-1}$ has a canonical inclusion
+Each $\Gamma_{n}$ has a embedding 
+into $\mathbb{T}P^{n-1}\deq \mathbb{P}(\mathbb{T}^{n})$.
+The $\mathbb{T}P^{n-1}$ has a canonical inclusion
 $\iota_n\colon \mathbb{R}^{n-1}\to 
 \mathbb{T}P^{n-1}$ 
 of tropical algebraic torus.
@@ -2647,7 +2676,7 @@ such that $\opn{Crit}(s_{p,q})=\{x\}$ where
 $x=(0,\ldots,0)$ and
 \begin{align}
 p=\sharp(\pi_0(\{s_{p,q}>0\})), \quad 
-q=\sharp(\pi_0(\{s_{p+q}<0\})).
+q=\sharp(\pi_0(\{s_{p,q}<0\})).
 \end{align}
 
 Then, 
@@ -2673,7 +2702,8 @@ When $p+q=3$,
 
 \begin{remark}
 \label{remark-nondeprave-curve}
-Every $\Sigma$ has a coarse polyhedral cone structure 
+Every $|\Sigma|$ of \cref{proposition-n-valent}
+has a coarse polyhedral cone structure 
 $\mathscr{C}$. 
 For this structure, $s_{p,q}$ has a unique critical 
 point at the origin with respect to 
@@ -2681,10 +2711,10 @@ $\mathscr{C}$ in the theory of stratified
 Morse theory \cite[Part I.2.1]{MR932724}
 but does not satisfy the nondegeneracy condition.
 In particular, $s_{p,q}$ is not nondepraved 
-at the origin \cite[Part I.2.3.]{MR932724} 
+at the origin \cite[Part I.2.3]{MR932724}, 
 and thus we cannot use the theory of local Morse 
 data for nondepraved functions directly 
-\cite[Part I.3.5.2 Definition]{MR932724}. 
+\cite[Part I. Definition 3.5.2]{MR932724}. 
 We expect, however, that there exists a 
 generalized version of local Morse data 
 which can apply for our settings.
@@ -2696,12 +2726,18 @@ Let $C$ be a tropical curve and
 $C_{0}\deq \{x\in C\mid \opn{val}(x)=2\}$.
 We set the following spaces:
 \begin{align}
-\check{X}(C_0)\deq T^{*}C_0/T^{*}_{\Z}C_0, \quad 
-\check{X}_0(C)\deq \check{X}(C_0)\sqcup_{i,s}C.
+\check{X}(C_0)\deq T^{*}C_0/\mathcal{T}_{\mathbb{Z},C_0}^{\vee}, \quad 
+\check{X}_0(C)\deq \check{X}(C_0)\sqcup_{i,\check{s}_0}C
 \end{align}
+where $\check{X}(C_0)\sqcup_{i,s}C$ is the pushout of 
+the inclusion $i\colon C_0 \to C$ and 
+$\check{s}_0\colon C_0\to \check{X}(C_0)$ is the zero 
+section of $\check{f}_{C_0}\colon \check{X}(C_0)
+\to C_0$.
+\end{definition}
+
 Obviously, $\check{X}_0(C)$ has a canonical projection
 $\check{f}_C \colon \check{X}_0(C)\to C$.
-\end{definition}
 
 \begin{example}
 If $C=\mathbb{T}P^{1}$, then 
@@ -2740,6 +2776,7 @@ Let $s$ be an permissible Cartier divisor
 $s=\{(U_i,f_i)\}_{i\in I}$ on a tropical curve 
 $C$ with no 1-valent vertex. 
 Then, 
+{\setlength{\leftmargini}{22pt}
 \begin{enumerate}
 \item There exists the following continuous map:
 \begin{align}
@@ -2749,10 +2786,10 @@ Then,
 \item If $\check{s}_0\colon C\to \check{X}_0 (C)$ be the 
 zero section, then $s_0\cap s=\check{\pi}_C(\check{s}_0\cap \check{s})$.
 \end{enumerate}
+}
 \end{proposition}
 \begin{proof}
-\begin{enumerate}
-\item First, we check $\check{s}$ is well-defined.
+(1): First, we check $\check{s}$ is well-defined.
 Choose $(U_i,f_i)$ and $(U_j,f_j)$ such that
 $U_i\cap U_j\neq \emp$. 
 Then, $df_i(x)-df_j(x)\in 
@@ -2761,9 +2798,10 @@ $df_i(x)\in (\mathcal{F}_{\mathbb{Z},C}^{1})_x$
 from \cref{proposition-permissible-curve} (2).
 Therefore, the construction of $\check{s}$ is well-defined.
 $\check{s}$ is continuous, obviously.
-\item Omit.
-\end{enumerate}
+
+(2): Omit.
 \end{proof}
+
 
 
 As like \cite{auroux2022lagrangian},
@@ -2781,7 +2819,7 @@ $C_0$ is a disjoint union of open interval:
 \end{align}
 
 \begin{proposition}
-Let $s=\{(U_i,f_i)\}_{i\in I}$ be a $C^{\infty}$-Cartier divisor on a compact
+Let $s$ be a $C^{\infty}$-Cartier divisor on a compact
 tropical curve $C$ with no 1-valent vertex.
 Then, there exists
 an permissible Cartier divisor $s'$ which is linearly
@@ -2790,20 +2828,21 @@ $s_0\cap s'$ is a finite set.
 \end{proposition}
 \begin{proof}
 
-Choose an sufficently small open neighborhood 
+Choose a sufficently small open neighborhood 
 $U_p$ of $p\in C\setminus C_0$. Then, there exists a 
 $(0,0)$-superform $f\colon U_p \to \mathbb{R}$ such 
 that $(f)^{\mathrm{sm}}=s|_{U_p}$. Besides, there exists 
 a smooth function $f_0\colon U\to \mathbb{R}$ for 
-an open subset $U$ of $T_p C$.  
+an open subset $U$ of $T_p C$ 
 which defines $f$. We can perturb $f$ with 
 $\tilde{f}$ such that 
 $d\tilde{f}(p)\in (\mathcal{F}_{\mathbb{Z},S}^{1})_p$
 and $f|_{U\setminus K}=\tilde{f}|_{U\setminus K}$ for 
-a sufficiently small compact neighborhood $K$ of $0$.  
+a sufficiently small compact neighborhood $K$ of $0$.
+Therefore, we can assume $s$ is permissible.  
 Next, we check that we can shoose $s'$ 
 such that $s\cap s'$ is a finite set.
-Fix an open edge $e \in E$ of $C$.
+Fix an open edge $e$ of $C$.
 Then, $s|_e$ is the principal divisor of a bounded smooth 
 function $f$ on $e$. 
 Therefore, we can choose a smooth bump function $g$ on $e$ such 
@@ -2894,29 +2933,36 @@ From \cref{proposition-permissible-section} and \cref{proposition-rotation-numbe
 rotation number for every permissible smooth 
 Cartier divisors as follows.
 \begin{definition}[{cf. \cite{auroux2022lagrangian}}]
+Let $s$ be a $C^{\infty}$-Cartier divisor and 
+$\check{s}$ its assocaited Lagrangian section.
 The \emph{rotation number} of $s$ is the sum of
 the rotation number of all edges of $C$: 
 \begin{align}
 \opn{rot}(s)\deq \sum_{e\in \pi_0(C_0)}
-\opn{rot}(s|_{\opn{cl}(e)}).
+\opn{rot}(\psi_{\bar{e}}^{*}(\check{s}))
 \end{align}
-
+where 
+$\psi_{\bar{e}}\colon [a_e,b_e]\to C$ is 
+a continuous map such that the restriction of $\psi_{\bar{e}}$ 
+on $(a_e,b_e)$ is an isomorphism onto $e$.
 \end{definition}
 
 \begin{definition}
 Let $s\in \opn{CDiv}^{\infty}(C)$ be a $C^{\infty}$-Cartier
-divisor and $(U_i,f_i)_{i\in I}$ $C^{\infty}$-Cartier data
-of $s$. The data is \emph{good} if 
+divisor and $\{(U_i,f_i)\}_{i\in I}$ a local data
+for $s$. The data is \emph{locally constractible} if 
 every $U_i$ is isomorphic to a contractible open 
 neighborhood of $0$ in $\opn{LC}_{p}C$ where 
 $p\in U_i$.
 \end{definition}
 If a local data $\{(U_i,f_i)\}_{i\in I}$ for $s$ 
-is good,
-we can calculate the divisor class $D_s$ of $s$ easily
-by using \v{C}ech cohomology of sheaves:
+is locally contractible,
+we can calculate the divisor class $[s]$ of $s$ easily
+by using the \v{C}ech cohomology 
+$\check{H}^{1}(C;\mathcal{O}_C^{\times})$ of 
+$\mathcal{O}_C^{\times}$:
 \begin{align}
-D_s=\{(f_j-f_i)\}_{i,j\in I}
+[s]=(f_j-f_i)_{i,j\in I}.
 \end{align}
 
 \begin{proposition}
@@ -2924,7 +2970,7 @@ Let $s$ be an permissible $C^{\infty}$-Cartier divisor on
 a compact tropical curve $C$.
 \label{equation-rotation-number}
 \begin{align}
-\opn{rot}(s)=\opn{deg}(D_s)(=\int_{C} c_1(D_s)).
+\opn{rot}(s)=\opn{deg}([s])(=\int_{C} c_1([s])).
 \end{align}
 \end{proposition}
 
@@ -2932,8 +2978,8 @@ a compact tropical curve $C$.
 We can create an ordinary Cartier divisor $D$
 from a $C^{\infty}$-Cartier divisor $s$ such 
 that its divisor class is equivalent by 
-using a \v{C}ech cocycle representation. 
-Then, we can easily calculate the 
+using the \v{C}ech cocycle representation of 
+$[s]$. Then, we can easily calculate the 
 \cref{equation-rotation-number} for 
 an typical $D$. The degree of $D$ is 
 invariant for any choice of $D$.
@@ -2969,7 +3015,8 @@ such that $s_0\cap s=\{a,b\}$. Then,
 \end{proposition}
 \begin{proof}
 We can calculate from 
-\cref{proposition-n-valent} directly.
+\cref{proposition-n-valent} directly for a case by case
+type of an intersection data for $s$.
 \end{proof}
 
 A good point of the rotation number and the 
@@ -3050,7 +3097,7 @@ In this case, \cref{theorem-MRR-metric-graph} is
 true from \cref{proposition-n-valent} directly.
 
 Suppose \cref{theorem-MRR-metric-graph} is true
-for all $C^{\infty}$-Cartier divisor $s$ on 
+for all $C^{\infty}$-Cartier divisors $s$ on 
 $C$ such that $\sharp \pi_0(C\setminus (s_0 \cap s))=n$.
 Let $C$ be a $1$-dimensional 
 compact rational polyhedral space
@@ -3084,9 +3131,10 @@ and \cref{equation-rotation-number}.
 \end{proof}
 
 
-\subsection{MRR for general tropical curves}
+\subsection{The proof of \cref{theorem-MRR-curve-preface}}
 \label{section-tropical-curve-general}
-We will prove MRR for compact tropical curve 
+We will prove \cref{theorem-MRR-curve-preface}
+for compact tropical curves 
 without \cref{condition-Rn}. 
 For general tropical curve $C$ with $1$-valent
 vertex and $C^{\infty}$-Cartier divisor 
@@ -3107,105 +3155,183 @@ on tropical curves for generalization of
 tropical curves.
 
 \begin{definition} \label{definition-weak-smooth}
-Let $\opn{exp}\colon \mathbb{T}^{n}\to 
+Let $U$ be an open subset of a rational polyhedral subset 
+in $\underline{\mathbb{R}}^{n}$.
+Let $\opn{exp}\colon \underline{\mathbb{R}}^{n}\to 
 \mathbb{R}_{\geq 0}^{n}$ be the coordinate-wise 
 exponential map of 
-$\mathbb{T}^{n}$ and $U$ an open subset of 
+$\underline{\mathbb{R}}^{n}$ and $U$ an open subset of 
 $\mathbb{T}^{n}$.
 A continuous function $f\colon U\to \mathbb{R}$
-is a \emph{weak-smooth} if 
+is a \emph{primitively weak-smooth} if 
 $f=\opn{log}\circ g\circ \opn{exp}$ for some 
-smooth function $g\colon V\to \mathbb{R}_{>0}$ on 
+smooth function $h\colon V\to \mathbb{R}_{>0}$ on 
 an open subset $V$ of $\mathbb{R}^{n} 
-(\supset \mathbb{R}_{\geq 0}^{n})$.
-Let $\mathcal{A}_{\mathbb{T}^{n}}^{\mathrm{weak}}(U)$ 
-be the set of weak-smooth functions on $U$.
+(\supset \mathbb{R}_{\geq 0}^{n})$:
+% https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXG1hdGhiYntSfV97PiAwfSJdLFsxLDEsIlxcbWF0aGJie1J9Il0sWzAsMSwiVSJdLFswLDAsIlYiXSxbMCwxLCJcXGxvZyJdLFsyLDEsImYiLDJdLFszLDAsImgiXSxbMiwzLCJcXG9wZXJhdG9ybmFtZXtleHB9Il1d
+\[\begin{tikzcd}
+	V & {\mathbb{R}_{> 0}} \\
+	U & {\mathbb{R}}
+	\arrow["\log", from=1-2, to=2-2]
+	\arrow["f"', from=2-1, to=2-2]
+	\arrow["h", from=1-1, to=1-2]
+	\arrow["{\operatorname{exp}}", from=2-1, to=1-1].
+\end{tikzcd}\]
+
 \end{definition}
-We can naturally generalize the sheaf of weak-smooth functions 
-on rational polyhedral space by 
-\cite[Lemma 9]{itenbergTropicalHomology2019b}.
+
+We note the following elementary equation:
+\begin{align}
+\opn{log}\circ g\circ\opn{exp}+\opn{log}\circ h
+\circ \opn{exp}=\opn{log}\circ(gh)\circ\opn{exp}.
+\end{align}
+
 \begin{example}
 Let 
 $g\in \mathbb{R}_{\geq 0}[x_1,\ldots,x_n]$ be a polynomial 
 function with positive coefficients such that $g(0)\ne 0$. 
-Then, $f=\opn{log}\circ g \circ \opn{exp}$ is weak-smooth 
-on $\mathbb{T}^{n}$.
+Then, $f=\opn{log}\circ g \circ \opn{exp}$ is weakly-smooth 
+on $\underline{\mathbb{R}}^{n}$.
 \end{example}
 
-Since $\opn{log}\circ g\circ\opn{exp}+\opn{log}\circ h
-\circ \opn{exp}=\opn{log}\circ(gh)\circ\opn{exp}$ and 
-the condition is local, 
-$\mathcal{A}_{\mathbb{T}^{n}}^{\opn{weak}}(U)$ forms a 
-sheaf of Abelian groups on $\mathbb{T}^{n}$. 
-The following property says that every weak-smooth 
-function is sufficiently close to a constant function 
-at the origin of $\mathbb{T}^{n}$.
-\begin{proposition}
-Let $U$ be an open neighborhood of the origin of 
-$\mathbb{T}^{n}$ and 
- $f\in \mathcal{A}_{\mathbb{T}^{n}}^{\mathrm{weak}}(U)$.
-For a given $\vep >0$, there exists $\delta\in \mathbb{R}$
-such that $|\frac{\partial f}{\partial x_i}(z)|<\vep$
-for any $z=(z_1,\ldots,z_n) \in (-\infty,\delta]^{n}$ and $i=1,\ldots,n$. 
-Here, $\frac{\partial f}{\partial x_i}(z)$ is the $i$-th partial 
-differential on $U\cap \mathbb{R}^{n}$.
-\end{proposition}
-\begin{proof}
-For sufficiently small $\delta\in \mathbb{R}$, 
-$[-\infty,\delta]^{n}$ is in $U$. 
-We can assume $f=\opn{log}\circ g\circ \opn{exp}$ for
-some smooth function 
-$g\colon V\to \mathbb{R}_{>0}$ of $\mathbb{R}^{n} 
-(\supset \mathbb{R}_{\geq 0}^{n})$.
-By Jacobi rule, we have
-\begin{align}
-\frac{\partial f}{\partial x_i}(z)=(g\circ \opn{exp}(z))^{-1} 
-\frac{\partial g}{\partial y_i}(\opn{exp}(z))\opn{exp}(z_i).
-\end{align}
-$g\circ \opn{exp}$ is bounded on $[-\infty,\delta]^{n}$.
-$\frac{\partial g}{\partial y_i}$ can be defined 
-on $V$, so $\frac{\partial g}{\partial y_i}\circ \opn{exp}$
-is also bounded on $[-\infty,\delta]^{n}$.
-Therefore, there exists a real number $r$ such that
-$|(g\circ \opn{exp}(z))^{-1} 
-\frac{\partial g}{\partial y_i}(\opn{exp}(z))|<r$ for any 
-$x\in [-\infty,\delta]^{n}$.
-Therefore, if $z_i$ is sufficiently small, so is 
-$\frac{\partial f}{\partial x_i}(z_i)$. 
-\end{proof}
-From now on, we mainly discuss the case when $n=1$.
 
-Let $C$ be a tropical curve. 
-Let $\mathcal{A}_C^{\opn{weak}}$ be the sheaf 
-of weak-smooth functions on $C$. From definition,
-$\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
-and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
 
-We can replace $\mathcal{A}_C^{0,0}$ with 
-$\mathcal{A}_C^{\opn{weak}}$
-on \cref{equation-smoooth-cartier-divisor-sequence}
-and thus we can also define $C^{\infty}$-Cartier divisors
-for weak-smooth functions. 
+
+
+
+
+
+
+
 \begin{definition}
-A \emph{$C^{\infty}$-Cartier divisor} of $C$ is a 
-element of $\Gamma(C;\mathcal{A}_C^{\opn{weak}}/
-\mathcal{O}^{\times}_C)$.
+Let $f$ is a continuous function on a rational polyhedral 
+space $S$.
+The function $f$ is \emph{weakly-smooth} at $x$ if 
+there exists a chart 
+$\psi \colon V\to U$ of $S$ which 
+contains $x$ and a primitively weakly-smooth 
+function $f_0$ such that $f=f_0\circ \psi$.
 \end{definition}
 
-Since $\mathcal{A}_C^{\opn{weak}}$ is fine, 
-the connected homomorphism 
-$\delta\colon \Gamma(C;\mathcal{A}_C^{\opn{weak}}/
-\mathcal{O}^{\times}_C)\to \opn{Pic}(C)$ is 
-surjective.
 
-
-We can extend permissibility condition for
-weak-smooth functions and weak-$C^{\infty}$-Cartier 
-divisors on $C$. In our case, every weak-smooth 
-Cartier divisor satisfies the permissible condition 
-at every $1$-valent vertex.
 \begin{definition}
-Let $s$ be an permissible weak-$C^{\infty}$-Cartier divisor 
+Let $S$ be a rational polyhedral space and 
+$U$ an open subset of $S$:
+\begin{align}
+\label{equation-weakly-smooth-definition}
+\mathcal{A}_S^{\mathrm{weak}}(U)
+\deq \{ f\in C^0(U)\mid
+f \text{ is weak-smooth at } x 
+\text{ for all } x\in U\}.
+\end{align}
+The sheaf $\mathcal{A}_S^{\mathrm{weak}}$ 
+of weakly-smooth functions on $S$ is the sheaf defined from 
+(\ref{equation-weakly-smooth-definition}). 
+\end{definition}
+
+\begin{proposition}
+$\mathcal{A}_S^{\mathrm{weak}}$ is the sheaf of Abelian groups.
+\end{proposition}
+
+\begin{proof}
+Let $f_1,f_2\in \mathcal{A}_S^{\mathrm{weak}}(U)$ is 
+weakly-smooth at $x$.
+
+% https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXG1hdGhiYntSfV97PiAwfSJdLFsxLDEsIlxcbWF0aGJie1J9Il0sWzAsMSwiVVxcY2FwIFUnIl0sWzAsMCwiVlxcdGltZXMgViciXSxbMCwxLCJcXGxvZyJdLFsyLDEsImYiLDJdLFsyLDMsIlxcb3BlcmF0b3JuYW1le2V4cH0iXSxbMywwLCJcXHBpXzFeeyp9aCtcXHBpXzJeeyp9aCJdXQ==
+\[\begin{tikzcd}
+	{V\times V'} & {\mathbb{R}_{> 0}} \\
+	{\Delta(U\cap U')} & {\mathbb{R}}
+	\arrow["\log", from=1-2, to=2-2]
+	\arrow["f_1+f_2"', from=2-1, to=2-2]
+	\arrow["{\operatorname{exp}}", from=2-1, to=1-1]
+	\arrow["{\pi_1^{*}h_1\cdot\pi_2^{*}h_2}", from=1-1, to=1-2]
+\end{tikzcd}\]
+
+\begin{align}
+\opn{log}\circ (\pi_1^{*}h_1\cdot \pi_2^{*}h_2)\circ
+\opn{exp}(x)=\opn{log}\circ h_1\circ \opn{exp}(x)+
+\opn{log}\circ h_2\circ \opn{exp} (x)
+=f_1(x)+f_2(x)
+\end{align}
+
+\end{proof}
+
+From definition of the sheaf of $(0,0)$-superforms, 
+$\mathcal{A}_S^{(0,0)}=\mathcal{A}_S^{\mathrm{weak}}$
+if $S$ is boundaryless.
+
+\begin{definition}
+A \emph{$C^{\infty}$-Cartier divisor} on 
+a rational polyhedral space $S$ is an 
+element of $H^{0}(S;\mathcal{A}_S^{\opn{weak}}/
+\mathcal{O}^{\times}_S)$.
+\end{definition}
+
+
+We can extend the permissibility condition for
+weak-smooth functions and $C^{\infty}$-Cartier divisors on
+general rational polyhedral spaces by the following lemma.  
+
+\begin{lemma}
+Let 
+$(x,U_0,\psi_0,f_0)$ and $(x,U_1,\psi_1,f_0)$
+be equivalent data of a weak-smooth function $f$ at $x$.
+Then, there exists an open subset $V_0$ of 
+$T_x S$ such that the following diagram is commutative:
+% https://q.uiver.app/#q=WzAsOCxbMiwwLCJVXzAiXSxbMiwyLCJVXzEiXSxbMiwxLCJWXzAiXSxbMywxLCJcXG1hdGhiYntSfSJdLFsxLDIsIlVfMVxcY2FwIFEiXSxbMSwwLCJVXzBcXGNhcCBQIl0sWzEsMSwiXFxvcGVyYXRvcm5hbWV7TEN9X3hTIFxcY2FwIFZfMCJdLFswLDEsIlUiXSxbMiwwLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsyLDEsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoiYm90dG9tIn19fV0sWzQsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNSwwLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs2LDUsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzYsNCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJib3R0b20ifX19XSxbNiwyLCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFswLDMsImZfMCJdLFsxLDMsImZfMSIsMl0sWzYsNywiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNyw0LCJcXHBzaV97MX0iLDJdLFs3LDUsIlxccHNpXzAiXV0=
+\begin{equation}
+\begin{tikzcd}
+	& {U_0\cap P} & {U_0} \\
+	U & {V_0\cap\operatorname{LC}_xS} & {V_0} & {\mathbb{R}} \\
+	& {U_1\cap Q} & {U_1}
+	\arrow[hook, from=2-3, to=1-3]
+	\arrow[hook', from=2-3, to=3-3]
+	\arrow[hook, from=3-2, to=3-3]
+	\arrow[hook, from=1-2, to=1-3]
+	\arrow[hook, from=2-2, to=1-2]
+	\arrow[hook', from=2-2, to=3-2]
+	\arrow[hook, from=2-2, to=2-3]
+	\arrow["{f_0}", from=1-3, to=2-4]
+	\arrow["{f_1}"', from=3-3, to=2-4]
+	\arrow[hook, from=2-2, to=2-1]
+	\arrow["{\psi_{1}}"', from=2-1, to=3-2]
+	\arrow["{\psi_0}", from=2-1, to=1-2]
+\end{tikzcd}
+\end{equation}
+where $\phi \colon V_0\cap \opn{LC}_x S\hookto U$ is the 
+canonical morphism induced from a morphism of germs 
+in \cite[Proposition 2.5]{gross2019sheaftheoretic}.
+In partiuclar, the pullback $\phi^{*}f$ of $f$ is also 
+weak-smooth at $x$.
+\end{lemma}
+Every local cone $\opn{LC}_x S$ is boundaryless, and thus
+we can define the permissible condition for any 
+weak smooth functions
+\begin{definition}[{Permissibility condition}]
+Let $f$ be a weak-smooth function on a rational polyhedral 
+space $U$. The $f$ is \emph{permissible} at $x\in U$ if 
+the pullback $\phi^{*}f$ is permissible at 
+$0\in \opn{LC}_x$.
+The weak-smooth function $f$ is permissible if 
+$f$ is permissible at $x$ for all $x\in U$.
+Let $s\in H^{0}(S;\mathcal{A}^{\mathrm{weak}}_S/
+\mathcal{O}^{\times}_S)$ be a $C^{\infty}$-Cartier
+divisor on a rational polyhedral space $S$.
+The $s$ is \emph{permissible} if there exists 
+a local data $\{(U_i,f_i)\}_{i\in I}$ for $s$
+such that every $f_i$ is permissible.
+\end{definition}
+
+\begin{example}
+Let $f\colon \underline{\mathbb{R}}\to \mathbb{R}$ be a 
+weak-smooth function. The local cone 
+$\opn{LC}_{-\infty} \underline{\mathbb{R}}$ 
+at $-\infty$ is trivial, 
+and thus every $f$ is permissible.
+\end{example}
+
+\begin{definition}
+Let $s$ be a permissible $C^{\infty}$-Cartier divisor 
 of $C$ such that $s_0\cap s<\infty$.
 The Morse complex of $s$ the following graded module:
 \begin{align}
@@ -3217,19 +3343,21 @@ Here, $(U_p,\tilde{f}_p)_{p\in s_0\cap s}$ is an
 intersection data of $s$.
 \end{definition}
 
+Let $C$ be a tropical curve. 
+Let $\mathcal{A}_C^{\opn{weak}}$ be the sheaf 
+of weak-smooth functions on $C$. From definition,
+$\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
+and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
+Since $\mathcal{A}_C^{\opn{weak}}$ is fine, 
+the connected homomorphism 
+$\delta\colon \Gamma(C;\mathcal{A}_C^{\opn{weak}}/
+\mathcal{O}^{\times}_C)\to \opn{Pic}(C)$ is 
+surjective.
+
 From construction, the following theorem is just a
 repetition of the proof of 
 \cref{theorem-MRR-metric-graph}.
 
-\begin{theorem} \label{theorem-MRR-tropical-curve}
-Let $C$ be a compact tropical curve and 
-$s$ an permissible weak-$C^{\infty}$-Cartier divisor 
-of $C$ such that $s_0\cap s<\infty$. Then,
-\begin{align}
-  \chi(\opn{LMD}^{\bullet}(C,s))=\opn{deg}(s)+
-\chi_{\opn{top}}(C)=\opn{deg}(\mathcal{L})+1-g(C).
-\end{align}
-\end{theorem}
 
 
 \begin{remark}
@@ -3297,7 +3425,7 @@ However, this positive divisor is different
 from ample line bundles for tropical curves. 
 If $s$ is a positive $C^{\infty}$-Cartier divisor, then
 $\chi(\opn{LMD}(C;s))=\sharp(s_0\cap s)\geq \sharp 
-(C\setminus C_{\opn{reg}})$. 
+(C\setminus C_{0})$. 
 Thus, $\chi(\opn{LMD}(C;s))\geq 2g(C)-2$
 when $C$ is a compact trivalent
 graph with no $1$-valent vertex. This means that
@@ -3342,9 +3470,9 @@ as a topological space,
 so below we will write the manin differences
 between  
 we will list the differences between 
-$X_0(C)$ and $M$ below.
+$X_0(C)$ and $M$ below:
+{\setlength{\leftmargini}{22pt}
 \begin{enumerate}
-\setlength{\leftskip}{-12pt}
   \item The local model of $M$ comes from the critical locus
 of the potential function of a (A-side) Landau--Ginzburg 
 model $(\C^{3},-xyz)$.
@@ -3365,7 +3493,7 @@ be a shift of $1$-dimensional vector space.
 for $\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
 (C;s)$ in general.
 \end{enumerate}
-
+}
 
 
 The stratified torus fibration of Riemann surface is 
@@ -3483,7 +3611,7 @@ corresponds a large pants in
 \cite[Definition 6.3]{MR2676658}.
 
 
-Each small pants and large pants have a local 
+Each small pants and large pants have a local
 Riemann--Roch number defined the theory of 
 localization of Dirac-type operator and its 
 number is equal 
@@ -3851,8 +3979,8 @@ By taking the long exact sequence for
 \cref{equation-smooth-cartier-diagram}, we get a canonical morphism:
 \begin{align} \label{equation-tropical-cartier}
 c_1\colon \opn{CaDiv}^{\infty}(X)\to \opn{Pic}(X)\to 
-H^{1}(X;\mathcal{F}_{\mathbb{Z},X}^{1}); s\mapsto D_s 
-\mapsto c_1(D_s).
+H^{1}(X;\mathcal{F}_{\mathbb{Z},X}^{1}); s\mapsto [s] 
+\mapsto c_1([s]).
 \end{align}
 The second morphism of (\ref{equation-tropical-cartier}) is 
 called the Chern class map of 
@@ -4309,7 +4437,7 @@ Thus, $\chi(\opn{LMD}^{\bullet}(T,s))=0$.
 \end{proof}
 
 \begin{proof}[{Proof of \cref{theorem-MRR-hesse-preface}}]
-Let $\{(U_i,f_i)\}_{i\in I}$ be a local 
+Let $\{(U_i,f_i)\}_{i\in I}$ be a local
 data for $s$.
 We can deform $s$ with a linearly equivalent to a 
 $C^{\infty}$-Cartier divisor $s'$ 
@@ -4394,7 +4522,8 @@ $\check{\pi}_{B}\colon \check{X}(B)\to B$
 In this case, every 
 pseudoholomorphic disk 
 $\psi\colon D\to \check{X}(B)$ such that 
-$\psi(\partial D)\subset L_s$ is zero.
+$\psi(\partial D)\subset L_s$ has 
+the zero symplectic area.
 In particular, $L_s$ is 
 \emph{tautologically unobstructed} defined in
 \cite[(2.50)]{MR3656481}.
@@ -4440,7 +4569,7 @@ $(\mathscr{L}_s,\mathscr{L}_{s'})$ at $p$.
 In this case, the Maslov index at $p$
 is equal to the Morse index of the 
 local intersection data $f_{p}$ of 
-the smooth divisor $s'-s$ at $p$
+the $C^{\infty}$-Cartier divisor $s'-s$ at $p$
 \cite[Remark 13]{MR1882331}. Therefore, 
 if $L_s$ and $L_{s'}$ intersect 
 transversally, then there exists the following
@@ -4562,7 +4691,7 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$;
 \opn{ind}_w(f_2).
 \end{align}
   From instance, if $f_1(x)=\|\cdot\|_{\mathbb{R}^{n}}^{2}$
-  and $f_2(x)=-\|\cdot\|_{\mathbb{R}^{m}}^{2}$ then we have
+  and $f_2(x)=-\|\cdot\|_{\mathbb{R}^{m}}^{2}$, then we have
 \begin{align}
     \opn{LMD}^{\bullet}(\Z_{{\mathbb{R}}^{n+m}},f_1\dot{+}f_2,0)
     \simeq \tilde{H}^{\bullet -1}(S^{n-1};\Z)
@@ -4578,11 +4707,10 @@ divisors in a fully
 general setting, but the following corollary 
 is enough for performing that there exists 
 a K\"unneth type formula for local Morse data
-of smooth divisors.
+of $C^{\infty}$-Cartier divisors.
 
 \begin{corollary}[{K\"unneth formula}]
-Fix compact rational polyhedral spaces $X$ and $Y$
-satisfying \cref{condition-Rn}.
+Fix boundaryless compact rational polyhedral spaces $X$ and $Y$.
 Let $s$ and $s'$ a permissible $C^{\infty}$-Cartier divisor of $X$ and $Y$ 
 satisfying the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
@@ -4604,13 +4732,13 @@ $\opn{SS}(F\boxtimes^{L} G)\subset
 $s\boxtimes s'$ is also permissible.
 
 Let $\{(U_v,f_v)\}_{v\in s_0\cap s}$
-(resp. $\{(U_w,g_w)\}_{v\in s_0\cap s'}$) is a
-local intersection data of $s$ (resp. $s'$), 
-and $\{(U_{v}\times U_w,f_v\boxplus g_w)\}_{
+(resp. $\{(U_w,g_w)\}_{v\in s_0\cap s'}$) is an
+intersection data for $s$ (resp. $s'$), 
+and $\{(U_{v}\times U_w,f_v\dot{+} g_w)\}_{
 (v,w)\in s_0 \cap 
 (s\boxtimes s')}$ the 
-corresponding local intersection data 
-of $s\boxtimes s'$.  
+corresponding intersection data 
+for $s\boxtimes s'$.  
 We get an isomorphism of graded modules
 from sheaf theoretic Thom-Sebastiani theorem for 
 $X_1=U_{v}$, $X_2=U_w$, $S_1=\{v\}$, $S_2=\{w\}$,
@@ -4619,7 +4747,7 @@ $f_2= f_w-f_w(w)$;
 \begin{align}
 \opn{LMD}^{\bullet}(X\times Y;s\boxtimes s') 
 & =\bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
-(R^{\bullet}_{\{f_v\boxplus g_w\geq f_v\boxplus g_w(v,w)\}}
+(R^{\bullet}_{\{f_v\dot{+} g_w\geq f_v\dot{+} g_w(v,w)\}}
 \Z_{U_{v}\times U_w})_{(v,w)} \\
 & \simeq \bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
 (R^{\bullet}_{\{f_v\geq f_v(v)\}}\Z_{U_v})_v
@@ -4634,15 +4762,15 @@ $f_2= f_w-f_w(w)$;
 \begin{remark}
 In the proof of the above corollary, we only use
 the condition of cohomological version of Milnor fiber. 
-Besides, we can find many $C^{\infty}$-Cartier data satisfying 
-the condition, see \cite[p.35]{MR2031639}.  
+Besides, we can find many permissible $C^{\infty}$-Cartier divisors
+satisfying the condition, see \cite[p.35]{MR2031639}.  
 \end{remark}
 
-As another corollary, we get a formula
+As another result, we get a formula
 for the $n$-th symmetric product 
 $S^{n}X\deq 
 (X^{n}/\mathfrak{S}_n,q_*^{\mathfrak{S}_n}\mathcal{O}_{X^{n}}^{\times})$ of 
-rational polyhedral spaces $X$ even though 
+a rational polyhedral spaces $X$, even though 
 the $S^{n}X$ is not a rational polyhedral space. 
 Here, $\mathfrak{S}_n$ is the $n$-th permuation group 
 and $q_*^{\mathfrak{S}_n}\mathcal{O}_{X^{n}}^{\times}$ the $\mathfrak{S}_n$-invariant 
@@ -4661,8 +4789,9 @@ $s_0 \cap \opn{Sym}^{n}(s)\deq q_*(s_0\cap s^{\boxtimes n})$
 and $\opn{LMD}^{\bullet}_{A}(S^{n}X;\opn{Sym}^{n}(s))$ like 
 that of $s$.
 \begin{corollary}
-Let $k$ be a field of characteristic $0$ and $X$ a compact rational 
-polyhedral space satisfying \cref{condition-Rn} 
+Let $k$ be a field of characteristic $0$ and $X$ 
+a compact boundaryless rational 
+polyhedral space
 and $s$ an permissible Cartier divisor 
 such that $\opn{LMD}^{\bullet}_k(X;s)$ is bounded, 
 finitely generated and 
@@ -4717,7 +4846,7 @@ its difficulty}
 
 Many authors have studied homological algebra of semimodules 
 or non-Abelian categories (e.g. 
-\cite{MR3051517,MR3211743,MR3939048,https://doi.org/10.48550/arxiv.2202.01573})
+\cite{MR3051517,MR3211743,MR3939048,https://doi.org/10.48550/arxiv.2202.01573}),
 but the theory of sheaf cohomology of 
 $\mathbb{T}$-semimodules on tropical spaces 
 have been not applied to prove a tropical
@@ -4731,7 +4860,7 @@ In fact, current tropical analogs of Riemann--Roch
 theorem is not formulated and proved by 
 homological algebra of semimodules.
 
-We recall tropical Riemann--Roch theorem for tropical curves 
+We recall the tropical Riemann--Roch theorem for tropical curves 
 in \cite{gathmannRiemannRochTheoremTropical2008a}. 
 The rank $r(D)$ of the linear system of a divisor $D$ 
 on tropical curve in 
@@ -4744,7 +4873,7 @@ the author give a simple example of divisors on
 tropical curves such that 
 the rank of a divisor is different even though 
 the $\mathbb{T}$-semimodule of the global section of 
-tropical line bundle $\mcal{O}_C(D)$ is isomorphic.}
+tropical line bundle $\mcal{O}_C(D)$ is isomorphic.},
 but this is truly one of good analog of classical one 
 (see \cite[Lemma 2.4]{MR2448666}).
 The rank of linear system is generalized by Cartwright
@@ -4763,6 +4892,8 @@ Cartwright conjectured the Riemann--Roch inequality
 $h^{0}(\Delta,D)+h^{0}(\Delta,K_{\Delta}-D)\geq 
 \frac{D(D-K)}{2}+\chi_{\opn{top}}(\Delta)$
 in \cite[Conjecture 3.6]{MR4251610}.
+Sumi prove for the inequality for tropical tori and 
+tropical toric surfaces \cite{MR4229604,sumi2021riemannroch}
 On the other hand, a tropical analog of Riemann--Roch theorem
 for higher dimensional tropical manifolds 
 (or tropical complexes) is not formulated
@@ -4782,8 +4913,10 @@ Riemann--Roch formula like
 
 \begin{remark} \label{remark-list-tropical-euler}
 Here is the list of the reason why the Euler 
-characteristic of structure sheaf of tropical manifold
+characteristic of the structure sheaf of tropical manifold
 should be equal to the topological Euler characteristics of it.
+{
+\setlength{\leftmargini}{22pt}
 \begin{enumerate}
 \item If $C$ is a compact tropical curve and $D$ 
 is the trivial divisor, then the tropical Riemann--Roch 
@@ -4813,7 +4946,7 @@ $h^{0,q}(Z_w)=\dim_{\mathbb{R}}H_{q}(X;\mathbb{R})
 Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
 \chi_{\opn{top}}(X)$.
 \end{enumerate}
-
+}
 \end{remark}
 
 \section{Etc of HMS and SYZ}
@@ -4988,7 +5121,10 @@ we can define the set of lattice points $B(\Z)$
 on $B$ for a fixed strongly integral affine structure from 
 the inverse image $\phi^{-1}_i(U_i\cap M)$ of each atlas.
 In other words, we can define 
-"$\underline{\Z}_{\max}$-rational points" of $B$.
+`$\underline{\Z}$-rational points' of $B$.
+Here, the $\underline{\Z}$ is the max-plus semifield of 
+extended integers,
+see also \cref{equation-rational-point}.
 
 
 We can create a canonical section 
@@ -5166,7 +5302,7 @@ In this section, we will see relationships
 between lattice polytopes and tropical toric
 varieties via local Morse data
 (\cref{proposition-ehrhart-revisit}). 
-For simplicity, we only consider for 
+For simplicity, we only consider them for 
 tropical toric manifolds, i.e., 
 smooth tropical toric varieties.
 
@@ -5235,24 +5371,30 @@ field. For instance, there exists the following
 adjoint between the category of commutative monoids and 
 the category of algebras over $k$:
 \begin{align}
+\label{equation-rational-point}
 \opn{Hom}_{\catn{CMon}}(S_{\sigma},k)=
 \opn{Hom}_{\catn{Alg}(k)}(k[S_{\sigma}],k)
 \end{align}
 where $\sigma$ is a rational convex polyhdeal cone 
 in $N_{\underline{\mathbb{R}}}$ and $S_{\sigma}\deq \sigma^{\vee}\cap M$ 
-is a monoid associated with the dual cone 
+is the monoid associated with the dual cone 
 $\sigma^{\vee}$ of $\sigma$ (\cite[p.30]{MR2810322}). 
-Therefore, we can define the $k$-rational points of 
+Therefore, we can define the set of 
+$k$-rational points of 
 affine toric varieties for $\sigma$ over a semifield 
-$k$ formally.
+$k$ formally. By gluing each the set of $k$-rational points of 
+affine toric variety, we get the set of $k$-rational points 
+in a toric variety $X_{\Sigma}$ for a rational polyhedral fan
+$\Sigma$.
 If $k$ is a semifield $\mathbb{R}_{\geq 0}$ of 
 nonnegative real numbers, then 
-$\opn{Hom}_{\catn{CMon}}(S_{\sigma},\mathbb{R}_{\geq 0})$
+$(U_{\sigma})_{\geq 0}\deq \opn{Hom}_{\catn{CMon}}(S_{\sigma},\mathbb{R}_{\geq 0})$
 can be considered as the nonnegative part of 
-affine toric variety
+the affine toric variety
 $U_{\sigma}\deq \opn{Hom}_{\catn{Alg}(\mathbb{C})}
 (\mathbb{C}[S_{\sigma}],\mathbb{C})$ over $\mathbb{C}$
-\cite[\textsection 12.2]{MR2810322}.
+\cite[\textsection 12.2]{MR2810322}
+(see also \cite[\textsection 1.3]{MR966447}).
 
 Let $\opn{exp}\colon 
 \underline{\mathbb{R}}\to \mathbb{R}_{\geq 0}$ be an 
@@ -5337,7 +5479,7 @@ on $\mathbb{R}^{n}$.
 The composition of the exact $1$-form
 $df_P:{\mathbb{R}}^{n}\to T^{*}({\mathbb{R}}^{n}); x\mapsto 
 (x;\frac{\partial f_P}{\partial x_1}(x),\ldots,\frac{\partial f_P}{\partial x_n}(x))$ 
-of $f$ with the canonical projection 
+of $f$, and the canonical projection 
 $\opn{pr}\colon T^{*}({\mathbb{R}}^{n})\mapsto (\mathbb{R}^n)^{\vee}$
 is an embedding onto the (relative) interior of $P$
 \cite[p.124 Exercise]{MR1301331}. 
@@ -5371,7 +5513,7 @@ when we consider tropical projective spaces.
 
 
 We can naturally extend $\dot{\mu}_{P}^{\opn{trop}}$ on tropical projective toric 
-varieties and then the extension map is called the \emph{tropical moment map}
+varieties, and then the extension map is called the \emph{tropical moment map}
 $\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$ 
 \cite[Definition 2.1 (2)]{MR2428356}.
 This is a tropical analog of algebraic moment map 
@@ -5380,7 +5522,7 @@ for toric varieties
 \cite[\textsection 12.2]{MR2810322}).
 Instead of the moment map for Hamiltonian action of Lie group on
 symplectic manifold, we
-need not assume convex lattice polytope is Delzant.
+need not assume the convex lattice polytope is Delzant.
 Let 
 $q: ({\mathbb{R}}^{n})^{\vee}\to ({\mathbb{R}}^{n})^{\vee}/(\Z^{n})^{\vee}$ 
 a canonical projection map.
@@ -5441,28 +5583,28 @@ $s_P\in H^{0}(X_P;
 \mathcal{O}^{\times}_{X_P})$ for 
 a given tropical projective toric manifold 
 $X_P$ as follows:
+{\setlength{\leftmargini}{22pt}
 \begin{enumerate}
-\item For 
-$m\in P\cap 
+\item For $m\in P\cap 
 (\mathbb{Z}^{n})^{\vee}$, we set $p\deq 
 (\mu_{P}^{\mathrm{trop}})^{-1}(m)$ and 
 $f_{P,p}\deq f_P-\langle m,x \rangle=f_{P-m}$
 where $P-m\deq\set{p-m\in (\mathbb{R}^{n} )^{\vee}\mid p\in P}$.
 \item If $p$ is a vertex of $P$
-and $\sigma(p)$ is the convex cone corresponding 
+and $\sigma_p$ is the convex cone corresponding 
 to $p$, then 
 $f_{P,p}$ can be considered as an element of 
-$H^{0}(U_{\sigma(p)},\mathcal{A}_{X_P}^{\mathrm{weak}})$
+$H^{0}(U_{\sigma_p},\mathcal{A}_{X_P}^{\mathrm{weak}})$
 naturally since $f_{P,p}\in 
-\underline{\mathbb{R}}_{\opn{log}}[S_{\sigma(p)}]$
+\underline{\mathbb{R}}_{\opn{log}}[S_{\sigma_p}]$
 . These data forms a $C^{\infty}$-Cartier 
-divisor on $X^{\mathrm{trop}}_P$.
-\item Every open neighborhood of a point in 
- $X_P^{\mathrm{trop}}$ is isomorphic to an open subset of 
-$\mathbb{T}^{n}$, and thus $s_P$ obviously satisfies 
-the permissible condition.
+divisor $s_P$ on $X^{\mathrm{trop}}_P$.
+\item Every local cone $\opn{LC}_x X_{P}^{\mathrm{trop}}$
+in $X_P^{\mathrm{trop}}$ at $x$ is isomorphic to an 
+$\mathbb{R}^{l}$, and thus $s_P$ obviously satisfies 
+the permissibility condition.
 \end{enumerate}
-
+}
 \begin{example} \label{eg: TP1Cartier}
 Let $P\deq [0,n]$. Then,
 $f_P\colon \mathbb{R}\to \mathbb{R}; 
@@ -5498,8 +5640,8 @@ Let $P$ a $n$-dimensional Delzant polytope again.
 Every face $F$ of $P$ corresponds a convex cone 
 $\sigma(F)$ of the normal fan of $P$.
 $s_P$ induces a family 
-$\{(O(\sigma(F)),f_F|_{O(\sigma(F))})\}_{F \prec P}$ of Laurent polynomials 
-$f_F$ on each tropical torus orbit $O(\sigma(F))$
+$\{(O(\sigma_F),f_F|_{O(\sigma_F)})\}_{F \prec P}$ of Laurent polynomials 
+$f_F$ on each tropical torus orbit $O_{\sigma_F}$
 of $\sigma(F)$
 naturally up to monomials.
 If a point $p\in X^{\mathrm{trop}}_P$ satiesfies 
@@ -5545,7 +5687,8 @@ is contractible.
 
 \begin{remark}
 There exist several versions of 
-the homological mirror symmetry for toric manifolds 
+the homological mirror symmetry for the derived categories
+of coherent sheaves on toric manifolds 
 (e.g. \cite{MR2529936,MR2871160,MR4234675}). 
 These references are related with tropical geometry.
 Especially, $C^{\infty}$-Cartier divisors on tropical toric 
