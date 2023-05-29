@@ -2196,7 +2196,7 @@ In general, we can define the
 differential of $f$ at $x$ by the pullback of 
 the germ of morphisms 
 $(\opn{LC}_x S,0)\to (S,x)$, and we will use 
-in \cref{definition-permissible-weakly-smooth}
+in \cref{definition-permissible-weakly-smooth}.
 
 
 \begin{condition}[{permissiblity}] \label{cond: permissible}
@@ -2204,7 +2204,7 @@ Let $S$ be a boundaryless rational polyhedral space.
 A $(0,0)$-superform $f\colon S \to {\mathbb{R}}$ is \emph{permissible} at $x$ 
 if 
 \begin{align}
-d''f(x)\notin (\opn{span}_{{\mathbb{R}}}
+df(x)\notin (\opn{span}_{{\mathbb{R}}}
 \opn{SS}(S)_x+\mathcal{F}_{\mathbb{Z},S,x}^{1})
 \setminus \mathcal{F}_{\mathbb{Z},S,x}^{1}.
 \end{align}
@@ -2268,7 +2268,7 @@ a local data for $s-s'$.
 \label{section-stratified-torus-fibration}
 We will explain the set $s'\cap s$ is the 
 intersection of two `Lagrangian sections' of
-stratified torus fibration in the next subsection.
+stratified torus fibration in this subsection.
 We can skip this subsection for following 
 our main theorem.
 
@@ -2431,10 +2431,10 @@ an intersection data for $s-s'$.
 \begin{definition}[{Cohomological local Morse data for 
 $C^{\infty}$-Cartier divisors}]
 \label{definition-local-morse-data-divisor}
-Let $S$ be a boudaryless rational polyhedral space 
-and $s$ be an permissible 
+Let $S$ be a (boudaryless) rational polyhedral space 
+and $s$ be a permissible 
 $C^{\infty}$-Cartier divisor such that
-the following set is finite and 
+$s'\cap s$ is finite and 
 $\{(U_p,f_p)\}_{p\in s_0\cap s}$ 
 be an intersection data for $s$.
 We set
@@ -2794,7 +2794,11 @@ weakly-smooth at $x$.
 \end{lemma}
 Every local cone $\opn{LC}_x S$ is boundaryless, and thus
 we can define the permissible condition for any 
-weakly-smooth functions:
+weakly-smooth functions.
+The \emph{differential vector} 
+$df(x)\in \mathcal{F}^{1}_{S,x}$ at $x$
+is that of $\phi^{*}f$ via the indentification 
+$T_0(\opn{LC}_x S)=T_xS$.
 \begin{definition}[{Permissibility condition}]
 \label{definition-permissible-weakly-smooth}
 Let $f$ be a weakly-smooth function on a rational polyhedral 
@@ -2848,33 +2852,10 @@ Some propositions which have already proved as a special case
 of the previous section will appeear, but we write a short proof 
 for simplicity.
 
-\subsection{MRR for tropical curve with no 1-valent
-vertex}
+\subsection{Proof for \cref{theorem-MRR-curve-preface}}
 
-The goal of this subsection is to prove a certain 
-analog of tropical Riemann--Roch theorem for
-a boundaryless compact smooth tropical 
-curves, i.e., 
-we will prove
-the following theorem:
-\begin{theorem}
-\label{theorem-MRR-metric-graph}
-Let $C$ be a compact and connected tropical curve with 
-no $1$-valent vertex and 
-$\mathcal{L}$ be a line bundle on $C$.
-Let $s$ be a smooth permissible Cartier divisor which
-represents $\mathcal{L}$ such that 
-$s_0\cap s$ is finite. Then,
-\begin{align}
-  \chi(\opn{LMD}^{\bullet}(C;s))=\opn{deg}(s)+
-\chi_{\opn{top}}(C)=\opn{deg}(\mathcal{L})+1-g(C)
-\end{align}
-where $g(C)$ is the genus of $C$, i.e., the first
-Betti number of $C$ 
-\cite[Definition 1.1.(a)]{gathmannRiemannRochTheoremTropical2008a}.
-\end{theorem}
-We will prove a generalized version of 
-\cref{theorem-MRR-metric-graph} in the next subsection.
+The goal of this subsection is to prove 
+\cref{theorem-MRR-curve-preface}.
 
 Let $\Gamma_{n}$ be the projectivization of 
 a certein tropical module defined in 
@@ -2993,10 +2974,40 @@ generalized version of local Morse data
 which can apply for our settings.
 \end{remark}
 
+\begin{proposition}
+\label{proposition-1-valent}
+Let $U\deq [-\infty,a) (\subset \underline{\mathbb{R}})$ be a connected open neighborhood of 
+$-\infty$ and $f\colon U\to \mathbb{R}$ a weakly-smooth
+function on $U$ such that $\opn{Crit}(f)=\{-\infty\}$.
+Then, $\{f< 0\}$ is equal to $\emptyset$ or 
+$U\setminus\{-\infty\}$.
+\end{proposition}
+
+As like \cite{auroux2022lagrangian},
+we also use the notion of the rotation number of 
+permissible Cartier divisor.
+Fix a connected smooth tropical curve $C$
+ and $C_0$ the 
+regular part of $C$.
+If $C$ is not isomorphic to a circle, then
+$C_0$ is a disjoint union of open interval:
+\begin{align}
+  C_0\simeq \coprod_{e\in E} (a_e,b_e), \quad
+(a_e\in \mathbb{T}
+=\mathbb{R}\cup\{-\infty\}, b_e\in \mathbb{R}\cup\{+\infty\}).
+\end{align}
+
+$C_0$ is an integral affine manifold, 
+and thus $C_0$ has a standard Lagrangian torus fibration
+$\check{f}_{C_0}\colon \check{X}(C_0)\to C_0$ and
+a dual torus fibration 
+$f_{C_0}\colon X(C_0)\to C_0$,
+(see \cref{definition-integral-affine-manifold}
+and \cref{definition-SYZ-torus-fibration}).
+
 \begin{definition}
 \label{definition-continuous-section}
-Let $C$ be a tropical curve and 
-$C_{0}\deq \{x\in C\mid \opn{val}(x)=2\}$.
+Let $C$ be a tropical curve.
 We set the following spaces:
 \begin{align}
 \check{X}(C_0)\deq T^{*}C_0/\mathcal{T}_{\mathbb{Z},C_0}^{\vee}, \quad 
@@ -3077,30 +3088,31 @@ $\check{s}$ is continuous, obviously.
 
 
 
-As like \cite{auroux2022lagrangian},
-we also use the notion of the rotation number of 
-permissible Cartier divisor.
-Fix a connected smooth tropical curve $C$
- and $C_0$ the 
-regular part of $C$.
-If $C$ is not isomorphic to a circle, then
-$C_0$ is a disjoint union of open interval:
-\begin{align}
-  C_0\simeq \coprod_{e\in E} (a_e,b_e), \quad
-(a_e\in \mathbb{T}
-=\mathbb{R}\cup\{-\infty\}, b_e\in \mathbb{R}\cup\{+\infty\}).
-\end{align}
+
+
+Let $C$ be a tropical curve and 
+$\mathcal{A}_C^{\opn{weak}}$ be the sheaf 
+of weakly-smooth functions on $C$. From definition,
+$\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
+and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
+Since $\mathcal{A}_C^{\opn{weak}}$ is fine, 
+the connected homomorphism 
+$\delta\colon \Gamma(C;\mathcal{A}_C^{\opn{weak}}/
+\mathcal{O}^{\times}_C)\to \opn{Pic}(C)$ is 
+surjective.
 
 \begin{proposition}
 Let $s$ be a $C^{\infty}$-Cartier divisor on a compact
-tropical curve $C$ with no 1-valent vertex.
+tropical curve $C$.
 Then, there exists
 an permissible Cartier divisor $s'$ which is linearly
 equivalent to $s$ and
 $s_0\cap s'$ is a finite set. 
 \end{proposition}
 \begin{proof}
-
+Every $C^{\infty}$-Cartier divisor $s$ on $C$ is 
+permissible at $1$-valent vertex on $C$. So, we
+can assume $C$ has no 1-valent vertex. 
 Choose a sufficently small open neighborhood 
 $U_p$ of $p\in C\setminus C_0$. Then, there exists a 
 $(0,0)$-superform $f\colon U_p \to \mathbb{R}$ such 
@@ -3127,13 +3139,7 @@ $s'$ on $C$ such that $\sharp (s\cap s')<\infty$.
 
 
 
-$C_0$ is an integral affine manifold, 
-and thus $C_0$ has a standard Lagrangian torus fibration
-$\check{f}_{C_0}\colon \check{X}(C_0)\to C_0$ and
-a dual torus fibration 
-$f_{C_0}\colon X(C_0)\to C_0$,
-(see \cref{definition-integral-affine-manifold}
-and \cref{definition-SYZ-torus-fibration}).
+
 
 $\check{X}(C_0)$ has a canonical symplectic structure
 and thus there exists a canonical orientation induced
@@ -3278,8 +3284,9 @@ an open annulus in $\mathbb{C}$.
 
 \begin{proposition}
 \label{proposition-simple-interval-rr}
-Let $C=[a,b]$ be a closed interval in $\mathbb{R}$
-and $s$ an permissible $C^{\infty}$-Cartier divisor 
+Let $C=[a,b]$ be a closed interval in $\mathbb{T}P^{1}$
+and $s$ a permissible $C^{\infty}$-Cartier divisor on 
+$C$
 such that $s_0\cap s=\{a,b\}$. Then,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=\opn{rot}(s)+
@@ -3288,7 +3295,8 @@ such that $s_0\cap s=\{a,b\}$. Then,
 \end{proposition}
 \begin{proof}
 We can calculate from 
-\cref{proposition-n-valent} directly for a case by case
+\cref{proposition-n-valent} and 
+\ref{proposition-1-valent} directly for a case by case
 type of an intersection data for $s$.
 \end{proof}
 
@@ -3398,62 +3406,10 @@ By \cref{proposition-gluing-formula}, we get
 
 \end{proof}
 
-\begin{proof}[{Proof of \cref{theorem-MRR-metric-graph}}]
+\begin{proof}[{Proof of \cref{theorem-MRR-curve-preface}}]
 We can prove it from \cref{proposition-MRR-1-dim-poly-space}
 and \cref{equation-rotation-number}.
 \end{proof}
-
-
-\subsection{The proof of \cref{theorem-MRR-curve-preface}}
-\label{section-tropical-curve-general}
-We will prove \cref{theorem-MRR-curve-preface}
-for compact tropical curves 
-without \cref{condition-Rn}. 
-For general tropical curve $C$ with $1$-valent
-vertex and $C^{\infty}$-Cartier divisor 
-$s\in\Gamma(C;\mathcal{A}^{0,0}_C/\mathcal{O}^{\times}_C)$,
-we cannot choose a $C^{\infty}$-Cartier divisor $s'$ which
-is linearly equivalent to $s$ and $s_0\cap s'<\infty$.
-The reason of this fact is that every 
-$(0,0)$-superform on a compact tropical curve 
-$C$ is constant on a sufficiently
-small open neighborhood of $1$-valent vertex.
-
-In this subsection, we extend smooth functions
-on tropical curves for generalization of 
-\cref{theorem-MRR-metric-graph} for general 
-tropical curves.
-
-
-\begin{definition}
-Let $s$ be a permissible $C^{\infty}$-Cartier divisor 
-of $C$ such that $s_0\cap s<\infty$.
-The Morse complex of $s$ the following graded module:
-\begin{align}
-  \opn{LMD}^{\bullet}(C;s)\deq \bigoplus_{p\in s_0\cap s} 
-\tilde{H}^{\bullet-1}
-(U_p\cap \{\tilde{f_p}<\tilde{f_p}(p)\};\mathbb{Z}).
-\end{align}
-Here, $(U_p,\tilde{f}_p)_{p\in s_0\cap s}$ is an
-intersection data of $s$.
-\end{definition}
-
-Let $C$ be a tropical curve. 
-Let $\mathcal{A}_C^{\opn{weak}}$ be the sheaf 
-of weakly-smooth functions on $C$. From definition,
-$\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
-and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
-Since $\mathcal{A}_C^{\opn{weak}}$ is fine, 
-the connected homomorphism 
-$\delta\colon \Gamma(C;\mathcal{A}_C^{\opn{weak}}/
-\mathcal{O}^{\times}_C)\to \opn{Pic}(C)$ is 
-surjective.
-
-From construction, the following theorem is just a
-repetition of the proof of 
-\cref{theorem-MRR-metric-graph}.
-
-
 
 \begin{remark}
 \label{remark-non-permissible-divisor}
@@ -3481,21 +3437,24 @@ such that
 \end{enumerate}
 $g$ is permissible except $x=(0,0)$.
 If we generalize 
-\cref{theorem-MRR-tropical-curve} for $g$, 
+\cref{theorem-MRR-curve-preface} for 
+a principal non-permissible 
+$C^{\infty}$-Cartier divisors $(g)^{\mathrm{sm}}$, 
 we need to add the index $\opn{ind}_x(g)$ at $x$ satisfying
 \begin{align}
 \sum_{p\in \opn{Crit}(g)}\opn{ind}_p(g)+
 \opn{ind}_x(g)=1=\chi_{\opn{top}}(\Gamma_3).
 \end{align}
-At least, \cref{theorem-MRR-tropical-curve} is not
+At least, \cref{theorem-MRR-curve-preface} is not
 true without correction the effect at non-permissible point
 of $g$.
 In this case, $\opn{ind}_x(g)$ should be $-1$.
 This condition is independent of the choice
 of $g$ satisfying the above condition.
-On the other hand, the index of $C^{\infty}$-Cartier
-divisor should be independent of the choice of
-Cartier data.
+On the other hand, the index of a given 
+$C^{\infty}$-Cartier divisor should be 
+independent of the choice of 
+$C^{\infty}$-Cartier local data.
 Since $\opn{ind}_x(g+m)$ depends on the choice
 of monomials $m$, we need to choose a monomial $m_0$
 with integer slope to 
