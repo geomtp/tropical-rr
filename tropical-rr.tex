@@ -215,8 +215,8 @@
 \usepackage{mathrsfs}
 \usepackage{upgreek}
 \numberwithin{equation}{section}
-\title[Graded modules associated with line bundles]{Graded modules associated with line bundles on 
-tropical curves and integral Hessian manifolds}
+\title[Graded modules associated with line bundles]{Graded modules associated with line bundles
+on boundaryless tropical manifolds}
 \author[Y. Tsutsui]{Yuki Tsutsui}
 \address{Graduate School of Mathematical Sciences,
 The University of Tokyo, 3-8-1 Komaba, Meguro-Ku,
@@ -227,95 +227,85 @@ Tokyo, 153-8914, Japan}
 \begin{document}
 
 \begin{abstract}
-We use ideas from the Strominger-Yau-Zaslow conjecture and 
-Morse theory to consider a tropical version of the Euler 
-characteristic of line bundles on algebraic varieties, 
-but this time for compact tropical manifolds without 
-boundaries. As a preliminary experiment,
-we prove a version of the Riemann--Roch formula 
-for compact tropical curves and integral affine 
-manifolds equipped with a Hessian form. 
-Our approach differs from the tropical Riemann--Roch 
-theorem established by Gathmann and Kerber.
+We use ideas
+from the Strominger--Yau--Zaslow conjecture
+and microlocal sheaf theory
+to define the Euler characteristic of line bundles
+on compact boundaryless tropical manifolds.
+We also prove a Riemann--Roch formula 
+for compact tropical curves
+and integral affine manifolds equipped with a Hessian form. 
+Our approach differs from the tropical Riemann--Roch theorem
+established by Gathmann and Kerber.
 \end{abstract}
+
 \maketitle
+
 \section{Introduction}
-%TODO: 日本語で4000字の論文の要旨
 
 \subsection{Background}
 
-Tropical geometry is a combinatorial and convex 
-geometrical analog of
-algebraic geometry or analytic geometry.
-In tropical geometry,
-a main geometric object is represented by 
-a \emph{rational polyhedral sapce}, see 
-\cite[Definition 2.2]{gross2019sheaftheoretic}. 
-A rational polyhedral space is a pair 
+Tropical geometry is a combinatorial
+(or convex-geometric)
+analog of algebraic (or analytic) geometry.
+A \emph{rational polyhedral sapce}
+is a pair 
 $(S,\mathcal{O}^{\times}_S)$ of a 
 topological space $S$ and 
 the sheaf $\mathcal{O}^{\times}_S$ of 
 locally affine linear functions with 
 $\mathbb{Z}$-valued slopes such that 
 $S$ is locally isomorphic to an open subset
-of a polyhedral subset of tropical affine 
-spaces $\overline{\mathbb{R}}^{k}=
-(\mathbb{R}\cup\{+\infty\})^{k}$.
+of a polyhedral subset
+of a tropical affine space
+$
+\overline{\mathbb{R}}^{k}=
+(\mathbb{R}\cup\{+\infty\})^{k}
+$
+(see e.g.~\cite[Definition 2.2]{gross2019sheaftheoretic}).
 The sheaf $\mathcal{O}_S^{\times}$ is a tropical analog
 of the sheaf $\mathcal{O}_X^{\times}$ of 
 units of the structure sheaf $\mathcal{O}_X$ of 
-algebraic varieties $X$.
+an algebraic variety $X$.
 The first cohomology 
-$H^{1}(S;\mathcal{O}_S^{\times})$ parameterize the 
-isomorphism classes of (tropical) line bundles on $S$
+$H^{1}(S;\mathcal{O}_S^{\times})$
+parametrizes the isomorphism classes
+of (tropical) line bundles on $S$
 \cite[Proposition 3.13]{gross2019sheaftheoretic}.
 A \emph{tropical manifold} is 
-a rational polyhedral space which are locally 
+a rational polyhedral space which is locally 
 isomorphic to the direct product of a 
-Bergman fan $\Sigma_M$ for some loopless 
+Bergman fan $\Sigma_M$ for some loopless
 matroid $M$ and a tropical affine space 
-$\overline{\mathbb{R}}^{k}$,
-see \cite[Definition 6.1]{gross2019sheaftheoretic} 
-or the original definition of tropical manifold 
-in \cite[Definition 1.14]{mikhalkinTropicalEigenwaveIntermediate2014a}.
-A typical example of tropical manifold is 
-\emph{tropical curve}
+$\overline{\mathbb{R}}^{k}$
+(see \cite[Definition 6.1]{gross2019sheaftheoretic},
+which originates from
+\cite[Definition 1.14]{mikhalkinTropicalEigenwaveIntermediate2014a}).
+An example of tropical manifold is
+a \emph{tropical curve}
 \cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a}
 (see also \cite[Definition 1.1]{gathmannRiemannRochTheoremTropical2008a}
-for a combinatorical definition of tropical curve).
+for a combinatorial definition of tropical curve).
 In this paper, the term `tropical curve' refers to a 
 $1$-dimensional tropical manifold.
 Every (finite) metric graph 
-(with no $1$-valent vertex) also has 
+(with no $1$-valent vertex) has 
 a natural structure of tropical curve 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
 
-
-Many important examples of tropical manifolds (or tropical 
-varieties) 
-are obtained from a certain type of limits of 
-degeneration family of algebraic varieties or 
-\emph{tropicalization}. 
-The former limit is called the \emph{tropical limit}
-\cite{itenbergTropicalHomology2019b}, and 
-the fundamental properties of tropicalization 
-are detailed in the tropical geometry 
-textbook \cite{MR3287221}. 
-Algebraic geometry and tropical geometry are 
-strongly connected through these operations.
-
 Finding tropical analogues of various theorems 
 in algebraic geometry is one of the 
-important themes in the study of tropical geometry.
+important themes in tropical geometry.
 The tropical Riemann--Roch theorem for a 
-divisor $D$ on a compact (and connected) tropical curve $C$ is proved 
+divisor $D$ on a compact (and connected) tropical curve $C$,
+proved
 by Gathmann--Kerber \cite{gathmannRiemannRochTheoremTropical2008a}
 as an extension of Riemann--Roch theorem for graphs
 \cite{MR2355607} (see also 
-\cite{mikhalkinTropicalCurvesTheir2008a}) as 
-the following equation: 
-\begin{align}
-r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\opn{top}}(C).
+\cite{mikhalkinTropicalCurvesTheir2008a}),
+is the equality
+\begin{align} \label{Gathmann-Kerber-TRR}
+r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\opn{top}}(C),
 \end{align}
 where $r(D)$ is the rank of the linear system of 
 $D$ 
@@ -325,144 +315,45 @@ $K_C$ is the canonical divisor of $C$
 and $\chi_{\opn{top}}(C)$ is the topological 
 Euler characteristic of $C$.
 
-It is natural to consider a tropical analog of 
+It is a natural problem to extend \eqref{Gathmann-Kerber-TRR}
+to a tropical analog of
 the Hirzebruch--Riemann--Roch theorem
-(HRR for short), 
-a higher-dimensional version of the Riemann--Roch theorem, 
-but there are many difficulties in such a generalization.
-In other words, tropical Riemann--Roch theorem 
-for tropical manifolds has been proved yet 
-as a generalization of 
-\cite{gathmannRiemannRochTheoremTropical2008a}.
-Let's recall the Hirzebruch--Riemann--Roch 
-theorem for complex line bundles on 
-projective complex manifolds 
-before explaining about the difficulties.
-\begin{theorem}[{\cite{MR0202713}}]
-Let $X$ be a compact projective complex manifold and
-$\mathcal{L}$ a holomorphic line bundle on $X$.
-Then there exists the following equation:
 \begin{align} \label{equation-HRR}
 \chi(H^{\bullet}(X;\mathcal{L}))
-=\int_X \opn{ch}(\mathcal{L})\opn{td}(X)
+=\int_X \opn{ch}(\mathcal{L})\opn{td}(X),
 \end{align}
-where $\opn{ch}(\mathcal{L})$ is the Chern character 
-of $\mathcal{L}$, 
-$\opn{td}(X)$ is the Todd class of $X$
-and $\int_X$ is the trace map of $X$. 
-\end{theorem}
-We note the HRR is generalized for 
-general compact complex 
-manifolds as a corollary of Atiyah--Singer index 
-theorem. Besides, the HRR for projective complex 
-manifold is a special case 
-of the Grothendieck--Riemann--Roch theorem (GRR for short). 
+proved for complex line bundles on 
+projective complex manifolds 
+by \cite{MR0202713}.
+However,
+the left hand side of \eqref{equation-HRR}
+does not have a straightforward tropicalization,
+since line bundles over tropical varieties are
+not sheaves of Abelian groups
+but commutative monoids,
+so that 
+the basic theory of homological algebra
+does not apply.
+See \cref{section-tropical-riemann-roch}
+for more on this difficulty.
 
-The main issue in formulating the HRR 
-for line bundles over 
-tropical manifolds is that 
-tropical analogs of 
-$\chi(H^{\bullet}(X;\mathcal{L}))$ and 
-$\opn{td}(X)$ have not yet been defined in general.
-In particular, the reason why the Euler number 
-of line bundles over tropical varieties cannot 
-be defined is due to a root cause 
-that the basic theory of homological 
-algebra cannot be used, 
-because line bundles over tropical 
-varieties are not sheaves of Abelian groups
-but commutative monoids.
-(For more detail about the previous related results of 
-tropical Riemann--Roch theorem
-and more difficulties for 
-this problem, see 
-\cref{section-tropical-riemann-roch}.)
-
-The following question is the main theme of this 
-paper.
-\begin{question} \label{question-tropical-euler}
-What is a tropical analog of Euler 
-characteristic of sheaf 
-cohomology of line bundles on algebraic varieties for 
-tropical manifolds? Is there some analogs of the HRR 
-for this Euler characteristic?
-\end{question}
-
-In this paper, we pursue a different tropical
-analog of the Euler characteristic of line bundles with the help of 
-ideas on toric varieties, geometric prequantization,
-Morse theory, microlocal sheaf theory,
-the \emph{Strominger--Yau--Zaslow conjecture}
-(SYZ conjecture for short), and related topics.
-Especially, our approach for 
-\cref{question-tropical-euler} is 
-strongly influenced by the ideas of the SYZ conjecture.
-Roughly speaking, our apporoach is to define
-the `Floer complex without differential' instead 
-of the `sheaf cohomology of tropical line bundles' 
-under the philosophy of \emph{Homological Mirror 
-Symmetry}. 
-In the next subsection, we will explain the SYZ conjecture 
-within the scope necessary for our approach, 
-pose a certain conjecture,
-and state the main theorem of this paper.
-If you are interested in how our approach 
-relates to toric geometry and geometric quantization, 
-please see \cref{section-toric-geometry} and 
-\cref{appendix-geometric-quantization} respectively.
-In this paper, we don't discuss the general theory of 
-the Todd class of $S$
-(see also \cref{remark-todd-class}).
-\begin{remark}
-\label{remark-todd-class}
-We note about the RHS of \cref{equation-HRR} 
-for tropical manifolds.
-Let $S$ be a compact tropical manifolds.
-The \emph{tropical cohomology}
-$H^{\bullet,*}(S;\mathbb{Z})$ 
-\cite{mikhalkinTropicalEigenwaveIntermediate2014a,
-itenbergTropicalHomology2019b}
-behaves like singular cohomology 
-$H^{\bullet}(X;\mathbb{Z})$ 
-of complex manifolds $X$.
-We adopted the notation for tropical cohomology 
-from \cite[Definition 2.6]{MR3894860}. 
-The trace map 
-$\int_S\colon H^{\bullet,*}(S;\mathbb{Z})
-\to \mathbb{Z}$ also exists like 
-complex manifolds, see 
-\cref{equation-trace-integration}.  
-The $1$-st Chern class $c_1(\mathcal{L})$ of 
-tropical line bundle $\mathcal{L}$ and 
-the Chow group of rational polyhedral spaces and 
-its cycle map is also 
-well-studied,
-and thus we can define the Chern character
-$\opn{ch}(\mathcal{L})\deq 
-\sum_{n=0}^{\infty}\frac{c_1(\mathcal{L})^{n}}{n!}
-\in H^{\bullet,*}(S;\mathbb{Z})$ of 
-$\mathcal{L}$ naturally.
-On the other hand, the Todd class of tropical manifold
-have not been studied well enough yet  
-when the dimension of tropical manifold is greater
-than $2$.
-We won't discuss the general theory of Todd class of tropical 
-manifolds in this paper, 
-but should be essentially defined from the theory of 
-Chern--Schwartz--MacPherson cycles for matroids 
-\cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
-See also \cite[5.3]{mikhalkinTropicalGeometryIts2006} and
-\cite[Definition 3.20]{shawTropicalSurfaces2015a}.
-\end{remark}
-
-%TODO: ラグランジュ切断に関して説明。
+In this paper,
+we pursue a different tropical analog
+of the Euler characteristic of line bundles
+motivated by ideas from
+toric geometry,
+geometric quantization,
+Morse theory,
+microlocal sheaf theory,
+homological mirror symmetry,
+and
+the Strominger--Yau--Zaslow conjecture.
 
 \subsection{SYZ conjecture and main results}
 
-The \emph{Strominger--Yau--Zaslow conjecture} is
-a conjecture in mathmatical physics 
-derived from string theory \cite{stromingerMirrorSymmetryTduality1996}. 
-The SYZ conjecture 
+The \emph{Strominger--Yau--Zaslow conjecture}
+\cite{stromingerMirrorSymmetryTduality1996}
+(or the SYZ conjecture for short)
 predicts that a mirror $\mathcal{X}$ of 
 a given Calabi--Yau manifold
 $\check{X}$ gets from the dual 
@@ -648,6 +539,48 @@ when $\mcal{L}$ is trivial.
 Besides, such a $C^{\infty}$-Cartier divisor $s$ exists
 for any $\mathcal{L}$.
 \end{conjecture}
+
+\begin{remark}
+\label{remark-todd-class}
+Let $S$ be a compact tropical manifolds.
+The \emph{tropical cohomology}
+$H^{\bullet,*}(S;\mathbb{Z})$ 
+\cite{mikhalkinTropicalEigenwaveIntermediate2014a,
+itenbergTropicalHomology2019b}
+behaves like singular cohomology 
+$H^{\bullet}(X;\mathbb{Z})$ 
+of complex manifolds $X$.
+We adopted the notation for tropical cohomology 
+from \cite[Definition 2.6]{MR3894860}. 
+The trace map 
+$\int_S\colon H^{\bullet,*}(S;\mathbb{Z})
+\to \mathbb{Z}$ also exists like 
+complex manifolds, see 
+\cref{equation-trace-integration}.  
+The $1$-st Chern class $c_1(\mathcal{L})$ of 
+tropical line bundle $\mathcal{L}$ and 
+the Chow group of rational polyhedral spaces and 
+its cycle map is also 
+well-studied,
+and thus we can define the Chern character
+$\opn{ch}(\mathcal{L})\deq 
+\sum_{n=0}^{\infty}\frac{c_1(\mathcal{L})^{n}}{n!}
+\in H^{\bullet,*}(S;\mathbb{Z})$ of 
+$\mathcal{L}$ naturally.
+On the other hand, the Todd class of tropical manifold
+have not been studied well enough yet  
+when the dimension of tropical manifold is greater
+than $2$.
+We won't discuss the general theory of Todd class of tropical 
+manifolds in this paper, 
+but should be essentially defined from the theory of 
+Chern--Schwartz--MacPherson cycles for matroids 
+\cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
+See also \cite[5.3]{mikhalkinTropicalGeometryIts2006} and
+\cite[Definition 3.20]{shawTropicalSurfaces2015a}.
+\end{remark}
+
+
 The graded module $\opn{LMD}^{\bullet}(S;s)$ is 
 an analog of the Floer complex of the pair of Lagrangian 
 sections. In fact, if $B$ is a compact integral affine 
