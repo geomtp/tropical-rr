@@ -495,8 +495,7 @@ case of \emph{$C^{\infty}$-Cartier divisor} on $B$
 and a main notion in this paper.  
 \cref{proposition-semi-flat-syz}. (1), (5), and
 the first part of (2) will be explained further 
-in \cref{section-integral-affine-manifold} 
-and \cref{appendix-integral-affine-manifold}.
+in \cref{section-integral-affine-manifold}.
 If Markus conjecture is true, then the 
 assumption $\pi_2(B)=0$ is not necessary,
 see \cref{remark-markus-conjecture}.
@@ -595,8 +594,9 @@ then
 \begin{align}
 \opn{CF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_{s})
 \simeq \opn{LMD}^{\bullet}(S;s)\otimes_{\mathbb{Z}}
-\Lambda_{\mathrm{nov}}^{\mathbb{C}}.
+\Lambda_{\mathrm{nov}}^{\mathbb{C}}
 \end{align}
+as graded vector spaces, see \cref{section-floer-lmd}.
 However, $\opn{LMD}^{\bullet}(S;s)$ is different 
 from any Floer complex of the pair of Lagrangian 
 submanifolds when $S$ is not an integral affine 
@@ -1142,7 +1142,7 @@ subset $V' (\ni v)$ of $S$ we get
 
 \subsection{Cohomological local Morse data and index}
 
-The following stalk complex (or graded module) is 
+The following stalk complex and its cohomology is 
 the most important notion
 for this paper which is naturally appeared in
 microlocal sheaf theory \cite{MR1299726}, 
@@ -1559,7 +1559,7 @@ where $M$ is a compact smooth manifold,
 $x_0\deq j(0)$ and $K\deq j(\bar{B}_{\varepsilon}(0))$. 
 $S^{n}$ is a typical example of $M$.
 The sheaf $\mathcal{C}^{\infty}_M$ of smooth functions 
-on $M$ is c-soft, so we can extend
+on $M$ is fine, so we can extend
 $f|_{\bar{B}_{\varepsilon}(0)}$ to 
 $f_0\in C^{\infty}(M)$.
 From \cref{prop-local-morse-data}, 
@@ -1794,7 +1794,6 @@ locally integral affine linear function on $S$
 and $\mathcal{A}^{0,0}_S$ the sheaf of 
 $(0,0)$-superforms on $S$ 
 \cite[Definition 2.24]{MR3903579}. 
-
 \begin{remark}
 In \cite{MR3903579},the sheaf of superforms 
 defined for polyhedral spaces with 
@@ -1803,6 +1802,13 @@ We can also define the sheaf of $(0,0)$-superforms for
 rational polyhedral spaces as the same way,
 at least.
 \end{remark}
+A $(0,0)$-superform on $S$ are also called as 
+a smooth function on $S$. In fact, 
+the sheaf $\mathcal{A}^{0,0}_S$ of $(0,0)$-superforms
+is equal to the sheaf $\mathcal{C}_S^{\infty}$ of 
+smooth functions on $S$ if $S$ is an integral 
+affine manifold.
+
 
 In various scenes, we assume rational polyhedral spaces
 satisfies the following \emph{boundaryless condition}:
@@ -1875,11 +1881,14 @@ there also exists a connecting homomorphism
 $\delta' \colon 
 H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)
 \to H^{1}(S;\mathcal{O}^{\times}_S)$. 
+From definition, every rational polyhedral space 
+$S$ is paracompact and
 $\mathcal{A}^{0,0}_S$ is a fine sheaf 
 \cite[Lemma 2.7, Proposition 2.26]{MR3903579}, so 
 $H^{1}(S;\mathcal{A}^{0,0}_S)=0$ and 
 so $\delta'$ is also surjective.
-
+In this paper, the definition of fine sheaves follows
+\cite[Definition 3.3]{MR2359489}.
 \begin{definition}
 Let $S$ be a boundaryless rational polyhedral space.
 A \emph{$C^{\infty}$-Cartier divisor} on 
@@ -2543,7 +2552,7 @@ in $\underline{\mathbb{R}}^{l}$.
 A continuous function $f_0\colon \Omega\to \mathbb{R}$
 is a \emph{primitively weakly-smooth} if 
 $f_0=\opn{log}\circ h\circ \opn{exp}$ for some 
-smooth function $h\colon V\to \mathbb{R}_{>0}$ on 
+smooth function $h\colon W\to \mathbb{R}_{>0}$ on 
 an open subset $W$ of $\mathbb{R}^{l} 
 (\supset \mathbb{R}_{\geq 0}^{l})$:
 % https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXG1hdGhiYntSfV97PiAwfSJdLFsxLDEsIlxcbWF0aGJie1J9Il0sWzAsMSwiVSJdLFswLDAsIlYiXSxbMCwxLCJcXGxvZyJdLFsyLDEsImYiLDJdLFszLDAsImgiXSxbMiwzLCJcXG9wZXJhdG9ybmFtZXtleHB9Il1d
@@ -2610,22 +2619,24 @@ of weakly-smooth functions on $S$ is the sheaf defined from
 \end{definition}
 
 \begin{proposition}
-$\mathcal{A}_S^{\mathrm{weak}}$ is the sheaf of Abelian groups.
+\label{proposition-sheaf-weak-smooth}
+The $\mathcal{A}_S^{\mathrm{weak}}$ is the sheaf of Abelian groups.
 \end{proposition}
 
 \begin{proof}
 The condition is local, and thus $\mathcal{A}_S^{\mathrm{weak}}$ 
-is a sheaf. From now on, we prove 
+is a subsheaf of the sheaf $\mathcal{C}^{0}_S$ of 
+continuous functions on $S$. From now on, we prove 
 $\mathcal{A}^{\mathrm{weak}}_S$ is Abelian.
 Fix an open subset $U$ of $S$, a point $x$ in $U$ 
 and $f_1,f_2\in \mathcal{A}_S^{\mathrm{weak}}(U)$.
 Each $f_i$ ($i=1,2$) has the primitive data
-$(x,U_i,\psi_i,W_i,h)$ of
+$(x,U_i,\psi_i,W_i,h_i)$ of
 weakly-smooth function $f$ at $x$
 respectively. We can assume $U_1=U_2$.
 The charts 
 $\psi_1\colon U_1 \to \Omega_1$ and 
-$\psi_2\colon U_2\to \Omega_2$ induces
+$\psi_2\colon U_2\to \Omega_2$ induce
 the diagonal morphism
 $\psi\colon 
 U_1\cap U_2\to \Omega_1\times \Omega_2; x\mapsto 
@@ -2657,10 +2668,20 @@ $x\in U$. Of course, $-f_1$ is also weakly-smooth
 at $x$ for all $x\in U$.
 \end{proof}
 
+\begin{remark}
+Since $\opn{log}\colon \mathbb{R}_{>0}\simeq \mathbb{R}$ is 
+smooth, we can also prove $\mathcal{A}^{\mathrm{weak}}_S$ is 
+the sheaf of $\mathbb{R}$-algebras by the same way
+as \cref{proposition-sheaf-weak-smooth}. 
+\end{remark}
+
+
 From definition of the sheaf of $(0,0)$-superforms, 
 $\mathcal{A}_S^{(0,0)}=\mathcal{A}_S^{\mathrm{weak}}$
-if $S$ is boundaryless.
-
+if $S$ is boundaryless. 
+As like $\mathcal{A}_S^{(0,0)}$, 
+$\mathcal{A}_S^{\mathrm{weak}}$ is also fine
+(see \cite[Lemma 2.7, Proposition 2.26]{MR3903579}).
 There exists a canonical injective morphism 
 $\mathcal{O}_S^{\times}\to \mathcal{A}_S^{\mathrm{weak}}$ 
 since every 
@@ -3627,11 +3648,11 @@ above correspondence.
 From this correspondence, 
 our theorem for tropical curve can be 
 proved by the theory of localization of index 
-and classical Riemann--Roch formula.
-We stress that both method of computation
+and the classical Riemann--Roch formula.
+We stress that the both methods of computation
 of our index and the local Riemann--Roch number
 defined in \cite{MR2676658} are different 
-each other even though both indexes have various 
+each other, even though both indexes have various 
 similar features.
 We also note that it was the beginning of our 
 approach that we 
@@ -3669,11 +3690,13 @@ for \cref{question-tropical-complex-rr}.
 \section{Proof for integral affine manifold with Hessian form.}
 \label{section-integral-affine-manifold}
 In this section,
-we recall the notion of affine manifolds from
+we recall about affine manifolds from
 \cite{MR2293045,
 goldmanRadianceObstructionParallel1984a,
 MR2181810,
-grossMirrorSymmetryLogarithmic2006a} and 
+grossMirrorSymmetryLogarithmic2006a,
+sepethesis}
+and 
 \cite[Chapter 6]{MR2567952}.
 
 \begin{definition} \label{definition-integral-affine-manifold}
@@ -3718,7 +3741,7 @@ Let $(B,\{(U_i,\psi_i)\}_{i \in I})$ be an affine manifold.
 Every  $U_i$ has a coordinate system $\{x_k\}_{k=1,\ldots,n}$ 
 induced from a coordinate system formed 
 by affine functions on $\mathbb{R}^{n}$.
-We call this coordinate system \emph{affine coordinate system} 
+We call this coordinate system as an \emph{affine coordinate system} 
 of $U_i$. 
 
 \begin{definition}[{cf. \cite[p.213]{MR413010}}]
@@ -3742,25 +3765,42 @@ To our knowledge, the notion of Hessian metric have already
 appeared in \cite{MR413010}.
 \end{remark}
 
-
-\begin{example}
-Let $f \colon \mathbb{R}^{n} \to \mathbb{R}$ be a continuous function defined by 
-\eqref{equation-log-polynomial}.
-$f$ is smooth and convex 
-on $\mathbb{R}^{n}$.
-Therefore, $(\mathbb{R}^{n},f)$ form an integral 
-Hessian manifold. This is a typical example of
-Hessian domain.
-See also \cite[Appendix 2]{MR1301331} for general theory for
-the relationships for Hessian form and 
-the induced K\"{a}hler potential on
-toric manifolds.
-\end{example}
-
 A Hessian metric can be considered as a $(1,1)$-superform 
 naturally and this superform is a certain analog of 
 K\"ahler form, so Hessian metric itself is called Hessian form.
+We can see this the following pair of torus fibrations induced 
+from the local system $\mathcal{T}_{B}$ on an integral 
+affine manifold:
 
+\begin{equation} \label{definition-SYZ-torus-fibration}
+\begin{tikzcd}%[scale cd=0.9, row sep=scriptsize, column sep=small]
+T^{*}B/\mathcal{T}_{\Z , B}^{\vee} =:\hspace{-35pt} 
+&\check{X}(B) \arrow[rd,"\check{f}_{B}"'] 
+&   & X(B) \arrow[ld,"f_{B}"] 
+&\hspace{-35pt} \deq TB/\mathcal{T}_{\Z, B} \\
+& &  B & &
+\end{tikzcd}.
+\end{equation}
+
+In some references, the symbol $\check{X}$ and
+$X$ are reversed. 
+$\check{X}(B)$ has a canonical symplectic structure 
+induced from $T^{*}B$, and each fiber of 
+$\check{f}_{B}$ is a Lagrangian torus.
+On the other hand, $X(B)$ has a canonical complex
+structure induced from $TB$ and integral affine 
+structure of $B$.
+Since each fiber of the fibrations $f_{B}$ and 
+$\check{f}_{B}$ are compact,
+$f_{B}$ and $\check{f}_{B}$ are proper maps.
+In particular, if $B$ is compact then 
+$\check{X}(B)$ and $X(B)$ are compact.
+If $B$ has a Hessian form $g$, 
+then $\check{X}(B)$ and $X(B)$ have
+the standard K\"ahler structure
+induced from $g$ 
+\cite[Proposition 6.14 and 6.15]{MR2567952}.
+ 
 \begin{remark} \label{remark-compact-hessian}
 We recall a well-known result for 
 compact special affine manifold with 
@@ -3834,14 +3874,14 @@ and geometric quantization.
 
 
 \subsection{Tropical homology, Tropical superform and Cartier data}
-From now on, we follow about tropical homology and sheaf 
-theory for tropical manifolds
+From now on, we follow about tropical cohomology and superforms 
+for tropical manifolds
 from \cite{mikhalkinTropicalEigenwaveIntermediate2014a,
 MR3903579,gross2019sheaftheoretic}.
-In the case of affine manifold, this sheaf is already
+In the case of affine manifolds, some parts of them has already
 studied in the field of Hessian geometry as a vector bundle
-with a flat connection
-(e.g. \cite[Chapter 7]{MR2293045}).
+with a flat connection.
+(We can see about this in \cite[Chapter 7]{MR2293045}.)
 Let $\mathcal{F}^{p}_{\mathbb{Z},X}$ be 
 the sheaf defined in 
 \cite[2.4]{mikhalkinTropicalEigenwaveIntermediate2014a}
@@ -3883,19 +3923,11 @@ We recall some results about tropical superforms from
 \cite{MR3903579,smacka2017differential}.
 Let $\mathcal{A}^{p,q}_X$ be the sheaf of 
 $(p,q)$-superforms on $X$. 
-\begin{example}
-$\mathcal{A}_X^{0,0}$ can be considered as the 
-sheaf of smooth functions on $X$.
-In fact, $\mathcal{A}_X^{0,0}$ is isomorphic to 
-the sheaf $\mathcal{C}^{\infty}(X)$ of smooth functions 
-on $X$ if $X$ is an integral affine manifold.
-\end{example}
 The bigraded sheaf $\mathcal{A}_X^{\bullet,*}$ has 
 a canonical bigraded
 complex structure
 $(\mathcal{A}_X^{\bullet,*},d',d'')$.
-
-$\mcal{F}^{p}_{X}$ has the following acyclic resolution
+The $\mcal{F}^{p}_{X}$ has the following acyclic resolution
 \cite[Corollary 3.18, Lemma 3.21]{MR3903579}:
 \begin{align}
   0 \to \mcal{F}^{p}_{X} \to \mcal{A}^{p,0}_{X}\xto{d''} 
@@ -3991,7 +4023,7 @@ and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
 \eqref{equation-smooth-cartier-diagram}. 
 In particular, we have
 $c_1(f^{*}(s)^{n})=f^{*}(c_1(s)^{n})$ for every 
-$D\in\opn{CaDiv}^{\infty}(Y)$
+$s\in\opn{CaDiv}^{\infty}(Y)$
 by \cite[Proposition 4.17]{gross2019sheaftheoretic}.
 
 \subsection{Verdier duality and Borel--Moore homology
@@ -4317,7 +4349,8 @@ before:
 
 \begin{proposition}
 \label{proposition-cartier-lagrangian}
-Let $B$ be an integral affine manifold. Then,
+Let $B$ be an integral affine manifold.
+Then, the following isomorphism exists
 \begin{align}
 \opn{CDiv}^{\infty}(B)\simeq \Gamma(B;
 \opn{Lag}(\check{X}(B)));s\mapsto L_s.
@@ -4510,14 +4543,63 @@ primary Kodaira surfaces and
 \subsection{Relationship between Floer cohomology
 and integral affine manifolds}
 \label{section-floer-lmd}
+In this section, we see 
+Let $B$ be a compact integral affine manifold
+such that $\pi_2(B)=0$. 
+The condition $\pi_2(B)=0$ descends
+to a good condition for Lagrangian sections
+of $\check{f}_B\colon \check{X}(B)\to B$
+by the following elementary proposition.  
 
-If $B$ is an compact integral affine manifold 
-such that $\pi_2(B)=0$, then $\pi_2(\check{X}(B))=0$.
-In this case, $\pi_2(\check{X}(B),L_s)=0$ for 
-any Lagrangian section of 
-$\check{\pi}_{B}\colon \check{X}(B)\to B$
-(see \cref{proposition-unobstructed-lagrangian}).
-In this case, every 
+\begin{proposition}
+
+\label{proposition-unobstructed-lagrangian}
+Let $B$ be a connected integral affine manifold 
+and $\check{s}\colon B\to \check{X}(B)$ a 
+Lagrangian section of 
+$\check{f}_{B}\colon \check{X}(B)\to B$. 
+Then, $\pi_i(B)\simeq \pi_i(\check{X}(B))$ 
+for $i\geq 2$.
+In particular, 
+$\pi_i(B)=\pi_i(\check{X}(B))=0$ if 
+$B$ is complete and $\pi_2(B,L_s)=0$ where 
+$L_s$ is the image of $\check{s}$.
+\end{proposition}
+\begin{proof}
+Let $p\colon \widetilde{X} \to X$ be the universal cover of 
+a topological space $X$, $p\in X$ and 
+$\tilde{p}\in f^{-1}(p)$.
+
+
+We note $\pi_{i}(X,p)\simeq 
+\pi_{i}(\widetilde{X},\tilde{p})$ for $i\geq 2$ and 
+the $i$-th homotopy group functor from the category of 
+pointed spaces to the category of group preserves finite
+products.
+Therefore,
+\begin{align}
+\pi_{i}(\check{X}(B))\simeq 
+\pi_{i}(\widetilde{\check{X}(B)})\simeq 
+\pi_{i}(\widetilde{T^{*}B})\simeq 
+\pi_{i}(T^{*}\widetilde{B})\simeq 
+\pi_{i}(T_p^* B)\times \pi_{i}(\widetilde{B})\simeq 
+\pi_{i}(B).
+\end{align}
+Thus, we have 
+$\pi_{i}(B)\simeq \pi_{i}(\check{X}(B))\simeq 
+\pi_{i}(X(B))$. 
+
+Let $i\colon L_{s}\to \check{X}(B)$ be the inclusion map of 
+$L$.
+Since $\check{s}$ is a section of 
+$\check{f}_{B}$, 
+$i_*\colon \pi_i(L_{s})\to \pi_i(\check{X}(B))$ is 
+injective. Therefore, we get 
+$\pi_2(\check{X}(B),L_s)=0$ by considering the long exact
+sequence of relative homotopy groups.
+\end{proof}
+
+\cref{proposition-unobstructed-lagrangian} induces, every 
 pseudoholomorphic disk 
 $\psi\colon D\to \check{X}(B)$ such that 
 $\psi(\partial D)\subset L_s$ has 
@@ -4534,9 +4616,9 @@ H^{\bullet}(\check{X}(B);\mathbb{F}_2)
 \to 
 H^{\bullet}(L_s;\mathbb{F}_2)$.
 In particular, 
-$i^{*}(\check{\pi}_{B}^{*}(w_2(B)))=w_2(L_s)$ and 
-thus any Lagrangian section $L_s$ satisfies the 
-condition \cite[(2.54)]{MR3656481}.
+$i^{*}(\check{\pi}_{B}^{*}(w_2(B)))=w_2(L_s)$,
+and thus any Lagrangian section $L_s$ satisfies 
+the condition \cite[(2.54)]{MR3656481}.
 Every Lagrangian section $L_s$ has 
 a canonical lifting to a Lagrangian 
 brane $\mathscr{L}_s$ as describled in 
@@ -4952,128 +5034,7 @@ Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
 \section{Etc of HMS and SYZ}
 \label{appendix-integral-affine-manifold}
 
-\subsection{Integral affine manifold and Floer cohomology}
-
-$T^{*}B/\mathcal{T}^{\vee}_{\mathbb{Z},B}$ has 
-a standard symplectic structure induced from that of 
-cotangent bundle $T^{*}B$.
-We write $\check{X}(B)\deq 
-T^{*}B/\mathcal{T}^{\vee}_{\mathbb{Z},B}$
-Let $f\colon B\to \mathbb{R}$ be a 
-smooth function on a smooth manifold $B$.
-$f$ defines a section 
-$\sigma_{df}\colon B\to T^{*}B; x\mapsto (x;df(x))$ of 
-the cotangent bundle $\pi\colon T^{*}B\to B$.
-We note that the intersection number of 
-$\sigma_{df}$ and the zero section of the cotangent
-bundle is equal to the topological Euler characteristic
-of $B$ if $B$ is compact.
-If $B$ is an integral affine manifold,
-$\sigma_{df}$ induces a section 
-$s_{df}\colon B\to T^*B/\Lambda$ of a torus fibration
-$\check{\pi}_B\colon T^*B/\Lambda \to B$ via a canonical 
-projection $\pi \colon T^*B\to T^*B/\Lambda$.
-$T^{*}B$ and $\check{X}(B)\deq T^*B\to T^*B/\Lambda$
-has a canonical symplectic structure and
-both $\sigma_{df}(B)$ (resp. $s_{df}(B)$) are Lagrangian 
-submanifolds of $T^{*}B$ 
-(resp. $T^*B/\check{\Lambda}$).
-
-
-
-
-
-\subsubsection{Semi-flat SYZ mirror pair}
-
-We add some notes about integral affine manifolds $B$,
-from \cite[Chapter 6]{MR2567952} and \cite{sepethesis}.
-
-The local system $\mathcal{T}_{\mathbb{Z}, B}$ defines 
- a pair of torus fibration:
-\begin{equation} \label{definition-SYZ-torus-fibration}
-\begin{tikzcd}%[scale cd=0.9, row sep=scriptsize, column sep=small]
-T^{*}B/\mathcal{T}_{\Z , B}^{\vee} =:\hspace{-35pt} 
-&\check{X}(B) \arrow[rd,"\check{f}_{B}"'] 
-&   & X(B) \arrow[ld,"f_{B}"] 
-&\hspace{-35pt} \deq TB/\mathcal{T}_{\Z, B} \\
-& &  B & &
-\end{tikzcd}.
-\end{equation}
-In some references, the symbol $\check{X}$ and
-$X$ are reversed. 
-$\check{X}(B)$ has a canonical symplectic structure 
-induced from $T^{*}B$, and each fiber of 
-$\check{f}_{B}$ is a Lagrangian torus.
-On the other hand, $X(B)$ has a canonical complex
-structure induced from $TB$ and integral affine 
-structure of $B$.
-Since each fiber of the fibrations $f_{B}$ and 
-$\check{f}_{B}$ are compact,
-$f_{B}$ and $\check{f}_{B}$ are proper maps.
-In particular, if $B$ is compact then 
-$\check{X}(B)$ and $X(B)$ are compact.
-
-Since integral affine condition is very strict, so 
-$X(B)$ (resp. $\check{X}(B)$) is also a special class of complex (resp. symplectic) manifold.
-
-\begin{proposition}
-
-\label{proposition-unobstructed-lagrangian}
-Let $B$ be a connected integral affine manifold 
-and $L$ a Lagrangian section of 
-$\check{\pi}_{B}\colon \check{X}(B)\to B$. 
-Then, $\pi_i(B)\simeq \pi_i(\check{X}(B))$ 
-for $i\geq 2$.
-In particular, 
-$\pi_i(B)=\pi_i(\check{X}(B))=0$ if 
-$B$ is complete and $\pi_2(B,L_s)=0$ for any image
-$L_s$ of 
-Lagrangian section of $\check{f}_{B}\colon B \to \check{X}(B)$.
-\end{proposition}
-\begin{proof}
-Let $\widetilde{X}$ be the universal cover of 
-a topological space $X$.
-
-
-We note $\pi_{i}(X,p)\simeq 
-\pi_{i}(\widetilde{X},\tilde{p})$ for $i\geq 2$ and 
-$\pi_{i}(X\times Y,(p,q))\simeq \pi_i(X,p)
-\times \pi_i(Y,q)$. Therefore,
-\begin{align}
-\pi_{i}(\check{X}(B))\simeq 
-\pi_{i}(\widetilde{\check{X}(B)})\simeq 
-\pi_{i}(\widetilde{T^{*}B})\simeq 
-\pi_{i}(T^{*}\widetilde{B})\simeq 
-\pi_{i}(T_p^* B)\times \pi_{i}(\widetilde{B})\simeq 
-\pi_{i}(B).
-\end{align}
-Thus, we have 
-$\pi_{i}(B)\simeq \pi_{i}(\check{X}(B))\simeq 
-\pi_{i}(X(B))$. 
-
-Let $i\colon L\to \check{X}(B)$ be the inclusion map of 
-$L$.
-Since $L$ is a section of 
-$\check{\pi}_{B}$, 
-$i_*\colon \pi_i(L)\to \pi_i(\check{X}(B))$ is 
-injective. Therefore, we get 
-$\pi_2(\check{X}(B),L)=0$ by considering the long exact
-sequence of relative homotopy groups.
-\end{proof}
-
-If $B$ is an integral Hessian manifold, 
-$X(B)$ and $\check{X}(B)$ have K\"ahler structure 
-respectively.
-This fact that $X(B)$ is a finite unramified quotient
-of a complex torus follows from $\pi_2(X(B))=0$ 
-and Bogomolov--Beauville decomposition theorem.
-Let $f:B' \to B$ be a finite unramified covering of $B$ such that $B'$ is a tropical torus.
-
-Then, $X(B')$ (resp. $\check{X}(B')$) 
-is a complex torus and an unramified finite cover 
-of $X(B)$ (resp. $\check{X}(B)$). 
-
-\section{Radiance obstruction and geometric prequantization}
+\subsection{Integral affine manifold and geometric prequantization}
 \label{sec: BSRR}
 \label{appendix-geometric-quantization}
 
@@ -5171,7 +5132,8 @@ If $B$ has a Hessian form, then $s_{B}$ can be
 considered as a Lagrangian section of the dual torus 
 fibration $\pi_{\check{B}}\colon 
 \check{X}(\check{B})\to \check{B}$ of dual Hessian
-manifold $\check{B}$ \cite[Proposition 6.9]{MR2567952}.
+manifold $\check{B}$, see also 
+\cite[p.181-183]{grossMirrorSymmetryLogarithmic2006a}.
 A similar result exists for projective toric manifolds 
 and their prequantum line bundle 
 \cite[Theorem 3.20]{yamaguchimaster}.  
@@ -5336,8 +5298,9 @@ equations hold
 &=\opn{Ehr}_P(-l)=
 \sharp (\opn{int}(lP)\cap \mathbb{Z}^{n})
 \end{align}
-for all $l\in \mathbb{Z}$.
-\eqref{equation-ehrhart-reciprocity-1,equation-ehrhart-reciprocity-2} 
+for all $l\in \mathbb{Z}_{\geq 0}$.
+\eqref{equation-ehrhart-reciprocity-1} and
+\eqref{equation-ehrhart-reciprocity-2} 
 are called the \emph{Ehrhart reciprocity law}. 
 The proof of the law is in \cite[Theorem 9.4.2]{MR2810322},
 for instance.
@@ -5475,7 +5438,7 @@ $\mathbb{R}^{n}$.
 $\mathbb{R}^{n}$ has a canonical integral affine 
 structure induced from the standard coordinates 
 and the Hessian of $f_P$ induces a Hessian form 
-on $\mathbb{R}^{n}$.
+on $\mathbb{R}^{n}$. 
 The composition of the exact $1$-form
 $df_P:{\mathbb{R}}^{n}\to T^{*}({\mathbb{R}}^{n}); x\mapsto 
 (x;\frac{\partial f_P}{\partial x_1}(x),\ldots,\frac{\partial f_P}{\partial x_n}(x))$ 
@@ -5488,6 +5451,10 @@ for simplicity.
 This map is also naturally appeared as an 
 exponential family in algebraic statistic,
 information geometry and Hessian geometry.
+See also \cite[Appendix 2]{MR1301331} for general theory for
+the relationships for the Hessian form of $f_P$ and 
+the induced K\"{a}hler potential on
+toric manifolds.
 
 We can write down the 
 $\dot{\mu}_P^{\opn{trop}}$ as follows:
@@ -5512,8 +5479,10 @@ when we consider tropical projective spaces.
 
 
 
-We can naturally extend $\dot{\mu}_{P}^{\opn{trop}}$ on tropical projective toric 
-varieties, and then the extension map is called the \emph{tropical moment map}
+We can naturally extend $\dot{\mu}_{P}^{\opn{trop}}$ on tropical 
+projective toric 
+varieties $X_{P}^{\opn{trop}}$,
+and then the extension map is called the \emph{tropical moment map}
 $\mu_{P}^{\opn{trop}}: X_{P}^{\opn{trop}}\simto P$ 
 \cite[Definition 2.1 (2)]{MR2428356}.
 This is a tropical analog of algebraic moment map 
@@ -5569,11 +5538,11 @@ let's reinterpret
 using the local Morse data for a
 $C^{\infty}$-Cartier divisor in this paper.
 First, let's construct a
-permissible $C^{\infty}$-Cartier divisor on 
-$X_{P}^{\mathrm{trop}}$ from a Delzant polytope $P$. 
+permissible $C^{\infty}$-Cartier divisor
+on $X_{P}^{\mathrm{trop}}$ from a Delzant polytope $P$. 
 Every compact tropical toric manifold is not 
-boundaryless, so we need to use the sheaf of 
-weak smooth functions which we defined 
+boundaryless, so we need to use the sheaf
+of weakly-smooth functions which we defined 
 in \cref{definition-weakly-smooth}.
 On the other hand, from \eqref{equation-log-polynomial} 
 we can construct 
