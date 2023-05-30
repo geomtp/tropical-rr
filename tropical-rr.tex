@@ -219,7 +219,7 @@
 \usepackage{mathrsfs}
 \usepackage{upgreek}
 \numberwithin{equation}{section}
-\title[Graded modules associated with line bundles]{Graded modules associated with line bundles
+\title[Graded modules associated with divisors]{Graded modules associated with divisors
 on boundaryless tropical manifolds}
 \author[Y. Tsutsui]{Yuki Tsutsui}
 \address{Graduate School of Mathematical Sciences,
@@ -234,11 +234,13 @@ Tokyo, 153-8914, Japan}
 We use ideas
 from the Strominger--Yau--Zaslow conjecture
 and microlocal sheaf theory
-to define the Euler characteristic of line bundles
+to define graded modules
+associated with divisors
 on compact boundaryless tropical manifolds.
 We also prove a Riemann--Roch formula 
 for compact tropical curves
-and integral affine manifolds equipped with a Hessian form. 
+and integral affine manifolds
+admitting Hessian forms.
 Our approach differs from the tropical Riemann--Roch theorem
 established by Gathmann and Kerber.
 \end{abstract}
@@ -271,15 +273,17 @@ The sheaf $\mathcal{O}_S^{\times}$ is a tropical analog
 of the sheaf $\mathcal{O}_X^{\times}$ of 
 units of the structure sheaf $\mathcal{O}_X$ of 
 an algebraic variety $X$.
-The first cohomology
+By a \emph{line bundle}
+on $S$,
+we mean an element
+of
 $
 \Pic S
 \coloneqq
 H^{1}(S;\mathcal{O}_S^{\times})
 $
-parametrizes the isomorphism classes
-of (tropical) line bundles on $S$
-\cite[Proposition 3.13]{gross2019sheaftheoretic}.
+(\cite[Section 4.3]{mikhalkinTropicalCurvesTheir2008a},
+see also \cite[Definition 3.12 and Proposition 3.13]{gross2019sheaftheoretic}).
 A \emph{tropical manifold} is 
 a rational polyhedral space which is locally 
 isomorphic to the direct product of a 
@@ -301,11 +305,13 @@ Every (finite) metric graph
 a natural structure of tropical curve 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
 
-Finding tropical analogues of various theorems 
+Finding tropical analogs of various theorems 
 in algebraic geometry is one of the 
 important themes in tropical geometry.
 The tropical Riemann--Roch theorem for a 
-divisor $D$ on a compact (and connected) tropical curve $C$,
+divisor $D$
+\cite[Definition 1.3]{gathmannRiemannRochTheoremTropical2008a}
+on a compact (and connected) tropical curve $C$,
 proved
 by Gathmann--Kerber \cite{gathmannRiemannRochTheoremTropical2008a}
 as an extension of Riemann--Roch theorem for graphs
@@ -319,12 +325,12 @@ where $r(D)$ is the rank of the linear system of
 $D$ 
 \cite[Definition 1.12]{gathmannRiemannRochTheoremTropical2008a}, 
 $K_C$ is the canonical divisor of $C$
-\cite[Definition 1.3]{gathmannRiemannRochTheoremTropical2008a}
+\cite[Definition 1.3]{gathmannRiemannRochTheoremTropical2008a},
 and $\chi_{\mathrm{top}}(C)$ is the topological 
 Euler characteristic of $C$.
 
-It is a natural problem to extend \eqref{Gathmann-Kerber-TRR}
-to a tropical analog of
+It is a natural problem
+to find a tropical analog of
 the Hirzebruch--Riemann--Roch theorem
 \begin{align} \label{equation-HRR}
 \chi(H^{\bullet}(X;\mathcal{L}))
@@ -334,11 +340,12 @@ for line bundles on
 complex projective manifolds 
 \cite{MR0202713}.
 However,
-the left hand side of \eqref{equation-HRR}
-does not have a straightforward tropicalization,
-since line bundles over tropical varieties are
-not sheaves of Abelian groups
-but commutative monoids,
+the left hand side of \cref{equation-HRR}
+does not have a straightforward tropical analog,
+since line bundles on tropical manifolds correspond
+to isomorphism classes of sheaves
+not of Abelian groups
+but of commutative monoids,
 so that 
 the basic theory of homological algebra
 does not apply.
@@ -373,7 +380,7 @@ f_B\colon \mathcal{X} \to B,
 \right)
 $
 of special Lagrangian torus fibrations
-inducing
+in such a way that
 homological mirror symmetry
 \cite{MR1403918}
 between
@@ -384,7 +391,7 @@ and the derived category
 % $\coh \mathcal{X}$
 of coherent sheaves 
 on $\mathcal{X}$
-via a Fourier-like transformation
+is induced by a Fourier-like transformation
 \begin{align} \label{equation-SYZ}
   \Phi_{\mathrm{SYZ}} \colon 
 \fuk \check{X} \simto \coh \mathcal{X}
@@ -396,8 +403,9 @@ $
 \check{f}_{B} \colon \check{X} \to B
 $
 does not have a singular fiber,
-then the base space $B$
-carries
+then the Liouville--Arnold theorem
+equips the base space $B$
+with
 an \emph{integral affine structure},
 i.e.,
 % an equivalence class of
@@ -407,8 +415,9 @@ Conversely,
 given an integral affine manifold $B$,
 one can construct a Lagrangian torus fibration
 $
-\check{f}_{B} \colon \check{X}(B) \to B.
+\check{f}_{B} \colon \check{X}(B) \to B
 $
+inducing the integral affine structure on $B$.
 One can also construct
 an analytic torus fibration
 $f_{B}\colon \mathcal{X}(B)\to B$
@@ -426,15 +435,16 @@ and \cref{appendix-integral-affine-manifold}):
 if Markus conjecture holds
 (see \cref{remark-markus-conjecture}).}
 
-Let $B$ be a compact integral affine manifold,
-and hence a tropical manifold in particular.
+Let $B$ be a compact integral affine manifold
+(and hence a tropical manifold in particular).
 Let
+further
 $\mathcal{C}^{\infty}_{B}$
 be the sheaf
 of $C^{\infty}$-functions.
 An element of 
 $
-\CDiv^\infty(B) \coloneqq H^{0}(B;\mathcal{C}^{\infty}_{B}/\mathcal{O}^{\times}_{B})
+\CDiv(B) \coloneqq H^{0}(B;\mathcal{C}^{\infty}_{B}/\mathcal{O}^{\times}_{B})
 $
 is called a \emph{$C^\infty$-Cartier divisor}
 (\cref{C-infinity-Cartier divisor}).
@@ -452,7 +462,7 @@ The short exact sequence
 \end{align}
 of sheaves induces a surjection 
 $
-\CDiv^\infty(B)
+\CDiv(B)
 % \coloneqq H^{0}(B;\mathcal{C}^{\infty}_{B}/\mathcal{O}^{\times}_{B})
 \to
 \Pic B
@@ -462,7 +472,7 @@ Any
 $
 s
 \in
-\CDiv^\infty(B)
+\CDiv(B)
 $
 gives a Lagrangian section
 $L_s$
@@ -486,14 +496,14 @@ so that
 the isomorphism class of the object $\mathscr{L}_s$
 depends only on the image $[s]$ of $s$
 in $\Pic B$
-(and the additional date).
+(and the additional data).
 The SYZ transform 
 $\mathcal{L}_s$ of $\mathscr{L}_s$ is a line bundle
 on the rigid analytic space $\mathcal{X}(B)$,
 and
 for any
 $
-s, s' \in \CDiv^\infty(B)
+s, s' \in \CDiv(B)
 $,
 one has an isomorphism 
 \begin{align}
@@ -501,7 +511,7 @@ one has an isomorphism
 \simeq \opn{Ext}^{\bullet}_{\mathcal{O}_{\mathcal{X}(B)}}(\mathcal{L}_s,\mathcal{L}_{s'}),
 \end{align}
 where $\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$
-is the (Lagrangian) Floer cohomology
+is the Floer cohomology
 (over the Novikov field $\Lambda_{\mathrm{nov}}^{\mathbb{C}}$
 with $\mathbb{C}$-coefficients).
 In particular,
@@ -516,21 +526,19 @@ whose Euler characteristic coincides with
 $\chi(\mathcal{L}_s)$.
 
 An extension of the SYZ conjecture
-to curves of higher genus
+to a curve of higher genus
 is studied recently in
 \cite{auroux2022lagrangian}, 
 which is expected to generalize
 to higher dimensions
 \cite[{\textsection 7}]{auroux2022lagrangian}.
 
-Let $S$ be a compact
-tropical manifolds.
 The \emph{tropical cohomology}
 $H^{\bullet,\bullet}(S;\mathbb{Z})$
 introduced in
 \cite{mikhalkinTropicalEigenwaveIntermediate2014a,
 itenbergTropicalHomology2019b}
-is defined for an arbitrary tropical manifold,
+is defined for an arbitrary tropical manifold $S$,
 and carries a piece of information
 on the limiting mixed Hodge structure
 if the tropical manifold comes from a degenerating family
@@ -538,13 +546,14 @@ of complex manifolds.
 We follow the notations of
 \cite[Definition 2.6]{MR3894860}
 for tropical cohomology.
-The trace map 
+If $S$ is compact, connected, and oriented of dimension $n$,
+then one has the trace map
 $
 \int_S\colon 
-H^{\bullet,\bullet}(S;\mathbb{Z})
+H^{n,n}(S;\mathbb{Z})
 \to \mathbb{Z}
 $
-is recalled in
+as we recall in
 \cref{equation-trace-integration}.  
 
 In this paper,
@@ -557,7 +566,8 @@ associated with a
 (\cref{definition-permissible-smooth-cartier-divisor})
 $C^\infty$-Cartier data $s$
 on a compact
-boundaryless (\cref{boundaryless})
+boundaryless
+(\todo{定義を参照})
 tropical manifold $S$.
 If $S$ is an integral affine manifold,
 then
@@ -578,7 +588,7 @@ of this paper:
 For any compact boundaryless tropical manifold $S$, 
 there exists an element $\opn{td}(S)$ of the tropical 
 cohomology group $H^{\bullet,\bullet}(S;\mathbb{Z})$ such that, 
-for any $s \in \CDiv^\infty(S)$
+for any $s \in \CDiv(S)$
 satisfying
 \cref{condition-good-divisor}, 
 one has
@@ -592,7 +602,7 @@ $\chi(\opn{LMD}^{\bullet}(S;s))=\chi_{\opn{top}}(S)$
 when $[s] = 0 \in \Pic S$.
 \end{conjecture}
 
-\cref{theorem-MRR-curve-preface,theorem-MRR-hesse-preface}
+\cref{theorem-MRR-curve-preface,theorem-MRR-hesse-preface} below
 prove \cref{conjecture-tropical-MRR-preface}
 for a compact tropical curve
 and
@@ -602,13 +612,13 @@ admitting a Hessian form respectively:
 \begin{theorem}
 \label{theorem-MRR-curve-preface}
 If $C$ is a compact tropical curve,
-then for any $s \in \CDiv^\infty(C)$
+then for any $s \in \CDiv(C)$
 satisfying \cref{condition-good-divisor},
 one has
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=
 \int_C c_1([s])+\frac{1}{2}c_1(-K_C)
-=\opn{deg}([s])+\chi_{\opn{top}}(C). 
+=\opn{deg}(s)+\chi_{\opn{top}}(C). 
 \end{align}
 \end{theorem}
 
@@ -618,7 +628,7 @@ one has
 If
 $B$ is an $n$-dimensional compact integral affine manifold $B$
 admitting a Hessian form,
-then for any $s \in \CDiv^\infty(B)$
+then for any $s \in \CDiv(B)$
 satisfying \cref{condition-good-divisor},
 one has
 \begin{align}
@@ -627,82 +637,69 @@ one has
 \end{align}
 \end{theorem}
 
+\cref{tropical elliptic curve} below gives
+an example of both \cref{theorem-MRR-curve-preface} and \cref{theorem-MRR-hesse-preface}:
+
+\begin{example} \label{tropical elliptic curve}
+Let
+$
+B = \mathbb{R}/\mathbb{Z}
+$
+be a tropical elliptic curve.
+For any integer $n$,
+the quadratic function
+$f_n \colon \mathbb{R} \to \mathbb{R}$,
+$x \mapsto \frac{n}{2}x^{2}$
+on the universal cover of $B$
+defines a $C^{\infty}$-Cartier divisor 
+$s_n \in \CDiv(B)$.
+The associated Lagrangian section $L_{s_n}$
+is the graph of
+$
+B \to 
+\check{X}(B) \cong B \times \mathbb{R}/\mathbb{Z}
+$;
+$
+x \mapsto (x, nx)
+$,
+and for any non-zero integer $n$, one has
+\begin{align}
+\chi(\opn{LMD}^{\bullet}(B;s_n))=
+\sharp(L_{s_0}\cap L_{s_n})=n
+=\opn{deg}(s_n)+\chi_{\opn{top}}(\mathbb{R}/\mathbb{Z}). 
+\end{align}
+\end{example}
+
 Although \cref{theorem-MRR-curve-preface,theorem-MRR-hesse-preface}
 are closely related to
 \cite{auroux2022lagrangian}
 and
-\cite{MR4301560},
+\cite{MR4301560}
+respectively,
 our proofs are purely `tropical'
 and does not rely on the SYZ transformation
 (see \cref{section-syz-trivalent-graph} and 
 \cref{section-floer-lmd} 
 for more details).
 
-\begin{example}
-Let $B$ is a tropical elliptic curve 
-$\mathbb{R}/\mathbb{Z}$ and
-$f_n\colon \mathbb{R}\to \mathbb{R};
-x\mapsto \frac{n}{2}x^{2}$ be a quadratic polynomial
-for some $n\in \mathbb{Z}\setminus\{0\}$.
-The polynomial induces a $C^{\infty}$-Cartier divisor 
-$s_n$ on $\mathbb{R}/\mathbb{Z}$ naturally.
-The associated Lagrangian section of $f_n$ is
-$s_n'\colon\mathbb{R}/\mathbb{Z}\to 
-\check{X}(\mathbb{R}/\mathbb{Z});x\mapsto (x;nx)$.
-Then,
-\begin{align}
-\chi(\opn{LMD}^{\bullet}(B;s_n))=
-\sharp(L_{s_0}\cap L_{s_n})=n
-=\opn{deg}(s_n)+\chi_{\opn{top}}(\mathbb{R}/\mathbb{Z}). 
-\end{align}
-This is a typical example of a weaker version of 
-\cref{conjecture-tropical-MRR-preface}.
-\end{example}
-
-\begin{remark}
-We expect our approach works for various style 
-of tropical spaces. 
-Our approach is 
-also inspired by Gross's works 
-\cite{grossSpecialLagrangianFibrations1998a} 
-and the Gross--Siebert program
-(see \cite[Conjecture 1.6]{MR3525095}).
-If the SYZ conjecture for Calabi--Yau manifolds
-is true, our apporoach should
-be true for integral affine manifold 
-with singularities of Calabi--Yau type.
-We expect that 
-our approach make sense for not only rational polyhedral
-spaces, integral affine manifold with singularities,
-but also for tropical spaces 
-in the sense of \cite[Definition 2.8]{cavalieri2020tropical}.
-\end{remark}
-
 \subsection{Outline of this paper}
 
-This paper is organized as follows:
-In Section 2, we define the permissible conditions 
-and local Morse data $\opn{LMD}^{\bullet}(S;s)$ for 
-$C^{\infty}$-Cartier divisors $s$ on a boundaryless
+In Section 2\todo{\textbackslash ref（またはcref）で参照する},
+we define permissibility conditions
+and local Morse data $\opn{LMD}^{\bullet}(S;s)$
+for $C^{\infty}$-Cartier divisors $s$ on a boundaryless
 tropical manifolds.
 Section 3 contains the proof of 
 \cref{theorem-MRR-curve-preface}.
 In Section 4, we prove 
-\cref{theorem-MRR-hesse-preface} after preparing from 
-the theory of tropical cohomology.
-In Section 5, we explain 
-more examples satisfying Riemann--Roch type 
-formula.
+\cref{theorem-MRR-hesse-preface}
+after preparation
+from the theory of tropical cohomology.
+In Section 5, we discuss
+more examples
+of Riemann--Roch type formula.
 
-\begin{Note}[Guide for reading this paper]
-  In order to reveal the relationships between our study
-  and other topics, we cannot avoid introducing various
-  notions. However, our results are almost elementary
-in the case of tropical curves,
-  so we write down a shortcut course of this paper as below:
-\end{Note}
-
-\textit{Acknowledgments:}
+\subsection*{Acknowledgments}
 We would like to thank Felipe Rinc\'on 
 for explaining about the unpublished recent works
 about Noether formula for general tropical surfaces.
@@ -727,11 +724,9 @@ pointing out some mistakes.
 This work was supported by JSPS KAKENHI 
 Grant Number 21J14529.
 
+\subsection*{Notations and conventions} \label{notation-general}
 
-
-\begin{notation} \label{notation-general}
-
-We will use the following notation in this paper:
+We use the following notations in this paper:
 
 \begin{itemize}
 
@@ -790,10 +785,8 @@ of bounded complexes of a given abelian category
 $\mathcal{C}$.
 \end{itemize}
 
-\end{notation}
-
-\begin{Note}
 We also impose the following assumption for simplicity in this paper:
+
 \begin{itemize}
 \setlength{\leftskip}{-20pt}
 \item Any topological space is Hausdorff and
@@ -808,10 +801,6 @@ $A_{\{\opn{pt}\}}$-module.
 $\alpha=0,1,\ldots,\infty,\omega$.
 \item We mainly use max-plus algebra.
 \end{itemize}
-
-
-
-\end{Note}
 
 \section{The cohomological local Morse datum}
 In this section, we recall some elementary results
@@ -1800,10 +1789,10 @@ be a morphism defined from
 The \emph{principal $C^{\infty}$-Cartier divisor} of a $(0,0)$-superform 
 $f$ is the image $(f)^{\mathrm{sm}}$ of $f$.
 \end{definition}
-We write $\opn{CDiv}^{\infty}(S)$ for 
+We write $\CDiv(S)$ for 
 $H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)$
 when $S$ is a boundaryless rational polyhedral space.
-We will define $\opn{CDiv}^{\infty}(S)$
+We will define $\CDiv(S)$
 for general rational polyhedral space $S$ by replacing 
 the sheaf $\mathcal{A}^{0,0}_{S}$ with the sheaf 
 $\mathcal{A}^{\mathrm{weak}}_S$ of weakly-smooth 
@@ -1821,7 +1810,7 @@ $C^{\infty}$-Cartier divisor like
 \cite[Definition 4.0.12]{MR2810322}.
 \begin{definition}[{$C^{\infty}$-Cartier local data}]
 \label{definition-Cartier-local-data}
-Let $s\in \opn{CDiv}^{\infty}(S)$, 
+Let $s\in \CDiv(S)$, 
 $\{U_i\}_{i\in I}$ an open cover of $S$ and 
 $f_i\colon U_i \to \mathbb{R}$ a $(0,0)$-superform
 on $U_i$. The set 
@@ -2590,7 +2579,7 @@ H^{0}(S;\mathcal{A}_S^{\opn{weak}}/
 \end{definition}
 
 We write 
-$\opn{CDiv}^{\infty}(S)\deq 
+$\CDiv(S)\deq 
 H^{0}(S;\mathcal{A}_S^{\opn{weak}}/
 \mathcal{O}^{\times}_S)$ for simplicity.
 We can define a \emph{local data} for 
@@ -3068,7 +3057,7 @@ on $(a_e,b_e)$ is an isomorphism onto $e$.
 \end{definition}
 
 \begin{definition}
-Let $s\in \opn{CDiv}^{\infty}(C)$ be a $C^{\infty}$-Cartier
+Let $s\in \CDiv(C)$ be a $C^{\infty}$-Cartier
 divisor and $\{(U_i,f_i)\}_{i\in I}$ a local data
 for $s$. The data is \emph{locally constractible} if 
 every $U_i$ is isomorphic to a contractible open 
@@ -4376,7 +4365,7 @@ $\chi(\opn{LMD}^{\bullet}(B,s))=
 \chi_{\opn{top}}(B)=0$ is 
 truly a special case of Poincar\'e--Hopf theorem for $B$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
-  \cite{MR4540954}. This analogue is about tropical Euler characteristic
+  \cite{MR4540954}. This analog is about tropical Euler characteristic
 $\chi_{\opn{trop}}(B)\deq 
 \chi(\mb{H}^{\bullet}(B;\mcal{F}_{B}^{\bullet}))$
   but not for topological Euler characteristic $\chi_{\opn{top}}(B)$.
