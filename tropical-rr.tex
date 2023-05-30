@@ -230,7 +230,7 @@ Tokyo, 153-8914, Japan}
 We use ideas 
 from the Strominger-Yau-Zaslow conjecture 
 and microlocal sheaf theory 
-to consider the problem of the definition 
+to consider the formulation problem 
 of a tropical version of the Euler 
 characteristic of line bundles 
 on compact tropical manifolds. 
@@ -266,57 +266,44 @@ $
 The sheaf $\mathcal{O}_S^{\times}$ is a tropical analog
 of the sheaf $\mathcal{O}_X^{\times}$ of 
 units of the structure sheaf $\mathcal{O}_X$ of 
-algebraic varieties $X$.
+an algebraic varieties $X$.
 The first cohomology 
-$H^{1}(S;\mathcal{O}_S^{\times})$ parameterize the 
-isomorphism classes of (tropical) line bundles on $S$
+$H^{1}(S;\mathcal{O}_S^{\times})$ 
+parameterize the isomorphism classes 
+of (tropical) line bundles on $S$
 \cite[Proposition 3.13]{gross2019sheaftheoretic}.
 A \emph{tropical manifold} is 
-a rational polyhedral space which are locally 
+a rational polyhedral space which is locally 
 isomorphic to the direct product of a 
 Bergman fan $\Sigma_M$ for some loopless 
 matroid $M$ and a tropical affine space 
 $\overline{\mathbb{R}}^{k}$,
-see \cite[Definition 6.1]{gross2019sheaftheoretic} 
-or the original definition of tropical manifold 
-in \cite[Definition 1.14]{mikhalkinTropicalEigenwaveIntermediate2014a}.
-A typical example of tropical manifold is 
-\emph{tropical curve}
+(see \cite[Definition 6.1]{gross2019sheaftheoretic} 
+which originates from 
+\cite[Definition 1.14]{mikhalkinTropicalEigenwaveIntermediate2014a}.
+An example of tropical manifold is 
+a \emph{tropical curve}
 \cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a}
 (see also \cite[Definition 1.1]{gathmannRiemannRochTheoremTropical2008a}
 for a combinatorical definition of tropical curve).
 In this paper, the term `tropical curve' refers to a 
 $1$-dimensional tropical manifold.
 Every (finite) metric graph 
-(with no $1$-valent vertex) also has 
+(with no $1$-valent vertex) has 
 a natural structure of tropical curve 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
 
-
-Many important examples of tropical manifolds (or tropical 
-varieties) 
-are obtained from a certain type of limits of 
-degeneration family of algebraic varieties or 
-\emph{tropicalization}. 
-The former limit is called the \emph{tropical limit}
-\cite{itenbergTropicalHomology2019b}, and 
-the fundamental properties of tropicalization 
-are detailed in the tropical geometry 
-textbook \cite{MR3287221}. 
-Algebraic geometry and tropical geometry are 
-strongly connected through these operations.
-
 Finding tropical analogues of various theorems 
 in algebraic geometry is one of the 
-important themes in the study of tropical geometry.
+important themes in tropical geometry.
 The tropical Riemann--Roch theorem for a 
-divisor $D$ on a compact (and connected) tropical curve $C$ is proved 
-by Gathmann--Kerber \cite{gathmannRiemannRochTheoremTropical2008a}
+divisor $D$ on a compact (and connected) tropical curve $C$,
+proved by Gathmann--Kerber \cite{gathmannRiemannRochTheoremTropical2008a}
 as an extension of Riemann--Roch theorem for graphs
 \cite{MR2355607} (see also 
-\cite{mikhalkinTropicalCurvesTheir2008a}) as 
-the following equation: 
-\begin{align}
+\cite{mikhalkinTropicalCurvesTheir2008a}),
+is the equality
+\begin{align} \label{Gathmann-Kerber-TRR}
 r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\opn{top}}(C).
 \end{align}
 where $r(D)$ is the rank of the linear system of 
@@ -327,144 +314,45 @@ $K_C$ is the canonical divisor of $C$
 and $\chi_{\opn{top}}(C)$ is the topological 
 Euler characteristic of $C$.
 
-It is natural to consider a tropical analog of 
+It is a natural to extend \eqref{Gathmann-Kerber-TRR} 
+to a tropical analog of 
 the Hirzebruch--Riemann--Roch theorem
-(HRR for short), 
-a higher-dimensional version of the Riemann--Roch theorem, 
-but there are many difficulties in such a generalization.
-In other words, tropical Riemann--Roch theorem 
-for tropical manifolds has been proved yet 
-as a generalization of 
-\cite{gathmannRiemannRochTheoremTropical2008a}.
-Let's recall the Hirzebruch--Riemann--Roch 
-theorem for complex line bundles on 
-projective complex manifolds 
-before explaining about the difficulties.
-\begin{theorem}[{\cite{MR0202713}}]
-Let $X$ be a compact projective complex manifold and
-$\mathcal{L}$ a holomorphic line bundle on $X$.
-Then there exists the following equation:
 \begin{align} \label{equation-HRR}
 \chi(H^{\bullet}(X;\mathcal{L}))
 =\int_X \opn{ch}(\mathcal{L})\opn{td}(X)
 \end{align}
-where $\opn{ch}(\mathcal{L})$ is the Chern character 
-of $\mathcal{L}$, 
-$\opn{td}(X)$ is the Todd class of $X$
-and $\int_X$ is the trace map of $X$. 
-\end{theorem}
-We note the HRR is generalized for 
-general compact complex 
-manifolds as a corollary of Atiyah--Singer index 
-theorem. Besides, the HRR for projective complex 
-manifold is a special case 
-of the Grothendieck--Riemann--Roch theorem (GRR for short). 
+proved for complex line bundles on 
+projective complex manifolds 
+by \cite{MR0202713}.
+However,
+the left hand side of \eqref{equation-HRR}
+does not have a straightforward tropicalization,
+since line bundles over tropical varieties are
+not sheaves of Abelian groups
+but commutative monoids,
+so that 
+the basic theory of homological algebra
+does not apply.
+See \cref{section-tropical-riemann-roch}
+for more on this difficulty.
 
-The main issue in formulating the HRR 
-for line bundles over 
-tropical manifolds is that 
-tropical analogs of 
-$\chi(H^{\bullet}(X;\mathcal{L}))$ and 
-$\opn{td}(X)$ have not yet been defined in general.
-In particular, the reason why the Euler number 
-of line bundles over tropical varieties cannot 
-be defined is due to a root cause 
-that the basic theory of homological 
-algebra cannot be used, 
-because line bundles over tropical 
-varieties are not sheaves of Abelian groups
-but commutative monoids.
-(For more detail about the previous related results of 
-tropical Riemann--Roch theorem
-and more difficulties for 
-this problem, see 
-\cref{section-tropical-riemann-roch}.)
-
-The following question is the main theme of this 
-paper.
-\begin{question} \label{question-tropical-euler}
-What is a tropical analog of Euler 
-characteristic of sheaf 
-cohomology of line bundles on algebraic varieties for 
-tropical manifolds? Is there some analogs of the HRR 
-for this Euler characteristic?
-\end{question}
-
-In this paper, we pursue a different tropical
-analog of the Euler characteristic of line bundles with the help of 
-ideas on toric varieties, geometric prequantization,
-Morse theory, microlocal sheaf theory,
-the \emph{Strominger--Yau--Zaslow conjecture}
-(SYZ conjecture for short), and related topics.
-Especially, our approach for 
-\cref{question-tropical-euler} is 
-strongly influenced by the ideas of the SYZ conjecture.
-Roughly speaking, our apporoach is to define
-the `Floer complex without differential' instead 
-of the `sheaf cohomology of tropical line bundles' 
-under the philosophy of \emph{Homological Mirror 
-Symmetry}. 
-In the next subsection, we will explain the SYZ conjecture 
-within the scope necessary for our approach, 
-pose a certain conjecture,
-and state the main theorem of this paper.
-If you are interested in how our approach 
-relates to toric geometry and geometric quantization, 
-please see \cref{section-toric-geometry} and 
-\cref{appendix-geometric-quantization} respectively.
-In this paper, we don't discuss the general theory of 
-the Todd class of $S$
-(see also \cref{remark-todd-class}).
-\begin{remark}
-\label{remark-todd-class}
-We note about the RHS of \cref{equation-HRR} 
-for tropical manifolds.
-Let $S$ be a compact tropical manifolds.
-The \emph{tropical cohomology}
-$H^{\bullet,*}(S;\mathbb{Z})$ 
-\cite{mikhalkinTropicalEigenwaveIntermediate2014a,
-itenbergTropicalHomology2019b}
-behaves like singular cohomology 
-$H^{\bullet}(X;\mathbb{Z})$ 
-of complex manifolds $X$.
-We adopted the notation for tropical cohomology 
-from \cite[Definition 2.6]{MR3894860}. 
-The trace map 
-$\int_S\colon H^{\bullet,*}(S;\mathbb{Z})
-\to \mathbb{Z}$ also exists like 
-complex manifolds, see 
-\cref{equation-trace-integration}.  
-The $1$-st Chern class $c_1(\mathcal{L})$ of 
-tropical line bundle $\mathcal{L}$ and 
-the Chow group of rational polyhedral spaces and 
-its cycle map is also 
-well-studied,
-and thus we can define the Chern character
-$\opn{ch}(\mathcal{L})\deq 
-\sum_{n=0}^{\infty}\frac{c_1(\mathcal{L})^{n}}{n!}
-\in H^{\bullet,*}(S;\mathbb{Z})$ of 
-$\mathcal{L}$ naturally.
-On the other hand, the Todd class of tropical manifold
-have not been studied well enough yet  
-when the dimension of tropical manifold is greater
-than $2$.
-We won't discuss the general theory of Todd class of tropical 
-manifolds in this paper, 
-but should be essentially defined from the theory of 
-Chern--Schwartz--MacPherson cycles for matroids 
-\cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
-See also \cite[5.3]{mikhalkinTropicalGeometryIts2006} and
-\cite[Definition 3.20]{shawTropicalSurfaces2015a}.
-\end{remark}
-
-%TODO: ラグランジュ切断に関して説明。
+In this paper,
+we pursue a different tropical analog
+of the Euler characteristic of line bundles
+motivated by ideas from
+toric geometry,
+geometric quantization,
+Morse theory,
+microlocal sheaf theory,
+homological mirror symmetry,
+and
+the Strominger--Yau--Zaslow conjecture.
 
 \subsection{SYZ conjecture and main results}
 
-The \emph{Strominger--Yau--Zaslow conjecture} is
-a conjecture in mathmatical physics 
-derived from string theory \cite{stromingerMirrorSymmetryTduality1996}. 
-The SYZ conjecture 
+The \emph{Strominger--Yau--Zaslow conjecture} 
+\cite{stromingerMirrorSymmetryTduality1996}
+(or the SYZ conjecture for short)
 predicts that a mirror $\mathcal{X}$ of 
 a given Calabi--Yau manifold
 $\check{X}$ gets from the dual 
@@ -654,6 +542,47 @@ when $\mcal{L}$ is trivial.
 Besides, such a $C^{\infty}$-Cartier divisor $s$ exists
 for any $\mathcal{L}$.
 \end{conjecture}
+
+\begin{remark}
+\label{remark-todd-class}
+Let $S$ be a compact tropical manifolds.
+The \emph{tropical cohomology}
+$H^{\bullet,*}(S;\mathbb{Z})$ 
+\cite{mikhalkinTropicalEigenwaveIntermediate2014a,
+itenbergTropicalHomology2019b}
+behaves like singular cohomology 
+$H^{\bullet}(X;\mathbb{Z})$ 
+of complex manifolds $X$.
+We adopted the notation for tropical cohomology 
+from \cite[Definition 2.6]{MR3894860}. 
+The trace map 
+$\int_S\colon H^{\bullet,*}(S;\mathbb{Z})
+\to \mathbb{Z}$ also exists like 
+complex manifolds, see 
+\eqref{equation-trace-integration}.  
+The $1$-st Chern class $c_1(\mathcal{L})$ of 
+tropical line bundle $\mathcal{L}$ and 
+the Chow group of rational polyhedral spaces and 
+its cycle map is also 
+well-studied,
+and thus we can define the Chern character
+$\opn{ch}(\mathcal{L})\deq 
+\sum_{n=0}^{\infty}\frac{c_1(\mathcal{L})^{n}}{n!}
+\in H^{\bullet,*}(S;\mathbb{Z})$ of 
+$\mathcal{L}$ naturally.
+On the other hand, the Todd class of tropical manifold
+have not been studied well enough yet  
+when the dimension of tropical manifold is greater
+than $2$.
+We won't discuss the general theory of Todd class of tropical 
+manifolds in this paper, 
+but should be essentially defined from the theory of 
+Chern--Schwartz--MacPherson cycles for matroids 
+\cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
+See also \cite[5.3]{mikhalkinTropicalGeometryIts2006} and
+\cite[Definition 3.20]{shawTropicalSurfaces2015a}.
+\end{remark}
+
 The graded module $\opn{LMD}^{\bullet}(S;s)$ is 
 an analog of the Floer complex of the pair of Lagrangian 
 sections. In fact, if $B$ is a compact integral affine 
@@ -673,10 +602,6 @@ manifold, see also \cref{remark-calabi-yau-condition}
 if you are interested in this. 
 To define $\opn{LMD}^{\bullet}(S;s)$, 
 we use tools in microlocal sheaf theory.
-\cref{conjecture-tropical-MRR-preface} 
-is our mathematical formulation 
-of \cref{question-tropical-euler}.
-
 
 The main results of this paper are that 
 the construction of the 
@@ -813,8 +738,8 @@ the following equation:
 \end{align}
 Here $\upomega_{\mathcal{X}}$ is the canonical bundle on $X$.
 If $\mathcal{X}$ is a mirror of $\check{X}$, then 
-the (\ref{equation-floer-poincare}) and 
-(\ref{equation-serre-duality}) should be compatible.
+the \eqref{equation-floer-poincare} and 
+\eqref{equation-serre-duality} should be compatible.
 Obviously, 
 $\upomega_{\mathcal{X}}$ is not trivial for many 
 projective manifolds $\mathcal{X}$,
@@ -838,7 +763,7 @@ On the other hand, the Euler characteristic
 $\chi(\opn{LMD}^{\bullet}(S;s))$ of 
 a permissible $C^{\infty}$-Cartier divisor
 $s$ on a tropical manifold $S$ behaves 
-like \cref{equation-serre-line} for various 
+like \eqref{equation-serre-line} for various 
 cases.
 
 \end{remark}
@@ -1927,7 +1852,7 @@ tropical rational function
 (for example, see \cite{mikhalkin2018tropical}).
 By taking a global section of the
 short exact sequence 
-(\ref{equation-cartier-divisor-sequence}),
+\eqref{equation-cartier-divisor-sequence},
 there exists a connecting homomorphism 
 $\delta \colon 
 H^{0}(S;\mcal{M}_S^{\times}/\mathcal{O}^{\times}_S)
@@ -1943,7 +1868,7 @@ which represents $\mathcal{L}$.
 
 By taking a global section of the
 short exact sequence
-(\ref{equation-smoooth-cartier-divisor-sequence}),
+\eqref{equation-smoooth-cartier-divisor-sequence},
 there also exists a connecting homomorphism 
 $\delta' \colon 
 H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)
@@ -1963,7 +1888,7 @@ $(\cdot)^{\mathrm{sm}}\colon
 H^{0}(S;\mathcal{A}^{0,0}_S)\to 
 H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)$ 
 be a morphism defined from 
-(\ref{equation-smoooth-cartier-divisor-sequence}).
+\eqref{equation-smoooth-cartier-divisor-sequence}.
 The \emph{principal $C^{\infty}$-Cartier divisor} of a $(0,0)$-superform 
 $f$ is the image $(f)^{\mathrm{sm}}$ of $f$.
 \end{definition}
@@ -2679,7 +2604,7 @@ f \text{ is weakly-smooth at } x
 \end{align}
 The sheaf $\mathcal{A}_S^{\mathrm{weak}}$ 
 of weakly-smooth functions on $S$ is the sheaf defined from 
-(\ref{equation-weakly-smooth-definition}). 
+\eqref{equation-weakly-smooth-definition}. 
 \end{definition}
 
 \begin{proposition}
@@ -2765,8 +2690,8 @@ $\opn{CDiv}^{\infty}(S)\deq
 H^{0}(S;\mathcal{A}_S^{\opn{weak}}/
 \mathcal{O}^{\times}_S)$ for simplicity.
 We can define a \emph{local data} for 
-$s$ like when $S$ is boundaryless naturally, 
-see \cref{definition-Cartier-local-data}.
+$s$ like when $S$ is boundaryless naturally
+(\cref{definition-Cartier-local-data}).
 We can extend the permissibility condition for
 weakly-smooth functions and $C^{\infty}$-Cartier divisors on
 general rational polyhedral spaces by the following lemma.  
@@ -3109,8 +3034,8 @@ $\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
 and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
 Since $\mathcal{A}_C^{\opn{weak}}$ is fine, 
 the connected homomorphism 
-$\delta\colon \Gamma(C;\mathcal{A}_C^{\opn{weak}}/
-\mathcal{O}^{\times}_C)\to \opn{Pic}(C)$ is 
+$[\cdot]\colon H^{0}(C;\mathcal{A}_C^{\opn{weak}}/
+\mathcal{O}^{\times}_C)\to \opn{Pic}(C);s\mapsto [s]$ is 
 surjective.
 
 \begin{proposition}
@@ -4032,7 +3957,8 @@ and \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}.}:
 \end{equation}
 Here $\mcal{Z}^{q}_{X}\deq
   \opn{Ker}(d'': \mcal{A}^{0,q}_X\to \mcal{A}^{0,q+1}_X)$.
-Every row and column of the diagram (\ref{equation-smooth-cartier-diagram}) is exact
+Every row and column of the diagram 
+\eqref{equation-smooth-cartier-diagram} is exact
 and $\mcal{A}_{X}^{0,0}/\mcal{O}^{\times}_X
   \simeq \mcal{Z}^{1}_X/\mcal{F}_{\Z,X}^{1}$ from the snake lemma.
 The left column short exact sequence of 
@@ -4048,7 +3974,8 @@ c_1\colon \opn{CaDiv}^{\infty}(X)\to \opn{Pic}(X)\to
 H^{1}(X;\mathcal{F}_{\mathbb{Z},X}^{1}); s\mapsto [s] 
 \mapsto c_1([s]).
 \end{align}
-The second morphism of (\ref{equation-tropical-cartier}) is 
+The second morphism of
+\eqref{equation-tropical-cartier} is 
 called the Chern class map of 
 $\opn{Pic}(X)$ in \cite[5]{mikhalkinTropicalCurvesTheir2008a}.
 Let $f\colon X\to Y$ be a morphism of 
@@ -4059,7 +3986,7 @@ and a naturally induced morphism of superforms
 $f$ induces the pullback 
 $f^{*}\colon \opn{CaDiv}^{\infty}(Y)\to \opn{CaDiv}^{\infty}(X)$ 
 and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
-(\ref{equation-smooth-cartier-diagram}). 
+\eqref{equation-smooth-cartier-diagram}. 
 In particular, we have
 $c_1(f^{*}(s)^{n})=f^{*}(c_1(s)^{n})$ for every 
 $D\in\opn{CaDiv}^{\infty}(Y)$
@@ -4240,11 +4167,9 @@ paper is equal to that of
 \cite[Definition 4.8]{MR3894860}.)
 We stress that every fundamental class of an integral affine 
 manifold (as tropical manifold) 
-is determined without the data of orientation
-like that of complex manifolds.
+is determined without the data of orientation.
 
-If $X$ is compact, then $a_{X}$ is proper. 
-In this case,
+If $X$ is a compact connected tropical manifold, 
 we can define the \emph{trace map} 
 on tropical cohomology like complex manifolds 
 (e.g. \cite[Example 13.A.3]{MR2810322}):
@@ -4259,9 +4184,13 @@ The fundamental class $[X]$ of a connected compact
 tropical manifold is a generator of 
 $H_{n,n}^{\opn{BM}}(X;\mathbb{Z})$, and thus we 
 can define the degree of a proper morphism.
+We can extend \eqref{equation-trace-integration}
+for compact tropical manifolds naturally.
 \begin{definition}[{cf. \cite[Definition 2.11]{MR3668972}}]
 Let $f\colon X \to Y$ be a proper morphism of 
 $n$-dimensional compact tropical manifolds.
+
+
 The (tropical) degree $\opn{deg}_{\opn{trop}}(f)$ of $f$ is the integer $m$
 such that $f_*([X])=m[Y]$. 
 \end{definition}
@@ -4336,7 +4265,8 @@ the $n$-th dilation map of $X$.
 
 \subsection{Sheaf cohomology for integral affine manfiolds}
 
-From now on, we recall the commutative diagram (\ref{equation-smooth-cartier-diagram})
+From now on, we recall the commutative diagram 
+\eqref{equation-smooth-cartier-diagram}
  for integral affine manifolds.
 In this case, every sheaf naturally comes 
 from symplectic geometry.
@@ -4364,7 +4294,7 @@ $\check{f}_{B}\colon \check{X}(B)\to B$
 \cite[(2.7), (2.11)]{duistermaatGlobalActionangleCoordinates1980a}.
 
 
-Thus, the commutative diagram (\ref{equation-smooth-cartier-diagram}) is written like this 
+Thus, the commutative diagram \eqref{equation-smooth-cartier-diagram} is written like this 
 (e.g. \cite[p.468]{MR2567952}):
 
 \begin{equation} \label{equation-cartier-lagrangian}
@@ -4379,7 +4309,7 @@ Thus, the commutative diagram (\ref{equation-smooth-cartier-diagram}) is written
 
 
 
-From the diagram (\ref{equation-cartier-lagrangian}),
+From the diagram \eqref{equation-cartier-lagrangian},
 we have the following group isomorphism already remarked 
 before:
 
@@ -4493,7 +4423,7 @@ We can calculate $\chi(\opn{LMD}^{\bullet}(T,s))$ as follows:
 (i) If $\det dq_s\ne 0$, $dq_s$ intersects to 
 the zero section transversely. We can see that 
 $\sharp(L_{dq_s}\cap L_0)=|\det dq_s|$ directly, and thus
-we get \cref{equation-Hesse-RR}. 
+we get \eqref{equation-Hesse-RR}. 
 
 (ii) If $\det dq=0$, we can choose a smooth vector field
  $v$ on $\check{X}(T)$ such that the one-time flow 
@@ -4512,7 +4442,7 @@ $\{(U_i,\tilde{f}_i)\}_{i\in I}$ satisfying
 $\tilde{f}_i$ is Morse, and 
 $f_i(x)=\tilde{f}_i(x)$ for the complement of 
 sufficiently small neighborhoods of $s_0\cap s$. 
-From \cref{equation-poincare-hopf}, we have
+From \eqref{equation-poincare-hopf}, we have
 $\chi(\opn{LMD}^{\bullet}(B,s))
 =\chi(\opn{LMD}^{\bullet}(B,s'))$.
 Therefore, \cref{theorem-MRR-hesse} 
@@ -5631,9 +5561,9 @@ sections.
 
 Now, 
 let's reinterpret 
-Eqs. (\ref{equation-danilov-formula}) -\!
-(\ref{equation-ehrhart-reciprocity-2}) and
-(\ref{equation-moment-map-intersection})
+\eqref{equation-danilov-formula} -\!
+\eqref{equation-ehrhart-reciprocity-2} and
+\eqref{equation-moment-map-intersection}
 using the local Morse data for a
 $C^{\infty}$-Cartier divisor in this paper.
 First, let's construct a
