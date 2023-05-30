@@ -597,12 +597,16 @@ $\chi(\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'}))
 \end{enumerate}
 
 \end{theorem}
+The element $s\in H^{0}(B;\mathcal{C}^{\infty}_{B}/
+\mathcal{O}^{\times}_{B})$ is the special 
+case of \emph{$C^{\infty}$-Cartier divisor} on $B$ 
+and a main notion in this paper.  
 \cref{proposition-semi-flat-syz}. (1), (5), and
 the first part of (2) will be explained further 
 in \cref{section-integral-affine-manifold} 
 and \cref{appendix-integral-affine-manifold}.
 If Markus conjecture is true, then the 
-assumption $\pi_2(B)=0$ is not necesary,
+assumption $\pi_2(B)=0$ is not necessary,
 see \cref{remark-markus-conjecture}.
 
 In a recent study 
@@ -679,7 +683,7 @@ proofs of \cref{conjecture-tropical-MRR-preface}
 for compact tropical curves and integral affine 
 manifolds with Hessian forms. 
 
-\begin{theorem}[{\cref{theorem-MRR-tropical-curve}}] 
+\begin{theorem}
 \label{theorem-MRR-curve-preface}
 Let $C$ be a compact tropical curve.
 For any tropical line bundle 
@@ -730,7 +734,7 @@ for some $n\in \mathbb{Z}\setminus\{0\}$.
 The polynomial induces a $C^{\infty}$-Cartier divisor 
 $s_n$ on $\mathbb{R}/\mathbb{Z}$ naturally.
 The associated Lagrangian section of $f_n$ is
-$s_n'\colon\mathbb{R}/\mathbb{Z}\to 
+$\check{s}_n\colon\mathbb{R}/\mathbb{Z}\to 
 \check{X}(\mathbb{R}/\mathbb{Z});x\mapsto (x;nx)$.
 Then,
 \begin{align}
@@ -1799,7 +1803,8 @@ for some cone}]
 Fix $X\deq \mathbb{R}^{n}$.
 Let $f\colon X\to {\mathbb{R}}$ be a convex $C^{1}$-
 function $X$ with the minimum point $x$
-and $S$ be a cone in $X$, i.e., 
+and $S$ a polyhedral cone in $X$, i.e.,
+a polyehedral set such that 
 $rS=S$ for all $r\in \mathbb{R}_{> 0}$.
 One of trivial but remarkable point is that
 \begin{align}
@@ -1822,7 +1827,8 @@ $\opn{LMD}^{\bullet}(A_S,-f|_S,x)\simeq
 H^{n-1}(S\setminus\{x\};A)[-n]$ since every Bergman fan has a good subdivision 
 \cite[Theorem 1]{MR2185977} and its link is shellable
 (e.g. \cite[7.9.1. Theorem]{MR1165544}).
-The vanishing property of the local cohomology is conjectured for
+The vanishing property of the local cohomology is 
+conjectured for every
 tropicalization of very affine algebraic variety by Hacking in
 \cite{MR2452307}.
 
@@ -1970,7 +1976,7 @@ functions on $S$.
 It's difficult to explain the reason why we need 
 $\mathcal{A}^{\mathrm{weak}}_S$ now, 
 so this explanation is done in 
-\cref{section-tropical-curve-general}.
+\cref{section-weakly-smooth-functions}.
 We will see a $C^{\infty}$-Cartier divisor is
 an analog of Lagrangian section 
 (\cref{proposition-cartier-lagrangian}).
@@ -2218,7 +2224,7 @@ for principal divisors directly.
 \begin{remark}
 Suppose $\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)=(\mathcal{F}_{S}^{1})_x$. 
 Then, $f$ is permissible if and only if 
-$d''f(x)\in (\mathcal{F}_{\mathbb{Z},S}^{1})_x$.
+$df(x)\in (\mathcal{F}_{\mathbb{Z},S}^{1})_x$.
 Therefore, permissibility
 condition may be not a generic condition.
 If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
@@ -2407,7 +2413,8 @@ intersection data of
 the permissible pair $(s',s)$.
 
 \begin{definition}[{intersection data}]
-Fix a bounaryless 
+\label{definition-intersection-data}
+Fix a (bounaryless) 
 rational polyhedral space $S$.
 Let $s$ be an permissible $C^{\infty}$-Cartier divisor 
 on $S$ such that $\sharp (s\cap s_0)<\infty$. 
@@ -2514,7 +2521,7 @@ from \cite{MR2892935}.
 \end{example}
 
 The following is the `good' conditions for 
-$C^{\infty}$-Cartier divisor 
+a given $C^{\infty}$-Cartier divisor 
 $s$ to consider Riemann--Roch type theorems.
 
 \begin{condition}
@@ -2679,7 +2686,8 @@ $\mathcal{A}_S^{\mathrm{weak}}$ is the sheaf of Abelian groups.
 
 \begin{proof}
 The condition is local, and thus $\mathcal{A}_S^{\mathrm{weak}}$ 
-is a sheaf.
+is a sheaf. From now on, we prove 
+$\mathcal{A}^{\mathrm{weak}}_S$ is Abelian.
 Fix an open subset $U$ of $S$, a point $x$ in $U$ 
 and $f_1,f_2\in \mathcal{A}_S^{\mathrm{weak}}(U)$.
 Each $f_i$ ($i=1,2$) has the primitive data
@@ -2716,7 +2724,8 @@ $(x,U_1\cap U_2,\psi,W_1\times W_2,
 \pi_1^*h_1\cdot \pi_2^{*}h_2)$ forms a primitive data
 of $f_1+f_2$ at $x$. Hence, 
 the $f_1+f_2$ is also weakly-smooth at $x$ for all
-$x\in U$. 
+$x\in U$. Of course, $-f_1$ is also weakly-smooth
+at $x$ for all $x\in U$.
 \end{proof}
 
 From definition of the sheaf of $(0,0)$-superforms, 
@@ -2730,7 +2739,8 @@ affine map $x\mapsto \langle u,x \rangle+b$
 with integer slope on $\mathbb{R}^{n}$
 is equal to $\opn{log} \circ h\circ \opn{exp}$ for 
 some Laurent monomial $h$ over the semifield 
-$\mathbb{R}_{\geq 0}$ of nonnegative real numbers. 
+$\mathbb{R}_{\geq 0}$ of nonnegative real numbers, 
+see also \cref{equation-log-polynomial}.
 
 
 
@@ -2762,7 +2772,7 @@ general rational polyhedral spaces by the following lemma.
 \begin{lemma}
 Let 
 $(x,U,\psi_1,W_1,h_1)$ and $(x,U,\psi_2,W_2,h_2)$
-be data of a weakly-smooth function $f$ at $x$.
+be primitive data of a weakly-smooth function $f$ at $x$.
 Then, there exists an open subset $V_0$ of 
 $T_x S$ and the following natural commutative diagram of 
 morphisms:
@@ -2790,7 +2800,7 @@ where $\phi \colon V_0\cap \opn{LC}_x S\hookto U$ is the
 canonical morphism induced from a morphism of germs 
 in \cite[Proposition 2.5]{gross2019sheaftheoretic}.
 In partiuclar, the pullback $\phi^{*}f$ of $f$ is also 
-weakly-smooth at $x$.
+weakly-smooth at $0$.
 \end{lemma}
 Every local cone $\opn{LC}_x S$ is boundaryless, and thus
 we can define the permissible condition for any 
@@ -2829,7 +2839,7 @@ of $C^{\infty}$-Cartier divisors, the
 set $s\cap s'$ of $(s',s)$ 
 (\cref{definition-divisor-intersection}), 
 an intersection data for $s$ 
-\cref{definition-intersection-data}, 
+(\cref{definition-intersection-data}), 
 and cohomological local Morse data of $s$
 (\cref{definition-local-morse-data-divisor}).
 With this, all the preparations necessary to 
@@ -3171,7 +3181,7 @@ section defined in \cref{proposition-permissible-section}.
 \caption{A continuous section $s\colon [0,1]\to [0,1]\times \mathbb{R}/\mathbb{Z}$}
 \end{figure}
 
-\begin{definition}[{rotation number of closed interval}]
+\begin{definition}
 Fix a closed interval $[a,b]$ in $\mathbb{T}P^{1}$.
 Let $s\colon [a,b]\to [a,b]\times \mathbb{R}/\mathbb{Z}$ be 
 a continuous section of the canonical projection
@@ -3246,7 +3256,7 @@ $\mathcal{O}_C^{\times}$:
 
 \begin{proposition}
 Let $s$ be an permissible $C^{\infty}$-Cartier divisor on
-a compact tropical curve $C$.
+a compact tropical curve $C$. Then,
 \label{equation-rotation-number}
 \begin{align}
 \opn{rot}(s)=\opn{deg}([s])(=\int_{C} c_1([s])).
@@ -3559,8 +3569,8 @@ Auroux--Efimov--Katzarkov
 expect a SYZ conjecture
 for projective hypersurfaces 
 in \cite[\textsection 7]{auroux2022lagrangian}.
-Our $\check{X}(S)$ for a boundaryless
-rational polyhedral spaces $S$ may give a hint for 
+We hope our $\check{X}(S)$ for a 
+rational polyhedral spaces $S$ give a hint for 
 a generalization of their expectation.  
 \subsubsection{Relationships between 
 Poincar\'e--Hopf theorem for graphs}
@@ -3658,7 +3668,7 @@ $(\mathcal{F}_{\mathbb{Z},C}^{1})_p\otimes_{\mathbb{Z}}
 \mathbb{R}/\mathbb{Z}\simeq 
 H^1(\mathbb{P}^{1}\setminus 
 \{0,1,\infty\};\mathbb{R}/\mathbb{Z})$
-is important for this construction.
+is important and not coincidence for this construction.
 The $s_{2,1}$
 corresponds a small pants and the $s_{1,2}$
 corresponds a large pants in 
@@ -4676,7 +4686,9 @@ Let $B$ an integral affine manifold
 Then, $B$ has 
 the notion of Lagrangian multi-section, 
 which is a mirror part of some 
-vector bundle on $X(B)$. 
+vector bundle on $X(B)$. The Lagrangian
+multi-sections are studied by 
+varous researchers. 
 Every (unramified) Lagrangian multi-sections 
 can be considered as a certain analog of  
 tropical multidivisors on a compact tropical
@@ -4686,7 +4698,7 @@ $C^{\infty}$-Cartier multidivisors
 for tropical curves and 
 the local Morse data of them naturally, 
 and thus we can generalize 
-\cref{theorem-MRR-tropical-curve} for 
+\cref{theorem-MRR-curve-preface} for 
 permissible $C^{\infty}$-Cartier 
 multidivisors by
 the Riemann--Hurwitz formula for tropical 
@@ -4968,7 +4980,7 @@ Riemann--Roch formula like
 \begin{remark} \label{remark-list-tropical-euler}
 Here is the list of the reason why the Euler 
 characteristic of the structure sheaf of tropical manifold
-should be equal to the topological Euler characteristics of it.
+should be equal to the topological Euler characteristic of it.
 {
 \setlength{\leftmargini}{22pt}
 \begin{enumerate}
@@ -5403,7 +5415,7 @@ see also \cref{appendix-geometric-quantization}.
 Next, we recall elementary facts about topical 
 toric varieties.
 Basic concepts and properties 
-of tropical toric varieties is studied and 
+of tropical toric varieties are studied and 
 explained in 
 \cite{MR2428356,MR2511632,meyer2011intersection,MR3287221,MR4016643}.
 In this section, $k$ means a ground semifield.
@@ -5636,7 +5648,7 @@ $s_P\in H^{0}(X_P;
 \mathcal{A}^{\mathrm{weak}}_{X_P}/
 \mathcal{O}^{\times}_{X_P})$ for 
 a given tropical projective toric manifold 
-$X_P$ as follows:
+$X_P^{\mathrm{trop}}$ as follows:
 {\setlength{\leftmargini}{22pt}
 \begin{enumerate}
 \item For $m\in P\cap 
@@ -5719,6 +5731,8 @@ Let $s_P$ be a permissible $C^{\infty}$-Cartier divisor on
 the $n$-dimensional
 projective tropical toric manifold $X_P$ for 
 a (Delzant) lattice polytope $P$. Then, 
+$s_P$ satisfies \cref{condition-good-divisor}. 
+Besides,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(X^{\mathrm{trop}}_P;s_P))
 &=\sharp(\opn{int}(P\cap \Z^{n})), \\
@@ -5729,7 +5743,7 @@ a (Delzant) lattice polytope $P$. Then,
 \end{proposition}
 \begin{proof}
 Let $\{(U_p,f_{P,p})\}_{p\in s_0\cap s_P}$ be an intersection
-data of $s_P$.
+data for $s_P$.
 For any $f_{P,p}$, $\{f_{P,p}<0\}$ is empty 
 and $\{-f_{P,p}<0\}=U_p\setminus \{p\}$. 
 If $\mu_P^{\mathrm{trop}}(p)=\partial P\cap \mathbb{Z}^{n}$,
