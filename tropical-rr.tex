@@ -855,7 +855,7 @@ In this subsection, we follow some classical results of
 the theory of sheaves on locally compact topological
 spaces from \cite{iversenCohomologySheaves1986a,
 MR1299726,MR1269324,MR2050072}.
-The notion and symbols for 
+The notations and symbols for 
 sheaf theory mainly follows from \cite{MR1299726}
 unless otherwise specified.
 
@@ -865,7 +865,7 @@ Henceforth, we assume $A$ is a PID.
 Then, the (global) homological dimension of 
 $\catn{Mod}(A)$ is less than or equal to $1$
 \cite[Exercise I.17, I.28]{MR1299726}.
-Therefore, for any $M^{\bullet}\in \opn{Ob}(\opn{D}^{b}(\catn{Mod}(A)))$
+Therefore, for any $M^{\bullet}\in \opn{Ob}(D^{b}(\catn{Mod}(A)))$
 there exists the following quasi-isomorphism 
 \cite[Exercise I.18]{MR1299726}:
 \begin{align}
@@ -875,7 +875,7 @@ M^{\bullet}\simeq
 
 Let $\catn{mod}(A)$ be the category of 
 finitely generated $A$-modules.
-Since $A$ is PID, then the Grothendieck group 
+Since $A$ is a PID, then the Grothendieck group 
 $K_0(\catn{mod}(A))$ is isomorphic to $\Z$ by
 the rank $\opn{rk}_A M$ of a finitely generated
 $A$-module $M$.
@@ -899,11 +899,11 @@ Let $f\colon Y\to X$ be a continuous map.
 $f$ induces the functor $f_!$ of
 the direct image with proper supports 
 \cite[(2.5.1)]{MR1299726}. 
-We note $a_{X!}\mathcal{F}\simeq \Gamma_c(X;\mathcal{F})$.
+For example, $a_{X!}\mathcal{F}\simeq \Gamma_c(X;\mathcal{F})$.
 
 Let $X$ be a topological space, $Z$ a locally closed 
-subset of $X$
-and $i\colon Z\to X$ be the inclusion map.
+subset of $X$,
+and $i\colon Z\to X$ the inclusion map.
 For a given sheaf $\mathcal{F}$ on $X$, we set
 \begin{align}
 \mcal{F}|_{Z}\deq i^{-1}\mcal{F}, \quad 
@@ -937,11 +937,11 @@ $Z$ as a closed subset of $U$ then we write
   \Gamma_Z(U;\mcal{F})\deq \opn{Ker}(\mcal{F}(U) \to 
 \mcal{F}(U\setminus Z)).
 \end{align}
-\item If $V$ is an open subset of $U$ contain $Z$, then
+\item Moreover, if $V$ is an open subset of $U$ contain $Z$, then
 $\Gamma_{Z}(U;\mcal{F})\simeq \Gamma_{Z}(V;\mcal{F})$
 via the canonical morphism. Therefore, we can define
 $\Gamma_{Z}(X;\mcal{F})\deq \Gamma_{Z}(U;\mcal{F})$.
-\item The sheaf $\Gamma_{Z}(\mcal{F})$ is defined as the presheaf 
+\item The sheaf $\Gamma_{Z}(\mcal{F})$ is the presheaf 
 $U\mapsto \Gamma_{Z\cap U}(U;\mcal{F})$ on $X$.
 \end{enumerate}
 
@@ -980,7 +980,7 @@ Let $X$ be a topological space, $Z$ a locally
 closed subset of $X$ and $Z'$ a closed subset of $Z$.
 
 There exists the following distinguished triangle 
-for any $\mathcal{F}^{\bullet}\in \opn{Ob}(\opn{D}^{b}(A_X))$ 
+for any $\mathcal{F}^{\bullet}\in \opn{Ob}(D^{b}(A_X))$ 
 \cite[(2.6.32)]{MR1299726}:
 \begin{align} \label{equation-exact-local}
   R\Gamma_{Z'}(\mcal{F}^{\bullet})\to 
@@ -1016,7 +1016,7 @@ A_{Z\setminus \{x\}})$
 of the constant sheaf on $Z\setminus \{x\}$
 (see 
 \cite[p.199]{hatcherAlgebraicTopology2002a} for 
-reduced singular cohomology.)
+reduced singular cohomology).
 \end{example}
 
 \begin{example}
@@ -1053,7 +1053,7 @@ In particular, for any point $v\in V$ we have
 Therefore, the stalk is independent
 of the choice of $V (\ni v)$.
 \item Let $i: S\to X$ be a closed inclusion.
-Since $i_!=i_*$ and $i_!$ is exact,
+Since $i_!=i_*$ and $i_!$ is exact, we have
 \begin{align}
   i^{-1}R\Gamma_{Z}(i_*\mcal{F})\simeq 
 i^{-1}R(\Gamma_{Z}\circ i_*)\mcal{F}
@@ -1061,7 +1061,7 @@ i^{-1}R(\Gamma_{Z}\circ i_*)\mcal{F}
   \simeq R\Gamma_{Z\cap S}\mcal{F}
 \end{align}
 In particular, $(R\Gamma_{Z}(i_*\mcal{F}))_v
-  \simeq (R\Gamma_{Z\cap S}\mcal{F})_v$ for $v\in S$.
+  \simeq (R\Gamma_{Z\cap S}\mcal{F})_v$ for any $v\in S$.
 \end{enumerate}
 
 By combining the above two examples, for an open 
@@ -1071,7 +1071,9 @@ subset $V' (\ni v)$ of $S$ we get
 (R\Gamma_{Z\cap S}(A_{S}))_v\simeq
 (R\Gamma_{Z\cap S\cap V'}(A_{V'}))_v.
 \end{align}
-
+We use the isomorphism
+\eqref{equation-local-stalk}
+in \cref{prop-local-morse-data}.
 \end{example}
 
 
@@ -1092,10 +1094,10 @@ or microlocal stalk in \cite{MR4132582}.
 Let $f\colon X\to {\mathbb{R}}$ be a continuous map on a 
 topological space $X$ and $x\in X$. Fix 
 $\mathcal{F}^{\bullet}\in 
-\opn{Ob}(\opn{D}^{b}(\catn{Mod}(A_X)))$.
-The cohomology group of the \emph{cohomological local Morse 
+\opn{Ob}(D^{b}(\catn{Mod}(A_X)))$.
+The cohomology of the \emph{cohomological local Morse 
 data} of the pair $(\mathcal{F}^{\bullet},f)$ at $x$ 
-is the following $A$-module: 
+is the following graded $A$-module: 
 \begin{align}
 \opn{LMD}^{\bullet}(\mcal{F}^{\bullet},f,x)\deq 
 H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
@@ -1105,8 +1107,8 @@ H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
 
 The \emph{local Morse index} of $f$ at $x$ is the 
 following number if 
-$R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
-\in \opn{D}^{b}(\catn{mod}(A))$:
+$R\Gamma_{\{f\geq f(x)\}}(\mathcal{F}^{\bullet})_x
+\in D^{b}(\catn{mod}(A))$:
 \begin{align} \label{equation-local-index}
 \opn{ind}_x^{A}(f)\deq \chi(\opn{LMD}^{\bullet}(A_X,f,x)), \quad
 \opn{ind}_x(f) \deq \opn{ind}_x^{\mathbb{Z}}(f).
@@ -1176,17 +1178,16 @@ of $X$, $V$ open subset of $S$ and $x\in V$. Then,
 &\simeq \varinjlim_{U\in\opn{Nbh}(x,S)} 
 \tilde{H}^{\bullet-1}(S\cap \{f<f(x)\}\cap U;A).
 \end{align}
-
-Here, $\tilde{H}^{i-1}(X;A)$ is the $(i-1)$-th reduced cohomology 
-group
-of $A_X$ and $\opn{Nbh}(x,S)$ the set of open neighborhoods
-of $x$ in $X$. 
+where $\tilde{H}^{i-1}(X;A)$ is
+the $(i-1)$-th reduced cohomology
+of $A_X$ and $\opn{Nbh}(x,S)$ is 
+the set of open neighborhoods of $x$ in $X$. 
 \end{proposition}
 \begin{proof}
-The fist and second isomorphism follows from
-\eqref{equation-local-stalk} by 
-replacing $Z$ (resp. $V'$) with 
-$\{f\geq f(x)\}$ (resp. $V$) and the isomorphism
+The first and second isomorphism follows 
+from \eqref{equation-local-stalk} 
+by replacing $Z$ (resp. $V'$) 
+with $\{f\geq f(x)\}$ (resp. $V$) and the isomorphism
 $H^{\bullet}(\mathcal{F}^{\bullet})_x\simeq 
 H^{\bullet}(\mathcal{F}^{\bullet}_x)$ for any 
 $\mathcal{F}^{\bullet}\in D^{b}(A_X)$ and $x\in X$.
@@ -1205,7 +1206,7 @@ We can see
 $R\Gamma_{\{f< f(x)\}}\simeq Rj_*\circ j^{-1}$
 from $j^{-1}=j^{!}$ preserve injectives.
 From the elemental properties of higher direct image
-(e.g. \cite[II. Proposition 5.11]{iversenCohomologySheaves1986a}),
+(e.g. \cite[Chapter II. Proposition 5.11]{iversenCohomologySheaves1986a}),
 we have
 \begin{align}
 (R^{i}\Gamma_{\{f< f(x)\}}A_S)_x\simeq 
@@ -1303,7 +1304,7 @@ This equation can be generalized for more cases.
 
 
 
-If $X$ is a locally compact space, then there exists a 
+If $X$ is a locally compact Hausdorff space, then there exists a 
 closed and compact neighborhood $S$ of $x\in X$. 
 By the second isomorphism of \cref{prop-local-morse-data},
 we have 
@@ -1324,11 +1325,11 @@ of $x$.
 By \cref{prop-local-morse-data}, we can calculate
 of local Morse index of a continuous function on 
 a given polyhedral complex by the theory of sheaves on 
-real manifolds.
+smooth manifolds.
 
 \begin{notation}
 
-We denote $Y\deq 
+We define $Y\deq 
 \{x\in X\mid \opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f,x)
 \not \simeq 0\}$ and set
 
@@ -1347,7 +1348,7 @@ Next, we recall about the micro-support of sheaves
 from \cite{MR1299726}.
 Let $X$ be a $C^{\alpha}$ manifold for
 $\alpha\in\{1,2,\ldots,\infty,\omega\}$ and let
-$\mcal{F}^{\bullet}\in\opn{Ob}(\opn{D}^{b}(A_X))$ and
+$\mcal{F}^{\bullet}\in\opn{Ob}(D^{b}(A_X))$ and
 $\opn{SS}(\mcal{F}^{\bullet})$ 
 the micro-support of $\mcal{F}^{\bullet}$:
 \begin{definition}[{Citation 
@@ -1372,32 +1373,26 @@ As remarked in \cite[Remark 5.1.6]{MR1299726},
 the dependence of the micro-support 
 $\opn{SS}(\mcal{F}^{\bullet})$ is solely 
 on the $C^{1}$-structure of $X$, and the forgetful functor 
-$\phi_X \colon \opn{D}^{b}(A_X)\to \opn{D}^{b}(\Z_X)$
+$\phi_X \colon D^{b}(A_X)\to D^{b}(\Z_X)$
 preserves the micro-support of $\mcal{F}^{\bullet}$ 
 \cite[Remark 5.1.5]{MR1299726}.
+For example, if $M$ is a closed submanifold of $X$, then
+$\opn{SS}((A_{X})_M)=T^{*}_M X$ 
+\cite[Proposition 5.3.2]{MR1299726}.
 
-\begin{example}
-If $M$ is a closed submanifold of $X$, then
-$\opn{SS}((A_{X})_M)=T^{*}_M X$ \cite[Proposition 5.3.2]{MR1299726}.
-\end{example}
 For simplicity,
 $\opn{SS}(\mcal{F})_x\deq \opn{SS}(\mcal{F}) 
 \cap T^{*}_x X$ 
 and $\check{\pi}_{X}\colon T^{*}X\to X$
 is the cotangent bundle.
-From definition of the micro-support of sheaves, 
+From the definition of the micro-support of sheaves, 
 $\opn{SS}(\mcal{F}|_{U})_x=\opn{SS}(\mcal{F})_x$
 for any open neighborhood $U$ of $x$.
-
-
-
-
-
 The following condition and proposition is also important.
 \begin{condition}[{\cite[Proposition 5.4.20]{MR1299726}}]
 \label{condition-global-morse}
 Let $X$ be a smooth manifold, $A$ a PID, 
-$\mathcal{F}^{\bullet}\in \opn{D}^{b}(A_X)$,
+$\mathcal{F}^{\bullet}\in D^{b}(A_X)$,
 and $f\colon X\to \mathbb{R}$ a smooth function.
 The pair $(\mathcal{F}^{\bullet},f)$ satisfies
 \begin{enumerate}
@@ -1496,7 +1491,6 @@ Fix $\varepsilon$ and an open smooth
 inclusion of $j\colon U \to M$
 where $M$ is a compact smooth manifold,
 $x_0\deq j(0)$ and $K\deq j(\bar{B}_{\varepsilon}(0))$. 
-$S^{n}$ is a typical example of $M$.
 The sheaf $\mathcal{C}^{\infty}_M$ of smooth functions 
 on $M$ is fine, so we can extend
 $f|_{\bar{B}_{\varepsilon}(0)}$ to 
@@ -1504,7 +1498,9 @@ $f_0\in C^{\infty}(M)$.
 From \cref{prop-local-morse-data}, 
 $\opn{LMD}^{\bullet}(A_M,f_0,x_0)
 \simeq \opn{LMD}^{\bullet}(A_U,f,0)$.
-By Morse perturbation, we can deform 
+(see \cite[Definition 3.3]{MR2359489} 
+for the definition of fine sheaves in this paper).
+By a Morse perturbation, we can deform 
 $f_0$ to a smooth function $f_1$ such that 
 $f_0|_{K}=f_1|_K$ and $f_1$ is nondegenerate except at 
 $x_0$. If $\opn{LMD}^{\bullet}(A_U,f,0)$ is 
@@ -1585,7 +1581,8 @@ $C^{\infty}$-function on a compact smooth
 Riemannian manifold 
 $(M,g)$ and 
 $\varepsilon$ a 
-sufficiently small positive real number. Then, 
+sufficiently small positive real number. Then,
+for $x\in M$
 \begin{align}
 \opn{LMD}^{\bullet}(A_{M},f,x)\simeq 
 \opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}^{n}(x)},
@@ -1641,7 +1638,7 @@ f|_{\bar{B}_{\varepsilon}(x)},x)\simeq
 \cap \{f<f(x)\};A).
 \end{align}
 
-By Alexander duality, 
+By the Alexander duality, 
 $H^{\bullet}(S_{\varepsilon}^{n-1}(x)\setminus \{f=f(x)\};A)$ 
 is bounded and finitely generated, so 
 is $\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(x)},
@@ -1651,7 +1648,7 @@ We also add explanation of real Milnor fiber from
 \cite[3.2]{MR3779558}. Every isolated critical point 
 of real analytic function is nondepraved 
 \cite[Part I.2.4]{MR932724}.
-If $f$ is a real analytic, then 
+If $f$ is real analytic, then 
 $S_{\varepsilon}^{n-1}(x)\cap \{f\leq f(x)\}\simeq 
 f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$
 for sufficiently small $\vep>\delta>0$.
@@ -1694,38 +1691,35 @@ If $S$ is a purely $n$-dimensional Bergman fan, then
 $\opn{LMD}^{\bullet}(A_S,-f|_S,x)\simeq 
 H^{n-1}(S\setminus\{x\};A)[-n]$ since every Bergman fan has a good subdivision 
 \cite[Theorem 1]{MR2185977} and its link is shellable
-(e.g. \cite[7.9.1. Theorem]{MR1165544}).
-The vanishing property of the local cohomology is 
-conjectured for every
-tropicalization of very affine algebraic variety by Hacking in
-\cite{MR2452307}.
+(e.g. \cite[Theorem 7.9.1]{MR1165544}). Hacking 
+conjectured the vanishing property of the local cohomology
+is true for every tropicalization
+of a very affine algebraic variety \cite{MR2452307}.
 
 Hacking also proved that conjecture is true for a suitable condition
 \cite[Theorem 2.5]{MR2452307}.
-Since any tropical varieties is connected
+Since any tropical variety is connected
 through codimension $1$ \cite[Theorem 3.3.5]{MR3287221},
 this conjecture is true when $\dim S \leq 2$.
 This phenomenon gives a certain analog of Kodaira vanishing theorem for 
 positive line bundles, see 
 also \cref{example-tropical-kodaira-vanishing}. 
-A certain shellability for tropical fans is studied in
-\cite{amini2021homology}.
+Amini and Piquerez also discuss a certain shellability 
+for tropical fans \cite{amini2021homology}.
 \end{remark}
 
 \subsection{Smooth Cartier divisors on rational 
 polyhedral spaces}
 
 
-
-We recall about line bundles on 
+In this subsection,
+we recall about line bundles on 
 rational polyhedral spaces and discuss the notion of
 \emph{$C^{\infty}$-divisor}
 for boundaryless rational polyhedral spaces
 \cite[\textsection 4.2]{MR4246795}.
 We mainly follow 
 from \cite{MR3903579,gross2019sheaftheoretic}.
-
-%TODO: 引用の整理
 
 Let $S$ be a rational polyhedral space
 \cite[Definition 2.2]{gross2019sheaftheoretic}, 
@@ -1735,9 +1729,12 @@ and $\mathcal{A}^{0,0}_S$ the sheaf of
 $(0,0)$-superforms on $S$ 
 \cite[Definition 2.24]{MR3903579}. 
 \begin{remark}
-In \cite{MR3903579},the sheaf of superforms 
-defined for polyhedral spaces with 
-face structures \cite[Definition 2.4.(c)]{gross2019sheaftheoretic}.
+Jell, Shaw and Smacka defined the sheaf of superforms 
+for polyhedral spaces with 
+face structures in \cite{MR3903579}
+(see also \cite[Definition 2.4.(c)]{gross2019sheaftheoretic}
+for the definition of face structures 
+of rational polyhedral space).
 We can also define the sheaf of $(0,0)$-superforms for 
 rational polyhedral spaces as the same way,
 at least.
@@ -1770,13 +1767,13 @@ give a test play for our approach.
 As like tropical line bundles on tropical curves
 \cite[Definition 4.4]{mikhalkinTropicalCurvesTheir2008a},
 there exists the notion of tropical line bundle on 
-rational polyhedral space
+rational polyhedral spaces
 \cite[Definition 3.12]{gross2019sheaftheoretic}.
 Every isomorphism class of 
 tropical line bundles on $S$ is parametrized by 
 $H^{1}(S;\mathcal{O}^{\times}_S)$
 \cite[Proposition 3.13]{gross2019sheaftheoretic}.
-The group $H^{1}(S;\mcal{O}^{\times}_S))$ is called 
+The cohomology $H^{1}(S;\mcal{O}^{\times}_S)$ is called 
 the \emph{Picard group} of $S$.
 There exists the following exact sequence:
 \begin{align}
@@ -1786,7 +1783,7 @@ There exists the following exact sequence:
 \mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S\to 0.
 \end{align}
 
-This is a smooth version of the following exact
+This is a $C^{\infty}$-version of the following exact
 sequences associated with the sheaf 
 $\mcal{M}_S^{\times}$
 of (real valued) \emph{tropical rational functions}
@@ -1809,7 +1806,7 @@ H^{0}(S;\mcal{M}_S^{\times}/\mathcal{O}^{\times}_S)
 We note $H^{1}(S;\mcal{M}_{S}^{\times})=0$, 
 and thus $\delta$ is surjective
 \cite[Lemma 4.5, Proposition 4.6]{MR3894860}.
-The element $H^{0}(S;\mcal{M}_S^{\times}/\mathcal{O}^{\times}_S)$
+An element in $H^{0}(S;\mcal{M}_S^{\times}/\mathcal{O}^{\times}_S)$
 is called a \emph{Cartier divisor} on $S$.
 Therefore, for every line bundle $\mathcal{L}$ on a rational polyhedral 
 space, there exists a Cartier divisor $D$ 
@@ -1828,8 +1825,6 @@ $\mathcal{A}^{0,0}_S$ is a fine sheaf
 \cite[Lemma 2.7, Proposition 2.26]{MR3903579}, so 
 $H^{1}(S;\mathcal{A}^{0,0}_S)=0$ and 
 so $\delta'$ is also surjective.
-In this paper, the definition of fine sheaves follows
-\cite[Definition 3.3]{MR2359489}.
 \begin{definition}
 Let $S$ be a boundaryless rational polyhedral space.
 A \emph{$C^{\infty}$-divisor} on 
@@ -1844,19 +1839,15 @@ be a morphism defined from
 The \emph{principal $C^{\infty}$-divisor} of a $(0,0)$-superform 
 $f$ is the image $(f)^{\mathrm{sm}}$ of $f$.
 \end{definition}
-We write $\CDiv(S)$ for 
+By $\CDiv(S)$, we mean 
 $H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)$
 when $S$ is a boundaryless rational polyhedral space.
 We will define $\CDiv(S)$
 for general rational polyhedral space $S$ by replacing 
 the sheaf $\mathcal{A}^{0,0}_{S}$ with the sheaf 
 $\mathcal{A}^{\mathrm{weak}}_S$ of weakly-smooth 
-functions on $S$ later.
-It's difficult to explain the reason why we need 
-$\mathcal{A}^{\mathrm{weak}}_S$ now, 
-so this explanation is done in 
-\cref{section-weakly-smooth-functions}.
-We will see a $C^{\infty}$-divisor is
+functions on $S$ in \cref{section-weakly-smooth-functions}.
+We will also see a $C^{\infty}$-divisor is
 an analog of Lagrangian section 
 (\cref{proposition-cartier-lagrangian}).
 
@@ -1897,8 +1888,7 @@ We will define an analog of a Morse complex
 without differential for permissible divisors 
 later.
 
-Fix a polyhedral set $S$ 
-in $\mathbb{R}^{n}$.
+Fix a rational polyhedral space $S$.
 Let 
 $\mathcal{F}^{1}_{\mathbb{Z},S}
 \deq \mathcal{O}^{\times}_S/\mathbb{R}_{S}$,
@@ -1907,13 +1897,13 @@ $\mathcal{F}^{1}_{S}\deq
 \otimes_{\mathbb{Z}_S} \mathbb{R}_S$ 
 and $T_x S\deq \opn{Hom}_{\mathbb{Z}}(
 (\mathcal{F}^{1}_{\mathbb{Z},S})_x,\mathbb{R})$.
-From definition of polyhedral set, 
+From definition of rational polyhedral space, 
 we can see 
 the stalk $(\mathcal{F}^{1}_{\mathbb{Z},S})_x$
 at $x$ is a free 
 $\mathbb{Z}$-module of finite rank.
 
-In order to define the permissible condition,
+In order to define the permissiblility condition,
 we define the subset $\opn{SS}(S)_x$ of cotangent
 space $(\mathcal{F}^{1}_{S})_x$ at $x\in S$ for 
 a boundaryless rational polyhedral
@@ -1992,7 +1982,9 @@ $V$ for the standard pairing of dual vector spaces
 and $\mathcal{W}_{1,S}^{\mathbb{R}}=
 \mathcal{H}om(\mathcal{F}^{1}_{\mathbb{Z},S};\mathbb{R}_S)$ is 
 the sheaf of (real) wave tangent 
-vector spaces of $S$ at $x$. (See \cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} and 
+vector spaces of $S$ at $x$
+(see \cite[1.3]{mikhalkinTropicalEigenwaveIntermediate2014a} 
+and 
 \cite[Definition 2.16, Proposition 2.20, Remark 2.21]{yamamotoTropicalContractionsIntegral2021}).
 \end{proposition}
 \begin{proof}
@@ -2061,12 +2053,15 @@ important cases.
 From now on, we define the permissibility condition 
 for $C^{\infty}$-divisors on boundaryless
 rational polyhedral spaces.
-From definition of superforms on 
+This condition is one of necessary conditions
+to define the local Morse data
+for $C^{\infty}$-divisor.
+From the definition of superforms on 
 polyhedral spaces 
 \cite[Definition 2.10, 2.24]{MR3903579}, we 
 can define the set of \emph{critical points} 
-of $(0,0)$-superform on boundaryless
-rational polyhedral space
+of $(0,0)$-superforms on
+rational polyhedral spaces
 like that of $C^{\infty}$-function on differential
 manifolds.
 Let $f\colon S \to \mathbb{R}$ be a $(0,0)$-superform on 
@@ -2076,10 +2071,11 @@ differential vector $df (x)\in (\mathcal{F}_{S}^{1})_x$ for any
 $x\in S$ from the definition of $(0,0)$-superforms
 and properties of the local 
 cone \cite[Corollary 2.6]{gross2019sheaftheoretic}.
-In general, we can define the 
+For a general rational polyhedral space $S$,
+we can also define the 
 differential of $f$ at $x$ by the pullback of 
 the germ of morphisms 
-$(\opn{LC}_x S,0)\to (S,x)$, and we will use 
+$(\opn{LC}_x S,0)\to (S,x)$, and we will use this
 in \cref{definition-permissible-weakly-smooth}.
 
 
@@ -2096,14 +2092,15 @@ df(x)\notin (\opn{span}_{{\mathbb{R}}}
 
 From definition, if $f$ is permissible at $x$ then
 $f|_{U_x}+m$ is also permissible at $x$ for any 
+open neighborhood $U_x$ at $x$ and 
 $m\in \mathcal{O}_{S}^{\times}(U_x)$.
 Therefore, we can define the permissibility condition
-for principal divisors directly.
+for principal $C^{\infty}$-divisors directly.
 \begin{remark}
 Suppose $\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)=(\mathcal{F}_{S}^{1})_x$. 
 Then, $f$ is permissible if and only if 
 $df(x)\in (\mathcal{F}_{\mathbb{Z},S}^{1})_x$.
-Therefore, permissibility
+Therefore, the permissibility
 condition may be not a generic condition.
 If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
 (\opn{SS}(S)_x)<\dim_{\mathbb{R}} \mathcal{F}_{S,x}^{1}$, the 
@@ -2124,18 +2121,18 @@ Cartier divisors $s,s'$ is
 permissible. 
 \end{definition}
 
-Let $s_0$ be the zero $C^{\infty}$-Cartier data on $S$. 
+Let $s_0$ be the zero $C^{\infty}$-divisor on $S$. 
 Then, a pair $(s_0,s)$ of $C^{\infty}$-divisors 
 is permissible if and only if $s$ is permissible.
-If a $C^{\infty}$-divisor is permissible, 
-then every local data satisfies the above 
+If a $C^{\infty}$-divisor $s$ is permissible, 
+then every local data for $s$ satisfies the above 
 permissibility condition.
 
 \begin{definition}
 \label{definition-divisor-intersection}
 Let $(s,s')$ be a permissible pair of 
 $C^{\infty}$-divisors and 
-$\{(U_i,f_i)\}_{i\in I}$ a local $C^{\infty}$-Cartier data
+$\{(U_i,f_i)\}_{i\in I}$ a local data
 for $s-s'$. The intersection set of the pair 
 $(s,s')$ is the following set
 \begin{align}
@@ -2152,12 +2149,11 @@ a local data for $s-s'$.
 \label{section-stratified-torus-fibration}
 We will explain the set $s'\cap s$ is the 
 intersection of two `Lagrangian sections' of
-stratified torus fibration in this subsection.
+a stratified torus fibration in this subsection.
 We can skip this subsection for following 
 our main theorem.
 
-Let $S$ be a rational polyhedral space satisfying
-\cref{condition-Rn}.
+Let $S$ be a rational polyhedral space.
 We can define a naive analog of Lagrangian torus 
 fibration 
 $\bigcup_{x\in S}(\mathcal{F}^{1}_{S})_x/
@@ -2181,7 +2177,7 @@ fibration} of $S$.
 \end{definition}
 We won't pursue about
 topological structures of $\check{X}_0(S)$ 
-here.
+in this paper.
 
 \begin{example}
 {\setlength{\leftmargini}{22pt}
@@ -2199,7 +2195,7 @@ as a set.
 \end{example}
 
 Let $\check{f}_S\colon \check{X}_0(S)\to S$ be the 
-canonical projection of stratified torus fibration of $S$.
+canonical projection onto $S$.
 
 We recall the following elementary proposition 
 in order to define `Lagrangian section' for $\check{f}_S$.
@@ -2241,7 +2237,7 @@ for all $x\in S$.
 
 \begin{definition}
 Let $s$ be a $C^{\infty}$-divisor 
-on a boundaryless rational polyhedral space $S$ 
+on a (boundaryless) rational polyhedral space $S$ 
 and $\{(U_i,f_i)\}_{i\in I}$ a local data for $s$. 
 The \emph{stratified Lagrangian section} associated with $s$ is the following
 section of $\check{f}_S$:
@@ -2250,8 +2246,8 @@ section of $\check{f}_S$:
 \end{align}
 \end{definition}
 
-The $\check{s}$ is independent of the choice of local
-$C^{\infty}$-Cartier data for $s$ since 
+The $\check{s}$ is independent of the choice 
+of local data for $s$ since 
 $(\mathcal{F}^{1}_{S})_x/(\mathcal{F}^{1}_{\mathbb{Z},S})_x$
 is naturally isomorphic to
 $(\mathcal{F}^{1}_{\mathbb{Z},S})_x
@@ -2263,7 +2259,7 @@ From the permissibility condition and
 
 \begin{proposition}
 Let $(s',s)$ be a permissible $C^{\infty}$-Cartier pair
-on a boundaryless rational polyhedral space, 
+on a (boundaryless) rational polyhedral space, 
 $\{(U_i,f_i)\}_{i\in I}$ the local data 
 for $s-s'$ and $L_s\deq \opn{Im}(\check{s})$.
 Then,
@@ -2282,7 +2278,7 @@ define the graded module of a given permissible pair
 $(s',s)$ of $C^{\infty}$-divisors such that 
 $\sharp (s'\cap s)<\infty$.
 In order to define the graded module
-$\opn{LMD}^{\bullet}(s',s)$, we define the 
+$\opn{LMD}^{\bullet}(s',s)$, we define
 intersection data of 
 the permissible pair $(s',s)$.
 
@@ -2760,12 +2756,12 @@ Let $\Gamma_{n}$ be the projectivization of
 a certain tropical module defined in 
 \cite[2.2]{mikhalkinTropicalCurvesTheir2008a}.
 Each $\Gamma_{n}$ has an embedding 
-into the $n-1$-dimensional tropical projective space
+into the $(n-1)$-dimensional tropical projective space
 $\mathbb{T}P^{n-1}\deq \mathbb{P}(\mathbb{T}^{n})$.
 The $\mathbb{T}P^{n-1}$ has a canonical inclusion
 $\iota_n\colon \mathbb{R}^{n-1}\to 
 \mathbb{T}P^{n-1}$ 
-of tropical algebraic torus.
+of a tropical algebraic torus.
 There exists the following isomorphism as rational 
 polyhedral spaces:
 \begin{align}
@@ -2788,8 +2784,8 @@ vector space of $C$
 \begin{proposition}
 \label{proposition-permissible-curve}
 Let $|\Sigma|$ be the support of a pure $1$-dimensonal 
-finite convex polyhedral fan $|\Sigma|$ such that
-$\Sigma$ spans $\mathbb{R}^{n}$.
+finite convex polyhedral fan $\Sigma$ such that
+$|\Sigma|$ spans $\mathbb{R}^{n}$.
 Let $f\colon |\Sigma|\to \mathbb{R}$ be a 
 $(0,0)$-superform on $|\Sigma|$. Then, 
 $f$ is permissible at $x=(0,\ldots,0)$ if and only if 
@@ -3208,7 +3204,7 @@ following Meyer--Vietoris type lemma.
 \label{proposition-gluing-formula}
 Let $s$ be a permissible $C^{\infty}$-divisor on a
 compact metric graph $C$ such that $s_0\cap s<\infty$.
-Fix two closed metric subgraph of $C$ such that
+Fix two closed metric subgraphs of $C$ such that
 $C' \cup C''=C$ and $C'\cap C''\subset s_0 \cap s$.
 Then, 
 the inclusion $i_{C'}\colon C'\to C$ 
@@ -3354,19 +3350,19 @@ of $g$ satisfying the above condition.
 On the other hand, the index of a given 
 $C^{\infty}$-divisor should be 
 independent of the choice of 
-$C^{\infty}$-Cartier local data.
+local data.
 Since $\opn{ind}_x(g+m)$ depends on the choice
 of monomials $m$, we need to choose a monomial $m_0$
 with integer slope to 
 define the index of $g$ at $x$ as a divisor.
-We consider there is no canonical choice
-of $m_0$ for $g$ as a principal divisor without
+In our knowledge, there is no canonical choice
+of $m_0$ (up to constant) for $g$ as a principal divisor without
 assumption permissibility.
 Every permissible function $f$ has a canonical choice
-of monomials which is determined by the condition 
-whether $x\in \opn{Crit}(f+m)$ or not.
+of monomials $m$ which is one such that 
+$x\in \opn{Crit}(f+m)$ (up to constant).
 We could not use this condition for $g$ since 
-$x\notin \opn{Crit}(g+m)$ for every monomial with
+$x\notin \opn{Crit}(g+m)$ for every monomial $m$ with
 integer slope.
 \end{remark}
 
@@ -3382,11 +3378,11 @@ $\chi(\opn{LMD}(C;s))=\sharp(s_0\cap s)\geq \sharp
 (C\setminus C_{0})$. 
 Thus, $\chi(\opn{LMD}(C;s))\geq 2g(C)-2$
 when $C$ is a compact trivalent
-graph with no $1$-valent vertex. This means that
+graph. This means that
 $\opn{deg}(s)\geq 3g(C)-3$.
 On the other hand, every divisor $D$ satisfying
 $\opn{deg}(D)>0$ is ample \cite[Corollary 43]{MR2892941}.
-In other words, there is no direct tropical
+Roughly speaking, there is no direct tropical
 analog of Kodaira embedding theorem
 in tropical geometry.
 \end{remark}
@@ -3406,7 +3402,8 @@ Our approach is mostly affected from
 \label{section-syz-trivalent-graph}
 When $C$ is a trivalent metric graph, 
 our $\check{X}_0(C)$ are 
-almost the trivalent configuration $M$ of 
+almost the same with 
+the trivalent configuration $M$ of 
 $2$-spheres in 
 \cite[3.1]{auroux2022lagrangian}.
 Here, the space $M$ is the
@@ -3991,14 +3988,14 @@ is equal to the classical $p$-th Borel--Moore homology
 We note $H_{0,0}^{\opn{BM}}(X;\mathbb{Z})\simeq 
  \mathbb{Z}$ if 
 $X$ is compact and path-connected.
-The isomorphism follows from the universal 
+This isomorphism follows from the universal 
 coefficient theorem and 
 $H^{1}_c(X;\mathbb{Z})$ is finitely generated and
 torsion-free 
-\cite[VI.Proposition 5.3]{iversenCohomologySheaves1986a}.
+\cite[Chapter VI. Proposition 5.3]{iversenCohomologySheaves1986a}.
 
-Let $f$ be a proper morphism of rational polyhedral 
-spaces.
+Let $f\colon X \to Y$ be a proper morphism
+of rational polyhedral spaces.
 Then, there exists the pushforward
 $f_*\colon H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})
 \to H_{p,q}^{\mathrm{BM}}(Y;\mathbb{Z})$
@@ -4529,10 +4526,10 @@ Therefore,
 \end{align}
 Thus, we have 
 $\pi_{i}(B)\simeq \pi_{i}(\check{X}(B))\simeq 
-\pi_{i}(X(B))$. 
+\pi_{i}(X(B))$ for $i\geq 2$. 
 
 Let $i\colon L_{s}\to \check{X}(B)$ be the inclusion map of 
-$L$.
+$L_{s}$.
 Since $\check{s}$ is a section of 
 $\check{f}_{B}$, 
 $i_*\colon \pi_i(L_{s})\to \pi_i(\check{X}(B))$ is 
@@ -5150,8 +5147,8 @@ $\mathcal{F}^{\bullet}$.
 
 The dual functor
 $\mathcal{D}_{A_X}\colon 
-\opn{D}^{b}(\catn{Mod}(A_X))\to 
-\opn{D}^{b}(\catn{Mod}(A_X)); \mathcal{F}^{\bullet} \to  R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
+D^{b}(\catn{Mod}(A_X))\to 
+D^{b}(\catn{Mod}(A_X)); \mathcal{F}^{\bullet} \to  R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
 \upomega_{A_X}^{\bullet})$
 has the following canonical isomorphism when 
 $\mathcal{D}_{A_X}(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}))
@@ -5179,7 +5176,7 @@ R\mathcal{H}om_{A_X}
 The pairs of adjoint functors $Rf_! \dashv f^{!}$ 
 induces the \emph{trace map} $\opn{Tr}_{f,\mathcal{F}^{\bullet}}\colon Rf_!f^{!}\mathcal{F}^{\bullet}
 \to \mathcal{F}^{\bullet}$ for each 
-$\mathcal{F}^{\bullet}\in \opn{Ob}(\opn{D}^{b}(A_X))$.
+$\mathcal{F}^{\bullet}\in \opn{Ob}(D^{b}(A_X))$.
 We follow the notation $\opn{Tr}_f$ from 
 \cite[p.20]{MR1299726}.
 Let $f\colon X\to Y $ and $g\colon Y\to Z$ be 
@@ -5515,7 +5512,7 @@ $f_{P,p}$ can be considered as an element of
 $H^{0}(U_{\sigma_p},\mathcal{A}_{X_P}^{\mathrm{weak}})$
 naturally since $f_{P,p}\in 
 \underline{\mathbb{R}}_{\opn{log}}[S_{\sigma_p}]$
-. These data forms a $C^{\infty}$-Cartier 
+. These data form a $C^{\infty}$-Cartier 
 divisor $s_P$ on $X^{\mathrm{trop}}_P$.
 \item Every local cone $\opn{LC}_x X_{P}^{\mathrm{trop}}$
 in $X_P^{\mathrm{trop}}$ at $x$ is isomorphic to an 
@@ -5529,14 +5526,14 @@ $f_P\colon \mathbb{R}\to \mathbb{R};
 x\mapsto \opn{log}(\sum_{i=0}^{n}e^{ix})$ and 
 $X_P\simeq \mathbb{T}P^{1}$.
 $\mathbb{T}P^{1}$ is covered by two open subsets:
-$U_{-\infty}\deq \mathbb{T}$ and 
-$U_{+\infty}\deq \mb{R}\cup\{+\infty\}$.
+$U_{-\infty}\deq \underline{\mathbb{R}}$ and 
+$U_{+\infty}\deq \overline{\mathbb{R}}$.
 Take two continuous functions on each $U_i$ as follows:
 \begin{align}
-f_{-\infty,n}\colon \mathbb{T}\to \mathbb{T};
+f_{-\infty,n}\colon \underline{\mathbb{R}}\to \underline{\mathbb{R}};
 x \mapsto \log (\sum_{i=0}^{n}e^{ix}),\quad
-f_{+\infty,n}\colon \mb{R}\cup\{+\infty\} \to 
-\mathbb{T};
+f_{+\infty,n}\colon \overline{\mathbb{R}} \to 
+\underline{\mathbb{R}};
 x\mapsto \log(\sum_{i=0}^{n}e^{ix})-nx.
 \end{align}
 
@@ -5556,15 +5553,16 @@ Then, we have
 \end{example}
 Let $P$ an $n$-dimensional Delzant polytope again.
 Every face $F$ of $P$ corresponds a convex cone 
-$\sigma(F)$ of the normal fan of $P$.
+$\sigma_F$ of the normal fan of $P$.
 $s_P$ induces a family 
 $\{(O(\sigma_F),f_F|_{O(\sigma_F)})\}_{F \prec P}$ of Laurent polynomials 
-$f_F$ on each tropical torus orbit $O_{\sigma_F}$
-of $\sigma(F)$
-naturally up to monomials.
-If a point $p\in X^{\mathrm{trop}}_P$ satisfies 
-$\mu_P^{\mathrm{trop}}(p)\in F$ for some a face $F$ of 
-$P$, then
+$f_F$ on each tropical torus orbit $O(\sigma_F)$
+of $\sigma_{F}$
+naturally (up to monomials).
+If the image $\mu_P^{\mathrm{trop}}(p)$
+of a point $p\in X^{\mathrm{trop}}_P$  
+in a relative interior of a face $F$ 
+of $P$, then
 $p$ is in 
 $s_0\cap s_P$ if and only if 
 $df_F(p)\in (\mathbb{Z}^{n})^{\vee}$.
