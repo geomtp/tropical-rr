@@ -216,6 +216,9 @@
 \DeclareMathOperator{\fuk}{fuk}
 \DeclareMathOperator{\coh}{coh}
 
+\crefname{equation}{}{}
+\crefname{conjecture}{Conjecture}{Conjectures}
+
 \usepackage{mathrsfs}
 \usepackage{upgreek}
 \numberwithin{equation}{section}
@@ -236,15 +239,16 @@ Tokyo, 153-8914, Japan}
 We use ideas 
 from the Strominger--Yau--Zaslow conjecture 
 and microlocal sheaf theory 
-to define graded modules  
-of $C^{\infty}$-divisors 
+to define graded modules
+associated with $C^{\infty}$-divisors 
 on compact tropical manifolds.
-A $C^{\infty}$-divisor is 
-a certain extension of a 
-Lagrangian section on an integral affine 
-manifold, and the group of $C^{\infty}$-divisors
-on a tropical manifold has a surjection onto 
-the Picard group of it.
+A $C^{\infty}$-divisor is
+a generalization of
+a Lagrangian section
+on an integral affine manifold.
+The group of $C^{\infty}$-divisors
+on a tropical manifold surjects
+onto the Picard group.
 We also prove a Riemann--Roch formula 
 for compact tropical curves 
 and integral affine manifolds 
@@ -263,19 +267,24 @@ Tropical geometry is a combinatorial
 (or convex-geometric)
 analog of algebraic (or analytic) geometry.
 A \emph{rational polyhedral space}
-is a pair 
-$(S,\mathcal{O}^{\times}_S)$ of a 
-topological space $S$ and 
-the sheaf $\mathcal{O}^{\times}_S$ of 
-locally affine linear functions with 
-integer slopes such that 
-$S$ is locally isomorphic to an open subset
+is a pair
+$(S,\mathcal{O}^{\times}_S)$
+of a topological space $S$
+and 
+a sheaf $\mathcal{O}^{\times}_S$ on $S$
+which is locally isomorphic to
+the pair
+of an open subset
 of a polyhedral subset 
 of a tropical affine space 
 $
 \overline{\mathbb{R}}^{k}=
 (\mathbb{R}\cup\{+\infty\})^{k}
 $
+and
+the sheaf
+of affine linear functions with 
+integer slopes
 (see e.g.~\cite[Definition 2.2]{gross2019sheaftheoretic}).
 The sheaf $\mathcal{O}_S^{\times}$ is a tropical analog
 of the sheaf $\mathcal{O}_X^{\times}$ of 
@@ -301,16 +310,16 @@ $\overline{\mathbb{R}}^{k}$
 (see \cite[Definition 6.1]{gross2019sheaftheoretic} 
 which originates from 
 \cite[Definition 1.14]{mikhalkinTropicalEigenwaveIntermediate2014a}).
-An example of tropical manifold is 
+An example of a tropical manifold is 
 a \emph{tropical curve}
 \cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a}
 (see also \cite[Definition 1.1]{gathmannRiemannRochTheoremTropical2008a}
-for a combinatorial definition of tropical curve).
+for a combinatorial definition of a tropical curve).
 In this paper, the term `tropical curve' refers to a 
 $1$-dimensional tropical manifold.
 Every (finite) metric graph 
 (with no $1$-valent vertex) has 
-a natural structure of tropical curve 
+a natural structure of a tropical curve 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
 
 Finding tropical analogs of various theorems 
@@ -360,9 +369,9 @@ does not apply.
 See \cref{section-tropical-riemann-roch}
 for more on this difficulty.
 \cref{section-tropical-riemann-roch}
-contains previous research
-about the topological Euler characteristic and 
-the Todd class of tropical manifolds.
+also contains earlier works
+on topological Euler characteristics and 
+Todd classes of tropical manifolds.
 
 In this paper,
 we pursue a different tropical analog
@@ -498,7 +507,7 @@ and a flat $U(1)$-bundle),
 which we ignore here
 for the sake of brevity of the exposition.
 A pair of $C^\infty$-divisors
-which differ by an image of
+which differ by an element in the image of
 $H^0(B; \mathcal{C}^{\infty}_{B})$
 give rise to
 Hamiltonian isotopic
@@ -599,9 +608,6 @@ a $C^{\infty}$-divisor $s$ satisfying
 $[s]=\mathcal{L}$. 
 \end{conjecture}
 
-\cref{conjecture-enough-permissible} is trivial when 
-$S$ is a compact tropical curve 
-or a compact integral affine manifold.
 \cref{conjecture-tropical-MRR-preface} below
 is the main conjecture
 of this paper:
@@ -609,8 +615,9 @@ of this paper:
 \begin{conjecture}
 \label{conjecture-tropical-MRR-preface}
 For any compact boundaryless tropical manifold $S$, 
-there exists an element $\opn{td}(S)$ of the tropical 
-cohomology group $H^{\bullet,\bullet}(S;\mathbb{Z})$ such that, 
+there exists an element $\opn{td}(S)$
+of the total tropical cohomology group
+$H^{\bullet,\bullet}(S;\mathbb{Z})$ such that, 
 for any $s \in \CDiv(S)$
 satisfying
 \cref{condition-good-divisor}, 
@@ -624,11 +631,13 @@ one has
 $\chi(\opn{LMD}^{\bullet}(S;s))=\chi_{\opn{top}}(S)$
 when $[s] = 0 \in \Pic S$.
 \end{conjecture}
-If \cref{conjecture-enough-permissible}
-and \cref{conjecture-tropical-MRR-preface} is true,
-then we can define the Euler characteristic of 
-line bundles as well-defined.
 
+\cref{conjecture-enough-permissible,conjecture-tropical-MRR-preface}
+implies that
+the Euler characteristic of a line bundle is well-defined.
+\cref{conjecture-enough-permissible} is obvious when 
+$S$ is a compact tropical curve 
+or a compact integral affine manifold.
 \cref{theorem-MRR-curve-preface,theorem-MRR-hesse-preface}
 below prove \cref{conjecture-tropical-MRR-preface}
 for a compact tropical curve
@@ -705,8 +714,8 @@ and
 respectively,
 our proofs are purely `tropical'
 and does not rely on the SYZ transformation
-(see \cref{section-syz-trivalent-graph} and 
-\cref{section-floer-lmd} 
+(see
+\cref{section-syz-trivalent-graph,section-floer-lmd} 
 for more details).
 
 \subsection{Outline of this paper}
@@ -3399,7 +3408,6 @@ homological mirror symmetry of trivalent graphs}
 
 Our approach is mostly affected from 
 \cite{auroux2022lagrangian}.
-\label{section-syz-trivalent-graph}
 When $C$ is a trivalent metric graph, 
 our $\check{X}_0(C)$ are 
 almost the same with 
