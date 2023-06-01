@@ -211,12 +211,17 @@
         \else      [Cited on p.#2.]%
     \fi}
 
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\CDiv}{CDiv}
+\DeclareMathOperator{\fuk}{fuk}
+\DeclareMathOperator{\coh}{coh}
 
 \usepackage{mathrsfs}
 \usepackage{upgreek}
 \numberwithin{equation}{section}
-\title[Graded modules associated with line bundles]{Graded modules associated with line bundles on 
-tropical curves and integral Hessian manifolds}
+\title[Graded modules associated with line bundles]{Graded modules 
+associated with line bundles on 
+compact tropical manifolds}
 \author[Y. Tsutsui]{Yuki Tsutsui}
 \address{Graduate School of Mathematical Sciences,
 The University of Tokyo, 3-8-1 Komaba, Meguro-Ku,
@@ -228,7 +233,7 @@ Tokyo, 153-8914, Japan}
 
 \begin{abstract}
 We use ideas 
-from the Strominger-Yau-Zaslow conjecture 
+from the Strominger--Yau--Zaslow conjecture 
 and microlocal sheaf theory 
 to consider the formulation problem 
 of a tropical version of the Euler 
@@ -236,7 +241,8 @@ characteristic of line bundles
 on compact tropical manifolds. 
 We also prove a Riemann--Roch formula 
 for compact tropical curves 
-and integral affine manifolds equipped with a Hessian form. 
+and integral affine manifolds 
+admitting Hessian forms. 
 Our approach differs from the tropical Riemann--Roch theorem 
 established by Gathmann and Kerber.
 \end{abstract}
@@ -256,7 +262,7 @@ $(S,\mathcal{O}^{\times}_S)$ of a
 topological space $S$ and 
 the sheaf $\mathcal{O}^{\times}_S$ of 
 locally affine linear functions with 
-$\mathbb{Z}$-valued slopes such that 
+integer slopes such that 
 $S$ is locally isomorphic to an open subset
 of a polyhedral subset 
 of a tropical affine space 
@@ -268,7 +274,7 @@ $
 The sheaf $\mathcal{O}_S^{\times}$ is a tropical analog
 of the sheaf $\mathcal{O}_X^{\times}$ of 
 units of the structure sheaf $\mathcal{O}_X$ of 
-an algebraic varieties $X$.
+an algebraic variety $X$.
 The first cohomology 
 $H^{1}(S;\mathcal{O}_S^{\times})$ 
 parameterize the isomorphism classes 
@@ -279,15 +285,15 @@ a rational polyhedral space which is locally
 isomorphic to the direct product of a 
 Bergman fan $\Sigma_M$ for some loopless 
 matroid $M$ and a tropical affine space 
-$\overline{\mathbb{R}}^{k}$,
+$\overline{\mathbb{R}}^{k}$
 (see \cite[Definition 6.1]{gross2019sheaftheoretic} 
 which originates from 
-\cite[Definition 1.14]{mikhalkinTropicalEigenwaveIntermediate2014a}.
+\cite[Definition 1.14]{mikhalkinTropicalEigenwaveIntermediate2014a}).
 An example of tropical manifold is 
 a \emph{tropical curve}
 \cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a}
 (see also \cite[Definition 1.1]{gathmannRiemannRochTheoremTropical2008a}
-for a combinatorical definition of tropical curve).
+for a combinatorial definition of tropical curve).
 In this paper, the term `tropical curve' refers to a 
 $1$-dimensional tropical manifold.
 Every (finite) metric graph 
@@ -295,37 +301,39 @@ Every (finite) metric graph
 a natural structure of tropical curve 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
 
-Finding tropical analogues of various theorems 
+Finding tropical analogs of various theorems 
 in algebraic geometry is one of the 
 important themes in tropical geometry.
 The tropical Riemann--Roch theorem for a 
-divisor $D$ on a compact (and connected) tropical curve $C$,
-proved by Gathmann--Kerber \cite{gathmannRiemannRochTheoremTropical2008a}
+divisor $D$
+\cite[Definition 1.3]{gathmannRiemannRochTheoremTropical2008a}
+on a compact (and connected) tropical curve $C$,
+proved 
+by Gathmann--Kerber \cite{gathmannRiemannRochTheoremTropical2008a}
 as an extension of Riemann--Roch theorem for graphs
 \cite{MR2355607} (see also 
 \cite{mikhalkinTropicalCurvesTheir2008a}),
 is the equality
 \begin{align} \label{Gathmann-Kerber-TRR}
-r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\opn{top}}(C).
+r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\mathrm{top}}(C),
 \end{align}
 where $r(D)$ is the rank of the linear system of 
 $D$ 
 \cite[Definition 1.12]{gathmannRiemannRochTheoremTropical2008a}, 
 $K_C$ is the canonical divisor of $C$
 \cite[Definition 1.3]{gathmannRiemannRochTheoremTropical2008a}
-and $\chi_{\opn{top}}(C)$ is the topological 
+and $\chi_{\mathrm{top}}(C)$ is the topological 
 Euler characteristic of $C$.
 
-It is a natural to extend \eqref{Gathmann-Kerber-TRR} 
-to a tropical analog of 
+It is a natural problem 
+to find a tropical analog of 
 the Hirzebruch--Riemann--Roch theorem
 \begin{align} \label{equation-HRR}
 \chi(H^{\bullet}(X;\mathcal{L}))
 =\int_X \opn{ch}(\mathcal{L})\opn{td}(X)
 \end{align}
-proved for complex line bundles on 
-projective complex manifolds 
-by \cite{MR0202713}.
+for line bundles on 
+complex projective manifolds \cite{MR0202713}.
 However,
 the left hand side of \eqref{equation-HRR}
 does not have a straightforward tropicalization,
@@ -883,9 +891,6 @@ with fiber $A$.
 \item $\catn{Mod}(\mathcal{R})$: the category of 
 sheaves of $\mathcal{R}$-modules
 (e.g. \cite[Definition 2.2.6]{MR1299726}).
-\item $\opn{D}^{b}(\mathcal{C})$: the derived category
-of bounded complexes of a given abelian category 
-$\mathcal{C}$.
 \end{itemize}
 
 \end{notation}
@@ -956,7 +961,7 @@ If $(M^{\bullet},d)$ is a bounded chain complex of finitely
 generated $A$-module, then 
 $\chi(M^{\bullet})=\chi(H^{\bullet}(M^{\bullet}))$.
 We note $K_0(\mathcal{C})\simeq 
-K_0(\opn{D}^{b}(\mathcal{C}))$ for any abelian category 
+K_0(D^{b}(\mathcal{C}))$ for any abelian category 
 \cite[Exercise I.27]{MR1299726}.
 
 \subsubsection{Some operations of sheaves}
@@ -1039,7 +1044,7 @@ f^{-1}\mathcal{F}_Z\simeq
 \end{align}
 
 Let $\mathscr{I}$ be the full subcategory of 
-$\opn{Mod}(A_X)$ consisting of flabby sheaves. 
+$\catn{Mod}(A_X)$ consisting of flabby sheaves. 
 Then $\mathscr{I}$ is $\Gamma_{Z}$-injective and
 $\Gamma_{Z}(\mathcal{I})\in\mathscr{I}$ for 
 $\mathcal{I}\in \mathscr{I}$ \cite[Proposition 2.4.6]{MR1299726}.
@@ -1153,6 +1158,8 @@ for this paper which is naturally appeared in
 microlocal sheaf theory \cite{MR1299726}, 
 and which is called ``local Morse datum'' in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
+(The double quotation mark here is taken from 
+\cite[p.271]{MR2031639}.)
 \begin{definition}[{Cohomological local Morse datum}]
 \label{definition-local-morse-data}
 Let $f\colon X\to {\mathbb{R}}$ be a continuous map on a 
@@ -5335,7 +5342,7 @@ N_{k}\deq
 M\deq N^{\vee},& \quad 
 M_{k}\deq M\otimes_{\mathbb{Z}}k^{\times}.
 \end{align}
-For instance, if $k$ is a max-plus semifield
+For instance, if $k$ is the max-plus semifield
 $\underline{\mathbb{R}}$, then 
 $N_{\underline{\mathbb{R}}}\simeq \mathbb{R}^{n}$.
 At first, we can formally define (normal) 
