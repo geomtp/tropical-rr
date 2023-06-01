@@ -3,7 +3,7 @@
 %
 %%%% packages
 \usepackage[utf8]{inputenc}
-\usepackage[dvipdfmx]{graphicx,color}%for images
+\usepackage{graphicx,color}%for images
 \usepackage{bm}%fonts
 \usepackage{tikz-cd}%
 \usetikzlibrary{cd}
@@ -441,8 +441,7 @@ then the SYZ conjecture holds
 \cite{MR1882331,MR3728639,MR3656481,MR4301560},
 as we recall briefly now
 (and in a little more detail later
-in \cref{section-integral-affine-manifold} 
-and \cref{appendix-integral-affine-manifold}):
+in \cref{section-integral-affine-manifold}):
 \footnote{The assumption $\pi_2(B) = 0$ is redundant
 if Markus conjecture holds
 (see \cref{remark-markus-conjecture}).}
@@ -458,8 +457,8 @@ An element of
 $
 \CDiv(B) \coloneqq H^{0}(B;\mathcal{C}^{\infty}_{B}/\mathcal{O}^{\times}_{B})
 $
-is called a \emph{$C^\infty$-Cartier divisor}
-(\cref{C-infinity-Cartier divisor}).
+is called a \emph{$C^\infty$-divisor}
+(\cref{definition-C-infinity-divisor}).
 The short exact sequence
 \begin{align}
 0
@@ -498,7 +497,7 @@ a spin structure,
 and a flat $U(1)$-bundle),
 which we ignore here
 for the sake of brevity of the exposition.
-A pair of $C^\infty$-Cartier divisors
+A pair of $C^\infty$-divisors
 which differ by an image of
 $H^0(B; \mathcal{C}^{\infty}_{B})$
 give rise to
@@ -519,6 +518,7 @@ s, s' \in \CDiv(B)
 $,
 one has an isomorphism 
 \begin{align}
+\label{equation-hf-sheaf-cohomology}
 \opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})
 \simeq \opn{Ext}^{\bullet}_{\mathcal{O}_{\mathcal{X}(B)}}(\mathcal{L}_s,\mathcal{L}_{s'}),
 \end{align}
@@ -678,7 +678,7 @@ the quadratic function
 $f_n \colon \mathbb{R} \to \mathbb{R}$,
 $x \mapsto \frac{n}{2}x^{2}$
 on the universal cover of $B$
-defines a $C^{\infty}$-Cartier divisor 
+defines a $C^{\infty}$-divisor 
 $s_n \in \CDiv(B)$.
 The associated Lagrangian section $L_{s_n}$
 is the graph of
@@ -713,7 +713,7 @@ for more details).
 
 In \cref{section-local-morse-data},
 we define local Morse data $\opn{LMD}^{\bullet}(S;s)$
-for $C^{\infty}$-Cartier divisors $s$ 
+for $C^{\infty}$-divisors $s$ 
 satisfying \cref{condition-good-divisor}
 on tropical manifolds.
 \cref{section-tropical-curve} contains the proof of
@@ -729,7 +729,7 @@ of Riemann--Roch type formula.
 \subsection*{Acknowledgments}
 I would like to express 
 my deepest gratitude to my supervisor, Kazushi Ueda,
-for his numerously invaluable advice and encourgament.
+for his numerously invaluable advice and encouragement.
 In particular, I have learned a great deal about 
 homological mirror symmetry from him.
 I want to offer my sincere thanks 
@@ -745,7 +745,7 @@ on Noether formula for general tropical surfaces.
 I am so thankful to Masanori Kobayashi for 
 pointing out some errors for the prior version 
 of the permissibility condition for
-principal $C^{\infty}$-Cartier divisors on metric graphs.
+principal $C^{\infty}$-divisors on metric graphs.
 I appreciate Yoshinori Gongyo for 
 giving a question about relationships 
 between a type of Pick's formula for
@@ -841,7 +841,7 @@ $\alpha=0,1,\ldots,\infty,\omega$.
 \end{itemize}
 
 \section{The cohomological local Morse data for
-$C^{\infty}$-divisors}
+\texorpdfstring{$C^{\infty}$}{C-infty}-divisors}
 \label{section-local-morse-data}
 In this section, we recall some elementary results
 for cohomological local Morse data of sheaves from
@@ -887,7 +887,7 @@ If $(M^{\bullet},d)$ is a bounded chain complex of finitely
 generated $A$-module, then 
 $\chi(M^{\bullet})=\chi(H^{\bullet}(M^{\bullet}))$.
 We note $K_0(\mathcal{C})\simeq 
-K_0(D^{b}(\mathcal{C}))$ for any abelian category 
+K_0(D^{b}(\mathcal{C}))$ for any Abelian category 
 $\mathcal{C}$
 \cite[Exercise I.27]{MR1299726}.
 
@@ -991,7 +991,7 @@ R\Gamma_{Z'}(\mcal{F}^{\bullet})[1].
 
 \begin{example}
 \label{example-local-cohomology}
-Let $Z$ be a open subset of $X$ 
+Let $Z$ be an open subset of $X$ 
 $\mathcal{F}^{\bullet}=A_{X}$ 
 and $U=Z\setminus Z'$.
 By taking the global 
@@ -1042,7 +1042,7 @@ equation:
 =j^{-1} \circ \Gamma_Z.
 \end{align}
 Since $j^{-1}=j^{!}$ and $j_!$ is exact, 
-$j^{-1}$ preseves injectives. 
+$j^{-1}$ preserves injectives. 
 Therefore, $R\Gamma_{j^{-1}(Z)} 
 \circ j^{-1}=j^{-1}\circ R\Gamma_Z$.
 In particular, for any point $v\in V$ we have
@@ -1248,7 +1248,7 @@ the local Morse index of is a certain generalization of
 Poincar\'e--Hopf index of the gradient 
 $\opn{grad}(f)$ of a smooth function $f$ 
 when $f$ is a Morse function. 
-we recall \cref{notation-general}
+We recall \cref{notation-general}
 and set
 \begin{align}
 f_{n,m}\colon \mathbb{R}^{n}\times \mathbb{R}^{m}\to \mathbb{R};
@@ -1355,7 +1355,7 @@ the micro-support of $\mcal{F}^{\bullet}$:
 The element $p\in T^{*}X$ 
 is  $p\notin \opn{SS}(\mathcal{F}^{\bullet})$
 if there exists an open neighborhood $U$ of $p$ such 
-that for any $x_1\in X$ any any real 
+that for any $x_1\in X$ any real 
 function $\psi$ of class $C^{\alpha}$ defined 
 in a neighborhood $V$ of $x_1$, with 
 $d\psi(x_1)\in U$, we have
@@ -1425,7 +1425,7 @@ is finitely generated.
 
 \begin{proposition}[{\cite[Proposition 5.4.20]{MR1299726},
 \cite[Remark 1.2]{MR1160840}}]
-Under the \cref{condition-global-morse}, 
+Under \cref{condition-global-morse}, 
 \begin{align}
 \chi(H^{\bullet}(X;\mathcal{F}^{\bullet}))=
 \chi (\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)).
@@ -1441,7 +1441,7 @@ This is called the microlocal index formula or Kashiwara's
 index formula.
 
 \begin{remark}
-We can cahnge \cref{condition-global-morse}.(2) 
+We can change \cref{condition-global-morse}.(2) 
 to a weaker version \cite[(H.2)]{MR1160840}:
 \begin{enumerate}
 \setlength{\leftskip}{0pt}
@@ -1469,13 +1469,13 @@ that the pair $(\iota_*\mathbb{R}_S,f)$ satisfies
 \end{align}
 for any smooth function $f\colon M\to \mathbb{R}$.
 Therefore, this is a certain sheaf theoretic version of 
-Poincar\'e--Hopf theorem for some polyhedral spaces. Under
-the \cref{observation-tropical-euler}, 
+Poincar\'e--Hopf theorem for some polyhedral spaces. 
+The cohomology 
 $H^{\bullet}(M;\iota_*k_S)$
  should be considered as a
 certain analog of 
-$H^{\bullet}(X;\iota_*\mcal{O}_Z)$ for closed embedding of 
-scheme.
+$H^{\bullet}(X;\iota_*\mcal{O}_Z)$ for closed embedding 
+of a scheme.
 \end{example}
 
 \begin{example}[{cf. \cite[Exercise V.12]{MR1299726}}]
@@ -1574,7 +1574,7 @@ $\tilde{f}$ when $\tilde{f}$ is a Morse function.
 % $f$.
 
 The following example is a $C^{\infty}$-function on a 
-smooth manifold with an unique isolated critical point such
+smooth manifold with a unique isolated critical point such
 that $\opn{LMD}^{\bullet}(A_M,f)$ is bounded and 
 finitely generated.
 
@@ -1625,9 +1625,9 @@ topological spaces:
 (\bar{B}_{\varepsilon}^{n}(x),
 \bar{B}_{\varepsilon}^{n}(x)\cap \{f=f(x)\})
 \simeq (\opn{Cone}(S_{\varepsilon}^{n-1}(x)),
-\opn{Cone}(S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\})).
+\opn{Cone}(S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\}))
 \end{align}
-Here $\opn{Cone}(X)$ is the topological cone over
+where $\opn{Cone}(X)$ is the topological cone over
 $X$ \cite[Example 4.4]{hatcherAlgebraicTopology2002a}.
 This homeomorphism is classically proved when 
 $f$ is real analytic function and $x$ is an 
@@ -1719,7 +1719,7 @@ polyhedral spaces}
 
 We recall about line bundles on 
 rational polyhedral spaces and discuss the notion of
-\emph{$C^{\infty}$-Cartier divisor}
+\emph{$C^{\infty}$-divisor}
 for boundaryless rational polyhedral spaces
 \cite[\textsection 4.2]{MR4246795}.
 We mainly follow 
@@ -1796,7 +1796,7 @@ of (real valued) \emph{tropical rational functions}
 0 \to \mcal{O}^{\times}_S \to \mcal{M}_S^{\times} 
 \to \mcal{M}_S^{\times}/\mathcal{O}^{\times}_S\to 0.
 \end{align}
-There are several different definitions of  
+There exist different definitions of  
 tropical rational function 
 (for example, see \cite{mikhalkin2018tropical}).
 By taking a global section of the
@@ -1832,7 +1832,7 @@ In this paper, the definition of fine sheaves follows
 \cite[Definition 3.3]{MR2359489}.
 \begin{definition}
 Let $S$ be a boundaryless rational polyhedral space.
-A \emph{$C^{\infty}$-Cartier divisor} on 
+A \emph{$C^{\infty}$-divisor} on 
 $S$ is an element of
 $H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)$.
 Let 
@@ -1841,7 +1841,7 @@ H^{0}(S;\mathcal{A}^{0,0}_S)\to
 H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)$ 
 be a morphism defined from 
 \eqref{equation-smoooth-cartier-divisor-sequence}.
-The \emph{principal $C^{\infty}$-Cartier divisor} of a $(0,0)$-superform 
+The \emph{principal $C^{\infty}$-divisor} of a $(0,0)$-superform 
 $f$ is the image $(f)^{\mathrm{sm}}$ of $f$.
 \end{definition}
 We write $\CDiv(S)$ for 
@@ -1856,12 +1856,12 @@ It's difficult to explain the reason why we need
 $\mathcal{A}^{\mathrm{weak}}_S$ now, 
 so this explanation is done in 
 \cref{section-weakly-smooth-functions}.
-We will see a $C^{\infty}$-Cartier divisor is
+We will see a $C^{\infty}$-divisor is
 an analog of Lagrangian section 
 (\cref{proposition-cartier-lagrangian}).
 
 We also use the following representation of 
-$C^{\infty}$-Cartier divisor like 
+$C^{\infty}$-divisor like 
 \cite[Definition 4.0.12]{MR2810322}.
 \begin{definition}[{$C^{\infty}$-Cartier local data}]
 \label{definition-Cartier-local-data}
@@ -1891,7 +1891,7 @@ satisfying \cref{condition-good-divisor}.
 
 In this subsection, we define 
 the \emph{permissibility condition} for
-$C^{\infty}$-Cartier divisors on rational 
+$C^{\infty}$-divisors on rational 
 polyhedral spaces.
 We will define an analog of a Morse complex
 without differential for permissible divisors 
@@ -1901,8 +1901,7 @@ Fix a polyhedral set $S$
 in $\mathbb{R}^{n}$.
 Let 
 $\mathcal{F}^{1}_{\mathbb{Z},S}
-\deq \mathcal{O}^{\times}_S/\mathbb{R}_{S}$
-,
+\deq \mathcal{O}^{\times}_S/\mathbb{R}_{S}$,
 $\mathcal{F}^{1}_{S}\deq 
 \mathcal{F}^{1}_{\mathbb{Z},S}
 \otimes_{\mathbb{Z}_S} \mathbb{R}_S$ 
@@ -1952,7 +1951,7 @@ d_0\phi(\opn{SS}((\mathbb{Z}_{T_x S})_{\opn{LC}_x S})_0).
 
 In general, $\opn{SS}(S)_x$  
 is complicated, but this is related with the 
-follwoing vector 
+following vector 
 spaces:
 
 \begin{definition}[{Lineality subspace 
@@ -2060,7 +2059,7 @@ important cases.
 \end{remark}
 
 From now on, we define the permissibility condition 
-for $C^{\infty}$-Cartier divisors on boundaryless
+for $C^{\infty}$-divisors on boundaryless
 rational polyhedral spaces.
 From definition of superforms on 
 polyhedral spaces 
@@ -2113,9 +2112,9 @@ connected.
 \end{remark}
 
 
-\begin{definition}[{permissible $C^{\infty}$-Cartier divisor}]
+\begin{definition}[{permissible $C^{\infty}$-divisor}]
 \label{definition-permissible-smooth-cartier-divisor}
-A $C^{\infty}$-Cartier divisor $s$ is \emph{permissible} 
+A $C^{\infty}$-divisor $s$ is \emph{permissible} 
 if there exists a local data $\{(U_i,f_i)\}_{i\in I}$ 
 for $s$
 such that $f_i$ is permissible for all $i\in I$. 
@@ -2126,16 +2125,16 @@ permissible.
 \end{definition}
 
 Let $s_0$ be the zero $C^{\infty}$-Cartier data on $S$. 
-Then, a pair $(s_0,s)$ of $C^{\infty}$-Cartier divisors 
+Then, a pair $(s_0,s)$ of $C^{\infty}$-divisors 
 is permissible if and only if $s$ is permissible.
-If a $C^{\infty}$-Cartier divisor is permissible, 
+If a $C^{\infty}$-divisor is permissible, 
 then every local data satisfies the above 
 permissibility condition.
 
 \begin{definition}
 \label{definition-divisor-intersection}
 Let $(s,s')$ be a permissible pair of 
-$C^{\infty}$-Cartier divisors and 
+$C^{\infty}$-divisors and 
 $\{(U_i,f_i)\}_{i\in I}$ a local $C^{\infty}$-Cartier data
 for $s-s'$. The intersection set of the pair 
 $(s,s')$ is the following set
@@ -2241,7 +2240,7 @@ $\opn{pr}_{S,x}\colon (\mathcal{F}_{S}^{1})_x\simeq
 for all $x\in S$.
 
 \begin{definition}
-Let $s$ be a $C^{\infty}$-Cartier divisor 
+Let $s$ be a $C^{\infty}$-divisor 
 on a boundaryless rational polyhedral space $S$ 
 and $\{(U_i,f_i)\}_{i\in I}$ a local data for $s$. 
 The \emph{stratified Lagrangian section} associated with $s$ is the following
@@ -2280,7 +2279,7 @@ Then,
 
 In this subsection, we
 define the graded module of a given permissible pair 
-$(s',s)$ of $C^{\infty}$-Cartier divisors such that 
+$(s',s)$ of $C^{\infty}$-divisors such that 
 $\sharp (s'\cap s)<\infty$.
 In order to define the graded module
 $\opn{LMD}^{\bullet}(s',s)$, we define the 
@@ -2291,7 +2290,7 @@ the permissible pair $(s',s)$.
 \label{definition-intersection-data}
 Fix a (boundaryless) 
 rational polyhedral space $S$.
-Let $s$ be an permissible $C^{\infty}$-Cartier divisor 
+Let $s$ be a permissible $C^{\infty}$-divisor 
 on $S$ such that $\sharp (s\cap s_0)<\infty$. 
 An \emph{intersection data} for $s$ is the set 
 $\{(U_p,f_p)\}_{p\in s\cap s_0}$ of pairs of open subsets
@@ -2306,16 +2305,16 @@ for all $p\in s_0\cap s$,
 \item $f_p(p)=0$ for all $p\in s_0\cap s$.
 \end{enumerate}
 An intersection data for a permissible pair 
-$(s',s)$ of $C^{\infty}$-Cartier divisors is 
+$(s',s)$ of $C^{\infty}$-divisors is 
 an intersection data for $s-s'$.
 \end{definition}
 
 \begin{definition}[{Cohomological local Morse data for 
-$C^{\infty}$-Cartier divisors}]
+$C^{\infty}$-divisors}]
 \label{definition-local-morse-data-divisor}
 Let $S$ be a (boundaryless) rational polyhedral space 
 and $s$ be a permissible 
-$C^{\infty}$-Cartier divisor such that
+$C^{\infty}$-divisor such that
 $s'\cap s$ is finite and 
 $\{(U_p,f_p)\}_{p\in s_0\cap s}$ 
 be an intersection data for $s$.
@@ -2359,13 +2358,13 @@ $\opn{LMD}^{\bullet}_{A}(S;s)$.
 \begin{example}
 \label{example-tropical-kodaira-vanishing}
 Let $S$ be a boundaryless rational polyhedral space, 
-$s$ a $C^{\infty}$-Cartier divisor on $S$ 
+$s$ a $C^{\infty}$-divisor on $S$ 
 and $\{(f_i,U_i)\}_{i\in I}$ the local data of $s$. 
 $s$ is 
 \emph{Bohr--Sommerfeld type},
 \emph{strongly-positive}
 or \emph{Hessian type} if every
-$f_i$ is locally a resctriction of a strictly convex 
+$f_i$ is locally a restriction of a strictly convex 
 function on an open neighborhood of $T_0(\opn{LC}_x)S$ 
 for any $i\in I$. 
 This is a certain analog of positive form on
@@ -2396,12 +2395,12 @@ from \cite{MR2892935}.
 \end{example}
 
 The following is the `good' conditions for 
-a given $C^{\infty}$-Cartier divisor 
+a given $C^{\infty}$-divisor 
 $s$ to consider Riemann--Roch type theorems.
 
 \begin{condition}
 \label{condition-good-divisor}
-$s$ is a permissible $C^{\infty}$-Cartier divisor on 
+$s$ is a permissible $C^{\infty}$-divisor on 
 a (boundaryless) rational polyhedral space 
 $S$ such that $s_0\cap s$ is finite and 
 $\opn{LMD}^{\bullet}(S;s)$ is bounded and 
@@ -2420,8 +2419,8 @@ map in this paper.
 \begin{proposition}
 \label{proposition-euler-number-etale}
 Let $S$ be a compact boundaryless rational polyhedral 
-space and $s$ be an permissible 
-$C^{\infty}$-Cartier divisor
+space and $s$ be a permissible 
+$C^{\infty}$-divisor
 satisfying \cref{condition-good-divisor}.
 For a tropical \'etale covering 
 map $q \colon S' \to S$ of 
@@ -2444,7 +2443,7 @@ We will use this feature for tropical curves
 \begin{remark}
 Obviously, $\opn{LMD}^{\bullet}(S;s)$ is not usually 
 finitely generated and this is not invariant 
-for linearly equivalent $C^{\infty}$-Cartier divisors
+for linearly equivalent $C^{\infty}$-divisors
 if $S$ is not compact.
 This corresponds that Morse homology does not work directly
 for non-compact manifolds such 
@@ -2455,10 +2454,12 @@ polyhedral spaces. See also
 \cref{remark-rotation-closed-interval}.  
 \end{remark}
 
-\subsection{$C^{\infty}$-Cartier divisors 
+\subsection{\texorpdfstring{$C^{\infty}$}{C-infty}-divisors 
 for general rational polyhedral spaces}
 \label{section-weakly-smooth-functions}
-In this section, we will define $C^{\infty}$-Cartier divisors 
+
+In this section, we will define
+$C^{\infty}$-divisors 
 for general rational polyhedral spaces 
 and finish preparations necessary to formulate
 \cref{conjecture-tropical-MRR-preface} for any 
@@ -2633,7 +2634,8 @@ see also \eqref{equation-log-polynomial}.
 
 
 \begin{definition}
-A \emph{$C^{\infty}$-Cartier divisor} on 
+\label{definition-C-infinity-divisor}
+A \emph{$C^{\infty}$-divisor} on 
 a rational polyhedral space $S$ is an 
 element of $H^{0}(S;\mathcal{A}_S^{\opn{weak}}/
 \mathcal{O}^{\times}_S)$. 
@@ -2654,7 +2656,7 @@ We can define a \emph{local data} for
 $s$ like when $S$ is boundaryless naturally
 (\cref{definition-Cartier-local-data}).
 We can extend the permissibility condition for
-weakly-smooth functions and $C^{\infty}$-Cartier divisors on
+weakly-smooth functions and $C^{\infty}$-divisors on
 general rational polyhedral spaces by the following lemma.  
 
 \begin{lemma}
@@ -2706,8 +2708,7 @@ $0\in \opn{LC}_x U$.
 The weakly-smooth function $f$ is permissible if 
 $f$ is permissible at $x$ for all $x\in U$.
 Let $s\in H^{0}(S;\mathcal{A}^{\mathrm{weak}}_S/
-\mathcal{O}^{\times}_S)$ be a $C^{\infty}$-Cartier
-divisor on a rational polyhedral space $S$.
+\mathcal{O}^{\times}_S)$ be a $C^{\infty}$-divisor on a rational polyhedral space $S$.
 The $s$ is \emph{permissible} if there exists 
 a local data $\{(U_i,f_i)\}_{i\in I}$ for $s$
 such that every $f_i$ is permissible.
@@ -2723,7 +2724,7 @@ and thus every $f$ is permissible.
 
 As like the permissibility condition,
 we can define a \emph{permissible pair} $(s',s)$
-of $C^{\infty}$-Cartier divisors, the
+of $C^{\infty}$-divisors, the
 set $s\cap s'$ of $(s',s)$ 
 (\cref{definition-divisor-intersection}), 
 an intersection data for $s$ 
@@ -2758,7 +2759,7 @@ The goal of this subsection is to prove
 Let $\Gamma_{n}$ be the projectivization of 
 a certain tropical module defined in 
 \cite[2.2]{mikhalkinTropicalCurvesTheir2008a}.
-Each $\Gamma_{n}$ has a embedding 
+Each $\Gamma_{n}$ has an embedding 
 into the $n-1$-dimensional tropical projective space
 $\mathbb{T}P^{n-1}\deq \mathbb{P}(\mathbb{T}^{n})$.
 The $\mathbb{T}P^{n-1}$ has a canonical inclusion
@@ -2776,7 +2777,7 @@ polyhedral spaces:
 If $C$ is a compact tropical curve with 
 no $1$-valent vertex, then every point in $C$ has 
 an open neighborhood which is isomorphic to 
-a open subset of some $\Gamma_{n}^{\circ}$.
+an open subset of some $\Gamma_{n}^{\circ}$.
 Besides, every compact tropical curve with 
 no $1$-valent vertex $C$ has a canonical metric structure 
 associated with lattice structure of the tangent 
@@ -2824,7 +2825,7 @@ $\opn{span}_{\mathbb{R}}(\opn{SS}((\mathbb{Z}_{X})_S)_x)
 \begin{proposition}[{cf. \cite{knill2012graph}}]
 \label{proposition-n-valent}
 Let $s_{p,q}\colon |\Sigma|\to \mathbb{R}$ be 
-an permissible $(0,0)$-superform on $|\Sigma|$ 
+a permissible $(0,0)$-superform on $|\Sigma|$ 
 such that $\opn{Crit}(s_{p,q})=\{x\}$ where
 $x=(0,\ldots,0)$ and
 \begin{align}
@@ -2950,12 +2951,12 @@ This automorphism can be visualized as the 180-degree rotation of the
 cylinder.
 \end{example}
 
-The following proposition is a repeative work of
+The following proposition is a repetitive work of
 \cref{section-stratified-torus-fibration}.
 
 \begin{proposition}[{continuous sections}]
 \label{proposition-permissible-section}
-Let $s$ be an permissible Cartier divisor 
+Let $s$ be a permissible Cartier divisor 
 $s=\{(U_i,f_i)\}_{i\in I}$ on a tropical curve 
 $C$ with no 1-valent vertex. 
 Then, 
@@ -2995,21 +2996,21 @@ of weakly-smooth functions on $C$. From definition,
 $\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
 and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
 Since $\mathcal{A}_C^{\opn{weak}}$ is fine, 
-the connected homomorphism 
+the connecting homomorphism 
 $[\cdot]\colon H^{0}(C;\mathcal{A}_C^{\opn{weak}}/
 \mathcal{O}^{\times}_C)\to \opn{Pic}(C);s\mapsto [s]$ is 
 surjective.
 
 \begin{proposition}
-Let $s$ be a $C^{\infty}$-Cartier divisor on a compact
+Let $s$ be a $C^{\infty}$-divisor on a compact
 tropical curve $C$.
 Then, there exists
-an permissible Cartier divisor $s'$ which is linearly
+a permissible Cartier divisor $s'$ which is linearly
 equivalent to $s$ and
 $s_0\cap s'$ is a finite set. 
 \end{proposition}
 \begin{proof}
-Every $C^{\infty}$-Cartier divisor $s$ on $C$ is 
+Every $C^{\infty}$-divisor $s$ on $C$ is 
 permissible at $1$-valent vertex on $C$. So, we
 can assume $C$ has no 1-valent vertex. 
 Choose a sufficiently small open neighborhood 
@@ -3032,7 +3033,7 @@ function $f$ on $e$.
 Therefore, we can choose a smooth bump function $g$ on $e$ such 
 that $f+g$ is nondegenerate. We can extend $g$ on $C$ 
 by zero, and thus $s+g$ is linearly equivalent to $s$.
-By repeating this, we get an permissible Cartier divisor
+By repeating this, we get a permissible Cartier divisor
 $s'$ on $C$ such that $\sharp (s\cap s')<\infty$.
 \end{proof}
 
@@ -3111,7 +3112,7 @@ From \cref{proposition-permissible-section} and \cref{proposition-rotation-numbe
 rotation number for every permissible smooth 
 Cartier divisors as follows.
 \begin{definition}[{cf. \cite{auroux2022lagrangian}}]
-Let $s$ be a $C^{\infty}$-Cartier divisor and 
+Let $s$ be a $C^{\infty}$-divisor and 
 $\check{s}$ its associated Lagrangian section.
 The \emph{rotation number} of $s$ is the sum of
 the rotation number of all edges of $C$: 
@@ -3126,8 +3127,7 @@ on $(a_e,b_e)$ is an isomorphism onto $e$.
 \end{definition}
 
 \begin{definition}
-Let $s\in \CDiv(C)$ be a $C^{\infty}$-Cartier
-divisor and $\{(U_i,f_i)\}_{i\in I}$ a local data
+Let $s\in \CDiv(C)$ be a $C^{\infty}$-divisor and $\{(U_i,f_i)\}_{i\in I}$ a local data
 for $s$. The data is \emph{locally contractible} if 
 every $U_i$ is isomorphic to a contractible open 
 neighborhood of $0$ in $\opn{LC}_{p}C$ where 
@@ -3144,7 +3144,7 @@ $\mathcal{O}_C^{\times}$:
 \end{align}
 
 \begin{proposition}
-Let $s$ be an permissible $C^{\infty}$-Cartier divisor on
+Let $s$ be a permissible $C^{\infty}$-divisor on
 a compact tropical curve $C$. Then,
 \label{equation-rotation-number}
 \begin{align}
@@ -3154,12 +3154,12 @@ a compact tropical curve $C$. Then,
 
 \begin{proof}
 We can create an ordinary Cartier divisor $D$
-from a $C^{\infty}$-Cartier divisor $s$ such 
+from a $C^{\infty}$-divisor $s$ such 
 that its divisor class is equivalent by 
 using the \v{C}ech cocycle representation of 
 $[s]$. Then, we can easily calculate the 
 \eqref{equation-rotation-number} for 
-an typical $D$. The degree of $D$ is 
+a typical $D$. The degree of $D$ is 
 invariant for any choice of $D$.
 \end{proof}
 
@@ -3171,7 +3171,7 @@ Let $C\deq [0,1]$ be a closed interval
 and $f_n\colon C\to \mathbb{R};x \mapsto nx^{2}$.
 Any $f_n$ is a permissible $(0,0)$-superform on $C$.
 From the definition
-of principal $C^{\infty}$-Cartier divisor,
+of principal $C^{\infty}$-divisor,
 $\opn{deg}(D_{(f_n)^{\mathrm{sm}}})=0$. 
 A philosophical reason of this is
 that a closed interval with finite length is a tropical
@@ -3185,7 +3185,7 @@ an open annulus in $\mathbb{C}$.
 \begin{proposition}
 \label{proposition-simple-interval-rr}
 Let $C=[a,b]$ be a closed interval in $\mathbb{T}P^{1}$
-and $s$ a permissible $C^{\infty}$-Cartier divisor on 
+and $s$ a permissible $C^{\infty}$-divisor on 
 $C$
 such that $s_0\cap s=\{a,b\}$. Then,
 \begin{align}
@@ -3206,7 +3206,7 @@ following Meyer--Vietoris type lemma.
 
 \begin{proposition}
 \label{proposition-gluing-formula}
-Let $s$ be an permissible $C^{\infty}$-Cartier divisor on a
+Let $s$ be a permissible $C^{\infty}$-divisor on a
 compact metric graph $C$ such that $s_0\cap s<\infty$.
 Fix two closed metric subgraph of $C$ such that
 $C' \cup C''=C$ and $C'\cap C''\subset s_0 \cap s$.
@@ -3249,7 +3249,7 @@ We can generalize
 \label{proposition-MRR-1-dim-poly-space}
 Let $C$ be a compact pure $1$-dimensional rational 
 polyhedral space satisfying \cref{condition-Rn} 
-and $s$ a $C^{\infty}$-Cartier divisor on $C$. Then,
+and $s$ a $C^{\infty}$-divisor on $C$. Then,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=\opn{rot}(s)+
 \chi_{\opn{top}}(C).
@@ -3274,17 +3274,17 @@ $C$ is homeomorphic to a closed interval
 or a closed circle and 
 $\sharp (s_0\cap s)\leq 2$ 
 from the definition of cell complex.
-In this case, \cref{theorem-MRR-metric-graph} is 
+In this case, \cref{theorem-MRR-curve-preface} is 
 true from \cref{proposition-n-valent} directly.
 
-Suppose \cref{theorem-MRR-metric-graph} is true
-for all $C^{\infty}$-Cartier divisors $s$ on 
+Suppose \cref{theorem-MRR-curve-preface} is true
+for all $C^{\infty}$-divisors $s$ on 
 $C$ such that $\sharp \pi_0(C\setminus (s_0 \cap s))=n$.
 Let $C$ be a $1$-dimensional 
 compact rational polyhedral space
 such that $\sharp\pi_0(C\setminus (s_0 \cap s))=n+1$.
 
-Then, we can choose a pair of proper subgraph $C',C''$ of
+Then, we can choose a pair of proper subgraphs $C',C''$ of
 $C$ such that
 $C'\setminus (s_0\cap i^{*}_{C'}(s))\leq n$,
 $C''\setminus (s_0\cap i^{*}_{C''}(s))\leq n$,
@@ -3314,7 +3314,7 @@ and \eqref{equation-rotation-number}.
 \begin{remark}
 \label{remark-non-permissible-divisor}
 We explain the reason why we add permissible condition for 
-$C^{\infty}$-Cartier divisors. 
+$C^{\infty}$-divisors. 
 One of reasons is that there exists smooth function $f$
 on a polyhedral space $S$ and 
 $x\notin\opn{Crit}(f|_S)$ such that
@@ -3339,7 +3339,7 @@ $g$ is permissible except $x=(0,0)$.
 If we generalize 
 \cref{theorem-MRR-curve-preface} for 
 a principal non-permissible 
-$C^{\infty}$-Cartier divisors $(g)^{\mathrm{sm}}$, 
+$C^{\infty}$-divisors $(g)^{\mathrm{sm}}$, 
 we need to add the index $\opn{ind}_x(g)$ at $x$ satisfying
 \begin{align}
 \sum_{p\in \opn{Crit}(g)}\opn{ind}_p(g)+
@@ -3352,7 +3352,7 @@ In this case, $\opn{ind}_x(g)$ should be $-1$.
 This condition is independent of the choice
 of $g$ satisfying the above condition.
 On the other hand, the index of a given 
-$C^{\infty}$-Cartier divisor should be 
+$C^{\infty}$-divisor should be 
 independent of the choice of 
 $C^{\infty}$-Cartier local data.
 Since $\opn{ind}_x(g+m)$ depends on the choice
@@ -3371,13 +3371,13 @@ integer slope.
 \end{remark}
 
 \begin{remark}
-Our definition of $C^{\infty}$-Cartier divisor 
+Our definition of $C^{\infty}$-divisor 
 has an analog of positive divisor by using 
 the local data $\{(U_i,f_i)\}_{i\in I}$ as 
 explained in \cref{example-tropical-kodaira-vanishing}.
 However, this positive divisor is different 
 from ample line bundles for tropical curves. 
-If $s$ is a positive $C^{\infty}$-Cartier divisor, then
+If $s$ is a positive $C^{\infty}$-divisor, then
 $\chi(\opn{LMD}(C;s))=\sharp(s_0\cap s)\geq \sharp 
 (C\setminus C_{0})$. 
 Thus, $\chi(\opn{LMD}(C;s))\geq 2g(C)-2$
@@ -3406,7 +3406,7 @@ Our approach is mostly affected from
 \label{section-syz-trivalent-graph}
 When $C$ is a trivalent metric graph, 
 our $\check{X}_0(C)$ are 
-almost the trivalent cofiguration $M$ of 
+almost the trivalent configuration $M$ of 
 $2$-spheres in 
 \cite[3.1]{auroux2022lagrangian}.
 Here, the space $M$ is the
@@ -3430,7 +3430,7 @@ $X_0(C)$ and $M$ below:
   \item The local model of $M$ comes from the critical locus
 of the potential function of a (A-side) Landau--Ginzburg 
 model $(\C^{3},-xyz)$.
-  \item If a $C^{\infty}$-Cartier divisor $s$ on $C$ 
+  \item If a $C^{\infty}$-divisor $s$ on $C$ 
 satisfies 
 \cref{condition-good-divisor} and has an intersection 
 data $\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
@@ -3438,7 +3438,7 @@ $f_p$ is strictly convex at all $p\in C\setminus C_0$,
 then $\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
 (C;s)$ corresponds to the 
 Floer complex \cite[(3.2)]{auroux2022lagrangian}
-as a graded modules, but 
+as a graded module, but 
 the both are different each other if not. 
 In particular, the graded modules associated with 
 an intersection point $p\in s_0\cap s$ may not 
@@ -3460,7 +3460,7 @@ expect a SYZ conjecture
 for projective hypersurfaces 
 in \cite[\textsection 7]{auroux2022lagrangian}.
 We hope our $\check{X}(S)$ for a 
-rational polyhedral spaces $S$ give a hint for 
+rational polyhedral space $S$ give a hint for 
 a generalization of their expectation.  
 \subsubsection{Relationships between 
 Poincar\'e--Hopf theorem for graphs}
@@ -3519,10 +3519,10 @@ on $C$ \cite{MR3076066}),
 $X_0(C)$ can be considered as a subset of a compact 
 Riemann surface $X$ whose complex structure is 
 compatible with $X(C_{0,\vep})$. 
-Such a $X$ is given by gluing triangles for 
+Such an $X$ is given by gluing triangles for 
 each open neighborhood of $p\in X_0(C)\setminus X(C_0)$
 appropriately.
-Let $s$ be an permissible $C^{\infty}$-Cartier divisor on $C$.
+Let $s$ be a permissible $C^{\infty}$-divisor on $C$.
 $s|_{C_0}$ corresponds to a Lagrangian section of 
 $\check{\pi}_{C_0}$ from 
 \cref{proposition-cartier-lagrangian}.
@@ -3686,15 +3686,15 @@ of $U_i$.
 
 \begin{definition}[{cf. \cite[p.213]{MR413010}}]
 A \emph{Hessian metric} or \emph{metric of Hessian form} on an affine manifold 
-$(B,\{(U_i,\psi_i)\}_{i \in I})$.
+$(B,\{(U_i,\psi_i)\}_{i \in I})$
 is a Riemannian metric $g$ such that 
-there exists a multi-valued function $K$ on $B$ satisfying
+there exists a multivalued function $K$ on $B$ satisfying
 $g=\sum_{k,l}\frac{\partial K}{\partial x_k \partial x_l}dx_k dx_l$ for 
 an affine conndinate system of $U_i$. The triple
 $(B,\{(U_i,\psi_i)\}_{i \in I},g)$ is called a \emph{Hessian manifold}.
 \end{definition}
 \begin{remark}
-We follows the terminology Hessian metric and Hessian manifold 
+We follow the terminology Hessian metric and Hessian manifold 
 from \cite{MR2293045}.
 The terminology 
 Hessian manifold is called
@@ -3944,7 +3944,7 @@ the
 By taking the long exact sequence for 
 \eqref{equation-smooth-cartier-diagram}, we get a canonical morphism:
 \begin{align} \label{equation-tropical-cartier}
-c_1\colon \opn{CaDiv}^{\infty}(X)\to \opn{Pic}(X)\to 
+c_1\colon \CDiv(X)\to \opn{Pic}(X)\to 
 H^{1}(X;\mathcal{F}_{\mathbb{Z},X}^{1}); s\mapsto [s] 
 \mapsto c_1([s]).
 \end{align}
@@ -3958,12 +3958,12 @@ From definition of morphism of rational polyhedral space
 and a naturally induced morphism of superforms 
 \cite[Lemma 2.21]{MR3903579},
 $f$ induces the pullback 
-$f^{*}\colon \opn{CaDiv}^{\infty}(Y)\to \opn{CaDiv}^{\infty}(X)$ 
+$f^{*}\colon \CDiv(Y)\to \CDiv(X)$ 
 and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
 \eqref{equation-smooth-cartier-diagram}. 
 In particular, we have
 $c_1(f^{*}(s)^{n})=f^{*}(c_1(s)^{n})$ for every 
-$s\in\opn{CaDiv}^{\infty}(Y)$
+$s\in\CDiv(Y)$
 by \cite[Proposition 4.17]{gross2019sheaftheoretic}.
 
 \subsection{Verdier duality and Borel--Moore homology
@@ -4085,8 +4085,8 @@ where $\mathcal{D}_{\mathbb{Z}_X}(\mathcal{F}^{\bullet})
 \deq R\mathcal{H}om_{\mathbb{Z}_X}(\mathcal{F}^{\bullet}
 ,\upomega^{\bullet}_X)$ for 
 $\mathcal{F}^{\bullet}\in D^{b}(\mathbb{Z}_X)$.
-The Poincar\'e--Verdier duality and the 
-Hom-tensor adjoint induce
+The Poincar\'e--Verdier duality 
+and the tensor-hom adjunction induce
 the following isomorphism.
 \begin{align}
 H^{n-p,n-q}(X;\mathbb{Z})=
@@ -4298,11 +4298,11 @@ Then, the following isomorphism exists
 \end{align}
 \end{proposition}
 
-In particular, a multi-valued function $K$ of a Hessian 
-metric of $B$ induces a $C^{\infty}$-Cartier divisor on $B$
+In particular, a multivalued function $K$ of a Hessian 
+metric of $B$ induces a $C^{\infty}$-divisor on $B$
 and a Lagrangian submanifold of $\check{X}(B)$.
 
-If two $C^{\infty}$-Cartier divisors $s,s'$ are linearly equivalent, 
+If two $C^{\infty}$-divisors $s,s'$ are linearly equivalent, 
 i.e., $s-s'=(f)^{\mathrm{sm}}$ for some
 $f\in C^{\infty}(B)$, 
 then $s$ is the image of a one-time Hamiltonian flow of $s'$
@@ -4329,7 +4329,7 @@ on $\check{X}(B)$
 \begin{theorem} \label{theorem-MRR-hesse}
 Let $B$ be an $n$-dimensional compact 
 integral affine manifold with a Hessian form and
-$s$ a $C^{\infty}$-Cartier divisor such that its
+$s$ a $C^{\infty}$-divisor such that its
 Lagrangian section $L_s$ intersects 
 with the zero section transversely. Then,
   \begin{align} \label{equation-Hesse-RR}
@@ -4412,7 +4412,7 @@ Thus, $\chi(\opn{LMD}^{\bullet}(T,s))=0$.
 Let $\{(U_i,f_i)\}_{i\in I}$ be a local
 data for $s$.
 We can deform $s$ with a linearly equivalent to a 
-$C^{\infty}$-Cartier divisor $s'$ 
+$C^{\infty}$-divisor $s'$ 
 such that $s'$ has a local $C^{\infty}$-Cartier data 
 $\{(U_i,\tilde{f}_i)\}_{i\in I}$ satisfying 
 $\tilde{f}_i$ is Morse, and 
@@ -4542,7 +4542,7 @@ sequence of relative homotopy groups.
 \end{proof}
 
 \cref{proposition-unobstructed-lagrangian} induces, every 
-pseudoholomorphic disk 
+pseudoholomorphic disk
 $\psi\colon D\to \check{X}(B)$ such that 
 $\psi(\partial D)\subset L_s$ has 
 the zero symplectic area.
@@ -4563,7 +4563,7 @@ and thus any Lagrangian section $L_s$ satisfies
 the condition \cite[(2.54)]{MR3656481}.
 Every Lagrangian section $L_s$ has 
 a canonical lifting to a Lagrangian 
-brane $\mathscr{L}_s$ as describled in 
+brane $\mathscr{L}_s$ as described in 
 \cite[5.2]{MR1882331}.
 Therefore, every Lagrangian section of 
 $\check{f}_B\colon \check{X}(B)\to B$
@@ -4591,7 +4591,7 @@ $(\mathscr{L}_s,\mathscr{L}_{s'})$ at $p$.
 In this case, the Maslov index at $p$
 is equal to the Morse index of the 
 local intersection data $f_{p}$ of 
-the $C^{\infty}$-Cartier divisor $s'-s$ at $p$
+the $C^{\infty}$-divisor $s'-s$ at $p$
 \cite[Remark 13]{MR1882331}. Therefore, 
 if $L_s$ and $L_{s'}$ intersect 
 transversally, then there exists the following
@@ -4716,21 +4716,20 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$:
 \end{example}
 
 We don't state a K\"unneth type formula for 
-local Morse data for $C^{\infty}$-Cartier
-divisors in a fully
+local Morse data for $C^{\infty}$-divisors in a fully
 general setting, but the following corollary 
 is enough for performing that there exists 
 a K\"unneth type formula for local Morse data
-of $C^{\infty}$-Cartier divisors.
+of $C^{\infty}$-divisors.
 
 \begin{corollary}[{K\"unneth formula}]
 Fix boundaryless compact rational polyhedral spaces $X$ and $Y$.
-Let $s$ and $s'$ a permissible $C^{\infty}$-Cartier divisor of $X$ and $Y$ 
+Let $s$ and $s'$ a permissible $C^{\infty}$-divisor of $X$ and $Y$ 
 satisfying the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
 Then, the induced external tensor product 
 $s\boxtimes s'\deq \opn{pr}_X^{*} (s)+\opn{pr}_Y^{*}(s')
-\in \opn{CaDiv}^{\infty}(X\times Y)$ is also permissible and
+\in \CDiv(X\times Y)$ is also permissible and
 has the following equations:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(X\times Y;s\boxtimes s'))=
@@ -4776,7 +4775,7 @@ $f_2= f_w-f_w(w)$;
 \begin{remark}
 In the proof of the above corollary, we only use
 the condition of cohomological version of Milnor fiber. 
-Besides, we can find many permissible $C^{\infty}$-Cartier divisors
+Besides, we can find many permissible $C^{\infty}$-divisors
 satisfying the condition, see \cite[p.35]{MR2031639}.  
 \end{remark}
 
@@ -4983,7 +4982,8 @@ Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
 \label{sec: BSRR}
 \label{appendix-geometric-quantization}
 
-In this subsection, we recall the relationships lattice points of 
+In this subsection, we recall the relationships
+between lattice points of 
 strongly integral affine manifolds and geometric quantization 
 from \cite{1999math......2027T,MR3525095}.
 
@@ -5071,7 +5071,8 @@ Calabi--Yau manifolds is studied in
 the name of the \emph{numerical quantization problem}.
 
 \eqref{equation-lattice-index} can be considered
-as a numerical version of \eqref{equation-hf-sheaf-cohomology} 
+as a numerical version of 
+\eqref{equation-hf-sheaf-cohomology} 
 when $B$ has a Hessian form.
 If $B$ has a Hessian form, then $s_{B}$ can be 
 considered as a Lagrangian section of the dual torus 
@@ -5084,7 +5085,7 @@ A similar result exists for projective toric manifolds
 and their prequantum line bundle 
 \cite[Theorem 3.20]{yamaguchimaster}, see also 
 \cref{section-toric-geometry}. 
-These observations was developed for 
+These observations were developed for 
 (simple) integral affine manifolds with singularities
 $B$ and the associated toric degenerations 
 by Gross and Siebert. 
@@ -5154,7 +5155,7 @@ $\mathcal{D}_{A_X}\colon
 \upomega_{A_X}^{\bullet})$
 has the following canonical isomorphism when 
 $\mathcal{D}_{A_X}(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}))
-\simeq \mathcal{G}^{\bullet}$ by the hom-tensor adjoint
+\simeq \mathcal{G}^{\bullet}$ by the tensor-hom adjunction
 \cite[Proposition 2.6.3]{MR1299726}:
 \begin{align}
 R\mathcal{H}om_{A_X}
@@ -5330,8 +5331,8 @@ a semifield isomorphic to the semifield
 $(\mathbb{R}_{\geq 0},+,\cdot)$ of nonnegative 
 of real numbers.
 The semifield $\underline{\mathbb{R}}_{\opn{log}}$ 
-is called the \emph{log-semifield} or 
-\emph{log-semiring}. $\mathbb{R}_{\opn{log}}$ has a 
+is called the \emph{log semifield} or 
+\emph{log semiring}. $\mathbb{R}_{\opn{log}}$ has a 
 topological structure induced from 
 $\opn{log}\colon \mathbb{R}_{\geq 0}\to 
 \underline{\mathbb{R}}$.
@@ -5484,9 +5485,9 @@ let's reinterpret
 \eqref{equation-ehrhart-reciprocity-2} and
 \eqref{equation-moment-map-intersection}
 using the local Morse data for a
-$C^{\infty}$-Cartier divisor in this paper.
+$C^{\infty}$-divisor in this paper.
 First, let's construct a
-permissible $C^{\infty}$-Cartier divisor
+permissible $C^{\infty}$-divisor
 on $X_{P}^{\mathrm{trop}}$ from a Delzant polytope $P$. 
 Every compact tropical toric manifold is not 
 boundaryless, so we need to use the sheaf
@@ -5494,7 +5495,7 @@ of weakly-smooth functions which we defined
 in \cref{definition-weakly-smooth}.
 On the other hand, from \eqref{equation-log-polynomial} 
 we can construct 
-a permissible $C^{\infty}$-Cartier divisor
+a permissible $C^{\infty}$-divisor
 $s_P\in H^{0}(X_P;
 \mathcal{A}^{\mathrm{weak}}_{X_P}/
 \mathcal{O}^{\times}_{X_P})$ for 
@@ -5541,8 +5542,8 @@ x\mapsto \log(\sum_{i=0}^{n}e^{ix})-nx.
 
 A local data 
 $\{(U_i,f_{i,n})\}_{i=-\infty,\infty}$ defines
-a $C^{\infty}$-Cartier divisor $s_n$ on $\mathbb{T}P^{1}$.
-an element 
+a $C^{\infty}$-divisor $s_n$ on $\mathbb{T}P^{1}$.
+An element 
 $D_n\deq (f_{-\infty,n}-f_{+\infty,n}=nx)\in 
 \check{H}^{1}(\mb{T}P^1;\mcal{O}_{\mb{T}P^1}^{\times})\simeq \Z$
 as a \v{C}ech cocycle.
@@ -5553,7 +5554,7 @@ Then, we have
 \opn{deg}(\mathcal{L}_{s_n})+\chi_{\opn{top}}(\mb{T}P^1).
 \end{align}
 \end{example}
-Let $P$ a $n$-dimensional Delzant polytope again.
+Let $P$ an $n$-dimensional Delzant polytope again.
 Every face $F$ of $P$ corresponds a convex cone 
 $\sigma(F)$ of the normal fan of $P$.
 $s_P$ induces a family 
@@ -5561,7 +5562,7 @@ $\{(O(\sigma_F),f_F|_{O(\sigma_F)})\}_{F \prec P}$ of Laurent polynomials
 $f_F$ on each tropical torus orbit $O_{\sigma_F}$
 of $\sigma(F)$
 naturally up to monomials.
-If a point $p\in X^{\mathrm{trop}}_P$ satiesfies 
+If a point $p\in X^{\mathrm{trop}}_P$ satisfies 
 $\mu_P^{\mathrm{trop}}(p)\in F$ for some a face $F$ of 
 $P$, then
 $p$ is in 
@@ -5578,7 +5579,7 @@ s_0\cap -s_P=s_0\cap s_P=(\mu_P^{\opn{trop}})^{-1}
 \begin{proposition}[{Ehrhart reciprocity for 
 local Morse data}]
 \label{proposition-ehrhart-revisit}
-Let $s_P$ be a permissible $C^{\infty}$-Cartier divisor on 
+Let $s_P$ be a permissible $C^{\infty}$-divisor on 
 the $n$-dimensional
 projective tropical toric manifold $X_P$ for 
 a (Delzant) lattice polytope $P$. Then, 
@@ -5610,7 +5611,7 @@ the homological mirror symmetry for the derived categories
 of coherent sheaves on toric manifolds 
 (e.g. \cite{MR2529936,MR2871160,MR4234675}). 
 These references are related with tropical geometry.
-Especially, $C^{\infty}$-Cartier divisors on tropical toric 
+Especially, $C^{\infty}$-divisors on tropical toric 
 manifolds are deeply related to 
 the wrapped Fukaya category 
 $\opn{Fuk}(T^{*}T_{\mathbb{R}}^{\vee};\overline{\Lambda}_{\Sigma})$
