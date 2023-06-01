@@ -511,8 +511,7 @@ general varieties in
 \cite[{\textsection 7}]{auroux2022lagrangian}.
 
 From now on, we present the following conjecture
-for boundaryless tropical manifolds 
-\cite[\textsection 4.2]{MR4246795},
+for compact tropical manifolds,
 inspired by \cref{proposition-semi-flat-syz}
 and various related works including 
 \cite{auroux2022lagrangian}.
@@ -580,8 +579,9 @@ manifolds in this paper,
 but should be essentially defined from the theory of 
 Chern--Schwartz--MacPherson cycles for matroids 
 \cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
-See also \cite[5.3]{mikhalkinTropicalGeometryIts2006} and
-\cite[Definition 3.20]{shawTropicalSurfaces2015a}.
+See also \cite[5.3]{mikhalkinTropicalGeometryIts2006},
+\cite[Definition 3.20]{shawTropicalSurfaces2015a} and 
+\cite{MR4583774}.
 \end{remark}
 
 The graded module $\opn{LMD}^{\bullet}(S;s)$ is 
@@ -720,8 +720,8 @@ following isomorphism:
 \chi(\opn{HF}^{\bullet}(L_1,L_2)).
 \end{align}
 
-On the other hand, let $\mathcal{X}$ be a 
-$n$-dimensional
+On the other hand, let $\mathcal{X}$ be 
+an $n$-dimensional
 projective manifold and $\mathcal{L}_1$, $\mathcal{L}_2$ be a
 line bundle on $\mathcal{X}$. 
 Then, by Serre duality there exists 
@@ -786,36 +786,42 @@ In Section 5, we explain
 more examples satisfying Riemann--Roch type 
 formula.
 
-\begin{Note}[Guide for reading this paper]
-  In order to reveal the relationships between our study
-  and other topics, we cannot avoid introducing various
-  notions. However, our results are almost elementary
-in the case of tropical curves,
-  so we write down a shortcut course of this paper as below:
-\end{Note}
-
 \textit{Acknowledgments:}
-We would like to thank Felipe Rinc\'on 
+I would like to express 
+my deepest gratitude to my supervisor, Kazushi Ueda,
+for his numerously invaluable advice and encourgament.
+In particular, I have learned a great deal about 
+homological mirror symmetry from him.
+I want to offer my sincere thanks 
+to Yuto Yamamoto for explaining and answering my questions 
+about his works 
+in \cite{yamamotoTropicalContractionsIntegral2021}
+and the Gross--Siebert program.
+I would like to thank Andreas Gross for answering my questions 
+on \cite{gross2019sheaftheoretic}.
+I am grateful to Felipe Rinc\'on 
 for explaining about the unpublished recent works
-about Noether formula for general tropical surfaces.
-We also thanks Jin Miyazawa
+on Noether formula for general tropical surfaces.
+I am so thankful to Masanori Kobayashi for 
+pointing out some errors for the prior version 
+of the permissibility condition for
+principal $C^{\infty}$-Cartier divisors on metric graphs.
+I appreciate Yoshinori Gongyo for 
+giving a question about relationships 
+between a type of Pick's formula for
+tropical Kummer surfaces and Atiyah--Singer
+index formula. This question allow me 
+to discover \cite{MR2676658}.
+My thanks also go to Jin Miyazawa
 for explaining us a heart of localization of 
 the index of Dirac operator and answering some 
-questions about it.
-We also thank Yoshinori Gongyo for 
-giving a question about relationships 
-between a kind of Pick's formula for
-tropical Kummer surfaces and Atiyah--Singer
-index formula. This question gives me 
-an opportunity to know \cite{MR2676658}.
-We also thank for Kentaro Yamaguchi for explaining about
-\cite{MR4234675} and his results of master thesis 
-\cite{yamaguchimaster}. We thank for Yuto Yamamoto for
-explaining and answering questions about his works in
-\cite{yamamotoTropicalContractionsIntegral2021}
-and Gross--Siebert programs.
-We thanks for Masanori Kobayashi for 
-pointing out some mistakes. 
+questions on \cite{MR2676658}.
+I am gereatful to Kentaro Yamaguchi 
+for explaining about \cite{MR4234675}
+and results in his master thesis \cite{yamaguchimaster}. 
+I would also like to 
+thank Yasuhito Nakajima for letting me know 
+Yamaguchi's work. 
 This work was supported by JSPS KAKENHI 
 Grant Number 21J14529.
 
@@ -966,11 +972,12 @@ We note $a_{X!}\mathcal{F}\simeq \Gamma_c(X;\mathcal{F})$.
 Let $X$ be a topological space, $Z$ a locally closed 
 subset of $X$
 and $i\colon Z\to X$ be the inclusion map.
-For a given sheaf $\mathcal{F}$ on $X$, 
+For a given sheaf $\mathcal{F}$ on $X$, we ser
 \begin{align}
 \mcal{F}|_{Z}\deq i^{-1}\mcal{F}, \quad 
 \mcal{F}_Z\deq i_! i^{-1}\mcal{F}, \quad 
-(A_X)_Z\deq i_!i^{-1}A_X, \quad \Gamma(Z;\mathcal{F})=\Gamma(Z;\mathcal{F}|_{Z})
+(A_X)_Z\deq i_!i^{-1}A_X, \quad 
+\Gamma(Z;\mathcal{F})=\Gamma(Z;\mathcal{F}|_{Z}).
 \end{align}
 
 From \cite[Proposition 2.5.4]{MR1299726}, $i_!$ is exact 
@@ -1083,8 +1090,9 @@ reduced singular cohomology.)
 \begin{example}
 
 We mention two elementary properties 
-about stalks of $R\Gamma_{Z}(\mcal{F})$ of a sheaf on 
-$X$.
+about stalks of $R\Gamma_{Z}(\mcal{F})$ of 
+a sheaf $\mathcal{F}$ on 
+a topological space $X$.
 
 \begin{enumerate}
 \item Let $j:V\to X$ be an open inclusion and $Z$ be a 
@@ -1092,7 +1100,7 @@ closed subset of $X$. Then,
 \begin{align}
 \Gamma_{Z\cap V}(\mathcal{F}|_V)=\Gamma_{Z}(\mathcal{F})|_V.
 \end{align}
-We can see the above from definition or the following 
+We can see the above from the definition or the following 
 equation:
 \begin{align}
 \Gamma_{j^{-1}(Z)} \circ j^{-1}
@@ -1101,20 +1109,17 @@ equation:
 =j^{-1}\circ \Gamma_V \circ \Gamma_Z
 =j^{-1} \circ \Gamma_Z.
 \end{align}
-$j^{-1}=j^{!}$, and thus 
-$R\Gamma_{j^{-1}(Z)} \circ j^{-1}=j^{-1}\circ R\Gamma_Z$.
-Here, we used $j^{!}$ is the right adjoint of 
-the exact functor $j_!$.
+Since $j^{-1}=j^{!}$ and $j_!$ is exact, 
+$j^{-1}$ preseves injectives. 
+Therefore, $R\Gamma_{j^{-1}(Z)} 
+\circ j^{-1}=j^{-1}\circ R\Gamma_Z$.
 In particular, for any point $v\in V$ we have
 \begin{align}
 (R\Gamma_{Z\cap V}(\mcal{F}|_{V}))_v\simeq 
 (R\Gamma_{Z}(\mcal{F}))_v.
 \end{align}
-
-
-
-Therefore, the stalk is independent of 
-the choice of $V (\ni v)$.
+Therefore, the stalk is independent
+of the choice of $V (\ni v)$.
 \item Let $i: S\to X$ be a closed inclusion.
 Since $i_!=i_*$ and $i_!$ is exact,
 \begin{align}
@@ -1781,7 +1786,8 @@ polyhedral spaces}
 We recall about line bundles on 
 rational polyhedral spaces and discuss the notion of
 \emph{$C^{\infty}$-Cartier divisor}
-for boundaryless rational polyhedral spaces.
+for boundaryless rational polyhedral spaces
+\cite[\textsection 4.2]{MR4246795}.
 We mainly follow 
 from \cite{MR3903579,gross2019sheaftheoretic}.
 
@@ -1801,13 +1807,14 @@ face structures \cite[Definition 2.4.(c)]{gross2019sheaftheoretic}.
 We can also define the sheaf of $(0,0)$-superforms for 
 rational polyhedral spaces as the same way,
 at least.
-\end{remark}
 A $(0,0)$-superform on $S$ are also called as 
 a smooth function on $S$. In fact, 
 the sheaf $\mathcal{A}^{0,0}_S$ of $(0,0)$-superforms
 is equal to the sheaf $\mathcal{C}_S^{\infty}$ of 
 smooth functions on $S$ if $S$ is an integral 
 affine manifold.
+\end{remark}
+
 
 
 In various scenes, we assume rational polyhedral spaces
@@ -1824,7 +1831,7 @@ is in $\mathbb{R}^{n}$.
 
 The \cref{condition-Rn} is strict for rational polyhedral
 spaces, but it is enough to
-give a test play for our approaches.
+give a test play for our approach.
 
 As like tropical line bundles on tropical curves
 \cite[Definition 4.4]{mikhalkinTropicalCurvesTheir2008a},
@@ -1910,7 +1917,7 @@ We will define $\opn{CDiv}^{\infty}(S)$
 for general rational polyhedral space $S$ by replacing 
 the sheaf $\mathcal{A}^{0,0}_{S}$ with the sheaf 
 $\mathcal{A}^{\mathrm{weak}}_S$ of weakly-smooth 
-functions on $S$.
+functions on $S$ later.
 It's difficult to explain the reason why we need 
 $\mathcal{A}^{\mathrm{weak}}_S$ now, 
 so this explanation is done in 
@@ -1946,7 +1953,7 @@ satisfying \cref{condition-good-divisor}.
 
 
 
-\subsection{Permissible conditions}
+\subsection{Permissibility conditions}
 
 In this subsection, we define 
 the \emph{permissibility condition} for
@@ -2465,6 +2472,7 @@ $s$ to consider Riemann--Roch type theorems.
 \begin{condition}
 \label{condition-good-divisor}
 $s$ is a permissible $C^{\infty}$-Cartier divisor on 
+a (boundaryless) rational polyhedral space 
 $S$ such that $s_0\cap s$ is finite and 
 $\opn{LMD}^{\bullet}(S;s)$ is bounded and 
 finitely generated.
@@ -2821,7 +2829,8 @@ Let $\Gamma_{n}$ be the projectivization of
 a certein tropical module defined in 
 \cite[2.2]{mikhalkinTropicalCurvesTheir2008a}.
 Each $\Gamma_{n}$ has a embedding 
-into $\mathbb{T}P^{n-1}\deq \mathbb{P}(\mathbb{T}^{n})$.
+into th $n-1$-dimensional tropical projective space
+$\mathbb{T}P^{n-1}\deq \mathbb{P}(\mathbb{T}^{n})$.
 The $\mathbb{T}P^{n-1}$ has a canonical inclusion
 $\iota_n\colon \mathbb{R}^{n-1}\to 
 \mathbb{T}P^{n-1}$ 
@@ -2901,8 +2910,8 @@ Then,
 \end{proposition}
 
 \begin{proof}
-From definition, $f$ is a monotone function except 
-at $x$.
+From definition, $s_{p,q}$ is a monotone function on 
+$|\Sigma|\setminus\{x\}$.
 \end{proof}
 
 \begin{example}
@@ -3230,11 +3239,12 @@ The above proposition
 is \emph{not} true for general compact metric curves.
 Let $C\deq [0,1]$ be a closed interval
 and $f_n\colon C\to \mathbb{R};x \mapsto nx^{2}$.
-All $f_n$ is an permissible $(0,0)$-superform on $C$.
-From the definition of smooth principal Cartier divisor,
+Any $f_n$ is a permissible $(0,0)$-superform on $C$.
+From the definition
+of principal $C^{\infty}$-Cartier divisor,
 $\opn{deg}(D_{(f_n)^{\mathrm{sm}}})=0$. 
-A philosophical reason of this is that
-a closed interval with finite length is a tropical
+A philosophical reason of this is
+that a closed interval with finite length is a tropical
 analog of a closed annulus in $\mathbb{C}$ but not for
 a complex projective line (cf. 
 \cite[Definition 3.7]{MR3903579}). In fact, $X(C_0)$ 
@@ -3587,8 +3597,8 @@ $s|_{C_0}$ corresponds to a Lagrangian section of
 $\check{\pi}_{C_0}$ from 
 \cref{proposition-cartier-lagrangian}.
 By topological SYZ transformation 
-(see for example \cite{MR1876073} or 
-\cite[\textsection 9.1]{MR1882331}),
+(see for example \cite{MR1876073},
+\cite{} ,or \cite[\textsection 9.1]{MR1882331}),
 $s|_ {C_0}$ induces a family of $U(1)$-holonomoy for
 each torus fiber $\pi_{C_0}^{-1}(p)$ and defines a 
 complex line bundle on $C_{0,\vep}$. From now on, 
@@ -4199,8 +4209,8 @@ the \emph{fundamental class} of $X$.
 (We omit to prove that the fundamental class in this 
 paper is equal to that of 
 \cite[Definition 4.8]{MR3894860}.)
-We stress that every fundamental class of an integral affine 
-manifold (as tropical manifold) 
+We stress that the fundamental class
+of every integral affine manifold (as tropical manifold) 
 is determined without the data of orientation.
 
 If $X$ is a compact connected tropical manifold, 
@@ -4530,11 +4540,12 @@ not K\"ahler manifold in \cite{MR402764}.
 Hence, $X(B)$ is not K\"ahler and $B$ has no
 Hessian form since every Hessian form on $B$ induces a 
 standard K\"ahler form
-on $X(B)$.
+on $X(B)$. The complex manifold $X(B)$ is 
+isomorphic to a primary Kodaira surface. 
 We can see explicit calculations of 
 $H^{\bullet}(B;\mathcal{F}_{\mathbb{Z},B}^{\bullet})$
 for tropical primary Kodaira surfaces in \cite{maehara2023}.
-See \cite{MR1422337} for more details about tropical 
+See \cite{MR1422337} for more details about the tropical 
 primary Kodaira surfaces and 
 \cite{MR3079343,MR3894860} for tropical Klein bottles.
 
@@ -4750,7 +4761,7 @@ the condition of cohomological version of a Milnor
 fibration \cite[Assumption 1.1.1]{MR2031639},
 then there exists the following isomorphism 
 for $\mcal{F}_1\boxtimes^{L} \mcal{F}_2\deq 
-p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$;
+p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$:
 \begin{align}
     R\Gamma(S_1\times S_2,\mu_{f_1\dot{+}f_2}(\mcal{F}_1\boxtimes^{L} \mcal{F}_2))
     \simeq R\Gamma(S_1,\mu_{f_1}(\mcal{F}_1))
@@ -4954,8 +4965,8 @@ in \cite[Example 6.5]{yoshitomi2011generators}
 the author give a simple example of divisors on 
 tropical curves such that 
 the rank of a divisor is different even though 
-the $\mathbb{T}$-semimodule of the global section of 
-tropical line bundle $\mcal{O}_C(D)$ is isomorphic.},
+the $\mathbb{T}$-semimodules of the global section of 
+tropical line bundle $\mcal{O}_C(D)$ are isomorphic.},
 but this is truly one of good analog of classical one 
 (see \cite[Lemma 2.4]{MR2448666}).
 The rank of linear system is generalized by Cartwright
@@ -5031,10 +5042,7 @@ Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
 }
 \end{remark}
 
-\section{Etc of HMS and SYZ}
-\label{appendix-integral-affine-manifold}
-
-\subsection{Integral affine manifold and geometric prequantization}
+\section{Integral affine manifold and geometric prequantization}
 \label{sec: BSRR}
 \label{appendix-geometric-quantization}
 
@@ -5133,10 +5141,12 @@ considered as a Lagrangian section of the dual torus
 fibration $\pi_{\check{B}}\colon 
 \check{X}(\check{B})\to \check{B}$ of dual Hessian
 manifold $\check{B}$, see also 
-\cite[p.181-183]{grossMirrorSymmetryLogarithmic2006a}.
+\cite[p.181-183]{grossMirrorSymmetryLogarithmic2006a}
+and \cite[Proposition 6.9]{MR2567952}.
 A similar result exists for projective toric manifolds 
 and their prequantum line bundle 
-\cite[Theorem 3.20]{yamaguchimaster}.  
+\cite[Theorem 3.20]{yamaguchimaster}, see also 
+\cref{section-toric-geometry}. 
 These observations was developed for 
 (simple) integral affine manifolds with singularities
 $B$ and the associated toric degenerations 
@@ -5529,6 +5539,7 @@ We can see \eqref{equation-moment-map-intersection}
 is very similar with the intersection number of
 two Lagrangian 
 sections.
+
 
 Now, 
 let's reinterpret 
