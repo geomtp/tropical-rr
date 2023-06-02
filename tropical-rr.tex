@@ -2907,8 +2907,7 @@ As like \cite{auroux2022lagrangian},
 we also use the notion of the rotation number of 
 permissible Cartier divisor.
 Fix a connected smooth tropical curve $C$
- and $C_{\reg}$ the 
-regular part of $C$.
+and $C_{\reg}\deq \{x\in C\mid \opn{val}(x)=2\}$.
 If $C$ is not isomorphic to a circle, then
 $C_{\reg}$ is a disjoint union of open interval:
 \begin{align}
@@ -4162,18 +4161,20 @@ Then, there exists the following isomorphism:
 The first isomorphism comes from \cite[Lemma 2.4]{MR3041763} and
 the second isomorphism is true for $n$-dimensional rational polyhedral 
 spaces \cite[Proposition 5.1]{gross2019sheaftheoretic}.
-Let $X_0$ the set of points in $X$ that has 
-an open neighborhood isomorphic to an open subset in 
-a Euclidean space.
+Let $X_{\reg}$ the set of generic points in $X$, i.e.,
+the set of points which has an open neighborhood 
+isomorphic to a Euclidean space
+\cite[\textsection 4.B]{MR3894860} 
+(see also \cite[Definition 2.7]{gross2019sheaftheoretic}).
 The constant function
-$1_{X_0}\colon X_{0} \to \mathbb{Z}; 
+$1_{X_{\reg}}\colon X_{\reg} \to \mathbb{Z}; 
 x\mapsto 1$ defines a generator of 
 $Z_n(X)=\Gamma(X;\mathscr{Z}_n^{X})\simeq 
 \opn{Hom}(\tform^{n}_{\mathbb{Z},X},
 \mathcal{H}^{n}_X)\simeq 
 \opn{Hom}_{D^{b}(X)}(\tform^{n}_{\mathbb{Z},X}[n],
 \upomega_X^{\bullet})$ if $X$ is connected.
-In particular, $1_{X_{0}}$ defines a 
+In particular, $1_{X_{\reg}}$ defines a 
 natural morphism 
 $\tform^{n}_{\mathbb{Z},X}[n]\to \mathcal{H}^{n}_X[n] 
 \to \upomega_X^{\bullet}$.
@@ -4230,8 +4231,8 @@ $n$-dimensional tropical manifolds such that $f$ is a
 covering map of topological degree $m$ and the associated map $d_xf\colon 
 T_{x}^{\mathbb{Z}} X\to T_{f(x)}^{\mathbb{Z}}Y$ is 
 isomorphic.
-Then, $f_*[X]=\opn{cyc}_X(f_*1_{X_{0}})
-=m[\opn{cyc}_Y(1_{Y_{0}})]=m
+Then, $f_*[X]=\opn{cyc}_X(f_*1_{X_{\reg}})
+=m[\opn{cyc}_Y(1_{Y_{\reg}})]=m
 [Y]$ from the commutative diagram of
 tropical cycle maps and the definition of the pushforward
 of tropical cycles \cite[Definition 3.6]{gross2019sheaftheoretic}.
