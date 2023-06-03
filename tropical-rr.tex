@@ -1428,8 +1428,8 @@ is finitely generated.
 
 
 
-\begin{proposition}[{\cite[Proposition 5.4.20]{MR1299726},
-\cite[Remark 1.2]{MR1160840}}]
+\begin{proposition}[{\cite[Remark 1.2]{MR1160840},
+\cite[Proposition 5.4.20]{MR1299726}}]
 Under \cref{condition-global-morse}, 
 \begin{align}
 \chi(H^{\bullet}(X;\mathcal{F}^{\bullet}))=
@@ -1457,7 +1457,7 @@ is locally constant.
 \end{enumerate}
 If $X$ is compact and $f$ is constant, then 
 the pair $(A_X,f)$ satisfies 
-\cref{condition-global-morse}.(1),(3) and (2)' but not 
+\cref{condition-global-morse}. (1), (3) and (2)' but not 
 (2).
 \end{remark}
 
@@ -1544,40 +1544,6 @@ $\opn{LMD}^{\bullet}(A_M,\tilde{f})=
 to the graded module of an $A$-valued Morse complex of 
 $\tilde{f}$ when $\tilde{f}$ is a Morse function.
 \end{example}
-
-
-
-
-
-
-
-%TODO: 適切な箇所に配置
-
-% \begin{remark}
-% Since the global homological 
-% dimension of $A$ is finite,
-% the weak global dimension of $A_X$ \cite[Definition 2.6.2]{MR1299726} is also finite.
-% \end{remark}
-
-
-
-% \begin{definition}[{\cite{MR4294126}}]
-
-% \end{definition}
-
-% Every PL set is subanalytic, and thus 
-% we can use the theory of microsupport of sheaves
-% effectively.
-% Let $\mcal{F}$ be a 
-
-% Every real analytic function is \emph{nondepraved} 
-% \cite[Part I, Definition. 2.3,]{MR932724} and
-% every nondepraved function $f\colon \to {\mathbb{R}}$ satisfies Whitney b-condition
-% for the pair $(\{f(x)=0\},x)$. Such a function satisfies the 
-% following condition
-
-% Let $S$ be a rational PL set in ${\mathbb{R}}^{n}$ and
-% $f$.
 
 The following example is a $C^{\infty}$-function on a 
 smooth manifold with a unique isolated critical point such
@@ -1780,8 +1746,11 @@ As like tropical line bundles on tropical curves
 there exists the notion of tropical line bundle on 
 rational polyhedral spaces
 \cite[Definition 3.12]{gross2019sheaftheoretic}.
-Every isomorphism class of 
-tropical line bundles on $S$ is parametrized by 
+The cohomology $H^{1}(S;\mcal{O}^{\times}_S)$
+is bijective with the set of isomorphism classes
+of tropical line bundles
+on a rational polyhedral space $S$
+is parametrized by 
 $H^{1}(S;\mathcal{O}^{\times}_S)$
 \cite[Proposition 3.13]{gross2019sheaftheoretic}.
 The cohomology $H^{1}(S;\mcal{O}^{\times}_S)$ is called 
@@ -2033,18 +2002,89 @@ $(\opn{LC}_xS)_{\reg}$ and a sufficiently
 small open ball $V_y$ of $y$ in $T_0(\opn{LC}_xS)$.
 If the diameter of $V_y$ is sufficiently small, 
 then $\opn{span}_{\mathbb{R}} U_y$ is independent of 
-the choice of $V_y$. 
-Let $h\in (\opn{span}_{\mathbb{R}} U_y)^{\bot}$ and 
-$\rho_{V_y}\colon T_0 (\opn{LC}_x S)\to \mathbb{R}$
-be a smooth function such that 
-$\{z \in T_0 (\opn{LC}_x S) \mid \rho_{V_y}(z)<0\}=V_y$.
-Since $h(z)=0$ for $z\in U_y$, we have
+the choice of $V_y$.
+
+Fix $y\in (\opn{LC}_x S)_{\mathrm{gen}}$ and
+$v\in (\opn{span}_{\mathbb{R}} U_y)^{\bot}$.
+In order to prove $v\in \opn{SS}(\opn{LC}_x S)_0$, 
+we will find a $C^{\infty}$-function 
+$f\colon \opn{LC}_x S \to \mathbb{R}$ 
+such that $f(0)=0$ $df(0)=v$ and 
 \begin{align}
-\chi(\{z\in \opn{LC}_x S\mid h(z)+\rho_{V_y}(z)<0\})
--\chi(\{z\in \opn{LC}_x S\mid h(z)<0\})=1.
+(R_{\{f\geq 0\}}(A_{T_xS})_{\opn{LC}_xS})_0
+\not \simeq 0.
 \end{align}
-Therefore, $h+\rho_{V_y}$ or $h$ induces 
-$h\in \opn{SS}(\opn{LC}_x S)_0$.
+From now on, we assume $\opn{LC}_x S=\mathbb{R}^{n}$.
+
+By \cref{prop-local-morse-data}, 
+we only need to find a $C^{\infty}$-function 
+$f\colon \opn{LC}_x S \to \mathbb{R}$ such that 
+\begin{align}
+\label{equation-non-acyclic}
+1-\chi_{\mathrm{top}}(\{x\in \opn{LC}_x S\cap B_{\varepsilon}^{n}(0)
+\mid f(z)<0\})\ne 0
+\end{align}
+for any sufficiently small $\varepsilon >0$.
+ 
+Let 
+$\rho_{\mathbb{R}_{\geq 0}}\colon 
+\mathbb{R}\to \mathbb{R}$ be the following
+well-known $C^{\infty}$-function:
+\begin{align}
+\rho_{\mathbb{R}_{\geq 0}}(x)=
+\begin{cases}
+e^{-1/x},\quad  (x> 0) \\
+0, \quad (x\leq 0).
+\end{cases}
+\end{align}
+
+Let $l\colon \mathbb{R}^{n}\to \mathbb{R}$
+be an affine map. Then, the pullback 
+$l^{*}\rho_{\mathbb{R}_{\geq 0}}$ is a 
+$C^{\infty}$-function such that 
+\begin{align}
+\{l^{*}\rho_{\mathbb{R}_{\geq 0}}\ne 0\}
+=\{l^{*}\rho_{\mathbb{R}_{\geq 0}}> 0\}
+=\{l>0\}.
+\end{align}
+Let $P$ be an $n$-dimensional convex polyhedron 
+in $\mathbb{R}^{n}$.
+If $P=\bigcap_{i=1}^{m}\{l_i\geq 0\}$
+for a family $\{l_i\}_{i=1,\ldots,m}$
+of affine linear map on $\mathbb{R}^{n}$,
+then $\rho_P\deq\prod_{i=1}^{m}l_i^{*}\rho_{\mathbb{R}_{\geq 0}}$
+is a $C^{\infty}$-function satisfies
+\begin{align}
+\{\rho_P
+\ne 0\}
+=\bigcap_{i=1}^{m}\{l_i>0\}=\opn{int}(P),
+\end{align}
+where $\opn{int}(P)$ is the interior of $P$.
+Besides, $d\rho_P(x)=0$ if $x\notin \opn{int}(P)$.
+
+Let $K\subset V_y$ be a $n$-dimensional convex polytope and 
+$P\deq \mathbb{R}_{\geq 0}K$. 
+Then, 
+\begin{align}
+\label{equation-bump-set}
+\{z\in\opn{LC}_xS\mid v(z)-\rho_P(z)<0\}=
+\{z\in\opn{LC}_xS\mid v(z)<0\}\sqcup (\opn{LC}_x S \cap \opn{int}(P)).
+\end{align}
+
+\eqref{equation-bump-set} follows from $v|_{\mathbb{R}_{\geq 0}U_y}=0$ 
+and $P\subset \mathbb{R}_{\geq 0}U_y$. 
+The RHS of \eqref{equation-bump-set} is a cone and 
+$\opn{LC}_x S \cap \opn{int}(P)$ is convex.
+Therefore, we have
+\begin{align}
+\chi_{\mathrm{top}}(
+\{z\in \opn{LC}_x S\cap B^{n}_{\varepsilon}(0)
+\mid v(z)-\rho_{P}(z)<0\})
+-\chi_{\mathrm{top}}(\{z\in \opn{LC}_x S \cap B^{n}_{\varepsilon}(0)\mid v(z)<0\})=1.
+\end{align}
+for any sufficently small $\varepsilon>0$.
+Therefore, $v+\rho_{P}$ or $v$ satisfies 
+\eqref{equation-non-acyclic}.
 \end{proof}
 
 \begin{remark}
@@ -2885,7 +2925,7 @@ $\mathscr{C}$ in the theory of stratified
 Morse theory \cite[Part I.2.1]{MR932724}
 but does not satisfy the nondegeneracy condition.
 In particular, $s_{p,q}$ is not nondepraved 
-at the origin \cite[Part I.2.3]{MR932724}, 
+at the origin \cite[Part I.2.3. Definition (c)]{MR932724}, 
 and thus we cannot use the theory of local Morse 
 data for nondepraved functions directly 
 \cite[Part I. Definition 3.5.2]{MR932724}. 
@@ -2905,25 +2945,27 @@ $U\setminus\{-\infty\}$.
 
 As like \cite{auroux2022lagrangian},
 we also use the notion of the rotation number of 
-permissible Cartier divisor.
+$C^{\infty}$-divisors.
 Fix a connected smooth tropical curve $C$
 and $C_{\reg}\deq \{x\in C\mid \opn{val}(x)=2\}$.
-If $C$ is not isomorphic to a circle, then
+The $C_{\reg}$ is isomorphic to a $1$-dimensional 
+(paracompact) integral affine manifold. 
+If $C$ is connected and not isomorphic to a circle, then
 $C_{\reg}$ is a disjoint union of open interval:
 \begin{align}
-  C_{\reg}\simeq \coprod_{e\in E} (a_e,b_e), \quad
-(a_e\in \mathbb{T}
-=\mathbb{R}\cup\{-\infty\}, b_e\in \mathbb{R}\cup\{+\infty\}).
+  C_{\reg}\simeq \coprod_{e\in \pi_0(C_{\reg})} (a_e,b_e), \quad
+(a_e\in \underline{\mathbb{R}}, b_e\in 
+\overline{\mathbb{R}}).
 \end{align}
 
-$C_{\reg}$ is an integral affine manifold, 
-and thus $C_{\reg}$ has a standard Lagrangian torus fibration
+Since $C_{\reg}$ is an integral affine manifold, 
+$C_{\reg}$ has a standard Lagrangian torus fibration
 $
 \check{f}_{C_{\reg}}
 \colon \check{X}(C_{\reg})\to C_{\reg}
 $ 
 and a dual torus fibration 
-$f_{C_{\reg}}\colon X(C_{\reg})\to C_{\reg}$,
+$f_{C_{\reg}}\colon X(C_{\reg})\to C_{\reg}$
 (see \cref{definition-integral-affine-manifold}
 and \cref{definition-SYZ-torus-fibration}).
 
@@ -3861,7 +3903,8 @@ $\tform^{p}_{\mathbb{Z},X}\simeq
 \mform_{\mathbb{Z},X}^{p}$ for all 
 $p\in \mathbb{Z}_{\geq 0}$
 (see \cite[Remark 2.8]{gross2019sheaftheoretic}).
-In the rest, we assume every rational polyhedral space $X$
+In the rest of this paper,
+we assume every rational polyhedral space $X$
 has a local face structure and
 satisfies $\Omega_{\mathbb{Z},X}^{p}\simeq \mform_{\mathbb{Z},X}^{p}$
 for all $p$.
@@ -3973,7 +4016,7 @@ The left column short exact sequence of
 \eqref{equation-smooth-cartier-diagram} is called
 the 
 \emph{tropical exponential sequence}
-(e.g. \cite{MR3894860}).
+(e.g. \cite[\textsection 3]{MR3894860}).
 
 By taking the long exact sequence for 
 \eqref{equation-smooth-cartier-diagram}, we get a canonical morphism:
@@ -4003,7 +4046,7 @@ by \cite[Proposition 4.17]{gross2019sheaftheoretic}.
 \subsection{Verdier duality and Borel--Moore homology
 for tropical spaces}
 In this subsection, we recall the Verdier duality for
-tropical manifolds.
+tropical manifolds from \cite{gross2019sheaftheoretic}.
 See \cref{section-verdier-dual} if you do not familiar 
 with the classical Verdier duality.
 Every rational polyhedral space $X$ is locally compact, 
@@ -4073,7 +4116,7 @@ morphism of rational polyhedral spaces.
 Then, $f_*\circ g_*=(f\circ g)_*$ from 
 \eqref{equation-trace}.
 
-Tropical cohomology and tropical Borel--Moore homology 
+The tropical cohomology and the tropical Borel--Moore homology 
 also have the cap product 
 \cite[\textsection 4.6]{gross2019sheaftheoretic}:
 \begin{align}
@@ -4124,10 +4167,12 @@ which is called the Poincar\'e--Verdier duality
 where $\mathcal{D}_{\mathbb{Z}_X}(\mathcal{F}^{\bullet})
 \deq R\mathcal{H}om_{\mathbb{Z}_X}(\mathcal{F}^{\bullet}
 ,\upomega^{\bullet}_X)$ for 
-$\mathcal{F}^{\bullet}\in D^{b}(\mathbb{Z}_X)$.
+$\mathcal{F}^{\bullet}\in D^{b}(\mathbb{Z}_X)$
+(see also ):
 The Poincar\'e--Verdier duality 
 and the tensor-hom adjunction induce
-the following isomorphism.
+the following isomorphism
+(see also \eqref{equation-verdier-dual}):
 \begin{align}
 H^{n-p,n-q}(X;\mathbb{Z})=
 R^{0}\opn{Hom}(\mathbb{Z}_X,
@@ -4164,7 +4209,7 @@ spaces \cite[Proposition 5.1]{gross2019sheaftheoretic}.
 Let $X_{\reg}$ the set of generic points in $X$, i.e.,
 the set of points which has an open neighborhood 
 isomorphic to a Euclidean space
-\cite[\textsection 4.B]{MR3894860} 
+\cite[\textsection 4.B]{MR3894860}
 (see also \cite[Definition 2.7]{gross2019sheaftheoretic}).
 The constant function
 $1_{X_{\reg}}\colon X_{\reg} \to \mathbb{Z}; 
@@ -4172,7 +4217,7 @@ x\mapsto 1$ defines a generator of
 $Z_n(X)=\Gamma(X;\mathscr{Z}_n^{X})\simeq 
 \opn{Hom}(\tform^{n}_{\mathbb{Z},X},
 \mathcal{H}^{n}_X)\simeq 
-\opn{Hom}_{D^{b}(X)}(\tform^{n}_{\mathbb{Z},X}[n],
+\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\tform^{n}_{\mathbb{Z},X}[n],
 \upomega_X^{\bullet})$ if $X$ is connected.
 In particular, $1_{X_{\reg}}$ defines a 
 natural morphism 
@@ -4666,30 +4711,33 @@ of a compact integral affine manifold is contractible.
 
 \section{For more examples}
 \label{section-more-examples}
+In the last section, we mention more examples of 
+tropical analog of the Euler number of 
+the sheaf cohomology of line bundles.
+
 \subsection{Tropical multidivisors and 
 Lagrangian multi-sections}
 \label{section-tropical-multi-section}
 
-Let $B$ an integral affine manifold
-(with singularities). 
+Let $B$ an integral affine manifold. 
 Then, $B$ has 
 the notion of Lagrangian multi-section, 
 which is a mirror part of some 
 vector bundle on $X(B)$. The Lagrangian
 multi-sections are studied by 
 various researchers. 
-Every (unramified) Lagrangian multi-sections 
-can be considered as a certain analog of  
+We can consider (unramified) Lagrangian multi-sections 
+as a certain analog of  
 tropical multidivisors on a compact tropical
 curve \cite[Definition 3.1]{gross2022principal}, 
-so we can also define (permissible) 
-$C^{\infty}$-Cartier multidivisors
+so we can also define 
+$C^{\infty}$-multidivisors
 for tropical curves and 
 the local Morse data of them naturally, 
 and thus we can generalize 
 \cref{theorem-MRR-curve-preface} for 
-permissible $C^{\infty}$-Cartier 
-multidivisors by
+$C^{\infty}$-multidivisors satisfying
+\cref{condition-good-divisor} by
 the Riemann--Hurwitz formula for tropical 
 curves \cite[Theorem 2.14]{MR2525845}. 
 
@@ -4697,12 +4745,12 @@ curves \cite[Theorem 2.14]{MR2525845}.
 \subsection{K\"unneth-type formula}
 
 
-In the last section, we mention more examples of 
-tropical analog of the Euler number of 
-the sheaf cohomology of line bundles.
-First, we remark that there exists
+
+First, We remark that there exists
 a tropical analog of K\"unneth formula for 
 local Morse data.
+For prove \cref{corollary-kunneth-type-formula},
+We use the following sheaf theoretic
 
 \begin{theorem}[{Thom--Sebastiani Theorem for sheaves \cite[Theorem 1.2.2]{MR2031639}}]
 Let $i=1,2$.
@@ -4763,7 +4811,8 @@ is enough for performing that there exists
 a K\"unneth type formula for local Morse data
 of $C^{\infty}$-divisors.
 
-\begin{corollary}[{K\"unneth formula}]
+\begin{corollary}[{K\"unneth type formula}]
+\label{corollary-kunneth-type-formula}
 Fix boundaryless compact rational polyhedral spaces $X$ and $Y$.
 Let $s$ and $s'$ a permissible $C^{\infty}$-divisor of $X$ and $Y$ 
 satisfying the condition of cohomological version of a Milnor 
@@ -5188,7 +5237,6 @@ The complex $\mathcal{D}_{A_X}(\mathcal{F}^{\bullet})
 \upomega_{A_X}^{\bullet})$ 
 is called the \emph{Verdier dual} of 
 $\mathcal{F}^{\bullet}$.
-
 The dual functor
 $\mathcal{D}_{A_X}\colon 
 D^{b}(\catn{Mod}(A_X))\to 
@@ -5212,6 +5260,7 @@ R\mathcal{H}om_{A_X}
 & \simeq R\mathcal{H}om_{A_X}
 (\mathcal{F}^{\bullet},
 \mathcal{G}^{\bullet}).
+\label{equation-verdier-dual}
 \end{align}
 
 
