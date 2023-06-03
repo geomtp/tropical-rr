@@ -634,7 +634,7 @@ when $[s] = 0 \in \Pic S$.
 \end{conjecture}
 
 \cref{conjecture-enough-permissible,conjecture-tropical-MRR-preface}
-implies that
+imply that
 the Euler characteristic of a line bundle is well-defined.
 \cref{conjecture-enough-permissible} is obvious when 
 $S$ is a compact tropical curve 
@@ -739,7 +739,7 @@ of Riemann--Roch type formula.
 \subsection*{Acknowledgments}
 I would like to express 
 my deepest gratitude to my advisor, Kazushi Ueda,
-for his numerously invaluable advice and encouragement.
+for his invaluable advice and constant encouragement.
 Without his extensive support,
 I would not have been able to complete this paper.
 I want to offer my thanks 
@@ -2846,6 +2846,8 @@ associated with lattice structure of the tangent
 vector space of $C$ 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
 
+Next, we see the permissibility condition 
+for $C^{\infty}$-divisors on tropical curves.
 
 \begin{proposition}
 \label{proposition-permissible-curve}
@@ -2857,9 +2859,7 @@ $(0,0)$-superform on $|\Sigma|$. Then,
 $f$ is permissible at $x=(0,\ldots,0)$ if and only if 
 $df(x)\in (\tform^{1}_{\mathbb{Z},|\Sigma|})_x\simeq (\mathbb{Z}^{n})^{\vee}$
 or $\opn{lineal}(|\Sigma|,x)\simeq \mathbb{R}$.
-
 \end{proposition}
-
 \begin{proof}
 Obviously, 
 $\opn{dim}_{\mathbb{R}}\opn{lineal}(|\Sigma|,x)\leq 1$.
@@ -2882,7 +2882,10 @@ $\opn{span}_{\mathbb{R}}(\opn{SS}((\mathbb{Z}_{X})_S)_x)
 =\mathbb{R}^{n}$ where $X=\mathbb{R}^{n}$ and $S=|\Sigma|$.
 \end{proof}
 
-
+\cref{proposition-n-valent} and 
+\cref{proposition-1-valent} classifies 
+the type of intersection data of 
+$C^{\infty}$-divisors.  
 
 \begin{proposition}[{cf. \cite{knill2012graph}}]
 \label{proposition-n-valent}
@@ -2936,6 +2939,7 @@ generalized version of local Morse data
 which can apply for our settings.
 \end{remark}
 
+
 \begin{proposition}
 \label{proposition-1-valent}
 Let $U\deq [-\infty,a) (\subset \underline{\mathbb{R}})$ be a connected open neighborhood of 
@@ -2945,9 +2949,58 @@ Then, $\{f< 0\}$ is equal to $\emptyset$ or
 $U\setminus\{-\infty\}$.
 \end{proposition}
 
+Let $C$ be a tropical curve and 
+$\mathcal{A}_C^{\opn{weak}}$ be the sheaf 
+of weakly-smooth functions on $C$. From definition,
+$\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
+and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
+Since $\mathcal{A}_C^{\opn{weak}}$ is fine, 
+the connecting homomorphism 
+$[\cdot]\colon H^{0}(C;\mathcal{A}_C^{\opn{weak}}/
+\mathcal{O}^{\times}_C)\to \opn{Pic}(C);s\mapsto [s]$ is 
+surjective.
+
+\begin{proposition}
+Let $s$ be a $C^{\infty}$-divisor on a compact
+tropical curve $C$.
+Then, there exists
+a permissible $C^{\infty}$-divisor $s'$ which is linearly
+equivalent to $s$ and
+$s_0\cap s'$ is a finite set. 
+\end{proposition}
+\begin{proof}
+Every $C^{\infty}$-divisor $s$ on $C$ is 
+permissible at $1$-valent vertex on $C$. So, we
+can assume $C$ has no 1-valent vertex. 
+Choose a sufficiently small open neighborhood 
+$U_p$ of $p\in C\setminus C_{\reg}$. Then, there exists a 
+$(0,0)$-superform $f\colon U_p \to \mathbb{R}$ such 
+that $(f)^{\mathrm{sm}}=s|_{U_p}$. Besides, there exists 
+a smooth function $f_0\colon U\to \mathbb{R}$ for 
+an open subset $U$ of $T_p C$ 
+which defines $f$. We can perturb $f$ with 
+$\tilde{f}$ such that 
+$d\tilde{f}(p)\in (\tform_{\mathbb{Z},S}^{1})_p$
+and $f|_{U\setminus K}=\tilde{f}|_{U\setminus K}$ for 
+a sufficiently small compact neighborhood $K$ of $0$.
+Therefore, we can assume $s$ is permissible.  
+Next, we check that we can choose $s'$ 
+such that $s\cap s'$ is a finite set.
+Fix an open edge $e$ of $C$.
+Then, $s|_e$ is the principal divisor of a bounded smooth 
+function $f$ on $e$. 
+Therefore, we can choose a smooth bump function $g$ on $e$ such 
+that $f+g$ is nondegenerate. We can extend $g$ on $C$ 
+by zero, and thus $s+g$ is linearly equivalent to $s$.
+By repeating this, we get a permissible Cartier divisor
+$s'$ on $C$ such that $\sharp (s\cap s')<\infty$.
+\end{proof}
+
+
 As like \cite{auroux2022lagrangian},
 we also use the notion of the rotation number of 
-$C^{\infty}$-divisors.
+$C^{\infty}$-divisors for the proof of 
+\cref{theorem-MRR-curve-preface}.
 Fix a connected smooth tropical curve $C$
 and $C_{\reg}\deq \{x\in C\mid \opn{val}(x)=2\}$.
 The $C_{\reg}$ is isomorphic to a $1$-dimensional 
@@ -2957,8 +3010,11 @@ $C_{\reg}$ is a disjoint union of open interval:
 \begin{align}
   C_{\reg}\simeq \coprod_{e\in \pi_0(C_{\reg})} (a_e,b_e), \quad
 (a_e\in \underline{\mathbb{R}}, b_e\in 
-\overline{\mathbb{R}}).
+\overline{\mathbb{R}})
 \end{align}
+where $\pi_0(C_{\reg})$ is the connected components of 
+$C_{\reg}$.
+If $C$ is compact, then $\pi_0(C_{\reg})$ is finite.
 
 Since $C_{\reg}$ is an integral affine manifold, 
 $C_{\reg}$ has a standard Lagrangian torus fibration
@@ -3049,7 +3105,8 @@ Then, $df_i(x)-df_j(x)\in
 $df_i(x)\in (\tform_{\mathbb{Z},C}^{1})_x$
 from \cref{proposition-permissible-curve} (2).
 Therefore, the construction of $\check{s}$ is well-defined.
-$\check{s}$ is continuous, obviously.
+Obviously, $\check{s}$ is continuous by gluing lemma 
+for each edge of $C$.
 
 (2): Omit.
 \end{proof}
@@ -3058,52 +3115,7 @@ $\check{s}$ is continuous, obviously.
 
 
 
-Let $C$ be a tropical curve and 
-$\mathcal{A}_C^{\opn{weak}}$ be the sheaf 
-of weakly-smooth functions on $C$. From definition,
-$\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
-and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
-Since $\mathcal{A}_C^{\opn{weak}}$ is fine, 
-the connecting homomorphism 
-$[\cdot]\colon H^{0}(C;\mathcal{A}_C^{\opn{weak}}/
-\mathcal{O}^{\times}_C)\to \opn{Pic}(C);s\mapsto [s]$ is 
-surjective.
 
-\begin{proposition}
-Let $s$ be a $C^{\infty}$-divisor on a compact
-tropical curve $C$.
-Then, there exists
-a permissible Cartier divisor $s'$ which is linearly
-equivalent to $s$ and
-$s_0\cap s'$ is a finite set. 
-\end{proposition}
-\begin{proof}
-Every $C^{\infty}$-divisor $s$ on $C$ is 
-permissible at $1$-valent vertex on $C$. So, we
-can assume $C$ has no 1-valent vertex. 
-Choose a sufficiently small open neighborhood 
-$U_p$ of $p\in C\setminus C_{\reg}$. Then, there exists a 
-$(0,0)$-superform $f\colon U_p \to \mathbb{R}$ such 
-that $(f)^{\mathrm{sm}}=s|_{U_p}$. Besides, there exists 
-a smooth function $f_0\colon U\to \mathbb{R}$ for 
-an open subset $U$ of $T_p C$ 
-which defines $f$. We can perturb $f$ with 
-$\tilde{f}$ such that 
-$d\tilde{f}(p)\in (\tform_{\mathbb{Z},S}^{1})_p$
-and $f|_{U\setminus K}=\tilde{f}|_{U\setminus K}$ for 
-a sufficiently small compact neighborhood $K$ of $0$.
-Therefore, we can assume $s$ is permissible.  
-Next, we check that we can choose $s'$ 
-such that $s\cap s'$ is a finite set.
-Fix an open edge $e$ of $C$.
-Then, $s|_e$ is the principal divisor of a bounded smooth 
-function $f$ on $e$. 
-Therefore, we can choose a smooth bump function $g$ on $e$ such 
-that $f+g$ is nondegenerate. We can extend $g$ on $C$ 
-by zero, and thus $s+g$ is linearly equivalent to $s$.
-By repeating this, we get a permissible Cartier divisor
-$s'$ on $C$ such that $\sharp (s\cap s')<\infty$.
-\end{proof}
 
 
 
@@ -3728,7 +3740,7 @@ different terminologies for different authors.
 For instance, an integral (resp. strongly integral) affine manifold 
 is called a tropical affine manifold (resp. integral affine manifold)
 in \cite[Definition 1.22]{MR2722115}. 
-The terminology `strongly integral affine manifold' 
+The terminology \emph{strongly integral affine manifold} 
 comes from \cite[Remark 5.10]{MR3079343}.
 \end{remark}
 
@@ -4157,7 +4169,11 @@ c\frown f_*\alpha\in H_{p-i,q-j}^{\opn{BM}}(Y).
 
 
 Let $X$ be a compact
-purely $n$-dimensional tropical manifold.
+$n$-dimensional tropical manifold.
+By a \emph{n-dimensional tropical manifold},
+we mean a tropical manifold of pure dimension $n$,
+for simplicity in this paper
+(see \cite[\textsection 2.A]{MR3894860}). 
 Then, there exists the following natural isomorphism, 
 which is called the Poincar\'e--Verdier duality 
 \cite[Theorem 6.2]{gross2019sheaftheoretic}:
@@ -4169,8 +4185,7 @@ which is called the Poincar\'e--Verdier duality
 where $\mathcal{D}_{\mathbb{Z}_X}(\mathcal{F}^{\bullet})
 \deq R\mathcal{H}om_{\mathbb{Z}_X}(\mathcal{F}^{\bullet}
 ,\upomega^{\bullet}_X)$ for 
-$\mathcal{F}^{\bullet}\in D^{b}(\mathbb{Z}_X)$
-(see also ):
+$\mathcal{F}^{\bullet}\in D^{b}(\mathbb{Z}_X)$.
 The Poincar\'e--Verdier duality 
 and the tensor-hom adjunction induce
 the following isomorphism
@@ -4196,7 +4211,7 @@ We recall the construction
 of $\opn{PVD}^{(n)}_X$ in \cite{gross2019sheaftheoretic}.
 Let $\mathscr{Z}_n^{X}$ be the sheaf of tropical 
 $n$-cycles \cite[Definition 3.5]{gross2019sheaftheoretic}
-on a pure $n$-dimensional tropical manifold $X$ and 
+on an $n$-dimensional tropical manifold $X$ and 
 $\mathcal{H}^{n}_X$ the $n$-th 
 homology sheaf \cite[Definition 4.6]{gross2019sheaftheoretic}.
 Then, there exists the following isomorphism:
@@ -4253,7 +4268,7 @@ We can extend \eqref{equation-trace-integration}
 for compact tropical manifolds naturally.
 \begin{definition}[{cf.~\cite[Definition 2.11]{MR3668972}}]
 Let $f\colon X \to Y$ be a proper morphism of 
-$n$-dimensional compact tropical manifolds.
+a $n$-dimensional compact tropical manifolds.
 
 
 The (tropical) degree
