@@ -1734,7 +1734,7 @@ affine manifold.
 
 
 In various scenes, we assume rational polyhedral spaces
-satisfies the following \emph{boundaryless condition}:
+satisfy the following \emph{boundaryless condition}:
 
 \begin{condition}[{\cite[\textsection 4.2]{MR4246795}}]
 \label{condition-Rn}
@@ -4182,7 +4182,7 @@ which is called the Poincar\'e--Verdier duality
 \begin{align}
 \opn{PVD}^{(n-p)}_X\colon \tform_{\mathbb{Z},X}^{n-p}[n]
 \simeq 
-\mathcal{D}_{\mathbb{Z}_X}(\tform_{\mathbb{Z},X}^{p}).
+\mathcal{D}_{\mathbb{Z}_X}(\tform_{\mathbb{Z},X}^{p})
 \end{align}
 where $\mathcal{D}_{\mathbb{Z}_X}(\mathcal{F}^{\bullet})
 \deq R\mathcal{H}om_{\mathbb{Z}_X}(\mathcal{F}^{\bullet}
@@ -4295,10 +4295,14 @@ $n$-dimensional tropical manifolds such that $f$ is a
 covering map of topological degree $m$ and the associated map $d_xf\colon 
 T_{x}^{\mathbb{Z}} X\to T_{f(x)}^{\mathbb{Z}}Y$ is 
 isomorphic.
+Let $\opn{cyc}_X$ be the cycle class map of $X$ 
+\cite[Definition 5.4]{gross2019sheaftheoretic}.
 Then, $f_*[X]=\opn{cyc}_X(f_*1_{X_{\reg}})
 =m[\opn{cyc}_Y(1_{Y_{\reg}})]=m
-[Y]$ from the commutative diagram of
-tropical cycle maps and the definition of the pushforward
+[Y]$ from the commutativity of
+tropical cycle maps
+\cite[Proposition 5.6]{gross2019sheaftheoretic}
+and the definition of the pushforward
 of tropical cycles \cite[Definition 3.6]{gross2019sheaftheoretic}.
 In this case, $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.
 \end{example}
@@ -4358,7 +4362,7 @@ from symplectic geometry.
 Of course, 
 $\mcal{A}_{B}^{0,0}=\mcal{C}^{\infty}_{B}$ and
 $\mcal{Z}^{1}_{B}$ is the sheaf of 
-closed $1$-form on $B$.
+closed $1$-forms on $B$.
 We recall the sheaf $\mcal{Z}^{1}_{B}$ can be 
 considered as the sheaf 
 $\opn{Lag}(T^{*}B)$ of Lagrangian sections 
@@ -4370,10 +4374,9 @@ the period lattice of
 $\check{f}_{B}\colon \check{X}(B)\to B$ 
  \cite{duistermaatGlobalActionangleCoordinates1980a}.
 Another important thing is that 
-$\mcal{Z}^{1}(B)/\mcal{T}_{\Z,B}^{\vee}$
- (resp. $\mcal{C}^{\infty}_{B}(T^{*}B)/\mcal{T}_{\Z,B}^{\vee}$) 
+$\mcal{Z}^{1}(B)/\mcal{T}_{\Z,B}^{\vee}$ 
 is isomorphic to the sheaf of germs of Lagrangian sections 
-(resp. smooth sections) of the Lagrangian torus fibration 
+of the Lagrangian torus fibration 
 $\check{f}_{B}\colon \check{X}(B)\to B$ 
 \cite[(2.7), (2.11)]{duistermaatGlobalActionangleCoordinates1980a}.
 
@@ -4558,10 +4561,10 @@ $\chi(\opn{LMD}^{\bullet}(B,s))=
 truly a special case of Poincar\'e--Hopf theorem for $B$.
 We also note there exists another tropical analog of Poincar\'e--Hopf theorem
 \cite{MR4540954}.
-This analog is about \emph{tropical Euler characteristic}
+This analog is about the \emph{tropical Euler characteristic}
 $\chi_{\opn{trop}}(B)\deq 
 \chi(\mb{H}^{\bullet}(B;\tform_{\mathbb{R},B}^{\bullet}))$
-  but not for topological Euler characteristic $\chi_{\opn{top}}(B)$.
+  but not for the topological Euler characteristic $\chi_{\opn{top}}(B)$.
 \end{remark}
 
 \begin{remark}[{Kodaira--Thurston surface}]
@@ -4767,7 +4770,7 @@ curves \cite[Theorem 2.14]{MR2525845}.
 
 First, We remark that there exists
 a tropical analog of K\"unneth formula for 
-local Morse data.
+local Morse data (\cref{corollary-kunneth-type-formula}).
 For prove \cref{corollary-kunneth-type-formula},
 We use the following sheaf theoretic
 
@@ -4847,9 +4850,7 @@ has the following equations:
 
 \end{corollary}
 \begin{proof}
-Since 
-$\opn{SS}(F\boxtimes^{L} G)\subset 
-\opn{SS}(F)\times \opn{SS}(G)$
+By
 \cite[Proposition 5.4.1]{MR1299726},
 $s\boxtimes s'$ is also permissible.
 
@@ -4885,7 +4886,7 @@ $f_2= f_w-f_w(w)$;
 In the proof of the above corollary, we only use
 the condition of cohomological version of Milnor fiber. 
 Besides, we can find many permissible $C^{\infty}$-divisors
-satisfying the condition, see \cite[p.35]{MR2031639}.  
+satisfying this condition, see \cite[p.35]{MR2031639}.  
 \end{remark}
 
 As another result, we get a formula
@@ -5124,7 +5125,7 @@ if $\pi^{-1}(x)$ is a Bohr-Sommerfeld orbit.
 The origin of Bohr--Sommerfeld orbit comes from
 Old Quantum Theory.
 See also \cite[15.2, Chapter 22]{MR3112817}
-and \cite[Remark 4.3]{MR1270931} for physical meaning 
+and \cite[Remark 4.3]{MR1270931} for a physical meaning 
 of BS-orbits.
 
 
@@ -5220,14 +5221,14 @@ https://doi.org/10.48550/arxiv.1904.04076}).
 \section{Verdier duality} 
 \label{section-verdier-dual}
 
-In this subsection, we recall Verdier duality which 
+In this subsection, we recall the Verdier duality which 
 uses in \cref{section-integral-affine-manifold}
 from \cite[Chapter 3]{MR1299726}.
 
 \begin{theorem}[{Verdier duality}]
 \label{theorem-relative-verdier}
 Let $f\colon X\to Y$ be a continuous map between locally 
-compact Hausdorff space s. If $f_!$ has finite cohomological
+compact Hausdorff spaces. If $f_!$ has finite cohomological
 dimension, then
 \begin{align}
 R\opn{Hom}_{A_Y}(R f_!\mcal{F}^{\bullet},\mcal{G}^{\bullet})    & \simeq R\opn{Hom}_{A_X}(\mcal{F}^{\bullet},f^{!}\mcal{G}^{\bullet}),        \\
@@ -5236,7 +5237,7 @@ R \mcal{H}om_{A_Y}(R f_! \mcal{F}^{\bullet},\mcal{G}^{\bullet}) & \simeq Rf_* R\
 \end{theorem}
 The proof of \cref{theorem-relative-verdier} is in 
 \cite[Proposition 3.1.10]{MR1299726}.
-The \emph{dualizing complex} over $A$ of $X$ is 
+The \emph{dualizing complex} on $X$ over $A$ is 
 $\upomega_{A_X}^{\bullet}\deq a^{!}_{X}A_{\{\opn{pt}\}}$.
 For simplicity, we write 
 $\upomega_X^{\bullet}\deq 
@@ -5285,7 +5286,7 @@ R\mathcal{H}om_{A_X}
 
 
 
-The pairs of adjoint functors $Rf_! \dashv f^{!}$ 
+The pair of adjoint functors $Rf_! \dashv f^{!}$ 
 induces the \emph{trace map} $\opn{Tr}_{f,\mathcal{F}^{\bullet}}\colon Rf_!f^{!}\mathcal{F}^{\bullet}
 \to \mathcal{F}^{\bullet}$ for each 
 $\mathcal{F}^{\bullet}\in \opn{Ob}(D^{b}(A_X))$.
