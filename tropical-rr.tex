@@ -241,7 +241,8 @@ We use ideas
 from the Strominger--Yau--Zaslow conjecture 
 and microlocal sheaf theory 
 to define graded modules
-associated with $C^{\infty}$-divisors 
+associated with $C^{\infty}$-divisors
+satisfying the appropriate conditions 
 on compact tropical manifolds.
 A $C^{\infty}$-divisor is
 a generalization of
@@ -831,6 +832,8 @@ with fiber $A$.
 \item $\catn{Mod}(\mathcal{R})$: the category of 
 sheaves of $\mathcal{R}$-modules
 (e.g. \cite[Definition 2.2.6]{MR1299726}).
+\item $D^{b}(A_X)$: the derived category
+of bounded complexes of $\catn{Mod}(A_X)$.
 \end{itemize}
 
 We also impose the following assumption for simplicity in this paper:
@@ -854,8 +857,12 @@ $\alpha=0,1,\ldots,\infty,\omega$.
 \texorpdfstring{$C^{\infty}$}{C-infty}-divisors}
 \label{section-local-morse-data}
 In this section, we recall some elementary results
-for cohomological local Morse data of sheaves from
-\cite{MR2031639,MR1299726}.
+of sheaf theory
+and define $C^{\infty}$-divsors on rational
+polyhedral spaces and
+the (cohomological) local Morse data 
+for $C^{\infty}$-divisors satisfying
+\cref{condition-good-divisor}.
 
 
 
@@ -865,8 +872,7 @@ In this subsection, we follow some classical results of
 the theory of sheaves on locally compact topological
 spaces from \cite{iversenCohomologySheaves1986a,
 MR1299726,MR1269324,MR2050072}.
-The notations and symbols for 
-sheaf theory mainly follows from \cite{MR1299726}
+We mainly follow the notation of \cite{MR1299726}
 unless otherwise specified.
 
 \subsubsection{Notes for modules over PID}
@@ -929,8 +935,8 @@ If $Z'$ be a closed subset of $Z$, then
 there exists the following exact sequence 
 \cite[Proposition 2.3.6.(v)]{MR1299726}:
 \begin{align}
-0\to \tform_{Z\setminus Z'} \to 
-\tform_Z \to \tform_{Z'}\to 0.
+0\to \mathcal{F}_{Z\setminus Z'} \to 
+\mathcal{F}_Z \to \mathcal{F}_{Z'}\to 0.
 \end{align}
 
 Let $\Gamma_{Z}(\mcal{F})$ be the sheaf of sections of 
@@ -974,7 +980,7 @@ and $\mathcal{G}\in\opn{Ob}(\catn{Mod}(A_Y))$.
 Then, we have the following isomorphism 
 \cite[(2.3.19)-(2.3.20)]{MR1299726}:
 \begin{align}
-f^{-1}\tform_Z\simeq 
+f^{-1}\mathcal{F}_Z\simeq 
 (f^{-1}\mathcal{F})_{f^{-1}(Z)},\quad 
 \Gamma_Zf_*\mathcal{G}\simeq f_*\Gamma_{f^{-1}(Z)}
 \mathcal{G}.
@@ -1001,7 +1007,7 @@ R\Gamma_{Z'}(\mcal{F}^{\bullet})[1].
 
 \begin{example}
 \label{example-local-cohomology}
-Let $Z$ be an open subset of $X$ 
+Let $Z$ be an open subset of $X$, 
 $\mathcal{F}^{\bullet}=A_{X}$ 
 and $U=Z\setminus Z'$.
 By taking the global 
@@ -1012,11 +1018,6 @@ the following exact sequence:
 H^{i}(Z;A_{Z})\to H^{i}(U;A_U)\to 
 H^{i+1}_{Z'}(X;A_X) \to \cdots.
 \end{align}
-If $H^{\bullet}(X;A_X)$ and $H^{\bullet}(U;A_U)$ 
-is isomorphic to the singular cohomology of $X$ and $U$
-respectively, $H^{\bullet}_{Z'}(X;A_X)$ is isomorphic to
-the singular cohomology group of the topological space 
-pair $(Z,U)$.
 The cohomology $H^{\bullet}_{\{x\}}(X;A_X)$ is called
 the local cohomology of $X$ at $x$.
 If $Z$ is acyclic and $x\in Z$, then $H^{\bullet}_{\{x\}}(X;A_X)$ is 
@@ -1093,9 +1094,9 @@ in \cref{prop-local-morse-data}.
 
 The following stalk complex and its cohomology is 
 the most important notion
-for this paper which is naturally appeared in
-microlocal sheaf theory \cite{MR1299726}, 
-and which is called ``local Morse datum'' in \cite[p.271]{MR2031639} 
+for this paper, which is naturally appeared in
+microlocal sheaf theory \cite{MR1299726}, and
+the complex is called ``local Morse datum'' in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
 (The double quotation mark here is taken from 
 \cite[p.271]{MR2031639}.)
@@ -1146,7 +1147,7 @@ We don't assume $f$ satisfies some
  we need to use some $C^{\infty}$-function
 which is \emph{not} a Morse function in the sense of 
 stratified Morse theory. 
-We will give an explanation in 
+We will give an explanation about this in 
 \cref{remark-nondeprave-curve}.
 Moreover, 
 $\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f,x)$
@@ -1166,13 +1167,6 @@ this reason.
 Before we see some important examples of cohomological
 local Morse datum, we will see some elementary
 properties of them.
-
-
-
-
-
-
-
 By \eqref{equation-local-stalk}, we get the following
 isomorphism:
 
@@ -1191,7 +1185,7 @@ of $X$, $V$ open subset of $S$ and $x\in V$. Then,
 where $\tilde{H}^{i-1}(X;A)$ is
 the $(i-1)$-th reduced cohomology
 of $A_X$ and $\opn{Nbh}(x,S)$ is 
-the set of open neighborhoods of $x$ in $X$. 
+the set of open neighborhoods of $x$ in $S$. 
 \end{proposition}
 \begin{proof}
 The first and second isomorphism follows 
@@ -1202,7 +1196,7 @@ $H^{\bullet}(\mathcal{F}^{\bullet})_x\simeq
 H^{\bullet}(\mathcal{F}^{\bullet}_x)$ for any 
 $\mathcal{F}^{\bullet}\in D^{b}(A_X)$ and $x\in X$.
 
-From now on, we may assume $S=X$.
+From now on, we may assume $X=S=V$.
 From \eqref{equation-exact-local} and by taking stalks,
 we have the following distinguished triangle:
 \begin{align}
@@ -1301,13 +1295,16 @@ gives
 \opn{ind}^{A}_{0}(f_{n,m})=(-1)^{m}=
 \opn{ind}^{\opn{PH}}_{0}(\opn{grad}(f_{n,m})).&
 \end{align}
-Here, $\opn{ind}^{\opn{PH}}_{0atod}(\opn{grad}(f_{n,m}))$ is 
-the Poincar\'e-Hopf index of $f_{n,m}$ at 
+where $\opn{ind}^{\opn{PH}}_{0}(\opn{grad}(f_{n,m}))$ is 
+the Poincar\'e-Hopf index of the gradient 
+of $f_{n,m}$ at 
 the origin $0$.
-From Morse lemma,
-for every critical point $x$ on a Morse function 
-$f\colon X\to \mathbb{R}$ on a smooth manifold 
-$\opn{ind}_x^{A}(f)=\opn{ind}^{\opn{PH}}_x(f)$. 
+From Morse lemma, 
+$\opn{ind}_x^{A}(f)=\opn{ind}^{\opn{PH}}_x(
+\opn{grad}(f))$
+for every critical point $x$ of a Morse function 
+$f\colon M\to \mathbb{R}$ on a 
+Riemannian manifold $(M,g)$. 
 This equation can be generalized for more cases.
 \end{example}
 
@@ -1351,25 +1348,25 @@ We define $Y\deq
 \end{notation}
 
 The graded module $\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)$
-behaves like the graded part of a Morse complex in Morse 
-homology when $X$ is a smooth manifold.
+behaves like a Morse complex of a Morse function
+as graded modules.
 
 Next, we recall about the micro-support of sheaves 
 from \cite{MR1299726}.
-Let $X$ be a $C^{\alpha}$ manifold for
+Let $X$ be a $C^{\alpha}$-manifold for
 $\alpha\in\{1,2,\ldots,\infty,\omega\}$ and let
 $\mcal{F}^{\bullet}\in\opn{Ob}(D^{b}(A_X))$ and
 $\opn{SS}(\mcal{F}^{\bullet})$ 
 the micro-support of $\mcal{F}^{\bullet}$:
-\begin{definition}[{Citation 
-\cite[Definition 5.1.2]{MR1299726}}]
+\begin{definition}[{\cite[Proposition 5.1.1, Definition 5.1.2]{MR1299726}}]
 The element $p\in T^{*}X$ 
 is  $p\notin \opn{SS}(\mathcal{F}^{\bullet})$
 if there exists an open neighborhood $U$ of $p$ such 
-that for any $x_1\in X$ any real 
-function $\psi$ of class $C^{\alpha}$ defined 
+that for any $x_1\in X$
+and any $C^{\alpha}$-function
+$\psi$ defined 
 in a neighborhood $V$ of $x_1$, with 
-$d\psi(x_1)\in U$, we have
+$(x_1;d\psi(x_1))\in U$, we have:
 \begin{align}
 (R\Gamma_{\{\psi \geq \psi(x_1)\}}(\mathcal{F}^{\bullet}|_V))_{x_1}
 \simeq 0,\, \mathrm{i.e.} \, , 
@@ -1414,7 +1411,7 @@ is compact,
 $df\colon X\to T^{*}X$,
 \item the graded module 
 $\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)$ 
-is finitely generated.
+is bounded and finitely generated.
 
 
 
@@ -1432,21 +1429,25 @@ is finitely generated.
 \cite[Proposition 5.4.20]{MR1299726}}]
 Under \cref{condition-global-morse}, 
 \begin{align}
+\label{equation-global-morse}
 \chi(H^{\bullet}(X;\mathcal{F}^{\bullet}))=
 \chi (\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)).
 \end{align}
 
 \end{proposition}
-This proposition can be considered as the intersection 
+The RHS of \eqref{equation-global-morse}
+can be considered 
+as the intersection number 
 of two Lagrangian cycles in $T^{*}X$ when 
 $\mathcal{F}^{\bullet}$ is a complex of 
-constructible sheaves on an analytic manifold,
+constructible sheaves,
+and $f$ is an analytic function on an analytic manifold,
 see \cite[Corollary 9.5.2, Theorem 9.5.6]{MR1299726}.
 This is called the microlocal index formula or Kashiwara's 
 index formula.
 
 \begin{remark}
-We can change \cref{condition-global-morse}.(2) 
+We can change \cref{condition-global-morse} (2) 
 to a weaker version \cite[(H.2)]{MR1160840}:
 \begin{enumerate}
 \setlength{\leftskip}{0pt}
@@ -1457,8 +1458,8 @@ is locally constant.
 \end{enumerate}
 If $X$ is compact and $f$ is constant, then 
 the pair $(A_X,f)$ satisfies 
-\cref{condition-global-morse}. (1), (3) and (2)' but not 
-(2).
+\cref{condition-global-morse} (1), (3) and (2)',
+but not (2).
 \end{remark}
 
 \begin{example}
@@ -1523,8 +1524,8 @@ then we have
 \chi(\opn{LMD}^{\bullet}(A_M,f_1,x))
 \end{align}
 by \cite[Proposition 5.4.20]{MR1299726}
-when $\opn{LMD}^{\bullet}(A_M,f_1,x_0)$ is finitely
-generated.
+when $\opn{LMD}^{\bullet}(A_M,f_1,x_0)$ is bounded 
+and finitely generated.
 From Poincar\'e--Hopf theorem and 
 \cref{example-morse-index}, 
 \begin{align} \label{equation-poincare-hopf}
@@ -1546,15 +1547,15 @@ $\tilde{f}$ when $\tilde{f}$ is a Morse function.
 \end{example}
 
 The following example is a $C^{\infty}$-function on a 
-smooth manifold with a unique isolated critical point such
-that $\opn{LMD}^{\bullet}(A_M,f)$ is bounded and 
-finitely generated.
+smooth manifold with an isolated critical point
+at $x$ such that $\opn{LMD}^{\bullet}(A_M,f,x)$
+is bounded and finitely generated.
 
 
 \begin{example}
 Let $f\colon M\to \mathbb{R}$ be a 
-$C^{\infty}$-function on a compact smooth
-Riemannian manifold 
+$C^{\infty}$-function on an $n$-dimensional
+compact smooth Riemannian manifold 
 $(M,g)$ and 
 $\varepsilon$ a 
 sufficiently small positive real number. Then,
@@ -1567,19 +1568,24 @@ f|_{\bar{B}_{\varepsilon}^{n}(x)},x) \simeq
 f|_{\bar{B}_{\varepsilon}^{n}(x)},x).
 \end{align}
 
-If $f$ is smooth and has a unique isolated \emph{nondepraved} 
-critical point at $x$, then 
-$\{\{f=f(x)\}\setminus \{x\}$ is a smooth submanifold 
-and $\{\{f=f(x)\}\setminus \{x\},\{x\} \}$ induces 
+If $f$ is smooth, has an isolated \emph{nondepraved} 
+critical point at $x$, 
+and $f^{-1}(f(x))\cap \opn{Crit}(f)=\{x\}$, then 
+$\{f=f(x)\}\setminus \{x\}$ is a smooth submanifold 
+of $M$ and the set 
+$\{\{f=f(x)\}\setminus \{x\},\{x\} \}$ induces 
 a stratification satisfying Whitney's condition B
-\cite[Part I. Lemma 2.5.1]{MR932724}. 
+\cite[Part I. Lemma 2.5.1]{MR932724}.
+For instance, every isolated critical point
+of real analytic function is nondepraved
+~\cite[Part I.2.4]{MR932724}.
 
-For sufficiently small $\varepsilon\in \mathbb{R}_{> 0}$, 
+For a sufficiently small $\varepsilon\in \mathbb{R}_{> 0}$, 
 we can assume 
-$S_{\varepsilon}(x) \cap \{f=f(x)\}$ 
+$S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\}$ 
 intersect transversely \cite[Part I. Lemma 3.5.1]{MR932724},
-and thus $S_{\varepsilon}(x) \cap \{f=f(x)\}$
-is also a submanifold and compact.
+and thus $S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\}$
+is also a submanifold of $M$ and compact.
 A relative version of Ehresmann's lemma for 
 $\|\cdot\|_{\mathbb{R}^{n}}^2$ induces the 
 following homeomorphism of pairs of smooth manifold 
@@ -1596,18 +1602,20 @@ in \cite{359708}.
 Besides, there exists a homeomorphism of pairs of
 topological spaces:
 \begin{align}
+\label{equation-cone-pair}
 (\bar{B}_{\varepsilon}^{n}(x),
 \bar{B}_{\varepsilon}^{n}(x)\cap \{f=f(x)\})
 \simeq (\opn{Cone}(S_{\varepsilon}^{n-1}(x)),
 \opn{Cone}(S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\}))
 \end{align}
 where $\opn{Cone}(X)$ is the topological cone over
-$X$ \cite[Example 4.4]{hatcherAlgebraicTopology2002a}.
+$X$
+(see e.g. \cite[Example 4.4]{hatcherAlgebraicTopology2002a}).
 This homeomorphism is classically proved when 
-$f$ is real analytic function and $x$ is an 
-isolated critical point
+$f$ is real analytic function
 \cite[Theorem 2.10]{MR0239612}.
-The homeomorphism induces 
+The homeomorphism \eqref{equation-cone-pair} and
+\cref{prop-local-morse-data} induces 
 \begin{align}
 \opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(x)},
 f|_{\bar{B}_{\varepsilon}(x)},x)\simeq 
@@ -1621,10 +1629,8 @@ is bounded and finitely generated, so
 is $\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(x)},
 f|_{\bar{B}_{\varepsilon}(x)},x)$.
 
-We also add explanation of real Milnor fiber from
-\cite[3.2]{MR3779558}. Every isolated critical point 
-of real analytic function is nondepraved 
-\cite[Part I.2.4]{MR932724}.
+We also add an explanation of real Milnor fibers from
+\cite[\textsection 3.2]{MR3779558}. 
 If $f$ is real analytic, then 
 $S_{\varepsilon}^{n-1}(x)\cap \{f\leq f(x)\}\simeq 
 f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$
@@ -1643,8 +1649,8 @@ By Khimshiashvili [Him\v{s}ia\v{s}vili] formula \cite{MR0458467}, we have
 \begin{remark}[{A vanishing properties
 for some cone}]
 Fix $X\deq \mathbb{R}^{n}$.
-Let $f\colon X\to {\mathbb{R}}$ be a convex $C^{1}$-
-function $X$ with the minimum point $x$
+Let $f\colon X\to {\mathbb{R}}$ be 
+a convex $C^{1}$-function $X$ with the minimum point $x$
 and $S$ a polyhedral cone in $X$, i.e.,
 a polyhedral set such that 
 $rS=S$ for all $r\in \mathbb{R}_{> 0}$.
@@ -1684,7 +1690,8 @@ Amini and Piquerez also discuss a certain shellability
 for tropical fans \cite{amini2021homology}.
 \end{remark}
 
-\subsection{Smooth Cartier divisors on rational 
+\subsection{$C^{\infty}$-divisors
+on boundaryless rational 
 polyhedral spaces}
 
 
@@ -1695,7 +1702,9 @@ rational polyhedral spaces and discuss the notion of
 for boundaryless rational polyhedral spaces
 \cite[\textsection 4.2]{MR4246795}.
 We mainly follow 
-from \cite{MR3903579,gross2019sheaftheoretic}.
+from \cite{MR3903579,gross2019sheaftheoretic},
+but our notation are slightly different from
+that of them. 
 
 Let $S$ be a rational polyhedral space
 \cite[Definition 2.2]{gross2019sheaftheoretic}, 
@@ -1707,7 +1716,7 @@ $(0,0)$-superforms on $S$
 \begin{remark}
 Jell, Shaw and Smacka defined the sheaf of superforms 
 for polyhedral spaces 
-with a local face structures in \cite{MR3903579}
+with a local face structure in \cite{MR3903579}
 (see also \cite[Definition 2.4.(c)]{gross2019sheaftheoretic}
 for the definition of face structures 
 of rational polyhedral space).
@@ -1716,7 +1725,7 @@ rational polyhedral spaces as the same way,
 at least.
 A $(0,0)$-superform on $S$ are also called as 
 a smooth function on $S$. In fact, 
-the sheaf $\mathcal{A}^{0,0}_S$ of $(0,0)$-superforms
+the sheaf $\mathcal{A}^{0,0}_S$ of $(0,0)$-superforms on $S$
 is equal to the sheaf $\mathcal{C}_S^{\infty}$ of 
 smooth functions on $S$ if $S$ is an integral 
 affine manifold.
@@ -1729,7 +1738,7 @@ satisfies the following \emph{boundaryless condition}:
 
 \begin{condition}[{\cite[\textsection 4.2]{MR4246795}}]
 \label{condition-Rn}
-Let $S$ be a rational polyhedral space  
+Let $S$ be a rational polyhedral space admitting 
 a coordinate system $\{(U_i,\phi_i)\}_{i\in I}$
 such that the image of each chart 
 $\phi_i\colon U_i \to \mathbb{T}^{n}$
@@ -1745,12 +1754,10 @@ As like tropical line bundles on tropical curves
 there exists the notion of tropical line bundle on 
 rational polyhedral spaces
 \cite[Definition 3.12]{gross2019sheaftheoretic}.
-The cohomology $H^{1}(S;\mcal{O}^{\times}_S)$
-is bijective with the set of isomorphism classes
+The set of isomorphism classes
 of tropical line bundles
-on a rational polyhedral space $S$
-is parametrized by 
-$H^{1}(S;\mathcal{O}^{\times}_S)$
+on a rational polyhedral space $S$ is 
+bijective with the cohomology $H^{1}(S;\mcal{O}^{\times}_S)$.
 \cite[Proposition 3.13]{gross2019sheaftheoretic}.
 The cohomology $H^{1}(S;\mcal{O}^{\times}_S)$ is called 
 the \emph{Picard group} of $S$.
@@ -1822,16 +1829,16 @@ By $\CDiv(S)$, we mean
 $H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)$
 when $S$ is a boundaryless rational polyhedral space.
 We will define $\CDiv(S)$
-for general rational polyhedral space $S$ by replacing 
+for any general rational polyhedral space $S$ by replacing 
 the sheaf $\mathcal{A}^{0,0}_{S}$ with the sheaf 
 $\mathcal{A}^{\mathrm{weak}}_S$ of weakly-smooth 
 functions on $S$ in \cref{section-weakly-smooth-functions}.
 We will also see a $C^{\infty}$-divisor is
-an analog of Lagrangian section 
+an analog of Lagrangian section later
 (\cref{proposition-cartier-lagrangian}).
 
-We also use the following representation of 
-$C^{\infty}$-divisor like 
+We also use the following representations of 
+$C^{\infty}$-divisors like 
 \cite[Definition 4.0.12]{MR2810322}.
 \begin{definition}[{$C^{\infty}$-Cartier local data}]
 \label{definition-Cartier-local-data}
@@ -1861,14 +1868,14 @@ satisfying \cref{condition-good-divisor}.
 
 In this subsection, we define 
 the \emph{permissibility condition} for
-$C^{\infty}$-divisors on rational 
-polyhedral spaces.
+$C^{\infty}$-divisors on
+boundaryless rational polyhedral spaces.
 We will define an analog of a Morse complex
-without differential for permissible divisors 
-later.
-At first, we recall some necessary sheaves
-on rational polyhedral spaces 
-to define the permissibility condition from 
+without differential for permissible 
+$C^{\infty}$-divisors later.
+In order to define the permissibility condition,
+we recall some necessary sheaves
+on rational polyhedral spaces from 
 ~\cite{gross2019sheaftheoretic}.
 
 Fix a rational polyhedral space $S$.
@@ -2064,7 +2071,8 @@ is a $C^{\infty}$-function satisfies
 where $\opn{int}(P)$ is the interior of $P$.
 Besides, $d\rho_P(x)=0$ if $x\notin \opn{int}(P)$.
 
-Let $K\subset V_y$ be a $n$-dimensional convex polytope and 
+Let $K\subset V_y$ be an $n$-dimensional convex polytope
+containing $y$ and 
 $P\deq \mathbb{R}_{\geq 0}K$. 
 Then, 
 \begin{align}
@@ -2141,7 +2149,7 @@ $(\opn{LC}_x S,0)\to (S,x)$, and we will use this
 in \cref{definition-permissible-weakly-smooth}.
 
 
-\begin{condition}[{permissiblity}] \label{cond: permissible}
+\begin{condition}[{Permissiblity condition}] \label{cond: permissible}
 Let $S$ be a boundaryless rational polyhedral space.
 A $(0,0)$-superform $f\colon S \to {\mathbb{R}}$ is \emph{permissible} at $x$ 
 if 
@@ -2172,7 +2180,7 @@ connected.
 \end{remark}
 
 
-\begin{definition}[{permissible $C^{\infty}$-divisor}]
+\begin{definition}
 \label{definition-permissible-smooth-cartier-divisor}
 A $C^{\infty}$-divisor $s$ is \emph{permissible} 
 if there exists a local data $\{(U_i,f_i)\}_{i\in I}$ 
@@ -2990,7 +2998,9 @@ Fix an open edge $e$ of $C$.
 Then, $s|_e$ is the principal divisor of a bounded smooth 
 function $f$ on $e$. 
 Therefore, we can choose a smooth bump function $g$ on $e$ such 
-that $f+g$ is nondegenerate. We can extend $g$ on $C$ 
+that $f+g$ is nondegenerate and monotone on a sufficiently 
+open neighborhood of $\partial e$. 
+We can extend $g$ on $C$ 
 by zero, and thus $s+g$ is linearly equivalent to $s$.
 By repeating this, we get a permissible Cartier divisor
 $s'$ on $C$ such that $\sharp (s\cap s')<\infty$.
@@ -3305,7 +3315,7 @@ and $i_{C''}\colon C''\to C$ induces
 \end{align}
 \end{proposition}
 \begin{proof}
-From assumption $i^{*}_{C'}(s)$ and 
+From assumption, $i^{*}_{C'}(s)$ and 
 $i^{*}_{C''}(s)$ are permissible.
 The \eqref{equation-rotation-sum} is true from
 the definition of rotation number. 
@@ -3327,9 +3337,9 @@ We can generalize
 
 \begin{proposition}
 \label{proposition-MRR-1-dim-poly-space}
-Let $C$ be a compact pure $1$-dimensional rational 
-polyhedral space satisfying \cref{condition-Rn} 
-and $s$ a $C^{\infty}$-divisor on $C$. Then,
+Let $C$ be a pure $1$-dimensional compact rational 
+polyhedral space and
+$s$ a $C^{\infty}$-divisor on $C$. Then,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=\opn{rot}(s)+
 \chi_{\opn{top}}(C).
@@ -3606,15 +3616,15 @@ Let $s$ be a permissible $C^{\infty}$-divisor on $C$.
 $s|_{C_{\reg}}$ corresponds to a Lagrangian section of 
 $\check{\pi}_{C_{\reg}}$ from 
 \cref{proposition-cartier-lagrangian}.
-By topological SYZ transformation 
-(see for example \cite{MR1876073},
-\cite{} ,or \cite[\textsection 9.1]{MR1882331}),
+By the semi-flat SYZ transformation 
+(see e.g. \cite{MR1876073}
+or \cite[\textsection 9.1]{MR1882331}),
 $s|_ {C_{\reg}}$ induces a family of $U(1)$-holonomoy for
 each torus fiber $\pi_{C_{\reg}}^{-1}(p)$ and defines a 
-complex line bundle on $C_{0,\vep}$. From now on, 
+complex line bundle on $X(C_{0,\varepsilon})$. From now on, 
 we suppose $s_0\cap s<\infty$. 
-Let $\{(U_p, f_p)\}_{p\in s_0\cap s}$ be the
- intersection data 
+Let $\{(U_p, f_p)\}_{p\in s_0\cap s}$ be
+an intersection data 
 for $s$ such that 
 $\{x\in C\mid d_C(p,x)\leq \vep\}\subset U_p$ for
 all $p\in C\setminus C_{\reg}$.
@@ -3627,7 +3637,7 @@ df_p(p_1)+df_p(p_2)+df_p(p_3)=0,\quad
 \end{align}
 
 From the above condition, $0<|df_p(p_i)| \ll 1$ and
-$f$ is of type $s_{2,1}$ or $s_{1,2}$ discussed
+$f_p$ is of type $s_{2,1}$ or $s_{1,2}$ discussed
 in \cref{proposition-n-valent}.
 From the above condition, we can define 
 a flat $U(1)$-bundle on each pants of a 
@@ -3664,19 +3674,11 @@ identification \cite[Theorem 6.7]{MR2676658}.
 \end{align}
 The origin of our approach firstly comes from the 
 above correspondence.
-
-From this correspondence, 
-our theorem for tropical curve can be 
-proved by the theory of localization of index 
-and the classical Riemann--Roch formula.
 We stress that the both methods of computation
 of our index and the local Riemann--Roch number
 defined in \cite{MR2676658} are different 
 each other, even though both indexes have various 
 similar features.
-We also note that it was the beginning of our 
-approach that we 
-noticed the above correspondence.
 We can also consider the following question as 
 like \cite{auroux2022lagrangian}.
 
@@ -4675,7 +4677,7 @@ has a lift to an object of Fukaya category
 of $\check{X}(B)$ in the sense of 
 \cite{MR4301560}.
 
-We also note about Floer cohomology of 
+We also note about the Floer cohomology of 
 a pair of Lagrangian sections.
 If a pair $(L_s,L_s')$ of Lagrangian sections 
 intersects transversally, then the graded 
@@ -5156,7 +5158,7 @@ B(\mathbb{Z})=\pi_{B}(s_0\cap s_{B})
 =\{p\in B \mid  \check{\pi}_{B}^{-1}(p) 
 \text{ is a BS-orbit}\}.
 \end{align}
-This construction is a certain dual of semi-flat SYZ 
+This construction is a certain dual of the semi-flat SYZ 
 transformation 
 (see \cite[Theorem 1.1]{MR1876073} or \cite[\textsection 9.1]{MR1882331}). 
 The following equation is firstly proved in 
