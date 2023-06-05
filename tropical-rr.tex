@@ -1330,7 +1330,7 @@ of $x$.
 
 
 By \cref{prop-local-morse-data}, we can calculate
-of local Morse index of a continuous function on 
+of the local Morse index of a continuous function on 
 a given polyhedral complex by the theory of sheaves on 
 smooth manifolds.
 
@@ -1499,7 +1499,7 @@ f|_{B_{\varepsilon}(0)},0)\simeq
 f|_{\bar{B}_{\varepsilon}(0)},0)$ 
 for a sufficiently small $\varepsilon \in \mathbb{R}_{>0}$.
 Fix $\varepsilon$ and an open smooth 
-inclusion of $j\colon U \to M$
+inclusion $j\colon U \to M$ of $U$
 where $M$ is a compact smooth manifold,
 $x_0\deq j(0)$ and $K\deq j(\bar{B}_{\varepsilon}(0))$. 
 The sheaf $\mathcal{C}^{\infty}_M$ of smooth functions 
@@ -1656,7 +1656,7 @@ a polyhedral set such that
 $rS=S$ for all $r\in \mathbb{R}_{> 0}$.
 One of trivial but remarkable point is that
 \begin{align}
-|\opn{ind}_x(f|_S,0)|\neq |\opn{ind}_x(-f|_S,0)|
+|\opn{ind}_x^{A}(f|_S)|\neq |\opn{ind}_x^{A}(-f|_S)|
 \end{align}
 except for special cases such like
 \cref{example-poincare-hopf}.
@@ -1782,10 +1782,10 @@ of (real valued) \emph{tropical rational functions}
 There exist different definitions of  
 tropical rational function 
 (for example, see \cite{mikhalkin2018tropical}).
-By taking a global section of the
+By applying the global section fuctor for the
 short exact sequence 
 \eqref{equation-cartier-divisor-sequence},
-there exists a connecting homomorphism 
+we get a connecting homomorphism 
 $\delta \colon 
 H^{0}(S;\mcal{M}_S^{\times}/\mathcal{O}^{\times}_S)
 \to H^{1}(S;\mathcal{O}^{\times}_S)$.
@@ -1887,10 +1887,7 @@ $\tform^{1}_{\mathbb{R},S}\deq
 \otimes_{\mathbb{Z}_S} \mathbb{R}_S$ 
 and $T_x S\deq \opn{Hom}_{\mathbb{Z}}(
 (\tform^{1}_{\mathbb{Z},S})_x,\mathbb{R})$.
-(The notation of 
-$\tform^{1}_{\mathbb{Z},S}$ differs from 
-~\cite{gross2019sheaftheoretic}.)
-From definition of rational polyhedral spaces, 
+From the definition of rational polyhedral spaces, 
 we can see 
 the stalk $(\tform^{1}_{\mathbb{Z},S})_x$
 at $x$ is a free 
@@ -1899,7 +1896,7 @@ $\mathbb{Z}$-module of finite rank.
 In order to define the permissibility condition,
 we define the subset $\opn{SS}(S)_x$ of cotangent
 space $(\tform^{1}_{\mathbb{R},S})_x$ at $x\in S$ for 
-a boundaryless rational polyhedral
+a (boundaryless) rational polyhedral
 space $S$.
 
 Let $S$ be a rational polyhedral space, 
@@ -2267,7 +2264,6 @@ as a set.
 
 Let $\check{f}_S\colon \check{X}_0(S)\to S$ be the 
 canonical projection onto $S$.
-
 We recall the following elementary proposition 
 in order to define `Lagrangian section' for $\check{f}_S$.
 
@@ -2367,6 +2363,7 @@ $f_p\colon U_p \to \mathbb{R}$ indexed by
 $ s_0\cap s$ 
 such that
 \begin{enumerate}
+\item $U_p\cap U_{p'}=\emptyset$ if $p\ne p'$,
 \item $s|_{U_p}=(f_p)^{\mathrm{sm}}$
 for all $p\in s_0\cap s$,
 \item $\opn{Crit}(f_p)=\{p\}$ for all $p\in s_0\cap s$,
@@ -2426,14 +2423,15 @@ $\opn{LMD}^{\bullet}_{A}(S;s)$.
 \begin{example}
 \label{example-tropical-kodaira-vanishing}
 Let $S$ be a boundaryless rational polyhedral space, 
-$s$ a $C^{\infty}$-divisor on $S$ 
+$s$ a $C^{\infty}$-divisor on $S$ satisfying 
+\cref{condition-good-divisor}
 and $\{(f_i,U_i)\}_{i\in I}$ the local data of $s$. 
-$s$ is 
+We say $s$ is 
 \emph{Bohr--Sommerfeld type},
 \emph{strongly-positive}
 or \emph{Hessian type} if every
 $f_i$ is locally a restriction of a strictly convex 
-function on an open neighborhood of $T_0(\opn{LC}_x)S$ 
+function on an open neighborhood of $T_0(\opn{LC}_xS)$ 
 for any $i\in I$. 
 This is a certain analog of positive form on
 complex manifolds. In this case, 
@@ -2446,7 +2444,7 @@ H^{n}(S,S\setminus\{x\};A)[-n].
 \end{align}
 In this case, the `cohomology' of 
 $\opn{LMD}^{\bullet}_{A}(S;s)$ is independent of the choice of 
-differential of $\opn{LMD}^{\bullet}(S;s,A)$.
+differential of $\opn{LMD}^{\bullet}_{A}(S;s)$.
 This is a tropical analog of Kodaira's vanishing theorem
 for a (multiple of) positive line bundle
 $\mathcal{L}$ on a complex manifold $M$: 
@@ -2799,7 +2797,7 @@ an intersection data for $s$
 (\cref{definition-intersection-data}), 
 and cohomological local Morse data of $s$
 (\cref{definition-local-morse-data-divisor}).
-With this, all the preparations necessary to 
+With them, all the preparations necessary to 
 formulate \cref{conjecture-tropical-MRR-preface}
 have been completed for any compact 
 tropical manifolds.
@@ -4647,11 +4645,11 @@ $\check{f}_{B}$,
 $i_*\colon \pi_i(L_{s})\to \pi_i(\check{X}(B))$ is 
 injective. Therefore, we get 
 $\pi_2(\check{X}(B),L_s)=0$ by considering the long exact
-sequence of relative homotopy groups.
+sequence of the relative homotopy groups.
 \end{proof}
 
-\cref{proposition-unobstructed-lagrangian} induces, every 
-pseudoholomorphic disk
+\cref{proposition-unobstructed-lagrangian} induces 
+that every pseudoholomorphic disk
 $\psi\colon D\to \check{X}(B)$ such that 
 $\psi(\partial D)\subset L_s$ has 
 the zero symplectic area.
@@ -4916,7 +4914,7 @@ Let $k$ be a field of characteristic $0$ and $X$
 a compact boundaryless rational 
 polyhedral space
 and $s$ a permissible Cartier divisor 
-such that $\opn{LMD}^{\bullet}_k(X;s)$ is bounded, 
+such that $\opn{LMD}^{\bullet}_k(X;s)$ is
 finitely generated and 
 satisfies \cite[Assumption 1.1.1]{MR2031639} locally.
 Let $\opn{Sym}^{n}(s)$ be the $n$-th symmetric product of 
@@ -4925,6 +4923,7 @@ $\opn{LMD}^{\bullet}_{k}(S^{n}X;\opn{Sym}^{n}(s))$
 the local Morse data of $\opn{Sym}^{n}(s)$.
 Then,
 \begin{align}
+\label{equation-symmetric-product}
 \chi(\opn{LMD}_k^{\bullet}(S^{n}X;\opn{Sym}^{n}(s)))=
 \binom{n+\chi(\opn{LMD}_{k}^{\bullet}(X;s))-1
 }{n}.
@@ -4932,19 +4931,109 @@ Then,
 
 \end{corollary}
 \begin{proof} 
-Every permutation
-$\sigma \colon X^{n}\to X^{n}$ induces a canonical 
-automorphism for
-$\opn{LMD}^{\bullet}_k(X;s)^{\otimes n}$ via
-Thom--Sebastiani formula 
-$\opn{LMD}^{\bullet}_k(X;s)^{\otimes n}\simeq 
-\opn{LMD}^{\bullet}_k(X^{n};s^{\boxtimes n})$
-(see also \cite[Corollary 1.3.1]{MR2031639}). 
-From construction,
-we can apply Macdonald formula \cite{MR143204} for 
-$\opn{LMD}_k^{\bullet}(S^{n}X;\opn{Sym}^{n}(s))$.
-Here, we also used the expression 
-$\frac{1}{(1-t)^{m}}=\sum_{n=0}^{\infty}\binom{n+m-1}{n}t^{n}$.
+Let $\{(U_p,f_p)\}_{p\in s_0\cap s}$ be
+an intersection data for $s$ such that 
+$f_p(p)=0$ for all $p\in s_0\cap s$,
+$U=\bigsqcup_{p\in s_0\cap s}U_p$
+and 
+$f\deq \bigsqcup_{p\in s_0\cap s} f_p$.
+Then, 
+$\opn{LMD}_k^{\bullet}(X;s)
+=\opn{LMD}_k(A_{U},f)$.
+
+Let $f^{\boxplus n}\colon U^{n}\to \mathbb{R}$
+be the continuous function induced from $f$,
+and $f_{\mathfrak{S}_n}\colon
+U^{n}/\mathfrak{S}_n\to \mathbb{R}$ 
+is a continuous function induced by the quotient map 
+$q\colon X^{n}\to X^{n}/\mathfrak{S}_n$.
+Then, we have 
+$\opn{LMD}^{\bullet}_{k}(S^{n}X;\opn{Sym}_n(s))
+\simeq \opn{LMD}^{\bullet}
+(k_{U^{n}/\mathfrak{S}_n};f_n)$.
+The latter graded module is isomorphic to
+the cohomology of the complex
+$R\Gamma(s_0\cap \opn{Sym}^{n}(s),
+R\Gamma_{\{f^{\boxplus n}\geq 0\}/\mathfrak{S}_n}
+(k_{U^{n}/\mathfrak{S}_n}))$.
+From now on, we calculate of this complex
+using the theory of $\mathfrak{S}_n$-equivalent
+sheaves. 
+The constant sheaf 
+$k_{U^{n}}$ is a $\mathfrak{S}_n$-equivalent sheaves
+with respect to the natural action 
+of $\mathfrak{S}_n$ on $U^n$.
+
+Let $\catn{Mod}_{\mathfrak{S}_n}(k_{U^n})$ be 
+the category of $\mathfrak{S}_n$-equivalent 
+sheaves of $k_{U^n}$-modules.
+We note the forgetful functor
+$\catn{Mod}_{\mathfrak{S}_n}(k_{U^n})
+\to \catn{Mod}(k_{U^n})$ preserve injectives.
+The subset $\{f^{\boxplus n}\geq 0\}$ of $\mathfrak{S}_n$ is 
+closed and has an $\mathfrak{S}_n$-action induced
+from $U^n$. Therefore, 
+the functor $\Gamma_{\{f^{\boxplus n}\geq 0\}}(\cdot)$ 
+lifts a functor from 
+$\catn{Mod}_{\mathfrak{S}_n}(k_{U^n})$
+to itself.
+The functor $q_*^{\mathfrak{S}_n}\colon 
+\catn{Mod}_{\mathfrak{S}_n}(k_{U^n})\to 
+\catn{Mod}(k_{U^n/\mathfrak{S}_n});\mathcal{F}
+\to q_*^{\mathfrak{S}_n}(\mathcal{F})$ 
+is exact and satisfies the following isomorphism
+(cf. \cite[(2.3.20)]{MR1299726}):
+\begin{align}
+\label{equation-equivalent-quotient}
+q_*^{\mathfrak{S}_n}\Gamma_{\{f^{\boxplus n}\geq 0\}}k_{U^{n}}
+=\Gamma_{\{f^{\boxplus n}\geq 0\}/\mathfrak{S}_n}q_*^{\mathfrak{S}_n}k_{U^{n}}
+=\Gamma_{\{f^{\boxplus n}\geq 0\}/
+\mathfrak{S}_n}k_{U^{n}/\mathfrak{S}_n}.
+\end{align}
+Moreover, $q_*^{\mathfrak{S}_n}$ and
+$\Gamma_{\{f^{\boxtimes n}\geq 0\}}(\cdot)$ preserves 
+$c$-soft sheaves. So, we can get
+the derived version of \eqref{equation-equivalent-quotient}.
+By \eqref{equation-equivalent-quotient} and
+the sheaf theoretic Thom--Sebastiani formula
+(see also \cite[Corollary 1.3.1]{MR2031639}), 
+we get 
+\begin{align}
+R\Gamma(s_0\cap \opn{Sym}^{n}(s);
+R\Gamma_{\{f^{\boxplus n}\geq 0\}/\mathfrak{S}_n}
+(k_{U^{n}/\mathfrak{S}_n}))
+&\simeq 
+R\Gamma(s_0\cap \opn{Sym}^{n}(s);
+q_*^{\mathfrak{S}_n}R\Gamma_{\{f^{\boxplus n}\geq 0\}}
+(k_{U^{n}})) \\
+&\simeq
+(R\Gamma(s_0\cap s^{\boxtimes n};
+R\Gamma_{\{f^{\boxplus n}\geq 0\}}
+(k_{U^{n}})))^{\mathfrak{S}_n} \\
+&\simeq
+(R\Gamma(s_0\cap s^{\boxtimes n};
+R\Gamma_{\{f\geq 0\}^{n}}
+(k_{U^{n}})))^{\mathfrak{S}_n} \\
+&\simeq
+\label{equation-macdonald}
+((R\Gamma(s_0\cap s;
+R_{\{f\geq 0\}}(k_{U})))^{\overset{L}{\otimes}n}
+)^{\mathfrak{S}_n}.
+\end{align}
+The group action of $\mathfrak{S}_n$ on
+$(R\Gamma(s_0\cap s;
+R_{\{f\geq 0\}}(k_{U})))^{\overset{L}{\otimes}n}$
+is compatible with 
+the natural $\mathfrak{S}_n$-action
+on the $n$-th tensor product of 
+$\opn{LMD}^{\bullet}_k(X;s)$.
+Therefore, we can apply the Macdonald formula
+\cite{MR143204} for
+the cohomology of \eqref{equation-macdonald}.
+The Macdonald formula and the
+expression of the formal power series
+$\frac{1}{(1-t)^{m}}=\sum_{n=0}^{\infty}\binom{n+m-1}{n}t^{n}$
+induces \eqref{equation-symmetric-product}.
 \end{proof}
 
 \begin{remark}
@@ -5467,7 +5556,8 @@ $h\colon (\mathbb{R}_{> 0})^{n}\to \mathbb{R}_{> 0}$:
 	\arrow["{f}"', from=2-1, to=2-2].
 \end{tikzcd}
 \end{equation}
-where $f\deq \log \circ h\circ (\opn{id}_N \otimes \exp)$.
+where $f\deq \log \circ h\circ (\opn{id}_N \otimes \exp)$
+(see also \cite[\textsection 2.3]{MR4155409}).
 If $h$ is a $C^{\infty}$-function, so do $f$.
 Let $h\in \mathbb{R}_{\geq 0}
 [x_{1}^{\pm},\ldots,x_n^{\pm}]\setminus \{0\}$ be 
@@ -5736,7 +5826,7 @@ is finally solved by Kuwagaki's results \cite{MR4132582}.
 
 \begin{remark}
 In \cite{MR4155409},
-new Ehrhart theory of tropical geometry appear, 
+a new Ehrhart theory of tropical geometry appear, 
 but this is different from our approach. 
 \end{remark}
 
