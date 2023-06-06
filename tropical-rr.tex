@@ -225,7 +225,7 @@
 \numberwithin{equation}{section}
 \title[Graded modules associated 
 with $C^{\infty}$-divisors]{Graded modules 
-associated with $C^{\infty}$-divisors
+associated with permissible $C^{\infty}$-divisors
 on tropical manifolds}
 \author[Y. Tsutsui]{Yuki Tsutsui}
 \address{Graduate School of Mathematical Sciences,
@@ -602,7 +602,7 @@ coincides with the Floer complex
 $\opn{CF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_{s})$.
 
 \begin{conjecture}
-\label{conjecture-enough-permissible}
+\label{conjecture-enough-prepermissible}
 For any line bundle $\mathcal{L}$ on a compact 
 tropical manifold $S$, there exists 
 a $C^{\infty}$-divisor $s$ satisfying 
@@ -634,10 +634,10 @@ $\chi(\opn{LMD}^{\bullet}(S;s))=\chi_{\opn{top}}(S)$
 when $[s] = 0 \in \Pic S$.
 \end{conjecture}
 
-\cref{conjecture-enough-permissible,conjecture-tropical-MRR-preface}
+\cref{conjecture-enough-prepermissible,conjecture-tropical-MRR-preface}
 imply that
 the Euler characteristic of a line bundle is well-defined.
-\cref{conjecture-enough-permissible} is obvious when 
+\cref{conjecture-enough-prepermissible} is obvious when 
 $S$ is a compact tropical curve 
 or a compact integral affine manifold.
 \cref{theorem-MRR-curve-preface,theorem-MRR-hesse-preface}
@@ -755,7 +755,7 @@ for explaining about the unpublished recent works
 on Noether formula for general tropical surfaces.
 I am so thankful to Masanori Kobayashi for 
 pointing out some errors for the prior version 
-of the permissibility condition for
+of the prepermissibility condition for
 principal $C^{\infty}$-divisors on metric graphs.
 I would like to appreciate Yoshinori Gongyo for 
 giving a question about relationships 
@@ -974,23 +974,25 @@ $\Gamma_V(\mathcal{F})\simeq j_*j^{-1}\mathcal{F}$
 \cite[Proposition 2.3.9 (iii)]{MR1299726}.
 
 Let $f\colon Y\to X$ be a continuous map,
-$\mathcal{F}\in \opn{Ob}(\catn{Mod}(A_X))$
+$\mathcal{F},\mathcal{F}'\in \opn{Ob}(\catn{Mod}(A_X))$
 and $\mathcal{G}\in\opn{Ob}(\catn{Mod}(A_Y))$.
 
 Then, we have the following isomorphism 
-\cite[(2.3.19)-(2.3.20)]{MR1299726}:
+\cite[(2.3.18)-(2.3.20)]{MR1299726}:
 \begin{align}
+\label{equation-property-sheaf-cut-off}
+\mathcal{H}om_{A_X}(\mathcal{F}_{Z},\mathcal{F}')
+\simeq \mathcal{H}om_{A_X}(\mathcal{F},\Gamma_{Z}(\mathcal{F}'))
+, \quad
 f^{-1}\mathcal{F}_Z\simeq 
 (f^{-1}\mathcal{F})_{f^{-1}(Z)},\quad 
 \Gamma_Zf_*\mathcal{G}\simeq f_*\Gamma_{f^{-1}(Z)}
 \mathcal{G}.
 \end{align}
 
-Let $\mathscr{I}$ be the full subcategory of 
-$\catn{Mod}(A_X)$ consisting of flabby sheaves. 
-Then $\mathscr{I}$ is $\Gamma_{Z}$-injective and
-$\Gamma_{Z}(\mathcal{I})\in\mathscr{I}$ for 
-$\mathcal{I}\in \mathscr{I}$ \cite[Proposition 2.4.6]{MR1299726}.
+The first isomorphism of \eqref{equation-property-sheaf-cut-off}
+induces $\Gamma_{Z}(\cdot)$ preserves injectives since
+$(\cdot)_Z$ is exact.
 
 Let $X$ be a topological space, $Z$ a locally 
 closed subset of $X$ and $Z'$ a closed subset of $Z$.
@@ -1864,16 +1866,16 @@ satisfying \cref{condition-good-divisor}.
 
 
 
-\subsection{Permissibility conditions}
+\subsection{prepermissibility conditions}
 
 In this subsection, we define 
-the \emph{permissibility condition} for
+the \emph{prepermissibility condition} for
 $C^{\infty}$-divisors on
 boundaryless rational polyhedral spaces.
 We will define an analog of a Morse complex
-without differential for permissible 
+without differential for prepermissible 
 $C^{\infty}$-divisors later.
-In order to define the permissibility condition,
+In order to define the prepermissibility condition,
 we recall some necessary sheaves
 on rational polyhedral spaces from 
 ~\cite{gross2019sheaftheoretic}.
@@ -1893,7 +1895,7 @@ the stalk $(\tform^{1}_{\mathbb{Z},S})_x$
 at $x$ is a free 
 $\mathbb{Z}$-module of finite rank.
 
-In order to define the permissibility condition,
+In order to define the prepermissibility condition,
 we define the subset $\opn{SS}(S)_x$ of cotangent
 space $(\tform^{1}_{\mathbb{R},S})_x$ at $x\in S$ for 
 a (boundaryless) rational polyhedral
@@ -2117,7 +2119,7 @@ We expect the middle and right vector space in
 important cases.
 \end{remark}
 
-From now on, we define the permissibility condition 
+From now on, we define the prepermissibility condition 
 for $C^{\infty}$-divisors on boundaryless
 rational polyhedral spaces.
 This condition is one of necessary conditions
@@ -2143,12 +2145,12 @@ we can also define the
 differential of $f$ at $x$ by the pullback of 
 the germ of morphisms 
 $(\opn{LC}_x S,0)\to (S,x)$, and we will use this
-in \cref{definition-permissible-weakly-smooth}.
+in \cref{definition-prepermissible-weakly-smooth}.
 
 
-\begin{condition}[{Permissiblity condition}] \label{cond: permissible}
+\begin{condition}[{Permissiblity condition}] \label{cond: prepermissible}
 Let $S$ be a boundaryless rational polyhedral space.
-A $(0,0)$-superform $f\colon S \to {\mathbb{R}}$ is \emph{permissible} at $x$ 
+A $(0,0)$-superform $f\colon S \to {\mathbb{R}}$ is \emph{prepermissible} at $x$ 
 if 
 \begin{align}
 df(x)\notin (\opn{span}_{{\mathbb{R}}}
@@ -2157,48 +2159,48 @@ df(x)\notin (\opn{span}_{{\mathbb{R}}}
 \end{align}
 \end{condition}
 
-From definition, if $f$ is permissible at $x$ then
-$f|_{U_x}+m$ is also permissible at $x$ for any 
+From definition, if $f$ is prepermissible at $x$ then
+$f|_{U_x}+m$ is also prepermissible at $x$ for any 
 open neighborhood $U_x$ at $x$ and 
 $m\in \mathcal{O}_{S}^{\times}(U_x)$.
-Therefore, we can define the permissibility condition
+Therefore, we can define the prepermissibility condition
 for principal $C^{\infty}$-divisors directly.
 \begin{remark}
 Suppose $\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)
 =(\tform_{\mathbb{R},S}^{1})_x$. 
-Then, $f$ is permissible if and only if 
+Then, $f$ is prepermissible if and only if 
 $df(x)\in (\tform_{\mathbb{Z},S}^{1})_x$.
-Therefore, the permissibility
+Therefore, the prepermissibility
 condition may be not a generic condition.
 If $\dim_{\mathbb{R}} \opn{span}_{{\mathbb{R}}}
 (\opn{SS}(S)_x)<\dim_{\mathbb{R}} (\tform_{\mathbb{R},S}^{1})_x$, the 
-set of permissible cotangent vector at $x$ is dense and 
+set of prepermissible cotangent vector at $x$ is dense and 
 connected.
 \end{remark}
 
 
 \begin{definition}
-\label{definition-permissible-smooth-cartier-divisor}
-A $C^{\infty}$-divisor $s$ is \emph{permissible} 
+\label{definition-prepermissible-smooth-cartier-divisor}
+A $C^{\infty}$-divisor $s$ is \emph{prepermissible} 
 if there exists a local data $\{(U_i,f_i)\}_{i\in I}$ 
 for $s$
-such that $f_i$ is permissible for all $i\in I$. 
+such that $f_i$ is prepermissible for all $i\in I$. 
 In general, a pair $(s',s)$ of smooth 
 Cartier divisors $s,s'$ is 
-\emph{permissible} if $s-s'$ is 
-permissible. 
+\emph{prepermissible} if $s-s'$ is 
+prepermissible. 
 \end{definition}
 
 Let $s_0$ be the zero $C^{\infty}$-divisor on $S$. 
 Then, a pair $(s_0,s)$ of $C^{\infty}$-divisors 
-is permissible if and only if $s$ is permissible.
-If a $C^{\infty}$-divisor $s$ is permissible, 
+is prepermissible if and only if $s$ is prepermissible.
+If a $C^{\infty}$-divisor $s$ is prepermissible, 
 then every local data for $s$ satisfies the above 
-permissibility condition.
+prepermissibility condition.
 
 \begin{definition}
 \label{definition-divisor-intersection}
-Let $(s,s')$ be a permissible pair of 
+Let $(s,s')$ be a prepermissible pair of 
 $C^{\infty}$-divisors and 
 $\{(U_i,f_i)\}_{i\in I}$ a local data
 for $s-s'$. The intersection set of the pair 
@@ -2322,11 +2324,11 @@ $(\tform^{1}_{\mathbb{Z},S})_x
 \otimes_{\mathbb{Z}}\mathbb{R}/\mathbb{Z}$.
  
 
-From the permissibility condition and
+From the prepermissibility condition and
 \eqref{equation-torus-fiber}, we get the following proposition.
 
 \begin{proposition}
-Let $(s',s)$ be a permissible $C^{\infty}$-Cartier pair
+Let $(s',s)$ be a prepermissible $C^{\infty}$-Cartier pair
 on a (boundaryless) rational polyhedral space, 
 $\{(U_i,f_i)\}_{i\in I}$ the local data 
 for $s-s'$ and $L_s\deq \opn{Im}(\check{s})$.
@@ -2339,22 +2341,22 @@ Then,
 
 
  
-\subsection{Cohomological local Morse data for permissible divisors}
+\subsection{Cohomological local Morse data for prepermissible divisors}
 
 In this subsection, we
-define the graded module of a given permissible pair 
+define the graded module of a given prepermissible pair 
 $(s',s)$ of $C^{\infty}$-divisors such that 
 $\sharp (s'\cap s)<\infty$.
 In order to define the graded module
 $\opn{LMD}^{\bullet}(s',s)$, we define
 intersection data of 
-the permissible pair $(s',s)$.
+the prepermissible pair $(s',s)$.
 
 \begin{definition}[{intersection data}]
 \label{definition-intersection-data}
 Fix a (boundaryless) 
 rational polyhedral space $S$.
-Let $s$ be a permissible $C^{\infty}$-divisor 
+Let $s$ be a prepermissible $C^{\infty}$-divisor 
 on $S$ such that $\sharp (s\cap s_0)<\infty$. 
 An \emph{intersection data} for $s$ is the set 
 $\{(U_p,f_p)\}_{p\in s\cap s_0}$ of pairs of open subsets
@@ -2363,13 +2365,12 @@ $f_p\colon U_p \to \mathbb{R}$ indexed by
 $ s_0\cap s$ 
 such that
 \begin{enumerate}
-\item $U_p\cap U_{p'}=\emptyset$ if $p\ne p'$,
 \item $s|_{U_p}=(f_p)^{\mathrm{sm}}$
 for all $p\in s_0\cap s$,
 \item $\opn{Crit}(f_p)=\{p\}$ for all $p\in s_0\cap s$,
 \item $f_p(p)=0$ for all $p\in s_0\cap s$.
 \end{enumerate}
-An intersection data for a permissible pair 
+An intersection data for a prepermissible pair 
 $(s',s)$ of $C^{\infty}$-divisors is 
 an intersection data for $s-s'$.
 \end{definition}
@@ -2378,7 +2379,7 @@ an intersection data for $s-s'$.
 $C^{\infty}$-divisors}]
 \label{definition-local-morse-data-divisor}
 Let $S$ be a (boundaryless) rational polyhedral space 
-and $s$ be a permissible 
+and $s$ be a prepermissible 
 $C^{\infty}$-divisor such that
 $s'\cap s$ is finite and 
 $\{(U_p,f_p)\}_{p\in s_0\cap s}$ 
@@ -2409,14 +2410,17 @@ $\opn{LMD}^{\bullet}_{A}(S;s)$ as an analog of
 Floer cohomology. We don't have, however,
 the definition of the true differential of 
 $\opn{LMD}^{\bullet}_A(S;s)$ in general, except when 
-$A=\Lambda_{\mathrm{nov}}^{\mathbb{C}}$ and
 $\opn{LMD}^{\bullet}_{A}(S;s)$ is equal to a Floer complex
-of Lagrangian submanifolds (e.g. \cite[5.2]{MR1882331}).
+of Lagrangian submanifolds
+as graded modules (e.g. \cite[5.2]{MR1882331}).
 \end{remark}
 
 It is important that 
-$\opn{LMD}^{\bullet}_{A}(S;s)\simeq \opn{LMD}^{\bullet}(A_{\coprod_{p} U_p},\coprod_p f_p)$ is
-for a given intersection data for $s$, and thus
+$\opn{LMD}^{\bullet}_{A}(S;s)\simeq 
+\opn{LMD}^{\bullet}(A_{\coprod_{p\in s_0\cap s} U_p},
+\coprod_{p\in s_0\cap s} f_p)$ is
+for a given intersection data 
+$\{(U_p,f_p)\}_{p\in s_0\cap s}$ for $s$, and thus
 we can use topological tools for computations of 
 $\opn{LMD}^{\bullet}_{A}(S;s)$.
 
@@ -2466,7 +2470,7 @@ $s$ to consider Riemann--Roch type theorems.
 
 \begin{condition}
 \label{condition-good-divisor}
-$s$ is a permissible $C^{\infty}$-divisor on 
+$s$ is a prepermissible $C^{\infty}$-divisor on 
 a (boundaryless) rational polyhedral space 
 $S$ such that $s_0\cap s$ is finite and 
 $\opn{LMD}^{\bullet}(S;s)$ is bounded and 
@@ -2485,7 +2489,7 @@ map in this paper.
 \begin{proposition}
 \label{proposition-euler-number-etale}
 Let $S$ be a compact boundaryless rational polyhedral 
-space and $s$ be a permissible 
+space and $s$ be a prepermissible 
 $C^{\infty}$-divisor
 satisfying \cref{condition-good-divisor}.
 For a tropical \'etale covering 
@@ -2721,7 +2725,7 @@ H^{0}(S;\mathcal{A}_S^{\opn{weak}}/
 We can define a \emph{local data} for 
 $s$ like when $S$ is boundaryless naturally
 (\cref{definition-Cartier-local-data}).
-We can extend the permissibility condition for
+We can extend the prepermissibility condition for
 weakly-smooth functions and $C^{\infty}$-divisors on
 general rational polyhedral spaces by the following lemma.  
 
@@ -2759,25 +2763,25 @@ In particular, the pullback $\phi^{*}f$ of $f$ is also
 weakly-smooth at $0$.
 \end{lemma}
 Every local cone $\opn{LC}_x S$ is boundaryless, and thus
-we can define the permissible condition for any 
+we can define the prepermissible condition for any 
 weakly-smooth functions.
 The \emph{differential vector} 
 $df(x)\in (\tform^{1}_{\mathbb{R},S})_x$ at $x$
 is that of $\phi^{*}f$ via the identification 
 $T_0(\opn{LC}_x S)=T_xS$.
-\begin{definition}[{Permissibility condition}]
-\label{definition-permissible-weakly-smooth}
+\begin{definition}[{prepermissibility condition}]
+\label{definition-prepermissible-weakly-smooth}
 Let $f$ be a weakly-smooth function on a rational polyhedral 
-space $U$. The $f$ is \emph{permissible} at $x\in U$ if 
-the pullback $\phi^{*}f$ is permissible at 
+space $U$. The $f$ is \emph{prepermissible} at $x\in U$ if 
+the pullback $\phi^{*}f$ is prepermissible at 
 $0\in \opn{LC}_x U$.
-The weakly-smooth function $f$ is permissible if 
-$f$ is permissible at $x$ for all $x\in U$.
+The weakly-smooth function $f$ is prepermissible if 
+$f$ is prepermissible at $x$ for all $x\in U$.
 Let $s\in H^{0}(S;\mathcal{A}^{\mathrm{weak}}_S/
 \mathcal{O}^{\times}_S)$ be a $C^{\infty}$-divisor on a rational polyhedral space $S$.
-The $s$ is \emph{permissible} if there exists 
+The $s$ is \emph{prepermissible} if there exists 
 a local data $\{(U_i,f_i)\}_{i\in I}$ for $s$
-such that every $f_i$ is permissible.
+such that every $f_i$ is prepermissible.
 \end{definition}
 
 \begin{example}
@@ -2785,11 +2789,11 @@ Let $f\colon \underline{\mathbb{R}}\to \mathbb{R}$ be a
 weakly-smooth function. The local cone 
 $\opn{LC}_{-\infty} \underline{\mathbb{R}}$ 
 at $-\infty$ is trivial, 
-and thus every $f$ is permissible.
+and thus every $f$ is prepermissible.
 \end{example}
 
-As like the permissibility condition,
-we can define a \emph{permissible pair} $(s',s)$
+As like the prepermissibility condition,
+we can define a \emph{prepermissible pair} $(s',s)$
 of $C^{\infty}$-divisors, the
 set $s\cap s'$ of $(s',s)$ 
 (\cref{definition-divisor-intersection}), 
@@ -2852,17 +2856,17 @@ associated with lattice structure of the tangent
 vector space of $C$ 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
 
-Next, we see the permissibility condition 
+Next, we see the prepermissibility condition 
 for $C^{\infty}$-divisors on tropical curves.
 
 \begin{proposition}
-\label{proposition-permissible-curve}
+\label{proposition-prepermissible-curve}
 Let $|\Sigma|$ be the support of a pure $1$-dimensonal 
 finite convex polyhedral fan $\Sigma$ such that
 $|\Sigma|$ spans $\mathbb{R}^{n}$.
 Let $f\colon |\Sigma|\to \mathbb{R}$ be a 
 $(0,0)$-superform on $|\Sigma|$. Then, 
-$f$ is permissible at $x=(0,\ldots,0)$ if and only if 
+$f$ is prepermissible at $x=(0,\ldots,0)$ if and only if 
 $df(x)\in (\tform^{1}_{\mathbb{Z},|\Sigma|})_x\simeq (\mathbb{Z}^{n})^{\vee}$
 or $\opn{lineal}(|\Sigma|,x)\simeq \mathbb{R}$.
 \end{proposition}
@@ -2896,7 +2900,7 @@ $C^{\infty}$-divisors.
 \begin{proposition}[{cf. \cite{knill2012graph}}]
 \label{proposition-n-valent}
 Let $s_{p,q}\colon |\Sigma|\to \mathbb{R}$ be 
-a permissible $(0,0)$-superform on $|\Sigma|$ 
+a prepermissible $(0,0)$-superform on $|\Sigma|$ 
 such that $\opn{Crit}(s_{p,q})=\{x\}$ where
 $x=(0,\ldots,0)$ and
 \begin{align}
@@ -2966,17 +2970,34 @@ $[\cdot]\colon H^{0}(C;\mathcal{A}_C^{\opn{weak}}/
 \mathcal{O}^{\times}_C)\to \opn{Pic}(C);s\mapsto [s]$ is 
 surjective.
 
+\begin{definition}
+Let $s\in \CDiv(C)$ be a $C^{\infty}$-divisor and $\{(U_i,f_i)\}_{i\in I}$ a local data
+for $s$. The data is \emph{locally contractible} if 
+every $U_i$ is isomorphic to a contractible open 
+neighborhood of $0$ in $\opn{LC}_{p}C$ where 
+$p\in U_i$.
+\end{definition}
+If a local data $\{(U_i,f_i)\}_{i\in I}$ for $s$ 
+is locally contractible,
+we can calculate the divisor class $[s]$ of $s$ easily
+by using the \v{C}ech cohomology 
+$\check{H}^{1}(C;\mathcal{O}_C^{\times})$ of 
+$\mathcal{O}_C^{\times}$:
+\begin{align}
+[s]=(f_j-f_i)_{i,j\in I}.
+\end{align}
+
 \begin{proposition}
 Let $s$ be a $C^{\infty}$-divisor on a compact
 tropical curve $C$.
 Then, there exists
-a permissible $C^{\infty}$-divisor $s'$ which is linearly
+a preprepermissible $C^{\infty}$-divisor $s'$ which is linearly
 equivalent to $s$ and
 $s_0\cap s'$ is a finite set. 
 \end{proposition}
 \begin{proof}
 Every $C^{\infty}$-divisor $s$ on $C$ is 
-permissible at $1$-valent vertex on $C$. So, we
+prepermissible at $1$-valent vertex on $C$. So, we
 can assume $C$ has no 1-valent vertex. 
 Choose a sufficiently small open neighborhood 
 $U_p$ of $p\in C\setminus C_{\reg}$. Then, there exists a 
@@ -2989,7 +3010,7 @@ $\tilde{f}$ such that
 $d\tilde{f}(p)\in (\tform_{\mathbb{Z},S}^{1})_p$
 and $f|_{U\setminus K}=\tilde{f}|_{U\setminus K}$ for 
 a sufficiently small compact neighborhood $K$ of $0$.
-Therefore, we can assume $s$ is permissible.  
+Therefore, we can assume $s$ is prepermissible.  
 Next, we check that we can choose $s'$ 
 such that $s\cap s'$ is a finite set.
 Fix an open edge $e$ of $C$.
@@ -3000,7 +3021,7 @@ that $f+g$ is nondegenerate and monotone on a sufficiently
 open neighborhood of $\partial e$. 
 We can extend $g$ on $C$ 
 by zero, and thus $s+g$ is linearly equivalent to $s$.
-By repeating this, we get a permissible Cartier divisor
+By repeating this, we get a prepermissible Cartier divisor
 $s'$ on $C$ such that $\sharp (s\cap s')<\infty$.
 \end{proof}
 
@@ -3087,8 +3108,8 @@ The following proposition is a repetitive work of
 \cref{section-stratified-torus-fibration}.
 
 \begin{proposition}[{continuous sections}]
-\label{proposition-permissible-section}
-Let $s$ be a permissible Cartier divisor 
+\label{proposition-prepermissible-section}
+Let $s$ be a prepermissible Cartier divisor 
 $s=\{(U_i,f_i)\}_{i\in I}$ on a tropical curve 
 $C$ with no 1-valent vertex. 
 Then, 
@@ -3111,7 +3132,7 @@ $U_i\cap U_j\neq \emp$.
 Then, $df_i(x)-df_j(x)\in 
 (\tform_{\mathbb{Z},C}^{1})_x$ and
 $df_i(x)\in (\tform_{\mathbb{Z},C}^{1})_x$
-from \cref{proposition-permissible-curve} (2).
+from \cref{proposition-prepermissible-curve} (2).
 Therefore, the construction of $\check{s}$ is well-defined.
 Obviously, $\check{s}$ is continuous by gluing lemma 
 for each edge of $C$.
@@ -3133,7 +3154,7 @@ $\check{X}_0(C_{\reg})$ has a canonical symplectic structure,
 and thus there exists a canonical orientation induced
 from the symplectic form on $\check{X}(C_{\reg})$.
 This form defines an orientation number of 
-section defined in \cref{proposition-permissible-section}.
+section defined in \cref{proposition-prepermissible-section}.
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
@@ -3196,8 +3217,8 @@ $a,b\notin \{-\infty,\infty\}$.
 \end{proof}
 
 
-From \cref{proposition-permissible-section} and \cref{proposition-rotation-number}, we can define the 
-rotation number for every permissible smooth 
+From \cref{proposition-prepermissible-section} and \cref{proposition-rotation-number}, we can define the 
+rotation number for every prepermissible smooth 
 Cartier divisors as follows.
 \begin{definition}[{cf. \cite{auroux2022lagrangian}}]
 Let $s$ be a $C^{\infty}$-divisor and 
@@ -3214,25 +3235,10 @@ a continuous map such that the restriction of $\psi_{\bar{e}}$
 on $(a_e,b_e)$ is an isomorphism onto $e$.
 \end{definition}
 
-\begin{definition}
-Let $s\in \CDiv(C)$ be a $C^{\infty}$-divisor and $\{(U_i,f_i)\}_{i\in I}$ a local data
-for $s$. The data is \emph{locally contractible} if 
-every $U_i$ is isomorphic to a contractible open 
-neighborhood of $0$ in $\opn{LC}_{p}C$ where 
-$p\in U_i$.
-\end{definition}
-If a local data $\{(U_i,f_i)\}_{i\in I}$ for $s$ 
-is locally contractible,
-we can calculate the divisor class $[s]$ of $s$ easily
-by using the \v{C}ech cohomology 
-$\check{H}^{1}(C;\mathcal{O}_C^{\times})$ of 
-$\mathcal{O}_C^{\times}$:
-\begin{align}
-[s]=(f_j-f_i)_{i,j\in I}.
-\end{align}
+
 
 \begin{proposition}
-Let $s$ be a permissible $C^{\infty}$-divisor on
+Let $s$ be a prepermissible $C^{\infty}$-divisor on
 a compact tropical curve $C$. Then,
 \label{equation-rotation-number}
 \begin{align}
@@ -3257,7 +3263,7 @@ The above proposition
 is \emph{not} true for general compact metric curves.
 Let $C\deq [0,1]$ be a closed interval
 and $f_n\colon C\to \mathbb{R};x \mapsto nx^{2}$.
-Any $f_n$ is a permissible $(0,0)$-superform on $C$.
+Any $f_n$ is a prepermissible $(0,0)$-superform on $C$.
 From the definition
 of principal $C^{\infty}$-divisor,
 $\opn{deg}(D_{(f_n)^{\mathrm{sm}}})=0$. 
@@ -3273,7 +3279,7 @@ an open annulus in $\mathbb{C}$.
 \begin{proposition}
 \label{proposition-simple-interval-rr}
 Let $C=[a,b]$ be a closed interval in $\mathbb{T}P^{1}$
-and $s$ a permissible $C^{\infty}$-divisor on 
+and $s$ a prepermissible $C^{\infty}$-divisor on 
 $C$
 such that $s_0\cap s=\{a,b\}$. Then,
 \begin{align}
@@ -3294,7 +3300,7 @@ following Meyer--Vietoris type lemma.
 
 \begin{proposition}
 \label{proposition-gluing-formula}
-Let $s$ be a permissible $C^{\infty}$-divisor on a
+Let $s$ be a prepermissible $C^{\infty}$-divisor on a
 compact metric graph $C$ such that $s_0\cap s<\infty$.
 Fix two closed metric subgraphs of $C$ such that
 $C' \cup C''=C$ and $C'\cap C''\subset s_0 \cap s$.
@@ -3314,7 +3320,7 @@ and $i_{C''}\colon C''\to C$ induces
 \end{proposition}
 \begin{proof}
 From assumption, $i^{*}_{C'}(s)$ and 
-$i^{*}_{C''}(s)$ are permissible.
+$i^{*}_{C''}(s)$ are prepermissible.
 The \eqref{equation-rotation-sum} is true from
 the definition of rotation number. 
  Besides,
@@ -3337,7 +3343,8 @@ We can generalize
 \label{proposition-MRR-1-dim-poly-space}
 Let $C$ be a pure $1$-dimensional compact rational 
 polyhedral space and
-$s$ a $C^{\infty}$-divisor on $C$. Then,
+$s$ a prepermissible $C^{\infty}$-divisor on $C$
+satisfying \cref{condition-good-divisor}. Then,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=\opn{rot}(s)+
 \chi_{\opn{top}}(C).
@@ -3400,8 +3407,8 @@ and \eqref{equation-rotation-number}.
 \end{proof}
 
 \begin{remark}
-\label{remark-non-permissible-divisor}
-We explain the reason why we add permissible condition for 
+\label{remark-non-prepermissible-divisor}
+We explain the reason why we add prepermissible condition for 
 $C^{\infty}$-divisors. 
 One of reasons is that there exists smooth function $f$
 on a polyhedral space $S$ and 
@@ -3423,10 +3430,10 @@ such that
 \item $\opn{Crit}(g)=\Gamma_3\setminus \Gamma_3^{\circ}$,
 \item $\sum_{p\in \opn{Crit}(g)}\opn{ind}_p(g)=2$.
 \end{enumerate}
-$g$ is permissible except $x=(0,0)$.
+$g$ is prepermissible except $x=(0,0)$.
 If we generalize 
 \cref{theorem-MRR-curve-preface} for 
-a principal non-permissible 
+a principal non-prepermissible 
 $C^{\infty}$-divisors $(g)^{\mathrm{sm}}$, 
 we need to add the index $\opn{ind}_x(g)$ at $x$ satisfying
 \begin{align}
@@ -3434,7 +3441,7 @@ we need to add the index $\opn{ind}_x(g)$ at $x$ satisfying
 \opn{ind}_x(g)=1=\chi_{\opn{top}}(\Gamma_3).
 \end{align}
 At least, \cref{theorem-MRR-curve-preface} is not
-true without correction the effect at non-permissible point
+true without correction the effect at non-prepermissible point
 of $g$.
 In this case, $\opn{ind}_x(g)$ should be $-1$.
 This condition is independent of the choice
@@ -3449,8 +3456,8 @@ with integer slope to
 define the index of $g$ at $x$ as a divisor.
 In our knowledge, there is no canonical choice
 of $m_0$ (up to constant) for $g$ as a principal divisor without
-assumption permissibility.
-Every permissible function $f$ has a canonical choice
+assumption prepermissibility.
+Every prepermissible function $f$ has a canonical choice
 of monomials $m$ which is one such that 
 $x\in \opn{Crit}(f+m)$ (up to constant).
 We could not use this condition for $g$ since 
@@ -3610,7 +3617,7 @@ compatible with $X(C_{0,\vep})$.
 Such an $X$ is given by gluing triangles for 
 each open neighborhood of $p\in X_0(C)\setminus X(C_{\reg})$
 appropriately.
-Let $s$ be a permissible $C^{\infty}$-divisor on $C$.
+Let $s$ be a prepermissible $C^{\infty}$-divisor on $C$.
 $s|_{C_{\reg}}$ corresponds to a Lagrangian section of 
 $\check{\pi}_{C_{\reg}}$ from 
 \cref{proposition-cartier-lagrangian}.
@@ -4446,11 +4453,11 @@ with the zero section transversely. Then,
 \begin{proof}
 
 As mentioned in \cref{remark-compact-hessian},
-$B$ is a finite unramified cover of tropical tori $T$.
+$B$ is a finite unramified cover of a tropical torus $T$.
 Fix an \'etale cover $p:T \to B$ of $B$.
 If \cref{theorem-MRR-hesse} is true for tropical tori,
 then \cref{theorem-MRR-hesse} is also true for compact
-integral manifold with a Hessian form from
+integral manifolds admitting a Hessian form from
 \cref{proposition-euler-number-etale} for $p$:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(B;s))
@@ -4468,7 +4475,7 @@ $s$ is linearly equivalent to a Lagrangian section
 defined from the differential $dq_s$ of a quadratic polynomial
 $q_s$ function on the universal cover $\tilde{T}$ of $T$
 (see \cite{mikhalkinTropicalCurvesTheir2008a} or 
-\cite[3.3]{MR4229604}).
+\cite[\textsection 3.3]{MR4229604}).
 
 From an explicit calculation of the ring structure of
 $\mathbb{H}^{\bullet}(T;\tform_{\mathbb{Z},B}^{\bullet})
@@ -4486,14 +4493,15 @@ signature.
 the choice of 
 an orientation of $\check{X}(B)$. 
 The definition of the intersection number of smooth 
-submanifolds is in \cite[5.2]{MR1336822} or 
-\cite[0.4]{griffithsPrinciplesAlgebraicGeometry1994a}.)
+submanifolds is in \cite[\textsection 5.2]{MR1336822} or 
+\cite[Chapter 0.4]{griffithsPrinciplesAlgebraicGeometry1994a}.)
 
 Every linearly equivalent 
 class is given by a one-time Hamiltonian flow on 
 $\check{X}(B)$ by the pullback $\check{\pi}_{B}^{*}(h)$
 of a smooth function $h$ on $B$.
-We note the one-time flow of submanifold of $\check{X}(B)$ does not change
+We note the one-time flow of a submanifold of
+$\check{X}(B)$ does not change
 the homology class in $H^{\bullet}(\check{X}(B);\Z)$ and
 the intersection number \cite[5.2.1. Theorem]{MR1336822}.
 Therefore, 
@@ -4778,11 +4786,7 @@ Fix locally compact Hausdorff spaces $X_i$ and
 sheaves $\tform_i$ on $X_i$.
 For continuous functions $f_i\colon X_1 \to\mathbb{R}$,
 and closed $S_i$ of $X_i$ contained in $\{f_i=0\}$.
-We write $f_1\dot{+} f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$
-\myfootnote{
-We don't use $\boxplus$ and $\oplus$ in place of
-$\dot{+}$
-to avoid confusion from tropical addition.}
+We write $f_1\boxplus  f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$
 and 
 $\mu_{f_i}\mathcal{F}\deq R\Gamma_{\{f_i\geq 0\}}
 (\mathcal{F})|_{\{f_i=0\}}$.
@@ -4793,7 +4797,7 @@ then there exists the following isomorphism
 for $\mcal{F}_1\boxtimes^{L} \mcal{F}_2\deq 
 p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$:
 \begin{align}
-    R\Gamma(S_1\times S_2,\mu_{f_1\dot{+}f_2}(\mcal{F}_1\boxtimes^{L} \mcal{F}_2))
+    R\Gamma(S_1\times S_2,\mu_{f_1\boxplus f_2}(\mcal{F}_1\boxtimes^{L} \mcal{F}_2))
     \simeq R\Gamma(S_1,\mu_{f_1}(\mcal{F}_1))
     \otimes^{L}_{A_X}R\Gamma(S_2,\mu_{f_2}(\mcal{F}_2)).
 \end{align}
@@ -4805,20 +4809,20 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$:
   If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
   the Thom-Sebastiani theorem gives
   a certain K\"unneth formula for
-  $\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\dot{+}f_2,(v,w))$:
+  $\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\boxplus f_2,(v,w))$:
 \begin{align}
-\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\dot{+}f_2,(v,w))
+\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\boxplus f_2,(v,w))
 &\simeq \opn{LMD}^{\bullet}(\Z_{V},f_1,v)
 \otimes_{\Z} \opn{LMD}^{\bullet}(\Z_{W},f_2,w), \quad \\
-\opn{ind}_{(v,w)}(f_1\dot{+}f_2)&=\opn{ind}_v(f_1)\cdot 
+\opn{ind}_{(v,w)}(f_1\boxplus f_2)&=\opn{ind}_v(f_1)\cdot 
 \opn{ind}_w(f_2).
 \end{align}
   From instance, if $f_1(x)=\|\cdot\|_{\mathbb{R}^{n}}^{2}$
   and $f_2(x)=-\|\cdot\|_{\mathbb{R}^{m}}^{2}$, then we have
 \begin{align}
-    \opn{LMD}^{\bullet}(\Z_{{\mathbb{R}}^{n+m}},f_1\dot{+}f_2,0)
+    \opn{LMD}^{\bullet}(\Z_{{\mathbb{R}}^{n+m}},f_1\boxplus f_2,0)
     \simeq \tilde{H}^{\bullet -1}(S^{n-1};\Z)
-    \simeq \Z[-\opn{ind}_{\mathrm{Morse}}(f_1\dot{+}f_2,0)]
+    \simeq \Z[-\opn{ind}_{\mathrm{Morse}}(f_1\boxplus f_2,0)]
 \end{align}
   where $\opn{ind}_{\mathrm{Morse}}(f,0)$ is the Morse index
   of a Morse function $f$ at the origin.
@@ -4834,12 +4838,12 @@ of $C^{\infty}$-divisors.
 \begin{corollary}[{K\"unneth type formula}]
 \label{corollary-kunneth-type-formula}
 Fix boundaryless compact rational polyhedral spaces $X$ and $Y$.
-Let $s$ and $s'$ a permissible $C^{\infty}$-divisor of $X$ and $Y$ 
+Let $s$ and $s'$ a prepermissible $C^{\infty}$-divisor of $X$ and $Y$ 
 satisfying the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
 Then, the induced external tensor product 
 $s\boxtimes s'\deq \opn{pr}_X^{*} (s)+\opn{pr}_Y^{*}(s')
-\in \CDiv(X\times Y)$ is also permissible and
+\in \CDiv(X\times Y)$ is also prepermissible and
 has the following equations:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(X\times Y;s\boxtimes s'))=
@@ -4850,12 +4854,12 @@ has the following equations:
 \begin{proof}
 By
 \cite[Proposition 5.4.1]{MR1299726},
-$s\boxtimes s'$ is also permissible.
+$s\boxtimes s'$ is also prepermissible.
 
 Let $\{(U_v,f_v)\}_{v\in s_0\cap s}$
 (resp. $\{(U_w,g_w)\}_{v\in s_0\cap s'}$) is an
 intersection data for $s$ (resp. $s'$), 
-and $\{(U_{v}\times U_w,f_v\dot{+} g_w)\}_{
+and $\{(U_{v}\times U_w,f_v\boxplus  g_w)\}_{
 (v,w)\in s_0 \cap 
 (s\boxtimes s')}$ the 
 corresponding intersection data 
@@ -4868,7 +4872,7 @@ $f_2= f_w-f_w(w)$;
 \begin{align}
 \opn{LMD}^{\bullet}(X\times Y;s\boxtimes s') 
 & =\bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
-(R^{\bullet}_{\{f_v\dot{+} g_w\geq f_v\dot{+} g_w(v,w)\}}
+(R^{\bullet}_{\{f_v\boxplus  g_w\geq f_v\boxplus  g_w(v,w)\}}
 \Z_{U_{v}\times U_w})_{(v,w)} \\
 & \simeq \bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
 (R^{\bullet}_{\{f_v\geq f_v(v)\}}\Z_{U_v})_v
@@ -4883,7 +4887,7 @@ $f_2= f_w-f_w(w)$;
 \begin{remark}
 In the proof of the above corollary, we only use
 the condition of cohomological version of Milnor fiber. 
-Besides, we can find many permissible $C^{\infty}$-divisors
+Besides, we can find many prepermissible $C^{\infty}$-divisors
 satisfying this condition, see \cite[p.35]{MR2031639}.  
 \end{remark}
 
@@ -4903,9 +4907,9 @@ $s$ as an element of $H^{0}(X^{n}/\mathfrak{S}_n;
 q_*^{\mathfrak{S}_n}\mathcal{A}^{0,0}_{X^{n}}/
 q_*^{\mathfrak{S}_n}\mathcal{O}_{X^{n}}^{\times})$
 naturally.
-We temporarily define $\opn{Sym}^{n}(s)$ is permissible if
+We temporarily define $\opn{Sym}^{n}(s)$ is prepermissible if
 the pullback $q^{*} \opn{Sym}^{n}(s)=s^{\boxtimes n}$ is 
-permissible. We also define 
+prepermissible. We also define 
 $s_0 \cap \opn{Sym}^{n}(s)\deq q_*(s_0\cap s^{\boxtimes n})$ 
 and $\opn{LMD}^{\bullet}_{A}(S^{n}X;\opn{Sym}^{n}(s))$ like 
 that of $s$.
@@ -4913,7 +4917,7 @@ that of $s$.
 Let $k$ be a field of characteristic $0$ and $X$ 
 a compact boundaryless rational 
 polyhedral space
-and $s$ a permissible $C^{\infty}$-divisor 
+and $s$ a prepermissible $C^{\infty}$-divisor 
 such that $\opn{LMD}^{\bullet}_k(X;s)$ is
 finitely generated and 
 satisfies \cite[Assumption 1.1.1]{MR2031639} locally.
@@ -4934,14 +4938,14 @@ Then,
 Let $\{(U_p,f_p)\}_{p\in s_0\cap s}$ be
 an intersection data for $s$ such that 
 $f_p(p)=0$ for all $p\in s_0\cap s$,
-$U=\bigsqcup_{p\in s_0\cap s}U_p$
+$U=\coprod_{p\in s_0\cap s}U_p$
 and 
-$f\deq \bigsqcup_{p\in s_0\cap s} f_p$.
+$f\deq \coprod_{p\in s_0\cap s} f_p$.
 Then, 
 $\opn{LMD}_k^{\bullet}(X;s)
-=\opn{LMD}_k(A_{U},f)$.
+=\opn{LMD}_k^{\bullet}(A_{U},f)$ from definition.
 
-Let $f^{\boxplus n}\colon U^{n}\to \mathbb{R}$
+Let $f^{\boxplus  n}\colon U^{n}\to \mathbb{R}$
 be the continuous function induced from $f$,
 and $f_{\mathfrak{S}_n}\colon
 U^{n}/\mathfrak{S}_n\to \mathbb{R}$ 
@@ -4954,29 +4958,56 @@ $\opn{LMD}^{\bullet}_{k}(S^{n}X;\opn{Sym}_n(s))
 The latter graded module is isomorphic to
 the cohomology of the complex
 $R\Gamma(s_0\cap \opn{Sym}^{n}(s),
-R\Gamma_{\{f^{\boxplus n}\geq 0\}/\mathfrak{S}_n}
+R\Gamma_{\{f^{\boxplus  n}\geq 0\}/\mathfrak{S}_n}
 (k_{U^{n}/\mathfrak{S}_n}))$.
-From now on, we calculate of this complex
-using the theory of $\mathfrak{S}_n$-equivalent
-sheaves. 
-The constant sheaf 
-$k_{U^{n}}$ is a $\mathfrak{S}_n$-equivalent sheaves
-with respect to the natural action 
-of $\mathfrak{S}_n$ on $U^n$.
-
+From now on, we calculate this complex
+using the theory of $\mathfrak{S}_n$-equivariant
+sheaves (see \cite[\textsection 0.2]{MR1299527}
+for the definition of $G$-equivariant sheaves
+of a topological group $G$). Here, we considered
+$\mathfrak{S}_n$ as a discrete group.
+In this case, every $\mathfrak{S}_n$-equivariant
+sheaves on a space $X$ with a (right) action 
+$\rho \colon X\times \mathfrak{S}_n\to X$
+is equivalent to a sheaf $\mathcal{F}$ on $X$
+with a family $\{a_{\sigma}\}_{\sigma\in \mathfrak{S}_n}$
+of morphisms $a_{\sigma}\colon \mathcal{F}\to \rho(\sigma)^{-1}\mathcal{F}$
+satisfying $a_{\sigma \tau}=\rho(\tau)_*a_{\sigma}\circ a_{\tau}$ 
+for all $\sigma,\tau \in \mathfrak{S}_n$ 
+(see also \cite[Chapter IV.9]{iversenCohomologySheaves1986a}).
+In particular, the constant sheaf 
+$k_{U^{n}}$ is an $\mathfrak{S}_n$-equivariant sheaf
+trivially.
 Let $\catn{Mod}_{\mathfrak{S}_n}(k_{U^n})$ be 
-the category of $\mathfrak{S}_n$-equivalent 
+the category of $\mathfrak{S}_n$-equivariant
 sheaves of $k_{U^n}$-modules.
+
 We note the forgetful functor
 $\catn{Mod}_{\mathfrak{S}_n}(k_{U^n})
-\to \catn{Mod}(k_{U^n})$ preserve injectives.
-The subset $\{f^{\boxplus n}\geq 0\}$ of $\mathfrak{S}_n$ is 
+\to \catn{Mod}(k_{U^n})$ preserve injectives
+~\cite[Corollary 8.2.4]{MR1299527}.
+The subset $\{f^{\boxplus  n}\geq 0\}$ of $U^{n}$ is 
 closed and has an $\mathfrak{S}_n$-action induced
-from $U^n$. Therefore, 
-the functor $\Gamma_{\{f^{\boxplus n}\geq 0\}}(\cdot)$ 
+from $U^n$.
+Let $(\mathcal{F},\{a_{\sigma}\}_{\sigma\in \mathfrak{S}_n})$
+be an $\mathfrak{S}_n$-equivariant sheaf on $U^{n}$. 
+Then,
+\begin{align}
+\Gamma_{\{f^{\boxplus  n}\geq 0\}}(a_{\sigma \tau})
+=\rho(\tau)_*(\Gamma_{\{f^{\boxplus  n}\geq 0\}}(a_{\sigma}))
+\circ \Gamma_{\{f^{\boxplus  n}\geq 0\}}(a_{\tau})
+\end{align}
+for all $\sigma, \tau \in \mathfrak{S}_n$ 
+from \cite[(2.3.20)]{MR1299726}.
+Therefore, 
+the functor $\Gamma_{\{f^{\boxplus  n}\geq 0\}}(\cdot)$ 
 lifts a functor from 
 $\catn{Mod}_{\mathfrak{S}_n}(k_{U^n})$
 to itself.
+The same logic works for $(\cdot)_{\{f^{\boxplus  n}\geq 0\}}$
+since $\rho(\sigma)_*\cdot \rho(\sigma)^{-1}=\opn{id}=
+\rho(\sigma)_*\circ \rho(\sigma^{-1})_*$
+for all $\sigma\in\mathfrak{S}_n$.
 The functor $q_*^{\mathfrak{S}_n}\colon 
 \catn{Mod}_{\mathfrak{S}_n}(k_{U^n})\to 
 \catn{Mod}(k_{U^n/\mathfrak{S}_n});\mathcal{F}
@@ -4984,31 +5015,34 @@ The functor $q_*^{\mathfrak{S}_n}\colon
 is exact and satisfies the following isomorphism
 (cf. \cite[(2.3.20)]{MR1299726}):
 \begin{align}
-\label{equation-equivalent-quotient}
-q_*^{\mathfrak{S}_n}\Gamma_{\{f^{\boxplus n}\geq 0\}}k_{U^{n}}
-=\Gamma_{\{f^{\boxplus n}\geq 0\}/\mathfrak{S}_n}q_*^{\mathfrak{S}_n}k_{U^{n}}
-=\Gamma_{\{f^{\boxplus n}\geq 0\}/
+\label{equation-equivariant-quotient}
+q_*^{\mathfrak{S}_n}\Gamma_{\{f^{\boxplus  n}\geq 0\}}k_{U^{n}}
+=\Gamma_{\{f^{\boxplus  n}\geq 0\}/\mathfrak{S}_n}q_*^{\mathfrak{S}_n}k_{U^{n}}
+=\Gamma_{\{f^{\boxplus  n}\geq 0\}/
 \mathfrak{S}_n}k_{U^{n}/\mathfrak{S}_n}.
 \end{align}
-Moreover, $q_*^{\mathfrak{S}_n}$ and
-$\Gamma_{\{f^{\boxtimes n}\geq 0\}}(\cdot)$ preserves 
-$c$-soft sheaves. So, we can get
-the derived version of \eqref{equation-equivalent-quotient}.
-By \eqref{equation-equivalent-quotient} and
+Moreover,
+$\Gamma_{\{f^{\boxplus n}\geq 0\}}(\cdot)$
+and $q_*^{\mathfrak{S}_n}$ preserve 
+injectives since
+both of them have left adjoint exact functors
+\cite[Proposition 8.4.1]{MR1299527}. So, we can get
+the derived version of \eqref{equation-equivariant-quotient}.
+By \eqref{equation-equivariant-quotient} and
 the sheaf theoretic Thom--Sebastiani formula
 (see also \cite[Corollary 1.3.1]{MR2031639}), 
 we get 
 \begin{align}
 R\Gamma(s_0\cap \opn{Sym}^{n}(s);
-R\Gamma_{\{f^{\boxplus n}\geq 0\}/\mathfrak{S}_n}
+R\Gamma_{\{f^{\boxplus  n}\geq 0\}/\mathfrak{S}_n}
 (k_{U^{n}/\mathfrak{S}_n}))
 &\simeq 
 R\Gamma(s_0\cap \opn{Sym}^{n}(s);
-q_*^{\mathfrak{S}_n}R\Gamma_{\{f^{\boxplus n}\geq 0\}}
+q_*^{\mathfrak{S}_n}R\Gamma_{\{f^{\boxplus  n}\geq 0\}}
 (k_{U^{n}})) \\
 &\simeq
 (R\Gamma(s_0\cap s^{\boxtimes n};
-R\Gamma_{\{f^{\boxplus n}\geq 0\}}
+R\Gamma_{\{f^{\boxplus  n}\geq 0\}}
 (k_{U^{n}})))^{\mathfrak{S}_n} \\
 &\simeq
 (R\Gamma(s_0\cap s^{\boxtimes n};
@@ -5039,8 +5073,6 @@ induces \eqref{equation-symmetric-product}.
 \begin{remark}
 The above corollary is an analog of 
 \cite[Lemma 5.1]{MR1795551}.
-The same logic works for integral affine manifold with
-singularities.
 \end{remark}
 
 
@@ -5226,8 +5258,8 @@ we can define the set of lattice points $B(\Z)$
 on $B$ for a fixed strongly integral affine structure from 
 the inverse image $\phi^{-1}_i(U_i\cap M)$ of each atlas.
 In other words, we can define 
-`$\underline{\Z}$-rational points' of $B$.
-Here, the $\underline{\Z}$ is the max-plus semifield of 
+`$\underline{\Z}$-rational points' of $B$,
+where $\underline{\Z}$ is the max-plus semifield of 
 extended integers,
 see also \eqref{equation-rational-point}.
 
@@ -5687,7 +5719,7 @@ let's reinterpret
 using the local Morse data for a
 $C^{\infty}$-divisor in this paper.
 First, let's construct a
-permissible $C^{\infty}$-divisor
+prepermissible $C^{\infty}$-divisor
 on $X_{P}^{\mathrm{trop}}$ from a Delzant polytope $P$. 
 Every compact tropical toric manifold is not 
 boundaryless, so we need to use the sheaf
@@ -5695,7 +5727,7 @@ of weakly-smooth functions which we defined
 in \cref{definition-weakly-smooth}.
 On the other hand, from \eqref{equation-log-polynomial} 
 we can construct 
-a permissible $C^{\infty}$-divisor
+a prepermissible $C^{\infty}$-divisor
 $s_P\in H^{0}(X_P;
 \mathcal{A}^{\mathrm{weak}}_{X_P}/
 \mathcal{O}^{\times}_{X_P})$ for 
@@ -5720,7 +5752,7 @@ divisor $s_P$ on $X^{\mathrm{trop}}_P$.
 \item Every local cone $\opn{LC}_x X_{P}^{\mathrm{trop}}$
 in $X_P^{\mathrm{trop}}$ at $x$ is isomorphic to an 
 $\mathbb{R}^{l}$, and thus $s_P$ obviously satisfies 
-the permissibility condition.
+the prepermissibility condition.
 \end{enumerate}
 }
 \begin{example} \label{eg: TP1Cartier}
@@ -5780,7 +5812,7 @@ s_0\cap -s_P=s_0\cap s_P=(\mu_P^{\opn{trop}})^{-1}
 \begin{proposition}[{Ehrhart reciprocity for 
 local Morse data}]
 \label{proposition-ehrhart-revisit}
-Let $s_P$ be a permissible $C^{\infty}$-divisor on 
+Let $s_P$ be a prepermissible $C^{\infty}$-divisor on 
 the $n$-dimensional
 projective tropical toric manifold $X_P$ for 
 a (Delzant) lattice polytope $P$. Then, 
