@@ -1290,7 +1290,7 @@ Therefore,
 \end{align}
 
 The above equation and \cref{prop-local-morse-data} 
-gives
+give
 \begin{align}
 \opn{LMD}^{\bullet}(A_{\mathbb{R}^{n+m}},f_{n,m},0)\simeq 
 \tilde{H}^{\bullet-1}(S^{m-1};A_S) \simeq A[-m],& \\
@@ -1301,7 +1301,7 @@ where $\opn{ind}^{\opn{PH}}_{0}(\opn{grad}(f_{n,m}))$ is
 the Poincar\'e-Hopf index of the gradient 
 of $f_{n,m}$ at 
 the origin $0$.
-From Morse lemma, 
+From the Morse lemma, 
 $\opn{ind}_x^{A}(f)=\opn{ind}^{\opn{PH}}_x(
 \opn{grad}(f))$
 for every critical point $x$ of a Morse function 
@@ -1784,7 +1784,7 @@ of (real valued) \emph{tropical rational functions}
 There exist different definitions of  
 tropical rational function 
 (for example, see \cite{mikhalkin2018tropical}).
-By applying the global section fuctor for the
+By applying the global section functor for the
 short exact sequence 
 \eqref{equation-cartier-divisor-sequence},
 we get a connecting homomorphism 
@@ -1804,15 +1804,15 @@ By taking a global section of the
 short exact sequence
 \eqref{equation-smoooth-cartier-divisor-sequence},
 there also exists a connecting homomorphism 
-$\delta' \colon 
+$[\cdot] \colon 
 H^{0}(S;\mathcal{A}^{0,0}_{S}/\mathcal{O}^{\times}_S)
-\to H^{1}(S;\mathcal{O}^{\times}_S)$. 
+\to H^{1}(S;\mathcal{O}^{\times}_S);s \mapsto [s]$. 
 From definition, every rational polyhedral space 
 $S$ is paracompact and
 $\mathcal{A}^{0,0}_S$ is a fine sheaf 
 \cite[Lemma 2.7, Proposition 2.26]{MR3903579}, so 
 $H^{1}(S;\mathcal{A}^{0,0}_S)=0$ and 
-so $\delta'$ is also surjective.
+so $[\cdot]$ is also surjective.
 \begin{definition}
 Let $S$ be a boundaryless rational polyhedral space.
 A \emph{$C^{\infty}$-divisor} on 
@@ -1839,7 +1839,7 @@ We will also see a $C^{\infty}$-divisor is
 an analog of Lagrangian section later
 (\cref{proposition-cartier-lagrangian}).
 
-We also use the following representations of 
+Furthermore, we use the following representations of 
 $C^{\infty}$-divisors like 
 \cite[Definition 4.0.12]{MR2810322}.
 \begin{definition}[{$C^{\infty}$-Cartier local data}]
@@ -1854,22 +1854,28 @@ $s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all
 $i\in I$. 
 \end{definition}
 
+Local data for a $C^{\infty}$-divisor $s$ is also useful for
+calculating the divisor class $[s]\in H^{1}(S;\mathcal{O}^{\times}_S)$
+by using the \v{C}ech cohomology 
+$\check{H}^{1}(S;\mathcal{O}^{\times}_S)$
+(see e.g. \cite[Remark 7.21]{MR3560225}).
 
 In the next subsection, 
 we will define an analog of Floer complex of 
 Lagrangian submanifolds
-(without differential) for $C^{\infty}$-Cartier 
-divisors on boundaryless rational polyhedral spaces
+(without differential) for $C^{\infty}$-divisors
+on boundaryless rational polyhedral spaces
 satisfying \cref{condition-good-divisor}.
 
 
 
 
 
-\subsection{prepermissibility conditions}
+\subsection{Permissibility conditions}
 
 In this subsection, we define 
-the \emph{prepermissibility condition} for
+the \emph{permissibility condition}
+\cref{condition-good-divisor} for
 $C^{\infty}$-divisors on
 boundaryless rational polyhedral spaces.
 We will define an analog of a Morse complex
@@ -1889,8 +1895,7 @@ $\tform^{1}_{\mathbb{R},S}\deq
 \otimes_{\mathbb{Z}_S} \mathbb{R}_S$ 
 and $T_x S\deq \opn{Hom}_{\mathbb{Z}}(
 (\tform^{1}_{\mathbb{Z},S})_x,\mathbb{R})$.
-From the definition of rational polyhedral spaces, 
-we can see 
+From the definition of rational polyhedral spaces,
 the stalk $(\tform^{1}_{\mathbb{Z},S})_x$
 at $x$ is a free 
 $\mathbb{Z}$-module of finite rank.
@@ -2091,7 +2096,7 @@ Therefore, we have
 \mid v(z)-\rho_{P}(z)<0\})
 -\chi_{\mathrm{top}}(\{z\in \opn{LC}_x S \cap B^{n}_{\varepsilon}(0)\mid v(z)<0\})=1.
 \end{align}
-for any sufficently small $\varepsilon>0$.
+for any sufficiently small $\varepsilon>0$.
 Therefore, $v+\rho_{P}$ or $v$ satisfies 
 \eqref{equation-non-acyclic}.
 \end{proof}
@@ -2328,7 +2333,8 @@ From the prepermissibility condition and
 \eqref{equation-torus-fiber}, we get the following proposition.
 
 \begin{proposition}
-Let $(s',s)$ be a prepermissible $C^{\infty}$-Cartier pair
+Let $(s',s)$ be a prepermissible pair of
+$C^{\infty}$-divisors
 on a (boundaryless) rational polyhedral space, 
 $\{(U_i,f_i)\}_{i\in I}$ the local data 
 for $s-s'$ and $L_s\deq \opn{Im}(\check{s})$.
@@ -2407,7 +2413,8 @@ a graded module
 since we need to define the differentials 
 $\mathfrak{m}_1$ of 
 $\opn{LMD}^{\bullet}_{A}(S;s)$ as an analog of
-Floer cohomology. We don't have, however,
+Floer cohomology.
+We don't have, however,
 the definition of the true differential of 
 $\opn{LMD}^{\bullet}_A(S;s)$ in general, except when 
 $\opn{LMD}^{\bullet}_{A}(S;s)$ is equal to a Floer complex
@@ -2725,7 +2732,7 @@ H^{0}(S;\mathcal{A}_S^{\opn{weak}}/
 We can define a \emph{local data} for 
 $s$ like when $S$ is boundaryless naturally
 (\cref{definition-Cartier-local-data}).
-We can extend the prepermissibility condition for
+Moreover, we can extend the prepermissibility condition for
 weakly-smooth functions and $C^{\infty}$-divisors on
 general rational polyhedral spaces by the following lemma.  
 
@@ -2991,7 +2998,7 @@ $\mathcal{O}_C^{\times}$:
 Let $s$ be a $C^{\infty}$-divisor on a compact
 tropical curve $C$.
 Then, there exists
-a preprepermissible $C^{\infty}$-divisor $s'$ which is linearly
+a prepermissible $C^{\infty}$-divisor $s'$ which is linearly
 equivalent to $s$ and
 $s_0\cap s'$ is a finite set. 
 \end{proposition}
@@ -3408,7 +3415,7 @@ and \eqref{equation-rotation-number}.
 
 \begin{remark}
 \label{remark-non-prepermissible-divisor}
-We explain the reason why we add prepermissible condition for 
+We explain the reason why we need the prepermissible condition for 
 $C^{\infty}$-divisors. 
 One of reasons is that there exists smooth function $f$
 on a polyhedral space $S$ and 
@@ -3433,7 +3440,7 @@ such that
 $g$ is prepermissible except $x=(0,0)$.
 If we generalize 
 \cref{theorem-MRR-curve-preface} for 
-a principal non-prepermissible 
+a principal non-prepermissible
 $C^{\infty}$-divisors $(g)^{\mathrm{sm}}$, 
 we need to add the index $\opn{ind}_x(g)$ at $x$ satisfying
 \begin{align}
@@ -3544,12 +3551,6 @@ for $\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
 \end{enumerate}
 }
 
-
-The stratified torus fibration of Riemann surface is 
-closely related with pants decomposition and 
-there exists a higher 
-dimensional pants decomposition \cite{MR2079993} along
-tropical hypersurfaces.
 Auroux--Efimov--Katzarkov  
 expect a SYZ conjecture
 for projective hypersurfaces 
@@ -3830,7 +3831,7 @@ induced from $g$
  
 \begin{remark} \label{remark-compact-hessian}
 We recall a well-known result for 
-compact special affine manifold with 
+compact special affine manifold admitting 
 a Hessian form which is mentioned 
 in some literature
 (e.g. \cite[\textsection 5.2]{MR1882331}).
@@ -3857,7 +3858,7 @@ for $\tilde{g}$,
 the Levi--Civita connection of $\tilde{g}$ is 
 equal to the affine connection of $B$ 
 \cite[Corollary 8.3.7]{MR2293045}. 
-By Bieberbach theorem, every closed flat Riemannian manifold 
+By the Bieberbach theorem, every closed flat Riemannian manifold 
 is covered by a Riemannian flat torus 
 (see also \cite[Theorem 5.3]{MR862114}), and thus every closed 
 integral Hessian manifold is an unramified finite cover of 
@@ -4177,7 +4178,7 @@ c\frown f_*\alpha\in H_{p-i,q-j}^{\opn{BM}}(Y).
 
 Let $X$ be a compact
 $n$-dimensional tropical manifold.
-By a \emph{n-dimensional tropical manifold},
+By an \emph{n-dimensional tropical manifold},
 we mean a tropical manifold of pure dimension $n$,
 for simplicity in this paper
 (see \cite[\textsection 2.A]{MR3894860}). 
@@ -4275,7 +4276,7 @@ We can extend \eqref{equation-trace-integration}
 for compact tropical manifolds naturally.
 \begin{definition}[{cf.~\cite[Definition 2.11]{MR3668972}}]
 Let $f\colon X \to Y$ be a proper morphism of 
-a $n$-dimensional compact tropical manifolds.
+an $n$-dimensional compact tropical manifolds.
 
 
 The (tropical) degree
@@ -4771,19 +4772,17 @@ curves \cite[Theorem 2.14]{MR2525845}.
 
 
 \subsection{K\"unneth-type formula}
-
-
-
-First, We remark that there exists
+We remark that there exists
 a tropical analog of K\"unneth formula for 
 local Morse data (\cref{corollary-kunneth-type-formula}).
 For prove \cref{corollary-kunneth-type-formula},
-We use the following sheaf theoretic
+we use the following sheaf theoretic version of
+Thom--Sebastiani formula:
 
 \begin{theorem}[{Thom--Sebastiani Theorem for sheaves \cite[Theorem 1.2.2]{MR2031639}}]
 Let $i=1,2$.
 Fix locally compact Hausdorff spaces $X_i$ and 
-sheaves $\tform_i$ on $X_i$.
+sheaves $\mathcal{F}_i$ on $X_i$.
 For continuous functions $f_i\colon X_1 \to\mathbb{R}$,
 and closed $S_i$ of $X_i$ contained in $\{f_i=0\}$.
 We write $f_1\boxplus  f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$
@@ -4821,7 +4820,7 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$:
   and $f_2(x)=-\|\cdot\|_{\mathbb{R}^{m}}^{2}$, then we have
 \begin{align}
     \opn{LMD}^{\bullet}(\Z_{{\mathbb{R}}^{n+m}},f_1\boxplus f_2,0)
-    \simeq \tilde{H}^{\bullet -1}(S^{n-1};\Z)
+    \simeq \tilde{H}^{\bullet -1}(S^{m-1};\Z)
     \simeq \Z[-\opn{ind}_{\mathrm{Morse}}(f_1\boxplus f_2,0)]
 \end{align}
   where $\opn{ind}_{\mathrm{Morse}}(f,0)$ is the Morse index
@@ -4832,7 +4831,7 @@ We don't state a K\"unneth type formula for
 local Morse data for $C^{\infty}$-divisors in a fully
 general setting, but the following corollary 
 is enough for performing that there exists 
-a K\"unneth type formula for local Morse data
+a K\"unneth type formula for the local Morse data
 of $C^{\infty}$-divisors.
 
 \begin{corollary}[{K\"unneth type formula}]
@@ -4865,7 +4864,7 @@ and $\{(U_{v}\times U_w,f_v\boxplus  g_w)\}_{
 corresponding intersection data 
 for $s\boxtimes s'$.  
 We get an isomorphism of graded modules
-from sheaf theoretic Thom-Sebastiani theorem for 
+from the sheaf theoretic Thom-Sebastiani theorem for 
 $X_1=U_{v}$, $X_2=U_w$, $S_1=\{v\}$, $S_2=\{w\}$,
 $f_1= f_v-f_v(v)$ and 
 $f_2= f_w-f_w(w)$;
@@ -5012,8 +5011,7 @@ The functor $q_*^{\mathfrak{S}_n}\colon
 \catn{Mod}_{\mathfrak{S}_n}(k_{U^n})\to 
 \catn{Mod}(k_{U^n/\mathfrak{S}_n});\mathcal{F}
 \to q_*^{\mathfrak{S}_n}(\mathcal{F})$ 
-is exact and satisfies the following isomorphism
-(cf. \cite[(2.3.20)]{MR1299726}):
+is exact and satisfies the following isomorphism:
 \begin{align}
 \label{equation-equivariant-quotient}
 q_*^{\mathfrak{S}_n}\Gamma_{\{f^{\boxplus  n}\geq 0\}}k_{U^{n}}
@@ -5861,13 +5859,6 @@ In \cite{MR4155409},
 a new Ehrhart theory of tropical geometry appear, 
 but this is different from our approach. 
 \end{remark}
-
-
-
-
-
-
-
 
 \bibliography{lattice_points_surface}
 \bibliographystyle{halpha}
