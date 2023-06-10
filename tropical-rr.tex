@@ -1,4 +1,5 @@
-\documentclass[a4paper,uplatex,reqno,12pt]{amsart}
+\documentclass[a4paper,dvipdfmx,reqno,12pt]{amsart}
+%\documentclass[a4paper,reqno,12pt]{amsart}%for arxiv
 \synctex=1
 %
 %%%% packages
@@ -220,7 +221,7 @@
 \usepackage{upgreek}
 \numberwithin{equation}{section}
 \title[Graded modules associated 
-with $C^{\infty}$-divisors]{Graded modules 
+with permissible $C^{\infty}$-divisors]{Graded modules 
 associated with permissible $C^{\infty}$-divisors
 on tropical manifolds}
 \author[Y. Tsutsui]{Yuki Tsutsui}
@@ -755,7 +756,7 @@ I would like to appreciate Yoshinori Gongyo for
 giving a question about relationships 
 between a type of Pick's formula for
 tropical Kummer surfaces and Atiyah--Singer
-index formula. This question allow me 
+index formula. This question allows me 
 to discover \cite{MR2676658}.
 My thanks also go to Jin Miyazawa
 for explaining us a heart of localization of 
@@ -905,7 +906,7 @@ $\mathcal{C}$
 From now on, we recall some elementary 
 operations of sheaves. 
 Let $f\colon Y\to X$ be a continuous map.
-$f$ induces the functor $f_!$ of
+Then, $f$ induces the functor $f_!$ of
 the direct image with proper supports 
 \cite[(2.5.1)]{MR1299726}. 
 For example, $a_{X!}\mathcal{F}\simeq \Gamma_c(X;\mathcal{F})$.
@@ -918,7 +919,7 @@ For a given sheaf $\mathcal{F}$ on $X$, we set
 \mcal{F}|_{Z}\deq i^{-1}\mcal{F}, \quad 
 \mcal{F}_Z\deq i_! i^{-1}\mcal{F}, \quad 
 (A_X)_Z\deq i_!i^{-1}A_X, \quad 
-\Gamma(Z;\mathcal{F})=\Gamma(Z;\mathcal{F}|_{Z}).
+\Gamma(Z;\mathcal{F})\deq \Gamma(Z;\mathcal{F}|_{Z}).
 \end{align}
 
 From \cite[Proposition 2.5.4]{MR1299726}, $i_!$ is exact 
@@ -954,7 +955,7 @@ $\Gamma_{Z}(X;\mcal{F})\deq \Gamma_{Z}(U;\mcal{F})$.
 $U\mapsto \Gamma_{Z\cap U}(U;\mcal{F})$ on $X$.
 \end{enumerate}
 
-$\Gamma_Z(X;\cdot)$ is a left exact functor from 
+The functor $\Gamma_Z(X;\cdot)$ is a left exact functor from 
 $\opn{Mod}(A_X)$ to $\opn{Mod}(A)$,
 and $\Gamma_{Z}(\cdot)$ is a left exact functor from
 $\opn{Mod}(A_X)$ to $\opn{Mod}(A_X)$ 
@@ -984,7 +985,7 @@ f^{-1}\mathcal{F}_Z\simeq
 \end{align}
 
 The first isomorphism of \eqref{equation-property-sheaf-cut-off}
-induces $\Gamma_{Z}(\cdot)$ preserves injectives since
+deduces that $\Gamma_{Z}(\cdot)$ preserves injectives since
 $(\cdot)_Z$ is exact.
 
 Let $X$ be a topological space, $Z$ a locally 
@@ -1519,7 +1520,7 @@ then we have
 \chi(\opn{LMD}^{\bullet}(A_M,f_1,x))
 \end{align}
 by \cite[Proposition 5.4.20]{MR1299726}.
-From Poincar\'e--Hopf theorem and 
+From the Poincar\'e--Hopf theorem and 
 \cref{example-morse-index}, 
 \begin{align} \label{equation-poincare-hopf}
 \opn{ind}_0^{A}(f)=
@@ -1590,8 +1591,9 @@ with boundary:
 (0,\varepsilon] \times
 (S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\})). \notag
 \end{align}
-The proof of relative version of Ehresmann's lemma is 
-in \cite{359708}.
+The proof of
+a relative version of Ehresmann's lemma is 
+in \cite{359708}, for example.
 Besides, there exists a homeomorphism of pairs of
 topological spaces:
 \begin{align}
@@ -3319,22 +3321,22 @@ from the symplectic form on $\check{X}(C_{\reg})$.
 
 \begin{figure}
   \centering
-  % \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-  %   %uncomment if require: \path (0,302); %set diagram left start at 0, and has height of 302
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,302); %set diagram left start at 0, and has height of 302
 
-  %   %Shape: Ellipse [id:dp7113644287533367] 
-  %   \draw   (220,160.5) .. controls (220,138.13) and (230.07,120) .. (242.5,120) .. controls (254.93,120) and (265,138.13) .. (265,160.5) .. controls (265,182.87) and (254.93,201) .. (242.5,201) .. controls (230.07,201) and (220,182.87) .. (220,160.5) -- cycle ;
-  %   %Shape: Ellipse [id:dp2574876106229609] 
-  %   \draw   (385,160.5) .. controls (385,138.13) and (395.07,120) .. (407.5,120) .. controls (419.93,120) and (430,138.13) .. (430,160.5) .. controls (430,182.87) and (419.93,201) .. (407.5,201) .. controls (395.07,201) and (385,182.87) .. (385,160.5) -- cycle ;
-  %   %Straight Lines [id:da9747654267031158] 
-  %   \draw    (242.5,120) -- (407.5,120) ;
-  %   %Straight Lines [id:da6388065944921051] 
-  %   \draw    (242.5,201) -- (407.5,201) ;
-  %   %Straight Lines [id:da44727041223554886] 
-  %   \draw  [dash pattern={on 15pt off 1.5pt}]  (220,160.5) -- (385,160.5) ;
-  %   %Curve Lines [id:da44274218397801035] 
-  %   \draw    (220,160.5) .. controls (263,97.5) and (348,224.5) .. (385,160.5) ;
-  % \end{tikzpicture}
+    %Shape: Ellipse [id:dp7113644287533367] 
+    \draw   (220,160.5) .. controls (220,138.13) and (230.07,120) .. (242.5,120) .. controls (254.93,120) and (265,138.13) .. (265,160.5) .. controls (265,182.87) and (254.93,201) .. (242.5,201) .. controls (230.07,201) and (220,182.87) .. (220,160.5) -- cycle ;
+    %Shape: Ellipse [id:dp2574876106229609] 
+    \draw   (385,160.5) .. controls (385,138.13) and (395.07,120) .. (407.5,120) .. controls (419.93,120) and (430,138.13) .. (430,160.5) .. controls (430,182.87) and (419.93,201) .. (407.5,201) .. controls (395.07,201) and (385,182.87) .. (385,160.5) -- cycle ;
+    %Straight Lines [id:da9747654267031158] 
+    \draw    (242.5,120) -- (407.5,120) ;
+    %Straight Lines [id:da6388065944921051] 
+    \draw    (242.5,201) -- (407.5,201) ;
+    %Straight Lines [id:da44727041223554886] 
+    \draw  [dash pattern={on 15pt off 1.5pt}]  (220,160.5) -- (385,160.5) ;
+    %Curve Lines [id:da44274218397801035] 
+    \draw    (220,160.5) .. controls (263,97.5) and (348,224.5) .. (385,160.5) ;
+  \end{tikzpicture}
 
 \caption{A continuous section $s\colon [0,1]\to [0,1]\times \mathbb{R}/\mathbb{Z}$}
 \end{figure}
@@ -3476,6 +3478,17 @@ we can directly compute it using
 \ref{proposition-1-valent} directly.
 \end{proof}
 
+Let $C$ be a $1$-dimensional rational polyhedral space,
+$C'$ be a $1$-dimensional rational
+polyhedral subspace and $i_{C'}$
+the inclusion map of $C'$. Then, the pullback of 
+a weakly-smooth function is also weakly smooth from
+definition, so there exists the pullback 
+$\iota_{C'}^{-1}\mathcal{A}^{\mathrm{weak}}_C\to 
+\mathcal{A}^{\mathrm{weak}}_{C'}$.
+This also induces the pullback 
+$\iota_{C'}^{*}\colon \CDiv(C')\to \CDiv(C)$
+(see also \cite[Proposition 3.15]{gross2019sheaftheoretic}).
 A good point of the rotation number
 $\opn{rot}(s)$ and the 
 Euler characteristic of 
@@ -3488,6 +3501,7 @@ following Meyer--Vietoris type lemma.
 Let $s$ be a permissible $C^{\infty}$-divisor
 on a $1$-dimensional compact rational space $C$.
 Fix two closed $1$-dimensional compact rational
+polyhedral
 subspaces $C'$, $C''$ of $C$ such that
 $C' \cup C''=C$ and $C'\cap C''\subset s_0 \cap s$.
 Then, 
@@ -3643,7 +3657,6 @@ a typical $D$ by \cref{lemma-rotation-slope}.
 The degree of $D$ is 
 invariant for any choice of $D$.
 \end{proof}
-
 
 \begin{remark}
 \label{remark-rotation-closed-interval} 
@@ -4281,9 +4294,9 @@ and \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}.}:
 \begin{equation} \label{equation-smooth-cartier-diagram}
   \begin{tikzcd}
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
-    & \mb{R}_{X} \arrow[r] \arrow[d]   & \mb{R}_{X} \arrow[d]\\
+    & \mb{R}_{X} \arrow[r,equal] \arrow[d]   & \mb{R}_{X} \arrow[d]\\
 0\arrow[r] & \mathcal{O}_X^{\times} \arrow[r] \arrow[d] &
-\mcal{A}^{0,0}_X \arrow[r] \arrow[d] & \mcal{A}^{0,0}_X /\mcal{O}_{X}^{\times}  \arrow[r] \arrow[d] & 0 \\
+\mcal{A}^{0,0}_X \arrow[r] \arrow[d] & \mcal{A}^{0,0}_X /\mcal{O}_{X}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
     0 \arrow[r] & 
 \tform_{\mathbb{Z},X}^{1} \arrow[r] \arrow[d] & 
 \mcal{Z}^{1}_{X} \arrow[r] \arrow[d]  & \mcal{Z}^{1}_{X}/
@@ -4657,8 +4670,8 @@ Thus, the commutative diagram \eqref{equation-smooth-cartier-diagram} is written
 \begin{equation} \label{equation-cartier-lagrangian}
   \begin{tikzcd}
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
-    & \mb{R}_{B} \arrow[r] \arrow[d]                & \mb{R}_{B} \arrow[d]           &                      &   \\
-    0 \arrow[r] & \mathcal{O}_{B}^{\times} \arrow[r] \arrow[d]         & \mathcal{C}^{\infty}_{B} \arrow[r] \arrow[d] & \mathcal{C}^{\infty}_{B}/\mathcal{O}_{B}^{\times}  \arrow[r] \arrow[d] & 0 \\
+    & \mb{R}_{B} \arrow[r,equal] \arrow[d]                & \mb{R}_{B} \arrow[d]           &                      &   \\
+    0 \arrow[r] & \mathcal{O}_{B}^{\times} \arrow[r] \arrow[d]         & \mathcal{C}^{\infty}_{B} \arrow[r] \arrow[d] & \mathcal{C}^{\infty}_{B}/\mathcal{O}_{B}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
     0 \arrow[r] & \mcal{T}_{\Z,B}^{\vee} \arrow[r] \arrow[d] & \opn{Lag}(T^{*}B) \arrow[r] \arrow[d]  & \opn{Lag}(\check{X}(B)) \arrow[r]   & 0 \\
     & 0 & 0 &  &
   \end{tikzcd}
@@ -6124,7 +6137,7 @@ the wrapped Fukaya category
 $\opn{Fuk}(T^{*}T_{\mathbb{R}}^{\vee};\overline{\Lambda}_{\Sigma})$
 in \cite[Theorem 2]{MR2871160}.
 We also note the homological mirror symmetry between the derived category of
-coherent sheaves on toric varieties $X_{\Sigma}$ and
+coherent sheaves on a toric variety $X_{\Sigma}$ and
 the wrapped Fukaya category 
 $\opn{Fuk}(T^{*}T_{\mathbb{R}}^{\vee};\overline{\Lambda}_{\Sigma})$
 is finally solved by Kuwagaki's results \cite{MR4132582}.
@@ -6132,11 +6145,11 @@ is finally solved by Kuwagaki's results \cite{MR4132582}.
 
 \begin{remark}
 In \cite{MR4155409},
-a new Ehrhart theory of tropical geometry appear, 
+a new Ehrhart theory of tropical geometry appears, 
 but this is different from our approach. 
 \end{remark}
 
-\bibliography{lattice_points_surface}
+\bibliography{tropical-rr}
 \bibliographystyle{alpha}
 
 \end{document}
