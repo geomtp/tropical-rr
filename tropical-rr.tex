@@ -1,23 +1,33 @@
-\documentclass[a4paper,dvipdfmx,reqno,12pt]{amsart}
+\documentclass[a4paper,uplatex,reqno,12pt]{amsart}
 \synctex=1
 %
 %%%% packages
 \usepackage[utf8]{inputenc}
+
+\usepackage{mathtools,thmtools}
+%\usepackage{pgf,pgfplots}
+%\usepackage{tikz}
+% \pgfplotsset{compat=1.15}
+%\usetikzlibrary{arrows}
+\usepackage{tikz-cd}%
+%\usetikzlibrary{cd}
+%\usetikzlibrary{calc}
+
 \usepackage{graphicx,color}%for images
 \usepackage{bm}%fonts
 \usepackage{amsmath,amsthm,amstext,amsfonts,amsbsy}%
 \usepackage{amssymb}
 \usepackage{latexsym}%
-\usepackage{algpseudocode,algorithm}%
+%\usepackage{algpseudocode,algorithm}%
 \usepackage{todonotes}%comments
 \usepackage[margin=0.8in]{geometry}
 \usepackage{layout}
 \usepackage[T1]{fontenc}%font encoding
 \usepackage{physics}
 \usepackage{braket}%after physics
-\usepackage{mathtools,thmtools}
-\usepackage{imakeidx}%before hyperref for pagebackref
-\usepackage[pagebackref,dvipdfmx]{hyperref}
+
+% \usepackage{imakeidx}%before hyperref for pagebackref
+\usepackage[pagebackref]{hyperref}
 \usepackage[capitalize]{cleveref}
 \hypersetup{
      colorlinks = true,
@@ -28,12 +38,7 @@
 %\usepackage{pxjahyper}%for hyperref in Japanese
 \usepackage{bookmark}
 
-\usepackage{pgf,tikz,pgfplots}
-\pgfplotsset{compat=1.15}
-\usetikzlibrary{arrows}
-\usepackage{tikz-cd}%
-\usetikzlibrary{cd}
-\usetikzlibrary{calc}
+
 
 
 %%%%
@@ -120,59 +125,59 @@
 
 %%%% 
 
-%%%% mathabx.sty (font) 
-\DeclareFontFamily{U}{matha}{\hyphenchar\font45}
-\DeclareFontShape{U}{matha}{m}{n}{
-      <5> <6> <7> <8> <9> <10> gen * matha
-      <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
-      }{}
-\DeclareSymbolFont{matha}{U}{matha}{m}{n}
+% %%%% mathabx.sty (font) 
+% \DeclareFontFamily{U}{matha}{\hyphenchar\font45}
+% \DeclareFontShape{U}{matha}{m}{n}{
+%       <5> <6> <7> <8> <9> <10> gen * matha
+%       <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
+%       }{}
+% \DeclareSymbolFont{matha}{U}{matha}{m}{n}
 
-\DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
-\DeclareFontShape{U}{mathb}{m}{n}{
-      <5> <6> <7> <8> <9> <10> gen * mathb
-      <10.95> mathb10 <12> <14.4> <17.28> <20.74> <24.88> mathb12
-      }{}
-\DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
+% \DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
+% \DeclareFontShape{U}{mathb}{m}{n}{
+%       <5> <6> <7> <8> <9> <10> gen * mathb
+%       <10.95> mathb10 <12> <14.4> <17.28> <20.74> <24.88> mathb12
+%       }{}
+% \DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
 
-\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
-\DeclareFontShape{U}{mathx}{m}{n}{
-      <5> <6> <7> <8> <9> <10>
-      <10.95> <12> <14.4> <17.28> <20.74> <24.88>
-      mathx10
-      }{}
-\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+% \DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+% \DeclareFontShape{U}{mathx}{m}{n}{
+%       <5> <6> <7> <8> <9> <10>
+%       <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+%       mathx10
+%       }{}
+% \DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
 
-%DeclareMathSymbol (from mathabx.sty)
-\DeclareMathSymbol{\bigboxslash}{\mathop}{mathx}{"FE}
-\DeclareMathSymbol{\bigboxtimes}{\mathop}{mathx}{"D2}
-%%%%
+% %DeclareMathSymbol (from mathabx.sty)
+% \DeclareMathSymbol{\bigboxslash}{\mathop}{mathx}{"FE}
+% \DeclareMathSymbol{\bigboxtimes}{\mathop}{mathx}{"D2}
+% %%%%
 
-%%%% MnSymbol.sty (font)
-\DeclareFontFamily{U}{MnSymbolC}{}
-\DeclareFontShape{U}{MnSymbolC}{m}{n}{
-  <-6> MnSymbolC5
-  <6-7> MnSymbolC6
-  <7-8> MnSymbolC7
-  <8-9> MnSymbolC8
-  <9-10> MnSymbolC9
-  <10-12> MnSymbolC10
-  <12-> MnSymbolC12}{}
-\DeclareFontShape{U}{MnSymbolC}{b}{n}{
-  <-6> MnSymbolA-Bold5
-  <6-7> MnSymbolC-Bold6
-  <7-8> MnSymbolC-Bold7
-  <8-9> MnSymbolC-Bold8
-  <9-10> MnSymbolC-Bold9
-  <10-12> MnSymbolC-Bold10
-  <12-> MnSymbolC-Bold12}{}
+% %%%% MnSymbol.sty (font)
+% \DeclareFontFamily{U}{MnSymbolC}{}
+% \DeclareFontShape{U}{MnSymbolC}{m}{n}{
+%   <-6> MnSymbolC5
+%   <6-7> MnSymbolC6
+%   <7-8> MnSymbolC7
+%   <8-9> MnSymbolC8
+%   <9-10> MnSymbolC9
+%   <10-12> MnSymbolC10
+%   <12-> MnSymbolC12}{}
+% \DeclareFontShape{U}{MnSymbolC}{b}{n}{
+%   <-6> MnSymbolA-Bold5
+%   <6-7> MnSymbolC-Bold6
+%   <7-8> MnSymbolC-Bold7
+%   <8-9> MnSymbolC-Bold8
+%   <9-10> MnSymbolC-Bold9
+%   <10-12> MnSymbolC-Bold10
+%   <12-> MnSymbolC-Bold12}{}
 
-\DeclareSymbolFont{MnSyC}{U}{MnSymbolC}{m}{n}
+% \DeclareSymbolFont{MnSyC}{U}{MnSymbolC}{m}{n}
 
-%%%% DeclareMathSymbol (from MnSymbol.sty)
+% %%%% DeclareMathSymbol (from MnSymbol.sty)
 
-\DeclareMathSymbol{\tplus}{\mathbin}{MnSyC}{43}
-\DeclareMathSymbol{\aplus}{\mathbin}{MnSyC}{190}
+% \DeclareMathSymbol{\tplus}{\mathbin}{MnSyC}{43}
+% \DeclareMathSymbol{\aplus}{\mathbin}{MnSyC}{190}
 
 %%%% renewcommand
 
@@ -2404,7 +2409,7 @@ $\opn{LMD}^{\bullet}_{A}(S;s)$ as the cohomology of $s$,
 but just
 a graded module 
 since we need to define the differentials 
-$m_1$ of 
+$\mathfrak{m}_1$ of 
 $\opn{LMD}^{\bullet}_{A}(S;s)$ as an analog of
 Floer cohomology.
 We don't have, however,
@@ -3314,22 +3319,22 @@ from the symplectic form on $\check{X}(C_{\reg})$.
 
 \begin{figure}
   \centering
-  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-    %uncomment if require: \path (0,302); %set diagram left start at 0, and has height of 302
+  % \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %   %uncomment if require: \path (0,302); %set diagram left start at 0, and has height of 302
 
-    %Shape: Ellipse [id:dp7113644287533367] 
-    \draw   (220,160.5) .. controls (220,138.13) and (230.07,120) .. (242.5,120) .. controls (254.93,120) and (265,138.13) .. (265,160.5) .. controls (265,182.87) and (254.93,201) .. (242.5,201) .. controls (230.07,201) and (220,182.87) .. (220,160.5) -- cycle ;
-    %Shape: Ellipse [id:dp2574876106229609] 
-    \draw   (385,160.5) .. controls (385,138.13) and (395.07,120) .. (407.5,120) .. controls (419.93,120) and (430,138.13) .. (430,160.5) .. controls (430,182.87) and (419.93,201) .. (407.5,201) .. controls (395.07,201) and (385,182.87) .. (385,160.5) -- cycle ;
-    %Straight Lines [id:da9747654267031158] 
-    \draw    (242.5,120) -- (407.5,120) ;
-    %Straight Lines [id:da6388065944921051] 
-    \draw    (242.5,201) -- (407.5,201) ;
-    %Straight Lines [id:da44727041223554886] 
-    \draw  [dash pattern={on 15pt off 1.5pt}]  (220,160.5) -- (385,160.5) ;
-    %Curve Lines [id:da44274218397801035] 
-    \draw    (220,160.5) .. controls (263,97.5) and (348,224.5) .. (385,160.5) ;
-  \end{tikzpicture}
+  %   %Shape: Ellipse [id:dp7113644287533367] 
+  %   \draw   (220,160.5) .. controls (220,138.13) and (230.07,120) .. (242.5,120) .. controls (254.93,120) and (265,138.13) .. (265,160.5) .. controls (265,182.87) and (254.93,201) .. (242.5,201) .. controls (230.07,201) and (220,182.87) .. (220,160.5) -- cycle ;
+  %   %Shape: Ellipse [id:dp2574876106229609] 
+  %   \draw   (385,160.5) .. controls (385,138.13) and (395.07,120) .. (407.5,120) .. controls (419.93,120) and (430,138.13) .. (430,160.5) .. controls (430,182.87) and (419.93,201) .. (407.5,201) .. controls (395.07,201) and (385,182.87) .. (385,160.5) -- cycle ;
+  %   %Straight Lines [id:da9747654267031158] 
+  %   \draw    (242.5,120) -- (407.5,120) ;
+  %   %Straight Lines [id:da6388065944921051] 
+  %   \draw    (242.5,201) -- (407.5,201) ;
+  %   %Straight Lines [id:da44727041223554886] 
+  %   \draw  [dash pattern={on 15pt off 1.5pt}]  (220,160.5) -- (385,160.5) ;
+  %   %Curve Lines [id:da44274218397801035] 
+  %   \draw    (220,160.5) .. controls (263,97.5) and (348,224.5) .. (385,160.5) ;
+  % \end{tikzpicture}
 
 \caption{A continuous section $s\colon [0,1]\to [0,1]\times \mathbb{R}/\mathbb{Z}$}
 \end{figure}
@@ -3798,7 +3803,7 @@ the both are different each other if not.
 In particular, the graded modules associated with 
 an intersection point $p\in s_0\cap s$ may not 
 be a shift of $1$-dimensional vector space.
-\item We don't know the differential $m_1$ 
+\item We don't know the differential $\mathfrak{m}_1$ 
 for $\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
 (C;s)$ in general.
 \end{enumerate}
@@ -4276,9 +4281,9 @@ and \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}.}:
 \begin{equation} \label{equation-smooth-cartier-diagram}
   \begin{tikzcd}
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
-    & \mb{R}_{X} \arrow[r,equal] \arrow[d]   & \mb{R}_{X} \arrow[d]\\
+    & \mb{R}_{X} \arrow[r] \arrow[d]   & \mb{R}_{X} \arrow[d]\\
 0\arrow[r] & \mathcal{O}_X^{\times} \arrow[r] \arrow[d] &
-\mcal{A}^{0,0}_X \arrow[r] \arrow[d] & \mcal{A}^{0,0}_X /\mcal{O}_{X}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
+\mcal{A}^{0,0}_X \arrow[r] \arrow[d] & \mcal{A}^{0,0}_X /\mcal{O}_{X}^{\times}  \arrow[r] \arrow[d] & 0 \\
     0 \arrow[r] & 
 \tform_{\mathbb{Z},X}^{1} \arrow[r] \arrow[d] & 
 \mcal{Z}^{1}_{X} \arrow[r] \arrow[d]  & \mcal{Z}^{1}_{X}/
@@ -4652,8 +4657,8 @@ Thus, the commutative diagram \eqref{equation-smooth-cartier-diagram} is written
 \begin{equation} \label{equation-cartier-lagrangian}
   \begin{tikzcd}
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
-    & \mb{R}_{B} \arrow[r,equal] \arrow[d]                & \mb{R}_{B} \arrow[d]           &                      &   \\
-    0 \arrow[r] & \mathcal{O}_{B}^{\times} \arrow[r] \arrow[d]         & \mathcal{C}^{\infty}_{B} \arrow[r] \arrow[d] & \mathcal{C}^{\infty}_{B}/\mathcal{O}_{B}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
+    & \mb{R}_{B} \arrow[r] \arrow[d]                & \mb{R}_{B} \arrow[d]           &                      &   \\
+    0 \arrow[r] & \mathcal{O}_{B}^{\times} \arrow[r] \arrow[d]         & \mathcal{C}^{\infty}_{B} \arrow[r] \arrow[d] & \mathcal{C}^{\infty}_{B}/\mathcal{O}_{B}^{\times}  \arrow[r] \arrow[d] & 0 \\
     0 \arrow[r] & \mcal{T}_{\Z,B}^{\vee} \arrow[r] \arrow[d] & \opn{Lag}(T^{*}B) \arrow[r] \arrow[d]  & \opn{Lag}(\check{X}(B)) \arrow[r]   & 0 \\
     & 0 & 0 &  &
   \end{tikzcd}
