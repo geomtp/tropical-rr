@@ -84,6 +84,8 @@ bottom=1.1in]{geometry}
 \newcommand{\beforesection}{\vspace{-15pt}}
 \newcommand{\aftersection}{\vspace{-8pt}}
 
+\DeclareMathOperator{\tform}{\Omega}
+
 \title{論文内容の要旨
 }
 %\author[Y. Tsutsui]{Yuki Tsutsui}
@@ -132,11 +134,10 @@ bottom=1.1in]{geometry}
 \noindent
 論文題目:
 
-Graded modules associated with line bundles on 
-tropical curves and integral Hessian manifolds
+Graded modules associated 
+with permissible $C^{\infty}$-divisors on tropical manifolds
 
-(トロピカル曲線と整Hesse多様体上の直線束に付随した
-次数付き加群)
+(トロピカル多様体上の可容$C^{\infty}$因子に付随した次数付き加群)
 }
 
 \vspace{5pt}
@@ -149,12 +150,13 @@ tropical curves and integral Hessian manifolds
 \vspace{10pt}
 
 \setlength{\baselineskip}{4pt}
-\setlength{\parskip}{2pt}
+\setlength{\parskip}{3pt}
 
-本論文の目的は境界のないトロピカル多様体上の直線束を表現する
-良い条件をもつ$C^{\infty}$級Cartierデータに対して次数つき加群を
-定義すること
-と(2)その定式化から自然と提起される Riemann--Roch 型の定理の
+本論文の目的は
+(1)コンパクトトロピカル多様体上の直線束を表現する
+可容$C^{\infty}$因子に対して次数付き加群を
+定義することと
+(2)その定式化から自然と提起される Riemann--Roch 型の定理の
 新たな類似をトロピカル曲線と Hesse 計量をもつ整アフィン多様体に対して
 証明することである。なおこの類似は Gathmann--Kerber
 によるトロピカル Riemann--Roch の定理とは異なる。
@@ -174,7 +176,7 @@ gross2019sheaftheoretic}。
 そのような空間をトロピカル多様体と呼ぶ。
 一次元トロピカル多様体をトロピカル曲線と呼び、
 有限距離グラフは標準的なトロピカル曲線の構造を持つ。
-トロピカル多様体であり境界なし微分多様体の構造を自然にもつ空間を
+トロピカル多様体であり、境界なし微分多様体の構造を自然にもつ空間を
 整アフィン多様体と呼ぶ。
 Hesse 計量は整アフィン多様体における
 K\"ahler 計量の類似である。
@@ -357,14 +359,14 @@ $\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$を
 上の事実を踏まえ、次の予想を提示する。
 
 \begin{conjecture} \label{conjecture-mirror-tropical-rr}
-任意のコンパクトかつboundarylessなトロピカル多様体$S$に対して、
-トロピカルコホモロジー群 $H^{\bullet,*}(S;\mathbb{Z})$
+任意のコンパクトなトロピカル多様体$S$に対して、
+トロピカルコホモロジー群 $H^{\bullet,\bullet}(S;\mathbb{Z})$
 の元$\opn{td}(S)$が存在して、
 $S$上の任意の
 トロピカル直線束
 $\mathcal{L}$と、
 $\mathcal{L}$を表現する任意の
-$C^{\infty}$ Cartier データ $s$ で、
+$C^{\infty}$-因子 $s$ で、
 次節で述べる\cref{condition-good}を満たすものに対し、
 次の等式が成り立つ:
 \begin{align}
@@ -372,7 +374,8 @@ $C^{\infty}$ Cartier データ $s$ で、
 \int_{S}\opn{ch}(\mathcal{L})\opn{td}(S).
 \end{align}
 ここで、$\int_S$ はトレース写像であり、
-$\mathrm{ch}(\mathcal{L})$ は$\mathcal{L}$ のChern指標である。
+$\mathrm{ch}(\mathcal{L})$ は$\mathcal{L}$の
+Chern指標である。
 \end{conjecture}
 
 $\opn{LMD}^{\bullet}(S;s)$ は次節で述べるが、
@@ -424,11 +427,13 @@ Cartierデータ $s$
 
 \aftersection
 
-この節では、
-\cref{condition-good} (i) を満たしている
-有理多面空間 $S$ とその上の$C^{\infty}$級Cartierデータ
+この節では、$S$ の座標系がすべて $\mathbb{R}^{n}$ 
+の多面集合の開集合と
+
+して取れるような
+有理多面空間 $S$ とその上の$C^{\infty}$-因子
 $s\in H^{0}(S;\mathcal{A}_{S}^{0,0}/\mathcal{O}^{\times}_S)$
-に対する\cref{condition-good}と 
+に対する可容条件(\cref{condition-good})と 
 $\opn{LMD}^{\bullet}(S;s)$ について説明する。
 ここで $\mathcal{A}^{0,0}_S$ は $S$ 上の $(0,0)$-superform
 のなす層のことである\cite{MR3903579}。まず、$s$は局所的には、
@@ -457,7 +462,7 @@ $f\colon U \to \mathbb{R}$ が $x$ にて permissible
 とは、次の条件を満たすことである。
 \begin{align}
 df(x)\notin\opn{span}_{\mathbb{R}}(\opn{SS}_x(S))+
-(\mathcal{F}_{\mathbb{Z},S}^{1})_x 
+(\tform_{\mathbb{Z},S}^{1})_x 
 \setminus (\mathcal{F}_{\mathbb{Z},S}^{1})_x
 \end{align}
 
@@ -496,8 +501,7 @@ $s|_{U_p}$ が $f_p$ の定義する$C^{\infty}$級Cartierデータ
 $s$ のしかるべき条件とは、本論文では次の条件である。
 
 \begin{condition} \label{condition-good}
-(i) $S$ の座標系がすべて $\mathbb{R}^{n}$ 
-の凸多面体の開集合として取れるトロピカル多様体である。
+(i) 
 (ii) $s$ が permissible である。
 (iii) $\sharp (s_0\cap s)<\infty$。
 (iv) $\opn{LMD}^{\bullet}(S;s)$ が有限生成。

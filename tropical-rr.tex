@@ -5,14 +5,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx,color}%for images
 \usepackage{bm}%fonts
-\usepackage{tikz-cd}%
-\usetikzlibrary{cd}
-\usetikzlibrary{calc}
-\usepackage{amsmath,amsthm,amstext,amsfonts,amsbsy}% ほぼ必須
+\usepackage{amsmath,amsthm,amstext,amsfonts,amsbsy}%
 \usepackage{amssymb}
-\usepackage{latexsym}% ほぼ必須
-\usepackage{makecell}%表のセル内で改行するためのパッケージ
-\usepackage{algpseudocode,algorithm}%疑似コード用
+\usepackage{latexsym}%
+\usepackage{algpseudocode,algorithm}%
 \usepackage{todonotes}%comments
 \usepackage[margin=0.8in]{geometry}
 \usepackage{layout}
@@ -31,15 +27,13 @@
 }
 %\usepackage{pxjahyper}%for hyperref in Japanese
 \usepackage{bookmark}
-\usepackage{dynkin-diagrams}
 
-%%%% imakeidx
-
-%%%%
 \usepackage{pgf,tikz,pgfplots}
 \pgfplotsset{compat=1.15}
 \usetikzlibrary{arrows}
-
+\usepackage{tikz-cd}%
+\usetikzlibrary{cd}
+\usetikzlibrary{calc}
 
 
 %%%%
@@ -56,30 +50,28 @@
 \newtheorem*{example*}{Example}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem*{proposition*}{Proposition}
-\newtheorem{Note}[theorem]{Note}
-\newtheorem*{Note*}{Note}
-\newtheorem{Ntc}[theorem]{Notice}
-\newtheorem*{Ntc*}{Notice}
+\newtheorem{note}[theorem]{Note}
+\newtheorem*{note*}{Note}
+\newtheorem{notice}[theorem]{Notice}
+\newtheorem*{notice*}{Notice}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem*{lemma*}{Lemma}
-\newtheorem{Fact}[theorem]{Fact}
-\newtheorem*{Fact*}{Fact}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
 \newtheorem{question}[theorem]{Question}
 \newtheorem*{question*}{Question}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem*{conjecture*}{Conjecture}
-\newtheorem{Rule}[theorem]{Rule}
-\newtheorem*{Rule*}{Rule}
 \newtheorem{notation}[theorem]{Notation}
-\newtheorem*{Not*}{Notation}
+\newtheorem*{notation*}{Notation}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem*{corollary*}{Corollary}
 \newtheorem{remark}[theorem]{Remark}
-\newtheorem*{Rmk*}{Remark}
+\newtheorem*{remark*}{Remark}
 \newtheorem{condition}[theorem]{Condition}
 \newtheorem*{condition*}{Condition}
-\newtheorem{Conv}[theorem]{Convention}
-\newtheorem*{Conv*}{Convention}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem*{convention*}{Convention}
 \newtheorem{observation}[theorem]{Observation}
 \newtheorem*{observation*}{Observation}
 %%%% newcommand
@@ -189,8 +181,6 @@
 
 %%%% footnote
 
-\newcommand{\cfootnote}[1]{\footnote{#1}}
-
 \newcommand{\myfootnote}[1]{\hspace{-5pt}\footnote{#1}}
 
 \newcommand{\TB}{\mcal{T}_{B}}
@@ -200,14 +190,15 @@
 \mathrel{\raisebox{0.13em}{${\sim}$}}
 \kern -0.75em \mathrel{\raisebox{-0.11em}{${\scriptstyle \to}$}}  
 }
-%%%% from 
+%%%%  
 
-%%%% from  https://tex.stackexchange.com/questions/183702/formatting-back-references-in-bibliography-bibtex
-\renewcommand*{\backrefalt}[4]{
-    \ifcase #1 [Not cited.]%
-        \or        [Cited on p.#2.]%
-        \else      [Cited on p.#2.]%
-    \fi}
+%%%% 
+
+\renewcommand*{\backrefalt}[4]{%
+\ifcase #1 %
+\or        [Cited on p.#2.]%
+\else      [Cited on pp.#2.]%
+\fi}
 
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\CDiv}{Div^{\infty}}
@@ -241,8 +232,7 @@ We use ideas
 from the Strominger--Yau--Zaslow conjecture 
 and microlocal sheaf theory 
 to define graded modules
-associated with $C^{\infty}$-divisors
-satisfying the appropriate conditions 
+associated with permissible $C^{\infty}$-divisors
 on compact tropical manifolds.
 A $C^{\infty}$-divisor is
 a generalization of
@@ -584,9 +574,9 @@ we introduce
 a graded $\Z$-module 
 $\opn{LMD}^{\bullet}(S;s)$
 (\cref{definition-local-morse-data-divisor})
-associated with a
-$C^\infty$-divisor $s$ satisfying 
-\cref{condition-good-divisor}
+associated with a permissible
+$C^\infty$-divisor $s$ 
+(\cref{condition-good-divisor})
 on a compact
 tropical manifold $S$.
 If $S$ is an integral affine manifold 
@@ -605,8 +595,7 @@ $\opn{CF}^{\bullet}(\mathscr{L}_{s_0},\mathscr{L}_{s})$.
 \label{conjecture-enough-prepermissible}
 For any line bundle $\mathcal{L}$ on a compact 
 tropical manifold $S$, there exists 
-a $C^{\infty}$-divisor $s$ satisfying 
-\cref{condition-good-divisor} and 
+a permissible $C^{\infty}$-divisor $s$ such that
 $[s]=\mathcal{L}$. 
 \end{conjecture}
 
@@ -858,11 +847,10 @@ $\alpha=0,1,\ldots,\infty,\omega$.
 \label{section-local-morse-data}
 In this section, we recall some elementary results
 of sheaf theory
-and define $C^{\infty}$-divsors on rational
+and define permissible $C^{\infty}$-divsors on rational
 polyhedral spaces and
 the (cohomological) local Morse data 
-for $C^{\infty}$-divisors satisfying
-\cref{condition-good-divisor}.
+for permissible $C^{\infty}$-divisors.
 
 
 
@@ -1009,7 +997,7 @@ R\Gamma_{Z'}(\mcal{F}^{\bullet})[1].
 
 \begin{example}
 \label{example-local-cohomology}
-Let $Z$ be an open subset of $X$, 
+Let $Z$ be an open subset of a Hausdorff space $X$, 
 $\mathcal{F}^{\bullet}=A_{X}$ 
 and $U=Z\setminus Z'$.
 By taking the global 
@@ -1094,15 +1082,15 @@ in \cref{prop-local-morse-data}.
 
 \subsection{Cohomological local Morse data and index}
 
-The following stalk complex and its cohomology is 
-the most important notion
+The following stalk complex and its cohomology are 
+the most important notions
 for this paper, which is naturally appeared in
 microlocal sheaf theory \cite{MR1299726}, and
 the complex is called ``local Morse datum'' in \cite[p.271]{MR2031639} 
 or microlocal stalk in \cite{MR4132582}.
 (The double quotation mark here is taken from 
 \cite[p.271]{MR2031639}.)
-\begin{definition}[{Cohomological local Morse datum}]
+\begin{definition}[{Cohomological local Morse data}]
 \label{definition-local-morse-data}
 Let $f\colon X\to {\mathbb{R}}$ be a continuous map on a 
 topological space $X$ and $x\in X$. Fix 
@@ -1263,8 +1251,8 @@ f_{n,m}\colon \mathbb{R}^{n}\times \mathbb{R}^{m}\to \mathbb{R};
 -\|y\|_{\mathbb{R}^{m}}^2.
 \end{align}
 In order to calculate 
-$\opn{LMD}^{\bullet}(A_{\mathbb{R}^{n+m}},f_{n,m},0)$, we 
-see
+$\opn{LMD}^{\bullet}(A_{\mathbb{R}^{n+m}},f_{n,m},0)$,
+for any $\varepsilon\in \mathbb{R}_{}>0$ we see
 \begin{align}
 \partial (\bar{B}^{n}_{\varepsilon}(0)
 \times \bar{B}^{m}_{\varepsilon}(0))=
@@ -1397,7 +1385,7 @@ is the cotangent bundle.
 From the definition of the micro-support of sheaves, 
 $\opn{SS}(\mcal{F}|_{U})_x=\opn{SS}(\mcal{F})_x$
 for any open neighborhood $U$ of $x$.
-The following condition and proposition is also important.
+The following condition and proposition are also important.
 \begin{condition}[{\cite[Proposition 5.4.20]{MR1299726}}]
 \label{condition-global-morse}
 Let $X$ be a smooth manifold, $A$ a PID, 
@@ -1413,7 +1401,7 @@ is compact,
 $df\colon X\to T^{*}X$,
 \item the graded module 
 $\opn{LMD}^{\bullet}(\mathcal{F}^{\bullet},f)$ 
-is bounded and finitely generated.
+is finitely generated (as an $A$-module).
 
 
 
@@ -1482,8 +1470,8 @@ The cohomology
 $H^{\bullet}(M;\iota_*k_S)$
  should be considered as a
 certain analog of 
-$H^{\bullet}(X;\iota_*\mcal{O}_Z)$ for closed embedding 
-of a scheme.
+$\chi(H^{\bullet}(X;\iota_*\mcal{O}_Z))$ for the closed embedding
+$\iota\colon Z\to X$ of a scheme.
 \end{example}
 
 \begin{example}[{cf. \cite[Exercise V.12]{MR1299726}}]
@@ -1525,9 +1513,7 @@ then we have
 \sum_{x\in \opn{Crit}(f_1)\setminus \{x_0\}}
 \chi(\opn{LMD}^{\bullet}(A_M,f_1,x))
 \end{align}
-by \cite[Proposition 5.4.20]{MR1299726}
-when $\opn{LMD}^{\bullet}(A_M,f_1,x_0)$ is bounded 
-and finitely generated.
+by \cite[Proposition 5.4.20]{MR1299726}.
 From Poincar\'e--Hopf theorem and 
 \cref{example-morse-index}, 
 \begin{align} \label{equation-poincare-hopf}
@@ -1578,16 +1564,16 @@ of $M$ and the set
 $\{\{f=f(x)\}\setminus \{x\},\{x\} \}$ induces 
 a stratification satisfying Whitney's condition B
 \cite[Part I. Lemma 2.5.1]{MR932724}.
-For instance, every isolated critical point
-of real analytic function is nondepraved
+For instance, every real analytic function is nondepraved 
+at any isolated critical point
 ~\cite[Part I.2.4]{MR932724}.
 
 For a sufficiently small $\varepsilon\in \mathbb{R}_{> 0}$, 
-we can assume 
-$S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\}$ 
+we can assume that
+$S_{\varepsilon}^{n-1}(x)$ and $\{f=f(x)\}$ 
 intersect transversely \cite[Part I. Lemma 3.5.1]{MR932724},
 and thus $S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\}$
-is also a submanifold of $M$ and compact.
+is also a closed submanifold of $M$ and compact.
 A relative version of Ehresmann's lemma for 
 $\|\cdot\|_{\mathbb{R}^{n}}^2$ induces the 
 following homeomorphism of pairs of smooth manifold 
@@ -1626,10 +1612,11 @@ f|_{\bar{B}_{\varepsilon}(x)},x)\simeq
 \end{align}
 
 By the Alexander duality, 
-$H^{\bullet}(S_{\varepsilon}^{n-1}(x)\setminus \{f=f(x)\};A)$ 
-is bounded and finitely generated, so 
-is $\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(x)},
-f|_{\bar{B}_{\varepsilon}(x)},x)$.
+$\tilde{H}^{\bullet}(S_{\varepsilon}^{n-1}(x)\setminus \{f=f(x)\};A)$ 
+is finitely generated.
+Therefore, $\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(x)},
+f|_{\bar{B}_{\varepsilon}(x)},x)$ is
+also finitely generated.
 
 We also add an explanation of real Milnor fibers from
 \cite[\textsection 3.2]{MR3779558}. 
@@ -1649,12 +1636,12 @@ By Khimshiashvili [Him\v{s}ia\v{s}vili] formula \cite{MR0458467}, we have
 \end{example}
 
 \begin{remark}[{A vanishing properties
-for some cone}]
+for some polyhedral cone}]
 Fix $X\deq \mathbb{R}^{n}$.
 Let $f\colon X\to {\mathbb{R}}$ be 
 a convex $C^{1}$-function $X$ with the minimum point $x$
 and $S$ a polyhedral cone in $X$, i.e.,
-a polyhedral set such that 
+a polyhedral subset such that 
 $rS=S$ for all $r\in \mathbb{R}_{> 0}$.
 One of trivial but remarkable point is that
 \begin{align}
@@ -1844,7 +1831,8 @@ $C^{\infty}$-divisors like
 \cite[Definition 4.0.12]{MR2810322}.
 \begin{definition}[{$C^{\infty}$-Cartier local data}]
 \label{definition-Cartier-local-data}
-Let $s\in \CDiv(S)$, 
+Let $s$ be a $C^{\infty}$-divisor
+on a (boundaryless) rational polyhedral space $S$, 
 $\{U_i\}_{i\in I}$ an open cover of $S$ and 
 $f_i\colon U_i \to \mathbb{R}$ a $(0,0)$-superform
 on $U_i$. The set 
@@ -1854,32 +1842,33 @@ $s|_{U_i}=(f_i)^{\mathrm{sm}}$ for all
 $i\in I$. 
 \end{definition}
 
-Local data for a $C^{\infty}$-divisor $s$ is also useful for
+Local data for a $C^{\infty}$-divisor $s$ are also useful for
 calculating the divisor class $[s]\in H^{1}(S;\mathcal{O}^{\times}_S)$
 by using the \v{C}ech cohomology 
 $\check{H}^{1}(S;\mathcal{O}^{\times}_S)$
 (see e.g. \cite[Remark 7.21]{MR3560225}).
 
 In the next subsection, 
-we will define an analog of Floer complex of 
+we will define an analog of Floer complexes of 
 Lagrangian submanifolds
 (without differential) for $C^{\infty}$-divisors
 on boundaryless rational polyhedral spaces
-satisfying \cref{condition-good-divisor}.
+satisfying the permissibility 
+condition (\cref{condition-good-divisor}).
 
 
 
 
 
-\subsection{Permissibility conditions}
+\subsection{Permissibility condition}
 
 In this subsection, we define 
 the \emph{permissibility condition}
-\cref{condition-good-divisor} for
+(\cref{condition-good-divisor}) for
 $C^{\infty}$-divisors on
 boundaryless rational polyhedral spaces.
 We will define an analog of a Morse complex
-without differential for prepermissible 
+without differential for permissible 
 $C^{\infty}$-divisors later.
 In order to define the prepermissibility condition,
 we recall some necessary sheaves
@@ -2027,11 +2016,11 @@ such that $f(0)=0$ $df(0)=v$ and
 (R_{\{f\geq 0\}}(A_{T_xS})_{\opn{LC}_xS})_0
 \not \simeq 0.
 \end{align}
-From now on, we assume $\opn{LC}_x S=\mathbb{R}^{n}$.
+From now on, we assume $T_x S=\mathbb{R}^{n}$.
 
 By \cref{prop-local-morse-data}, 
 we only need to find a $C^{\infty}$-function 
-$f\colon \opn{LC}_x S \to \mathbb{R}$ such that 
+$f\colon T_x S \to \mathbb{R}$ such that 
 \begin{align}
 \label{equation-non-acyclic}
 1-\chi_{\mathrm{top}}(\{x\in \opn{LC}_x S\cap B_{\varepsilon}^{n}(0)
@@ -2044,6 +2033,7 @@ $\rho_{\mathbb{R}_{\geq 0}}\colon
 \mathbb{R}\to \mathbb{R}$ be the following
 well-known $C^{\infty}$-function:
 \begin{align}
+\label{equation-elementary-bump}
 \rho_{\mathbb{R}_{\geq 0}}(x)=
 \begin{cases}
 e^{-1/x},\quad  (x> 0) \\
@@ -2056,6 +2046,7 @@ be an affine map. Then, the pullback
 $l^{*}\rho_{\mathbb{R}_{\geq 0}}$ is a 
 $C^{\infty}$-function such that 
 \begin{align}
+\label{equation-pullback-support}
 \{l^{*}\rho_{\mathbb{R}_{\geq 0}}\ne 0\}
 =\{l^{*}\rho_{\mathbb{R}_{\geq 0}}> 0\}
 =\{l>0\}.
@@ -2097,7 +2088,7 @@ Therefore, we have
 -\chi_{\mathrm{top}}(\{z\in \opn{LC}_x S \cap B^{n}_{\varepsilon}(0)\mid v(z)<0\})=1.
 \end{align}
 for any sufficiently small $\varepsilon>0$.
-Therefore, $v+\rho_{P}$ or $v$ satisfies 
+Therefore, $v-\rho_{P}$ or $v$ satisfies 
 \eqref{equation-non-acyclic}.
 \end{proof}
 
@@ -2124,7 +2115,7 @@ We expect the middle and right vector space in
 important cases.
 \end{remark}
 
-From now on, we define the prepermissibility condition 
+From now on, we define the prepermissibility conditions 
 for $C^{\infty}$-divisors on boundaryless
 rational polyhedral spaces.
 This condition is one of necessary conditions
@@ -2237,6 +2228,7 @@ for $S$ (as a set). Instead of this fibration,
 we define (the underlying set of) 
 another torus fibration as follows. 
 \begin{definition}[{Stratified torus fibration}]
+\label{definition-stratified-torus-fibration}
 Let $S$ be a compact rational polyhedral space.
 Let $\check{X}(S)_x$ be 
 the real torus defined as follows:
@@ -2336,7 +2328,7 @@ From the prepermissibility condition and
 Let $(s',s)$ be a prepermissible pair of
 $C^{\infty}$-divisors
 on a (boundaryless) rational polyhedral space, 
-$\{(U_i,f_i)\}_{i\in I}$ the local data 
+$\{(U_i,f_i)\}_{i\in I}$ a local data 
 for $s-s'$ and $L_s\deq \opn{Im}(\check{s})$.
 Then,
 \begin{align}
@@ -2347,7 +2339,7 @@ Then,
 
 
  
-\subsection{Cohomological local Morse data for prepermissible divisors}
+\subsection{Cohomological local Morse data for permissible divisors}
 
 In this subsection, we
 define the graded module of a given prepermissible pair 
@@ -2363,7 +2355,7 @@ the prepermissible pair $(s',s)$.
 Fix a (boundaryless) 
 rational polyhedral space $S$.
 Let $s$ be a prepermissible $C^{\infty}$-divisor 
-on $S$ such that $\sharp (s\cap s_0)<\infty$. 
+on $S$ such that $\sharp (s_0\cap s)<\infty$. 
 An \emph{intersection data} for $s$ is the set 
 $\{(U_p,f_p)\}_{p\in s\cap s_0}$ of pairs of open subsets
 $U_i$ of $S$ and (0,0)-superforms
@@ -2377,7 +2369,8 @@ for all $p\in s_0\cap s$,
 \item $f_p(p)=0$ for all $p\in s_0\cap s$.
 \end{enumerate}
 An intersection data for a prepermissible pair 
-$(s',s)$ of $C^{\infty}$-divisors is 
+$(s',s)$ of $C^{\infty}$-divisors such that 
+$\sharp (s'\cap s)<\infty$ is 
 an intersection data for $s-s'$.
 \end{definition}
 
@@ -2411,7 +2404,7 @@ $\opn{LMD}^{\bullet}_{A}(S;s)$ as the cohomology of $s$,
 but just
 a graded module 
 since we need to define the differentials 
-$\mathfrak{m}_1$ of 
+$m_1$ of 
 $\opn{LMD}^{\bullet}_{A}(S;s)$ as an analog of
 Floer cohomology.
 We don't have, however,
@@ -2433,54 +2426,75 @@ $\opn{LMD}^{\bullet}_{A}(S;s)$.
 
 \begin{example}
 \label{example-tropical-kodaira-vanishing}
-Let $S$ be a boundaryless rational polyhedral space, 
-$s$ a $C^{\infty}$-divisor on $S$ satisfying 
-\cref{condition-good-divisor}
-and $\{(f_i,U_i)\}_{i\in I}$ the local data of $s$. 
-We say $s$ is 
-\emph{Bohr--Sommerfeld type},
-\emph{strongly-positive}
-or \emph{Hessian type} if every
-$f_i$ is locally a restriction of a strictly convex 
-function on an open neighborhood of $T_0(\opn{LC}_xS)$ 
-for any $i\in I$. 
-This is a certain analog of positive form on
-complex manifolds. In this case, 
+Let $S$ be a boundaryless compact tropical manifold 
+of pure dimension $n$, 
+$s$ a prepermissible $C^{\infty}$-divisor on $S$ satisfying 
+$\sharp (s_0\cap s)<\infty$,
+and $\{(f_p,U_p)\}_{p\in s_0\cap s}$
+an intersection data for $s$. 
+If $\{f_p<f_p(p)\}=U_p\setminus\{f_p(p)\}$
+for all $p\in s_0\cap s$, then
 \begin{align}
+\label{equation-kodaira-vanishing}
 \opn{LMD}^{\bullet}_{A}(S;s)\simeq 
-\bigoplus_{x\in s_0 \cap s} A[0], \quad
+\bigoplus_{p\in s_0 \cap s} A[0], \quad
 \opn{LMD}^{\bullet}_{A}(S;-s)\simeq 
-\bigoplus_{x\in s_0\cap -s} 
-H^{n}(S,S\setminus\{x\};A)[-n].
+\bigoplus_{p\in s_0\cap -s} 
+H^{n-1}(S\setminus\{p\};A)[-n].
 \end{align}
 In this case, the `cohomology' of 
 $\opn{LMD}^{\bullet}_{A}(S;s)$ is independent of the choice of 
 differential of $\opn{LMD}^{\bullet}_{A}(S;s)$.
-This is a tropical analog of Kodaira's vanishing theorem
-for a (multiple of) positive line bundle
+
+Such a $C^{\infty}$-divisor naturally appears when
+we consider an analog of positive forms
+on complex manifolds. A \emph{Hessian form} on
+an (integral) affine manifold is a certain analog
+of a K\"ahler form and has been studied
+in Hessian geometry (see 
+\cref{definition-hessian-metric,example-hessian-metric-from}).
+Lagerberg \cite{MR2892935} studied a tropical analog of
+positive $(p,p)$-forms and currents in $\mathbb{C}^{n}$.
+
+As like the above previous research, we can also define
+the positivity condition for $C^{\infty}$-divisors
+tentatively. A $C^{\infty}$-divisor $s$ on
+a boundaryless rational polyhedral space $S$ is 
+\emph{positive} if there exists
+a coordinate system 
+$\{(U_i,\psi_i\colon U_i\to \Omega_i 
+(\subset \mathbb{R}^{n_i}))\}_{i\in I}$ and 
+a family $\{f_i\}_{i\in I}$
+of strongly convex $C^{\infty}$-functions on a convex
+open subset of $\mathbb{R}^{n_i}$ such that 
+$\{(U_i,\psi_i^{*}f_i)\}_{i\in I}$ is a local data
+for $s$.
+
+If $s$ is a positive and prepermissible
+$C^{\infty}$-divisor on a rational polyhedral space $S$
+such that $s_0\cap s$ is finite, then 
+$s$ satisfies \eqref{equation-kodaira-vanishing}.
+This is a tropical analog of the Kodaira vanishing theorem
+for a (positive power of) positive line bundle
 $\mathcal{L}$ on a complex manifold $M$: 
 \begin{align}
 H^{\bullet}(M;\mcal{L}^{-1})\simeq H^{n}(M;\mcal{L}^{-1})[-n].
 \end{align}
-The name of Bohr--Sommerfeld type comes from 
-the set $s_0\cap s$ can be considered as the set of 
-Bohr--Sommerfeld point if $S$ is a strictly integral affine manifold 
-with a Hessian form by semi-flat SYZ mirror pair
+Positive $C^{\infty}$-divisors on integral affine 
+manifolds are also related
+with Bohr-Sommerfeld points on integral affine manifolds
 (see \cref{sec: BSRR}).
-The name of strongly-positive follows 
-from \cite{MR2892935}.
 \end{example}
 
-The following is the `good' conditions for 
-a given $C^{\infty}$-divisor 
-$s$ to consider Riemann--Roch type theorems.
+The following is the \emph{permissibility condition} for 
+$C^{\infty}$-divisors.
 
-\begin{condition}
+\begin{condition}[{Permissibility condition}]
 \label{condition-good-divisor}
 $s$ is a prepermissible $C^{\infty}$-divisor on 
 a (boundaryless) rational polyhedral space 
 $S$ such that $s_0\cap s$ is finite and 
-$\opn{LMD}^{\bullet}(S;s)$ is bounded and 
+$\opn{LMD}^{\bullet}(S;s)$ is 
 finitely generated.
 \end{condition}
 
@@ -2495,13 +2509,12 @@ the definition of tropical \'etale covering
 map in this paper.
 \begin{proposition}
 \label{proposition-euler-number-etale}
-Let $S$ be a compact boundaryless rational polyhedral 
-space and $s$ be a prepermissible 
-$C^{\infty}$-divisor
-satisfying \cref{condition-good-divisor}.
+Let $S$ be a compact (boundaryless) rational polyhedral 
+space and $s$ be a permissible 
+$C^{\infty}$-divisor.
 For a tropical \'etale covering 
-map $q \colon S' \to S$ of 
-(topological) degree 
+map $q \colon S' \to S$ having
+the finite topological degree 
 $\opn{deg}_{\opn{top}}(q)$,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(S';q^{*}(s)))=
@@ -2520,7 +2533,7 @@ We will use this feature for tropical curves
 \begin{remark}
 Obviously, $\opn{LMD}^{\bullet}(S;s)$ is not usually 
 finitely generated and this is not invariant 
-for linearly equivalent $C^{\infty}$-divisors
+for the divisor class $[s]$ of $s$
 if $S$ is not compact.
 This corresponds that Morse homology does not work directly
 for non-compact manifolds such 
@@ -2538,17 +2551,17 @@ for general rational polyhedral spaces}
 In this section, we will define
 $C^{\infty}$-divisors 
 for general rational polyhedral spaces 
-and finish preparations necessary to formulate
+and finish preparations which is necessary to formulate
 \cref{conjecture-tropical-MRR-preface} for any 
 compact tropical manifolds.
 We recall \cref{condition-good-divisor}
 and the definition of $(0,0)$-superforms
-on tropical affine space $\underline{\mathbb{R}}^{n}$
+on a tropical affine space $\underline{\mathbb{R}}^{n}$
 \cite[Definition 2.4]{MR3903579}.
 As explained in \cite[Example 2.6]{MR3903579},
 every $(0,0)$-superform on $\underline{\mathbb{R}}$ 
  is constant at $-\infty$.
-For instance, 
+For instance, a continuous function
 $f\colon \underline{\mathbb{R}} \to \mathbb{R}; x\mapsto 
 \opn{log}(1+e^{x})$ is not a $(0,0)$-superform
 on $\underline{\mathbb{R}}$.
@@ -2792,11 +2805,25 @@ such that every $f_i$ is prepermissible.
 \end{definition}
 
 \begin{example}
+\label{exmaple-weakly-smooth-line}
 Let $f\colon \underline{\mathbb{R}}\to \mathbb{R}$ be a 
 weakly-smooth function. The local cone 
 $\opn{LC}_{-\infty} \underline{\mathbb{R}}$ 
 at $-\infty$ is trivial, 
 and thus every $f$ is prepermissible.
+Fix a primitive data 
+$(-\infty,[-\infty,\varepsilon),\opn{id},W,g)$ for $f$
+at $-\infty$.
+By the Jacobi rule, we have
+\begin{align}
+\frac{\partial f}{\partial x}(z)=(g\circ \opn{exp}(z))^{-1} 
+\frac{\partial g}{\partial y}(\opn{exp}(z))\opn{exp}(z)
+\end{align}
+for all $z\in (-\infty,\varepsilon)$.
+We can assume $\frac{\partial g}{\partial y}$ and 
+$g$ are bounded on $(0,\opn{exp}(\varepsilon))$
+for sufficiently small $\varepsilon$.
+Therefore, $\lim_{z\to -\infty}\frac{\partial f}{\partial x}=0$.
 \end{example}
 
 As like the prepermissibility condition,
@@ -2815,18 +2842,14 @@ tropical manifolds.
 \section{Proof for compact tropical curves}
 \label{section-tropical-curve}
 In this section, we prove \cref{theorem-MRR-curve-preface}. 
-(See \cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a} 
-for the definition of tropical curves.)
-Our proof is highly effected from 
-\cite{knill2012graph,MR2676658,auroux2022lagrangian}.
-Our proof idea comes from 
-\cite{knill2012graph,MR2676658} at first.  
-The current proof is a modified version after reading 
-\cite{auroux2022lagrangian}.
-We also mainly follow the notation used in 
-\cite{auroux2022lagrangian}.
+See \cite[Definition 3.1]{mikhalkinTropicalCurvesTheir2008a} 
+for the definition of tropical curves.
+\cref{theorem-MRR-curve-preface} and
+our proof of it are highly effected from 
+\cite{MR2676658,knill2012graph,auroux2022lagrangian}.
 Some propositions which have already proved as a special case
-of the previous section will appear, but we write a short proof 
+of the previous section will appear, but we write short
+proofs of them 
 for simplicity.
 
 \subsection{Proof for \cref{theorem-MRR-curve-preface}}
@@ -2850,15 +2873,18 @@ polyhedral spaces:
 \cup {\mathbb{R}}_{\geq 0}(0,\ldots,0,1)\cup 
 {\mathbb{R}}_{\geq 0}(-1,\ldots,-1).
 \end{align}
-Every point in tropical curve has an open neighborhood 
+Every point in a tropical curve has an open neighborhood 
 which is isomorphic to an open subset of 
 $\Gamma_n$ for some $n\in \mathbb{Z}_{\geq 1}$.
-If $C$ is a compact tropical curve with 
-no $1$-valent vertex, then every point in $C$ has 
+Let $C$ be a tropical curve,
+and $C^{\circ}$ the complement
+of the set of $1$-valent vertices in $C$. 
+Then, every point in $C^{\circ}$ has 
 an open neighborhood which is isomorphic to 
 an open subset of some $\Gamma_{n}^{\circ}$.
-Besides, every compact tropical curve with 
-no $1$-valent vertex $C$ has a canonical metric structure 
+Besides, every compact tropical curve $C$ 
+has a canonical metric structure $d_{C^{\circ}}$
+on $C^{\circ}$
 associated with lattice structure of the tangent 
 vector space of $C$ 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
@@ -2885,12 +2911,14 @@ then $|\Sigma | \simeq \mathbb{R}$.
 From now on, we assume $\dim_{\mathbb{R}}\opn{lineal}(|\Sigma|,x)=0$.
 Fix a vector $v_{\sigma}$ for $\sigma\in \Sigma \setminus\{0\}$ 
 such that $\opn{span}_{\mathbb{R}}(v_{\sigma})=\sigma$.
-We can choose a basis $\{v_{\sigma_i}\}_{i=1,\ldots, n}$ 
+We can choose a basis $\{v_{\sigma_i}\}_{i=1,\ldots, n}$ of
+$\mathbb{R}^{n}$
 from $\{v_{\sigma}\}_{\sigma \in \Sigma}$,
 and a linear form
-$h=\sum_{\sigma \in \Sigma \setminus\{0\}} a_\sigma v^{*}_\sigma$
+$h=\sum_{i=1}^{n} 
+a_{\sigma_i} v^{*}_{\sigma_i}$
 such that $a_\sigma<0$ for any 
-$\sigma \in \Sigma \setminus\{0\}$.
+$i=1,\ldots,n$.
 Then, the lower set $|\Sigma|\cap \{h< 0\}$ is disconnected
 when $n\geq 2$. If $n=1$, $|\Sigma|\cap \{-h<0\}$ is 
 empty.
@@ -2899,25 +2927,28 @@ $\opn{span}_{\mathbb{R}}(\opn{SS}((\mathbb{Z}_{X})_S)_x)
 =\mathbb{R}^{n}$ where $X=\mathbb{R}^{n}$ and $S=|\Sigma|$.
 \end{proof}
 
-\cref{proposition-n-valent} and 
-\cref{proposition-1-valent} classifies 
+\cref{proposition-n-valent,proposition-1-valent}  
+classify 
 the type of intersection data of 
 $C^{\infty}$-divisors.  
 
 \begin{proposition}[{cf. \cite{knill2012graph}}]
 \label{proposition-n-valent}
-Let $s_{p,q}\colon |\Sigma|\to \mathbb{R}$ be 
+Let $|\Sigma|$ be the support of a pure $1$-dimensonal 
+finite convex polyhedral fan $\Sigma$ such that
+$|\Sigma|$ spans $\mathbb{R}^{n}$ and
+$s_{p,q}\colon |\Sigma|\to \mathbb{R}$
 a prepermissible $(0,0)$-superform on $|\Sigma|$ 
 such that $\opn{Crit}(s_{p,q})=\{x\}$ where
-$x=(0,\ldots,0)$ and
+$x=(0,\ldots,0)$. We set
 \begin{align}
-p=\sharp(\pi_0(\{s_{p,q}>0\})), \quad 
-q=\sharp(\pi_0(\{s_{p,q}<0\})).
+p\deq\sharp(\pi_0(\{s_{p,q}>0\})), \quad 
+q\deq \sharp(\pi_0(\{s_{p,q}<0\})).
 \end{align}
 
 Then, 
 \begin{align}
-\opn{ind}_v(s_{p,q})=1-q ,\quad \opn{ind}_v(-s_{p,q})=1-p.
+\opn{ind}_x(s_{p,q})=1-q ,\quad \opn{ind}_x(-s_{p,q})=1-p.
 \end{align}
 
 \end{proposition}
@@ -2928,7 +2959,7 @@ $|\Sigma|\setminus\{x\}$.
 \end{proof}
 
 \begin{example}
-When $p+q=3$, 
+When $p+q=3$, we have
 \begin{align}
 \opn{ind}_x(s_{3,0})=1, \quad 
 \opn{ind}_x(s_{2,1})=0, \quad \opn{ind}_x(s_{1,2})=-1, 
@@ -2966,91 +2997,72 @@ Then, $\{f< 0\}$ is equal to $\emptyset$ or
 $U\setminus\{-\infty\}$.
 \end{proposition}
 
-Let $C$ be a tropical curve and 
-$\mathcal{A}_C^{\opn{weak}}$ be the sheaf 
-of weakly-smooth functions on $C$. From definition,
-$\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
-and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
-Since $\mathcal{A}_C^{\opn{weak}}$ is fine, 
-the connecting homomorphism 
-$[\cdot]\colon H^{0}(C;\mathcal{A}_C^{\opn{weak}}/
-\mathcal{O}^{\times}_C)\to \opn{Pic}(C);s\mapsto [s]$ is 
-surjective.
-
-\begin{definition}
-Let $s\in \CDiv(C)$ be a $C^{\infty}$-divisor and $\{(U_i,f_i)\}_{i\in I}$ a local data
-for $s$. The data is \emph{locally contractible} if 
-every $U_i$ is isomorphic to a contractible open 
-neighborhood of $0$ in $\opn{LC}_{p}C$ where 
-$p\in U_i$.
-\end{definition}
-If a local data $\{(U_i,f_i)\}_{i\in I}$ for $s$ 
-is locally contractible,
-we can calculate the divisor class $[s]$ of $s$ easily
-by using the \v{C}ech cohomology 
-$\check{H}^{1}(C;\mathcal{O}_C^{\times})$ of 
-$\mathcal{O}_C^{\times}$:
+Let $C$ be a pure $1$-dimensional
+rational polyhedral space and 
+$C_{\reg}$ the set of generic points in $C$
+(see \cite[\textsection 4.B]{MR3894860} and
+\cite[Definition 2.7]{gross2019sheaftheoretic}).
+In the rest, we assume every $C$ satisfies
+the following condition for simplicity 
+(see also \cref{remark-classification-curve}):
+\begin{condition}
+\label{condition-simplicity-curve}
+By a \emph{$1$-dimensional rational polyhedral space},
+we mean a pure $1$-dimensional rational polyhedral
+space $C$ such that every connected component
+of $C_{\reg}$ is isomorphic to 
+an open interval of $\mathbb{R}$ or a 
+circle $\mathbb{R}/c\mathbb{Z}$ ($c\in \mathbb{R}_{>0}$) 
+with the standard strucure induced from $\mathbb{R}$. 
+In particular,
 \begin{align}
-[s]=(f_j-f_i)_{i,j\in I}.
-\end{align}
-
-\begin{proposition}
-Let $s$ be a $C^{\infty}$-divisor on a compact
-tropical curve $C$.
-Then, there exists
-a prepermissible $C^{\infty}$-divisor $s'$ which is linearly
-equivalent to $s$ and
-$s_0\cap s'$ is a finite set. 
-\end{proposition}
-\begin{proof}
-Every $C^{\infty}$-divisor $s$ on $C$ is 
-prepermissible at $1$-valent vertex on $C$. So, we
-can assume $C$ has no 1-valent vertex. 
-Choose a sufficiently small open neighborhood 
-$U_p$ of $p\in C\setminus C_{\reg}$. Then, there exists a 
-$(0,0)$-superform $f\colon U_p \to \mathbb{R}$ such 
-that $(f)^{\mathrm{sm}}=s|_{U_p}$. Besides, there exists 
-a smooth function $f_0\colon U\to \mathbb{R}$ for 
-an open subset $U$ of $T_p C$ 
-which defines $f$. We can perturb $f$ with 
-$\tilde{f}$ such that 
-$d\tilde{f}(p)\in (\tform_{\mathbb{Z},S}^{1})_p$
-and $f|_{U\setminus K}=\tilde{f}|_{U\setminus K}$ for 
-a sufficiently small compact neighborhood $K$ of $0$.
-Therefore, we can assume $s$ is prepermissible.  
-Next, we check that we can choose $s'$ 
-such that $s\cap s'$ is a finite set.
-Fix an open edge $e$ of $C$.
-Then, $s|_e$ is the principal divisor of a bounded smooth 
-function $f$ on $e$. 
-Therefore, we can choose a smooth bump function $g$ on $e$ such 
-that $f+g$ is nondegenerate and monotone on a sufficiently 
-open neighborhood of $\partial e$. 
-We can extend $g$ on $C$ 
-by zero, and thus $s+g$ is linearly equivalent to $s$.
-By repeating this, we get a prepermissible Cartier divisor
-$s'$ on $C$ such that $\sharp (s\cap s')<\infty$.
-\end{proof}
-
-
-As like \cite{auroux2022lagrangian},
-we also use the notion of the rotation number of 
-$C^{\infty}$-divisors for the proof of 
-\cref{theorem-MRR-curve-preface}.
-Fix a connected smooth tropical curve $C$
-and $C_{\reg}\deq \{x\in C\mid \opn{val}(x)=2\}$.
-The $C_{\reg}$ is isomorphic to a $1$-dimensional 
-(paracompact) integral affine manifold. 
-If $C$ is connected and not isomorphic to a circle, then
-$C_{\reg}$ is a disjoint union of open interval:
-\begin{align}
-  C_{\reg}\simeq \coprod_{e\in \pi_0(C_{\reg})} (a_e,b_e), \quad
+  C_{\reg}\simeq \left( \coprod_{e\in E} (a_e,b_e)\right)\sqcup
+\left(\coprod_{l\in L} \mathbb{R}/c_l\mathbb{Z} \right), \quad
 (a_e\in \underline{\mathbb{R}}, b_e\in 
-\overline{\mathbb{R}})
+\overline{\mathbb{R}}, c_l\in \mathbb{R}_{>0})
 \end{align}
-where $\pi_0(C_{\reg})$ is the connected components of 
-$C_{\reg}$.
-If $C$ is compact, then $\pi_0(C_{\reg})$ is finite.
+for some indexed set $E$ and $L$.
+\end{condition}
+
+
+\begin{remark}
+\label{remark-classification-curve}
+To be honest, \cref{condition-simplicity-curve}
+is unnecessary. This remark explains that.
+Let $C$ be a pure $1$-dimensional
+rational polyhedral space.
+Then, $C_{\reg}$ is also a rational polyhedral space,
+and isomorphic to the disjoint union of 
+$1$-dimensional integral affine manifolds
+(see \cite[\textsection 2.1]{MR2181810}
+for three different definition of
+integral affine manifolds).
+Since $C_{\reg}$ is paracompact,
+every connected component of $C_{\reg}$
+is diffeomorphic to an open interval or a circle.
+
+Every $n$-dimensional
+integral affine manifold $B$ has 
+the developing map $\opn{dev}_{B}\colon\tilde{B}\to \mathbb{R}^{n}$
+where $\tilde{B}$ is the universal cover of $B$.
+Besides, every developing map is a immersion and a submersion, 
+and thus $\opn{dev}_{B}$ is an embedding onto 
+an open subset of $\mathbb{R}$ when $\dim B=1$.
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Since $C_{\reg}$ is an integral affine manifold, 
 $C_{\reg}$ has a standard Lagrangian torus fibration
@@ -3063,9 +3075,12 @@ $f_{C_{\reg}}\colon X(C_{\reg})\to C_{\reg}$
 (see \cref{definition-integral-affine-manifold}
 and \cref{definition-SYZ-torus-fibration}).
 
-\begin{definition}
+
+
+\begin{definition}[{cf. \cref{definition-stratified-torus-fibration}}]
 \label{definition-continuous-section}
-Let $C$ be a tropical curve.
+Let $C$ be a tropical curve or a closed interval in 
+$\mathbb{T}P^{1}$.
 We set the following spaces:
 \begin{align}
 \check{X}(C_{\reg})\deq 
@@ -3082,20 +3097,20 @@ section of $\check{f}_{C_{\reg}}\colon \check{X}(C_{\reg})
 
 Obviously, $\check{X}_0(C)$ has a canonical projection
 $\check{f}_C \colon \check{X}_0(C)\to C$.
+By the universal property of the pushout,
+$\check{f}_C$ is continuous.
 
 \begin{example}
-If $C=\mathbb{T}P^{1}$, then 
-$\check{X}_0(C_{\reg})$ is just a 
-cylinder with infinity length.
-$\check{X}_0(\mathbb{R})$ has a canonical homeomorphism:
-$\Phi \colon \check{X}_0(\mathbb{R})\to 
-\mathbb{R}\times (\mathbb{R}^{\vee}/\mathbb{Z}^{\vee});
-(p,q dx_p)\mapsto (p,q)$.
+Let $C=[a,b]$ be a closed interval in $\mathbb{T}P^{1}$, then 
+$\check{X}(C_{\reg})$ is just a cylinder
+and $\check{X}(C)$ has a canonical embedding 
+into 
+$[a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$.
 \begin{align}
-\check{X}_0(\mathbb{T}P^{1})\simeq 
-\{(-\infty,0)\}\cup(\mathbb{R}\times 
+\check{X}_0([a,b])\simeq 
+\{(a,0)\}\cup((a,b)\times 
 \mathbb{R}^{\vee}/\mathbb{Z}^{\vee})
-\cup \{(+\infty,0)\}.
+\cup \{(b,0)\}.
 \end{align}
 The negation map
 $\iota \colon\mathbb{T}P^{1}\to \mathbb{T}P^{1}; x\mapsto -x$
@@ -3105,7 +3120,7 @@ induces the canonical automorphism induced from the pullback of cotangent bundle
 \to \check{X}_0(\mathbb{T}P^{1}); (x;y)\mapsto (-x;-y). 
 \end{align}
 This is a symplectic automorphism on 
-$\check{X}_0(\mathbb{R}) (\subset \check{X}_0(\mathbb{T}P^{1}))$ since 
+$\check{X}(\mathbb{R}) (\subset \check{X}_0(\mathbb{T}P^{1}))$ since 
 $dx\wedge dy=d(-x)\wedge d(-y)$.
 This automorphism can be visualized as the 180-degree rotation of the 
 cylinder.
@@ -3116,19 +3131,20 @@ The following proposition is a repetitive work of
 
 \begin{proposition}[{continuous sections}]
 \label{proposition-prepermissible-section}
-Let $s$ be a prepermissible Cartier divisor 
+Let $s$ be a prepermissible $C^{\infty}$-divisor
 $s=\{(U_i,f_i)\}_{i\in I}$ on a tropical curve 
-$C$ with no 1-valent vertex. 
+$C$ or a closed interval of $\mathbb{T}P^{1}$. 
 Then, 
 {\setlength{\leftmargini}{22pt}
 \begin{enumerate}
 \item There exists the following continuous map:
 \begin{align}
+\label{equation-continuous-section}
 \check{s}\colon C\to \check{X}_0 (C); x
 \mapsto (x,\opn{pr}_{C,x}(df_{i}(x))).
 \end{align}
 \item If $\check{s}_0\colon C\to \check{X}_0 (C)$ be the 
-zero section, then $s_0\cap s=\check{\pi}_C(\check{s}_0\cap \check{s})$.
+zero section, then $s_0\cap s=\check{f}_C(\check{s}_0\cap \check{s})$.
 \end{enumerate}
 }
 \end{proposition}
@@ -3144,7 +3160,142 @@ Therefore, the construction of $\check{s}$ is well-defined.
 Obviously, $\check{s}$ is continuous by gluing lemma 
 for each edge of $C$.
 
-(2): Omit.
+(2): It follows directly from \eqref{equation-continuous-section}.
+\end{proof}
+
+By \cref{proposition-prepermissible-section},
+$s_0\cap s$ is compact when $C$ is compact.
+
+Let $C$ be a tropical curve and 
+$\mathcal{A}_C^{\opn{weak}}$ be the sheaf 
+of weakly-smooth functions on $C$. From definition,
+$\mathcal{A}_C^{0,0}\subset \mathcal{A}_C^{\opn{weak}}$
+and $\mathcal{A}_C^{\opn{weak}}$ is also a fine sheaf.
+Since $\mathcal{A}_C^{\opn{weak}}$ is fine, 
+the connecting homomorphism 
+$[\cdot]\colon H^{0}(C;\mathcal{A}_C^{\opn{weak}}/
+\mathcal{O}^{\times}_C)\to \opn{Pic}(C);s\mapsto [s]$ is 
+surjective.
+
+From now on, we will prove
+\cref{conjecture-enough-prepermissible}
+for compact tropical curves
+(\cref{proposition-prepermissible-section}).
+Geometrically, this is clear,
+but in order to solve it,
+some preparations are necessary.
+
+\begin{definition}
+An \emph{open interval} in
+a $1$-dimensional rational polyhedral space $C$ is
+an open subset of $C_{\opn{reg}}$ which is homeomorphic
+to an open interval.
+\end{definition}
+
+\begin{proposition}
+\label{proposition-bump-interval}
+Let $U$ be a finite union of open intervals in a 
+compact tropical curve $C$.
+Then, there exists a prepermissible nonnegative weakly-smooth function
+$f\colon C\to \mathbb{R}_{\geq 0}$ satisfying
+\begin{enumerate}
+\item $\{f>0\}\subset U$
+\item $U\cap(\bigcup_{m\in \mathbb{Z}}\{f'=m\})$ is finite.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+We may assume $C$ is connected.
+If $U$ is an bounded interval,
+then we can create such a $f$ easily by using 
+the following bump function
+$f_{a,b}\colon\mathbb{R}\to \mathbb{R}$
+\begin{align}
+f_{a,b}(x)=
+\begin{cases}
+\opn{exp}(-\frac{1}{a^{2}-(x-b)^{2}}),\quad \text{ if } (|x-b|<a) \\
+0,\quad \text{ o.w. }
+\end{cases}
+\end{align}
+for all $a\in \mathbb{R}_{>0}, b\in \mathbb{R}$.
+$f$ is a $C^{\infty}$-function on such that
+$\{f>0\}=(b-a,b+a)$ and has a unique maximal point.
+Of course, $f_{a,b}'$ is bounded.
+We can extend $f|_U$ to $C$ by zero outside of $U$
+by the pullback of $f$ by an appropriate linear function 
+on $\Gamma_{n}^{\circ}$
+(see also \cref{equation-pullback-support}).
+
+Suppose $U=\mathbb{R}_{>0}$.
+Then, 
+$f=f_{\frac{1}{2},\frac{1}{2}}\circ \opn{exp}
+\colon \underline{\mathbb{R}}\to \mathbb{R}$ is a
+nonnegative weakly-smooth function which is strictly monotone 
+except at $x=-\opn{log}2$ and $\{f>0\}=(-\infty,0)$.
+By \cref{exmaple-weakly-smooth-line}, $f$ is also
+bounded. In this case, we can also extend 
+$f|_U$ to $C$ by zero outside of $C\setminus U$.
+
+If $U=\mathbb{R}$, then $C=\mathbb{T}P^{1}$.
+$f\colon \mathbb{T}P^{1}\to\mathbb{R};x\mapsto 
+f_{\frac{1}{2},\frac{1}{2}}\circ \opn{exp}(x)
++f_{\frac{1}{2},\frac{1}{2}}\circ \opn{exp}(-x)$
+satisfies the conditions $(1)$ and $(2)$.
+
+By combining with the above three cases, we can 
+construct $f$ satisfying the conditions
+$(1)$ and $(2)$ for every $U$.
+\end{proof}
+
+\begin{proposition}
+\label{proposition-permissible-divisor}
+Let $s$ be a $C^{\infty}$-divisor on a compact
+tropical curve $C$.
+Then, there exists
+a prepermissible $C^{\infty}$-divisor $s'$ which is linearly
+equivalent to $s$ and
+$s_0\cap s'$ is a finite set. 
+\end{proposition}
+\begin{proof}
+We may assume $C$ is connected.
+Fix a local data $\{(U_i,f_i)\}_{i\in I}$
+for $s$. We can assume $I$ is finite
+since $C$ is compact.
+Let $K_v$ be a compact and connected neighborhood 
+of $v (\in C\setminus C_{\reg})$ such that
+$K_{v}\subset U_i$ for some $i\in I$ and 
+$K_v\cap K_{v'}=\emptyset$ when $v\ne v'$ for
+all $v,v'\in C\setminus C_{\reg}$.
+Let $h\colon C\to \mathbb{R}$ be a weakly-smooth function
+such that $h|_{K_v}=f_i|_{K_v}$.
+Such a $h$ exists since $\mathcal{A}^{\mathrm{weak}}_C$
+is fine. 
+The set $\{(U_i,h|_{U_i})\}_{i\in I}$ is a local data for 
+$(h)^{\mathrm{sm}}$.
+From construction,
+$s'\deq s-(h)^{\mathrm{sm}}$ is linearly-equivalent 
+to $s$, prepermissible 
+and has a local data 
+$\{(U_i,\tilde{f}_i)\}_{i\in I}$ for $s'$
+satisfying $\tilde{f}_i|_{K_v}$ is constant for all 
+$i\in I$ and $v\in C\setminus C_{\reg}$. 
+
+From now on, we assume $s$ is prepermissible.
+We may assume $s\ne s_0$.
+By \cref{proposition-prepermissible-section},
+$s_0\cap s$ is closed and compact.
+Therefore, $(s_0\cap s)\cap C_{\reg}$ is 
+a finite union of closed subset of $C_{\reg}$.
+
+If $s$ is not trivial, then each connected
+component of its interior 
+$\opn{int}((s_0\cap s)\cap C_{\reg})$ is 
+isomorphic to an open interval.
+Let $U\deq \opn{int}((s_0\cap s)\cap C_{\reg})$ and 
+$f$ be a weakly-smooth function on $C$
+satisfies the conditions of 
+\cref{proposition-bump-interval}.
+Then, $s'=s+(f)^{\mathrm{sm}}$ is also
+prepermissible and $\sharp(s_0\cap s')<\infty$.
 \end{proof}
 
 
@@ -3154,14 +3305,10 @@ for each edge of $C$.
 
 
 
-
-
-
+Let $C$ be a $1$-dimensional rational polyhedral space.
 $\check{X}_0(C_{\reg})$ has a canonical symplectic structure,
 and thus there exists a canonical orientation induced
 from the symplectic form on $\check{X}(C_{\reg})$.
-This form defines an orientation number of 
-section defined in \cref{proposition-prepermissible-section}.
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
@@ -3187,21 +3334,41 @@ section defined in \cref{proposition-prepermissible-section}.
 \caption{A continuous section $s\colon [0,1]\to [0,1]\times \mathbb{R}/\mathbb{Z}$}
 \end{figure}
 
+
+As like \cite{auroux2022lagrangian},
+we also use the notion of the rotation number of 
+$C^{\infty}$-divisors for the proof of 
+\cref{theorem-MRR-curve-preface}. 
+From now on, we start to prepare for defining
+the \emph{rotation number} of a permissible
+$C^{\infty}$-divisor on a $1$-dimensional rational
+polyhedral space which has no circle.
+
 \begin{definition}
+\label{definition-rotation-interval}
 Fix a closed interval $[a,b]$ in $\mathbb{T}P^{1}$.
-Let $s\colon [a,b]\to [a,b]\times \mathbb{R}/\mathbb{Z}$ be 
+Let $s\colon [a,b]
+\to [a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$ be 
 a continuous section of the canonical projection
-$p\colon [a,b]\times \mathbb{R}/\mathbb{Z} \to [a,b]$
+$p\colon [a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee} \to [a,b]$
 such that $s(a)=(a,0)$ and $s(b)=(b,0)$. 
 The rotation number
 is the homotopy class of the closed path
-$q\circ s\colon [a,b]\to \mathbb{R}/\mathbb{Z}$
+$q\circ s\colon [a,b]\to \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$
 induced from $s$ and the canonical projection
-$q\colon [a,b]\times \mathbb{R}/\mathbb{Z} 
-\to \mathbb{R}/\mathbb{Z}$. Here, 
-we identify $\pi_1(\mathbb{R}/\mathbb{Z},0)\simeq \mathbb{Z}$
-via the canonical orientation of $\mathbb{R}/\mathbb{Z}$.
+$q\colon [a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}
+\to \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$.
+Here, 
+we identify $\pi_1(\mathbb{R}^{\vee}/\mathbb{Z}^{\vee},0)\simeq \mathbb{Z}$
+by the canonical orientation of
+$\mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$.
 \end{definition}
+
+The canonical orientation on 
+$[a,b]\times \mathbb{R}/\mathbb{Z}$
+is compatible with the symplectic orientation 
+of $\check{X}((a,b))$.
+
 
 \begin{proposition} \label{proposition-rotation-number}
 Let 
@@ -3223,65 +3390,66 @@ $(x,y)\in [a,b]\times \mathbb{R}/\mathbb{Z}$ if
 $a,b\notin \{-\infty,\infty\}$.
 \end{proof}
 
-
 From \cref{proposition-prepermissible-section} and \cref{proposition-rotation-number}, we can define the 
-rotation number for every prepermissible smooth 
-Cartier divisors as follows.
-\begin{definition}[{cf. \cite{auroux2022lagrangian}}]
-Let $s$ be a $C^{\infty}$-divisor and 
-$\check{s}$ its associated Lagrangian section.
-The \emph{rotation number} of $s$ is the sum of
-the rotation number of all edges of $C$: 
+rotation number for every permissible
+$C^{\infty}$-divisor (\cref{{definition-rotation-number}}).
+
+\begin{definition}
+Let $C$ be a $1$-dimensional compact rational polyhedral space
+and $s$ a prepermissible $C^{\infty}$-divisor on $C$.
+We set
 \begin{align}
-\opn{rot}(s)\deq \sum_{e\in \pi_0(C_{\reg})}
+I(C,s)\deq \{
+e\in\pi_0(C\setminus (s_0\cap s))\mid e 
+\text{ is an open interval}\}.
+\end{align}
+\end{definition}
+
+
+\begin{definition}[{cf. \cite{auroux2022lagrangian}}]
+\label{definition-rotation-number}
+Let $s$ be a prepermissible $C^{\infty}$-divisor 
+and a $1$-dimensional compact rational polyhedral space $C$ 
+and 
+$\check{s}$ its associated Lagrangian section.
+The \emph{rotation number} of $s$ is 
+\begin{align}
+\opn{rot}(s)\deq \sum_{e\in I(C,s)}
 \opn{rot}(\psi_{\bar{e}}^{*}(\check{s}))
 \end{align}
-where 
+where  
 $\psi_{\bar{e}}\colon [a_e,b_e]\to C$ is 
 a continuous map such that the restriction of $\psi_{\bar{e}}$ 
 on $(a_e,b_e)$ is an isomorphism onto $e$.
 \end{definition}
 
+The rotation number is equal to 
+the degree of the divisor class $[s]$ of 
+prepermissible $C^{\infty}$-divisor when
+$C$ is a compact tropical curve
+(\cref{proposition-rotation-degree}). 
 
+From now on, we start the proof of 
+\cref{theorem-MRR-curve-preface}.
 
 \begin{proposition}
-Let $s$ be a prepermissible $C^{\infty}$-divisor on
-a compact tropical curve $C$. Then,
-\label{equation-rotation-number}
+\label{proposition-trivial-case-curve}
+Let $s$ be a prepermissible $C^{\infty}$-divisor 
+and a $1$-dimensional compact rational polyhedral space $C$
+such that $s_0\cap s=\emptyset$. Then, 
 \begin{align}
-\opn{rot}(s)=\opn{deg}([s])(=\int_{C} c_1([s])).
+  \opn{LMD}^{\bullet}(C;s)=\chi_{\opn{top}}(C)=0.
 \end{align}
 \end{proposition}
-
 \begin{proof}
-We can create an ordinary Cartier divisor $D$
-from a $C^{\infty}$-divisor $s$ such 
-that its divisor class is equivalent by 
-using the \v{C}ech cocycle representation of 
-$[s]$. Then, we can easily calculate the 
-\eqref{equation-rotation-number} for 
-a typical $D$. The degree of $D$ is 
-invariant for any choice of $D$.
+The equation $\opn{LMD}^{\bullet}(C;s)=0$ is trivial.
+From definition, $C\setminus C_{\reg} \subset s_0\cap s=\emptyset$.
+Then, $C$ must be the disjoint union of
+tropical elliptic curves. 
+By computing the \v{C}ech cohomology of 
+$c_1([s])\in H^{1}(C;\tform_{\mathbb{Z},C}^{1})$, we also get 
+the last equation.
 \end{proof}
-
-\begin{remark}
-\label{remark-rotation-closed-interval} 
-The above proposition 
-is \emph{not} true for general compact metric curves.
-Let $C\deq [0,1]$ be a closed interval
-and $f_n\colon C\to \mathbb{R};x \mapsto nx^{2}$.
-Any $f_n$ is a prepermissible $(0,0)$-superform on $C$.
-From the definition
-of principal $C^{\infty}$-divisor,
-$\opn{deg}(D_{(f_n)^{\mathrm{sm}}})=0$. 
-A philosophical reason of this is
-that a closed interval with finite length is a tropical
-analog of a closed annulus in $\mathbb{C}$ but not for
-a complex projective line (cf. 
-\cite[Definition 3.7]{MR3903579}). In fact, $X(C_{\reg})$ 
-has a standard complex structure which is holomorphic to
-an open annulus in $\mathbb{C}$.
-\end{remark}
 
 \begin{proposition}
 \label{proposition-simple-interval-rr}
@@ -3295,21 +3463,27 @@ such that $s_0\cap s=\{a,b\}$. Then,
 \end{align}
 \end{proposition}
 \begin{proof}
-We can calculate from 
+Since there are a finite number of types of 
+intersection data and 
+$\opn{rot}(s)=-1,0,1$,
+we can directly compute it using
 \cref{proposition-n-valent} and 
-\ref{proposition-1-valent} directly for a case by case
-type of an intersection data for $s$.
+\ref{proposition-1-valent} directly.
 \end{proof}
 
-A good point of the rotation number and the 
-Euler number of $s$ is the 
+A good point of the rotation number
+$\opn{rot}(s)$ and the 
+Euler characteristic of 
+$\opn{LMD}^{\bullet}(C;s)$ is that
+they have the
 following Meyer--Vietoris type lemma.
 
 \begin{proposition}
 \label{proposition-gluing-formula}
-Let $s$ be a prepermissible $C^{\infty}$-divisor on a
-compact metric graph $C$ such that $s_0\cap s<\infty$.
-Fix two closed metric subgraphs of $C$ such that
+Let $s$ be a permissible $C^{\infty}$-divisor
+on a $1$-dimensional compact rational space $C$.
+Fix two closed $1$-dimensional compact rational
+subspaces $C'$, $C''$ of $C$ such that
 $C' \cup C''=C$ and $C'\cap C''\subset s_0 \cap s$.
 Then, 
 the inclusion $i_{C'}\colon C'\to C$ 
@@ -3338,7 +3512,7 @@ s_0\cap i^{*}_{C'\cap C''}(s)=
 i^{-1}_{C'\cap C''}(s_0\cap s).
 \end{align}
 By \cref{proposition-n-valent} 
-and Meyer--Vietoris sequence, we get 
+and the Meyer--Vietoris sequence, we get 
 the \eqref{equation-meyer-vietoris}.
 \end{proof}
 
@@ -3348,11 +3522,12 @@ We can generalize
 
 \begin{proposition}
 \label{proposition-MRR-1-dim-poly-space}
-Let $C$ be a pure $1$-dimensional compact rational 
+Let $C$ be a $1$-dimensional compact rational 
 polyhedral space and
-$s$ a prepermissible $C^{\infty}$-divisor on $C$
-satisfying \cref{condition-good-divisor}. Then,
+$s$ a permissible $C^{\infty}$-divisor on $C$.
+Then,
 \begin{align}
+\label{equation-rotation-rr}
 \chi(\opn{LMD}^{\bullet}(C;s))=\opn{rot}(s)+
 \chi_{\opn{top}}(C).
 \end{align}
@@ -3364,68 +3539,146 @@ satisfying \cref{condition-good-divisor}. Then,
 
 \begin{proof}
 Without loss of generality, we can assume $C$ is 
-connected and $\sharp (s_0\cap s)\geq 1$.
-Since $s_0\cap s\supset (C\setminus C_{\reg})$, 
-The set $s_0\cap s$ induces a cell decomposition of 
-$C$. We will prove the theorem by mathematical 
-induction for the cardinality of 
-$\pi_0(C\setminus (s_0 \cap s))$, i.e., the 
-number of edges of the cell decomposition.
-When $\sharp\pi_0(C\setminus (s_0 \cap s))=1$, 
-$C$ is homeomorphic to a closed interval 
-or a closed circle and 
-$\sharp (s_0\cap s)\leq 2$ 
-from the definition of cell complex.
-In this case, \cref{theorem-MRR-curve-preface} is 
-true from \cref{proposition-n-valent} directly.
+connected and $\sharp (s_0\cap s)\geq 1$ 
+by \cref{proposition-trivial-case-curve}.
+Since $s_0\cap s\supset (C\setminus C_{\reg})$ 
+and connected, $C\setminus (s_0\cap s)$ has no 
+connected components which 
+are isomorphic to tropical elliptic curves.
+The set $s_0\cap s$ induces a finite cell decomposition of 
+$C$.
+Fix a total ordering $<$ on $\pi_0(C\setminus (s_0\cap s))$.
+By gluing $1$-cells in that order, we get a filtering;
+\begin{align}
+\emptyset=C_0\subsetneqq C_1\subsetneqq \cdots
+\subsetneqq C_m \subsetneqq C_{m+1}=C
+\end{align}
+where $C_{i+1}\deq C_{i}\cup e_{i+1}$
+($e_i\in \pi_0(C\setminus s_0\cap s)$)
+for $i=0,\ldots,m$.
+Let $i_{C'}\colon C'\to C$ be the inclusion map
+of a cell subcomplex $C'$ of $C$.
+By \cref{proposition-simple-interval-rr,proposition-gluing-formula},
+for $i=0,\ldots,m$ we have
+\begin{align}
+\label{equation-1st}
+\chi(\opn{LMD}^{\bullet}(C_1;i_{C_1}^{*}(s)))
+=& \opn{rot}(i_{C_1}^{*}(s))+\chi_{\opn{top}}(C_1), \\
+\chi(\opn{LMD}^{\bullet}(C_{i+1};i_{C_{i+1}}^{*}(s)))
+=& \chi(\opn{LMD}^{\bullet}(C_i;i_{C_i}^{*}(s)))
++ \chi(\opn{LMD}^{\bullet}(e_{i+1};i_{e_{i+1}}^{*}(s)))
+-\chi_{\opn{top}}(C_i\cap e_i), \\
+\opn{rot}(i_{C_{i+1}}^{*}(s))
+=& \opn{rot}(i_{C_{i}}^{*}(s))
++ \opn{rot}(i_{e_{i+1}}^{*}(s)).
+\end{align}
 
-Suppose \cref{theorem-MRR-curve-preface} is true
-for all $C^{\infty}$-divisors $s$ on 
-$C$ such that $\sharp \pi_0(C\setminus (s_0 \cap s))=n$.
-Let $C$ be a $1$-dimensional 
-compact rational polyhedral space
-such that $\sharp\pi_0(C\setminus (s_0 \cap s))=n+1$.
+If $C_{j}$ ($j\in \{0,\ldots,m\}$)
+satisfies \eqref{equation-rotation-rr}, then
 
-Then, we can choose a pair of proper subgraphs $C',C''$ of
-$C$ such that
-$C'\setminus (s_0\cap i^{*}_{C'}(s))\leq n$,
-$C''\setminus (s_0\cap i^{*}_{C''}(s))\leq n$,
-$C'\cup C''=C$
-and $(C'\cap C'')\subset (s_0\cap s)$.
-
-By \cref{proposition-gluing-formula}, we get 
-\begin{align*}
-\chi(\opn{LMD}^{\bullet}(C;s))
-&=\chi(\opn{LMD}^{\bullet}(C';i_{C'}^{*}(s)))
-+\chi(\opn{LMD}^{\bullet}(C'';i_{C''}^{*}(s)))
--\sharp(C'\cap C'') \\
-&=\opn{rot}(i_{C'}^{*}(s))
-+\opn{rot}(i_{C''}^{*}(s))
-+\chi_{\opn{top}}(C')+\chi_{\opn{top}}(C'')
--\chi_{\opn{top}}(C'\cap C'') \\
-&=\opn{rot}(s)+\chi_{\opn{top}}(C).
-\end{align*}
-
+\begin{align}
+\chi(\opn{LMD}^{\bullet}(C_{j+1};i_{C_{j+1}}^{*}(s)))
+=&\opn{rot}(i_{C_{j}}^{*}(s))+\opn{rot}(i_{e_{j+1}}^{*}(s))
++\chi_{\opn{top}}(C_j)+\chi_{\opn{top}}(e_{j+1})
+-\chi_{\opn{top}}(C_j\cap e_{j+1}) \notag \\
+=&\opn{rot}(i_{C_{j+1}}^{*}(s))
++\chi_{\opn{top}}(C_{j+1}). \label{equation-j-th}
+\end{align}
+\eqref{equation-1st} and \eqref{equation-j-th}
+complete the proof of \eqref{equation-rotation-rr}.
 \end{proof}
 
+\begin{lemma}
+\label{lemma-rotation-slope}
+Let $f\colon [a,b]\to \mathbb{R}$ be
+a prepermissible 
+weakly-smooth function on a closed interval of 
+$\underline{\mathbb{R}}$.
+Then, 
+\begin{align}
+\lim_{x\to b-0}f'(x)-\lim_{x\to a+0} f'(x)
+=\opn{rot}((f)^{\mathrm{sm}}).
+\end{align}
+
+\end{lemma}
+\begin{proof}
+Let $s=(f)^{\mathrm{sm}}$.
+$g\colon [a,b]\to \mathbb{R}^{\vee};z\mapsto 
+\lim_{x\to z-0}f'(x)-\lim_{x\to a+0} f'(x)$
+is just a lift of the
+rotation map $q\circ\check{s}$ defined in 
+\cref{definition-rotation-interval}.
+Therefore, we can get our assertion from definition 
+of fundamental group. 
+\end{proof}
+
+\begin{proposition}
+\label{proposition-rotation-degree}
+Let $s$ be a permissible $C^{\infty}$-divisor on
+a compact tropical curve $C$. Then,
+\begin{align}
+\label{equation-rotation-number}
+\opn{rot}(s)=\opn{deg}([s])(=\int_{C} c_1([s])).
+\end{align}
+\end{proposition}
+
+\begin{proof}
+We can find an ordinary Cartier divisor 
+$D\in H^{0}(C;\mathcal{M}_C^{\times}/
+\mathcal{O}_C^{\times})$
+such that its divisor class is equal to $[s]$ such 
+that its divisor class is equivalent by 
+using the \v{C}ech cochain of 
+$[s]$ (see also \cite[Remark 7.2.1]{MR3560225}).
+In particular, we can choose such a $D$ satisfying
+that $\opn{supp}(D)\subset C_{\reg}$.
+Then, we can calculate the 
+\eqref{equation-rotation-number} for 
+a typical $D$ by \cref{lemma-rotation-slope}.
+The degree of $D$ is 
+invariant for any choice of $D$.
+\end{proof}
+
+
+\begin{remark}
+\label{remark-rotation-closed-interval} 
+The rotation number of a permissible
+$C^{\infty}$-divisor on $1$-dimensional
+compact rational polyhedral space is 
+\emph{not} an invariant for its divisor class.
+Let $C\deq [0,1]$ be a closed interval
+and $f_n\colon C\to \mathbb{R};x \mapsto nx^{2}$.
+Any $f_n$ is a prepermissible $(0,0)$-superform on $C$.
+From the definition
+of principal $C^{\infty}$-divisor,
+$s_n\deq (f_{n})^{\mathrm{sm}}$ is always trivial,
+but $\opn{rot}(\check{s}_n)=n$. 
+A philosophical reason of this is
+that a closed interval in $\mathbb{R}$
+is a tropical analog of a closed annulus 
+in $\mathbb{C}$ but not for
+a complex projective line (cf. 
+\cite[Definition 3.7]{MR3903579}).
+In fact, $X(C_{\reg})$ has a standard complex structure
+which is biholomorphic to
+an open annulus in $\mathbb{C}$
+(see \eqref{definition-SYZ-torus-fibration}
+for the definition of $X(C_{\reg})$).
+\end{remark}
+
 \begin{proof}[{Proof of \cref{theorem-MRR-curve-preface}}]
-We can prove it from \cref{proposition-MRR-1-dim-poly-space}
-and \eqref{equation-rotation-number}.
+We can prove it from \cref{proposition-MRR-1-dim-poly-space,proposition-rotation-degree}.
 \end{proof}
 
 \begin{remark}
 \label{remark-non-prepermissible-divisor}
-We explain the reason why we need the prepermissible condition for 
+In this remark, we explain
+the reason why we need the prepermissible condition for 
 $C^{\infty}$-divisors. 
 One of reasons is that there exists smooth function $f$
 on a polyhedral space $S$ and 
 $x\notin\opn{Crit}(f|_S)$ such that
 $\opn{LMD}^{\bullet}(A_S,f|_{S},x)$ is nontrivial.
-Another reason is that we could not create 
-convenient continuous sections like 
-\cref{definition-continuous-section} easily.
-
-The third reason is the most critical. 
 We will explain about this problem by the following 
 example:
 Let 
@@ -3448,7 +3701,7 @@ we need to add the index $\opn{ind}_x(g)$ at $x$ satisfying
 \opn{ind}_x(g)=1=\chi_{\opn{top}}(\Gamma_3).
 \end{align}
 At least, \cref{theorem-MRR-curve-preface} is not
-true without correction the effect at non-prepermissible point
+true without correction of the effect at non-prepermissible point
 of $g$.
 In this case, $\opn{ind}_x(g)$ should be $-1$.
 This condition is independent of the choice
@@ -3495,11 +3748,11 @@ in tropical geometry.
 
 
 
-\subsection{Relationships between previous results}
+\subsection{Relations to previous results}
 \label{section-tropical-curve-note}
 
 
-\subsubsection{Relationships between
+\subsubsection{Relations to
 homological mirror symmetry of trivalent graphs}
 \label{section-syz-trivalent-graph}
 
@@ -3545,7 +3798,7 @@ the both are different each other if not.
 In particular, the graded modules associated with 
 an intersection point $p\in s_0\cap s$ may not 
 be a shift of $1$-dimensional vector space.
-\item We don't know the differential $\mathfrak{m}_1$ 
+\item We don't know the differential $m_1$ 
 for $\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
 (C;s)$ in general.
 \end{enumerate}
@@ -3558,8 +3811,8 @@ in \cite[\textsection 7]{auroux2022lagrangian}.
 We hope our $\check{X}(S)$ for a 
 rational polyhedral space $S$ give a hint for 
 a generalization of their expectation.  
-\subsubsection{Relationships between 
-Poincar\'e--Hopf theorem for graphs}
+\subsubsection{Relations to the Poincar\'e--Hopf 
+theorem for graphs}
 
 \cref{theorem-MRR-curve-preface} can be considered 
 as a $C^{\infty}$-version of Knill's graph 
@@ -3587,7 +3840,7 @@ for more detail about it).
 
 
 
-\subsubsection{Relationships with a localization of 
+\subsubsection{Relations to a localization of 
 index on compact Riemann surfaces.}
 
 We mention relationships between 
@@ -3760,8 +4013,10 @@ and every integral affine manifold is a special case of
 tropical manifold. 
 Every integral affine structure of $B$ induces a 
 canonical local system $\mathcal{T}_{\mathbb{Z},B}$ 
-of integer valued vector bundle and the dual 
-local system $\mathcal{T}_{\mathbb{Z},B}^{\vee}$ of it.
+of integer valued tangent vectors and the dual 
+local system 
+$\mathcal{T}_{\mathbb{Z},B}^{\vee}
+(\simeq \tform_{\mathbb{Z},B}^{1})$ of it.
 
 
 
@@ -3772,8 +4027,10 @@ by affine functions on $\mathbb{R}^{n}$.
 We call this coordinate system as an \emph{affine coordinate system} 
 of $U_i$. 
 
-\begin{definition}[{cf. \cite[p.213]{MR413010}}]
-A \emph{Hessian metric} or \emph{metric of Hessian form} on an affine manifold 
+\begin{definition}
+\label{definition-hessian-metric}
+A \emph{Hessian metric} or \emph{metric of a Hessian form}
+on an affine manifold 
 $(B,\{(U_i,\psi_i)\}_{i \in I})$
 is a Riemannian metric $g$ such that 
 there exists a multivalued function $K$ on $B$ satisfying
@@ -3790,7 +4047,7 @@ Hessian manifold is called
 in \cite{MR714338}, \emph{affine K\"ahler manifold}
 or AK-manifold \cite{MR1882331} for short.
 To our knowledge, the notion of Hessian metric have already
-appeared in \cite{MR413010}.
+appeared in \cite[p.213]{MR413010}.
 \end{remark}
 
 A Hessian metric can be considered as a $(1,1)$-superform 
@@ -3810,7 +4067,7 @@ T^{*}B/\mathcal{T}_{\Z , B}^{\vee} =:\hspace{-35pt}
 \end{tikzcd}.
 \end{equation}
 
-In some references, the symbol $\check{X}$ and
+In some literature, the symbol $\check{X}$ and
 $X$ are reversed. 
 $\check{X}(B)$ has a canonical symplectic structure 
 induced from $T^{*}B$, and each fiber of 
@@ -3831,8 +4088,8 @@ induced from $g$
  
 \begin{remark} \label{remark-compact-hessian}
 We recall a well-known result for 
-compact special affine manifold admitting 
-a Hessian form which is mentioned 
+compact special affine manifolds admitting
+Hessian forms which is mentioned 
 in some literature
 (e.g. \cite[\textsection 5.2]{MR1882331}).
 By \cite[Theorem 2.1 and Corollary 2.3]{MR714338},
@@ -3909,8 +4166,8 @@ for tropical manifolds
 from \cite{mikhalkinTropicalEigenwaveIntermediate2014a,
 MR3903579,gross2019sheaftheoretic}.
 In the case of affine manifolds, some parts of them has already
-studied in the field of Hessian geometry as a vector bundle
-with a flat connection
+studied in the field of Hessian geometry by the language 
+of differential geometry
 (see e.g. ~\cite[Chapter 7]{MR2293045}).
 Let $X$ be a rational polyhedral space and 
 $\Omega_{\mathbb{Z},X}^{p}$ the sheaf
@@ -3934,17 +4191,6 @@ We set
 $\tform^{p}_{\mathbb{R},X}\deq 
 \tform^{p}_{\mathbb{Z},X}\otimes_{\mathbb{Z}_X}\mathbb{R}_X$.
 
-
-
-\begin{example}
-If $B$ is an integral affine manifold, then 
-$\tform^{p}_{\mathbb{Z},B}\simeq 
-\bigwedge^{p}_{i=1} \mathcal{T}_{\mathbb{Z},B}^{\vee}$ for 
-all $p\in \mathbb{Z}_{\geq 0}$.
-\end{example}
-
- 
-
 We recall some results about tropical superforms from
 \cite{MR3903579,smacka2017differential}.
 Let $\mathcal{A}^{p,q}_X$ be the sheaf of 
@@ -3960,6 +4206,18 @@ The sheaf $\tform^{p}_{\mathbb{R},X}$ has the following acyclic resolution
   0 \to \tform^{p}_{\mathbb{R},X} \to \mcal{A}^{p,0}_{X}\xto{d''} 
 \mcal{A}^{p,1}_{X} \xto{d''}\cdots.
 \end{align}
+
+\begin{example}
+\label{example-hessian-metric-from}
+If $B$ is an integral affine manifold, then 
+$\tform^{p}_{\mathbb{Z},B}\simeq 
+\bigwedge^{p}_{i=1} \mathcal{T}_{\mathbb{Z},B}^{\vee}$ for 
+all $p\in \mathbb{Z}_{\geq 0}$.
+Every Riemannian metric $g$ on $B$ can be considered
+as an element of $\mathcal{A}_{B}^{1,1}$.
+The metric $g$ is $d''$-closed if and only 
+if $g$ is a Hessian metric (\cite[Lemma 7.4.1]{MR2293045}).
+\end{example}
 
 The complex $(\tform_{\mathbb{R},X}^{\bullet},d')$
 has a canonical dga structure induced from 
@@ -4209,10 +4467,9 @@ H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z}).
 This is the Poincar\'e duality
 for tropical manifolds 
 \cite[Corollary 6.3]{gross2019sheaftheoretic}.
-The Poincar\'e duality for tropical manifold
-with coefficients in $\mathbb{Z}$ was firstly 
-proved in \cite[Theorem 5.3]{MR3894860}
-under a slight technical assumption.
+The Poincar\'e duality for tropical manifold with
+a global face structure was firstly 
+proved in \cite[Theorem 5.3]{MR3894860}.
 
 
 We recall the construction 
@@ -4256,7 +4513,7 @@ We stress that the fundamental class
 of every integral affine manifold (as tropical manifold) 
 is determined without the data of orientation.
 
-If $X$ is a compact connected tropical manifold
+If $X$ is a compact and connected tropical manifold
 of dimension $n$, 
 we can define the \emph{trace map} 
 on tropical cohomology like complex manifolds 
@@ -4275,9 +4532,9 @@ can define the degree of a proper morphism.
 We can extend \eqref{equation-trace-integration}
 for compact tropical manifolds naturally.
 \begin{definition}[{cf.~\cite[Definition 2.11]{MR3668972}}]
-Let $f\colon X \to Y$ be a proper morphism of 
-an $n$-dimensional compact tropical manifolds.
-
+Let $f\colon X \to Y$ be a proper surjective morphism
+of $n$-dimensional tropical manifolds
+such that $Y$ is connected.
 
 The (tropical) degree
 $\opn{deg}_{\opn{trop}}(f)$
@@ -4287,7 +4544,8 @@ such that $f_*([X])=m[Y]$.
 We write $\opn{deg}_{\opn{trop}}(f)$ by $\opn{deg}(f)$
 for simplicity.
 From the projection formula, every element 
-$c\in H^{n,n}(Y;\mathbb{Z})$ have the following equation:
+$c\in H^{n,n}(Y;\mathbb{Z})$ have the equation below
+when $X$ and $Y$ are compact:
 \begin{align}
 \int_{X}f^{*}c
 =a_{Y*}(f_*(f^{*}c\frown [X]))
@@ -4297,7 +4555,7 @@ $c\in H^{n,n}(Y;\mathbb{Z})$ have the following equation:
 
 \begin{example}
 Let $f\colon X\to Y$ be a morphism of 
-$n$-dimensional tropical manifolds such that $f$ is a 
+$n$-dimensional connected tropical manifolds such that $f$ is a 
 covering map of topological degree $m$ and the associated map $d_xf\colon 
 T_{x}^{\mathbb{Z}} X\to T_{f(x)}^{\mathbb{Z}}Y$ is 
 isomorphic.
@@ -4316,7 +4574,7 @@ In this case, $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.
 \begin{definition} \label{definition-etale-covering}
 Let $f\colon X\to Y$ be a proper morphism 
 of tropical manifolds such
-that $f$ is a covering map.
+that $Y$ is connected and $f$ is a covering map.
 $f$ is a \emph{tropical \'etale} covering map 
 if $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.  
 \end{definition}
@@ -4330,7 +4588,7 @@ in our sense but \'etale on the meaning in
 from the $n$-th Frobenius endomorphism 
 $\opn{Fr}_{n,X}^{\natural}\colon \mathcal{O}_X \to \mathcal{O}_X; f\mapsto nf$ of 
 the structure sheaf of tropical manifolds. 
-This is a tropical analog of Frobenius morphism of 
+This is a tropical analog of Frobenius morphisms of 
 schemes in positive characteristic 
 (e.g. \cite[IV. Remark 2.4.1]{hartshorneAlgebraicGeometry1977a}). As like classical Frobenius morphism, 
 the morphism $\opn{Fr}_{n,X}=(\opn{id}_X,\opn{Fr}_{n,X}^{\natural})$ of semiringed space does 
@@ -4362,7 +4620,8 @@ the $n$-th dilation map of $X$.
 From now on, we recall the commutative diagram 
 \eqref{equation-smooth-cartier-diagram}
  for integral affine manifolds.
-In this case, every sheaf naturally comes 
+In this case, every sheaf
+in \eqref{equation-smooth-cartier-diagram} naturally comes 
 from symplectic geometry.
 
 Of course, 
@@ -4409,9 +4668,9 @@ before:
 \begin{proposition}
 \label{proposition-cartier-lagrangian}
 Let $B$ be an integral affine manifold.
-Then, the following group isomorphism exists
+Then, the following group isomorphism exists:
 \begin{align}
-\opn{CDiv}^{\infty}(B)\simeq \Gamma(B;
+\CDiv(B)\simeq \Gamma(B;
 \opn{Lag}(\check{X}(B)));s\mapsto L_s.
 \end{align}
 \end{proposition}
@@ -4455,7 +4714,7 @@ with the zero section transversely. Then,
 
 As mentioned in \cref{remark-compact-hessian},
 $B$ is a finite unramified cover of a tropical torus $T$.
-Fix an \'etale cover $p:T \to B$ of $B$.
+Fix a tropical \'etale cover $p:T \to B$ of $B$.
 If \cref{theorem-MRR-hesse} is true for tropical tori,
 then \cref{theorem-MRR-hesse} is also true for compact
 integral manifolds admitting a Hessian form from
@@ -4489,13 +4748,13 @@ of the linear part of $dq_s$.
 The intersection number of Lagrangian
 section $L_s$ and the zero section $L_0$ is equal to
 $\chi(\opn{LMD}^{\bullet}(s_0,s))$ up to 
-signature.
-(The signature only depends on
+signature. The signature only depends on
 the choice of 
-an orientation of $\check{X}(B)$. 
-The definition of the intersection number of smooth 
-submanifolds is in \cite[\textsection 5.2]{MR1336822} or 
-\cite[Chapter 0.4]{griffithsPrinciplesAlgebraicGeometry1994a}.)
+an orientation of $\check{X}(B)$
+(see e.g. \cite[\textsection 5.2]{MR1336822}
+for the definition of 
+the intersection number of smooth 
+submanifolds).
 
 Every linearly equivalent 
 class is given by a one-time Hamiltonian flow on 
@@ -4575,26 +4834,34 @@ $\chi_{\opn{trop}}(B)\deq
 \end{remark}
 
 \begin{remark}[{Kodaira--Thurston surface}]
-There exists a complete and compact integral affine manifold
-  which has no Hessian form.
-As pointed out in \cite[Example 1.14]{grossMirrorSymmetryLogarithmic2006a}
-and \cite[p.403]{MR1461965}, there exists an integral affine manifold
-$B$ such that
-$X(B)$ is a primary Kodaira surface and $X(B)$
-and $\check{X}(B)$
-are diffeomorphic to a Thurston's example of a symplectic but
-not K\"ahler manifold in \cite{MR402764}.
-Hence, $X(B)$ is not K\"ahler and $B$ has no
-Hessian form since every Hessian form on $B$ induces a 
-standard K\"ahler form
-on $X(B)$. The complex manifold $X(B)$ is 
-isomorphic to a primary Kodaira surface. 
-We can see explicit calculations of 
+There exists a complete and compact integral affine surface
+which has no Hessian forms.
+(The author firstly knew that such an example exists 
+from a remark in 
+~\cite[Example 1.5]{grossMirrorSymmetryLogarithmic2006a}).
+Mishachev classified integral affine structures 
+on 2-torus in \cite[Theorem A]{MR1422337}.
+If $B$ is an integral affine 2-torus and not isomorphic
+to a tropical $2$-torus, then 
+$H^{1}(\check{X}(B);\mathbb{R})=H^{1}(X(B);\mathbb{R})=3$
+from the Leray spectral sequence for 
+$\check{f}_B\colon \check{X}(B)\to B$ and
+\cite[Theorem A]{MR1422337}. 
+Therefore, the both $\check{X}(B)$ and $X(B)$ has no 
+K\"ahler structure.
+An example of such a $\check{X}(B)$ firstly
+essentially appeared in \cite{MR402764}.
+Since $X(B)$ has no K\"ahler structure,
+$B$ also has no Hessian forms.
+From Kodaira's classification of complex surfaces, 
+$X(B)$ is isomorphic to a primary Kodaira surface.
+Explicit calculations of the tropical cohomology
 $H^{\bullet}(B;\tform_{\mathbb{Z},B}^{\bullet})$
-for tropical primary Kodaira surfaces in \cite{maehara2023}.
-See \cite{MR1422337} for more details about the tropical 
-primary Kodaira surfaces and 
-\cite{MR3079343,MR3894860} for tropical Klein bottles.
+and the radiance obstruction of tropical primary Kodaira surfaces is in \cite{maehara2023}
+(see also \cite[\textsection 6]{MR1422337}).
+Integral affine structures on a Klein bottle
+and their tropical cohomologies are discussed in
+\cite{MR2737696,MR3894860}.
 
 \end{remark}
 
@@ -4743,6 +5010,10 @@ of a compact integral affine manifold is contractible.
 In the last section, we mention more examples of 
 tropical analog of the Euler number of 
 the sheaf cohomology of line bundles.
+(See also \cref{section-toric-geometry}
+for the local Morse data for
+tropical toric manifolds associated with
+lattice polytopes.)
 
 \subsection{Tropical multidivisors and 
 Lagrangian multi-sections}
@@ -4781,8 +5052,9 @@ Thom--Sebastiani formula:
 
 \begin{theorem}[{Thom--Sebastiani Theorem for sheaves \cite[Theorem 1.2.2]{MR2031639}}]
 Let $i=1,2$.
-Fix locally compact Hausdorff spaces $X_i$ and 
-sheaves $\mathcal{F}_i$ on $X_i$.
+Fix locally compact Hausdorff spaces $X_i$ with
+countable topology and of finite cohomological dimension,
+and sheaves $\mathcal{F}_i$ on $X_i$.
 For continuous functions $f_i\colon X_1 \to\mathbb{R}$,
 and closed $S_i$ of $X_i$ contained in $\{f_i=0\}$.
 We write $f_1\boxplus  f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$
@@ -4837,7 +5109,7 @@ of $C^{\infty}$-divisors.
 \begin{corollary}[{K\"unneth type formula}]
 \label{corollary-kunneth-type-formula}
 Fix boundaryless compact rational polyhedral spaces $X$ and $Y$.
-Let $s$ and $s'$ a prepermissible $C^{\infty}$-divisor of $X$ and $Y$ 
+Let $s$ and $s'$ a permissible $C^{\infty}$-divisor of $X$ and $Y$ 
 satisfying the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
 Then, the induced external tensor product 
@@ -4854,7 +5126,7 @@ has the following equations:
 By
 \cite[Proposition 5.4.1]{MR1299726},
 $s\boxtimes s'$ is also prepermissible.
-
+Of course, $s_0\cap (s\boxtimes s')$ is finite.
 Let $\{(U_v,f_v)\}_{v\in s_0\cap s}$
 (resp. $\{(U_w,g_w)\}_{v\in s_0\cap s'}$) is an
 intersection data for $s$ (resp. $s'$), 
@@ -4867,7 +5139,7 @@ We get an isomorphism of graded modules
 from the sheaf theoretic Thom-Sebastiani theorem for 
 $X_1=U_{v}$, $X_2=U_w$, $S_1=\{v\}$, $S_2=\{w\}$,
 $f_1= f_v-f_v(v)$ and 
-$f_2= f_w-f_w(w)$;
+$f_2= f_w-f_w(w)$:
 \begin{align}
 \opn{LMD}^{\bullet}(X\times Y;s\boxtimes s') 
 & =\bigoplus_{(v,w)\in s_0\cap s\boxtimes s'}
@@ -4884,7 +5156,8 @@ $f_2= f_w-f_w(w)$;
 \end{proof}
 
 \begin{remark}
-In the proof of the above corollary, we only use
+In the proof of \cref{corollary-kunneth-type-formula},
+we only use
 the condition of cohomological version of Milnor fiber. 
 Besides, we can find many prepermissible $C^{\infty}$-divisors
 satisfying this condition, see \cite[p.35]{MR2031639}.  
@@ -5218,11 +5491,11 @@ from \cite{1999math......2027T,MR3525095}.
 
 A symplectic manifold $(M,\omega)$ is 
 \emph{prequantizable}
-if the de Rham cohomology class $[\omega]$ of $\omega$ is in $H^2(X;\Z)$. 
+if the de Rham cohomology class $[\omega]$ of $\omega$ is in 
+$\opn{Im}(H^2(X;\Z)\to H^2(X;\mathbb{R}))$. 
 An integral affine manifold $B$ has a strongly integral affine structure 
-if and only if the de Rham cohomology class of 
-$\omega_{\opn{std}}(\in \check{X}(B))$ is in 
-$H^{2}(\check{X}(B);\mathbb{Z})$
+if and only if the standard symplectic form 
+on $\check{X}(B)$ is prequantizable
 (see for example 
 \cite[Lemma 2.8]{MR4275791}).
 
@@ -5432,8 +5705,6 @@ Ra_{Z!}(\opn{Tr}_{g\circ f,\upomega_{Z}^{\bullet}})
 =Ra_{Z!}(\opn{Tr}_{g,\upomega_{Z}^{\bullet}})
 \circ Ra_{Y!}(\opn{Tr}_{f,\upomega_{Y}^{\bullet}}).
 \end{align}
-
-%TODO: lineality空間の話とweakly-smoothの話を書く。
 
 \section{Lattice polytopes and local Morse data}
 \label{section-toric-geometry}
@@ -5861,6 +6132,6 @@ but this is different from our approach.
 \end{remark}
 
 \bibliography{lattice_points_surface}
-\bibliographystyle{halpha}
+\bibliographystyle{alpha}
 
 \end{document}
