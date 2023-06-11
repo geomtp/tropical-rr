@@ -1088,7 +1088,7 @@ in \cref{prop-local-morse-data}.
 
 \subsection{Cohomological local Morse data and index}
 
-The following stalk complex and its cohomology are 
+The stalk complex and its cohomology written below are 
 the most important notions
 for this paper, which is naturally appeared in
 microlocal sheaf theory \cite{MR1299726}, and
@@ -1244,7 +1244,7 @@ inclusion map $U_{j'}\hookto U_j$. Then,
 
 \begin{example}
 \label{example-morse-index}
-In this example we see
+In this example, we see
 the local Morse index of is a certain generalization of 
 Poincar\'e--Hopf index of the gradient 
 $\opn{grad}(f)$ of a smooth function $f$ 
@@ -1258,7 +1258,7 @@ f_{n,m}\colon \mathbb{R}^{n}\times \mathbb{R}^{m}\to \mathbb{R};
 \end{align}
 In order to calculate 
 $\opn{LMD}^{\bullet}(A_{\mathbb{R}^{n+m}},f_{n,m},0)$,
-for any $\varepsilon\in \mathbb{R}_{}>0$ we see
+for any $\varepsilon\in \mathbb{R}_{}>0$ we get
 \begin{align}
 \partial (\bar{B}^{n}_{\varepsilon}(0)
 \times \bar{B}^{m}_{\varepsilon}(0))=
@@ -1737,8 +1737,8 @@ satisfy the following \emph{boundaryless condition}:
 Let $S$ be a rational polyhedral space admitting 
 a coordinate system $\{(U_i,\phi_i)\}_{i\in I}$
 such that the image of each chart 
-$\phi_i\colon U_i \to \mathbb{T}^{n}$
-is in $\mathbb{R}^{n}$.
+$\phi_i\colon U_i \to \mathbb{T}^{n_i}$
+is in $\mathbb{R}^{n_i}$.
 \end{condition}
 
 The \cref{condition-Rn} is strict for rational polyhedral
@@ -2865,7 +2865,7 @@ The goal of this subsection is to prove
 
 Let $\Gamma_{n}$ be the projectivization of 
 a certain tropical module defined in 
-\cite[2.2]{mikhalkinTropicalCurvesTheir2008a}.
+\cite[\textsection 2.2]{mikhalkinTropicalCurvesTheir2008a}.
 Each $\Gamma_{n}$ has an embedding 
 into the $(n-1)$-dimensional tropical projective space
 $\mathbb{T}P^{n-1}\deq \mathbb{P}(\mathbb{T}^{n})$.
@@ -2924,7 +2924,7 @@ from $\{v_{\sigma}\}_{\sigma \in \Sigma}$,
 and a linear form
 $h=\sum_{i=1}^{n} 
 a_{\sigma_i} v^{*}_{\sigma_i}$
-such that $a_\sigma<0$ for any 
+such that $a_{\sigma_i}<0$ for any 
 $i=1,\ldots,n$.
 Then, the lower set $|\Sigma|\cap \{h< 0\}$ is disconnected
 when $n\geq 2$. If $n=1$, $|\Sigma|\cap \{-h<0\}$ is 
@@ -2937,7 +2937,8 @@ $\opn{span}_{\mathbb{R}}(\opn{SS}((\mathbb{Z}_{X})_S)_x)
 \cref{proposition-n-valent,proposition-1-valent}  
 classify 
 the type of intersection data of 
-$C^{\infty}$-divisors.  
+$C^{\infty}$-divisors which appear
+in tropical curves.  
 
 \begin{proposition}[{cf. \cite{knill2012graph}}]
 \label{proposition-n-valent}
@@ -3219,7 +3220,8 @@ $f_{a,b}\colon\mathbb{R}\to \mathbb{R}$
 \begin{align}
 f_{a,b}(x)=
 \begin{cases}
-\opn{exp}(-\frac{1}{a^{2}-(x-b)^{2}}),\quad \text{ if } (|x-b|<a) \\
+\opn{exp}\left(-\frac{1}{a^{2}-(x-b)^{2}}\right),
+\quad \text{ if } (|x-b|<a), \\
 0,\quad \text{ o.w. }
 \end{cases}
 \end{align}
@@ -3349,8 +3351,14 @@ $C^{\infty}$-divisors for the proof of
 From now on, we start to prepare for defining
 the \emph{rotation number} of a permissible
 $C^{\infty}$-divisor on a $1$-dimensional rational
-polyhedral space which has no circle.
+polyhedral space.
 
+We recall there exists a canonical 
+embedding $\check{X}_0([a,b])\to [a,b]\times 
+\mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$ for 
+any closed interval in $\mathbb{T}P^1$.
+We usually identify $\check{X}_0([a,b])$ with 
+the image of the above embedding.
 \begin{definition}
 \label{definition-rotation-interval}
 Fix a closed interval $[a,b]$ in $\mathbb{T}P^{1}$.
@@ -3359,7 +3367,7 @@ Let $s\colon [a,b]
 a continuous section of the canonical projection
 $p\colon [a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee} \to [a,b]$
 such that $s(a)=(a,0)$ and $s(b)=(b,0)$. 
-The rotation number
+The rotation number $\opn{rot}(s)$
 is the homotopy class of the closed path
 $q\circ s\colon [a,b]\to \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$
 induced from $s$ and the canonical projection
@@ -3376,16 +3384,54 @@ $[a,b]\times \mathbb{R}/\mathbb{Z}$
 is compatible with the symplectic orientation 
 of $\check{X}((a,b))$.
 
+\begin{lemma}
+\label{lemma-rotation-slope}
+Let $s$ be a prepermissible $C^{\infty}$-divisor on 
+a closed interval $[a,b]$ in $\mathbb{T}P^{1}$ 
+and
+$f\colon (a,b)\to \mathbb{R}$ be 
+a weakly-smooth function
+such that $s|_{(a,b)}=(f)^{\mathrm{sm}}$.
+Then, 
+\begin{align}
+\label{equation-degree-rot-line}
+\lim_{x\to b-0}f'(x)-\lim_{x\to a+0} f'(x)
+=\opn{rot}(\check{s}).
+\end{align}
+
+\end{lemma}
+\begin{proof}
+From \cref{exmaple-weakly-smooth-line}
+and $s|_{(a,b)}=(f)^{\mathrm{sm}}$,
+the RHS of \cref{equation-degree-rot-line} is an
+integer.
+A continuous function
+$g\colon [a,b]\to \mathbb{R}^{\vee};z\mapsto 
+\lim_{x\to z-0}f'(x)-\lim_{x\to a+0} f'(x)$
+is just a lift of the
+rotation map $q\circ\check{s}$ defined in 
+\cref{definition-rotation-interval}.
+Therefore, we can get our assertion from definition 
+of fundamental group. 
+\end{proof}
+
+\begin{definition}
+Let $s$ be a prepermissible $C^{\infty}$-divisor on 
+a closed interval $[a,b]$ in $\mathbb{T}P^{1}$.
+We define $\opn{rot}_0(s)\deq\opn{rot}(\check{s})$.
+\end{definition}
 
 \begin{proposition} \label{proposition-rotation-number}
 Let 
 $\phi \colon [a,b] \to [a,b]$ be an automorphism of 
 a closed interval in $\mathbb{T}P^{1}$, 
-$s\colon [a,b]\times \mathbb{R}/\mathbb{Z}$ and 
+$s\colon [a,b]\times \mathbb{R}/\mathbb{Z}$
+a section of the canonical projection 
+$q\colon [a,b]\times \mathbb{R}/\mathbb{Z} \to [a,b]$ and 
 $\varphi \colon [a,b]\times \mathbb{R}/\mathbb{Z} \to 
 [a,b]\times \mathbb{R}/\mathbb{Z}$ 
 the symplectic automorphism induced from $\phi$.
-Then, $\opn{rot}(\varphi\circ s)=\opn{rot}(s)$.
+Then, $\opn{rot}(\varphi\circ s \circ \phi^{-1})=\opn{rot}(s)$.
 \end{proposition}
 \begin{proof}
 Since every automorphism of 
@@ -3395,9 +3441,40 @@ when $\phi$ is the negation map.
 In this case, $\varphi(x,y)=(b+a-x,-y)$ for 
 $(x,y)\in [a,b]\times \mathbb{R}/\mathbb{Z}$ if 
 $a,b\notin \{-\infty,\infty\}$.
+Since $s(x)=(x,q\circ s(x))$ for all $x\in [a,b]$,
+we have
+\begin{align}
+q\circ \psi \circ s \circ \phi^{-1}(x)=
+-q\circ s(\phi^{-1}(x)))=-q\circ s(b+a-x).
+\end{align}
+From definiton of fundamental group, 
+$\opn{rot}(\varphi\circ s \circ \phi^{-1})$
+should be $\opn{rot}(s)$.
+The same method works for $[a,b]=\mathbb{T}P^{1}$.
 \end{proof}
 
-From \cref{proposition-prepermissible-section} and \cref{proposition-rotation-number}, we can define the 
+\begin{remark}
+\label{remark-rotation-slope}
+Let $s$ be
+a prepermissible $C^{\infty}$-divisors
+on a closed interval $[a,b]$ in $\mathbb{T}P^{1}$,
+$f\colon (a,b)\to \mathbb{R}$
+a permissible weakly-smooth function such that 
+$s|_{(a,b)}=(f)^{\mathrm{sm}}$
+and $\phi\colon [a,b]\to [a,b]\colon x\mapsto b+a-x$.
+Then,
+\begin{align}
+\lim_{x->b-0}\phi^{*}(f)'(x)-\lim_{x->a+0}\phi^{*}(f)'(x)
+=-\lim_{x->a+0}f'(x)+\lim_{x->b-0}f'(x)
+\end{align}
+Therefore, $\opn{rot}_0(s)=
+\opn{rot}_0(\phi^{*}s)$.
+This is a special case of \cref{proposition-rotation-number}.
+\end{remark}
+
+From \cref{proposition-prepermissible-section} and 
+\cref{proposition-rotation-number}
+(or \cref{remark-rotation-slope}), we can define the 
 rotation number for every permissible
 $C^{\infty}$-divisor (\cref{{definition-rotation-number}}).
 
@@ -3422,7 +3499,7 @@ $\check{s}$ its associated Lagrangian section.
 The \emph{rotation number} of $s$ is 
 \begin{align}
 \opn{rot}(s)\deq \sum_{e\in I(C,s)}
-\opn{rot}(\psi_{\bar{e}}^{*}(\check{s}))
+\opn{rot}_0(\psi_{\bar{e}}^{*}(s))
 \end{align}
 where  
 $\psi_{\bar{e}}\colon [a_e,b_e]\to C$ is 
@@ -3430,7 +3507,8 @@ a continuous map such that the restriction of $\psi_{\bar{e}}$
 on $(a_e,b_e)$ is an isomorphism onto $e$.
 \end{definition}
 
-The rotation number is equal to 
+The rotation number for prepermissible 
+$C^{\infty}$-divisors is equal to 
 the degree of the divisor class $[s]$ of 
 prepermissible $C^{\infty}$-divisor when
 $C$ is a compact tropical curve
@@ -3483,7 +3561,7 @@ $C'$ be a $1$-dimensional rational
 polyhedral subspace and $i_{C'}$
 the inclusion map of $C'$. Then, the pullback of 
 a weakly-smooth function is also weakly smooth from
-definition, so there exists the pullback 
+definition, so there exists a morphism 
 $\iota_{C'}^{-1}\mathcal{A}^{\mathrm{weak}}_C\to 
 \mathcal{A}^{\mathrm{weak}}_{C'}$.
 This also induces the pullback 
@@ -3564,8 +3642,11 @@ Since $s_0\cap s\supset (C\setminus C_{\reg})$
 and connected, $C\setminus (s_0\cap s)$ has no 
 connected components which 
 are isomorphic to tropical elliptic curves.
-The set $s_0\cap s$ induces a finite cell decomposition of 
+The set $s_0\cap s$ induces a finite cell decomposition
+$\mathscr{C}$ of 
 $C$.
+Let $\mathscr{C}_1=\{e_{\alpha}\}_{\alpha \in \pi_0(C\setminus (s_0\cap s))}$
+be the set of (closed) $1$-cells of $\mathscr{C}$. 
 Fix a total ordering $<$ on $\pi_0(C\setminus (s_0\cap s))$.
 By gluing $1$-cells in that order, we get a filtering;
 \begin{align}
@@ -3573,7 +3654,7 @@ By gluing $1$-cells in that order, we get a filtering;
 \subsetneqq C_m \subsetneqq C_{m+1}=C
 \end{align}
 where $C_{i+1}\deq C_{i}\cup e_{i+1}$
-($e_i\in \pi_0(C\setminus s_0\cap s)$)
+($e_i\in \mathscr{C}_1$)
 for $i=0,\ldots,m$.
 Let $i_{C'}\colon C'\to C$ be the inclusion map
 of a cell subcomplex $C'$ of $C$.
@@ -3586,7 +3667,7 @@ for $i=0,\ldots,m$ we have
 \chi(\opn{LMD}^{\bullet}(C_{i+1};i_{C_{i+1}}^{*}(s)))
 =& \chi(\opn{LMD}^{\bullet}(C_i;i_{C_i}^{*}(s)))
 + \chi(\opn{LMD}^{\bullet}(e_{i+1};i_{e_{i+1}}^{*}(s)))
--\chi_{\opn{top}}(C_i\cap e_i), \\
+-\chi_{\opn{top}}(C_i\cap e_{i+1}), \\
 \opn{rot}(i_{C_{i+1}}^{*}(s))
 =& \opn{rot}(i_{C_{i}}^{*}(s))
 + \opn{rot}(i_{e_{i+1}}^{*}(s)).
@@ -3607,29 +3688,7 @@ satisfies \eqref{equation-rotation-rr}, then
 complete the proof of \eqref{equation-rotation-rr}.
 \end{proof}
 
-\begin{lemma}
-\label{lemma-rotation-slope}
-Let $f\colon [a,b]\to \mathbb{R}$ be
-a prepermissible 
-weakly-smooth function on a closed interval of 
-$\underline{\mathbb{R}}$.
-Then, 
-\begin{align}
-\lim_{x\to b-0}f'(x)-\lim_{x\to a+0} f'(x)
-=\opn{rot}((f)^{\mathrm{sm}}).
-\end{align}
 
-\end{lemma}
-\begin{proof}
-Let $s=(f)^{\mathrm{sm}}$.
-$g\colon [a,b]\to \mathbb{R}^{\vee};z\mapsto 
-\lim_{x\to z-0}f'(x)-\lim_{x\to a+0} f'(x)$
-is just a lift of the
-rotation map $q\circ\check{s}$ defined in 
-\cref{definition-rotation-interval}.
-Therefore, we can get our assertion from definition 
-of fundamental group. 
-\end{proof}
 
 \begin{proposition}
 \label{proposition-rotation-degree}
@@ -3646,8 +3705,8 @@ We can find an ordinary Cartier divisor
 $D\in H^{0}(C;\mathcal{M}_C^{\times}/
 \mathcal{O}_C^{\times})$
 such that its divisor class is equal to $[s]$ such 
-that its divisor class is equivalent by 
-using the \v{C}ech cochain of 
+that its divisor class is equivalent as 
+the level of \v{C}ech cochains of 
 $[s]$ (see also \cite[Remark 7.2.1]{MR3560225}).
 In particular, we can choose such a $D$ satisfying
 that $\opn{supp}(D)\subset C_{\reg}$.
@@ -3748,7 +3807,7 @@ Our definition of $C^{\infty}$-divisor
 has an analog of positive divisor by using 
 the local data $\{(U_i,f_i)\}_{i\in I}$ as 
 explained in \cref{example-tropical-kodaira-vanishing}.
-However, this positive divisor is different 
+However, this positive $C^{\infty}$-divisor is different 
 from ample line bundles for tropical curves. 
 If $s$ is a positive $C^{\infty}$-divisor, then
 $\chi(\opn{LMD}(C;s))=\sharp(s_0\cap s)\geq \sharp 
@@ -3781,14 +3840,14 @@ our $\check{X}_0(C)$ are
 almost the same with 
 the trivalent configuration $M$ of 
 $2$-spheres in 
-\cite[3.1]{auroux2022lagrangian}.
+\cite[\textsection 3.1]{auroux2022lagrangian}.
 Here, the space $M$ is the
 union of $\C P^{1}$'s whose intersection complex is $C$, 
 i.e., every edge of $C$ corresponds
 $\C P^{1}$ and every trivalent vertex of $C$ corresponds
 to the intersection points of some three $\C P^{1}$'s.
 The mirror manifold of $M$ is an algebraic curve $X_K$
-from Mumford's construction using the dual intersection
+defined from Mumford's construction for the dual intersection
 complex $C$.
 
 The similarity of $\check{X}_0(C)$ and $M$ is evident 
@@ -3812,7 +3871,7 @@ then $\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
 (C;s)$ corresponds to the 
 Floer complex \cite[(3.2)]{auroux2022lagrangian}
 as a graded module, but 
-the both are different each other if not. 
+the both are different if not. 
 In particular, the graded modules associated with 
 an intersection point $p\in s_0\cap s$ may not 
 be a shift of $1$-dimensional vector space.
@@ -3823,10 +3882,10 @@ for $\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
 }
 
 Auroux--Efimov--Katzarkov  
-expect a SYZ conjecture
+expected a SYZ conjecture
 for projective hypersurfaces 
 in \cite[\textsection 7]{auroux2022lagrangian}.
-We hope our $\check{X}(S)$ for a 
+We hope our $\check{X}_0(S)$ for a 
 rational polyhedral space $S$ give a hint for 
 a generalization of their expectation.  
 \subsubsection{Relations to the Poincar\'e--Hopf 
@@ -3874,14 +3933,15 @@ $\check{\pi}_{C_{\reg}} \colon \check{X}(C_{\reg})\to C_{\reg}$.
 We can define $X_0(C)\deq C\sqcup_{i,s} X(C_{\reg})$ like
 $\check{X}_0(C)$.
 $C$ has a canonical lattice length metric $d_{C}$, and
-thus we can define the following set for sufficiently small
+thus we can define the following set for 
+a sufficiently small
 $\vep >0$: 
 \begin{align}
 C_{0,\vep}\deq \{p\in C\mid d_C(p,v)>\vep 
 \text{ for all } v\in C\setminus C_{\reg}\}.
 \end{align}
 
-For a given $\vep>0$ (and a \emph{signed tropical structure}
+For a given $\vep$ (and a \emph{signed tropical structure}
 on $C$ \cite{MR3076066}), 
 $X_0(C)$ can be considered as a subset of a compact 
 Riemann surface $X$ whose complex structure is 
@@ -3889,12 +3949,12 @@ compatible with $X(C_{0,\vep})$.
 Such an $X$ is given by gluing triangles for 
 each open neighborhood of $p\in X_0(C)\setminus X(C_{\reg})$
 appropriately.
-Let $s$ be a prepermissible $C^{\infty}$-divisor on $C$.
-$s|_{C_{\reg}}$ corresponds to a Lagrangian section of 
+Let $s$ be a permissible $C^{\infty}$-divisor on $C$.
+The restriction $s|_{C_{\reg}}$ corresponds to a Lagrangian section of 
 $\check{\pi}_{C_{\reg}}$ from 
 \cref{proposition-cartier-lagrangian}.
 By the semi-flat SYZ transformation 
-(see e.g. \cite{MR1876073}
+(see \cite{MR1876073}
 or \cite[\textsection 9.1]{MR1882331}),
 $s|_ {C_{\reg}}$ induces a family of $U(1)$-holonomoy for
 each torus fiber $\pi_{C_{\reg}}^{-1}(p)$ and defines a 
@@ -3925,7 +3985,7 @@ $(\tform_{\mathbb{Z},C}^{1})_p\otimes_{\mathbb{Z}}
 \mathbb{R}/\mathbb{Z}\simeq 
 H^1(\mathbb{P}^{1}\setminus 
 \{0,1,\infty\};\mathbb{R}/\mathbb{Z})$
-is important and not coincidence for this construction.
+is important and no coincidence for this construction.
 The $s_{2,1}$
 corresponds a small pants and the $s_{1,2}$
 corresponds a large pants in 
@@ -4031,7 +4091,7 @@ and every integral affine manifold is a special case of
 tropical manifold. 
 Every integral affine structure of $B$ induces a 
 canonical local system $\mathcal{T}_{\mathbb{Z},B}$ 
-of integer valued tangent vectors and the dual 
+of integer valued tangent vectors in $TB$ and the dual 
 local system 
 $\mathcal{T}_{\mathbb{Z},B}^{\vee}
 (\simeq \tform_{\mathbb{Z},B}^{1})$ of it.
@@ -4087,7 +4147,8 @@ T^{*}B/\mathcal{T}_{\Z , B}^{\vee} =:\hspace{-35pt}
 
 In some literature, the symbol $\check{X}$ and
 $X$ are reversed. 
-$\check{X}(B)$ has a canonical symplectic structure 
+The manifold $\check{X}(B)$
+has a canonical symplectic structure 
 induced from $T^{*}B$, and each fiber of 
 $\check{f}_{B}$ is a Lagrangian torus.
 On the other hand, $X(B)$ has a canonical complex
@@ -4174,7 +4235,7 @@ an integral affine structure with
 a Hessian metric by McLean's theorem \cite{MR1664890}.
 See also \cref{appendix-geometric-quantization} 
 for the relationships between integral affine manifolds 
-and geometric quantization. 
+and geometric prequantization. 
 \end{remark}
 
 
@@ -4459,7 +4520,8 @@ we mean a tropical manifold of pure dimension $n$,
 for simplicity in this paper
 (see \cite[\textsection 2.A]{MR3894860}). 
 Then, there exists the following natural isomorphism, 
-which is called the Poincar\'e--Verdier duality 
+which is called the Poincar\'e--Verdier duality
+for tropical manifolds
 \cite[Theorem 6.2]{gross2019sheaftheoretic}:
 \begin{align}
 \opn{PVD}^{(n-p)}_X\colon \tform_{\mathbb{Z},X}^{n-p}[n]
@@ -4664,7 +4726,7 @@ $\check{f}_{B}\colon \check{X}(B)\to B$
 \cite[(2.7), (2.11)]{duistermaatGlobalActionangleCoordinates1980a}.
 
 
-Thus, the commutative diagram \eqref{equation-smooth-cartier-diagram} is written like this 
+Thus, we can write the commutative diagram \eqref{equation-smooth-cartier-diagram} like this 
 (e.g. \cite[p.468]{MR2567952}):
 
 \begin{equation} \label{equation-cartier-lagrangian}
@@ -4700,22 +4762,8 @@ then $s$ is the image of a one-time Hamiltonian flow of $s'$
 on $\check{X}(B)$
 \cite[Exercise 6.65]{MR2567952}.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+From now on, we start to prove
+\cref{theorem-MRR-hesse-preface}.
 
 \begin{theorem} \label{theorem-MRR-hesse}
 Let $B$ be an $n$-dimensional compact 
@@ -4780,7 +4828,7 @@ $\check{X}(B)$ by the pullback $\check{\pi}_{B}^{*}(h)$
 of a smooth function $h$ on $B$.
 We note the one-time flow of a submanifold of
 $\check{X}(B)$ does not change
-the homology class in $H^{\bullet}(\check{X}(B);\Z)$ and
+the homology class in $H_{\bullet}(\check{X}(B);\Z)$ and
 the intersection number \cite[5.2.1. Theorem]{MR1336822}.
 Therefore, 
 $\chi(\opn{LMD}^{\bullet}(T,s))=
@@ -4854,8 +4902,8 @@ $\chi_{\opn{trop}}(B)\deq
 \begin{remark}[{Kodaira--Thurston surface}]
 There exists a complete and compact integral affine surface
 which has no Hessian forms.
-(The author firstly knew that such an example exists 
-from a remark in 
+(I firstly knew that such an example exists 
+from
 ~\cite[Example 1.5]{grossMirrorSymmetryLogarithmic2006a}).
 Mishachev classified integral affine structures 
 on 2-torus in \cite[Theorem A]{MR1422337}.
@@ -4945,8 +4993,8 @@ sequence of the relative homotopy groups.
 \cref{proposition-unobstructed-lagrangian} induces 
 that every pseudoholomorphic disk
 $\psi\colon D\to \check{X}(B)$ such that 
-$\psi(\partial D)\subset L_s$ has 
-the zero symplectic area.
+$\psi(\partial D)\subset L_s$, 
+has the zero symplectic area.
 In particular, $L_s$ is 
 \emph{tautologically unobstructed} defined in
 \cite[(2.50)]{MR3656481}.
@@ -5003,10 +5051,10 @@ isomorphism of graded modules:
 \opn{LMD}^{\bullet}_{\Lambda_{\opn{nov}}^{\mathbb{C}}}
 (s,s').
 \end{align}
-This isomorphism supports our analog of graded module
+This isomorphism supports that our analog of the graded module
 of Floer complex is compatible with the classical 
 Floer complex.
-Therefore, every pair $(L_1,L_2)$ of Lagrangian section
+To summarize, every pair $(L_1,L_2)$ of Lagrangian section
 of $B$ has a 
 Floer cohomology $\opn{HF}^{\bullet}(\mathscr{L}_1,
 \mathscr{L}_2)$, and its Euler 
@@ -5094,10 +5142,10 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$:
 \end{theorem}
 
 
-\begin{example}
+\begin{example}[{\cite[p.22]{MR2031639}}]
   If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
   the Thom-Sebastiani theorem gives
-  a certain K\"unneth formula for
+  a certain K\"unneth type formula for
   $\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\boxplus f_2,(v,w))$:
 \begin{align}
 \opn{LMD}^{\bullet}(\Z_{V\times W},f_1\boxplus f_2,(v,w))
@@ -5128,12 +5176,13 @@ of $C^{\infty}$-divisors.
 \label{corollary-kunneth-type-formula}
 Fix boundaryless compact rational polyhedral spaces $X$ and $Y$.
 Let $s$ and $s'$ a permissible $C^{\infty}$-divisor of $X$ and $Y$ 
-satisfying the condition of cohomological version of a Milnor 
+admitting intersection data satisfying
+the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
 Then, the induced external tensor product 
 $s\boxtimes s'\deq \opn{pr}_X^{*} (s)+\opn{pr}_Y^{*}(s')
 \in \CDiv(X\times Y)$ is also prepermissible and
-has the following equations:
+has the following equation:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(X\times Y;s\boxtimes s'))=
 \chi(\opn{LMD}^{\bullet}(X,s))\chi(\opn{LMD}^{\bullet}(Y,s')).
@@ -5254,7 +5303,7 @@ From now on, we calculate this complex
 using the theory of $\mathfrak{S}_n$-equivariant
 sheaves (see \cite[\textsection 0.2]{MR1299527}
 for the definition of $G$-equivariant sheaves
-of a topological group $G$). Here, we considered
+of a topological group $G$). Here, we consider
 $\mathfrak{S}_n$ as a discrete group.
 In this case, every $\mathfrak{S}_n$-equivariant
 sheaves on a space $X$ with a (right) action 
@@ -5356,7 +5405,7 @@ the cohomology of \eqref{equation-macdonald}.
 The Macdonald formula and the
 expression of the formal power series
 $\frac{1}{(1-t)^{m}}=\sum_{n=0}^{\infty}\binom{n+m-1}{n}t^{n}$
-induces \eqref{equation-symmetric-product}.
+deduces \eqref{equation-symmetric-product}.
 \end{proof}
 
 \begin{remark}
@@ -5401,8 +5450,8 @@ on tropical curve in
 is \emph{not} an invariant of $\mb{T}$-(semi)
 modules
 \myfootnote{In fact, 
-in \cite[Example 6.5]{yoshitomi2011generators} 
-the author give a simple example of divisors on 
+Yoshitomi \cite[Example 6.5]{yoshitomi2011generators} 
+give a simple example of divisors on 
 tropical curves such that 
 the rank of a divisor is different even though 
 the $\mathbb{T}$-semimodules of the global section of 
@@ -5434,9 +5483,9 @@ since there hasn't been any good definition of
 Euler characteristic of line bundles on tropical 
 manifolds as an extension of the above notions yet.
 
-We also note the other dimensions of $\mb{T}$-semimodules 
-(which are invariant for $\mb{T}$-semimodules) are defined for 
-some authors 
+We also note the other definition of the dimension of $\mb{T}$-semimodules 
+(which are invariant for $\mb{T}$-semimodules) are
+introduced by several researchers 
 (see for instance 
 \cite[Definition 2.3]{mikhalkinTropicalCurvesTheir2008a}
 and \cite[p.8]{yoshitomi2011generators}) but 
@@ -5455,7 +5504,7 @@ of tropical manifolds in this paper,
 but should be essentially defined from the theory 
 of Chern--Schwartz--MacPherson cycles for matroids 
 \cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
-See also \cite[5.3]{mikhalkinTropicalGeometryIts2006},
+See also \cite[\textsection 5.3]{mikhalkinTropicalGeometryIts2006},
 \cite[Definition 3.20]{shawTropicalSurfaces2015a} and 
 \cite{MR4583774}.
 \end{remark}
@@ -5504,8 +5553,8 @@ Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
 
 In this subsection, we recall the relationships
 between lattice points of 
-strongly integral affine manifolds and geometric quantization 
-from \cite{1999math......2027T,MR3525095}.
+strongly integral affine manifolds and geometric prequantization 
+from \cite{1999math......2027T,MR4237881}.
 
 A symplectic manifold $(M,\omega)$ is 
 \emph{prequantizable}
@@ -5520,7 +5569,7 @@ on $\check{X}(B)$ is prequantizable
 From the theory of connection on a vector bundle,
  there exists a complex line bundle $\mcal{L}$ with a $U(1)$-connection $\nabla$ and $R_{\nabla}=-2\pi\sqrt{-1}\omega$.  
 Such pair $(\mcal{L},\nabla)$ is called 
-\emph{prequantum line bundle} over $M$. 
+a \emph{prequantum line bundle} on $M$. 
 Obviously, $c_1(\mcal{L})=[\omega]$.
 Let $L$ be a Lagrangian submanifold of $(M,\omega)$.
 Then, $\nabla|_{L}$ is a flat $U(1)$-connection from definition.
@@ -5541,9 +5590,11 @@ of BS-orbits.
 
 
 
-
-If $B$ is a strongly integral affine manifold,
-we can define the set of lattice points $B(\Z)$ 
+Fix $M=\mathbb{Z}^{n}$.
+If $(B,\{(U_i,\phi_i)\}_{i\in I})$ is a 
+$n$-dimensional strongly integral affine manifold
+(\cref{definition-integral-affine-manifold}),
+then we can define the set of lattice points $B(\Z)$ 
 on $B$ for a fixed strongly integral affine structure from 
 the inverse image $\phi^{-1}_i(U_i\cap M)$ of each atlas.
 In other words, we can define 
@@ -5558,7 +5609,8 @@ $s_{B}\colon B \to X(B)$ of the torus fibration
  $\pi_B:X(B)\to B$
 induced from the graph of the composition map of developing map
 $\opn{dev}_{B}\colon \widetilde{B}\to M_{{\mathbb{R}}}$ 
-\cite[p.641]{goldmanRadianceObstructionParallel1984a} and projection
+\cite[p.641]{goldmanRadianceObstructionParallel1984a} and 
+the projection
 $p:M_{{\mathbb{R}}}\to M_{{\mathbb{R}}}/M$. 
 Then, we can consider $B(\Z)$ as the intersection of 
 $s_{B}$ and the zero section of 
@@ -5580,8 +5632,10 @@ the index formula for reducible non-negative polarizations:
 =\opn{vol}(\check{X}(B))=\opn{vol}(B)
 =\int_{\check{X}(B)}\opn{ch}(\mathcal{L})\hat{\mathcal{A}}(T(\check{X}(B))).
 \end{align}
-
-This equation is reproved in \cite{MR2676658} as a 
+\eqref{equation-bohr-sommerfeld-riemann-roch} also 
+appears in \cite{MR1461965} essentially.
+The equation \cref{equation-lattice-index} was reproved
+in \cite{MR2676658} as a 
 corollary of the theory of localization of the 
 index of a Dirac type operator.
 The comparison of LHS and RHS of 
@@ -5593,13 +5647,14 @@ the name of the \emph{numerical quantization problem}.
 \eqref{equation-lattice-index} can be considered
 as a numerical version of 
 \eqref{equation-hf-sheaf-cohomology} 
-when $B$ has a Hessian form.
+when $B$ has a Hessian form as explained
+in \cite[\textsection 8.5]{MR4237881}.
 If $B$ has a Hessian form, then $s_{B}$ can be 
 considered as a Lagrangian section of the dual torus 
 fibration $\pi_{\check{B}}\colon 
 \check{X}(\check{B})\to \check{B}$ of dual Hessian
 manifold $\check{B}$, see also 
-\cite[p.181-183]{grossMirrorSymmetryLogarithmic2006a}
+\cite[pp.181-183]{grossMirrorSymmetryLogarithmic2006a}
 and \cite[Proposition 6.9]{MR2567952}.
 A similar result exists for projective toric manifolds 
 and their prequantum line bundle 
@@ -5614,7 +5669,8 @@ that the set $B(\mathbb{Z})$ of integer points of
 $B$ forms a canonical basis of the global section a 
 relatively ample line bundle of a toric 
 degeneration of Calabi--Yau manifolds
-\cite[Conjecture 1.6]{MR3525095}.
+\cite[Conjecture 1.6]{MR3525095}
+(see also \cite[Conjecture 4.9]{grossSpecialLagrangianFibrations1998a}.)
 We also mention that the numerical quantization problem 
 is developed by several other perspectives
 (e.g. \cite{MR2879247,
@@ -5847,17 +5903,19 @@ $\underline{\mathbb{R}}_{\opn{log}}
 \deq (\underline{\mathbb{R}},\oplus_{\opn{log}},+)$ forms 
 a semifield isomorphic to the semifield 
 $(\mathbb{R}_{\geq 0},+,\cdot)$ of nonnegative 
-of real numbers.
+of real numbers (see also \cite{MR874583}).
 The semifield $\underline{\mathbb{R}}_{\opn{log}}$ 
 is called the \emph{log semifield} or 
-\emph{log semiring}. $\mathbb{R}_{\opn{log}}$ has a 
+\emph{log semiring}. The log semifield 
+$\underline{\mathbb{R}}_{\opn{log}}$ has a 
 topological structure induced from 
 $\opn{log}\colon \mathbb{R}_{\geq 0}\to 
 \underline{\mathbb{R}}$.
 This topological structure induces the topological 
 structure for 
 $N_{\underline{\mathbb{R}}}$ and this is homeomorphic 
-to the $n$-dimensional Euclidean space $\mathbb{R}^{n}$.
+to the $n$-dimensional Euclidean space $\mathbb{R}^{n}$
+(\cite[Definition 1.2]{MR2428356}).
 The isomorphism 
 $\mathbb{R}_{\geq 0}\simeq 
 \underline{\mathbb{R}}_{\opn{log}}$
@@ -5875,8 +5933,7 @@ $h\colon (\mathbb{R}_{> 0})^{n}\to \mathbb{R}_{> 0}$:
 	\arrow["{f}"', from=2-1, to=2-2].
 \end{tikzcd}
 \end{equation}
-where $f\deq \log \circ h\circ (\opn{id}_N \otimes \exp)$
-(see also \cite[\textsection 2.3]{MR4155409}).
+where $f\deq \log \circ h\circ (\opn{id}_N \otimes \exp)$.
 If $h$ is a $C^{\infty}$-function, so do $f$.
 Let $h\in \mathbb{R}_{\geq 0}
 [x_{1}^{\pm},\ldots,x_n^{\pm}]\setminus \{0\}$ be 
@@ -5887,7 +5944,7 @@ $C^{\infty}$-function on
 $(\mathbb{R}_{> 0})^{n}$ naturally.
 
 Let $P$ be an $n$-dimensional convex lattice polytope in
-$M_{\underline{R}}=(\mathbb{R}^{n})^{\vee}$ and
+$M_{\underline{\mathbb{R}}}=(\mathbb{R}^{n})^{\vee}$ and
 $f_P\colon \mathbb{R}^{n} \to \mathbb{R}$ a 
 polynomial function over $\underline{\mathbb{R}}$ as follows:
 \begin{align}
@@ -5975,7 +6032,7 @@ fiber bundle
 $\hat{f}_P\colon X_{P}^{\mathrm{trop}}\times 
 (\mathbb{R}^{n})^{\vee}/(\mathbb{Z}^{n})^{\vee}
 \to X_{P}^{\mathrm{trop}}$. 
-Readers who have read up to this point may feel that
+Readers may feel that
 $\dot{s}_P$ look like a `Lagrangian section of
 $\hat{f}_P$'.
 In fact, $\dot{s}_P|_{\mathbb{R}^{n}}$
@@ -6050,7 +6107,8 @@ $X_P\simeq \mathbb{T}P^{1}$.
 $\mathbb{T}P^{1}$ is covered by two open subsets:
 $U_{-\infty}\deq \underline{\mathbb{R}}$ and 
 $U_{+\infty}\deq \overline{\mathbb{R}}$.
-Take two continuous functions on each $U_i$ as follows:
+Take two continuous functions on each $U_i$ 
+($i=\pm \infty$) as follows:
 \begin{align}
 f_{-\infty,n}\colon \underline{\mathbb{R}}\to \underline{\mathbb{R}};
 x \mapsto \log (\sum_{i=0}^{n}e^{ix}),\quad
@@ -6060,20 +6118,21 @@ x\mapsto \log(\sum_{i=0}^{n}e^{ix})-nx.
 \end{align}
 
 A local data 
-$\{(U_i,f_{i,n})\}_{i=-\infty,\infty}$ defines
+$\{(U_i,f_{i,n})\}_{i=\pm \infty}$ defines
 a $C^{\infty}$-divisor $s_n$ on $\mathbb{T}P^{1}$.
 An element 
 $D_n\deq (f_{-\infty,n}-f_{+\infty,n}=nx)\in 
-\check{H}^{1}(\mb{T}P^1;\mcal{O}_{\mb{T}P^1}^{\times})\simeq \Z$
+\check{H}^{1}(\mb{T}P^1;
+\mcal{O}_{\mb{T}P^1}^{\times})\simeq \Z$
 as a \v{C}ech cocycle.
 Then, we have
 \begin{align}
 \label{equation-MRR-tropical-line}
 \sharp([0,n]\cap \Z)=n+1=
-\opn{deg}(\mathcal{L}_{s_n})+\chi_{\opn{top}}(\mb{T}P^1).
+\opn{deg}([s_n])+\chi_{\opn{top}}(\mb{T}P^1).
 \end{align}
 \end{example}
-Let $P$ an $n$-dimensional Delzant polytope again.
+Let $P$ be an $n$-dimensional Delzant polytope again.
 Every face $F$ of $P$ corresponds a convex cone 
 $\sigma_F$ of the normal fan of $P$.
 $s_P$ induces a family 
@@ -6149,7 +6208,7 @@ a new Ehrhart theory of tropical geometry appears,
 but this is different from our approach. 
 \end{remark}
 
-\bibliography{tropical-rr}
+\bibliography{tropical-permissible-divisor}
 \bibliographystyle{alpha}
 
 \end{document}
