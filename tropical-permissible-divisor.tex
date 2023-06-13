@@ -720,7 +720,7 @@ for more details).
 In \cref{section-local-morse-data},
 we define local Morse data $\opn{LMD}^{\bullet}(S;s)$
 for $C^{\infty}$-divisors $s$ 
-satisfying \cref{condition-good-divisor}
+satisfying the permissibility condition
 on tropical manifolds.
 \cref{section-tropical-curve} contains the proof of
 \cref{theorem-MRR-curve-preface}.
@@ -971,7 +971,7 @@ Let $f\colon Y\to X$ be a continuous map,
 $\mathcal{F},\mathcal{F}'\in \opn{Ob}(\catn{Mod}(A_X))$
 and $\mathcal{G}\in\opn{Ob}(\catn{Mod}(A_Y))$.
 
-Then, we have the following isomorphism 
+Then, we have the following isomorphisms
 \cite[(2.3.18)-(2.3.20)]{MR1299726}:
 \begin{align}
 \label{equation-property-sheaf-cut-off}
@@ -3021,10 +3021,10 @@ space $C$ such that every connected component
 of $C_{\reg}$ is isomorphic to 
 an open interval of $\mathbb{R}$ or a 
 circle $\mathbb{R}/c\mathbb{Z}$ ($c\in \mathbb{R}_{>0}$) 
-with the standard strucure induced from $\mathbb{R}$. 
+with the standard structure induced from $\mathbb{R}$. 
 In particular,
 \begin{align}
-  C_{\reg}\simeq \left( \coprod_{e\in E} (a_e,b_e)\right)\sqcup
+  C_{\reg}\simeq \left( \coprod_{e\in E} (a_e,b_e)\right)\amalg
 \left(\coprod_{l\in L} \mathbb{R}/c_l\mathbb{Z} \right), \quad
 (a_e\in \underline{\mathbb{R}}, b_e\in 
 \overline{\mathbb{R}}, c_l\in \mathbb{R}_{>0})
@@ -3053,7 +3053,7 @@ Every $n$-dimensional
 integral affine manifold $B$ has 
 the developing map $\opn{dev}_{B}\colon\tilde{B}\to \mathbb{R}^{n}$
 where $\tilde{B}$ is the universal cover of $B$.
-Besides, every developing map is a immersion and a submersion, 
+Besides, every developing map is an immersion and a submersion, 
 and thus $\opn{dev}_{B}$ is an embedding onto 
 an open subset of $\mathbb{R}$ when $\dim B=1$.
 \end{remark}
@@ -3096,7 +3096,7 @@ T^{*}C_{\reg}/\mathcal{T}_{\mathbb{Z},C_{\reg}}^{\vee}, \quad
 \check{X}_0(C)\deq 
 \check{X}(C_{\reg})\sqcup_{i,\check{s}_0}C
 \end{align}
-where $\check{X}(C_{\reg})\sqcup_{i,s}C$ is the pushout of 
+where $\check{X}(C_{\reg})\sqcup_{i,\check{s}_0}C$ is the pushout of 
 the inclusion $i\colon C_{\reg} \to C$ and 
 $\check{s}_0\colon C_{\reg}\to \check{X}(C_{\reg})$ is the zero 
 section of $\check{f}_{C_{\reg}}\colon \check{X}(C_{\reg})
@@ -3213,8 +3213,8 @@ $f\colon C\to \mathbb{R}_{\geq 0}$ satisfying
 \end{proposition}
 \begin{proof}
 We may assume $C$ is connected.
-If $U$ is an bounded interval,
-then we can create such a $f$ easily by using 
+If $U$ is a bounded open interval,
+then we can create such an $f$ easily by using 
 the following bump function
 $f_{a,b}\colon\mathbb{R}\to \mathbb{R}$
 \begin{align}
@@ -3229,7 +3229,7 @@ for all $a\in \mathbb{R}_{>0}, b\in \mathbb{R}$.
 $f$ is a $C^{\infty}$-function on such that
 $\{f>0\}=(b-a,b+a)$ and has a unique maximal point.
 Of course, $f_{a,b}'$ is bounded.
-We can extend $f|_U$ to $C$ by zero outside of $U$
+We can extend $f|_U$ to $C$ by zero outside $U$
 by the pullback of $f$ by an appropriate linear function 
 on $\Gamma_{n}^{\circ}$
 (see also \cref{equation-pullback-support}).
@@ -3242,7 +3242,7 @@ nonnegative weakly-smooth function which is strictly monotone
 except at $x=-\opn{log}2$ and $\{f>0\}=(-\infty,0)$.
 By \cref{exmaple-weakly-smooth-line}, $f$ is also
 bounded. In this case, we can also extend 
-$f|_U$ to $C$ by zero outside of $C\setminus U$.
+$f|_U$ to $C$ by zero outside $C\setminus U$.
 
 If $U=\mathbb{R}$, then $C=\mathbb{T}P^{1}$.
 $f\colon \mathbb{T}P^{1}\to\mathbb{R};x\mapsto 
@@ -3276,7 +3276,7 @@ $K_v\cap K_{v'}=\emptyset$ when $v\ne v'$ for
 all $v,v'\in C\setminus C_{\reg}$.
 Let $h\colon C\to \mathbb{R}$ be a weakly-smooth function
 such that $h|_{K_v}=f_i|_{K_v}$.
-Such a $h$ exists since $\mathcal{A}^{\mathrm{weak}}_C$
+Such an $h$ exists since $\mathcal{A}^{\mathrm{weak}}_C$
 is fine. 
 The set $\{(U_i,h|_{U_i})\}_{i\in I}$ is a local data for 
 $(h)^{\mathrm{sm}}$.
@@ -3421,6 +3421,13 @@ a closed interval $[a,b]$ in $\mathbb{T}P^{1}$.
 We define $\opn{rot}_0(s)\deq\opn{rot}(\check{s})$.
 \end{definition}
 
+\cref{proposition-rotation-number}
+and \cref{remark-rotation-slope} 
+show that the rotation number of 
+a permissible $C^{\infty}$-divisor is
+independent of the choice of embedding
+of closed intervals into $\mathbb{T}P^{1}$. 
+
 \begin{proposition} \label{proposition-rotation-number}
 Let 
 $\phi \colon [a,b] \to [a,b]$ be an automorphism of 
@@ -3447,7 +3454,7 @@ we have
 q\circ \psi \circ s \circ \phi^{-1}(x)=
 -q\circ s(\phi^{-1}(x)))=-q\circ s(b+a-x).
 \end{align}
-From definiton of fundamental group, 
+From definition of fundamental group, 
 $\opn{rot}(\varphi\circ s \circ \phi^{-1})$
 should be $\opn{rot}(s)$.
 The same method works for $[a,b]=\mathbb{T}P^{1}$.
@@ -4655,7 +4662,7 @@ In this case, $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.
 Let $f\colon X\to Y$ be a proper morphism 
 of tropical manifolds such
 that $Y$ is connected and $f$ is a covering map.
-$f$ is a \emph{tropical \'etale} covering map 
+The morphism $f$ is a \emph{tropical \'etale} covering map 
 if $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.  
 \end{definition}
 \begin{remark}
@@ -4870,19 +4877,51 @@ for $s'$ proves \cref{theorem-MRR-hesse-preface}.
 
 \begin{remark}
 
-According to \cite[5.3]{mikhalkinTropicalGeometryIts2006},
-the support of $k$-th Chern class of tropical manifold is 
-the $k$-skeleton of it.
-We don't know the definition of higher Chern class of tropical manifold $B$ except
-$n=1$ or $n=\dim B$ (see \cref{remark-todd-class}).
-On the other hand, $\opn{ch}(B)$ should be trivial when $B$ is
-an integral affine manifold, since $B=B_{0}$.
-Thus, $c_{k}(B)$ should be $1$ except $k=0$, 
-i.e., $\opn{td}(B)$ should be $1$. 
+According to \cite[\textsection 5.3]{mikhalkinTropicalGeometryIts2006},
+the $k$-th Chern class $c_k(X)$
+of an $n$-dimensional tropical manifold $X$ 
+should be supported on the $(n-k)$-skeleton of $X$.
+I don't know the explicit and
+precise definition of higher
+Chern classes of tropical manifold $B$ except
+$k=1$ or $k=\dim B$
+(see \cite[Definition 3.20]{shawTropicalSurfaces2015a} for 
+the definition of the top Chern class of a tropical manifold), 
+but we can consider the $0$-th Chern class $c_0(B)$ of 
+an integral affine manifold should be $1$,
+and the $k$-th Chern class should be $0$ when $k\ne 0$
+since $B=B_{\reg}$.
+Thus, the Todd class $\opn{td}(B)$ of $B$
+should be $1$ when the Todd class of a tropical manifold
+can be written as a formal power series of the Chern classes
+as like complex geometry.
 On the other hand,
- $\hat{\mcal{A}}(X(B))=\opn{td}(X(B))=1$
+ $\opn{td}(X(B))=1$
 since the tangent bundle on $X(B)$ has a flat
 structure.
+
+Besides, 
+the Chern--Schwartz--MacPherson cycles for matroids 
+were defined in 
+\cite{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
+As explained in 
+\cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020},
+the Chern--Schwartz--MacPherson cycles of matroids should 
+give a precise definition of higher Chern classes
+of tropical manifolds
+(see \cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}
+for more details about it).
+In particular, the above observation of the Chern classes
+of integral affine manifolds is compatible with the 
+properties of the Chern--Schwartz--MacPherson cycles
+of matroids 
+\cite[Proposition 2.12]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
+In a recent study,
+a Lagrangian interpretation of
+the Chern--Schwartz--MacPherson cycles of matroids 
+appeared in \cite{MR4583774}.
+We expect that our approach has a good relationship
+with this interpretation. 
 \end{remark}
 
 \begin{remark}
@@ -4903,9 +4942,8 @@ $\chi_{\opn{trop}}(B)\deq
 \begin{remark}[{Kodaira--Thurston surface}]
 There exists a complete and compact integral affine surface
 which has no Hessian forms.
-(I firstly knew that such an example exists 
-from
-~\cite[Example 1.5]{grossMirrorSymmetryLogarithmic2006a}).
+I learned the following example from
+~\cite[Example 1.14]{grossMirrorSymmetryLogarithmic2006a}.
 Mishachev classified integral affine structures 
 on 2-torus in \cite[Theorem A]{MR1422337}.
 If $B$ is an integral affine 2-torus and not isomorphic
@@ -4922,9 +4960,10 @@ Since $X(B)$ has no K\"ahler structure,
 $B$ also has no Hessian forms.
 From Kodaira's classification of complex surfaces, 
 $X(B)$ is isomorphic to a primary Kodaira surface.
-Explicit calculations of the tropical cohomology
+Explicit calculations of the tropical cohomologies
 $H^{\bullet}(B;\tform_{\mathbb{Z},B}^{\bullet})$
-and the radiance obstruction of tropical primary Kodaira surfaces is in \cite{maehara2023}
+and the radiance obstructions of
+tropical primary Kodaira surfaces are in \cite{maehara2023}
 (see also \cite[\textsection 6]{MR1422337}).
 Integral affine structures on a Klein bottle
 and their tropical cohomologies are discussed in
@@ -4966,7 +5005,7 @@ $\tilde{p}\in f^{-1}(p)$.
 We note $\pi_{i}(X,p)\simeq 
 \pi_{i}(\widetilde{X},\tilde{p})$ for $i\geq 2$ and 
 the $i$-th homotopy group functor from the category of 
-pointed spaces to the category of group preserves finite
+pointed spaces to the category of groups preserves finite
 products.
 Therefore,
 \begin{align}
@@ -4991,7 +5030,7 @@ $\pi_2(\check{X}(B),L_s)=0$ by considering the long exact
 sequence of the relative homotopy groups.
 \end{proof}
 
-\cref{proposition-unobstructed-lagrangian} induces 
+\cref{proposition-unobstructed-lagrangian} deduces 
 that every pseudoholomorphic disk
 $\psi\colon D\to \check{X}(B)$ such that 
 $\psi(\partial D)\subset L_s$, 
@@ -5033,9 +5072,9 @@ is the following:
 \opn{CF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})
 \deq \bigoplus_{p\in L_s\cap L_{s'}}
 \Lambda_{\opn{nov}}^{\mathbb{C}}
-[-\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)].
+[-\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)]
 \end{align}
-Here, $\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)$ is 
+where $\mu_{(\mathscr{L}_s,\mathscr{L}_{s'})}(p)$ is 
 the Maslov index of the pair 
 $(\mathscr{L}_s,\mathscr{L}_{s'})$ at $p$.
 In this case, the Maslov index at $p$
@@ -5055,7 +5094,7 @@ isomorphism of graded modules:
 This isomorphism supports that our analog of the graded module
 of Floer complex is compatible with the classical 
 Floer complex.
-To summarize, every pair $(L_1,L_2)$ of Lagrangian section
+To summarize, every pair $(L_1,L_2)$ of Lagrangian sections
 of $B$ has a 
 Floer cohomology $\opn{HF}^{\bullet}(\mathscr{L}_1,
 \mathscr{L}_2)$, and its Euler 
@@ -5111,33 +5150,33 @@ curves \cite[Theorem 2.14]{MR2525845}.
 
 \subsection{K\"unneth-type formula}
 We remark that there exists
-a tropical analog of K\"unneth formula for 
+a tropical analog of the K\"unneth formula for 
 local Morse data (\cref{corollary-kunneth-type-formula}).
-For prove \cref{corollary-kunneth-type-formula},
+For proving \cref{corollary-kunneth-type-formula},
 we use the following sheaf theoretic version of
-Thom--Sebastiani formula:
+the Thom--Sebastiani formula:
 
 \begin{theorem}[{Thom--Sebastiani Theorem for sheaves \cite[Theorem 1.2.2]{MR2031639}}]
 Let $i=1,2$.
 Fix locally compact Hausdorff spaces $X_i$ with
 countable topology and of finite cohomological dimension,
-and sheaves $\mathcal{F}_i$ on $X_i$.
-For continuous functions $f_i\colon X_1 \to\mathbb{R}$,
+and sheaves $\mathcal{F}_i$ on $X_i$,
 and compact subsets $S_i$ of $\{f_i=0\}$.
-We write $f_1\boxplus  f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$
+For continuous functions $f_i\colon X_1 \to\mathbb{R}$,
+we write $f_1\boxplus  f_2\deq \pi_1^{*}f_1+\pi_2^{*}f_2$
 and 
 $\mu_{f_i}\mathcal{F}\deq R\Gamma_{\{f_i\geq 0\}}
 (\mathcal{F})|_{\{f_i=0\}}$.
-If the above data satisfies
+If the above data satisfy
 the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639},
 then there exists the following isomorphism 
 for $\mcal{F}_1\boxtimes^{L} \mcal{F}_2\deq 
 p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$:
 \begin{align}
-    R\Gamma(S_1\times S_2,\mu_{f_1\boxplus f_2}(\mcal{F}_1\boxtimes^{L} \mcal{F}_2))
-    \simeq R\Gamma(S_1,\mu_{f_1}(\mcal{F}_1))
-    \otimes^{L}_{A_X}R\Gamma(S_2,\mu_{f_2}(\mcal{F}_2)).
+    R\Gamma(S_1\times S_2;\mu_{f_1\boxplus f_2}(\mcal{F}_1\boxtimes^{L} \mcal{F}_2))
+    \simeq R\Gamma(S_1;\mu_{f_1}(\mcal{F}_1))
+    \otimes^{L}_{A_X}R\Gamma(S_2;\mu_{f_2}(\mcal{F}_2)).
 \end{align}
 
 \end{theorem}
@@ -5166,7 +5205,7 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$:
   of a Morse function $f$ at the origin.
 \end{example}
 
-We don't state a K\"unneth type formula for 
+We won't state a K\"unneth type formula for 
 local Morse data for $C^{\infty}$-divisors in a fully
 general setting, but the following corollary 
 is enough for performing that there exists 
@@ -5177,10 +5216,10 @@ of $C^{\infty}$-divisors.
 \label{corollary-kunneth-type-formula}
 Fix boundaryless compact rational polyhedral spaces $X$ and $Y$.
 Let $s$ and $s'$ a permissible $C^{\infty}$-divisor of $X$ and $Y$ 
-admitting intersection data satisfying
+admitting intersection data which satisfy
 the condition of cohomological version of a Milnor 
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
-Then, the induced external tensor product 
+Then, the external tensor product 
 $s\boxtimes s'\deq \opn{pr}_X^{*} (s)+\opn{pr}_Y^{*}(s')
 \in \CDiv(X\times Y)$ is also prepermissible and
 has the following equation:
@@ -5369,7 +5408,7 @@ both of them have left adjoint exact functors
 the derived version of \eqref{equation-equivariant-quotient}.
 By \eqref{equation-equivariant-quotient} and
 the sheaf theoretic Thom--Sebastiani formula
-(see also \cite[Corollary 1.3.1]{MR2031639}), 
+(see also \cite[Corollary 1.3.2]{MR2031639}), 
 we get 
 \begin{align}
 R\Gamma(s_0\cap \opn{Sym}^{n}(s);
@@ -5452,7 +5491,7 @@ is \emph{not} an invariant of $\mb{T}$-(semi)
 modules
 \myfootnote{In fact, 
 Yoshitomi \cite[Example 6.5]{yoshitomi2011generators} 
-give a simple example of divisors on 
+gave a simple example of divisors on 
 tropical curves such that 
 the rank of a divisor is different even though 
 the $\mathbb{T}$-semimodules of the global section of 
@@ -5476,7 +5515,7 @@ $h^{0}(\Delta,D)+h^{0}(\Delta,K_{\Delta}-D)\geq
 \frac{D(D-K)}{2}+\chi_{\opn{top}}(\Delta)$
 in \cite[Conjecture 3.6]{MR4251610}.
 Sumi prove for the inequality for tropical tori and 
-tropical toric surfaces \cite{MR4229604,sumi2021riemannroch}
+tropical toric surfaces \cite{MR4229604,sumi2021riemannroch}.
 On the other hand, a tropical analog of Riemann--Roch theorem
 for higher dimensional tropical manifolds 
 (or tropical complexes) is not formulated
@@ -5493,22 +5532,6 @@ and \cite[p.8]{yoshitomi2011generators}) but
 these dimensions have no tropical analog of 
 Riemann--Roch formula like 
 \cite{MR2355607,gathmannRiemannRochTheoremTropical2008a}.
-
-\begin{remark} \label{remark-todd-class}
-The Todd class of tropical manifold
-have not been studied well enough yet  
-when the dimension of tropical manifold is greater
-than $2$.
-We don't discuss the general theory 
-of the Todd classes 
-of tropical manifolds in this paper, 
-but should be essentially defined from the theory 
-of Chern--Schwartz--MacPherson cycles for matroids 
-\cite[Previous work]{lopezdemedranoChernSchwartzMacPhersonCyclesMatroids2020}.
-See also \cite[\textsection 5.3]{mikhalkinTropicalGeometryIts2006},
-\cite[Definition 3.20]{shawTropicalSurfaces2015a} and 
-\cite{MR4583774}.
-\end{remark}
 
 \begin{remark} \label{remark-list-tropical-euler}
 Here is the list of the reason why the Euler 
@@ -5527,7 +5550,7 @@ says $r(D)-r(K_C-D)=\chi_{\opn{top}}(C)=
 good condition, then there exists the Noether formula
 $\chi_{\opn{top}}(S)=\frac{c_1(K_S)^{2} +c_2(S)}{12}$ 
 \cite[Theorem 5.1]{shawTropicalSurfaces2015a}.
-Cartwright proves Noether's formula for
+Cartwright proved Noether's formula for
 a good class of $2$-dimensonal tropical complexes
 \cite[Proposition 1.3]{cartwright2015combinatorial}. 
 
@@ -5539,7 +5562,7 @@ complex projective varieties over a punctured disc which
 has a tropical limit to a smooth projective 
 $\mathbb{Q}$-tropical variety $X$, 
 is equal to that of tropical homology 
-$H_{q}(X;\tform_p)$ of it. If $p=0$, then
+$H_{q}(X;\mform_p)$ of it. If $p=0$, then
 $h^{0,q}(Z_w)=\dim_{\mathbb{R}}H_{q}(X;\mathbb{R})
 =\dim_{\mathbb{R}} H^{q}(X;\mathbb{R})$.
 Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
@@ -5592,8 +5615,8 @@ of BS-orbits.
 
 
 Fix $M=\mathbb{Z}^{n}$.
-If $(B,\{(U_i,\phi_i)\}_{i\in I})$ is a 
-$n$-dimensional strongly integral affine manifold
+If $(B,\{(U_i,\phi_i)\}_{i\in I})$ is
+an $n$-dimensional strongly integral affine manifold
 (\cref{definition-integral-affine-manifold}),
 then we can define the set of lattice points $B(\Z)$ 
 on $B$ for a fixed strongly integral affine structure from 
