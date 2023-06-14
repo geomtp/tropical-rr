@@ -229,7 +229,7 @@ on tropical manifolds}
 The University of Tokyo, 3-8-1 Komaba, Meguro-Ku,
 Tokyo, 153-8914, Japan}
 \email{tyuki@ms.u-tokyo.ac.jp}
-\date{\today}
+%\date{\today}
 
 \begin{document}
 
@@ -815,8 +815,6 @@ B^{n}_{\varepsilon}(x)\setminus
 B_{\varepsilon,\varepsilon'}^{n}(x)\cup 
 \partial B_{\varepsilon,\varepsilon'}^{n}(x).
 \end{align*}
-\item $\opn{Crit}(f)$: the subset of critical points of
-a $C^{1}$-function $f$ on a smooth manifold.
 \item $\{\opn{pt}\}$: the topological space of 
 a fixed singleton set.
 \item $a_X\colon X\to \{\opn{pt}\}$:
@@ -1039,8 +1037,8 @@ closed subset of $X$. Then,
 \begin{align}
 \Gamma_{Z\cap V}(\mathcal{F}|_V)=\Gamma_{Z}(\mathcal{F})|_V.
 \end{align}
-We can see the above from the definition or the following 
-equation:
+We can see the above from the definition or the following
+equations:
 \begin{align}
 \Gamma_{j^{-1}(Z)} \circ j^{-1}
 =j^{-1}\circ j_*\circ \Gamma_{j^{-1}(Z)} \circ j^{-1}
@@ -1153,7 +1151,7 @@ be more appropriate
 than the name cohomological local Morse data. 
 \item We also note that we need to use 
 the graded module $\opn{LMD}^{\bullet}(\mcal{F},f,x)$ instead of 
-the complex $R\Gamma_{\{f\geq f(x)\}}\mathcal{F}$ in order to define
+the complex $(R\Gamma_{\{f\geq f(x)\}}\mathcal{F})_x$ in order to define
 a graded module associated with line bundle on tropical
 spaces. See also \cref{remark-differential-graded-module} for more about 
 this reason.
@@ -1161,7 +1159,7 @@ this reason.
 \end{remark}
 
 Before we see some important examples of cohomological
-local Morse datum, we will see some elementary
+local Morse data, we will see some elementary
 properties of them.
 By \eqref{equation-local-stalk}, we get the following
 isomorphism:
@@ -1246,11 +1244,10 @@ inclusion map $U_{j'}\hookto U_j$. Then,
 \label{example-morse-index}
 In this example, we see
 the local Morse index of is a certain generalization of 
-Poincar\'e--Hopf index of the gradient 
+the Poincar\'e--Hopf index of the gradient 
 $\opn{grad}(f)$ of a smooth function $f$ 
 when $f$ is a Morse function. 
-We recall \cref{notation-general}
-and set
+We set
 \begin{align}
 f_{n,m}\colon \mathbb{R}^{n}\times \mathbb{R}^{m}\to \mathbb{R};
 (x,y)\mapsto \|x\|_{\mathbb{R}^{n}}^2
@@ -1438,7 +1435,7 @@ of two Lagrangian cycles in $T^{*}X$ when
 $\mathcal{F}^{\bullet}$ is a complex of 
 constructible sheaves,
 and $f$ is an analytic function on an analytic manifold,
-see \cite[Corollary 9.5.2, Theorem 9.5.6]{MR1299726}.
+see \cite[Corollary 9.5.2 and Theorem 9.5.6]{MR1299726}.
 This is called the microlocal index formula or Kashiwara's 
 index formula.
 
@@ -1473,7 +1470,7 @@ for any smooth function $f\colon M\to \mathbb{R}$.
 Therefore, this is a certain sheaf theoretic version of 
 Poincar\'e--Hopf theorem for some polyhedral spaces. 
 The cohomology 
-$H^{\bullet}(M;\iota_*k_S)$
+$H^{\bullet}(M;\iota_*\mathbb{R}_S)$
  should be considered as a
 certain analog of 
 $\chi(H^{\bullet}(X;\iota_*\mcal{O}_Z))$ for the closed embedding
@@ -1510,7 +1507,9 @@ for the definition of fine sheaves in this paper).
 By a Morse perturbation, we can deform 
 $f_0$ to a smooth function $f_1$ such that 
 $f_0|_{K}=f_1|_K$ and $f_1$ is nondegenerate except at 
-$x_0$. If $\opn{LMD}^{\bullet}(A_U,f,0)$ is 
+$x_0$.
+Let $\opn{Crit}(f)$ be the set of critical points of $f$.
+If $\opn{LMD}^{\bullet}(A_U,f,0)$ is 
 a finitely generated graded $A$-module,
 then we have
 \begin{align} \label{equation-local-poincare-hopf}
@@ -1521,7 +1520,7 @@ then we have
 \end{align}
 by \cite[Proposition 5.4.20]{MR1299726}.
 From the Poincar\'e--Hopf theorem and 
-\cref{example-morse-index}, 
+\cref{example-morse-index}, we have
 \begin{align} \label{equation-poincare-hopf}
 \opn{ind}_0^{A}(f)=
 \opn{ind}_x^{A}(f_1) =
@@ -1543,21 +1542,21 @@ $\tilde{f}$ when $\tilde{f}$ is a Morse function.
 The following example is a $C^{\infty}$-function on a 
 smooth manifold with an isolated critical point
 at $x$ such that $\opn{LMD}^{\bullet}(A_M,f,x)$
-is bounded and finitely generated.
+is finitely generated.
 
 
 \begin{example}
 Let $f\colon M\to \mathbb{R}$ be a 
 $C^{\infty}$-function on an $n$-dimensional
-compact smooth Riemannian manifold 
+smooth Riemannian manifold 
 $(M,g)$ and 
 $\varepsilon$ a 
 sufficiently small positive real number. Then,
 for $x\in M$ we have
 \begin{align}
 \opn{LMD}^{\bullet}(A_{M},f,x)\simeq 
-\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}^{n}(x)},
-f|_{\bar{B}_{\varepsilon}^{n}(x)},x) \simeq 
+\opn{LMD}^{\bullet}(A_{B_{\varepsilon}^{n}(x)},
+f|_{B_{\varepsilon}^{n}(x)},x) \simeq 
 \opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}^{n}(x)},
 f|_{\bar{B}_{\varepsilon}^{n}(x)},x).
 \end{align}
@@ -1633,7 +1632,7 @@ f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$
 for sufficiently small $\vep>\delta>0$.
 $f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$ is called 
 the (negative) \emph{real Milnor fiber}.
-By Khimshiashvili [Him\v{s}ia\v{s}vili] formula \cite{MR0458467}, we have
+By Khimshiashvili's [Him\v{s}ia\v{s}vili] formula \cite{MR0458467}, we have
 \begin{align} \label{equation-Khimshiashvili}
   \opn{ind}_x^{A}(f)
 =1-\chi(f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x))
@@ -1679,7 +1678,7 @@ Hacking also proved this conjecture is true for a suitable condition
 Since any tropical variety is connected
 through codimension $1$ \cite[Theorem 3.3.5]{MR3287221},
 this conjecture is true when $\dim S \leq 2$.
-This phenomenon gives a certain analog of Kodaira vanishing theorem for 
+This phenomenon gives a certain analog of the Kodaira vanishing theorem for 
 positive line bundles, see 
 also \cref{example-tropical-kodaira-vanishing}. 
 Amini and Piquerez also discuss a certain shellability 
@@ -1753,7 +1752,7 @@ rational polyhedral spaces
 The set of isomorphism classes
 of tropical line bundles
 on a rational polyhedral space $S$ is 
-bijective with the cohomology $H^{1}(S;\mcal{O}^{\times}_S)$.
+bijective with the cohomology $H^{1}(S;\mcal{O}^{\times}_S)$
 \cite[Proposition 3.13]{gross2019sheaftheoretic}.
 The cohomology $H^{1}(S;\mcal{O}^{\times}_S)$ is called 
 the \emph{Picard group} of $S$.
@@ -1775,7 +1774,7 @@ of (real valued) \emph{tropical rational functions}
 0 \to \mcal{O}^{\times}_S \to \mcal{M}_S^{\times} 
 \to \mcal{M}_S^{\times}/\mathcal{O}^{\times}_S\to 0.
 \end{align}
-There exist different definitions of  
+We also note there exist different definitions of  
 tropical rational function 
 (for example, see \cite{mikhalkin2018tropical}).
 By applying the global section functor for the
@@ -1787,7 +1786,7 @@ H^{0}(S;\mcal{M}_S^{\times}/\mathcal{O}^{\times}_S)
 \to H^{1}(S;\mathcal{O}^{\times}_S)$.
 We note $H^{1}(S;\mcal{M}_{S}^{\times})=0$, 
 and thus $\delta$ is surjective
-\cite[Lemma 4.5, Proposition 4.6]{MR3894860}.
+\cite[Lemma 4.5 and Proposition 4.6]{MR3894860}.
 An element in $H^{0}(S;\mcal{M}_S^{\times}/\mathcal{O}^{\times}_S)$
 is called a \emph{Cartier divisor} on $S$.
 Therefore, for every line bundle $\mathcal{L}$ on a rational polyhedral 
@@ -1850,7 +1849,9 @@ $i\in I$.
 \end{definition}
 
 Local data for a $C^{\infty}$-divisor $s$ are also useful for
-calculating the divisor class $[s]\in H^{1}(S;\mathcal{O}^{\times}_S)$
+calculating the divisor class
+$[s]\in H^{1}(S;\mathcal{O}^{\times}_S)$
+of $s$
 by using the \v{C}ech cohomology 
 $\check{H}^{1}(S;\mathcal{O}^{\times}_S)$
 (see e.g. \cite[Remark 7.21]{MR3560225}).
@@ -1906,8 +1907,8 @@ Let $S$ be a rational polyhedral space,
 $x\in S$ and $\opn{LC}_x S$
 the local cone of $S$ at $x$ 
 \cite[2.2]{gross2019sheaftheoretic}.
-This is a subset of the tangent vector space
-$T_{x}S$ at $x$ which spans of $T_{x}S$
+This is a subset of
+$T_{x}S$ which spans $T_{x}S$
 \cite[Corollary 2.6]{gross2019sheaftheoretic}.
 Then, there exists an open neighborhood 
 $V$ of $0$ in $\opn{LC}_x S$ and
@@ -2087,12 +2088,12 @@ Then,
 and $P\subset \mathbb{R}_{\geq 0}U_y$. 
 The RHS of \eqref{equation-bump-set} is a cone and 
 $\opn{LC}_x S \cap \opn{int}(P)$ is convex.
-Therefore, we have
+Hence, we have
 \begin{align}
 \chi_{\mathrm{top}}(
 \{z\in \opn{LC}_x S\cap B^{n}_{\varepsilon}(0)
 \mid v(z)-\rho_{P}(z)<0\})
--\chi_{\mathrm{top}}(\{z\in \opn{LC}_x S \cap B^{n}_{\varepsilon}(0)\mid v(z)<0\})=1.
+-\chi_{\mathrm{top}}(\{z\in \opn{LC}_x S \cap B^{n}_{\varepsilon}(0)\mid v(z)<0\})=1
 \end{align}
 for any sufficiently small $\varepsilon>0$.
 Therefore, $v-\rho_{P}$ or $v$ satisfies 
@@ -2100,7 +2101,7 @@ Therefore, $v-\rho_{P}$ or $v$ satisfies
 \end{proof}
 
 \begin{remark}
-In many cases, the three vector space in 
+In many cases, the three vector spaces in 
 \eqref{equation-W-SS-Lin} is equal.
 For instance, if $S$ is a tropical curve 
 or integral affine manifold, 
@@ -2115,8 +2116,8 @@ that the three vector space in
 \eqref{equation-W-SS-Lin} is equal. If 
 $S=\mathbb{R}_{\geq 0}$, then 
 $((\mathcal{W}_{1,S}^{\mathbb{R}})_{0})^{\bot}=\{0\}$ and
-$\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)=
-(\opn{lineal}(\opn{LC}_x S))^{\bot}=\mathbb{R}$. 
+$\opn{span}_{\mathbb{R}}(\opn{SS}(S)_0)=
+(\opn{lineal}(\opn{LC}_0 S))^{\bot}=\mathbb{R}$. 
 We expect the middle and right vector space in 
 \eqref{equation-W-SS-Lin} is equal for various 
 important cases.
@@ -2143,6 +2144,8 @@ differential vector $df (x)\in (\tform_{S}^{1})_x$ for any
 $x\in S$ from the definition of $(0,0)$-superforms
 and properties of the local 
 cone \cite[Corollary 2.6]{gross2019sheaftheoretic}.
+We write $\opn{Crit}(f)$ for the set
+of critical points of $f$.
 For a general rational polyhedral space $S$,
 we can also define the 
 differential of $f$ at $x$ by the pullback of 
@@ -2164,7 +2167,7 @@ df(x)\notin (\opn{span}_{{\mathbb{R}}}
 
 From definition, if $f$ is prepermissible at $x$ then
 $f|_{U_x}+m$ is also prepermissible at $x$ for any 
-open neighborhood $U_x$ at $x$ and 
+open neighborhood $U_x$ of $x$ and 
 $m\in \mathcal{O}_{S}^{\times}(U_x)$.
 Therefore, we can define the prepermissibility condition
 for principal $C^{\infty}$-divisors directly.
@@ -2457,7 +2460,7 @@ Such a $C^{\infty}$-divisor naturally appears when
 we consider an analog of positive forms
 on complex manifolds. A \emph{Hessian form} on
 an (integral) affine manifold is a certain analog
-of a K\"ahler form and has been studied
+of a K\"ahler form, and has been studied
 in Hessian geometry (see 
 \cref{definition-hessian-metric,example-hessian-metric-from}).
 Lagerberg \cite{MR2892935} studied a tropical analog of
@@ -2796,6 +2799,9 @@ The \emph{differential vector}
 $df(x)\in (\tform^{1}_{\mathbb{R},S})_x$ at $x$
 is that of $\phi^{*}f$ via the identification 
 $T_0(\opn{LC}_x S)=T_xS$.
+We can also define the set $\opn{Crit}(f)$ of
+\emph{critical points} of a weakly-smooth function $f$
+on a rational polyhedral space naturally.
 \begin{definition}[{prepermissibility condition}]
 \label{definition-prepermissible-weakly-smooth}
 Let $f$ be a weakly-smooth function on a rational polyhedral 
@@ -2846,6 +2852,7 @@ With them, all the preparations necessary to
 formulate \cref{conjecture-tropical-MRR-preface}
 have been completed for any compact 
 tropical manifolds.
+
 \section{Proof for compact tropical curves}
 \label{section-tropical-curve}
 In this section, we prove \cref{theorem-MRR-curve-preface}. 
@@ -2864,7 +2871,7 @@ The goal of this subsection is to prove
 \cref{theorem-MRR-curve-preface}.
 
 Let $\Gamma_{n}$ be the projectivization of 
-a certain tropical module defined in 
+the tropical module defined in 
 \cite[\textsection 2.2]{mikhalkinTropicalCurvesTheir2008a}.
 Each $\Gamma_{n}$ has an embedding 
 into the $(n-1)$-dimensional tropical projective space
@@ -2880,6 +2887,8 @@ polyhedral spaces:
 \cup {\mathbb{R}}_{\geq 0}(0,\ldots,0,1)\cup 
 {\mathbb{R}}_{\geq 0}(-1,\ldots,-1).
 \end{align}
+In particular, $\Gamma_{n}$ is isomorphic to the closure of
+$\Gamma_{n}^{\circ}$ in $\mathbb{T}P^{1}$.
 Every point in a tropical curve has an open neighborhood 
 which is isomorphic to an open subset of 
 $\Gamma_n$ for some $n\in \mathbb{Z}_{\geq 1}$.
@@ -2991,8 +3000,8 @@ and thus we cannot use the theory of local Morse
 data for nondepraved functions directly 
 \cite[Part I. Definition 3.5.2]{MR932724}. 
 We expect, however, that there exists a 
-generalized version of local Morse data 
-which can apply for our settings.
+good method to connect our approach with
+stratified Morse theory.
 \end{remark}
 
 
@@ -3004,6 +3013,12 @@ function on $U$ such that $\opn{Crit}(f)=\{-\infty\}$.
 Then, $\{f< 0\}$ is equal to $\emptyset$ or 
 $U\setminus\{-\infty\}$.
 \end{proposition}
+
+\begin{remark}
+By using \cref{proposition-1-valent}, we can generalize
+\cref{proposition-n-valent} for any point in 
+a pure $1$-dimensonal rational polyhedral space.
+\end{remark}
 
 Let $C$ be a pure $1$-dimensional
 rational polyhedral space and 
@@ -3213,20 +3228,21 @@ $f\colon C\to \mathbb{R}_{\geq 0}$ satisfying
 \end{proposition}
 \begin{proof}
 We may assume $C$ is connected.
-If $U$ is a bounded open interval,
+If $U$ is isomorphic to a bounded open interval in
+$\mathbb{R}$,
 then we can create such an $f$ easily by using 
 the following bump function
 $f_{a,b}\colon\mathbb{R}\to \mathbb{R}$
 \begin{align}
-f_{a,b}(x)=
+f_{a,b}(x)\deq 
 \begin{cases}
 \opn{exp}\left(-\frac{1}{a^{2}-(x-b)^{2}}\right),
 \quad \text{ if } (|x-b|<a), \\
 0,\quad \text{ o.w. }
 \end{cases}
 \end{align}
-for all $a\in \mathbb{R}_{>0}, b\in \mathbb{R}$.
-$f$ is a $C^{\infty}$-function on such that
+for all $a\in \mathbb{R}_{>0}$ and $b\in \mathbb{R}$.
+Then, $f=f_{a,b}$ is a $C^{\infty}$-function on such that
 $\{f>0\}=(b-a,b+a)$ and has a unique maximal point.
 Of course, $f_{a,b}'$ is bounded.
 We can extend $f|_U$ to $C$ by zero outside $U$
@@ -3242,7 +3258,7 @@ nonnegative weakly-smooth function which is strictly monotone
 except at $x=-\opn{log}2$ and $\{f>0\}=(-\infty,0)$.
 By \cref{exmaple-weakly-smooth-line}, $f$ is also
 bounded. In this case, we can also extend 
-$f|_U$ to $C$ by zero outside $C\setminus U$.
+$f|_U$ to $C$ by zero outside $U$.
 
 If $U=\mathbb{R}$, then $C=\mathbb{T}P^{1}$.
 $f\colon \mathbb{T}P^{1}\to\mathbb{R};x\mapsto 
@@ -3296,7 +3312,7 @@ Therefore, $(s_0\cap s)\cap C_{\reg}$ is
 a finite union of closed subset of $C_{\reg}$.
 
 If $s$ is not trivial, then each connected
-component of its interior 
+component of the interior 
 $\opn{int}((s_0\cap s)\cap C_{\reg})$ is 
 isomorphic to an open interval.
 Let $U\deq \opn{int}((s_0\cap s)\cap C_{\reg})$ and 
@@ -3345,18 +3361,18 @@ from the symplectic form on $\check{X}(C_{\reg})$.
 
 
 As like \cite{auroux2022lagrangian},
-we also use the notion of the rotation number of 
+we also use the notion of the \emph{rotation number} of 
 $C^{\infty}$-divisors for the proof of 
 \cref{theorem-MRR-curve-preface}. 
 From now on, we start to prepare for defining
-the \emph{rotation number} of a permissible
+the rotation number of a permissible
 $C^{\infty}$-divisor on a $1$-dimensional rational
 polyhedral space.
 
 We recall there exists a canonical 
 embedding $\check{X}_0([a,b])\to [a,b]\times 
 \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$ for 
-any closed interval in $\mathbb{T}P^1$.
+any closed interval $[a,b]$ in $\mathbb{T}P^1$.
 We usually identify $\check{X}_0([a,b])$ with 
 the image of the above embedding.
 \begin{definition}
@@ -3425,7 +3441,7 @@ We define $\opn{rot}_0(s)\deq\opn{rot}(\check{s})$.
 and \cref{remark-rotation-slope} 
 show that the rotation number of 
 a permissible $C^{\infty}$-divisor is
-independent of the choice of embedding
+independent of the choice of embeddings
 of closed intervals into $\mathbb{T}P^{1}$. 
 
 \begin{proposition} \label{proposition-rotation-number}
@@ -3538,9 +3554,6 @@ The equation $\opn{LMD}^{\bullet}(C;s)=0$ is trivial.
 From definition, $C\setminus C_{\reg} \subset s_0\cap s=\emptyset$.
 Then, $C$ must be the disjoint union of
 tropical elliptic curves. 
-By computing the \v{C}ech cohomology of 
-$c_1([s])\in H^{1}(C;\tform_{\mathbb{Z},C}^{1})$, we also get 
-the last equation.
 \end{proof}
 
 \begin{proposition}
@@ -3564,8 +3577,8 @@ we can directly compute it using
 \end{proof}
 
 Let $C$ be a $1$-dimensional rational polyhedral space,
-$C'$ be a $1$-dimensional rational
-polyhedral subspace and $i_{C'}$
+$C'$ be a rational
+polyhedral subspace of $C$ and $i_{C'}$
 the inclusion map of $C'$. Then, the pullback of 
 a weakly-smooth function is also weakly smooth from
 definition, so there exists a morphism 
@@ -3706,22 +3719,58 @@ a compact tropical curve $C$. Then,
 \opn{rot}(s)=\opn{deg}([s])(=\int_{C} c_1([s])).
 \end{align}
 \end{proposition}
-
+For proving \cref{equation-rotation-number},
+we use the following elementary lemma.
+\begin{lemma}
+\label{lemma-csoft-tropical-rational-function}
+Let $(a,b)$ be an open interval in
+$\mathbb{T}P^{1}$ and 
+$l\colon \mathbb{R}\to \mathbb{R}$ be an 
+affine function with a integer slope.
+Then, there exists a tropical rational function
+$f \colon\underline{\mathbb{R}}\to \mathbb{R}$
+such that the support $\opn{supp}((f))$ of 
+the principal divisor $(f)$ is in $(a,b)$, 
+$\lim_{x\to a}f'(x)=0$, and $f(z)=l(z)$ for all 
+$z\geq \opn{max}\{x\mid x\in\opn{supp}((f))\}$.
+\end{lemma}
 \begin{proof}
-We can find an ordinary Cartier divisor 
+This is a special case of \cite[Lemma 4.4]{MR3894860}.
+\end{proof}
+
+\begin{proof}[{Proof of \cref{proposition-rotation-degree}}]
+We recall that a local data $\{(U_i,f_i)\}_{i\in I}$ for $s$
+defines a \v{C}ech $1$-cocycle 
+$(f_{j}-f_i)_{i,j}
+\in C^{1}(\{U_i\}_{i\in I},\mathcal{O}_C^{\times})$
+whose cohomology class is equal to $[s]$
+(see also \cite[Remark 7.2.1]{MR3560225}).
+There exists a family 
+$\{U_v\}_{v\in C\setminus C_{\reg}}$ of 
+contractible open neighborhoods $U_v$ of $v$
+such that $U_v\cap U_{v'}\ne \emptyset $ if $v\ne v'$.
+So we may assume 
+$\{U_i\}_{i\in I}=\{U_v\}_{v\in C\setminus C_{\reg}}
+\cup\{e\}_{e\in\pi_0(C_{\reg})}$.
+Then, we can find an ordinary Cartier divisor 
 $D\in H^{0}(C;\mathcal{M}_C^{\times}/
 \mathcal{O}_C^{\times})$
-such that its divisor class is equal to $[s]$ such 
-that its divisor class is equivalent as 
-the level of \v{C}ech cochains of 
-$[s]$ (see also \cite[Remark 7.2.1]{MR3560225}).
-In particular, we can choose such a $D$ satisfying
-that $\opn{supp}(D)\subset C_{\reg}$.
-Then, we can calculate the 
-\eqref{equation-rotation-number} for 
-a typical $D$ by \cref{lemma-rotation-slope}.
-The degree of $D$ is 
-invariant for any choice of $D$.
+and a local data $\{(U_i,g_i)\}_{i\in I}$ for $D$
+such that $(g_j-g_i)_{i,j}=(f_j-f_i)_{i,j}$ for any 
+$i,j\in I$
+and $\opn{supp}(D)\subset C_{\reg}$
+by \cref{lemma-csoft-tropical-rational-function}.
+From \cite[Theorem 4.15]{MR3894860},
+we can calculate the degree of $D$ by the sum of
+the weights on $\opn{supp}(D)$,
+which are dertermined by 
+the divisor map $\opn{div}\colon 
+H^{0}(C;\mathcal{M}_C^{\times}/
+\mathcal{O}_C^{\times})\to \mathrm{Z}_{0}(C)$
+\cite[Defintion 4.14]{MR3894860}.
+By \cref{lemma-csoft-tropical-rational-function}
+and \cref{lemma-rotation-slope}, we get
+$\opn{deg}([s])=\opn{deg}(D)=\opn{rot}(s)$.
 \end{proof}
 
 \begin{remark}
@@ -3826,7 +3875,7 @@ $\opn{deg}(s)\geq 3g(C)-3$.
 On the other hand, every divisor $D$ satisfying
 $\opn{deg}(D)>0$ is ample \cite[Corollary 43]{MR2892941}.
 Roughly speaking, there is no direct tropical
-analog of Kodaira embedding theorem
+analogs of the Kodaira embedding theorem
 in tropical geometry.
 \end{remark}
 
@@ -4222,10 +4271,8 @@ in $\opn{SL}_n(\mathbb{R})\ltimes \mathbb{R}^{n}$.
 Therefore, every closed integral affine 
 manifold satisfies Chern's conjecture 
 since the orientable double cover of an integral affine manifold has a compatible special integral affine structure.
-\myfootnote{We have not checked 
-the original source of Chern's conjecture yet.
-Our knowledge about these conjectures
-mainly comes from \cite{goldmanRadianceObstructionParallel1984a}
+\myfootnote{We learned this conjecture 
+from \cite{goldmanRadianceObstructionParallel1984a}
 and \cite{MR3665000}.
 }
 \end{remark}
@@ -4413,7 +4460,7 @@ by \cite[Proposition 4.17]{gross2019sheaftheoretic}.
 for tropical spaces}
 In this subsection, we recall the Verdier duality for
 tropical manifolds from \cite{gross2019sheaftheoretic}.
-See \cref{section-verdier-dual} if you do not familiar 
+See \cref{section-verdier-dual} if you are not familiar 
 with the classical Verdier duality.
 Every rational polyhedral space $X$ is locally compact, 
 and thus we can use the Verdier duality of tropical spaces.
@@ -4878,18 +4925,18 @@ for $s'$ proves \cref{theorem-MRR-hesse-preface}.
 \begin{remark}
 
 According to \cite[\textsection 5.3]{mikhalkinTropicalGeometryIts2006},
-the $k$-th Chern class $c_k(X)$
+the $k$-th Chern cycle $c_k(X)$
 of an $n$-dimensional tropical manifold $X$ 
 should be supported on the $(n-k)$-skeleton of $X$.
 I don't know the explicit and
-precise definition of higher
-Chern classes of tropical manifold $B$ except
-$k=1$ or $k=\dim B$
+precise definition of $k$-th
+Chern cycles of $X$ except
+$k=0,1$ or $k=\dim X$
 (see \cite[Definition 3.20]{shawTropicalSurfaces2015a} for 
-the definition of the top Chern class of a tropical manifold), 
-but we can consider the $0$-th Chern class $c_0(B)$ of 
-an integral affine manifold should be $1$,
-and the $k$-th Chern class should be $0$ when $k\ne 0$
+the definition of the top Chern cycle of a tropical manifold), 
+but we can consider the $0$-th Chern cycle $c_0(B)$ of 
+a (connected) integral affine manifold $B$ should be $1$,
+and the $k$-th Chern cycle should be $0$ when $k\ne 0$
 since $B=B_{\reg}$.
 Thus, the Todd class $\opn{td}(B)$ of $B$
 should be $1$ when the Todd class of a tropical manifold
@@ -4897,7 +4944,7 @@ can be written as a formal power series of the Chern classes
 as like complex geometry.
 On the other hand,
  $\opn{td}(X(B))=1$
-since the tangent bundle on $X(B)$ has a flat
+since the tangent bundle on $X(B)$ admits a flat
 structure.
 
 Besides, 
@@ -4919,7 +4966,7 @@ of matroids
 In a recent study,
 a Lagrangian interpretation of
 the Chern--Schwartz--MacPherson cycles of matroids 
-appeared in \cite{MR4583774}.
+were introduced in \cite{MR4583774}.
 We expect that our approach has a good relationship
 with this interpretation. 
 \end{remark}
@@ -4967,7 +5014,7 @@ tropical primary Kodaira surfaces are in \cite{maehara2023}
 (see also \cite[\textsection 6]{MR1422337}).
 Integral affine structures on a Klein bottle
 and their tropical cohomologies are discussed in
-\cite{MR2737696,MR3894860}.
+\cite{MR2737696,shawTropicalSurfaces2015a,MR3894860}.
 
 \end{remark}
 
@@ -5111,7 +5158,7 @@ which implies that the universal cover
 of a compact integral affine manifold is contractible.
 \end{remark}
 
-\section{For more examples}
+\section{More examples}
 \label{section-more-examples}
 In the last section, we mention more examples of 
 tropical analog of the Euler number of 
@@ -5711,8 +5758,8 @@ https://doi.org/10.48550/arxiv.1904.04076}).
 \section{Verdier duality} 
 \label{section-verdier-dual}
 
-In this subsection, we recall the Verdier duality which 
-uses in \cref{section-integral-affine-manifold}
+In this subsection, we recall the Verdier duality 
+used in \cref{section-integral-affine-manifold}
 from \cite[Chapter 3]{MR1299726}.
 
 \begin{theorem}[{Verdier duality}]
