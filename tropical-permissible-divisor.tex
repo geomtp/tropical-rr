@@ -2274,7 +2274,7 @@ as a set.
 Let $\check{f}_S\colon \check{X}_0(S)\to S$ be the 
 canonical projection onto $S$.
 We recall the following elementary proposition 
-in order to define `Lagrangian section' for $\check{f}_S$.
+in order to define `Lagrangian sections' for $\check{f}_S$.
 
 \begin{proposition}
 
@@ -2367,7 +2367,7 @@ rational polyhedral space $S$.
 Let $s$ be a prepermissible $C^{\infty}$-divisor 
 on $S$ such that $\sharp (s_0\cap s)<\infty$. 
 An \emph{intersection data} for $s$ is the set 
-$\{(U_p,f_p)\}_{p\in s\cap s_0}$ of pairs of open subsets
+$\{(U_p,f_p)\}_{p\in s_0\cap s}$ of pairs of open subsets
 $U_i$ of $S$ and (0,0)-superforms
 $f_p\colon U_p \to \mathbb{R}$ indexed by 
 $ s_0\cap s$ 
@@ -2388,10 +2388,10 @@ an intersection data for $s-s'$.
 $C^{\infty}$-divisors}]
 \label{definition-local-morse-data-divisor}
 Let $S$ be a (boundaryless) rational polyhedral space 
-and $s$ be a prepermissible 
-$C^{\infty}$-divisor such that
+and $(s',s)$ be a prepermissible pair of
+$C^{\infty}$-divisors such that
 $s'\cap s$ is finite and 
-$\{(U_p,f_p)\}_{p\in s_0\cap s}$ 
+$\{(U_p,f_p)\}_{p\in s'\cap s}$ 
 be an intersection data for $s$.
 We set
 \begin{align}
@@ -2399,7 +2399,10 @@ We set
 \bigoplus_{p\in s' \cap s} 
 \opn{LMD}^{\bullet}(A_{U_p},f_{p},p), \quad 
 \opn{LMD}^{\bullet}(s',s)
-\deq \opn{LMD}^{\bullet}_{\mathbb{Z}}(s',s)\\
+\deq \opn{LMD}^{\bullet}_{\mathbb{Z}}(s',s).
+\end{align}
+When $s'=s_0$, we also define 
+\begin{align}
 \opn{LMD}^{\bullet}_A(S;s)
 \deq \opn{LMD}^{\bullet}_{A}(s_0,s), \quad
 \opn{LMD}^{\bullet}(S;s)\deq
@@ -2440,9 +2443,9 @@ Let $S$ be a boundaryless compact tropical manifold
 of pure dimension $n$, 
 $s$ a prepermissible $C^{\infty}$-divisor on $S$ satisfying 
 $\sharp (s_0\cap s)<\infty$,
-and $\{(f_p,U_p)\}_{p\in s_0\cap s}$
+and $\{(U_p,f_p)\}_{p\in s_0\cap s}$
 an intersection data for $s$. 
-If $\{f_p<f_p(p)\}=U_p\setminus\{f_p(p)\}$
+If $\{-f_p<-f_p(p)\}=U_p\setminus\{p\}$
 for all $p\in s_0\cap s$, then
 \begin{align}
 \label{equation-kodaira-vanishing}
@@ -2463,7 +2466,7 @@ an (integral) affine manifold is a certain analog
 of a K\"ahler form, and has been studied
 in Hessian geometry (see 
 \cref{definition-hessian-metric,example-hessian-metric-from}).
-Lagerberg \cite{MR2892935} studied a tropical analog of
+Lagerberg \cite{MR2892935} defined a tropical analog of
 positive $(p,p)$-forms and currents in $\mathbb{C}^{n}$.
 
 As like the above previous research, we can also define
@@ -2533,7 +2536,7 @@ $\opn{deg}_{\opn{top}}(q)$,
 \end{proposition}
 
 The proof of \cref{proposition-euler-number-etale} is trivial from definition.
-Besides, we can apply Meyer--Vietoris exact sequence 
+Besides, we can apply the Meyer--Vietoris exact sequence 
 for $\opn{LMD}^{\bullet}(S;s)$ under a suitable condition.
 We will use this feature for tropical curves
 (\cref{proposition-gluing-formula}).
@@ -2546,8 +2549,7 @@ finitely generated and this is not invariant
 for the divisor class $[s]$ of $s$
 if $S$ is not compact.
 This corresponds that Morse homology does not work directly
-for non-compact manifolds such 
-like for compact manifolds.
+for non-compact manifolds unlike for compact manifolds.
 Besides, $\chi(\opn{LMD}^{\bullet}(S;s))$ is \emph{not}
 an invariant for line bundles for general compact rational 
 polyhedral spaces. See also 
@@ -2802,7 +2804,7 @@ $T_0(\opn{LC}_x S)=T_xS$.
 We can also define the set $\opn{Crit}(f)$ of
 \emph{critical points} of a weakly-smooth function $f$
 on a rational polyhedral space naturally.
-\begin{definition}[{prepermissibility condition}]
+\begin{definition}[{Prepermissibility condition}]
 \label{definition-prepermissible-weakly-smooth}
 Let $f$ be a weakly-smooth function on a rational polyhedral 
 space $U$. The $f$ is \emph{prepermissible} at $x\in U$ if 
@@ -2842,7 +2844,7 @@ Therefore, $\lim_{z\to -\infty}\frac{\partial f}{\partial x}=0$.
 As like the prepermissibility condition,
 we can define a \emph{prepermissible pair} $(s',s)$
 of $C^{\infty}$-divisors, the
-set $s\cap s'$ of $(s',s)$ 
+set $s'\cap s$ of $(s',s)$ 
 (\cref{definition-divisor-intersection}), 
 an intersection data for $s$ 
 (\cref{definition-intersection-data}), 
@@ -2888,7 +2890,7 @@ polyhedral spaces:
 {\mathbb{R}}_{\geq 0}(-1,\ldots,-1).
 \end{align}
 In particular, $\Gamma_{n}$ is isomorphic to the closure of
-$\Gamma_{n}^{\circ}$ in $\mathbb{T}P^{1}$.
+$\Gamma_{n}^{\circ}$ in $\mathbb{T}P^{n-1}$.
 Every point in a tropical curve has an open neighborhood 
 which is isomorphic to an open subset of 
 $\Gamma_n$ for some $n\in \mathbb{Z}_{\geq 1}$.
@@ -2901,7 +2903,7 @@ an open subset of some $\Gamma_{n}^{\circ}$.
 Besides, every compact tropical curve $C$ 
 has a canonical metric structure $d_{C^{\circ}}$
 on $C^{\circ}$
-associated with lattice structure of the tangent 
+associated with the lattice structure of the tangent 
 vector space of $C$ 
 \cite[Proposition 3.6]{mikhalkinTropicalCurvesTheir2008a}.
 
@@ -3172,13 +3174,11 @@ zero section, then $s_0\cap s=\check{f}_C(\check{s}_0\cap \check{s})$.
 }
 \end{proposition}
 \begin{proof}
-(1): First, we check $\check{s}$ is well-defined.
+(1): 
 Choose $(U_i,f_i)$ and $(U_j,f_j)$ such that
 $U_i\cap U_j\neq \emp$. 
 Then, $df_i(x)-df_j(x)\in 
-(\tform_{\mathbb{Z},C}^{1})_x$ and
-$df_i(x)\in (\tform_{\mathbb{Z},C}^{1})_x$
-from \cref{proposition-prepermissible-curve} (2).
+(\tform_{\mathbb{Z},C}^{1})_x$.
 Therefore, the construction of $\check{s}$ is well-defined.
 Obviously, $\check{s}$ is continuous by gluing lemma 
 for each edge of $C$.
@@ -3396,7 +3396,7 @@ $\mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$.
 \end{definition}
 
 The canonical orientation on 
-$[a,b]\times \mathbb{R}/\mathbb{Z}$
+$[a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$
 is compatible with the symplectic orientation 
 of $\check{X}((a,b))$.
 
@@ -3448,11 +3448,11 @@ of closed intervals into $\mathbb{T}P^{1}$.
 Let 
 $\phi \colon [a,b] \to [a,b]$ be an automorphism of 
 a closed interval in $\mathbb{T}P^{1}$, 
-$s\colon [a,b]\times \mathbb{R}/\mathbb{Z}$
+$s\colon [a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$
 a section of the canonical projection 
-$q\colon [a,b]\times \mathbb{R}/\mathbb{Z} \to [a,b]$ and 
-$\varphi \colon [a,b]\times \mathbb{R}/\mathbb{Z} \to 
-[a,b]\times \mathbb{R}/\mathbb{Z}$ 
+$q\colon [a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee} \to [a,b]$ and 
+$\varphi \colon [a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee} \to 
+[a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$ 
 the symplectic automorphism induced from $\phi$.
 Then, $\opn{rot}(\varphi\circ s \circ \phi^{-1})=\opn{rot}(s)$.
 \end{proposition}
@@ -3462,7 +3462,7 @@ $[a,b]$ is a composition of the negation map
 with a translation map, we only need to consider the case
 when $\phi$ is the negation map.
 In this case, $\varphi(x,y)=(b+a-x,-y)$ for 
-$(x,y)\in [a,b]\times \mathbb{R}/\mathbb{Z}$ if 
+$(x,y)\in [a,b]\times \mathbb{R}^{\vee}/\mathbb{Z}^{\vee}$ if 
 $a,b\notin \{-\infty,\infty\}$.
 Since $s(x)=(x,q\circ s(x))$ for all $x\in [a,b]$,
 we have
@@ -3659,7 +3659,7 @@ Without loss of generality, we can assume $C$ is
 connected and $\sharp (s_0\cap s)\geq 1$ 
 by \cref{proposition-trivial-case-curve}.
 Since $s_0\cap s\supset (C\setminus C_{\reg})$ 
-and connected, $C\setminus (s_0\cap s)$ has no 
+and $C$ is connected, $C\setminus (s_0\cap s)$ has no 
 connected components which 
 are isomorphic to tropical elliptic curves.
 The set $s_0\cap s$ induces a finite cell decomposition
@@ -3760,7 +3760,8 @@ such that $(g_j-g_i)_{i,j}=(f_j-f_i)_{i,j}$ for any
 $i,j\in I$
 and $\opn{supp}(D)\subset C_{\reg}$
 by \cref{lemma-csoft-tropical-rational-function}.
-From \cite[Theorem 4.15]{MR3894860},
+From \cite[Theorem 4.15]{MR3894860}
+(or \cite[Proposition 5.12]{gross2019sheaftheoretic}),
 we can calculate the degree of $D$ by the sum of
 the weights on $\opn{supp}(D)$,
 which are dertermined by 
@@ -3806,7 +3807,7 @@ We can prove it from \cref{proposition-MRR-1-dim-poly-space,proposition-rotation
 \begin{remark}
 \label{remark-non-prepermissible-divisor}
 In this remark, we explain
-the reason why we need the prepermissible condition for 
+the reason why we need the prepermissibility condition for 
 $C^{\infty}$-divisors. 
 One of reasons is that there exists smooth function $f$
 on a polyhedral space $S$ and 
@@ -3891,7 +3892,7 @@ homological mirror symmetry of trivalent graphs}
 
 Our approach is mostly affected from 
 \cite{auroux2022lagrangian}.
-When $C$ is a trivalent metric graph, 
+When $C$ is a compact trivalent metric graph, 
 our $\check{X}_0(C)$ are 
 almost the same with 
 the trivalent configuration $M$ of 
@@ -3904,7 +3905,7 @@ $\C P^{1}$ and every trivalent vertex of $C$ corresponds
 to the intersection points of some three $\C P^{1}$'s.
 The mirror manifold of $M$ is an algebraic curve $X_K$
 defined from Mumford's construction for the dual intersection
-complex $C$.
+complex defined from $C$.
 
 The similarity of $\check{X}_0(C)$ and $M$ is evident 
 since $M$ is a compactification of $\check{X}_0(C)$ 
@@ -3983,12 +3984,12 @@ For simplicity,
 we assume $C$ is a compact trivalent tropical curve, i.e.,
 a compact tropical curve which only has $3$-valent
 vertex in $C\setminus C_{\reg}$.  
-$C_{\reg}$ has a canonical dual torus fibration 
+Then, $C_{\reg}$ has a canonical dual torus fibration 
 $\pi_{C_{\reg}}\colon X(C_{\reg})\to C_{\reg}$ of
 $\check{\pi}_{C_{\reg}} \colon \check{X}(C_{\reg})\to C_{\reg}$.
 We can define $X_0(C)\deq C\sqcup_{i,s} X(C_{\reg})$ like
 $\check{X}_0(C)$.
-$C$ has a canonical lattice length metric $d_{C}$, and
+Besides, $C$ has a canonical lattice length metric $d_{C}$, and
 thus we can define the following set for 
 a sufficiently small
 $\vep >0$: 
@@ -4054,7 +4055,7 @@ localization of Dirac-type operator and its
 number is equal 
 to our index by the above correspondence.
 The following equation is a correspondence about 
-local index $\opn{ind}_v$ and the Local 
+the local index $\opn{ind}_v$ and the local 
 Riemann--Roch number under the above 
 identification \cite[Theorem 6.7]{MR2676658}.
 \begin{align} \label{equation-local-RR}
@@ -4186,7 +4187,7 @@ appeared in \cite[p.213]{MR413010}.
 
 A Hessian metric can be considered as a $(1,1)$-superform 
 naturally and this superform is a certain analog of 
-K\"ahler form, so Hessian metric itself is called Hessian form.
+a K\"ahler form, so a Hessian metric itself is called a Hessian form.
 We can see this the following pair of torus fibrations induced 
 from the local system $\mathcal{T}_{B}$ on an integral 
 affine manifold:
@@ -4386,7 +4387,7 @@ also has
 a very simple graded-commutative ring structure.  
 
 Let $f\colon X\to Y$ be a morphism of rational polyhedral 
-space. Then, this induces a canonical morphism
+spaces. Then, this induces a canonical morphism
 \begin{align}
 b_f^{p}\colon \tform^{p}_{\mathbb{Z},Y}\to 
 f_* \tform^{p}_{\mathbb{Z},X} \to
@@ -4422,7 +4423,7 @@ and \cite[Definition 1.45]{grossMirrorSymmetryLogarithmic2006a}.}:
 Here $\mcal{Z}^{q}_{X}\deq
   \opn{Ker}(d'': \mcal{A}^{0,q}_X\to \mcal{A}^{0,q+1}_X)$.
 Every row and column of the diagram 
-\eqref{equation-smooth-cartier-diagram} is exact
+\eqref{equation-smooth-cartier-diagram} are exact
 and $\mcal{A}_{X}^{0,0}/\mcal{O}^{\times}_X
   \simeq \mcal{Z}^{1}_X/\mcal{F}_{\Z,X}^{1}$ from the snake lemma.
 The left column short exact sequence of 
@@ -4434,7 +4435,7 @@ the
 By taking the long exact sequence for 
 \eqref{equation-smooth-cartier-diagram}, we get a canonical morphism:
 \begin{align} \label{equation-tropical-cartier}
-c_1\colon \CDiv(X)\to \opn{Pic}(X)\to 
+c_1\colon H^{0}(X;\mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times})\to \opn{Pic}(X)\to 
 H^{1}(X;\tform_{\mathbb{Z},X}^{1}); s\mapsto [s] 
 \mapsto c_1([s]).
 \end{align}
@@ -4443,10 +4444,9 @@ The second morphism of
 called the Chern class map of 
 $\opn{Pic}(X)$ in \cite[5]{mikhalkinTropicalCurvesTheir2008a}.
 Let $f\colon X\to Y$ be a morphism of 
-two rational polyhedral spaces.
+two boundaryless rational polyhedral spaces.
 From definition of morphism of rational polyhedral space
-and a naturally induced morphism of superforms 
-\cite[Lemma 2.21]{MR3903579},
+and \cite[Lemma 2.21]{MR3903579},
 $f$ induces the pullback 
 $f^{*}\colon \CDiv(Y)\to \CDiv(X)$ 
 and $c_1(f^{*}s)=f^{*}(c_1(s))$ from the diagram
@@ -4457,13 +4457,13 @@ $s\in\CDiv(Y)$
 by \cite[Proposition 4.17]{gross2019sheaftheoretic}.
 
 \subsection{Verdier duality and Borel--Moore homology
-for tropical spaces}
+for tropical manifolds}
 In this subsection, we recall the Verdier duality for
 tropical manifolds from \cite{gross2019sheaftheoretic}.
 See \cref{section-verdier-dual} if you are not familiar 
 with the classical Verdier duality.
 Every rational polyhedral space $X$ is locally compact, 
-and thus we can use the Verdier duality of tropical spaces.
+and thus we can use the Verdier duality for tropical manifolds.
 We set $H^{p,q}(X;\mathbb{Z})\deq 
 H^{q}(X;\tform_{\mathbb{Z},X}^{p})$. 
 The total cohomology 
@@ -4498,7 +4498,7 @@ of rational polyhedral spaces.
 Then, there exists the pushforward
 $f_*\colon H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})
 \to H_{p,q}^{\mathrm{BM}}(Y;\mathbb{Z})$
-of tropical Borel--Moore homology 
+of tropical Borel--Moore homology
 \cite[Definition 4.9]{gross2019sheaftheoretic}:
 \begin{align}
 f_*(\psi)\deq \opn{Tr}_{f,\upomega_Y^{\bullet}}\circ 
@@ -4506,7 +4506,9 @@ Rf_!\psi \circ b_{f}^{p}[q]\in
 \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
 \tform^{p}_{\mathbb{Z},Y}[q],\upomega_Y^{\bullet}).
 \end{align}
-
+where 
+$\opn{Tr}_{f,\upomega_Y^{\bullet}}$ is the counit 
+$Rf_!f^{!}\upomega_Y^{\bullet}\to \upomega_Y^{\bullet}$.
 \begin{example}
 
 If $p=0$, $q=0$ and $f=a_X$, 
@@ -4567,12 +4569,13 @@ c\frown f_*\alpha\in H_{p-i,q-j}^{\opn{BM}}(Y).
 
 
 
-Let $X$ be a compact
-$n$-dimensional tropical manifold.
+
 By an \emph{n-dimensional tropical manifold},
 we mean a tropical manifold of pure dimension $n$,
 for simplicity in this paper
-(see \cite[\textsection 2.A]{MR3894860}). 
+(see \cite[\textsection 2.A]{MR3894860}).
+Let $X$ be a compact
+$n$-dimensional tropical manifold. 
 Then, there exists the following natural isomorphism, 
 which is called the Poincar\'e--Verdier duality
 for tropical manifolds
@@ -4713,7 +4716,7 @@ The morphism $f$ is a \emph{tropical \'etale} covering map
 if $\opn{deg}(f)=\opn{deg}_{\mathrm{top}}(f)$.  
 \end{definition}
 \begin{remark}
-Our condition of \'etale is different from that of 
+Our definition of \'etale covering is different from that of 
 \cite[Definition 1.1]{grossMirrorSymmetryLogarithmic2006a}
 when $X$ and $Y$ are integral affine manifolds.
 A typical example of non-\'etale covering map 
@@ -5230,10 +5233,10 @@ p_1^{*}\mcal{F}_1\otimes^{L}p^{*}_2\mcal{F}_2$:
 
 
 \begin{example}[{\cite[p.22]{MR2031639}}]
-  If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
-  the Thom-Sebastiani theorem gives
-  a certain K\"unneth type formula for
-  $\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\boxplus f_2,(v,w))$:
+If $S_1=\set{v},S_2=\set{w}$ and $\mcal{F}_1=\Z_V, \mcal{F}_2=\Z_{W}$,
+then the Thom-Sebastiani theorem gives
+a certain K\"unneth type formula for
+$\opn{LMD}^{\bullet}(\Z_{V\times W},f_1\boxplus f_2,(v,w))$:
 \begin{align}
 \opn{LMD}^{\bullet}(\Z_{V\times W},f_1\boxplus f_2,(v,w))
 &\simeq \opn{LMD}^{\bullet}(\Z_{V},f_1,v)
@@ -5268,7 +5271,7 @@ the condition of cohomological version of a Milnor
 fibration \cite[Assumption 1.1.1]{MR2031639} locally.
 Then, the external tensor product 
 $s\boxtimes s'\deq \opn{pr}_X^{*} (s)+\opn{pr}_Y^{*}(s')
-\in \CDiv(X\times Y)$ is also prepermissible and
+\in \CDiv(X\times Y)$ is also permissible and
 has the following equation:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(X\times Y;s\boxtimes s'))=
@@ -5519,14 +5522,14 @@ or non-Abelian categories (e.g.
 but the theory of sheaf cohomology of 
 $\mathbb{T}$-semimodules on tropical spaces 
 have been not applied to prove a tropical
-analog of HRR or GRR yet.
+analog of the Hirzebruch--Riemann--Roch theorem yet.
 The difficulty of homological algebra of semimodules
-over idempotent semiring relates 
+over an idempotent semiring relates 
 with the difficulty of the formulation of
 higher dimensional
 Riemann--Roch theorem for tropical varieties.
 In fact, current tropical analogs of Riemann--Roch 
-theorem is not formulated and proved by 
+theorem are not formulated and proved by 
 homological algebra of semimodules.
 
 We recall the tropical Riemann--Roch theorem for tropical curves 
@@ -5543,7 +5546,7 @@ tropical curves such that
 the rank of a divisor is different even though 
 the $\mathbb{T}$-semimodules of the global section of 
 tropical line bundle $\mcal{O}_C(D)$ are isomorphic.},
-but this is truly one of good analog of classical one 
+but this is truly a good analog of classical one 
 (see \cite[Lemma 2.4]{MR2448666}).
 The rank of linear system is generalized by Cartwright
 \cite{MR4131998,MR4251610}.
@@ -5563,7 +5566,8 @@ $h^{0}(\Delta,D)+h^{0}(\Delta,K_{\Delta}-D)\geq
 in \cite[Conjecture 3.6]{MR4251610}.
 Sumi prove for the inequality for tropical tori and 
 tropical toric surfaces \cite{MR4229604,sumi2021riemannroch}.
-On the other hand, a tropical analog of Riemann--Roch theorem
+On the other hand, a tropical analog of
+the Riemann--Roch theorem
 for higher dimensional tropical manifolds 
 (or tropical complexes) is not formulated
 since there hasn't been any good definition of 
@@ -5632,6 +5636,7 @@ A symplectic manifold $(M,\omega)$ is
 if the de Rham cohomology class $[\omega]$ of $\omega$ is in 
 $\opn{Im}(H^2(X;\Z)\to H^2(X;\mathbb{R}))$. 
 An integral affine manifold $B$ has a strongly integral affine structure 
+(\cref{definition-integral-affine-manifold})
 if and only if the standard symplectic form 
 on $\check{X}(B)$ is prequantizable
 (see for example 
@@ -5653,7 +5658,7 @@ A point $x\in B$ is
 if $\pi^{-1}(x)$ is a Bohr-Sommerfeld orbit.
 
 The origin of Bohr--Sommerfeld orbit comes from
-Old Quantum Theory.
+old quantum theory.
 See also \cite[15.2, Chapter 22]{MR3112817}
 and \cite[Remark 4.3]{MR1270931} for a physical meaning 
 of BS-orbits.
@@ -5663,8 +5668,7 @@ of BS-orbits.
 
 Fix $M=\mathbb{Z}^{n}$.
 If $(B,\{(U_i,\phi_i)\}_{i\in I})$ is
-an $n$-dimensional strongly integral affine manifold
-(\cref{definition-integral-affine-manifold}),
+an $n$-dimensional strongly integral affine manifold,
 then we can define the set of lattice points $B(\Z)$ 
 on $B$ for a fixed strongly integral affine structure from 
 the inverse image $\phi^{-1}_i(U_i\cap M)$ of each atlas.
@@ -5782,7 +5786,7 @@ $\upomega_X^{\bullet}\deq
 
 \begin{example}
 If $X$ is a topological manifold of dimension $n$, 
-$\upomega^{\bullet}_{X}\simeq \opn{or}_{X}^{\Z}[n]$ 
+then $\upomega^{\bullet}_{X}\simeq \opn{or}_{X}^{\Z}[n]$ 
 where $\opn{or}_{X}^{\mathbb{Z}}[n]$ is the sheaf 
 associated with the presheaf $U\mapsto 
 \opn{Hom}(H^{n}_c(U;\mathbb{Z}_{X}),\mathbb{Z})$
@@ -6132,7 +6136,7 @@ let's reinterpret
 \eqref{equation-ehrhart-reciprocity-2} and
 \eqref{equation-moment-map-intersection}
 using the local Morse data for a
-$C^{\infty}$-divisor in this paper.
+$C^{\infty}$-divisor.
 First, let's construct a
 prepermissible $C^{\infty}$-divisor
 on $X_{P}^{\mathrm{trop}}$ from a Delzant polytope $P$. 
@@ -6246,8 +6250,8 @@ Besides,
 \begin{proof}
 Let $\{(U_p,f_{P,p})\}_{p\in s_0\cap s_P}$ be an intersection
 data for $s_P$.
-For any $f_{P,p}$, $\{f_{P,p}<0\}$ is empty 
-and $\{-f_{P,p}<0\}=U_p\setminus \{p\}$. 
+For any $f_{P,p}$, $\{f_{P,p}<f_{P,p}(p)\}$ is empty 
+and $\{-f_{P,p}<-f_{P,p}(p)\}=U_p\setminus \{p\}$. 
 If $\mu_P^{\mathrm{trop}}(p)=\partial P\cap \mathbb{Z}^{n}$,
 then $\opn{LMD}^{\bullet}(U_p,-f_{P,p},p)$ is trivial since 
 we can choose a sufficiently small 
