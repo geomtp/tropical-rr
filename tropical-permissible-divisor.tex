@@ -21,7 +21,7 @@
 \usepackage{latexsym}%
 %\usepackage{algpseudocode,algorithm}%
 \usepackage{todonotes}%comments
-\usepackage[margin=0.8in]{geometry}
+\usepackage[margin=3cm]{geometry}
 \usepackage{layout}
 \usepackage[T1]{fontenc}%font encoding
 \usepackage{physics}
@@ -806,7 +806,8 @@ B^{n}_{\varepsilon}(x)\deq
 \leq \varepsilon\},
 & \quad  
 S^{n-1}_{\varepsilon}(x)\deq \partial B^{n}_{\varepsilon}(x),
-\quad \bar{B}^{n}_{\varepsilon}(x)\deq 
+\quad \\
+\bar{B}^{n}_{\varepsilon}(x)\deq 
 B^{n}_{\varepsilon}(x)\cup \partial B^{n}_{\varepsilon}(x),  \\
 B_{\varepsilon,\varepsilon'}^{n}(x)\deq 
 B^{n}_{\varepsilon}(x)\setminus 
@@ -966,23 +967,23 @@ $\Gamma_V(\mathcal{F})\simeq j_*j^{-1}\mathcal{F}$
 \cite[Proposition 2.3.9 (iii)]{MR1299726}.
 
 Let $f\colon Y\to X$ be a continuous map,
-$\mathcal{F},\mathcal{F}'\in \opn{Ob}(\catn{Mod}(A_X))$
+$\mathcal{F},\mathcal{F}'\in \opn{Ob}(\catn{Mod}(A_X))$\\
 and $\mathcal{G}\in\opn{Ob}(\catn{Mod}(A_Y))$.
-
 Then, we have the following isomorphisms
 \cite[(2.3.18)-(2.3.20)]{MR1299726}:
 \begin{align}
-\label{equation-property-sheaf-cut-off}
+\label{equation-adjoint-sheaf-cut-off}
 \mathcal{H}om_{A_X}(\mathcal{F}_{Z},\mathcal{F}')
 \simeq \mathcal{H}om_{A_X}(\mathcal{F},\Gamma_{Z}(\mathcal{F}'))
-, \quad
+, \quad \\
+\label{equation-property-sheaf-cut-off}
 f^{-1}\mathcal{F}_Z\simeq 
 (f^{-1}\mathcal{F})_{f^{-1}(Z)},\quad 
 \Gamma_Zf_*\mathcal{G}\simeq f_*\Gamma_{f^{-1}(Z)}
 \mathcal{G}.
 \end{align}
 
-The first isomorphism of \eqref{equation-property-sheaf-cut-off}
+The first isomorphism \eqref{equation-adjoint-sheaf-cut-off}
 deduces that $\Gamma_{Z}(\cdot)$ preserves injectives since
 $(\cdot)_Z$ is exact.
 
@@ -1111,7 +1112,7 @@ H^{\bullet}(R\Gamma_{\{f\geq f(x)\}}\mathcal{F}^{\bullet})_x
 \end{align}
 
 The \emph{local Morse index} of $f$ at $x$ is the 
-following number if 
+following number if \\
 $R\Gamma_{\{f\geq f(x)\}}(\mathcal{F}^{\bullet})_x
 \in D^{b}(\catn{mod}(A))$:
 \begin{align} \label{equation-local-index}
@@ -1391,7 +1392,7 @@ for any open neighborhood $U$ of $x$.
 The following condition and proposition are also important.
 \begin{condition}[{\cite[Proposition 5.4.20]{MR1299726}}]
 \label{condition-global-morse}
-Let $X$ be a smooth manifold, $A$ a PID, 
+Let $X$ be a smooth manifold,\\ $A$ a PID, 
 $\mathcal{F}^{\bullet}\in D^{b}(A_X)$,
 and $f\colon X\to \mathbb{R}$ a smooth function.
 The pair $(\mathcal{F}^{\bullet},f)$ satisfies
@@ -2092,8 +2093,10 @@ Hence, we have
 \begin{align}
 \chi_{\mathrm{top}}(
 \{z\in \opn{LC}_x S\cap B^{n}_{\varepsilon}(0)
-\mid v(z)-\rho_{P}(z)<0\})
--\chi_{\mathrm{top}}(\{z\in \opn{LC}_x S \cap B^{n}_{\varepsilon}(0)\mid v(z)<0\})=1
+\mid v(z)-\rho_{P}(z)<0\}) \notag \\
+-\chi_{\mathrm{top}}(
+\{z\in \opn{LC}_x S \cap B^{n}_{\varepsilon}(0)\mid v(z)<0
+\})=1
 \end{align}
 for any sufficiently small $\varepsilon>0$.
 Therefore, $v-\rho_{P}$ or $v$ satisfies 
@@ -2495,7 +2498,7 @@ H^{\bullet}(M;\mcal{L}^{-1})\simeq H^{n}(M;\mcal{L}^{-1})[-n].
 \end{align}
 Positive $C^{\infty}$-divisors on integral affine 
 manifolds are also related
-with Bohr-Sommerfeld points on integral affine manifolds
+with Bohr--Sommerfeld points on integral affine manifolds
 (see \cref{sec: BSRR}).
 \end{example}
 
@@ -3686,8 +3689,8 @@ for $i=0,\ldots,m$ we have
 =& \opn{rot}(i_{C_1}^{*}(s))+\chi_{\opn{top}}(C_1), \\
 \chi(\opn{LMD}^{\bullet}(C_{i+1};i_{C_{i+1}}^{*}(s)))
 =& \chi(\opn{LMD}^{\bullet}(C_i;i_{C_i}^{*}(s)))
-+ \chi(\opn{LMD}^{\bullet}(e_{i+1};i_{e_{i+1}}^{*}(s)))
--\chi_{\opn{top}}(C_i\cap e_{i+1}), \\
++ \chi(\opn{LMD}^{\bullet}(e_{i+1};i_{e_{i+1}}^{*}(s)))\\
+-&\chi_{\opn{top}}(C_i\cap e_{i+1}), \\
 \opn{rot}(i_{C_{i+1}}^{*}(s))
 =& \opn{rot}(i_{C_{i}}^{*}(s))
 + \opn{rot}(i_{e_{i+1}}^{*}(s)).
@@ -3699,8 +3702,8 @@ satisfies \eqref{equation-rotation-rr}, then
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C_{j+1};i_{C_{j+1}}^{*}(s)))
 =&\opn{rot}(i_{C_{j}}^{*}(s))+\opn{rot}(i_{e_{j+1}}^{*}(s))
-+\chi_{\opn{top}}(C_j)+\chi_{\opn{top}}(e_{j+1})
--\chi_{\opn{top}}(C_j\cap e_{j+1}) \notag \\
++\chi_{\opn{top}}(C_j)+\chi_{\opn{top}}(e_{j+1}) \\
+-&\chi_{\opn{top}}(C_j\cap e_{j+1}) \notag \\
 =&\opn{rot}(i_{C_{j+1}}^{*}(s))
 +\chi_{\opn{top}}(C_{j+1}). \label{equation-j-th}
 \end{align}
@@ -3924,7 +3927,8 @@ satisfies
 \cref{condition-good-divisor} and has an intersection 
 data $\{(U_p,f_p)\}_{p\in s_0\cap s}$ such that
 $f_p$ is strictly convex at all $p\in C\setminus C_{\reg}$, 
-then $\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
+then \\
+$\opn{LMD}_{\Lambda_{\mathrm{nov}}^{\mathbb{C}}}
 (C;s)$ corresponds to the 
 Floer complex \cite[(3.2)]{auroux2022lagrangian}
 as a graded module, but 
@@ -4474,7 +4478,8 @@ $\mathbb{H}^{\bullet}(X;
 \tform_{\mathbb{Z},X}^{\bullet})$.
 Let $\upomega_X^{\bullet}$ be the dualizing complex 
 of $D^{b}(\mathbb{Z}_X)$.
-The $(p,q)$-th Borel--Moore homology of $X$ is
+The $(p,q)$-th Borel--Moore homology of $X$
+\cite[Definition 4.3]{gross2019sheaftheoretic} is
 \begin{align}
 H^{\opn{BM}}_{p,q}(X;\Z)\deq 
 H^{-q}R\opn{Hom}(\tform_{\mathbb{Z},X}^{p},\upomega_X^{\bullet})\simeq 
@@ -4515,10 +4520,10 @@ If $p=0$, $q=0$ and $f=a_X$,
 then $b^{0}_{a_X}$ is just a counit for 
 the adjoint $a^{-1}_X\dashv Ra_{X*}$.
 Therefore, we can identify
-$a_{X*}\colon H_{\opn{BM}}^{0,0}(X;\mathbb{Z})
-\to H_{\opn{BM}}^{0,0}(\{\opn{pt}\};\mathbb{Z})$
+$a_{X*}\colon H^{\opn{BM}}_{0,0}(X;\mathbb{Z})
+\to H^{\opn{BM}}_{0,0}(\{\opn{pt}\};\mathbb{Z})$
 with $\opn{Hom}_{D(\mathbb{Z})}(\mathbb{Z},\opn{Tr}_{a_X,\mathbb{Z}})$
-by the adjoint isomorphism
+by the adjoint isomorphism\\
 $\opn{Hom}_{D(\mathbb{Z}_X)}(a_X^{-1}\mathbb{Z},
 \upomega_X^{\bullet})\simeq 
 \opn{Hom}_{D(\mathbb{Z})}(\mathbb{Z},Ra_{X*}\upomega_X^{\bullet})$
@@ -4526,8 +4531,8 @@ if $a_X$ is proper.
 
 \end{example}
 
-Let $f\colon X\to Y$, $g\colon Y\to Z$ be a proper 
-morphism of rational polyhedral spaces.
+Let $f\colon X\to Y$ and $g\colon Y\to Z$ be proper 
+morphisms of rational polyhedral spaces.
 Then, $f_*\circ g_*=(f\circ g)_*$ from 
 \eqref{equation-trace}.
 
@@ -4548,10 +4553,10 @@ morphisms:
 \begin{align} \label{equation-composition-cap}
 \cdot \frown \cdot =\cdot \circ \cdot \colon
 \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
-\mathbb{Z}_X,\tform^{p}_{\mathbb{Z},X}[q])\times
+\mathbb{Z}_X,\tform^{p}_{\mathbb{Z},X}[q])\times &
 \opn{Hom}_{D^{b}(\mathbb{Z}_X)}
-(\tform^{p}_{\mathbb{Z},X}[q],\upomega_X^{\bullet})
-\to 
+(\tform^{p}_{\mathbb{Z},X}[q],\upomega_X^{\bullet}) \notag \\
+\to &
 \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\mathbb{Z}_X,
 \upomega_X^{\bullet}).
 \end{align}
@@ -4845,8 +4850,9 @@ integral manifolds admitting a Hessian form from
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(B;s))
 =\opn{deg}(p)^{-1}\chi(\opn{LMD}^{\bullet}(T;p^{*}(s)))
-=\opn{deg}(p)^{-1}\frac{1}{n!}\int_T c_1(p^{*}s)^{n}
-=\frac{1}{n!}\int_{B}c_1(s)^{n}.
+=&\opn{deg}(p)^{-1}\frac{1}{n!}\int_T c_1(p^{*}s)^{n}
+\notag \\
+=&\frac{1}{n!}\int_{B}c_1(s)^{n}.
 \end{align}
 
 From now on, we assume $B=T$.
@@ -5543,9 +5549,9 @@ modules
 Yoshitomi \cite[Example 6.5]{yoshitomi2011generators} 
 gave a simple example of divisors on 
 tropical curves such that 
-the rank of a divisor is different even though 
-the $\mathbb{T}$-semimodules of the global section of 
-tropical line bundle $\mcal{O}_C(D)$ are isomorphic.},
+the ranks of divisors are different even though 
+the $\mathbb{T}$-semimodules of the global sections of 
+tropical line bundles are isomorphic.},
 but this is truly a good analog of classical one 
 (see \cite[Lemma 2.4]{MR2448666}).
 The rank of linear system is generalized by Cartwright
@@ -5655,7 +5661,7 @@ $L$ is a
 if $\nabla|_{L}$ is a trivial connection on $L$. Let $\pi :M\to B$ be a Lagrangian fibration. 
 A point $x\in B$ is 
 \emph{Bohr--Sommerfeld point} 
-if $\pi^{-1}(x)$ is a Bohr-Sommerfeld orbit.
+if $\pi^{-1}(x)$ is a Bohr--Sommerfeld orbit.
 
 The origin of Bohr--Sommerfeld orbit comes from
 old quantum theory.
@@ -5801,7 +5807,7 @@ $\mathcal{F}^{\bullet}$.
 The dual functor
 $\mathcal{D}_{A_X}\colon 
 D^{b}(\catn{Mod}(A_X))\to 
-D^{b}(\catn{Mod}(A_X)); \mathcal{F}^{\bullet} \to  R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
+D^{b}(\catn{Mod}(A_X)); \mathcal{F}^{\bullet} \mapsto  R\mathcal{H}om_{A_X}(\mathcal{F}^{\bullet},
 \upomega_{A_X}^{\bullet})$
 has the following canonical isomorphism when 
 $\mathcal{D}_{A_X}(\mathcal{D}_{A_X}(\mathcal{G}^{\bullet}))
@@ -5901,7 +5907,7 @@ for all $l\in \mathbb{Z}_{\geq 0}$.
 are called the \emph{Ehrhart reciprocity law}. 
 The proof of the law is in \cite[Theorem 9.4.2]{MR2810322},
 for instance.
-We also note \eqref{equation-danilov-formula} 
+We also note that \eqref{equation-danilov-formula} 
 has a differential geometrical interpretation,
 see also \cref{appendix-geometric-quantization}. 
 
@@ -6010,6 +6016,7 @@ $h\colon (\mathbb{R}_{> 0})^{n}\to \mathbb{R}_{> 0}$:
 \end{equation}
 where $f\deq \log \circ h\circ (\opn{id}_N \otimes \exp)$.
 If $h$ is a $C^{\infty}$-function, so do $f$.
+
 Let $h\in \mathbb{R}_{\geq 0}
 [x_{1}^{\pm},\ldots,x_n^{\pm}]\setminus \{0\}$ be 
 a nonzero Laurent 
