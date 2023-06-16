@@ -223,8 +223,8 @@ $C$ の位相的 Euler 数である。
 本研究では、Strominger--Yau--Zaslow 予想 (SYZ予想)
 のアイデアと超局所層理論\cite{MR1299726}を
 利用することで、
-境界を持たないトロピカル多様体上の直線束を表現する 
-permissible な$C^{\infty}$級Cartierデータに対して
+コンパクトトロピカル多様体上の直線束を表現する 
+可容$C^{\infty}$因子に対して
 Floer 複体もしくは Morse 複体の類似の
 次数付き加群を定義し、その次数つき加群の 
 Euler 数を 直線束の Euler 数のトロピカル類似とする。
@@ -363,22 +363,22 @@ $\opn{HF}^{\bullet}(\mathscr{L}_s,\mathscr{L}_{s'})$を
 トロピカルコホモロジー群 $H^{\bullet,\bullet}(S;\mathbb{Z})$
 の元$\opn{td}(S)$が存在して、
 $S$上の任意の
-トロピカル直線束
-$\mathcal{L}$と、
-$\mathcal{L}$を表現する任意の
-$C^{\infty}$-因子 $s$ で、
-次節で述べる\cref{condition-good}を満たすものに対し、
+$C^{\infty}$因子$s$で、
+次節で述べる可容条件(\cref{condition-good})を満たすものに対し、
 次の等式が成り立つ:
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(S;s))=
-\int_{S}\opn{ch}(\mathcal{L})\opn{td}(S).
+\int_{S}\opn{ch}([s])\opn{td}(S).
 \end{align}
 ここで、$\int_S$ はトレース写像であり、
-$\mathrm{ch}(\mathcal{L})$ は$\mathcal{L}$の
+$\mathrm{ch}([s])$は$s$の因子類$[s]\in \opn{Pic}(S)$の 
 Chern指標である。
 \end{conjecture}
-
-$\opn{LMD}^{\bullet}(S;s)$ は次節で述べるが、
+$C^{\infty}$因子と
+$\opn{LMD}^{\bullet}(S;s)$は次節で述べるが、
+整アフィン多様体$B$上の$C^{\infty}$因子は、
+$H^{0}(B;\mathcal{C}_{B}^{\infty}/\mathcal{O}^{\times}_B)$
+の元のことであり、
 コンパクト整アフィン多様体 $B$と
 $\mathscr{L}_s$が零切断と横断的に交わる$s$
 の組に対しては、複素係数Novikov体 
@@ -389,6 +389,12 @@ $\opn{LMD}^{\bullet}(B;s)\otimes_{\mathbb{Z}}
 \opn{CF}^{\bullet}(\mathscr{L}_{s_0},
 \mathscr{L}_s)$ となる。
 % なお条件(iv)は将来的に不要となると期待している。
+任意の$\mathcal{L}\in\opn{Pic}(S)$の元に対して、
+$[s]=\mathcal{L}$となる可容$C^{\infty}$因子
+$s$が
+存在するか否かは一般には非自明であるが、豊富に存在すると期待
+され、$S$がコンパクトトロピカル曲線もしくは整アフィン多様体
+の場合は豊富に存在する。
 本論文の主結果は、\cref{conjecture-mirror-tropical-rr}
 への肯定的な部分解答であり、
 用語や条件の説明を後回しにすると、
@@ -396,15 +402,14 @@ $\opn{LMD}^{\bullet}(B;s)\otimes_{\mathbb{Z}}
 
 \begin{theorem} \label{theorem-main}
 $C$ (resp. $B$) をコンパクトなトロピカル曲線 (resp. Hesse 計量を持つ
-整アフィン多様体) とし、$\mathcal{L}$ をその上の直線束
+$n$次元整アフィン多様体) とし、
 $s$ を $C$ (resp. $B$) 上の
-\cref{condition-good} を満たす$C^{\infty}$
-Cartierデータ $s$ 
+\cref{condition-good} を満たす$C^{\infty}$因子 
 とする。このとき、次が成り立つ。
 \begin{align}
-\chi(\opn{LMD}^{\bullet}(C;s))=\int_C c_1(\mathcal{L})+
+\chi(\opn{LMD}^{\bullet}(C;s))=\int_C c_1([s])+
 \chi_{\opn{top}}(C), \quad
-\chi(\opn{LMD}^{\bullet}(B;s))=\int_B \frac{c_1(\mathcal{L})^n}{n!}
+\chi(\opn{LMD}^{\bullet}(B;s))=\int_B \frac{c_1([s])^n}{n!}
 \end{align}
 \end{theorem}
 % トロピカル曲線の定理\ref{theorem-main} の右辺は
@@ -427,51 +432,63 @@ Cartierデータ $s$
 
 \aftersection
 
-この節では、$S$ の座標系がすべて $\mathbb{R}^{n}$ 
-の多面集合の開集合と
-
-して取れるような
-有理多面空間 $S$ とその上の$C^{\infty}$-因子
-$s\in H^{0}(S;\mathcal{A}_{S}^{0,0}/\mathcal{O}^{\times}_S)$
-に対する可容条件(\cref{condition-good})と 
+この節では、有理多面空間$S$とその上の$C^{\infty}$因子
+$s$の可容条件(\cref{condition-good})と 
 $\opn{LMD}^{\bullet}(S;s)$ について説明する。
-ここで $\mathcal{A}^{0,0}_S$ は $S$ 上の $(0,0)$-superform
-のなす層のことである\cite{MR3903579}。まず、$s$は局所的には、
+まず、$S$の各点$x$には、余接ベクトル空間
+$(\tform^{1}_{S})_x\deq
+(\mathcal{O}_S^{\times}/\mathbb{R}_S)_x
+\otimes_{\mathbb{Z}}\mathbb{R}$
+と、その中の整数ベクトルのなす格子
+$(\tform^{1}_{\mathbb{Z},S})_x$が存在する。
+接ベクトル空間
+$T_x S\deq(\tform^{1}_{S})_x^{\vee}$の中には、local cone
+という$T_xS$を張る有理多面集合
+$\opn{LC}_x S$が存在する。
+$\phi \colon \opn{LC}_x S\to T_x S$を埋め込み写像とすると
+$T^{*}(T_xS)$の部分集合である層のマイクロ台
+$\opn{SS}(\phi_!\phi^{-1}\mathbb{Z}_{T_xS})$が定義される。
+このとき、原点での余接ベクトル空間$T^{*}_0(T_xS)$が、
+$(\tform_S^{1})_x$と自然に同型であることに注意することで
+$(\tform_S^{1})_x$の部分集合
+$\opn{SS}(S)_x\deq \opn{SS}(\phi_!\phi^{-1}\mathbb{Z}_{T_xS})
+\cap (\tform_S^{1})_x$が定義される。
+
+$S$上の$C^{\infty}$因子$s$は、$S$上の
+weakly-smoothな関数のなす層$\mathcal{A}^{\mathrm{weak}}_S$
+によって定義されるコホモロジー
+$H^{0}(S;\mathcal{A}^{\mathrm{weak}}_S/\mathcal{O}^{\times}_S)$
+の元である。(なお、$S$がboundarylessのとき、つまり
+$S$ の座標系がすべてある$\mathbb{R}^{n}$ 
+の有理凸多面体の有限和の開集合として取れるような$S$のとき、
+$\mathcal{A}^{\mathrm{weak}}_S$は$S$上の(0,0)-superformのなす
+層$\mathcal{A}^{0,0}_S$ \cite{MR3903579}と同じである。)
+$s$は局所的には、
 $S$の開集合上の 
-$(0,0)$ superform $f\colon U\to \mathbb{R}$
-によって表現されており、各点 $x$ において
-全微分ベクトル $df(x)\in(\mathcal{F}_{S}^{1})_x$ 
-が定義される。$\mathcal{F}_{S}^{1}$ とは、定数層
-$\mathbb{R}_S$ による
-商層 $\mathcal{O}^{\times}_{S}/\mathbb{R}_{S}$ 
-の $\mathbb{R}$ 係数拡大であり、
-$(\mathcal{F}_{S}^{1})_x$の双対空間
-$T_x S$は、$S$ の $x$ の局所的な錐
-$\opn{LC}_x S$ の張るベクトル空間と同一視される。
-$\phi \colon \opn{LC}_x S\to T_x S$ を上述の同一視の下
-による閉埋め込みとすると
-$\opn{SS}_x (S)$を
-$\opn{SS}_0(\phi_* \phi^{-1}\mathbb{Z}_{T_x S})$
-と定義する。このとき、
-$\opn{SS}_0(\phi_* \phi^{-1}\mathbb{Z}_{T_x S})$は、
-$T_x X$を微分多様体とみなしたときの、
-$\phi_* \phi^{-1}\mathbb{Z}_{T_x S}$ のマイクロ台と
-原点での$T_x X$の余接ベクトル空間との交叉である。
+weakly-smoothな関数 $f\colon U\to \mathbb{R}$
+の主因子によって表現されており、各点 $x$ において
+全微分ベクトル $df(x)\in(\tform_{S}^{1})_x$ 
+が定義される。
 このとき、
-$f\colon U \to \mathbb{R}$ が $x$ にて permissible
+$f\colon U \to \mathbb{R}$ が $x$ にて
+前可容(prepermissible)
 とは、次の条件を満たすことである。
 \begin{align}
-df(x)\notin\opn{span}_{\mathbb{R}}(\opn{SS}_x(S))+
+df(x)\notin\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)+
 (\tform_{\mathbb{Z},S}^{1})_x 
-\setminus (\mathcal{F}_{\mathbb{Z},S}^{1})_x
+\setminus (\tform_{\mathbb{Z},S}^{1})_x
 \end{align}
+$C^{\infty}$因子$s$が前可容とは、
+$s$が前可容なweakly-smoothな関数のなす
+局所データ$\{(U_i,f_i)\}_{i\in I}$
+をもつことをいう。
 
-$S$ には、各点に対してトーラス
-$\check{X}_0(S)_x\deq ((\mathcal{F}^{1}_{\mathbb{Z},S})_x/
+$S$上の各点$x$に対してトーラス
+$\check{X}_0(S)_x\deq ((\tform^{1}_{\mathbb{Z},S})_x/
 \opn{span}_{\mathbb{R}}(\opn{SS}_x(S))\cap 
-(\mathcal{F}^{1}_{\mathbb{Z},S})_x)\otimes_{\mathbb{Z}}
+(\tform^{1}_{\mathbb{Z},S})_x)\otimes_{\mathbb{Z}}
 \mathbb{R}/\mathbb{Z}$ が定義され、
-permissible な$C^{\infty}$級因子 $s$ に対して写像
+前可容な$C^{\infty}$因子 $s$ に対して写像
 $\check{s}\colon S\to \check{X}_0(S)\deq 
 \bigcup_{x\in S} \check{X}_0(S)_x$ が定義される。 
 そして標準的な射影 $\check{f}_{S}\colon \check{X}_0(S)\to S$
@@ -479,17 +496,17 @@ $\check{s}\colon S\to \check{X}_0(S)\deq
 $s_0\cap s\deq \check{f}_{S}(\opn{Im}(\check{s}_0)\cap 
 \opn{Im}(\check{s}))$ と定義される。
 この、$s_0\cap s$ が有限集合のとき、
-$s$ の局所 Morse データは層の局所 Morse データを用いることで
-次のように定義される。
+$s$ の局所 Morse データは層の局所 Morse データのコホモロジー
+を用いることで次のように定義される。
 \begin{align} \label{equation-local-morse-data}
 \opn{LMD}^{\bullet}(S;s)\deq 
 \bigoplus_{p\in s_0\cap s} 
 (R^{\bullet}_{\{x\in U_p\mid f_p(x)\geq f_p(p)\}}(\mathbb{Z}_{U_p}))_p.
 \end{align}
 ここで、$f_p\colon U_p\to \mathbb{R}$ とは、
-$p$ の十分小さな近傍 $U_p$ 上の $(0,0)$-superform で
-$s|_{U_p}$ が $f_p$ の定義する$C^{\infty}$級Cartierデータ
-と一致し、$p$ にのみ特異点を持つものである。
+$p$ の十分小さな近傍 $U_p$ 上の weakly-smoothな関数で
+$s|_{U_p}$ が $f_p$ の定義する$C^{\infty}$因子
+と一致し、$p$ にのみ臨界点を持つものである。
 % \textcolor{gray}{ 
 % \cref{equation-local-morse-data}の右辺の直和成分は
 % 局所 Morse データもしくは、micro-stalk と呼ばれるものの
@@ -497,15 +514,16 @@ $s|_{U_p}$ が $f_p$ の定義する$C^{\infty}$級Cartierデータ
 % \cite{MR2031639,MR1299726}。
 % }
 
-前述の $C^{\infty}$級Cartierデータ
-$s$ のしかるべき条件とは、本論文では次の条件である。
+前述の $C^{\infty}$因子
+$s$ の可容条件(permissibility condition)
+とは、次の条件である。
 
 \begin{condition} \label{condition-good}
-(i) 
-(ii) $s$ が permissible である。
-(iii) $\sharp (s_0\cap s)<\infty$。
-(iv) $\opn{LMD}^{\bullet}(S;s)$ が有限生成。
+(i) $s$ が前可容である。
+(ii) $\sharp (s_0\cap s)<\infty$。
+(iii) $\opn{LMD}^{\bullet}(S;s)$ が有限生成。
 \end{condition}
+
 
 コンパクトトロピカル曲線における、定理\ref{theorem-main}の証明は、
 各閉区間に対して定理\ref{theorem-main}を証明し、
@@ -518,7 +536,7 @@ Hesse 計量をもつコンパクト整アフィン多様体は Cheng--Yau
 \cite{gross2019sheaftheoretic}を利用することで
 示した。
 また本論文では、\cref{condition-good}を少し強めた
-$C^{\infty}$級Cartierデータに対して
+$C^{\infty}$因子に対して
 K\"unneth 型の定理が成り立つことを層における
 Thom--Sebastiani型の定理\cite{MR2031639}を
 用いることで示している。
