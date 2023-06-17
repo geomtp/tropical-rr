@@ -442,14 +442,15 @@ $(\tform^{1}_{S})_x\deq
 と、その中の整数ベクトルのなす格子
 $(\tform^{1}_{\mathbb{Z},S})_x$が存在する。
 接ベクトル空間
-$T_x S\deq(\tform^{1}_{S})_x^{\vee}$の中には、local cone
-という$T_xS$を張る有理多面集合
+$T_x S\deq(\tform^{1}_{S})_x^{\vee}$の中には、
+local coneと呼ばれる
+$T_xS$を張る有理多面集合
 $\opn{LC}_x S$が存在する。
-$\phi \colon \opn{LC}_x S\to T_x S$を埋め込み写像とすると
+$\phi \colon \opn{LC}_x S\to T_x S$を埋め込み写像とすると、
 $T^{*}(T_xS)$の部分集合である層のマイクロ台
 $\opn{SS}(\phi_!\phi^{-1}\mathbb{Z}_{T_xS})$が定義される。
-このとき、原点での余接ベクトル空間$T^{*}_0(T_xS)$が、
-$(\tform_S^{1})_x$と自然に同型であることに注意することで
+このとき、原点での余接ベクトル空間$T^{*}_0(T_xS)$が
+$(\tform_S^{1})_x$と自然に同型であることに注意することで、
 $(\tform_S^{1})_x$の部分集合
 $\opn{SS}(S)_x\deq \opn{SS}(\phi_!\phi^{-1}\mathbb{Z}_{T_xS})
 \cap (\tform_S^{1})_x$が定義される。
@@ -458,11 +459,12 @@ $S$上の$C^{\infty}$因子$s$は、$S$上の
 weakly-smoothな関数のなす層$\mathcal{A}^{\mathrm{weak}}_S$
 によって定義されるコホモロジー
 $H^{0}(S;\mathcal{A}^{\mathrm{weak}}_S/\mathcal{O}^{\times}_S)$
-の元である。(なお、$S$がboundarylessのとき、つまり
+の元である。
+なお、$S$がboundarylessのとき、つまり
 $S$ の座標系がすべてある$\mathbb{R}^{n}$ 
 の有理凸多面体の有限和の開集合として取れるような$S$のとき、
 $\mathcal{A}^{\mathrm{weak}}_S$は$S$上の(0,0)-superformのなす
-層$\mathcal{A}^{0,0}_S$ \cite{MR3903579}と同じである。)
+層$\mathcal{A}^{0,0}_S$ \cite{MR3903579}と一致する。
 $s$は局所的には、
 $S$の開集合上の 
 weakly-smoothな関数 $f\colon U\to \mathbb{R}$
@@ -472,7 +474,7 @@ weakly-smoothな関数 $f\colon U\to \mathbb{R}$
 このとき、
 $f\colon U \to \mathbb{R}$ が $x$ にて
 前可容(prepermissible)
-とは、次の条件を満たすことである。
+とは、次の条件を満たすことを指す。
 \begin{align}
 df(x)\notin\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)+
 (\tform_{\mathbb{Z},S}^{1})_x 
@@ -491,22 +493,22 @@ $\check{X}_0(S)_x\deq ((\tform^{1}_{\mathbb{Z},S})_x/
 前可容な$C^{\infty}$因子 $s$ に対して写像
 $\check{s}\colon S\to \check{X}_0(S)\deq 
 \bigcup_{x\in S} \check{X}_0(S)_x$ が定義される。 
-そして標準的な射影 $\check{f}_{S}\colon \check{X}_0(S)\to S$
+標準的な射影 $\check{f}_{S}\colon \check{X}_0(S)\to S$
 によって、自明な因子 $s_0$ と $s$ の交点は
 $s_0\cap s\deq \check{f}_{S}(\opn{Im}(\check{s}_0)\cap 
 \opn{Im}(\check{s}))$ と定義される。
-この、$s_0\cap s$ が有限集合のとき、
+この$s_0\cap s$ が有限集合のとき、
 $s$ の局所 Morse データは層の局所 Morse データのコホモロジー
 を用いることで次のように定義される。
 \begin{align} \label{equation-local-morse-data}
 \opn{LMD}^{\bullet}(S;s)\deq 
 \bigoplus_{p\in s_0\cap s} 
-(R^{\bullet}_{\{x\in U_p\mid f_p(x)\geq f_p(p)\}}(\mathbb{Z}_{U_p}))_p.
+(R^{\bullet}_{\{x\in U_p\mid f_p(x)\geq f_p(p)\}}(\mathbb{Z}_{U_p}))_p
 \end{align}
-ここで、$f_p\colon U_p\to \mathbb{R}$ とは、
-$p$ の十分小さな近傍 $U_p$ 上の weakly-smoothな関数で
-$s|_{U_p}$ が $f_p$ の定義する$C^{\infty}$因子
-と一致し、$p$ にのみ臨界点を持つものである。
+ここで$f_p\colon U_p\to \mathbb{R}$は、
+$p$ の十分小さな近傍 $U_p$ 上の weakly-smoothな関数で、
+$s|_{U_p}$ が $f_p$ の定義する$C^{\infty}$因子と一致し、
+$p$ にのみ臨界点を持つものである。
 % \textcolor{gray}{ 
 % \cref{equation-local-morse-data}の右辺の直和成分は
 % 局所 Morse データもしくは、micro-stalk と呼ばれるものの
@@ -514,9 +516,9 @@ $s|_{U_p}$ が $f_p$ の定義する$C^{\infty}$因子
 % \cite{MR2031639,MR1299726}。
 % }
 
-前述の $C^{\infty}$因子
-$s$ の可容条件(permissibility condition)
-とは、次の条件である。
+$C^{\infty}$因子$s$が
+可容である(permissible)とは、
+次の条件を満たす事を指す。
 
 \begin{condition} \label{condition-good}
 (i) $s$ が前可容である。
@@ -525,7 +527,7 @@ $s$ の可容条件(permissibility condition)
 \end{condition}
 
 
-コンパクトトロピカル曲線における、定理\ref{theorem-main}の証明は、
+コンパクトなトロピカル曲線に対する定理\ref{theorem-main}の証明は、
 各閉区間に対して定理\ref{theorem-main}を証明し、
 それらを張り合わせることで証明する。
 Hesse 計量をもつコンパクト整アフィン多様体については、
