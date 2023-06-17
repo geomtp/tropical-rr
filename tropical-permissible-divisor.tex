@@ -547,11 +547,20 @@ $\chi(H^{\bullet}(\mathcal{X}(B);\mathcal{L}_s))$.
 
 An extension of the SYZ conjecture
 to a curve of higher genus
-is studied recently in
-\cite{auroux2022lagrangian}, 
+is studied in
+\cite{MR3570582,auroux2022lagrangian}, 
 which is expected to generalize
 to higher dimensions
-\cite[{\textsection 7}]{auroux2022lagrangian}.
+(see \cite{MR3600059} and 
+\cite[{\textsection 7}]{auroux2022lagrangian}).
+Ruddat also informed us that
+Matessi--Muk--Ruddat--Zharkov proved
+the construction problem for
+a topological SYZ torus fibration 
+$\check{f}_B\colon X\to B$
+from integral affine manifold with
+singularities (see \cite{MR4294796}
+for more detail about it).
 
 The \emph{tropical cohomology}
 $H^{\bullet,\bullet}(S;\mathbb{Z})$
@@ -563,6 +572,12 @@ and carries a piece of information
 on the limiting mixed Hodge structure
 if the tropical manifold comes from a degenerating family
 of complex manifolds.
+A variation of tropical homology and cohomology 
+is for integral affine manifold having
+at worst symple singularities 
+also developed in \cite{MR4347312}
+(see also \cite[\textsection 2.1]{MR4179831}
+for the relations with SYZ fibrations).
 We follow the notations of
 \cite[Definition 2.6]{MR3894860}
 for tropical cohomology.
@@ -767,7 +782,10 @@ for explaining about \cite{MR4234675}
 and results in his master thesis \cite{yamaguchimaster}. 
 I would also like to 
 thank Yasuhito Nakajima for letting me know 
-Yamaguchi's work. 
+Yamaguchi's work.
+I extend my gratitude to Helge Ruddat
+for pointing out the references 
+\cite{MR3570582,MR3600059,MR4179831,MR4347312,MR4294796}.
 This work was supported by JSPS KAKENHI 
 Grant Number JP21J14529.
 
@@ -1621,15 +1639,15 @@ f|_{\bar{B}_{\varepsilon}(x)},x)\simeq
 By the Alexander duality, 
 $\tilde{H}^{\bullet}(S_{\varepsilon}^{n-1}(x)\setminus \{f=f(x)\};A)$ 
 is finitely generated.
-Therefore, $\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(x)},
-f|_{\bar{B}_{\varepsilon}(x)},x)$ is
+Therefore, $\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}^{n}(x)},
+f|_{\bar{B}_{\varepsilon}^{n}(x)},x)$ is
 also finitely generated.
 
 We also add an explanation of real Milnor fibers from
 \cite[\textsection 3.2]{MR3779558}. 
 If $f$ is real analytic, then 
 $S_{\varepsilon}^{n-1}(x)\cap \{f\leq f(x)\}\simeq 
-f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$
+f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}^{n}(x)$
 for sufficiently small $\vep>\delta>0$.
 $f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$ is called 
 the (negative) \emph{real Milnor fiber}.
@@ -1919,8 +1937,8 @@ $d_{0}\phi\colon T_0(\opn{LC}_xS) \simto T_x S$
 \cite[Proposition 2.5]{gross2019sheaftheoretic}.
 The $d_0 \phi$ does not depend on the choice of 
 $V$. 
-We frequently identify $T_0(\opn{LC}_x S)$ with 
-$T_x S$ for simplicity.
+We frequently identify $T_0^{*}(\opn{LC}_x S)$ with 
+$T_x^{*}S=(\tform_{S}^{1})_x$ for simplicity.
 \begin{definition}
 For the above notation, we set
 \begin{align}
@@ -3904,9 +3922,10 @@ $2$-spheres in
 \cite[\textsection 3.1]{auroux2022lagrangian}.
 Here, the space $M$ is the
 union of $\C P^{1}$'s whose intersection complex is $C$, 
-i.e., every edge of $C$ corresponds
+i.e., every edge of $C$ corresponds to a
 $\C P^{1}$ and every trivalent vertex of $C$ corresponds
-to the intersection points of some three $\C P^{1}$'s.
+to the intersection point of some three $\C P^{1}$'s
+(see also \cite{MR3570582}).
 The mirror manifold of $M$ is an algebraic curve $X_K$
 defined from Mumford's construction for the dual intersection
 complex defined from $C$.
