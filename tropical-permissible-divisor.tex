@@ -8,7 +8,7 @@
 \usepackage{mathtools,thmtools}
 %\usepackage{pgf,pgfplots}
 %\usepackage{tikz}
-% \pgfplotsset{compat=1.15}
+%\pgfplotsset{compat=1.15}
 %\usetikzlibrary{arrows}
 \usepackage{tikz-cd}%
 %\usetikzlibrary{cd}
@@ -343,6 +343,10 @@ $K_C$ is the canonical divisor of $C$
 \cite[Definition 1.3]{gathmannRiemannRochTheoremTropical2008a},
 and $\chi_{\mathrm{top}}(C)$ is the topological 
 Euler characteristic of $C$.
+The tropical Riemann--Roch theorem for divisors
+on a compact tropical curve were generalized for
+divisors on a weighted metric graph \cite[Theorem 5.4]{MR3046301}, 
+or multidivisors on a metric graph \cite[Theorem 4.3]{gross2022principal}.
 
 It is a natural problem 
 to find a tropical analog of 
@@ -369,7 +373,8 @@ for more on this difficulty.
 \cref{section-tropical-riemann-roch}
 also contains earlier works
 on topological Euler characteristics and 
-Todd classes of tropical manifolds.
+Todd classes of tropical manifolds
+(see also \cref{remark-todd-class}).
 
 In this paper,
 we pursue a different tropical analog
@@ -546,11 +551,20 @@ $\chi(H^{\bullet}(\mathcal{X}(B);\mathcal{L}_s))$.
 
 An extension of the SYZ conjecture
 to a curve of higher genus
-is studied recently in
-\cite{auroux2022lagrangian}, 
+is studied in
+\cite{MR3570582,auroux2022lagrangian}, 
 which is expected to generalize
 to higher dimensions
-\cite[{\textsection 7}]{auroux2022lagrangian}.
+(see \cite{MR3600059} and 
+\cite[{\textsection 7}]{auroux2022lagrangian}).
+Ruddat also informed us that
+Mak--Matessi--Ruddat--Zharkov proved
+the construction problem for
+a topological SYZ torus fibration 
+$\check{f}_B\colon \check{X}\to B$
+from integral affine manifold with
+singularities (see \cite{MR4294796}
+for more detail about it).
 
 The \emph{tropical cohomology}
 $H^{\bullet,\bullet}(S;\mathbb{Z})$
@@ -565,6 +579,12 @@ of complex manifolds.
 We follow the notations of
 \cite[Definition 2.6]{MR3894860}
 for tropical cohomology.
+A variation of tropical homology and cohomology 
+for integral affine manifold having
+at worst symple singularities 
+is also developed in \cite{MR4347312}
+(see also \cite[\textsection 2.1]{MR4179831}
+for the relations with SYZ fibrations).
 If $S$ is compact and connected of dimension $n$,
 then one has the trace map
 $
@@ -574,7 +594,6 @@ H^{n,n}(S;\mathbb{Z})
 $
 as we recall in
 \cref{equation-trace-integration}.  
-
 In this paper,
 we introduce
 a graded $\Z$-module 
@@ -767,7 +786,9 @@ for explaining about \cite{MR4234675}
 and results in his master thesis \cite{yamaguchimaster}. 
 I would also like to 
 thank Yasuhito Nakajima for letting me know 
-Yamaguchi's work. 
+Yamaguchi's work.
+I extend my gratitude to Helge Ruddat
+for pointing out several references.
 This work was supported by JSPS KAKENHI 
 Grant Number JP21J14529.
 
@@ -852,7 +873,7 @@ $\alpha=0,1,\ldots,\infty,\omega$.
 \label{section-local-morse-data}
 In this section, we recall some elementary results
 of sheaf theory
-and define permissible $C^{\infty}$-divsors on rational
+and define permissible $C^{\infty}$-divisors on rational
 polyhedral spaces and
 the (cohomological) local Morse data 
 for permissible $C^{\infty}$-divisors.
@@ -989,7 +1010,6 @@ $(\cdot)_Z$ is exact.
 
 Let $X$ be a topological space, $Z$ a locally 
 closed subset of $X$ and $Z'$ a closed subset of $Z$.
-
 There exists the following distinguished triangle 
 for any $\mathcal{F}^{\bullet}\in \opn{Ob}(D^{b}(A_X))$ 
 \cite[(2.6.32)]{MR1299726}:
@@ -1261,13 +1281,15 @@ for any $\varepsilon\in \mathbb{R}_{}>0$ we get
 \partial (\bar{B}^{n}_{\varepsilon}(0)
 \times \bar{B}^{m}_{\varepsilon}(0))=
 & S^{n-1}_{\varepsilon}(0)\times B^{m}_{\varepsilon}(0) 
-\cup B^{n}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0) \\
+\cup B^{n}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0) 
+\notag \\
 & \cup 
 S^{n-1}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0) \\
 =& \{\|\cdot\|_{\mathbb{R}^{n}}=\varepsilon\} 
 \times \{\|\cdot\|_{\mathbb{R}^{m}} < \varepsilon\} 
 \cup \{\|\cdot\|_{\mathbb{R}^{n}} < \varepsilon\} \times 
-\{\|\cdot\|_{\mathbb{R}^{m}}= \varepsilon\} \\
+\{\|\cdot\|_{\mathbb{R}^{m}}= \varepsilon\}
+\notag \\
 & \cup 
 \{\|\cdot\|_{\mathbb{R}^{n}}=\varepsilon\} \times 
 \{\|\cdot\|_{\mathbb{R}^{m}}= \varepsilon\}.
@@ -1621,15 +1643,15 @@ f|_{\bar{B}_{\varepsilon}(x)},x)\simeq
 By the Alexander duality, 
 $\tilde{H}^{\bullet}(S_{\varepsilon}^{n-1}(x)\setminus \{f=f(x)\};A)$ 
 is finitely generated.
-Therefore, $\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}(x)},
-f|_{\bar{B}_{\varepsilon}(x)},x)$ is
+Therefore, $\opn{LMD}^{\bullet}(A_{\bar{B}_{\varepsilon}^{n}(x)},
+f|_{\bar{B}_{\varepsilon}^{n}(x)},x)$ is
 also finitely generated.
 
 We also add an explanation of real Milnor fibers from
 \cite[\textsection 3.2]{MR3779558}. 
 If $f$ is real analytic, then 
 $S_{\varepsilon}^{n-1}(x)\cap \{f\leq f(x)\}\simeq 
-f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$
+f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}^{n}(x)$
 for sufficiently small $\vep>\delta>0$.
 $f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$ is called 
 the (negative) \emph{real Milnor fiber}.
@@ -1919,8 +1941,10 @@ $d_{0}\phi\colon T_0(\opn{LC}_xS) \simto T_x S$
 \cite[Proposition 2.5]{gross2019sheaftheoretic}.
 The $d_0 \phi$ does not depend on the choice of 
 $V$. 
-We frequently identify $T_0(\opn{LC}_x S)$ with 
-$T_x S$ for simplicity.
+We frequently identify $T_0^{*}(\opn{LC}_x S)$ with 
+$T_x^{*}S=(\tform_{\mathbb{R},S}^{1})_x$ for simplicity.
+Under this indenfitication, we can define the 
+$\opn{SS}(S)_x$ as follows:
 \begin{definition}
 For the above notation, we set
 \begin{align}
@@ -3872,16 +3896,15 @@ However, this positive $C^{\infty}$-divisor is different
 from ample line bundles for tropical curves. 
 If $s$ is a positive $C^{\infty}$-divisor, then
 $\chi(\opn{LMD}(C;s))=\sharp(s_0\cap s)\geq \sharp 
-(C\setminus C_{0})$. 
+(C\setminus C_{\reg})$. 
 Thus, $\chi(\opn{LMD}(C;s))\geq 2g(C)-2$
 when $C$ is a compact trivalent
 graph. This means that
 $\opn{deg}(s)\geq 3g(C)-3$.
 On the other hand, every divisor $D$ satisfying
 $\opn{deg}(D)>0$ is ample \cite[Corollary 43]{MR2892941}.
-Roughly speaking, there is no direct tropical
-analogs of the Kodaira embedding theorem
-in tropical geometry.
+Roughly speaking, the positivity condition is more 
+strict than the ampleness condition.
 \end{remark}
 
 
@@ -3904,9 +3927,10 @@ $2$-spheres in
 \cite[\textsection 3.1]{auroux2022lagrangian}.
 Here, the space $M$ is the
 union of $\C P^{1}$'s whose intersection complex is $C$, 
-i.e., every edge of $C$ corresponds
+i.e., every edge of $C$ corresponds to a
 $\C P^{1}$ and every trivalent vertex of $C$ corresponds
-to the intersection points of some three $\C P^{1}$'s.
+to the intersection point of some three $\C P^{1}$'s
+(see also \cite{MR3570582}).
 The mirror manifold of $M$ is an algebraic curve $X_K$
 defined from Mumford's construction for the dual intersection
 complex defined from $C$.
@@ -4175,7 +4199,7 @@ $(B,\{(U_i,\psi_i)\}_{i \in I})$
 is a Riemannian metric $g$ such that 
 there exists a multivalued function $K$ on $B$ satisfying
 $g=\sum_{k,l}\frac{\partial K}{\partial x_k \partial x_l}dx_k dx_l$ for 
-an affine conndinate system of $U_i$. The triple
+an affine coordinate system of $U_i$. The triple
 $(B,\{(U_i,\psi_i)\}_{i \in I},g)$ is called a \emph{Hessian manifold}.
 \end{definition}
 \begin{remark}
@@ -4933,7 +4957,7 @@ for $s'$ proves \cref{theorem-MRR-hesse-preface}.
 
 
 \begin{remark}
-
+\label{remark-todd-class}
 According to \cite[\textsection 5.3]{mikhalkinTropicalGeometryIts2006},
 the $k$-th Chern cycle $c_k(X)$
 of an $n$-dimensional tropical manifold $X$ 
@@ -5589,7 +5613,10 @@ introduced by several researchers
 and \cite[p.8]{yoshitomi2011generators}) but 
 these dimensions have no tropical analog of 
 Riemann--Roch formula like 
-\cite{MR2355607,gathmannRiemannRochTheoremTropical2008a}.
+\cite{MR2355607,gathmannRiemannRochTheoremTropical2008a},
+but there exists a analog of Riemann--Roch formula 
+for the tropicalization of the linear system of divisors
+on a algebraic curve \cite[Corollary D]{MR4444458}.
 
 \begin{remark} \label{remark-list-tropical-euler}
 Here is the list of the reason why the Euler 
