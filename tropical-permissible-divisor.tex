@@ -343,6 +343,10 @@ $K_C$ is the canonical divisor of $C$
 \cite[Definition 1.3]{gathmannRiemannRochTheoremTropical2008a},
 and $\chi_{\mathrm{top}}(C)$ is the topological 
 Euler characteristic of $C$.
+The tropical Riemann--Roch theorem for divisors
+on a compact tropical curve were generalized for
+divisors on a weighted metric graph \cite[Theorem 5.4]{MR3046301}, 
+or multidivisors on a metric graph \cite[Theorem 4.3]{gross2022principal}.
 
 It is a natural problem 
 to find a tropical analog of 
@@ -554,10 +558,10 @@ to higher dimensions
 (see \cite{MR3600059} and 
 \cite[{\textsection 7}]{auroux2022lagrangian}).
 Ruddat also informed us that
-Matessi--Muk--Ruddat--Zharkov proved
+Mak--Matessi--Ruddat--Zharkov proved
 the construction problem for
 a topological SYZ torus fibration 
-$\check{f}_B\colon X\to B$
+$\check{f}_B\colon \check{X}\to B$
 from integral affine manifold with
 singularities (see \cite{MR4294796}
 for more detail about it).
@@ -576,9 +580,9 @@ We follow the notations of
 \cite[Definition 2.6]{MR3894860}
 for tropical cohomology.
 A variation of tropical homology and cohomology 
-is for integral affine manifold having
+for integral affine manifold having
 at worst symple singularities 
-also developed in \cite{MR4347312}
+is also developed in \cite{MR4347312}
 (see also \cite[\textsection 2.1]{MR4179831}
 for the relations with SYZ fibrations).
 If $S$ is compact and connected of dimension $n$,
@@ -1006,7 +1010,6 @@ $(\cdot)_Z$ is exact.
 
 Let $X$ be a topological space, $Z$ a locally 
 closed subset of $X$ and $Z'$ a closed subset of $Z$.
-
 There exists the following distinguished triangle 
 for any $\mathcal{F}^{\bullet}\in \opn{Ob}(D^{b}(A_X))$ 
 \cite[(2.6.32)]{MR1299726}:
@@ -1278,13 +1281,15 @@ for any $\varepsilon\in \mathbb{R}_{}>0$ we get
 \partial (\bar{B}^{n}_{\varepsilon}(0)
 \times \bar{B}^{m}_{\varepsilon}(0))=
 & S^{n-1}_{\varepsilon}(0)\times B^{m}_{\varepsilon}(0) 
-\cup B^{n}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0) \\
+\cup B^{n}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0) 
+\notag \\
 & \cup 
 S^{n-1}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0) \\
 =& \{\|\cdot\|_{\mathbb{R}^{n}}=\varepsilon\} 
 \times \{\|\cdot\|_{\mathbb{R}^{m}} < \varepsilon\} 
 \cup \{\|\cdot\|_{\mathbb{R}^{n}} < \varepsilon\} \times 
-\{\|\cdot\|_{\mathbb{R}^{m}}= \varepsilon\} \\
+\{\|\cdot\|_{\mathbb{R}^{m}}= \varepsilon\}
+\notag \\
 & \cup 
 \{\|\cdot\|_{\mathbb{R}^{n}}=\varepsilon\} \times 
 \{\|\cdot\|_{\mathbb{R}^{m}}= \varepsilon\}.
@@ -3891,16 +3896,15 @@ However, this positive $C^{\infty}$-divisor is different
 from ample line bundles for tropical curves. 
 If $s$ is a positive $C^{\infty}$-divisor, then
 $\chi(\opn{LMD}(C;s))=\sharp(s_0\cap s)\geq \sharp 
-(C\setminus C_{0})$. 
+(C\setminus C_{\reg})$. 
 Thus, $\chi(\opn{LMD}(C;s))\geq 2g(C)-2$
 when $C$ is a compact trivalent
 graph. This means that
 $\opn{deg}(s)\geq 3g(C)-3$.
 On the other hand, every divisor $D$ satisfying
 $\opn{deg}(D)>0$ is ample \cite[Corollary 43]{MR2892941}.
-Roughly speaking, there is no direct tropical
-analogs of the Kodaira embedding theorem
-in tropical geometry.
+Roughly speaking, the positivity condition is more 
+strict than the ampleness condition.
 \end{remark}
 
 
@@ -5609,7 +5613,10 @@ introduced by several researchers
 and \cite[p.8]{yoshitomi2011generators}) but 
 these dimensions have no tropical analog of 
 Riemann--Roch formula like 
-\cite{MR2355607,gathmannRiemannRochTheoremTropical2008a}.
+\cite{MR2355607,gathmannRiemannRochTheoremTropical2008a},
+but there exists a analog of Riemann--Roch formula 
+for the tropicalization of the linear system of divisors
+on a algebraic curve \cite[Corollary D]{MR4444458}.
 
 \begin{remark} \label{remark-list-tropical-euler}
 Here is the list of the reason why the Euler 
