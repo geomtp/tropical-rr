@@ -153,12 +153,12 @@ with permissible $C^{\infty}$-divisors on tropical manifolds
 \setlength{\parskip}{3pt}
 
 本論文の目的は
-(1)コンパクトトロピカル多様体上の直線束を表現する
+(1)コンパクトなトロピカル多様体上の直線束を表現する
 可容$C^{\infty}$因子に対して次数付き加群を
 定義することと
-(2)その定式化から自然と提起される Riemann--Roch 型の定理の
+(2)その定式化が示唆する Riemann--Roch 型の定理の
 新たな類似をトロピカル曲線と Hesse 計量をもつ整アフィン多様体に対して
-証明することである。なおこの類似は Gathmann--Kerber
+証明することである。なお、この類似は Gathmann--Kerber
 によるトロピカル Riemann--Roch の定理とは異なる。
 
 \beforesection
@@ -167,40 +167,32 @@ with permissible $C^{\infty}$-divisors on tropical manifolds
 
 \aftersection
 
-トロピカル幾何とは、
-局所的にトロピカルアフィン空間
-$\underline{\mathbb{R}}^{n}\deq (\mathbb{R}\cup\{-\infty\})^{n}$内の
-有理多面集合の開集合となる空間$S$とその上の
-局所的に整数係数の傾きを持つアフィンな関数のなす層 
+$\underline{\mathbb{R}}^{n} \deq (\mathbb{R}\cup\{-\infty\})^{n}$内の
+有理多面集合と
+その上の整数係数の傾きを持つアフィン関数のなす層 
 $\mathcal{O}_S^{\times}$
-の組を代数多様体の類似物とみなして研究する分野である
+からなる組と局所的に同型であるような空間を
+有理多面空間(rational polyhedral space)
+と呼び、
+その中のある特別なクラスをトロピカル多様体と呼ぶ。
+トロピカル多様体を代数多様体の類似物とみなして研究する分野が
+トロピカル幾何学である
 \cite{mikhalkinTropicalEigenwaveIntermediate2014a,
 gross2019sheaftheoretic}。
-$\underline{\mathbb{R}}^{n}$は、
-指数写像$\opn{exp}\colon
-\underline{\mathbb{R}}^{n}\to (\mathbb{R}_{\geq 0})^{n}$
-による誘導位相を持ち、
-有理多面集合とは、$\underline{\mathbb{R}}^{n}$
-の次のような部分空間に含まれる、有理凸多面体の閉包
-の有限和として得られるものである。
-\begin{align}
-\mathbb{R}_{I}\deq 
-\{(x_1,\ldots,x_n)\in
-\underline{\mathbb{R}}^{n}\mid x_i=-\infty \text{ for all } i\in I\}
-\end{align}
-そのような空間を有理多面空間(rational polyhedral space)
-と呼び、その中のある特別なクラスをトロピカル多様体と呼ぶ。
-一次元トロピカル多様体をトロピカル曲線と呼び、
 次数$1$の頂点を持たない有限距離グラフは標準的な
-トロピカル曲線の構造を持つ。
-トロピカル多様体であり、境界なし微分多様体の構造を自然にもつ空間を
-整アフィン多様体と呼ぶ。
+トロピカル曲線（一次元トロピカル多様体）の構造を持つ。
+また、
+微分可能多様体の構造を持つトロピカル多様体は、
+整アフィン多様体（つまり、変換関数が整アファイン関数であるような
+アトラスを持つ微分可能多様体）と自然に対応する。
 Hesse 計量は整アフィン多様体における
 K\"ahler 計量の類似である。
 
-コンパクトトロピカル曲線 $C$ 上の Cartier 因子 
-$D\in \opn{CDiv}(C)$
-に関する Riemann--Roch の定理は
+コンパクトなトロピカル曲線 $C$ 上の因子 
+$D\in \opn{Div}(C)$
+に関する Riemann--Roch の定理は、
+Baker--Norine による
+グラフの Riemann--Roch の定理の一般化として、
 Gathmann--Kerber
 \cite{gathmannRiemannRochTheoremTropical2008a} によって 
 Baker--Norine による
@@ -212,13 +204,12 @@ r(D)-r(K_C-D)=\opn{deg}(D)+\chi_{\mathrm{top}}(C)
 ここで、$r(D)$ とは、$D$ の因子の線形系の階数であり、
 $K_C$ は$C$ の標準因子、$\chi_{\mathrm{top}}(C)$ は
 $C$ の位相的 Euler 数である。
-この等式を高次元に一般化することは自然な考えであるが、
-両辺ともに技術的な困難が存在する。
-
-特に左辺は、
-トロピカル直線束は Abel 群のなす層ではないという
-根本的な問題が原因である。
-
+この等式を高次元に一般化することは
+自然な問題であるが、
+右辺と左辺のどちらも高次元化は容易ではない。
+特に左辺の高次元化には、
+トロピカル直線束は Abel 群のなす層ではないことから来る
+本質的な困難がある。
 
 \beforesection
 
@@ -226,16 +217,16 @@ $C$ の位相的 Euler 数である。
 
 \aftersection
 
-本研究では、Strominger--Yau--Zaslow 予想 (SYZ予想)
+本論文では、Strominger--Yau--Zaslow 予想
 \cite{stromingerMirrorSymmetryTduality1996}
-のアイデアと超局所層理論\cite{MR1299726}を
-利用することで、
-コンパクトトロピカル多様体上の直線束を表現する 
-可容$C^{\infty}$因子に対して
-Floer 複体もしくは Morse 複体の類似の
-次数付き加群$\opn{LMD}^{\bullet}(S;s)$を定義し、その次数つき加群の 
-Euler 数を 直線束の Euler 数のトロピカル類似とする。
-この節ではそれについて説明する。
+に基づくアイデアと超局所層理論\cite{MR1299726}を
+用いることで、
+コンパクトなトロピカル多様体$S$上の直線束を表現する 
+可容$C^{\infty}$因子$s$に対して
+次数付き加群$\opn{LMD}^{\bullet}(S;s)$を定義し、
+そのEuler数を
+代数多様体上の直線束のEuler数のトロピカル類似として採用するが、
+本節ではこの定義について説明する。
 
 まず、$S$の各点$x$には、余接ベクトル空間
 $(\tform^{1}_{S})_x\deq
@@ -254,63 +245,75 @@ $T^{*}(T_xS)$の部分集合である層のマイクロ台
 $\opn{SS}(\phi_!\phi^{-1}\mathbb{Z}_{T_xS})$が定義される。
 このとき、原点での余接ベクトル空間$T^{*}_0(T_xS)$が
 $(\tform_S^{1})_x$と自然に同型であることに注意することで、
-同一視の下$(\tform_S^{1})_x$の部分集合
+$(\tform_S^{1})_x$の部分集合
 $\opn{SS}(S)_x\deq \opn{SS}(\phi_!\phi^{-1}\mathbb{Z}_{T_xS})
 \cap (\tform_S^{1})_x$が定義される。
-
 
 $S$上の$C^{\infty}$因子$s$は、$S$上の
 weakly-smoothな関数のなす層$\mathcal{A}^{\mathrm{weak}}_S$
 によって定義されるコホモロジー
 $H^{0}(S;\mathcal{A}^{\mathrm{weak}}_S/\mathcal{O}^{\times}_S)$
 の元である。
-有理多面空間$S$上のweakly-smoothな関数
-$f\colon S\to \mathbb{R}$とは、
+ここで、
+有理多面空間$S$上の連続関数
+$f\colon S\to \mathbb{R}$
+がweakly-smoothであるとは、
 各点$x\in S$に対して$x$を含むあるチャート
 $\psi \colon U_x\to \underline{\mathbb{R}}^{n}$と、
 $\mathbb{R}^{n}$の開集合上の正の値を持つ
 ある$C^{\infty}$-関数$h\colon V\to \mathbb{R}_{>0}$
-によって、$f|_{U_x}=
-\opn{log}\circ h\circ \opn{exp}\circ \psi$
-となる連続関数である
-(Definition 2.44と2.45)。
-$f\colon \underline{\mathbb{R}}\to \mathbb{R};x\mapsto 
-\opn{log}(1+e^{x})$は、weakly-smoothな関数の典型例であり、
+が存在して、
+$f|_{U_x}=\opn{log}\circ h\circ \opn{exp}\circ \psi$
+となることを指す
+(Definition 2.44とDefinition 2.45)。
+関数
+$
+f\colon \underline{\mathbb{R}}\to \mathbb{R}
+$;
+$
+x\mapsto \opn{log}(1+e^{x})
+$
+はweakly-smoothな関数の典型例であり、
 $h\colon \mathbb{R}_{>-1}
 \to \mathbb{R}_{>0};z\mapsto 1+z$によって定義される。
 なお、$S$がboundarylessのとき、つまり
 $S$ の座標系がすべてある$\mathbb{R}^{n}$ 
 に含まれる有理多面集合の開集合として取れるような$S$のとき、
-$\mathcal{A}^{\mathrm{weak}}_S$は$S$上の(0,0)-superformのなす
-層$\mathcal{A}^{0,0}_S$ \cite{MR3903579}と一致する。
-上述の例が、weakly-smoothだが$(0,0)$-superform
-ではない典型例である。
+$\mathcal{A}^{\mathrm{weak}}_S$は$S$上の
+\cite{MR3903579}の意味の
+(0,0)-superformのなす
+層$\mathcal{A}^{0,0}_S$
+と一致する。
+上述の例が、weakly-smoothだが$(0,0)$-superformではない典型例である。
 
-$C^{\infty}$因子$s$は局所的には、
+$C^{\infty}$因子$s$は局所的には
 $S$の開集合上の 
 weakly-smoothな関数 $f\colon U\to \mathbb{R}$
-の主因子によって表現されており、各点 $x$ において
+の主因子として表現されており、各点 $x$ において
 全微分ベクトル $df(x)\in(\tform_{S}^{1})_x$ 
 が定義される。
-このとき、
-$f\colon U \to \mathbb{R}$ が $x$ にて
-前可容(prepermissible)
-とは、次の条件(Condition 2.26)を満たすことを指す。
+weakly-smoothな関数
+$f\colon U \to \mathbb{R}$ が $x$ で
+前可容(prepermissible)であるとは、
+次の条件(Condition 2.26)を満たすことを指す。
 \begin{align}
 df(x)\notin\opn{span}_{\mathbb{R}}(\opn{SS}(S)_x)+
 (\tform_{\mathbb{Z},S}^{1})_x 
 \setminus (\tform_{\mathbb{Z},S}^{1})_x
 \end{align}
-$C^{\infty}$因子$s$が前可容とは、
-$s$が前可容なweakly-smoothな関数のなす
+$C^{\infty}$因子$s$が前可容であるとは、
+$s$が前可容な関数からなる
 局所データ$\{(U_i,f_i)\}_{i\in I}$
-をもつことをいう。
+を持つことをいう。
 
 $S$上の各点$x$に対してトーラス
-$\check{X}_0(S)_x\deq ((\tform^{1}_{\mathbb{Z},S})_x/
+\begin{equation}
+\check{X}_0(S)_x\deq ((\tform^{1}_{\mathbb{Z},S})_x/
 \opn{span}_{\mathbb{R}}(\opn{SS}_x(S))\cap 
 (\tform^{1}_{\mathbb{Z},S})_x)\otimes_{\mathbb{Z}}
-\mathbb{R}/\mathbb{Z}$ が定義され、
+\mathbb{R}/\mathbb{Z}
+\end{equation}
+が定義され、
 前可容な$C^{\infty}$因子 $s$ に対して写像
 $\check{s}\colon S\to \check{X}_0(S)\deq 
 \bigcup_{x\in S} \check{X}_0(S)_x$ が定義される。 
@@ -361,19 +364,26 @@ $\pi_2(B)=0$のとき、
 $L_{s_0}$と$L_{s}$のFloerコホモロジーのEuler数と
 対応する\cite{MR1882331,MR4301560}。
 
-以下より、本論文の主予想(Conjecture 1.2)と
-主結果について述べる。
-まず、$S$を有理多面空間とすると次の短完全列が存在する。
+\section{主予想と主結果}
+
+$S$を有理多面空間とすると、
+次の短完全列が存在する。
 \begin{align}
 0\to \mathcal{O}_S^{\times} \to 
 \mathcal{A}^{\mathrm{weak}}_S \to 
 \mathcal{A}^{\mathrm{weak}}_S/\mathcal{O}_S^{\times}
 \to 0
 \end{align}
-短完全列は、接続準同型
-$[\cdot]\colon 
+この短完全列は、
+接続準同型
+$
+[\cdot] \colon 
 H^{0}(S;\mathcal{A}^{\mathrm{weak}}_S/\mathcal{O}_S^{\times})
-\to H^{1}(S;\mathcal{O}_S^{\times}); s\mapsto [s]$
+\to H^{1}(S;\mathcal{O}_S^{\times})
+$;
+$
+s\mapsto [s]
+$
 を誘導する。
 任意の元$\mathcal{L}\in H^{1}(S;\mathcal{O}^{\times}_S)$
 に対して、
@@ -382,17 +392,31 @@ $s$が
 存在するか否かは一般には非自明であるが、豊富に存在すると期待
 できる。実際に$S$がコンパクトトロピカル曲線もしくは整アフィン多様体
 の場合は豊富に存在する。
-同様に、自然な単射 $\mathbb{R}_S\to \mathcal{O}^{\times}_S$が、
-接続準同型$c_1\colon H^{1}(S;\mathcal{O}^{\times}_S)
-\to H^{1}(S;\tform_{\mathbb{Z},S}^{1})$を誘導する。
-$\Omega_{\mathbb{Z},S}^{p}$を$S$のトロピカル$p$-形式のなす層
+同様に、
+短完全列
+\begin{equation}
+0
+\to \mathbb{R}_S
+\to \mathcal{O}^{\times}_S
+\to \tform_{\mathbb{Z},S}^{1}
+\to 0
+\end{equation}
+が
+準同型
+$
+c_1\colon H^{1}(S;\mathcal{O}^{\times}_S)
+\to H^{1}(S;\tform_{\mathbb{Z},S}^{1})
+$
+を誘導する。
+$\Omega_{\mathbb{Z},S}^{p}$を$S$のトロピカル$p$形式のなす層
 とする\cite{gross2019sheaftheoretic}。
 $S$がトロピカル多様体のとき、
 $H^{p,q}(S;\mathbb{Z})\deq H^{q}(S;\tform_{\mathbb{Z},S}^{p})$は
-\cite{mikhalkinTropicalEigenwaveIntermediate2014a}にて
-定義されたトロピカルコホモロジーと同じである。
+\cite{mikhalkinTropicalEigenwaveIntermediate2014a}
+で定義されたトロピカルコホモロジーと一致する。
 全コホモロジー$H^{\bullet,\bullet}(S;\mathbb{Z})$
-には自然な環構造が存在し、これより
+には自然な環構造が存在し、
+これを用いて
 $\mathcal{L}\in H^{1}(S;\mathcal{O}_S^{\times})$の
 Chern指標を$\opn{ch}(\mathcal{L})\deq
 \sum_{i=0}^{\infty}\frac{c_1(\mathcal{L})^{i}}{i!}$と定義することが
@@ -410,10 +434,10 @@ $H^{\bullet,\bullet}(S;\mathbb{Z})$
 の元$\opn{td}(S)$が存在して、
 $S$上の任意の可容
 $C^{\infty}$因子$s$に対し、
-次の等式が成り立つ:
+次が成り立つ。
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(S;s))=
-\int_{S}\opn{ch}([s])\opn{td}(S).
+\int_{S}\opn{ch}([s])\opn{td}(S)
 \end{align}
 \end{conjecture}
 
@@ -427,37 +451,30 @@ $s$ を $C$上の可容$C^{\infty}$因子
 とする。このとき、次が成り立つ。
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=\int_C c_1([s])+
-\chi_{\opn{top}}(C). \quad
+\chi_{\opn{top}}(C)
 \end{align}
 \end{theorem}
 
 \begin{theorem}
 \label{theorem-main-2}
-$B$ をHesse計量を持つ、コンパクト$n$次元整アフィン多様体とし、
+$B$をHesse計量を許容するコンパクトな$n$次元整アフィン多様体とし、
 $s$を可容$C^{\infty}$因子とする。このとき、次が成り立つ。
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(B;s))=\int_B \frac{c_1([s])^n}{n!}
 \end{align}
 \end{theorem}
 
-Theorem \ref{theorem-main-1}の証明は、
+Theorem \ref{theorem-main-1}の証明には、
 \cite{auroux2022lagrangian}で定義されているLagrange切断の
-回転数を可容$C^{\infty}$因子に対して定義し、それを用いることで証明する。
-Thereom \ref{theorem-main-1}は Cheng--Yau
-の結果\cite{MR714338}より、トロピカルトーラスの有限不分岐被覆によって
-得られることとトロピカル Borel--Moore
+回転数の
+可容$C^{\infty}$因子に対する類似を用いる。
+また、Thereom \ref{theorem-main-1}の証明には、
+Cheng--Yau \cite{MR714338}の結果から
+Hesse計量を許容するコンパクトな整アファイン多様体が
+トロピカルトーラスを有限不分岐被覆に持つことと、
+トロピカル Borel--Moore
 ホモロジーの射影公式
-\cite{gross2019sheaftheoretic}を利用することで
-示す。
-また本論文では、\cref{condition-good}より強い条件を課した
-$C^{\infty}$因子に対して
-K\"unneth 型の定理が成り立つことを層における
-Thom--Sebastiani型の定理\cite{MR2031639}を
-用いることで示している。
-
-
-
-
+\cite{gross2019sheaftheoretic}を用いる。
 
 \aftersection
 
