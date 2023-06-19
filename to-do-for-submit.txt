@@ -7,4 +7,18 @@
 博論投稿
 0. 謝辞に次の一文を加える。
 
+I would also like to express my gratitude to 
+many colleagues through my master's 
+and doctoral programs, 
+everyone in the same student office, 
+and everyone in the same laboratory 
+who have helped me enormously.
+I would like to thank  everyone
+I met at the workshops for tropical geometry
+have served as a significant motivation 
+for my research.
+Lastly, I want to express special thanks to
+my family who have supported me both mentally
+and financially for a long time.
+
 1.
