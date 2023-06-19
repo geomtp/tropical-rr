@@ -714,7 +714,7 @@ and for any non-zero integer $n$, one has
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(B;s_n))=
 \sharp(L_{s_0}\cap L_{s_n})=n
-=\opn{deg}(s_n)+\chi_{\opn{top}}(B). 
+=\opn{deg}([s_n])+\chi_{\opn{top}}(B). 
 \end{align}
 \end{example}
 
@@ -4934,15 +4934,13 @@ Thus, $\chi(\opn{LMD}^{\bullet}(T,s))=0$.
 \end{proof}
 
 \begin{proof}[{Proof of \cref{theorem-MRR-hesse-preface}}]
-Let $\{(U_i,f_i)\}_{i\in I}$ be a local
-data for $s$.
-We can deform $s$ with a linearly equivalent to a 
-$C^{\infty}$-divisor $s'$ 
-such that $s'$ has a local $C^{\infty}$-Cartier data 
-$\{(U_i,\tilde{f}_i)\}_{i\in I}$ satisfying 
-$\tilde{f}_i$ is Morse, and 
-$f_i(x)=\tilde{f}_i(x)$ for the complement of 
-sufficiently small neighborhoods of $s_0\cap s$. 
+We can deform $s$ to a 
+linearly equivalent $C^{\infty}$-divisor $s'$ 
+such that $L_{s'}$ intsersects the zero section 
+transversaly and $s|_{B\setminus K}=s'|_{B\setminus K}$
+for a sufficienly small neighborhood $K$
+of $s_0\cap s$ by Morse purturbation for 
+a local data for $s$. 
 From \eqref{equation-poincare-hopf}, we have
 $\chi(\opn{LMD}^{\bullet}(B,s))
 =\chi(\opn{LMD}^{\bullet}(B,s'))$.
