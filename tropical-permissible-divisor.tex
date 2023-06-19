@@ -344,7 +344,7 @@ $K_C$ is the canonical divisor of $C$
 and $\chi_{\mathrm{top}}(C)$ is the topological 
 Euler characteristic of $C$.
 The tropical Riemann--Roch theorem for divisors
-on a compact tropical curve were generalized for
+on a compact tropical curve were generalized to
 divisors on a weighted metric graph \cite[Theorem 5.4]{MR3046301}, 
 or multidivisors on a metric graph \cite[Theorem 4.3]{gross2022principal}.
 
@@ -634,9 +634,7 @@ For any compact tropical manifold $S$,
 there exists an element $\opn{td}(S)$
 of the total tropical cohomology group
 $H^{\bullet,\bullet}(S;\mathbb{Z})$ such that, 
-for any $s \in \CDiv(S)$
-satisfying
-\cref{condition-good-divisor}, 
+for any permissible $C^{\infty}$-divisors $s$, 
 one has
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(S;s))=
@@ -664,13 +662,12 @@ admitting a Hessian form respectively:
 \begin{theorem}
 \label{theorem-MRR-curve-preface}
 If $C$ is a compact tropical curve,
-then for any $s \in \CDiv(C)$
-satisfying \cref{condition-good-divisor},
+then for any permissible $C^{\infty}$-divisors $s$,
 one has
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(C;s))=
 \int_C c_1([s])+\frac{1}{2}c_1(-K_C)
-=\opn{deg}(s)+\chi_{\opn{top}}(C). 
+=\opn{deg}([s])+\chi_{\opn{top}}(C). 
 \end{align}
 \end{theorem}
 
@@ -680,8 +677,7 @@ one has
 If
 $B$ is an $n$-dimensional compact integral affine manifold $B$
 admitting a Hessian form,
-then for any $s \in \CDiv(B)$
-satisfying \cref{condition-good-divisor},
+then for any permissible $C^{\infty}$-divisors $s$,
 one has
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(B;s))=
