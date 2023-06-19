@@ -1523,7 +1523,8 @@ $\opn{LMD}^{\bullet}(A_M,f_0,x_0)
 \simeq \opn{LMD}^{\bullet}(A_U,f,0)$
 (see \cite[Definition 3.3]{MR2359489} 
 for the definition of fine sheaves in this paper).
-By a Morse perturbation, we can deform 
+By a Morse perturbation (see e.g. 
+\cite[(2.57)]{MR1873233}), we can deform 
 $f_0$ to a smooth function $f_1$ such that 
 $f_0|_{K}=f_1|_K$ and $f_1$ is nondegenerate except at 
 $x_0$.
@@ -1939,7 +1940,7 @@ The $d_0 \phi$ does not depend on the choice of
 $V$. 
 We frequently identify $T_0^{*}(\opn{LC}_x S)$ with 
 $T_x^{*}S=(\tform_{\mathbb{R},S}^{1})_x$ for simplicity.
-Under this indenfitication, we can define the 
+Under this identification, we can define the 
 $\opn{SS}(S)_x$ as follows:
 \begin{definition}
 For the above notation, we set
@@ -3750,7 +3751,7 @@ we use the following elementary lemma.
 Let $(a,b)$ be an open interval in
 $\mathbb{T}P^{1}$ and 
 $l\colon \mathbb{R}\to \mathbb{R}$ be an 
-affine function with a integer slope.
+affine function with an integer slope.
 Then, there exists a tropical rational function
 $f \colon\underline{\mathbb{R}}\to \mathbb{R}$
 such that the support $\opn{supp}((f))$ of 
@@ -3764,7 +3765,7 @@ This is a special case of \cite[Lemma 4.4]{MR3894860}.
 
 \begin{proof}[{Proof of \cref{proposition-rotation-degree}}]
 We recall that a local data $\{(U_i,f_i)\}_{i\in I}$ for $s$
-defines a \v{C}ech $1$-cocycle 
+defines an \v{C}ech $1$-cocycle 
 $(f_{j}-f_i)_{i,j}
 \in C^{1}(\{U_i\}_{i\in I},\mathcal{O}_C^{\times})$
 whose cohomology class is equal to $[s]$
@@ -3788,7 +3789,7 @@ From \cite[Theorem 4.15]{MR3894860}
 (or \cite[Proposition 5.12]{gross2019sheaftheoretic}),
 we can calculate the degree of $D$ by the sum of
 the weights on $\opn{supp}(D)$,
-which are dertermined by 
+which are determined by 
 the divisor map $\opn{div}\colon 
 H^{0}(C;\mathcal{M}_C^{\times}/
 \mathcal{O}_C^{\times})\to \mathrm{Z}_{0}(C)$
@@ -3859,7 +3860,8 @@ we need to add the index $\opn{ind}_x(g)$ at $x$ satisfying
 \opn{ind}_x(g)=1=\chi_{\opn{top}}(\Gamma_3).
 \end{align}
 At least, \cref{theorem-MRR-curve-preface} is not
-true without correction of the effect at non-prepermissible point
+true without correction of the effects at 
+non-prepermissible points
 of $g$.
 In this case, $\opn{ind}_x(g)$ should be $-1$.
 This condition is independent of the choice
@@ -3899,17 +3901,17 @@ graph. This means that
 $\opn{deg}(s)\geq 3g(C)-3$.
 On the other hand, every divisor $D$ satisfying
 $\opn{deg}(D)>0$ is ample \cite[Corollary 43]{MR2892941}.
-Roughly speaking, the positivity condition is more 
-strict than the ampleness condition.
+Roughly speaking, the positivity condition is 
+stricter than the ampleness condition.
 \end{remark}
 
 
 
-\subsection{Relations to previous results}
+\subsection{Relationships to previous results}
 \label{section-tropical-curve-note}
 
 
-\subsubsection{Relations to
+\subsubsection{Relationships to
 homological mirror symmetry of trivalent graphs}
 \label{section-syz-trivalent-graph}
 
@@ -3970,7 +3972,7 @@ in \cite[\textsection 7]{auroux2022lagrangian}.
 We hope our $\check{X}_0(S)$ for a 
 rational polyhedral space $S$ give a hint for 
 a generalization of their expectation.  
-\subsubsection{Relations to the Poincar\'e--Hopf 
+\subsubsection{Relationships to the Poincar\'e--Hopf 
 theorem for graphs}
 
 \cref{theorem-MRR-curve-preface} can be considered 
@@ -3999,7 +4001,7 @@ for more detail about it).
 
 
 
-\subsubsection{Relations to a localization of 
+\subsubsection{Relationships to a localization of 
 index on compact Riemann surfaces.}
 
 We mention relationships between 
@@ -4227,7 +4229,7 @@ T^{*}B/\mathcal{T}_{\Z , B}^{\vee} =:\hspace{-35pt}
 \end{tikzcd}.
 \end{equation}
 
-In some literature, the symbol $\check{X}$ and
+In some literature, the symbols $\check{X}$ and
 $X$ are reversed. 
 The manifold $\check{X}(B)$
 has a canonical symplectic structure 
@@ -4303,7 +4305,7 @@ and \cite{MR3665000}.
 }
 \end{remark}
 
-\begin{remark}[{Relationships between symplectic geometry}]
+\begin{remark}[{Relationships with symplectic geometry}]
 Integral affine manifolds naturally appear 
 as base spaces of Lagrangian torus fibration 
 \cite{duistermaatGlobalActionangleCoordinates1980a}. 
@@ -4450,7 +4452,7 @@ Here $\mcal{Z}^{q}_{X}\deq
 Every row and column of the diagram 
 \eqref{equation-smooth-cartier-diagram} are exact
 and $\mcal{A}_{X}^{0,0}/\mcal{O}^{\times}_X
-  \simeq \mcal{Z}^{1}_X/\mcal{F}_{\Z,X}^{1}$ from the snake lemma.
+  \simeq \mcal{Z}^{1}_X/\tform_{\Z,X}^{1}$ from the snake lemma.
 The left column short exact sequence of 
 \eqref{equation-smooth-cartier-diagram} is called
 the 
@@ -4688,7 +4690,8 @@ H_{0,0}^{\opn{BM}}(\{\opn{pt}\};\mathbb{Z})\simeq
 \mathbb{Z},
 \qquad \alpha \mapsto a_{X*}(\alpha \frown [X]).
 \end{align}
-
+The trace map extends on $H^{\bullet,\bullet}(X;\mathbb{Z})$
+naturally.
 The fundamental class $[X]$ of $X$ is a generator of 
 $H_{n,n}^{\opn{BM}}(X;\mathbb{Z})$, and thus we 
 can define the degree of a proper morphism.
@@ -4746,16 +4749,17 @@ Our definition of \'etale covering is different from that of
 \cite[Definition 1.1]{grossMirrorSymmetryLogarithmic2006a}
 when $X$ and $Y$ are integral affine manifolds.
 A typical example of non-\'etale covering map 
-in our sense but \'etale on the meaning in 
+in our sense but \'etale in the sense of
 \cite{grossMirrorSymmetryLogarithmic2006a} is given
 from the $n$-th Frobenius endomorphism 
 $\opn{Fr}_{n,X}^{\natural}\colon \mathcal{O}_X \to \mathcal{O}_X; f\mapsto nf$ of 
 the structure sheaf of tropical manifolds. 
 This is a tropical analog of Frobenius morphisms of 
 schemes in positive characteristic 
-(e.g. \cite[IV. Remark 2.4.1]{hartshorneAlgebraicGeometry1977a}). As like classical Frobenius morphism, 
+(e.g. \cite[IV. Remark 2.4.1]{hartshorneAlgebraicGeometry1977a}).
+As like classical Frobenius morphisms, 
 the morphism $\opn{Fr}_{n,X}=(\opn{id}_X,\opn{Fr}_{n,X}^{\natural})$ of semiringed space does 
-not induce an endomorphism of tropical manifolds 
+not induce an endomorphism of a given tropical manifold 
 (over $\mathbb{T}$), but
 there exists the following commutative diagram:
 \begin{equation}
@@ -4880,10 +4884,10 @@ From now on, we assume $B=T$.
 Let $s$ be an element of 
 $\Gamma(T;\mcal{C}^{\infty}(T)/\mcal{O}_{T}^{\times})\simeq
 \Gamma(T;\opn{Lag}(\check{X}(T)))$.
-
-$s$ is linearly equivalent to a Lagrangian section
-defined from the differential $dq_s$ of a quadratic polynomial
-$q_s$ function on the universal cover $\tilde{T}$ of $T$
+Every $s$ is linearly equivalent to a Lagrangian section
+$L_{dq_s}$
+defined from the differential $dq_s$ of a quadratic 
+polynomial $q_s$ on the universal cover $\tilde{T}$ of $T$
 (see \cite{mikhalkinTropicalCurvesTheir2008a} or 
 \cite[\textsection 3.3]{MR4229604}).
 
@@ -4936,10 +4940,10 @@ Thus, $\chi(\opn{LMD}^{\bullet}(T,s))=0$.
 \begin{proof}[{Proof of \cref{theorem-MRR-hesse-preface}}]
 We can deform $s$ to a 
 linearly equivalent $C^{\infty}$-divisor $s'$ 
-such that $L_{s'}$ intsersects the zero section 
-transversaly and $s|_{B\setminus K}=s'|_{B\setminus K}$
-for a sufficienly small neighborhood $K$
-of $s_0\cap s$ by Morse purturbation for 
+such that $L_{s'}$ intersects the zero section 
+transversally and $s|_{B\setminus K}=s'|_{B\setminus K}$
+for a sufficiently small neighborhood $K$
+of $s_0\cap s$ by Morse perturbations for 
 a local data for $s$. 
 From \eqref{equation-poincare-hopf}, we have
 $\chi(\opn{LMD}^{\bullet}(B,s))
@@ -4995,7 +4999,7 @@ In a recent study,
 a Lagrangian interpretation of
 the Chern--Schwartz--MacPherson cycles of matroids 
 were introduced in \cite{MR4583774}.
-We expect that our approach has a good relationship
+We expect that our approach has a good relation
 with this interpretation. 
 \end{remark}
 
@@ -5010,8 +5014,8 @@ We also note there exists another tropical analog of Poincar\'e--Hopf theorem
 \cite{MR4540954}.
 This analog is about the \emph{tropical Euler characteristic}
 $\chi_{\opn{trop}}(B)\deq 
-\chi(\mb{H}^{\bullet}(B;\tform_{\mathbb{R},B}^{\bullet}))$
-  but not for the topological Euler characteristic $\chi_{\opn{top}}(B)$.
+\chi(\mb{H}^{\bullet}(B;\tform_{\mathbb{R},B}^{\bullet}))$,
+but not for the topological Euler characteristic $\chi_{\opn{top}}(B)$.
 \end{remark}
 
 \begin{remark}[{Kodaira--Thurston surface}]
@@ -5046,7 +5050,7 @@ and their tropical cohomologies are discussed in
 
 \end{remark}
 
-\subsection{Relationship between Floer cohomology
+\subsection{Relationships between Floer cohomology
 and integral affine manifolds}
 \label{section-floer-lmd}
  
@@ -5422,7 +5426,7 @@ sheaves.
 for the theory of $G$-equivariant sheaves
 of a discrete group $G$.
 We mainly follow the terminologies and notions
-of equvariant sheaves
+of equivariant sheaves
 from \cite[\textsection 8]{MR1299527}).
 In this case, every $\mathfrak{S}_n$-equivariant
 sheaves on a space $X$ with a (right) action 
@@ -5614,9 +5618,9 @@ and \cite[p.8]{yoshitomi2011generators}) but
 these dimensions have no tropical analog of 
 Riemann--Roch formula like 
 \cite{MR2355607,gathmannRiemannRochTheoremTropical2008a},
-but there exists a analog of Riemann--Roch formula 
+but there exists an analog of Riemann--Roch formula 
 for the tropicalization of the linear system of divisors
-on a algebraic curve \cite[Corollary D]{MR4444458}.
+on an algebraic curve \cite[Corollary D]{MR4444458}.
 
 \begin{remark} \label{remark-list-tropical-euler}
 Here is the list of the reason why the Euler 
@@ -5660,7 +5664,7 @@ Therefore, $\chi(H^{\bullet}(Z_w;\mathcal{O}_{Z_w}))=
 \label{sec: BSRR}
 \label{appendix-geometric-quantization}
 
-In this subsection, we recall the relationships
+In this subsection, we recall the relations
 between lattice points of 
 strongly integral affine manifolds and geometric prequantization 
 from \cite{1999math......2027T,MR4237881}.
@@ -5821,7 +5825,7 @@ $\upomega_X^{\bullet}\deq
 \begin{example}
 If $X$ is a topological manifold of dimension $n$, 
 then $\upomega^{\bullet}_{X}\simeq \opn{or}_{X}^{\Z}[n]$ 
-where $\opn{or}_{X}^{\mathbb{Z}}[n]$ is the sheaf 
+where $\opn{or}_{X}^{\mathbb{Z}}$ is the sheaf 
 associated with the presheaf $U\mapsto 
 \opn{Hom}(H^{n}_c(U;\mathbb{Z}_{X}),\mathbb{Z})$
 \cite[Proposition 3.3.6]{MR1299726}.
@@ -5871,7 +5875,7 @@ Let $f\colon X\to Y $ and $g\colon Y\to Z$ be
 a continuous map and $f_!,g_!$ has finite cohomological 
 dimension. Then, $(g\circ f)^{!}=f^{!}\circ g^{!}$
 \cite[Proposition 3.1.8]{MR1299726}.
-In particular, $\upomega_X=f^{!}\upomega_Y$.
+In particular, $\upomega_X^{\bullet}=f^{!}\upomega_Y^{\bullet}$.
 From elemental properties of the composition of
 adjoint functors \cite[p.103]{MR1712872}, we have
 \begin{align}
@@ -5891,7 +5895,7 @@ Ra_{Z!}(\opn{Tr}_{g\circ f,\upomega_{Z}^{\bullet}})
 
 \section{Lattice polytopes and local Morse data}
 \label{section-toric-geometry}
-In this section, we will see relationships 
+In this section, we will see relationships
 between lattice polytopes and tropical toric
 varieties via local Morse data
 (\cref{proposition-ehrhart-revisit}). 
@@ -6090,7 +6094,7 @@ This map is also naturally appeared as an
 exponential family in algebraic statistic,
 information geometry and Hessian geometry.
 See also \cite[Appendix 2]{MR1301331} for general theory for
-the relationships for the Hessian form of $f_P$ and 
+the relationship between the Hessian form of $f_P$ and 
 the induced K\"{a}hler potential on
 toric manifolds.
 
