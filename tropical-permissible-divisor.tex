@@ -1235,8 +1235,8 @@ We will see several examples of local Morse data.
 
 \begin{example}
 Let $f\colon X \to \mathbb{R}$ a continuous function 
-such that $\{f<f(x_0)\}\cap S=\emptyset$ and 
-$\{f=f(x_0)\}\cap S=\{x_0\}$ for some $x_0\in X$. 
+such that $\{f<f(x_0)\}\cap S=\emptyset$
+for some $x_0\in X$. 
 Then,
 \begin{align}
 \opn{LMD}^{\bullet}(A_S,f|_{S},x_0)\simeq 
@@ -1294,7 +1294,7 @@ S^{n-1}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0) \\
 Therefore,  
 \begin{align}
 \partial (\bar{B}^{n}_{\varepsilon}(0)
-\times \bar{B}^{m}_{\varepsilon}(0)\cap 
+\times \bar{B}^{m}_{\varepsilon}(0))\cap 
 \{f_{n,m}<f_{n,m}(0)\}
 = B^{n}_{\varepsilon}(0)\times S^{m-1}_{\varepsilon}(0).
 \end{align}
@@ -1610,7 +1610,7 @@ with boundary:
 (0,\varepsilon] \times
 (S_{\varepsilon}^{n-1}(x) \cap \{f=f(x)\})). \notag
 \end{align}
-The proof of
+A proof of
 a relative version of Ehresmann's lemma is 
 in \cite{359708}, for example.
 Besides, there exists a homeomorphism of pairs of
@@ -1650,6 +1650,7 @@ If $f$ is real analytic, then
 $S_{\varepsilon}^{n-1}(x)\cap \{f\leq f(x)\}\simeq 
 f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}^{n}(x)$
 for sufficiently small $\vep>\delta>0$.
+The fiber 
 $f^{-1}(-\delta)\cap \bar{B}_{\varepsilon}(x)$ is called 
 the (negative) \emph{real Milnor fiber}.
 By Khimshiashvili's [Him\v{s}ia\v{s}vili] formula \cite{MR0458467}, we have
@@ -1665,13 +1666,14 @@ By Khimshiashvili's [Him\v{s}ia\v{s}vili] formula \cite{MR0458467}, we have
 for some polyhedral cone}]
 Fix $X\deq \mathbb{R}^{n}$.
 Let $f\colon X\to {\mathbb{R}}$ be 
-a convex $C^{1}$-function $X$ with the minimum point $x$
+a convex $C^{1}$-function $X$ with the minimum point 
+at the origin
 and $S$ a polyhedral cone in $X$, i.e.,
 a polyhedral subset such that 
 $rS=S$ for all $r\in \mathbb{R}_{> 0}$.
 One of trivial but remarkable point is that
 \begin{align}
-|\opn{ind}_x^{A}(f|_S)|\neq |\opn{ind}_x^{A}(-f|_S)|
+|\opn{ind}_0^{A}(f|_S)|\neq |\opn{ind}_0^{A}(-f|_S)|
 \end{align}
 except for special cases such like
 \cref{example-poincare-hopf}.
@@ -1680,25 +1682,26 @@ From \cref{example-local-cohomology},
 \cref{example-fundamental-system}, we have
 \begin{align}
 \opn{LMD}^{\bullet}(A_S,-f|_S,0)=
-\tilde{H}^{\bullet-1}(S\setminus \{x\};A_{S}).
+\tilde{H}^{\bullet-1}(S\setminus \{0\};A_{S}).
 \end{align}
 
 
 
 If $S$ is a purely $n$-dimensional Bergman fan, then 
-$\opn{LMD}^{\bullet}(A_S,-f|_S,x)\simeq 
-H^{n-1}(S\setminus\{x\};A)[-n]$ since every Bergman fan has a good subdivision 
+$\opn{LMD}^{\bullet}(A_S,-f|_S,0)\simeq 
+H^{n-1}(S\setminus\{0\};A)[-n]$ since every Bergman fan has a good subdivision 
 \cite[Theorem 1]{MR2185977} and its link is shellable
-(e.g. \cite[Theorem 7.9.1]{MR1165544}). Hacking 
-conjectured the vanishing property of the local cohomology
-is true for every tropicalization
-of a very affine algebraic variety \cite{MR2452307}.
-Hacking also proved this conjecture is true for a suitable condition
+(e.g. \cite[Theorem 7.9.1]{MR1165544}). Hacking also
+studied homotopy types of link of tropical variety 
+and the vanishing property of the local cohomology
+for the tropicalization
+of a very affine algebraic variety
 \cite[Theorem 2.5]{MR2452307}.
 Since any tropical variety is connected
 through codimension $1$ \cite[Theorem 3.3.5]{MR3287221},
-this conjecture is true when $\dim S \leq 2$.
-This phenomenon gives a certain analog of the Kodaira vanishing theorem for 
+the vanishing property works when $\dim S \leq 2$.
+This phenomenon gives a certain analog of the Kodaira
+vanishing theorem for 
 positive line bundles, see 
 also \cref{example-tropical-kodaira-vanishing}. 
 Amini and Piquerez also discuss a certain shellability 
@@ -1735,8 +1738,8 @@ with a local face structure in \cite{MR3903579}
 (see also \cite[Definition 2.4.(c)]{gross2019sheaftheoretic}
 for the definition of face structures 
 of rational polyhedral space).
-We can also define the sheaf of $(0,0)$-superforms for 
-rational polyhedral spaces as the same way,
+We can also define the sheaf of $(0,0)$-superforms on 
+a rational polyhedral space as the same way,
 at least.
 A $(0,0)$-superform on $S$ are also called as 
 a smooth function on $S$. In fact, 
@@ -1813,7 +1816,7 @@ Therefore, for every line bundle $\mathcal{L}$ on a rational polyhedral
 space, there exists a Cartier divisor $D$ 
 which represents $\mathcal{L}$.
 
-By taking a global section of the
+By taking global sections of the
 short exact sequence
 \eqref{equation-smoooth-cartier-divisor-sequence},
 there also exists a connecting homomorphism 
@@ -2040,7 +2043,7 @@ Fix $y\in (\opn{LC}_x S)_{\mathrm{gen}}$ and
 $v\in (\opn{span}_{\mathbb{R}} U_y)^{\bot}$.
 In order to prove $v\in \opn{SS}(\opn{LC}_x S)_0$, 
 we will find a $C^{\infty}$-function 
-$f\colon \opn{LC}_x S \to \mathbb{R}$ 
+$f\colon T_x S \to \mathbb{R}$ 
 such that $f(0)=0$ $df(0)=v$ and 
 \begin{align}
 (R_{\{f\geq 0\}}(A_{T_xS})_{\opn{LC}_xS})_0
@@ -2126,7 +2129,7 @@ Therefore, $v-\rho_{P}$ or $v$ satisfies
 
 \begin{remark}
 In many cases, the three vector spaces in 
-\eqref{equation-W-SS-Lin} is equal.
+\eqref{equation-W-SS-Lin} are equal.
 For instance, if $S$ is a tropical curve 
 or integral affine manifold, 
 then $S$ satisfies this condition.
@@ -3090,11 +3093,11 @@ integral affine manifolds).
 Since $C_{\reg}$ is paracompact,
 every connected component of $C_{\reg}$
 is diffeomorphic to an open interval or a circle.
-
-Every $n$-dimensional
+Every connected $n$-dimensional
 integral affine manifold $B$ has 
 the developing map $\opn{dev}_{B}\colon\tilde{B}\to \mathbb{R}^{n}$
-where $\tilde{B}$ is the universal cover of $B$.
+where $\tilde{B}$ is the universal cover of $B$
+(see e.g. \cite[\textsection 2.3]{goldmanRadianceObstructionParallel1984a}).
 Besides, every developing map is an immersion and a submersion, 
 and thus $\opn{dev}_{B}$ is an embedding onto 
 an open subset of $\mathbb{R}$ when $\dim B=1$.
@@ -4821,7 +4824,7 @@ Thus, we can rewrite the commutative diagram \eqref{equation-smooth-cartier-diag
     & 0 \arrow[d]    & 0 \arrow[d]           &                      &   \\
     & \mb{R}_{B} \arrow[r,equal] \arrow[d]                & \mb{R}_{B} \arrow[d]           &                      &   \\
     0 \arrow[r] & \mathcal{O}_{B}^{\times} \arrow[r] \arrow[d]         & \mathcal{C}^{\infty}_{B} \arrow[r] \arrow[d] & \mathcal{C}^{\infty}_{B}/\mathcal{O}_{B}^{\times}  \arrow[r] \arrow[d,equal] & 0 \\
-    0 \arrow[r] & \mcal{T}_{\Z,B}^{\vee} \arrow[r] \arrow[d] & \opn{Lag}(T^{*}B) \arrow[r] \arrow[d]  & \opn{Lag}(\check{X}(B)) \arrow[r]   & 0 \\
+    0 \arrow[r] & \mcal{T}_{\Z,B}^{\vee} \arrow[r] \arrow[d] & \opn{Lag}(T^{*}B) \arrow[r] \arrow[d]  & \opn{Lag}(\check{X}(B)) \arrow[r]   & 0. \\
     & 0 & 0 &  &
   \end{tikzcd}
 \end{equation}
@@ -4854,7 +4857,7 @@ From now on, we start to prove
 
 \begin{theorem} \label{theorem-MRR-hesse}
 Let $B$ be an $n$-dimensional compact 
-integral affine manifold with a Hessian form and
+integral affine manifold admitting a Hessian form and
 $s$ a $C^{\infty}$-divisor such that its
 Lagrangian section $L_s$ intersects 
 with the zero section transversely. Then,
@@ -5193,7 +5196,7 @@ of a compact integral affine manifold is contractible.
 \section{More examples}
 \label{section-more-examples}
 In the last section, we mention more examples of 
-tropical analog of the Euler number of 
+tropical analog of the Euler characteristic of 
 the sheaf cohomology of line bundles.
 (See also \cref{section-toric-geometry}
 for the local Morse data for
@@ -6222,7 +6225,7 @@ Let $P\deq [0,n]$. Then,
 $f_P\colon \mathbb{R}\to \mathbb{R}; 
 x\mapsto \opn{log}(\sum_{i=0}^{n}e^{ix})$ and 
 $X_P\simeq \mathbb{T}P^{1}$.
-$\mathbb{T}P^{1}$ is covered by two open subsets:
+The space $\mathbb{T}P^{1}$ is covered by two open subsets:
 $U_{-\infty}\deq \underline{\mathbb{R}}$ and 
 $U_{+\infty}\deq \overline{\mathbb{R}}$.
 Take two continuous functions on each $U_i$ 
