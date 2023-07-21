@@ -4602,7 +4602,7 @@ morphisms:
 
 Let $f\colon X \to Y $ be a proper morphism of 
 rational polyhedral spaces.
-Then, there exists the projective formula 
+Then, there exists the projection formula 
 for $\alpha\in H_{p,q}^{\mathrm{BM}}(X)$
 and $c\in H^{i,j}(Y)$ 
 \cite[Proposition 4.18]{gross2019sheaftheoretic}:
@@ -6096,11 +6096,11 @@ on $\mathbb{R}^{n}$.
 The composition of the exact $1$-form
 $df_P:{\mathbb{R}}^{n}\to T^{*}({\mathbb{R}}^{n}); x\mapsto 
 (x;\frac{\partial f_P}{\partial x_1}(x),\ldots,\frac{\partial f_P}{\partial x_n}(x))$ 
-of $f$, and the canonical projection 
+of $f_P$, and the canonical projection 
 $\opn{pr}\colon T^{*}({\mathbb{R}}^{n})\mapsto (\mathbb{R}^n)^{\vee}$
 is an embedding onto the (relative) interior of $P$
 \cite[p.124 Exercise]{MR1301331}. 
-We set $\dot{\mu}_{P}^{\opn{trop}}\deq \opn{pr}\circ df$ 
+We set $\dot{\mu}_{P}^{\opn{trop}}\deq \opn{pr}\circ df_P$ 
 for simplicity.
 $\dot{\mu}_{P}^{\opn{trop}}$ is called the 
 \emph{Legendre transform}
@@ -6225,8 +6225,8 @@ $f_{P,p}$ can be considered as an element of
 $H^{0}(U_{\sigma_p},\mathcal{A}_{X_P}^{\mathrm{weak}})$
 naturally since $f_{P,p}\in 
 \underline{\mathbb{R}}_{\opn{log}}[S_{\sigma_p}]$. 
-These data form a $C^{\infty}$-Cartier 
-divisor $s_P$ on $X^{\mathrm{trop}}_P$.
+These data form a $C^{\infty}$-divisor
+$s_P$ on $X^{\mathrm{trop}}_P$.
 \item Every local cone $\opn{LC}_x X_{P}^{\mathrm{trop}}$
 in $X_P^{\mathrm{trop}}$ at $x$ is isomorphic to an 
 $\mathbb{R}^{l}$, and thus $s_P$ obviously satisfies 
@@ -6300,7 +6300,7 @@ $s_P$ satisfies \cref{condition-good-divisor}.
 Besides,
 \begin{align}
 \chi(\opn{LMD}^{\bullet}(X^{\mathrm{trop}}_P;s_P))
-&=\sharp(\opn{int}(P\cap \Z^{n})), \\
+&=\sharp(P\cap \Z^{n}), \\
 \chi(\opn{LMD}^{\bullet}(X^{\mathrm{trop}}_P;-s_P))
 &=(-1)^{n}\sharp 
 (\opn{int}(P\cap \Z^{n})).
